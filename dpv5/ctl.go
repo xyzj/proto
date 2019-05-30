@@ -11,14 +11,11 @@ import (
 	"github.com/tidwall/gjson"
 	"github.com/tidwall/sjson"
 
-	"github.com/xyzj/gopsu"
-
-	msgctl "yanfa/luwak/proto/msgjk"
-
-	msgnb "yanfa/luwak/proto/msgnb"
-
+	msgctl "../msgjk"
+	msgnb "../msgnb"
 	pb2 "github.com/gogo/protobuf/proto"
 	"github.com/pkg/errors"
+	"github.com/xyzj/gopsu"
 )
 
 // ClassifyCtlData 中间层等数据解析
