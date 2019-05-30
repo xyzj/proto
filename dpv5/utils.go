@@ -8,7 +8,8 @@ import (
 	"strings"
 	"time"
 
-	msgctl "../msgjk"
+	msgctl "yanfa/luwak/proto/msgjk"
+
 	"github.com/gogo/protobuf/proto"
 	"github.com/xyzj/gopsu"
 )

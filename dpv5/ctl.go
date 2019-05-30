@@ -13,8 +13,10 @@ import (
 
 	"github.com/xyzj/gopsu"
 
-	msgctl "../msgjk"
-	msgnb "../msgnb"
+	msgctl "yanfa/luwak/proto/msgjk"
+
+	msgnb "yanfa/luwak/proto/msgnb"
+
 	pb2 "github.com/gogo/protobuf/proto"
 	"github.com/pkg/errors"
 )

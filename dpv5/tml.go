@@ -15,7 +15,8 @@ import (
 	"github.com/tidwall/sjson"
 	"github.com/xyzj/gopsu"
 
-	msgctl "../msgjk"
+	msgctl "yanfa/luwak/proto/msgjk"
+
 	pb2 "github.com/gogo/protobuf/proto"
 )
 
