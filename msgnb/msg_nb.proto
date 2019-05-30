@@ -1,0 +1,15 @@
+syntax = "proto3";
+package wlst.nbiot;
+
+option optimize_for = SPEED;
+
+message MsgNBiot {
+    int64 cmd_idx = 1;
+    // GoWork or GoWorkTask
+    string cmd_name = 2;
+    // 0xdad9 or 0xdad0
+    int32 cmd_flag = 3;
+    repeated int64 imei = 4;
+    // hex string
+    repeated int32 raw_data = 5;
+}
