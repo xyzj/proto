@@ -27,6 +27,8 @@ message Head {
     int32 rcv = 12;
     // 命令序号，long型递增循环
     int64 idx  = 13;
+    // 当前消息发出时间戳
+    int64 dt = 15;
 }
 
 message Args {
