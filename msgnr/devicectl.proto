@@ -1,0 +1,60 @@
+syntax = "proto3";
+package devproto;
+
+import "nr.proto";
+
+// 系统指令代码：
+// 1 - rtuonline
+// 10053 - close socket,填充SysCommand，填入要断开socket的dev_mainid或dev_ip
+
+
+service DeviceCtrl {
+	rpc DeviceEcho(MsgWithCtrl) returns (MsgWithCtrl) {}
+}
+
+message Head {
+    int64 cmd_idx = 1; // 消息流水
+    int32 cmd_name = 2; // 命令标识
+    int32 cmd_mod = 3; // 命令模式，1-系统指令，2-数传指令
+    int32 priority = 5; // 命令优先级别，1-普通，2-高级
+    int32 err = 6; // 0-无错误，>0-有错误,1-设备不在线，2-参数错误
+    string msg = 7; // 错误信息或其他详细信息
+    int32 ver = 8; // 协议版本，目前默认1
+    int32 shell_mod = 9; // 数据发送模式，0-直传，>0时表示加壳传输，加壳方式依据值定
+    repeated int64 dev_mainid = 10 [packed=true]; // 设备地址，多个地址时执行相同操作
+    repeated int32 dev_cmdidx = 11 [packed=true]; // 设备命令流水号2-65535，可以不填，如果填写，数量和顺序必须和dev_mainid相同
+}
+
+message SysCommand {
+    repeated Online_devs onlinedevs = 1;
+    
+    message Online_devs {
+        int64 dev_mainid = 1; // 设备地址
+        string asset_mainid = 2; // 资产编号（暂不用）
+        uint64 dev_ip = 3; // 远端ip
+        int32 dev_port = 4; // 远端port
+        uint64 imei = 5; // 移动网络imei或网卡mac（可能没有）
+        int32 signal = 6; // 移动网络信号强度（可能没有）
+        int32 net_type = 7; // 移动网络类型，0-unknow，2-2/3G，4-4G（可能没有）
+    }
+}
+
+message MsgWithCtrl {
+	Head head = 1;
+	SysCommand sys_command = 2;
+	
+    Nr_slu_1004 nr_slu1004 = 10;
+    Nr_slu_1010 nr_slu1010 = 11;
+    Nr_slu_1030 nr_slu1030 = 12;
+    Nr_slu_1031 nr_slu1031 = 13;
+    Nr_slu_1032 nr_slu1032 = 14;
+    Nr_slu_1033 nr_slu1033 = 15;
+    Nr_slu_1034 nr_slu1034 = 16;
+    Nr_slu_1035 nr_slu1035 = 17;
+    Nr_slu_1135 nr_slu1135 = 18;
+    Nr_rtu_2032 nr_rtu2032 = 19;
+    Nr_rtu_2033 nr_rtu2033 = 20;
+    Nr_rtu_2035 nr_rtu2035 = 21;
+    Nr_dev_3003 nr_dev3003 = 22;
+    Nr_dev_4003 nr_dev4003 = 23;
+}
