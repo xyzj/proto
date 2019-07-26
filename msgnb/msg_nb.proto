@@ -13,3 +13,275 @@ message MsgNBiot {
     // hex string
     repeated int32 raw_data = 5;
 }
+
+service NBIoTCtl {
+	rpc NBIoTEcho(MsgNBOpen) returns (MsgNBOpen) {}
+}
+
+//数据服务和通讯服务传输格式
+message MsgNBOpen {
+    // 设备imei
+    int64 imei = 1;
+    // 数据接收时间
+    int64 dt_receive = 2;
+    // 数据类型，1-设备最新数据，2-控制应答，3-参数设置/读取应答
+    int32 data_type = 3;
+    // 设备最新数据
+    SluitemData sluitem_data = 4;
+    // 控制应答
+    SluitemReply sluitem_reply = 5;
+    // 参数设置/读取
+    SluitemConfig sluitem_config = 6;
+}
+
+message SluitemConfig {
+    // 序号
+    int32 cmd_idx =  1;
+    // 控制器条码（4字节）
+    int64 sluitem_idx = 2;
+    // 参数读取标识
+    Data_mark data_mark = 4;
+    // 控制器回路数量
+    int32 loop_count = 5;
+    // 控制器时钟(read_timer)
+    int64 sluitem_time = 7;
+    // 控制器运行参数(read_args)
+    Sluitem_para sluitem_para = 8;
+    // 控制器版本(read_ver)
+    Sluitem_ver sluitem_ver = 10;
+    // 控制器当日日出日落(read_sunriseset)
+    Sluitem_sunriseset sluitem_sunriseset = 11;
+    // 控制器定时控制参数(read_timetable)
+    repeated Sluitem_runtime sluitem_runtime = 12;
+    // 设置状态0-失败，1-成功
+    int32 status = 14;
+    // 参数设置标识
+    Set_mark set_mark = 15;
+
+    message Data_mark {
+        // 读取时钟
+        int32 read_timer = 2;
+        // 读取运行参数
+        int32 read_args = 3;
+        // 读取版本
+        int32 read_ver = 5;
+        // 读取当天日出日落
+        int32 read_sunriseset = 6;
+        // 读取定时控制参数
+        int32 read_timetable = 7;
+    }
+    
+    message Set_mark {
+        // 设置时钟
+        int32 set_timer = 1;
+        // 设置运行参数
+        int32 set_args = 2;
+        // 复位设备
+        int32 set_reset = 4;
+        // 设置定时控制参数
+        int32 set_timetable = 5;
+        
+    }
+    
+    message Sluitem_para {
+        // 域名
+        int32 domain_name = 1;
+        // 控制器状态 false-停运，true-投运
+        int32 sluitem_status = 2;
+        // 控制器主报 false-禁止主报，true-允许主报
+        int32 sluitem_enable_alarm = 3;
+        // 控制器上电开灯 true-开灯，false-关灯
+        repeated int32 sluitem_power_turnon = 4 [packed=true];
+        // 控制器1-4回路矢量
+        repeated int32 sluitem_vector = 5 [packed=true];
+        // 经度
+        double longitude = 6;
+        // 纬度
+        double latitude = 7;
+        // 1-4回路额定功率
+        repeated int32 rated_power = 8 [packed=true];
+        // nb主报间隔，(0～127)*5
+        int32 uplink_timer = 9;
+        // nb主报需要主站应答，0-不需要，1-需要
+        int32 uplink_reply = 10;
+    }
+    message Sluitem_ver {
+        // 控制器回路
+        int32 sluitem_loop = 1;
+        // 节能方式
+        int32 energy_saving = 2;
+        // 有漏电模块
+        int32 electric_leakage_module = 3;
+        // 有温度检测模块
+        int32 temperature_module = 4;
+        // 有时钟
+        int32 timer_module = 5;
+        // 型号 0-unknow,1-wj2090j
+        string sluitem_type = 6;
+        // 软件版本
+        string ver = 7;
+    }
+    message Sluitem_sunriseset {
+        // 当日日出日落时间 hhmm->int32
+        int32 sunrise = 1;
+        int32 sunset = 2;
+    }
+    message Sluitem_runtime {
+        // 本地控制数据类型0-基本类型（6字节），1-扩展类型（6+20字节）
+        int32 data_type = 1;
+        // 输出类型0-继电器，1-pwm输出，2-485
+        int32 output_type = 2;
+        // 操作类型1-定时操作，2-经纬度操作，3-即时操作
+        int32 operate_type = 3;
+        // 有效日期，0-6～周日-周6
+        repeated int32 date_enable = 4 [packed=true];
+        // 开关灯操作时间 hhmm->int32
+        int32 operate_time = 5;
+        // 操作偏移 -720~+720
+        int32 operate_offset = 6;
+        // 继电器操作回路1-4 0-不操作，3-开灯，5-一档节能，a-二档节能，c-关灯
+        repeated int32 relay_operate = 7 [packed=true];
+        // PWM操作回路
+        repeated int32 pwm_loop = 8 [packed=true];
+        // PWM操作占空比
+        int32 pwm_power = 9;
+        // PWM频率 (1~255) * 100
+        int32 pwm_baudrate = 10;
+        // 485波特率 0-300,1-600,2-1200,3-2400,4-4800,5-9600,6-19200
+        int32 rs485_baudrate = 11;
+        // 485校验位 0-无校验，1-奇校验，2-偶校验
+        int32 rs485_check = 12;
+    }
+}
+
+message SluitemReply {
+	// 开关灯调光操作结果，0-失败，1-成功
+	int32 status = 1; 
+}
+
+message SluitemData {
+    // 序号
+    int32 cmd_idx =  1;
+    // 型号
+    Model_info model_info=2;
+    // 回路数据(最大4个)
+    repeated Light_data light_data = 3;
+    // 漏电流
+    double leakage_current = 4;
+    // 控制器状态
+    Sluitem_status sluitem_status = 5;
+    // 时钟故障
+    Time_fault time_fault = 6;
+    // 自复位次数
+    int32 reset_count = 7;
+    // 时间
+    int64 date_time = 8;
+    // 控制器运行参数
+    Sluitem_para sluitem_para = 9;
+    // 参考信号接收功率
+    int64 rsrp = 10;
+    // 接收信号强度等级
+    int64 rssi = 11;
+    // 信噪比
+    int64 snr = 12;
+    // 物理小区标识
+    int64 pci = 13;
+    // 参考信号接收质量
+    int64 rsrq = 14;
+    // 终端发射功率
+    int64 txpower = 15;
+    // 频点号
+    int64 earfcn = 16;
+    // 信号覆盖等级
+    int32 ecl = 17;
+    // 信号强度值
+    int32 csq = 18;
+    // 主动上报原因，0-非主动上报，1-上电，2-开关灯状态变化，3-故障发生/消除，4-定时主动上报
+    int32 reson = 19;
+    // 重连次数
+    int32 retry = 20;
+    // 日出时间
+    int32 sunrise = 21;
+    // 日落时间
+    int32 sunset = 22;
+
+    message Model_info {
+        // 控制器回路数量
+        int32 sluitem_loop = 1;
+        // 节能方式 0-无控制，1-只有开关灯，2-一档节能，3-二档节能，4-RS485，5-PWM，6-0~10V
+        int32 power_saving = 2;
+        // 漏电流测量 0-无，1-有
+        int32 has_leakage = 3;
+        // 温度采集 0-无，1-有
+        int32 has_temperature = 4;
+        // 时钟 0-无，1-有
+        int32 has_timer = 5;
+        // 型号 0-unknow
+        int32 model = 6;
+        // 字符串型号
+        string sluitem_type = 7;
+    }
+
+    message Light_data {
+        // 电压
+        double voltage = 1;
+        // 电流
+        double current = 2;
+        // 有功功率
+        double active_power = 3;
+        // 无功功率
+        double reactive_power = 4;
+        // 视在功率
+        double apparent_power = 5;
+        // 电量
+        double electricity = 6;
+        // 运行时间
+        double active_time = 7;
+        // 灯状态
+        Light_status light_status=8;
+        // 节能档位
+        int32 power_level = 9;
+        // 控制器上电开灯 true-开灯，false-关灯
+        int32 sluitem_power_turnon = 10;
+        // 1-4回路额定功率
+        int32 rated_power = 11;
+    }
+
+    message Light_status {
+      // 灯具漏电 0-正常，1-漏电
+      int32 leakage = 1;
+      // 故障 0-正常，1-光源故障，2-补偿电容故障，3-意外灭灯，4-意外亮灯，5-自熄灯
+      int32 fault = 2;
+      // 工作状态 0-正常亮灯，1-保留，2-调光节能，3-关灯
+      int32 working_on = 3;
+    }
+
+    message Sluitem_status {
+        // flash故障 0-正常 1-故障
+        int32 flash_fault = 1;
+        // 主动报警禁止 0-正常 1-禁止
+        int32 enable_alarm = 2;
+    }
+
+    message Time_fault {
+        // 本地时钟故障 0-正常 1-故障
+        int32 clock_fault = 1;
+        // 本地时钟超差故障 0-正常 1-故障
+        int32 clock_out_fault = 2;
+        // 校时超差故障 0-正常 1-故障
+        int32 clock_out_alarm = 3;
+    }
+
+    message Sluitem_para {
+        // 经度
+        double longitude = 1;
+        // 纬度
+        double latitude = 2;
+        // 是否允许主报 0-允许 1-不允许
+        int32 has_enable_alarm = 3;
+        // 是否投运 0-投运 1-停运
+        int32 is_running = 4;
+        // 主动报警间隔 单位分钟 0表示30分钟
+        int32 alarm_interval = 5;
+    }
+}
