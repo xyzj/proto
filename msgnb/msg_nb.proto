@@ -26,6 +26,8 @@ message MsgNBOpen {
     int64 dt_receive = 2;
     // 数据类型，1-设备最新数据，2-控制应答，3-参数设置/读取应答
     int32 data_type = 3;
+    // 内部用命令字符串，类似wlst.vslu.3900等
+    string data_cmd = 9;
     // 设备最新数据
     SluitemData sluitem_data = 4;
     // 控制应答
