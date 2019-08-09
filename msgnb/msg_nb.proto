@@ -26,8 +26,6 @@ message MsgNBOpen {
     int64 dt_receive = 2;
     // 数据类型，1-设备最新数据，2-控制应答，3-参数设置/读取应答
     int32 data_type = 3;
-    // 内部用命令字符串，类似wlst.vslu.3900等
-    string data_cmd = 9;
     // 设备最新数据
     SluitemData sluitem_data = 4;
     // 控制应答
@@ -82,20 +80,15 @@ message SluitemConfig {
         int32 set_reset = 4;
         // 设置定时控制参数
         int32 set_timetable = 5;
-        
     }
     
     message Sluitem_para {
-        // 域名
-        int32 domain_name = 1;
         // 控制器状态 false-停运，true-投运
         int32 sluitem_status = 2;
         // 控制器主报 false-禁止主报，true-允许主报
         int32 sluitem_enable_alarm = 3;
         // 控制器上电开灯 true-开灯，false-关灯
         repeated int32 sluitem_power_turnon = 4 [packed=true];
-        // 控制器1-4回路矢量
-        repeated int32 sluitem_vector = 5 [packed=true];
         // 经度
         double longitude = 6;
         // 纬度
@@ -141,7 +134,7 @@ message SluitemConfig {
         int32 operate_time = 5;
         // 操作偏移 -720~+720
         int32 operate_offset = 6;
-        // 继电器操作回路1-4 0-不操作，3-开灯，5-一档节能，a-二档节能，c-关灯
+        // 继电器操作回路1-4, 0x0-不操作，0x3-开灯，0xc-关灯
         repeated int32 relay_operate = 7 [packed=true];
         // PWM操作回路
         repeated int32 pwm_loop = 8 [packed=true];
@@ -149,10 +142,6 @@ message SluitemConfig {
         int32 pwm_power = 9;
         // PWM频率 (1~255) * 100
         int32 pwm_baudrate = 10;
-        // 485波特率 0-300,1-600,2-1200,3-2400,4-4800,5-9600,6-19200
-        int32 rs485_baudrate = 11;
-        // 485校验位 0-无校验，1-奇校验，2-偶校验
-        int32 rs485_check = 12;
     }
 }
 
@@ -164,8 +153,6 @@ message SluitemReply {
 message SluitemData {
     // 序号
     int32 cmd_idx =  1;
-    // 型号
-    Model_info model_info=2;
     // 回路数据(最大4个)
     repeated Light_data light_data = 3;
     // 漏电流
@@ -207,23 +194,6 @@ message SluitemData {
     // 日落时间
     int32 sunset = 22;
 
-    message Model_info {
-        // 控制器回路数量
-        int32 sluitem_loop = 1;
-        // 节能方式 0-无控制，1-只有开关灯，2-一档节能，3-二档节能，4-RS485，5-PWM，6-0~10V
-        int32 power_saving = 2;
-        // 漏电流测量 0-无，1-有
-        int32 has_leakage = 3;
-        // 温度采集 0-无，1-有
-        int32 has_temperature = 4;
-        // 时钟 0-无，1-有
-        int32 has_timer = 5;
-        // 型号 0-unknow
-        int32 model = 6;
-        // 字符串型号
-        string sluitem_type = 7;
-    }
-
     message Light_data {
         // 电压
         double voltage = 1;
@@ -243,7 +213,7 @@ message SluitemData {
         Light_status light_status=8;
         // 节能档位
         int32 power_level = 9;
-        // 控制器上电开灯 true-开灯，false-关灯
+        // 控制器上电开灯 1-开灯，0-关灯
         int32 sluitem_power_turnon = 10;
         // 1-4回路额定功率
         int32 rated_power = 11;
@@ -285,5 +255,7 @@ message SluitemData {
         int32 is_running = 4;
         // 主动报警间隔 单位分钟 0表示30分钟
         int32 alarm_interval = 5;
+        // nb主报需要主站应答，0-不需要，1-需要
+        int32 uplink_reply = 6;
     }
 }

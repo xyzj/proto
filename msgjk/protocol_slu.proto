@@ -142,6 +142,8 @@ message Wlst_slu_3900 {
         int32 is_running = 4;
         // 主动报警间隔 单位分钟 0表示30分钟
         int32 alarm_interval = 5;
+        // nb主报需要主站应答，0-不需要，1-需要
+        int32 uplink_reply = 6;
     }
 }
 
