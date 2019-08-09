@@ -153,6 +153,8 @@ message SluitemReply {
 message SluitemData {
     // 序号
     int32 cmd_idx =  1;
+    // 型号
+    Model_info model_info=2;
     // 回路数据(最大4个)
     repeated Light_data light_data = 3;
     // 漏电流
@@ -193,6 +195,23 @@ message SluitemData {
     int32 sunrise = 21;
     // 日落时间
     int32 sunset = 22;
+
+    message Model_info {
+        // 控制器回路数量
+        int32 sluitem_loop = 1;
+        // 节能方式 0-无控制，1-只有开关灯，2-一档节能，3-二档节能，4-RS485，5-PWM，6-0~10V
+        int32 power_saving = 2;
+        // 漏电流测量 0-无，1-有
+        int32 has_leakage = 3;
+        // 温度采集 0-无，1-有
+        int32 has_temperature = 4;
+        // 时钟 0-无，1-有
+        int32 has_timer = 5;
+        // 型号 0-unknow
+        int32 model = 6;
+        // 字符串型号
+        string sluitem_type = 7;
+    }
 
     message Light_data {
         // 电压
