@@ -136,9 +136,9 @@ message Wlst_slu_3900 {
         double longitude = 1;
         // 纬度
         double latitude = 2;
-        // 是否允许主报 0-允许 1-不允许
+        // 是否允许主报 1-允许 0-不允许
         int32 has_enable_alarm = 3;
-        // 是否投运 0-投运 1-停运
+        // 是否投运 1-投运 0-停运
         int32 is_running = 4;
         // 主动报警间隔 单位分钟 0表示30分钟
         int32 alarm_interval = 5;
@@ -530,11 +530,11 @@ message Wlst_slu_9d00 {
     message Sluitem_para {
         // 域名
         int32 domain_name = 1;
-        // 控制器状态 false-停运，true-投运
+        // 控制器状态 0-停运，1-投运
         int32 sluitem_status = 2;
-        // 控制器主报 false-禁止主报，true-允许主报
+        // 控制器主报 0-禁止主报，1-允许主报
         int32 sluitem_enable_alarm = 3;
-        // 控制器上电开灯 true-开灯，false-关灯
+        // 控制器上电开灯 1-开灯，0-关灯
         repeated int32 sluitem_power_turnon = 4 [packed=true];
         // 控制器1-4回路矢量
         repeated int32 sluitem_vector = 5 [packed=true];
