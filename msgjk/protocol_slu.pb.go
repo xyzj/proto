@@ -712,9 +712,9 @@ type WlstSlu_3900_SluitemPara struct {
 	Longitude float64 `protobuf:"fixed64,1,opt,name=longitude,proto3" json:"longitude,omitempty"`
 	// 纬度
 	Latitude float64 `protobuf:"fixed64,2,opt,name=latitude,proto3" json:"latitude,omitempty"`
-	// 是否允许主报 0-允许 1-不允许
+	// 是否允许主报 1-允许 0-不允许
 	HasEnableAlarm int32 `protobuf:"varint,3,opt,name=has_enable_alarm,json=hasEnableAlarm,proto3" json:"has_enable_alarm,omitempty"`
-	// 是否投运 0-投运 1-停运
+	// 是否投运 1-投运 0-停运
 	IsRunning int32 `protobuf:"varint,4,opt,name=is_running,json=isRunning,proto3" json:"is_running,omitempty"`
 	// 主动报警间隔 单位分钟 0表示30分钟
 	AlarmInterval int32 `protobuf:"varint,5,opt,name=alarm_interval,json=alarmInterval,proto3" json:"alarm_interval,omitempty"`
@@ -2876,11 +2876,11 @@ func (m *WlstSlu_9D00_SluitemDataNew) GetEnergySaving() []int32 {
 type WlstSlu_9D00_SluitemPara struct {
 	// 域名
 	DomainName int32 `protobuf:"varint,1,opt,name=domain_name,json=domainName,proto3" json:"domain_name,omitempty"`
-	// 控制器状态 false-停运，true-投运
+	// 控制器状态 0-停运，1-投运
 	SluitemStatus int32 `protobuf:"varint,2,opt,name=sluitem_status,json=sluitemStatus,proto3" json:"sluitem_status,omitempty"`
-	// 控制器主报 false-禁止主报，true-允许主报
+	// 控制器主报 0-禁止主报，1-允许主报
 	SluitemEnableAlarm int32 `protobuf:"varint,3,opt,name=sluitem_enable_alarm,json=sluitemEnableAlarm,proto3" json:"sluitem_enable_alarm,omitempty"`
-	// 控制器上电开灯 true-开灯，false-关灯
+	// 控制器上电开灯 1-开灯，0-关灯
 	SluitemPowerTurnon []int32 `protobuf:"varint,4,rep,packed,name=sluitem_power_turnon,json=sluitemPowerTurnon,proto3" json:"sluitem_power_turnon,omitempty"`
 	// 控制器1-4回路矢量
 	SluitemVector []int32 `protobuf:"varint,5,rep,packed,name=sluitem_vector,json=sluitemVector,proto3" json:"sluitem_vector,omitempty"`

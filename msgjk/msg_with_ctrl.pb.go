@@ -8,6 +8,8 @@ import (
 	fmt "fmt"
 	proto "github.com/golang/protobuf/proto"
 	grpc "google.golang.org/grpc"
+	codes "google.golang.org/grpc/codes"
+	status "google.golang.org/grpc/status"
 	math "math"
 )
 
@@ -615,6 +617,14 @@ func (c *deviceCtrlClient) DeviceEcho(ctx context.Context, in *MsgWithCtrl, opts
 // DeviceCtrlServer is the server API for DeviceCtrl service.
 type DeviceCtrlServer interface {
 	DeviceEcho(context.Context, *MsgWithCtrl) (*MsgWithCtrl, error)
+}
+
+// UnimplementedDeviceCtrlServer can be embedded to have forward compatible implementations.
+type UnimplementedDeviceCtrlServer struct {
+}
+
+func (*UnimplementedDeviceCtrlServer) DeviceEcho(ctx context.Context, req *MsgWithCtrl) (*MsgWithCtrl, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeviceEcho not implemented")
 }
 
 func RegisterDeviceCtrlServer(s *grpc.Server, srv DeviceCtrlServer) {

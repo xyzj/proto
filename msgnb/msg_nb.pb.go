@@ -8,6 +8,8 @@ import (
 	fmt "fmt"
 	proto "github.com/golang/protobuf/proto"
 	grpc "google.golang.org/grpc"
+	codes "google.golang.org/grpc/codes"
+	status "google.golang.org/grpc/status"
 	math "math"
 )
 
@@ -465,11 +467,11 @@ func (m *SluitemConfig_SetMark) GetSetTimetable() int32 {
 }
 
 type SluitemConfig_SluitemPara struct {
-	// 控制器状态 false-停运，true-投运
+	// 控制器状态 0-停运，1-投运
 	SluitemStatus int32 `protobuf:"varint,2,opt,name=sluitem_status,json=sluitemStatus,proto3" json:"sluitem_status,omitempty"`
-	// 控制器主报 false-禁止主报，true-允许主报
+	// 控制器主报 0-禁止主报，1-允许主报
 	SluitemEnableAlarm int32 `protobuf:"varint,3,opt,name=sluitem_enable_alarm,json=sluitemEnableAlarm,proto3" json:"sluitem_enable_alarm,omitempty"`
-	// 控制器上电开灯 true-开灯，false-关灯
+	// 控制器上电开灯 1-开灯，0-关灯
 	SluitemPowerTurnon []int32 `protobuf:"varint,4,rep,packed,name=sluitem_power_turnon,json=sluitemPowerTurnon,proto3" json:"sluitem_power_turnon,omitempty"`
 	// 经度
 	Longitude float64 `protobuf:"fixed64,6,opt,name=longitude,proto3" json:"longitude,omitempty"`
@@ -907,7 +909,7 @@ type SluitemData struct {
 	Ecl int32 `protobuf:"varint,17,opt,name=ecl,proto3" json:"ecl,omitempty"`
 	// 信号强度值
 	Csq int32 `protobuf:"varint,18,opt,name=csq,proto3" json:"csq,omitempty"`
-	// 主动上报原因，0-非主动上报，1-上电，2-开关灯状态变化，3-故障发生/消除，4-定时主动上报
+	// 主动上报原因，0-非主动上报，1-登录，2-开关灯状态变化，3-故障发生/消除，4-定时主动上报
 	Reson int32 `protobuf:"varint,19,opt,name=reson,proto3" json:"reson,omitempty"`
 	// 重连次数
 	Retry int32 `protobuf:"varint,20,opt,name=retry,proto3" json:"retry,omitempty"`
@@ -1102,7 +1104,7 @@ func (m *SluitemData) GetSunset() int32 {
 type SluitemData_ModelInfo struct {
 	// 控制器回路数量
 	SluitemLoop int32 `protobuf:"varint,1,opt,name=sluitem_loop,json=sluitemLoop,proto3" json:"sluitem_loop,omitempty"`
-	// 节能方式 0-无控制，1-只有开关灯，2-一档节能，3-二档节能，4-RS485，5-PWM，6-0~10V
+	// 节能方式 0-无控制，1-只有开关灯，4-RS485，5-PWM，6-0~10V
 	PowerSaving int32 `protobuf:"varint,2,opt,name=power_saving,json=powerSaving,proto3" json:"power_saving,omitempty"`
 	// 漏电流测量 0-无，1-有
 	HasLeakage int32 `protobuf:"varint,3,opt,name=has_leakage,json=hasLeakage,proto3" json:"has_leakage,omitempty"`
@@ -1493,9 +1495,9 @@ type SluitemData_SluitemPara struct {
 	Longitude float64 `protobuf:"fixed64,1,opt,name=longitude,proto3" json:"longitude,omitempty"`
 	// 纬度
 	Latitude float64 `protobuf:"fixed64,2,opt,name=latitude,proto3" json:"latitude,omitempty"`
-	// 是否允许主报 0-允许 1-不允许
+	// 是否允许主报 1-允许 0-不允许
 	HasEnableAlarm int32 `protobuf:"varint,3,opt,name=has_enable_alarm,json=hasEnableAlarm,proto3" json:"has_enable_alarm,omitempty"`
-	// 是否投运 0-投运 1-停运
+	// 是否投运 1-投运 0-停运
 	IsRunning int32 `protobuf:"varint,4,opt,name=is_running,json=isRunning,proto3" json:"is_running,omitempty"`
 	// 主动报警间隔 单位分钟 0表示30分钟
 	AlarmInterval int32 `protobuf:"varint,5,opt,name=alarm_interval,json=alarmInterval,proto3" json:"alarm_interval,omitempty"`
@@ -1746,6 +1748,14 @@ func (c *nBIoTCtlClient) NBIoTEcho(ctx context.Context, in *MsgNBOpen, opts ...g
 // NBIoTCtlServer is the server API for NBIoTCtl service.
 type NBIoTCtlServer interface {
 	NBIoTEcho(context.Context, *MsgNBOpen) (*MsgNBOpen, error)
+}
+
+// UnimplementedNBIoTCtlServer can be embedded to have forward compatible implementations.
+type UnimplementedNBIoTCtlServer struct {
+}
+
+func (*UnimplementedNBIoTCtlServer) NBIoTEcho(ctx context.Context, req *MsgNBOpen) (*MsgNBOpen, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method NBIoTEcho not implemented")
 }
 
 func RegisterNBIoTCtlServer(s *grpc.Server, srv NBIoTCtlServer) {
