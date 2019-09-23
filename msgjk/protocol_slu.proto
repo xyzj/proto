@@ -1105,7 +1105,7 @@ message Wlst_slu_6f00 {
     int32 addr = 3;
     // 操作标识
     Reset_mark reset_mark = 4;
-    // 操作结果 0x3a-失败，0x5a-成功, 0x60-数据错误，0x61-正在操作，0x62-等待操作，0x63-队列已满
+    // 操作结果 0x3a-成功，0x5a-失败, 0x60-数据错误，0x61-正在操作，0x62-等待操作，0x63-队列已满
     int32 status = 5;
 
     message Reset_mark {
