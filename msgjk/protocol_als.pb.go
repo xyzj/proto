@@ -10,8 +10,6 @@ import (
 	io "io"
 	math "math"
 	math_bits "math/bits"
-	reflect "reflect"
-	strings "strings"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -32,8 +30,9 @@ type WlstElu_6255 struct {
 	Status  int32 `protobuf:"varint,2,opt,name=status,proto3" json:"status,omitempty"`
 }
 
-func (m *WlstElu_6255) Reset()      { *m = WlstElu_6255{} }
-func (*WlstElu_6255) ProtoMessage() {}
+func (m *WlstElu_6255) Reset()         { *m = WlstElu_6255{} }
+func (m *WlstElu_6255) String() string { return proto.CompactTextString(m) }
+func (*WlstElu_6255) ProtoMessage()    {}
 func (*WlstElu_6255) Descriptor() ([]byte, []int) {
 	return fileDescriptor_16b54be489a6899a, []int{0}
 }
@@ -84,8 +83,9 @@ type WlstElu_6256 struct {
 	Status   int32                    `protobuf:"varint,2,opt,name=status,proto3" json:"status,omitempty"`
 }
 
-func (m *WlstElu_6256) Reset()      { *m = WlstElu_6256{} }
-func (*WlstElu_6256) ProtoMessage() {}
+func (m *WlstElu_6256) Reset()         { *m = WlstElu_6256{} }
+func (m *WlstElu_6256) String() string { return proto.CompactTextString(m) }
+func (*WlstElu_6256) ProtoMessage()    {}
 func (*WlstElu_6256) Descriptor() ([]byte, []int) {
 	return fileDescriptor_16b54be489a6899a, []int{1}
 }
@@ -137,8 +137,9 @@ type WlstElu_6256_WorkArgv struct {
 	OptDelay      int32 `protobuf:"varint,4,opt,name=opt_delay,json=optDelay,proto3" json:"opt_delay,omitempty"`
 }
 
-func (m *WlstElu_6256_WorkArgv) Reset()      { *m = WlstElu_6256_WorkArgv{} }
-func (*WlstElu_6256_WorkArgv) ProtoMessage() {}
+func (m *WlstElu_6256_WorkArgv) Reset()         { *m = WlstElu_6256_WorkArgv{} }
+func (m *WlstElu_6256_WorkArgv) String() string { return proto.CompactTextString(m) }
+func (*WlstElu_6256_WorkArgv) ProtoMessage()    {}
 func (*WlstElu_6256_WorkArgv) Descriptor() ([]byte, []int) {
 	return fileDescriptor_16b54be489a6899a, []int{1, 0}
 }
@@ -203,8 +204,9 @@ type WlstElu_6257 struct {
 	Status int32   `protobuf:"varint,2,opt,name=status,proto3" json:"status,omitempty"`
 }
 
-func (m *WlstElu_6257) Reset()      { *m = WlstElu_6257{} }
-func (*WlstElu_6257) ProtoMessage() {}
+func (m *WlstElu_6257) Reset()         { *m = WlstElu_6257{} }
+func (m *WlstElu_6257) String() string { return proto.CompactTextString(m) }
+func (*WlstElu_6257) ProtoMessage()    {}
 func (*WlstElu_6257) Descriptor() ([]byte, []int) {
 	return fileDescriptor_16b54be489a6899a, []int{2}
 }
@@ -254,8 +256,9 @@ type WlstElu_62D8 struct {
 	AlarmData []*WlstElu_62D8_AlarmData `protobuf:"bytes,1,rep,name=alarm_data,json=alarmData,proto3" json:"alarm_data,omitempty"`
 }
 
-func (m *WlstElu_62D8) Reset()      { *m = WlstElu_62D8{} }
-func (*WlstElu_62D8) ProtoMessage() {}
+func (m *WlstElu_62D8) Reset()         { *m = WlstElu_62D8{} }
+func (m *WlstElu_62D8) String() string { return proto.CompactTextString(m) }
+func (*WlstElu_62D8) ProtoMessage()    {}
 func (*WlstElu_62D8) Descriptor() ([]byte, []int) {
 	return fileDescriptor_16b54be489a6899a, []int{3}
 }
@@ -301,8 +304,9 @@ type WlstElu_62D8_AlarmData struct {
 	ElValue       int32   `protobuf:"varint,5,opt,name=el_value,json=elValue,proto3" json:"el_value,omitempty"`
 }
 
-func (m *WlstElu_62D8_AlarmData) Reset()      { *m = WlstElu_62D8_AlarmData{} }
-func (*WlstElu_62D8_AlarmData) ProtoMessage() {}
+func (m *WlstElu_62D8_AlarmData) Reset()         { *m = WlstElu_62D8_AlarmData{} }
+func (m *WlstElu_62D8_AlarmData) String() string { return proto.CompactTextString(m) }
+func (*WlstElu_62D8_AlarmData) ProtoMessage()    {}
 func (*WlstElu_62D8_AlarmData) Descriptor() ([]byte, []int) {
 	return fileDescriptor_16b54be489a6899a, []int{3, 0}
 }
@@ -377,8 +381,9 @@ type WlstElu_625A struct {
 	DtAlarm       int64   `protobuf:"varint,5,opt,name=dt_alarm,json=dtAlarm,proto3" json:"dt_alarm,omitempty"`
 }
 
-func (m *WlstElu_625A) Reset()      { *m = WlstElu_625A{} }
-func (*WlstElu_625A) ProtoMessage() {}
+func (m *WlstElu_625A) Reset()         { *m = WlstElu_625A{} }
+func (m *WlstElu_625A) String() string { return proto.CompactTextString(m) }
+func (*WlstElu_625A) ProtoMessage()    {}
 func (*WlstElu_625A) Descriptor() ([]byte, []int) {
 	return fileDescriptor_16b54be489a6899a, []int{4}
 }
@@ -451,8 +456,9 @@ type WlstElu_625B struct {
 	Status       int32 `protobuf:"varint,3,opt,name=status,proto3" json:"status,omitempty"`
 }
 
-func (m *WlstElu_625B) Reset()      { *m = WlstElu_625B{} }
-func (*WlstElu_625B) ProtoMessage() {}
+func (m *WlstElu_625B) Reset()         { *m = WlstElu_625B{} }
+func (m *WlstElu_625B) String() string { return proto.CompactTextString(m) }
+func (*WlstElu_625B) ProtoMessage()    {}
 func (*WlstElu_625B) Descriptor() ([]byte, []int) {
 	return fileDescriptor_16b54be489a6899a, []int{5}
 }
@@ -510,8 +516,9 @@ type WlstElu_625C struct {
 	Status  int32 `protobuf:"varint,2,opt,name=status,proto3" json:"status,omitempty"`
 }
 
-func (m *WlstElu_625C) Reset()      { *m = WlstElu_625C{} }
-func (*WlstElu_625C) ProtoMessage() {}
+func (m *WlstElu_625C) Reset()         { *m = WlstElu_625C{} }
+func (m *WlstElu_625C) String() string { return proto.CompactTextString(m) }
+func (*WlstElu_625C) ProtoMessage()    {}
 func (*WlstElu_625C) Descriptor() ([]byte, []int) {
 	return fileDescriptor_16b54be489a6899a, []int{6}
 }
@@ -574,8 +581,9 @@ type WlstAlsA700 struct {
 	Error int32 `protobuf:"varint,7,opt,name=error,proto3" json:"error,omitempty"`
 }
 
-func (m *WlstAlsA700) Reset()      { *m = WlstAlsA700{} }
-func (*WlstAlsA700) ProtoMessage() {}
+func (m *WlstAlsA700) Reset()         { *m = WlstAlsA700{} }
+func (m *WlstAlsA700) String() string { return proto.CompactTextString(m) }
+func (*WlstAlsA700) ProtoMessage()    {}
 func (*WlstAlsA700) Descriptor() ([]byte, []int) {
 	return fileDescriptor_16b54be489a6899a, []int{7}
 }
@@ -665,8 +673,9 @@ type WlstGps_0000 struct {
 	Gpsdate string `protobuf:"bytes,3,opt,name=gpsdate,proto3" json:"gpsdate,omitempty"`
 }
 
-func (m *WlstGps_0000) Reset()      { *m = WlstGps_0000{} }
-func (*WlstGps_0000) ProtoMessage() {}
+func (m *WlstGps_0000) Reset()         { *m = WlstGps_0000{} }
+func (m *WlstGps_0000) String() string { return proto.CompactTextString(m) }
+func (*WlstGps_0000) ProtoMessage()    {}
 func (*WlstGps_0000) Descriptor() ([]byte, []int) {
 	return fileDescriptor_16b54be489a6899a, []int{8}
 }
@@ -732,8 +741,9 @@ type WlstGps_5901 struct {
 	Nindex int32 `protobuf:"varint,5,opt,name=nindex,proto3" json:"nindex,omitempty"`
 }
 
-func (m *WlstGps_5901) Reset()      { *m = WlstGps_5901{} }
-func (*WlstGps_5901) ProtoMessage() {}
+func (m *WlstGps_5901) Reset()         { *m = WlstGps_5901{} }
+func (m *WlstGps_5901) String() string { return proto.CompactTextString(m) }
+func (*WlstGps_5901) ProtoMessage()    {}
 func (*WlstGps_5901) Descriptor() ([]byte, []int) {
 	return fileDescriptor_16b54be489a6899a, []int{9}
 }
@@ -807,8 +817,9 @@ type WlstGps_5902 struct {
 	Nindex int32 `protobuf:"varint,2,opt,name=nindex,proto3" json:"nindex,omitempty"`
 }
 
-func (m *WlstGps_5902) Reset()      { *m = WlstGps_5902{} }
-func (*WlstGps_5902) ProtoMessage() {}
+func (m *WlstGps_5902) Reset()         { *m = WlstGps_5902{} }
+func (m *WlstGps_5902) String() string { return proto.CompactTextString(m) }
+func (*WlstGps_5902) ProtoMessage()    {}
 func (*WlstGps_5902) Descriptor() ([]byte, []int) {
 	return fileDescriptor_16b54be489a6899a, []int{10}
 }
@@ -861,8 +872,9 @@ type WlstGps_5903 struct {
 	Nindex int32 `protobuf:"varint,2,opt,name=nindex,proto3" json:"nindex,omitempty"`
 }
 
-func (m *WlstGps_5903) Reset()      { *m = WlstGps_5903{} }
-func (*WlstGps_5903) ProtoMessage() {}
+func (m *WlstGps_5903) Reset()         { *m = WlstGps_5903{} }
+func (m *WlstGps_5903) String() string { return proto.CompactTextString(m) }
+func (*WlstGps_5903) ProtoMessage()    {}
 func (*WlstGps_5903) Descriptor() ([]byte, []int) {
 	return fileDescriptor_16b54be489a6899a, []int{11}
 }
@@ -921,8 +933,9 @@ type WlstGps_5904 struct {
 	Radius int32 `protobuf:"varint,5,opt,name=radius,proto3" json:"radius,omitempty"`
 }
 
-func (m *WlstGps_5904) Reset()      { *m = WlstGps_5904{} }
-func (*WlstGps_5904) ProtoMessage() {}
+func (m *WlstGps_5904) Reset()         { *m = WlstGps_5904{} }
+func (m *WlstGps_5904) String() string { return proto.CompactTextString(m) }
+func (*WlstGps_5904) ProtoMessage()    {}
 func (*WlstGps_5904) Descriptor() ([]byte, []int) {
 	return fileDescriptor_16b54be489a6899a, []int{12}
 }
@@ -1003,8 +1016,9 @@ type WlstMru_9100 struct {
 	Ver int32 `protobuf:"varint,6,opt,name=ver,proto3" json:"ver,omitempty"`
 }
 
-func (m *WlstMru_9100) Reset()      { *m = WlstMru_9100{} }
-func (*WlstMru_9100) ProtoMessage() {}
+func (m *WlstMru_9100) Reset()         { *m = WlstMru_9100{} }
+func (m *WlstMru_9100) String() string { return proto.CompactTextString(m) }
+func (*WlstMru_9100) ProtoMessage()    {}
 func (*WlstMru_9100) Descriptor() ([]byte, []int) {
 	return fileDescriptor_16b54be489a6899a, []int{13}
 }
@@ -1099,810 +1113,62 @@ func init() {
 func init() { proto.RegisterFile("protocol_als.proto", fileDescriptor_16b54be489a6899a) }
 
 var fileDescriptor_16b54be489a6899a = []byte{
-	// 872 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xac, 0x55, 0xbd, 0x8f, 0x1b, 0x45,
-	0x14, 0xf7, 0x78, 0xfd, 0x39, 0x77, 0x0e, 0xa7, 0x11, 0x0a, 0x9b, 0x0b, 0x5a, 0x1c, 0xf3, 0x75,
-	0x05, 0xb2, 0x1c, 0x87, 0xbb, 0xe4, 0x0a, 0x24, 0xee, 0x30, 0x12, 0x14, 0xa1, 0xd8, 0x9c, 0x48,
-	0x39, 0x1a, 0x7b, 0x46, 0x66, 0xe5, 0xf1, 0xce, 0x6a, 0x76, 0xd6, 0x9b, 0xeb, 0x68, 0x28, 0xe8,
-	0x90, 0xa8, 0xe9, 0x23, 0x51, 0xf1, 0x5f, 0xd0, 0x71, 0x65, 0x4a, 0xce, 0xd7, 0x50, 0x46, 0xfc,
-	0x05, 0x68, 0x3e, 0xd6, 0xf6, 0x9a, 0x98, 0x08, 0x29, 0xdd, 0x7b, 0xbf, 0xf7, 0xe6, 0xcd, 0x6f,
-	0x7f, 0xef, 0xcd, 0x5b, 0x88, 0x12, 0x29, 0x94, 0x98, 0x08, 0x8e, 0x09, 0x4f, 0xfb, 0xc6, 0x41,
-	0xad, 0x9c, 0xa7, 0xaa, 0x9f, 0x8c, 0x87, 0xbd, 0x73, 0xd8, 0x79, 0xca, 0x53, 0x85, 0x19, 0xcf,
-	0xf0, 0xc9, 0xf0, 0xf8, 0x18, 0xdd, 0x81, 0xad, 0x98, 0xe5, 0x98, 0x50, 0x2a, 0x7d, 0xd0, 0x05,
-	0x47, 0xf5, 0xb0, 0x19, 0xb3, 0xfc, 0x8c, 0x52, 0x89, 0x6e, 0xc3, 0x46, 0xaa, 0x88, 0xca, 0x52,
-	0xbf, 0x6a, 0x02, 0xce, 0xeb, 0xfd, 0x0d, 0xca, 0x45, 0x4e, 0xd0, 0x67, 0xb0, 0x9d, 0x0b, 0x39,
-	0xc3, 0x44, 0x4e, 0x17, 0x3e, 0xe8, 0x7a, 0x47, 0x7b, 0xc3, 0x6e, 0xbf, 0xb8, 0xb3, 0x5f, 0xca,
-	0xed, 0x3f, 0x15, 0x72, 0x76, 0x26, 0xa7, 0x8b, 0xb0, 0x95, 0x3b, 0x6b, 0xd7, 0x45, 0x87, 0x3f,
-	0x02, 0xd8, 0x2a, 0xd2, 0xd1, 0x5d, 0xd8, 0xe6, 0x42, 0x24, 0x78, 0x4e, 0xe4, 0xcc, 0x31, 0x6d,
-	0x69, 0xe0, 0x31, 0x91, 0x33, 0x1d, 0x34, 0x04, 0xe6, 0x82, 0x32, 0x57, 0xc4, 0x94, 0x7f, 0x2c,
-	0x28, 0x43, 0x1f, 0xc1, 0xb7, 0x08, 0x27, 0x72, 0x8e, 0x17, 0x84, 0x67, 0x0c, 0xa7, 0x4c, 0xf9,
-	0x9e, 0x49, 0xe9, 0x18, 0xf8, 0x5b, 0x8d, 0x3e, 0x61, 0x4a, 0x17, 0x11, 0x89, 0xc2, 0x94, 0x71,
-	0x72, 0xe9, 0xd7, 0x6c, 0x11, 0x91, 0xa8, 0x91, 0xf6, 0xb7, 0x85, 0x7b, 0x88, 0xee, 0xc0, 0x86,
-	0xc9, 0x16, 0xe6, 0x83, 0xeb, 0xe7, 0xd5, 0x03, 0x10, 0xd6, 0x75, 0xba, 0xd8, 0x29, 0xdc, 0x0f,
-	0xd5, 0x52, 0x11, 0xfa, 0x08, 0x7d, 0x0e, 0xa1, 0xa5, 0x46, 0x89, 0x22, 0x4e, 0xb9, 0x7b, 0xaf,
-	0x54, 0x8e, 0x3e, 0xea, 0x9f, 0xe9, 0xcc, 0x11, 0x51, 0x24, 0x6c, 0x93, 0xc2, 0x3c, 0xfc, 0x0d,
-	0xc0, 0xf6, 0x2a, 0x80, 0x3e, 0x86, 0x9d, 0x34, 0x8f, 0xd4, 0xe4, 0x3b, 0xec, 0x08, 0xac, 0xb9,
-	0xed, 0xdb, 0xc0, 0x13, 0x83, 0xbf, 0x4a, 0x93, 0xea, 0x6b, 0x35, 0xf1, 0xca, 0x9a, 0xe8, 0x60,
-	0x2c, 0x72, 0x5b, 0xa2, 0x10, 0x2c, 0x16, 0xb9, 0x39, 0xac, 0x07, 0x8b, 0x71, 0x17, 0xab, 0xdb,
-	0xc1, 0x62, 0xdc, 0x84, 0x7a, 0xbf, 0x6e, 0x0d, 0x10, 0x41, 0xf7, 0xe0, 0x3e, 0x5b, 0xb0, 0x58,
-	0xa5, 0x78, 0x22, 0xb2, 0x58, 0xb9, 0xfe, 0xee, 0x59, 0xec, 0x0b, 0x0d, 0xa1, 0x77, 0x60, 0xd3,
-	0xf4, 0x3f, 0x16, 0x7e, 0x55, 0x7f, 0x54, 0xd8, 0xd0, 0xee, 0x37, 0xe2, 0xff, 0xb4, 0xf7, 0x3f,
-	0xd9, 0x52, 0x85, 0xcd, 0x01, 0xc3, 0xd6, 0x0b, 0x9b, 0x54, 0x19, 0x5d, 0x7b, 0x69, 0x99, 0xec,
-	0x18, 0x7d, 0x00, 0x6f, 0xe5, 0x44, 0x6b, 0x6c, 0x2f, 0x64, 0xdc, 0xd1, 0xdd, 0x37, 0xa8, 0xa9,
-	0xf7, 0x25, 0xdf, 0xce, 0x52, 0x89, 0x13, 0x78, 0x23, 0xeb, 0x22, 0xd9, 0x18, 0x15, 0xaf, 0x34,
-	0x2a, 0x5b, 0xe3, 0x36, 0x71, 0x04, 0x55, 0x34, 0x67, 0xf6, 0x9d, 0x1a, 0x82, 0x17, 0xda, 0xdd,
-	0x39, 0x6e, 0xbf, 0x14, 0x32, 0x13, 0x9e, 0x62, 0xf2, 0x70, 0x30, 0x40, 0x08, 0xd6, 0x36, 0x1e,
-	0xba, 0xb1, 0x77, 0x9d, 0xd6, 0xb9, 0xe6, 0x35, 0x59, 0x5e, 0xc6, 0xd6, 0x98, 0x66, 0xe0, 0xd4,
-	0x33, 0x36, 0x3a, 0x80, 0xde, 0x82, 0x49, 0x23, 0x5a, 0x3b, 0xd4, 0xa6, 0x46, 0x78, 0xf6, 0xcc,
-	0x6f, 0x74, 0xc1, 0x11, 0x08, 0xb5, 0x89, 0xde, 0x86, 0x75, 0x26, 0xa5, 0x90, 0x7e, 0xd3, 0x1c,
-	0xb4, 0x4e, 0x6f, 0xe2, 0xe8, 0x4d, 0x93, 0x14, 0x0f, 0x06, 0x83, 0x01, 0x7a, 0x57, 0x3f, 0xf1,
-	0x78, 0x1a, 0xa9, 0x8c, 0x32, 0xc3, 0x11, 0x84, 0x6b, 0x00, 0x1d, 0xc2, 0x16, 0x27, 0xca, 0x06,
-	0xab, 0x26, 0xb8, 0xf2, 0x91, 0x0f, 0x9b, 0xd3, 0x24, 0xa5, 0x44, 0x59, 0xbe, 0xed, 0xb0, 0x70,
-	0x7b, 0xcf, 0xc1, 0xc6, 0x2d, 0xc7, 0xa7, 0x83, 0xfb, 0xe5, 0x5d, 0x01, 0xb6, 0x76, 0xc5, 0xfb,
-	0xb0, 0xa3, 0xbf, 0x0a, 0x47, 0xb1, 0x62, 0x72, 0x41, 0x78, 0xd1, 0x34, 0x0d, 0x7e, 0xed, 0x30,
-	0xf4, 0x21, 0xbc, 0xe5, 0x5e, 0x6d, 0x94, 0x2a, 0x12, 0x4f, 0x58, 0x69, 0xe0, 0x46, 0x0e, 0xdc,
-	0x50, 0xb6, 0x56, 0x52, 0xf6, 0x36, 0x6c, 0xc4, 0x51, 0x4c, 0xd9, 0x33, 0xf7, 0x2e, 0x9c, 0xb7,
-	0xea, 0xb9, 0x63, 0x3a, 0x7c, 0xcd, 0x6e, 0x76, 0x35, 0xaa, 0xa5, 0x1a, 0xa7, 0xe5, 0x1a, 0x0f,
-	0x8a, 0xf6, 0x80, 0x75, 0x7b, 0x76, 0x1d, 0xfd, 0x79, 0x4b, 0xa9, 0x4f, 0xdf, 0x5c, 0x3f, 0xbc,
-	0x55, 0x3f, 0x36, 0x6e, 0xaf, 0x6d, 0xde, 0xae, 0x71, 0x49, 0x68, 0x94, 0xa5, 0x85, 0x28, 0xd6,
-	0xeb, 0xfd, 0x51, 0xb0, 0x9a, 0xcb, 0x0c, 0x9f, 0xde, 0x2f, 0x0d, 0xb1, 0xb7, 0x1a, 0xe2, 0x4f,
-	0x20, 0x9a, 0x33, 0xc5, 0x24, 0x96, 0x8c, 0xd0, 0x28, 0x9e, 0x62, 0x75, 0x99, 0x14, 0x3f, 0x82,
-	0x03, 0x13, 0x09, 0x6d, 0xe0, 0xe2, 0x32, 0x61, 0xff, 0xce, 0x5e, 0x11, 0xdd, 0xca, 0x1e, 0x69,
-	0xc6, 0x77, 0x61, 0x7b, 0x4c, 0x32, 0x8a, 0xa5, 0x4e, 0x72, 0x7b, 0x43, 0x03, 0xa1, 0x0e, 0xbe,
-	0x07, 0xf7, 0x6c, 0xa9, 0xf5, 0xa2, 0x03, 0x21, 0x34, 0x90, 0x5d, 0x2c, 0x4e, 0xff, 0x86, 0x39,
-	0xa7, 0xcd, 0xf3, 0x93, 0xab, 0xeb, 0xa0, 0xf2, 0xe2, 0x3a, 0xa8, 0xbc, 0xbc, 0x0e, 0xc0, 0xf7,
-	0xcb, 0x00, 0x3c, 0x5f, 0x06, 0xe0, 0xf7, 0x65, 0x00, 0xae, 0x96, 0x01, 0xf8, 0x73, 0x19, 0x80,
-	0xbf, 0x96, 0x41, 0xe5, 0xe5, 0x32, 0x00, 0x3f, 0xdd, 0x04, 0x95, 0xab, 0x9b, 0xa0, 0xf2, 0xe2,
-	0x26, 0xa8, 0x7c, 0x05, 0xc6, 0x0d, 0xf3, 0x2f, 0x7f, 0xf0, 0x4f, 0x00, 0x00, 0x00, 0xff, 0xff,
-	0xe3, 0xdd, 0x12, 0x73, 0xe1, 0x07, 0x00, 0x00,
+	// 841 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xac, 0x55, 0xcd, 0x6e, 0x2b, 0x35,
+	0x14, 0xae, 0x33, 0xf9, 0x75, 0x9b, 0x4b, 0x65, 0xa1, 0xcb, 0xdc, 0x5c, 0x14, 0xd2, 0xf0, 0xd7,
+	0x05, 0x8a, 0xd2, 0x94, 0xfe, 0x2d, 0x90, 0x68, 0x09, 0x12, 0x2c, 0xca, 0x62, 0x5a, 0xd1, 0xa5,
+	0xe5, 0xc4, 0x56, 0x18, 0xc5, 0x19, 0x8f, 0x3c, 0x9e, 0x4c, 0xfb, 0x00, 0x2c, 0xd8, 0x21, 0xb1,
+	0x66, 0x8f, 0xc4, 0x8a, 0xb7, 0x60, 0x47, 0x97, 0x2c, 0x51, 0xfb, 0x06, 0x3c, 0x01, 0xf2, 0xcf,
+	0x24, 0x99, 0xd0, 0x50, 0x21, 0xdd, 0xdd, 0x39, 0xdf, 0x39, 0x3e, 0xfe, 0xe6, 0x3b, 0xc7, 0x67,
+	0x20, 0x8a, 0xa5, 0x50, 0x62, 0x2c, 0x38, 0x26, 0x3c, 0xe9, 0x19, 0x07, 0xd5, 0x33, 0x9e, 0xa8,
+	0x5e, 0x3c, 0x1a, 0x74, 0x2f, 0x60, 0xf3, 0x86, 0x27, 0x0a, 0x33, 0x9e, 0xe2, 0xe3, 0xc1, 0xd1,
+	0x11, 0x7a, 0x05, 0xeb, 0x11, 0xcb, 0x30, 0xa1, 0x54, 0xfa, 0xa0, 0x03, 0xf6, 0x2b, 0x41, 0x2d,
+	0x62, 0xd9, 0x39, 0xa5, 0x12, 0xbd, 0x84, 0xd5, 0x44, 0x11, 0x95, 0x26, 0x7e, 0xc9, 0x04, 0x9c,
+	0xd7, 0xfd, 0x1b, 0x14, 0x8b, 0x1c, 0xa3, 0xcf, 0x60, 0x23, 0x13, 0x72, 0x8a, 0x89, 0x9c, 0xcc,
+	0x7d, 0xd0, 0xf1, 0xf6, 0xb7, 0x07, 0x9d, 0x5e, 0x7e, 0x67, 0xaf, 0x90, 0xdb, 0xbb, 0x11, 0x72,
+	0x7a, 0x2e, 0x27, 0xf3, 0xa0, 0x9e, 0x39, 0x6b, 0xd3, 0x45, 0xad, 0x1f, 0x00, 0xac, 0xe7, 0xe9,
+	0xe8, 0x35, 0x6c, 0x70, 0x21, 0x62, 0x3c, 0x23, 0x72, 0xea, 0x98, 0xd6, 0x35, 0x70, 0x49, 0xe4,
+	0x54, 0x07, 0x0d, 0x81, 0x99, 0xa0, 0xcc, 0x15, 0x31, 0xe5, 0x2f, 0x05, 0x65, 0xe8, 0x23, 0xf8,
+	0x16, 0xe1, 0x44, 0xce, 0xf0, 0x9c, 0xf0, 0x94, 0xe1, 0x84, 0x29, 0xdf, 0x33, 0x29, 0x4d, 0x03,
+	0x7f, 0xab, 0xd1, 0x2b, 0xa6, 0x74, 0x11, 0x11, 0x2b, 0x4c, 0x19, 0x27, 0x77, 0x7e, 0xd9, 0x16,
+	0x11, 0xb1, 0x1a, 0x6a, 0x7f, 0x5d, 0xb8, 0x13, 0xf4, 0x0a, 0x56, 0x4d, 0xb6, 0x30, 0x1f, 0x5c,
+	0xb9, 0x28, 0xed, 0x82, 0xa0, 0xa2, 0xd3, 0xc5, 0x46, 0xe1, 0xbe, 0x2f, 0x15, 0x8a, 0xd0, 0x53,
+	0xf4, 0x39, 0x84, 0x96, 0x1a, 0x25, 0x8a, 0x38, 0xe5, 0xf6, 0x9e, 0x54, 0x8e, 0x9e, 0xf6, 0xce,
+	0x75, 0xe6, 0x90, 0x28, 0x12, 0x34, 0x48, 0x6e, 0xb6, 0x7e, 0x03, 0xb0, 0xb1, 0x08, 0xa0, 0x8f,
+	0x61, 0x33, 0xc9, 0x42, 0x35, 0xfe, 0x0e, 0x3b, 0x02, 0x4b, 0x6e, 0x3b, 0x36, 0x70, 0x65, 0xf0,
+	0xa7, 0x34, 0x29, 0x3d, 0xab, 0x89, 0x57, 0xd4, 0x44, 0x07, 0x23, 0x91, 0xd9, 0x12, 0xb9, 0x60,
+	0x91, 0xc8, 0xcc, 0x61, 0x3d, 0x58, 0x8c, 0xbb, 0x58, 0xc5, 0x0e, 0x16, 0xe3, 0x26, 0xd4, 0xfd,
+	0x75, 0x6d, 0x80, 0x08, 0xda, 0x83, 0x3b, 0x6c, 0xce, 0x22, 0x95, 0xe0, 0xb1, 0x48, 0x23, 0xe5,
+	0xfa, 0xbb, 0x6d, 0xb1, 0x2f, 0x34, 0x84, 0xde, 0x81, 0x35, 0xd3, 0xff, 0x48, 0xf8, 0x25, 0xfd,
+	0x51, 0x41, 0x55, 0xbb, 0xdf, 0x88, 0xff, 0xd3, 0xde, 0xff, 0x64, 0x4b, 0x15, 0x36, 0x07, 0x0c,
+	0x5b, 0x2f, 0xa8, 0x51, 0x65, 0x74, 0xed, 0x26, 0x45, 0xb2, 0x23, 0xf4, 0x01, 0x7c, 0x91, 0x11,
+	0xad, 0xb1, 0xbd, 0x90, 0x71, 0x47, 0x77, 0xc7, 0xa0, 0xa6, 0xde, 0x97, 0x7c, 0x3d, 0x4b, 0xc5,
+	0x4e, 0xe0, 0x95, 0xac, 0xeb, 0x78, 0x65, 0x54, 0xbc, 0xc2, 0xa8, 0xac, 0x8d, 0xdb, 0xd8, 0x11,
+	0x54, 0xe1, 0x8c, 0xd9, 0x77, 0x6a, 0x08, 0x5e, 0x6b, 0x77, 0xe3, 0xb8, 0xfd, 0x9c, 0xcb, 0x4c,
+	0x78, 0x82, 0xc9, 0x49, 0xbf, 0x8f, 0x10, 0x2c, 0xaf, 0x3c, 0x74, 0x63, 0x6f, 0x3a, 0xad, 0x73,
+	0xcd, 0x6b, 0xb2, 0xbc, 0x8c, 0xad, 0x31, 0xcd, 0xc0, 0xa9, 0x67, 0x6c, 0xb4, 0x0b, 0xbd, 0x39,
+	0x93, 0x46, 0xb4, 0x46, 0xa0, 0x4d, 0x8d, 0xf0, 0xf4, 0xd6, 0xaf, 0x76, 0xc0, 0x3e, 0x08, 0xb4,
+	0x89, 0xde, 0x86, 0x15, 0x26, 0xa5, 0x90, 0x7e, 0xcd, 0x1c, 0xb4, 0x4e, 0x77, 0xec, 0xe8, 0x4d,
+	0xe2, 0x04, 0xf7, 0xfb, 0xfd, 0x3e, 0x7a, 0x57, 0x3f, 0xf1, 0x68, 0x12, 0xaa, 0x94, 0x32, 0xc3,
+	0x11, 0x04, 0x4b, 0x00, 0xb5, 0x60, 0x9d, 0x13, 0x65, 0x83, 0x25, 0x13, 0x5c, 0xf8, 0xc8, 0x87,
+	0xb5, 0x49, 0x9c, 0x50, 0xa2, 0x2c, 0xdf, 0x46, 0x90, 0xbb, 0xdd, 0x5f, 0xc0, 0xca, 0x2d, 0x47,
+	0x67, 0xfd, 0x83, 0xe2, 0xae, 0x00, 0x6b, 0xbb, 0xe2, 0x7d, 0xd8, 0xd4, 0x5f, 0x85, 0xc3, 0x48,
+	0x31, 0x39, 0x27, 0x3c, 0x6f, 0x9a, 0x06, 0xbf, 0x76, 0x18, 0xfa, 0x10, 0xbe, 0x70, 0xaf, 0x36,
+	0x4c, 0x14, 0x89, 0xc6, 0xac, 0x30, 0x70, 0x43, 0x07, 0xae, 0x28, 0x5b, 0x2e, 0x28, 0xfb, 0x12,
+	0x56, 0xa3, 0x30, 0xa2, 0xec, 0xd6, 0xbd, 0x0b, 0xe7, 0x2d, 0x7a, 0xee, 0x98, 0x0e, 0x9e, 0xd9,
+	0xcd, 0xae, 0x46, 0xa9, 0x50, 0xe3, 0xac, 0x58, 0xe3, 0x30, 0x6f, 0x0f, 0x58, 0xb6, 0x67, 0xd3,
+	0xd1, 0x9f, 0xd6, 0x94, 0xfa, 0xf4, 0xcd, 0xf5, 0xc3, 0x5b, 0xf4, 0x63, 0xe5, 0xf6, 0xf2, 0xea,
+	0xed, 0x1a, 0x97, 0x84, 0x86, 0x69, 0x92, 0x8b, 0x62, 0xbd, 0xee, 0x1f, 0x39, 0xab, 0x99, 0x4c,
+	0xf1, 0xd9, 0x41, 0x61, 0x88, 0xbd, 0xc5, 0x10, 0x7f, 0x02, 0xd1, 0x8c, 0x29, 0x26, 0xb1, 0x64,
+	0x84, 0x86, 0xd1, 0x04, 0xab, 0xbb, 0x38, 0xff, 0x11, 0xec, 0x9a, 0x48, 0x60, 0x03, 0xd7, 0x77,
+	0x31, 0xfb, 0x77, 0xf6, 0x82, 0xe8, 0x5a, 0xf6, 0x50, 0x33, 0x7e, 0x0d, 0x1b, 0x23, 0x92, 0x52,
+	0x2c, 0x75, 0x92, 0xdb, 0x1b, 0x1a, 0x08, 0x74, 0xf0, 0x3d, 0xb8, 0x6d, 0x4b, 0x2d, 0x17, 0x1d,
+	0x08, 0xa0, 0x81, 0xec, 0x62, 0x71, 0xfa, 0x57, 0xcd, 0x39, 0x6d, 0x5e, 0xb4, 0x7e, 0x7f, 0x68,
+	0x83, 0xfb, 0x87, 0x36, 0xf8, 0xeb, 0xa1, 0x0d, 0x7e, 0x7c, 0x6c, 0x6f, 0xdd, 0x3f, 0xb6, 0xb7,
+	0xfe, 0x7c, 0x6c, 0x6f, 0x7d, 0x05, 0x46, 0x55, 0xf3, 0xbf, 0x3e, 0xfc, 0x27, 0x00, 0x00, 0xff,
+	0xff, 0xb4, 0x24, 0x26, 0x38, 0xc5, 0x07, 0x00, 0x00,
 }
 
-func (this *WlstElu_6255) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*WlstElu_6255)
-	if !ok {
-		that2, ok := that.(WlstElu_6255)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.NewAddr != that1.NewAddr {
-		return false
-	}
-	if this.Status != that1.Status {
-		return false
-	}
-	return true
-}
-func (this *WlstElu_6256) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*WlstElu_6256)
-	if !ok {
-		that2, ok := that.(WlstElu_6256)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if len(this.WorkArgv) != len(that1.WorkArgv) {
-		return false
-	}
-	for i := range this.WorkArgv {
-		if !this.WorkArgv[i].Equal(that1.WorkArgv[i]) {
-			return false
-		}
-	}
-	if this.Status != that1.Status {
-		return false
-	}
-	return true
-}
-func (this *WlstElu_6256_WorkArgv) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*WlstElu_6256_WorkArgv)
-	if !ok {
-		that2, ok := that.(WlstElu_6256_WorkArgv)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.LoopMark != that1.LoopMark {
-		return false
-	}
-	if this.WorkMode != that1.WorkMode {
-		return false
-	}
-	if this.AlarmValueSet != that1.AlarmValueSet {
-		return false
-	}
-	if this.OptDelay != that1.OptDelay {
-		return false
-	}
-	return true
-}
-func (this *WlstElu_6257) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*WlstElu_6257)
-	if !ok {
-		that2, ok := that.(WlstElu_6257)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if len(this.OptDo) != len(that1.OptDo) {
-		return false
-	}
-	for i := range this.OptDo {
-		if this.OptDo[i] != that1.OptDo[i] {
-			return false
-		}
-	}
-	if this.Status != that1.Status {
-		return false
-	}
-	return true
-}
-func (this *WlstElu_62D8) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*WlstElu_62D8)
-	if !ok {
-		that2, ok := that.(WlstElu_62D8)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if len(this.AlarmData) != len(that1.AlarmData) {
-		return false
-	}
-	for i := range this.AlarmData {
-		if !this.AlarmData[i].Equal(that1.AlarmData[i]) {
-			return false
-		}
-	}
-	return true
-}
-func (this *WlstElu_62D8_AlarmData) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*WlstElu_62D8_AlarmData)
-	if !ok {
-		that2, ok := that.(WlstElu_62D8_AlarmData)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if len(this.SwitchStatus) != len(that1.SwitchStatus) {
-		return false
-	}
-	for i := range this.SwitchStatus {
-		if this.SwitchStatus[i] != that1.SwitchStatus[i] {
-			return false
-		}
-	}
-	if this.AlarmValueSet != that1.AlarmValueSet {
-		return false
-	}
-	if this.OptDelay != that1.OptDelay {
-		return false
-	}
-	if this.NowValue != that1.NowValue {
-		return false
-	}
-	if this.ElValue != that1.ElValue {
-		return false
-	}
-	return true
-}
-func (this *WlstElu_625A) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*WlstElu_625A)
-	if !ok {
-		that2, ok := that.(WlstElu_625A)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.EventsCount != that1.EventsCount {
-		return false
-	}
-	if len(this.LoopNo) != len(that1.LoopNo) {
-		return false
-	}
-	for i := range this.LoopNo {
-		if this.LoopNo[i] != that1.LoopNo[i] {
-			return false
-		}
-	}
-	if this.AlarmValueSet != that1.AlarmValueSet {
-		return false
-	}
-	if this.NowValue != that1.NowValue {
-		return false
-	}
-	if this.DtAlarm != that1.DtAlarm {
-		return false
-	}
-	return true
-}
-func (this *WlstElu_625B) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*WlstElu_625B)
-	if !ok {
-		that2, ok := that.(WlstElu_625B)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.WatchValueEl != that1.WatchValueEl {
-		return false
-	}
-	if this.WatchValueTp != that1.WatchValueTp {
-		return false
-	}
-	if this.Status != that1.Status {
-		return false
-	}
-	return true
-}
-func (this *WlstElu_625C) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*WlstElu_625C)
-	if !ok {
-		that2, ok := that.(WlstElu_625C)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.DtTimer != that1.DtTimer {
-		return false
-	}
-	if this.Status != that1.Status {
-		return false
-	}
-	return true
-}
-func (this *WlstAlsA700) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*WlstAlsA700)
-	if !ok {
-		that2, ok := that.(WlstAlsA700)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.Addr != that1.Addr {
-		return false
-	}
-	if this.Status != that1.Status {
-		return false
-	}
-	if this.Mode != that1.Mode {
-		return false
-	}
-	if this.Time != that1.Time {
-		return false
-	}
-	if this.Ver != that1.Ver {
-		return false
-	}
-	if this.Lux != that1.Lux {
-		return false
-	}
-	if this.Error != that1.Error {
-		return false
-	}
-	return true
-}
-func (this *WlstGps_0000) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*WlstGps_0000)
-	if !ok {
-		that2, ok := that.(WlstGps_0000)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.Longitude != that1.Longitude {
-		return false
-	}
-	if this.Latitude != that1.Latitude {
-		return false
-	}
-	if this.Gpsdate != that1.Gpsdate {
-		return false
-	}
-	return true
-}
-func (this *WlstGps_5901) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*WlstGps_5901)
-	if !ok {
-		that2, ok := that.(WlstGps_5901)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.WorkMode != that1.WorkMode {
-		return false
-	}
-	if this.TimeInterval != that1.TimeInterval {
-		return false
-	}
-	if this.AlarmDistance != that1.AlarmDistance {
-		return false
-	}
-	if this.Status != that1.Status {
-		return false
-	}
-	if this.Nindex != that1.Nindex {
-		return false
-	}
-	return true
-}
-func (this *WlstGps_5902) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*WlstGps_5902)
-	if !ok {
-		that2, ok := that.(WlstGps_5902)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.NewAddr != that1.NewAddr {
-		return false
-	}
-	if this.Nindex != that1.Nindex {
-		return false
-	}
-	return true
-}
-func (this *WlstGps_5903) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*WlstGps_5903)
-	if !ok {
-		that2, ok := that.(WlstGps_5903)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.Ver != that1.Ver {
-		return false
-	}
-	if this.Nindex != that1.Nindex {
-		return false
-	}
-	return true
-}
-func (this *WlstGps_5904) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*WlstGps_5904)
-	if !ok {
-		that2, ok := that.(WlstGps_5904)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.Longitude != that1.Longitude {
-		return false
-	}
-	if this.Latitude != that1.Latitude {
-		return false
-	}
-	if this.Gpsdate != that1.Gpsdate {
-		return false
-	}
-	if this.Nindex != that1.Nindex {
-		return false
-	}
-	if this.Radius != that1.Radius {
-		return false
-	}
-	return true
-}
-func (this *WlstMru_9100) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*WlstMru_9100)
-	if !ok {
-		that2, ok := that.(WlstMru_9100)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if len(this.Addr) != len(that1.Addr) {
-		return false
-	}
-	for i := range this.Addr {
-		if this.Addr[i] != that1.Addr[i] {
-			return false
-		}
-	}
-	if this.MeterReadingType != that1.MeterReadingType {
-		return false
-	}
-	if this.MeterReadingDate != that1.MeterReadingDate {
-		return false
-	}
-	if this.BaudRate != that1.BaudRate {
-		return false
-	}
-	if this.MeterValue != that1.MeterValue {
-		return false
-	}
-	if this.Ver != that1.Ver {
-		return false
-	}
-	return true
-}
-func (this *WlstElu_6255) GoString() string {
-	if this == nil {
-		return "nil"
-	}
-	s := make([]string, 0, 6)
-	s = append(s, "&wlst_pb2.WlstElu_6255{")
-	s = append(s, "NewAddr: "+fmt.Sprintf("%#v", this.NewAddr)+",\n")
-	s = append(s, "Status: "+fmt.Sprintf("%#v", this.Status)+",\n")
-	s = append(s, "}")
-	return strings.Join(s, "")
-}
-func (this *WlstElu_6256) GoString() string {
-	if this == nil {
-		return "nil"
-	}
-	s := make([]string, 0, 6)
-	s = append(s, "&wlst_pb2.WlstElu_6256{")
-	if this.WorkArgv != nil {
-		s = append(s, "WorkArgv: "+fmt.Sprintf("%#v", this.WorkArgv)+",\n")
-	}
-	s = append(s, "Status: "+fmt.Sprintf("%#v", this.Status)+",\n")
-	s = append(s, "}")
-	return strings.Join(s, "")
-}
-func (this *WlstElu_6256_WorkArgv) GoString() string {
-	if this == nil {
-		return "nil"
-	}
-	s := make([]string, 0, 8)
-	s = append(s, "&wlst_pb2.WlstElu_6256_WorkArgv{")
-	s = append(s, "LoopMark: "+fmt.Sprintf("%#v", this.LoopMark)+",\n")
-	s = append(s, "WorkMode: "+fmt.Sprintf("%#v", this.WorkMode)+",\n")
-	s = append(s, "AlarmValueSet: "+fmt.Sprintf("%#v", this.AlarmValueSet)+",\n")
-	s = append(s, "OptDelay: "+fmt.Sprintf("%#v", this.OptDelay)+",\n")
-	s = append(s, "}")
-	return strings.Join(s, "")
-}
-func (this *WlstElu_6257) GoString() string {
-	if this == nil {
-		return "nil"
-	}
-	s := make([]string, 0, 6)
-	s = append(s, "&wlst_pb2.WlstElu_6257{")
-	s = append(s, "OptDo: "+fmt.Sprintf("%#v", this.OptDo)+",\n")
-	s = append(s, "Status: "+fmt.Sprintf("%#v", this.Status)+",\n")
-	s = append(s, "}")
-	return strings.Join(s, "")
-}
-func (this *WlstElu_62D8) GoString() string {
-	if this == nil {
-		return "nil"
-	}
-	s := make([]string, 0, 5)
-	s = append(s, "&wlst_pb2.WlstElu_62D8{")
-	if this.AlarmData != nil {
-		s = append(s, "AlarmData: "+fmt.Sprintf("%#v", this.AlarmData)+",\n")
-	}
-	s = append(s, "}")
-	return strings.Join(s, "")
-}
-func (this *WlstElu_62D8_AlarmData) GoString() string {
-	if this == nil {
-		return "nil"
-	}
-	s := make([]string, 0, 9)
-	s = append(s, "&wlst_pb2.WlstElu_62D8_AlarmData{")
-	s = append(s, "SwitchStatus: "+fmt.Sprintf("%#v", this.SwitchStatus)+",\n")
-	s = append(s, "AlarmValueSet: "+fmt.Sprintf("%#v", this.AlarmValueSet)+",\n")
-	s = append(s, "OptDelay: "+fmt.Sprintf("%#v", this.OptDelay)+",\n")
-	s = append(s, "NowValue: "+fmt.Sprintf("%#v", this.NowValue)+",\n")
-	s = append(s, "ElValue: "+fmt.Sprintf("%#v", this.ElValue)+",\n")
-	s = append(s, "}")
-	return strings.Join(s, "")
-}
-func (this *WlstElu_625A) GoString() string {
-	if this == nil {
-		return "nil"
-	}
-	s := make([]string, 0, 9)
-	s = append(s, "&wlst_pb2.WlstElu_625A{")
-	s = append(s, "EventsCount: "+fmt.Sprintf("%#v", this.EventsCount)+",\n")
-	s = append(s, "LoopNo: "+fmt.Sprintf("%#v", this.LoopNo)+",\n")
-	s = append(s, "AlarmValueSet: "+fmt.Sprintf("%#v", this.AlarmValueSet)+",\n")
-	s = append(s, "NowValue: "+fmt.Sprintf("%#v", this.NowValue)+",\n")
-	s = append(s, "DtAlarm: "+fmt.Sprintf("%#v", this.DtAlarm)+",\n")
-	s = append(s, "}")
-	return strings.Join(s, "")
-}
-func (this *WlstElu_625B) GoString() string {
-	if this == nil {
-		return "nil"
-	}
-	s := make([]string, 0, 7)
-	s = append(s, "&wlst_pb2.WlstElu_625B{")
-	s = append(s, "WatchValueEl: "+fmt.Sprintf("%#v", this.WatchValueEl)+",\n")
-	s = append(s, "WatchValueTp: "+fmt.Sprintf("%#v", this.WatchValueTp)+",\n")
-	s = append(s, "Status: "+fmt.Sprintf("%#v", this.Status)+",\n")
-	s = append(s, "}")
-	return strings.Join(s, "")
-}
-func (this *WlstElu_625C) GoString() string {
-	if this == nil {
-		return "nil"
-	}
-	s := make([]string, 0, 6)
-	s = append(s, "&wlst_pb2.WlstElu_625C{")
-	s = append(s, "DtTimer: "+fmt.Sprintf("%#v", this.DtTimer)+",\n")
-	s = append(s, "Status: "+fmt.Sprintf("%#v", this.Status)+",\n")
-	s = append(s, "}")
-	return strings.Join(s, "")
-}
-func (this *WlstAlsA700) GoString() string {
-	if this == nil {
-		return "nil"
-	}
-	s := make([]string, 0, 11)
-	s = append(s, "&wlst_pb2.WlstAlsA700{")
-	s = append(s, "Addr: "+fmt.Sprintf("%#v", this.Addr)+",\n")
-	s = append(s, "Status: "+fmt.Sprintf("%#v", this.Status)+",\n")
-	s = append(s, "Mode: "+fmt.Sprintf("%#v", this.Mode)+",\n")
-	s = append(s, "Time: "+fmt.Sprintf("%#v", this.Time)+",\n")
-	s = append(s, "Ver: "+fmt.Sprintf("%#v", this.Ver)+",\n")
-	s = append(s, "Lux: "+fmt.Sprintf("%#v", this.Lux)+",\n")
-	s = append(s, "Error: "+fmt.Sprintf("%#v", this.Error)+",\n")
-	s = append(s, "}")
-	return strings.Join(s, "")
-}
-func (this *WlstGps_0000) GoString() string {
-	if this == nil {
-		return "nil"
-	}
-	s := make([]string, 0, 7)
-	s = append(s, "&wlst_pb2.WlstGps_0000{")
-	s = append(s, "Longitude: "+fmt.Sprintf("%#v", this.Longitude)+",\n")
-	s = append(s, "Latitude: "+fmt.Sprintf("%#v", this.Latitude)+",\n")
-	s = append(s, "Gpsdate: "+fmt.Sprintf("%#v", this.Gpsdate)+",\n")
-	s = append(s, "}")
-	return strings.Join(s, "")
-}
-func (this *WlstGps_5901) GoString() string {
-	if this == nil {
-		return "nil"
-	}
-	s := make([]string, 0, 9)
-	s = append(s, "&wlst_pb2.WlstGps_5901{")
-	s = append(s, "WorkMode: "+fmt.Sprintf("%#v", this.WorkMode)+",\n")
-	s = append(s, "TimeInterval: "+fmt.Sprintf("%#v", this.TimeInterval)+",\n")
-	s = append(s, "AlarmDistance: "+fmt.Sprintf("%#v", this.AlarmDistance)+",\n")
-	s = append(s, "Status: "+fmt.Sprintf("%#v", this.Status)+",\n")
-	s = append(s, "Nindex: "+fmt.Sprintf("%#v", this.Nindex)+",\n")
-	s = append(s, "}")
-	return strings.Join(s, "")
-}
-func (this *WlstGps_5902) GoString() string {
-	if this == nil {
-		return "nil"
-	}
-	s := make([]string, 0, 6)
-	s = append(s, "&wlst_pb2.WlstGps_5902{")
-	s = append(s, "NewAddr: "+fmt.Sprintf("%#v", this.NewAddr)+",\n")
-	s = append(s, "Nindex: "+fmt.Sprintf("%#v", this.Nindex)+",\n")
-	s = append(s, "}")
-	return strings.Join(s, "")
-}
-func (this *WlstGps_5903) GoString() string {
-	if this == nil {
-		return "nil"
-	}
-	s := make([]string, 0, 6)
-	s = append(s, "&wlst_pb2.WlstGps_5903{")
-	s = append(s, "Ver: "+fmt.Sprintf("%#v", this.Ver)+",\n")
-	s = append(s, "Nindex: "+fmt.Sprintf("%#v", this.Nindex)+",\n")
-	s = append(s, "}")
-	return strings.Join(s, "")
-}
-func (this *WlstGps_5904) GoString() string {
-	if this == nil {
-		return "nil"
-	}
-	s := make([]string, 0, 9)
-	s = append(s, "&wlst_pb2.WlstGps_5904{")
-	s = append(s, "Longitude: "+fmt.Sprintf("%#v", this.Longitude)+",\n")
-	s = append(s, "Latitude: "+fmt.Sprintf("%#v", this.Latitude)+",\n")
-	s = append(s, "Gpsdate: "+fmt.Sprintf("%#v", this.Gpsdate)+",\n")
-	s = append(s, "Nindex: "+fmt.Sprintf("%#v", this.Nindex)+",\n")
-	s = append(s, "Radius: "+fmt.Sprintf("%#v", this.Radius)+",\n")
-	s = append(s, "}")
-	return strings.Join(s, "")
-}
-func (this *WlstMru_9100) GoString() string {
-	if this == nil {
-		return "nil"
-	}
-	s := make([]string, 0, 10)
-	s = append(s, "&wlst_pb2.WlstMru_9100{")
-	s = append(s, "Addr: "+fmt.Sprintf("%#v", this.Addr)+",\n")
-	s = append(s, "MeterReadingType: "+fmt.Sprintf("%#v", this.MeterReadingType)+",\n")
-	s = append(s, "MeterReadingDate: "+fmt.Sprintf("%#v", this.MeterReadingDate)+",\n")
-	s = append(s, "BaudRate: "+fmt.Sprintf("%#v", this.BaudRate)+",\n")
-	s = append(s, "MeterValue: "+fmt.Sprintf("%#v", this.MeterValue)+",\n")
-	s = append(s, "Ver: "+fmt.Sprintf("%#v", this.Ver)+",\n")
-	s = append(s, "}")
-	return strings.Join(s, "")
-}
-func valueToGoStringProtocolAls(v interface{}, typ string) string {
-	rv := reflect.ValueOf(v)
-	if rv.IsNil() {
-		return "nil"
-	}
-	pv := reflect.Indirect(rv).Interface()
-	return fmt.Sprintf("func(v %v) *%v { return &v } ( %#v )", typ, typ, pv)
-}
 func (m *WlstElu_6255) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
@@ -2990,224 +2256,6 @@ func sovProtocolAls(x uint64) (n int) {
 }
 func sozProtocolAls(x uint64) (n int) {
 	return sovProtocolAls(uint64((x << 1) ^ uint64((int64(x) >> 63))))
-}
-func (this *WlstElu_6255) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&WlstElu_6255{`,
-		`NewAddr:` + fmt.Sprintf("%v", this.NewAddr) + `,`,
-		`Status:` + fmt.Sprintf("%v", this.Status) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *WlstElu_6256) String() string {
-	if this == nil {
-		return "nil"
-	}
-	repeatedStringForWorkArgv := "[]*WlstElu_6256_WorkArgv{"
-	for _, f := range this.WorkArgv {
-		repeatedStringForWorkArgv += strings.Replace(fmt.Sprintf("%v", f), "WlstElu_6256_WorkArgv", "WlstElu_6256_WorkArgv", 1) + ","
-	}
-	repeatedStringForWorkArgv += "}"
-	s := strings.Join([]string{`&WlstElu_6256{`,
-		`WorkArgv:` + repeatedStringForWorkArgv + `,`,
-		`Status:` + fmt.Sprintf("%v", this.Status) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *WlstElu_6256_WorkArgv) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&WlstElu_6256_WorkArgv{`,
-		`LoopMark:` + fmt.Sprintf("%v", this.LoopMark) + `,`,
-		`WorkMode:` + fmt.Sprintf("%v", this.WorkMode) + `,`,
-		`AlarmValueSet:` + fmt.Sprintf("%v", this.AlarmValueSet) + `,`,
-		`OptDelay:` + fmt.Sprintf("%v", this.OptDelay) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *WlstElu_6257) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&WlstElu_6257{`,
-		`OptDo:` + fmt.Sprintf("%v", this.OptDo) + `,`,
-		`Status:` + fmt.Sprintf("%v", this.Status) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *WlstElu_62D8) String() string {
-	if this == nil {
-		return "nil"
-	}
-	repeatedStringForAlarmData := "[]*WlstElu_62D8_AlarmData{"
-	for _, f := range this.AlarmData {
-		repeatedStringForAlarmData += strings.Replace(fmt.Sprintf("%v", f), "WlstElu_62D8_AlarmData", "WlstElu_62D8_AlarmData", 1) + ","
-	}
-	repeatedStringForAlarmData += "}"
-	s := strings.Join([]string{`&WlstElu_62D8{`,
-		`AlarmData:` + repeatedStringForAlarmData + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *WlstElu_62D8_AlarmData) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&WlstElu_62D8_AlarmData{`,
-		`SwitchStatus:` + fmt.Sprintf("%v", this.SwitchStatus) + `,`,
-		`AlarmValueSet:` + fmt.Sprintf("%v", this.AlarmValueSet) + `,`,
-		`OptDelay:` + fmt.Sprintf("%v", this.OptDelay) + `,`,
-		`NowValue:` + fmt.Sprintf("%v", this.NowValue) + `,`,
-		`ElValue:` + fmt.Sprintf("%v", this.ElValue) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *WlstElu_625A) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&WlstElu_625A{`,
-		`EventsCount:` + fmt.Sprintf("%v", this.EventsCount) + `,`,
-		`LoopNo:` + fmt.Sprintf("%v", this.LoopNo) + `,`,
-		`AlarmValueSet:` + fmt.Sprintf("%v", this.AlarmValueSet) + `,`,
-		`NowValue:` + fmt.Sprintf("%v", this.NowValue) + `,`,
-		`DtAlarm:` + fmt.Sprintf("%v", this.DtAlarm) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *WlstElu_625B) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&WlstElu_625B{`,
-		`WatchValueEl:` + fmt.Sprintf("%v", this.WatchValueEl) + `,`,
-		`WatchValueTp:` + fmt.Sprintf("%v", this.WatchValueTp) + `,`,
-		`Status:` + fmt.Sprintf("%v", this.Status) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *WlstElu_625C) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&WlstElu_625C{`,
-		`DtTimer:` + fmt.Sprintf("%v", this.DtTimer) + `,`,
-		`Status:` + fmt.Sprintf("%v", this.Status) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *WlstAlsA700) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&WlstAlsA700{`,
-		`Addr:` + fmt.Sprintf("%v", this.Addr) + `,`,
-		`Status:` + fmt.Sprintf("%v", this.Status) + `,`,
-		`Mode:` + fmt.Sprintf("%v", this.Mode) + `,`,
-		`Time:` + fmt.Sprintf("%v", this.Time) + `,`,
-		`Ver:` + fmt.Sprintf("%v", this.Ver) + `,`,
-		`Lux:` + fmt.Sprintf("%v", this.Lux) + `,`,
-		`Error:` + fmt.Sprintf("%v", this.Error) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *WlstGps_0000) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&WlstGps_0000{`,
-		`Longitude:` + fmt.Sprintf("%v", this.Longitude) + `,`,
-		`Latitude:` + fmt.Sprintf("%v", this.Latitude) + `,`,
-		`Gpsdate:` + fmt.Sprintf("%v", this.Gpsdate) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *WlstGps_5901) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&WlstGps_5901{`,
-		`WorkMode:` + fmt.Sprintf("%v", this.WorkMode) + `,`,
-		`TimeInterval:` + fmt.Sprintf("%v", this.TimeInterval) + `,`,
-		`AlarmDistance:` + fmt.Sprintf("%v", this.AlarmDistance) + `,`,
-		`Status:` + fmt.Sprintf("%v", this.Status) + `,`,
-		`Nindex:` + fmt.Sprintf("%v", this.Nindex) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *WlstGps_5902) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&WlstGps_5902{`,
-		`NewAddr:` + fmt.Sprintf("%v", this.NewAddr) + `,`,
-		`Nindex:` + fmt.Sprintf("%v", this.Nindex) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *WlstGps_5903) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&WlstGps_5903{`,
-		`Ver:` + fmt.Sprintf("%v", this.Ver) + `,`,
-		`Nindex:` + fmt.Sprintf("%v", this.Nindex) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *WlstGps_5904) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&WlstGps_5904{`,
-		`Longitude:` + fmt.Sprintf("%v", this.Longitude) + `,`,
-		`Latitude:` + fmt.Sprintf("%v", this.Latitude) + `,`,
-		`Gpsdate:` + fmt.Sprintf("%v", this.Gpsdate) + `,`,
-		`Nindex:` + fmt.Sprintf("%v", this.Nindex) + `,`,
-		`Radius:` + fmt.Sprintf("%v", this.Radius) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *WlstMru_9100) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&WlstMru_9100{`,
-		`Addr:` + fmt.Sprintf("%v", this.Addr) + `,`,
-		`MeterReadingType:` + fmt.Sprintf("%v", this.MeterReadingType) + `,`,
-		`MeterReadingDate:` + fmt.Sprintf("%v", this.MeterReadingDate) + `,`,
-		`BaudRate:` + fmt.Sprintf("%v", this.BaudRate) + `,`,
-		`MeterValue:` + fmt.Sprintf("%v", this.MeterValue) + `,`,
-		`Ver:` + fmt.Sprintf("%v", this.Ver) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func valueToStringProtocolAls(v interface{}) string {
-	rv := reflect.ValueOf(v)
-	if rv.IsNil() {
-		return "nil"
-	}
-	pv := reflect.Indirect(rv).Interface()
-	return fmt.Sprintf("*%v", pv)
 }
 func (m *WlstElu_6255) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)

@@ -9,8 +9,6 @@ import (
 	io "io"
 	math "math"
 	math_bits "math/bits"
-	reflect "reflect"
-	strings "strings"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -37,8 +35,9 @@ type WlstCom_0000 struct {
 	CdmaPassword string `protobuf:"bytes,8,opt,name=cdma_password,json=cdmaPassword,proto3" json:"cdma_password,omitempty"`
 }
 
-func (m *WlstCom_0000) Reset()      { *m = WlstCom_0000{} }
-func (*WlstCom_0000) ProtoMessage() {}
+func (m *WlstCom_0000) Reset()         { *m = WlstCom_0000{} }
+func (m *WlstCom_0000) String() string { return proto.CompactTextString(m) }
+func (*WlstCom_0000) ProtoMessage()    {}
 func (*WlstCom_0000) Descriptor() ([]byte, []int) {
 	return fileDescriptor_800322016269ce4e, []int{0}
 }
@@ -134,8 +133,9 @@ type WlstCom_3E01 struct {
 	ArgsMark []int32 `protobuf:"varint,3,rep,packed,name=args_mark,json=argsMark,proto3" json:"args_mark,omitempty"`
 }
 
-func (m *WlstCom_3E01) Reset()      { *m = WlstCom_3E01{} }
-func (*WlstCom_3E01) ProtoMessage() {}
+func (m *WlstCom_3E01) Reset()         { *m = WlstCom_3E01{} }
+func (m *WlstCom_3E01) String() string { return proto.CompactTextString(m) }
+func (*WlstCom_3E01) ProtoMessage()    {}
 func (*WlstCom_3E01) Descriptor() ([]byte, []int) {
 	return fileDescriptor_800322016269ce4e, []int{1}
 }
@@ -202,8 +202,9 @@ type WlstCom_3E02 struct {
 	Status    *WlstCom_3E02_Group06 `protobuf:"bytes,9,opt,name=status,proto3" json:"status,omitempty"`
 }
 
-func (m *WlstCom_3E02) Reset()      { *m = WlstCom_3E02{} }
-func (*WlstCom_3E02) ProtoMessage() {}
+func (m *WlstCom_3E02) Reset()         { *m = WlstCom_3E02{} }
+func (m *WlstCom_3E02) String() string { return proto.CompactTextString(m) }
+func (*WlstCom_3E02) ProtoMessage()    {}
 func (*WlstCom_3E02) Descriptor() ([]byte, []int) {
 	return fileDescriptor_800322016269ce4e, []int{2}
 }
@@ -303,8 +304,9 @@ type WlstCom_3E02_Group01 struct {
 	Pwd  string `protobuf:"bytes,3,opt,name=pwd,proto3" json:"pwd,omitempty"`
 }
 
-func (m *WlstCom_3E02_Group01) Reset()      { *m = WlstCom_3E02_Group01{} }
-func (*WlstCom_3E02_Group01) ProtoMessage() {}
+func (m *WlstCom_3E02_Group01) Reset()         { *m = WlstCom_3E02_Group01{} }
+func (m *WlstCom_3E02_Group01) String() string { return proto.CompactTextString(m) }
+func (*WlstCom_3E02_Group01) ProtoMessage()    {}
 func (*WlstCom_3E02_Group01) Descriptor() ([]byte, []int) {
 	return fileDescriptor_800322016269ce4e, []int{2, 0}
 }
@@ -369,8 +371,9 @@ type WlstCom_3E02_Group02 struct {
 	Idle              int32   `protobuf:"varint,10,opt,name=idle,proto3" json:"idle,omitempty"`
 }
 
-func (m *WlstCom_3E02_Group02) Reset()      { *m = WlstCom_3E02_Group02{} }
-func (*WlstCom_3E02_Group02) ProtoMessage() {}
+func (m *WlstCom_3E02_Group02) Reset()         { *m = WlstCom_3E02_Group02{} }
+func (m *WlstCom_3E02_Group02) String() string { return proto.CompactTextString(m) }
+func (*WlstCom_3E02_Group02) ProtoMessage()    {}
 func (*WlstCom_3E02_Group02) Descriptor() ([]byte, []int) {
 	return fileDescriptor_800322016269ce4e, []int{2, 1}
 }
@@ -479,8 +482,9 @@ type WlstCom_3E02_Group03 struct {
 	WorkMode int32 `protobuf:"varint,5,opt,name=work_mode,json=workMode,proto3" json:"work_mode,omitempty"`
 }
 
-func (m *WlstCom_3E02_Group03) Reset()      { *m = WlstCom_3E02_Group03{} }
-func (*WlstCom_3E02_Group03) ProtoMessage() {}
+func (m *WlstCom_3E02_Group03) Reset()         { *m = WlstCom_3E02_Group03{} }
+func (m *WlstCom_3E02_Group03) String() string { return proto.CompactTextString(m) }
+func (*WlstCom_3E02_Group03) ProtoMessage()    {}
 func (*WlstCom_3E02_Group03) Descriptor() ([]byte, []int) {
 	return fileDescriptor_800322016269ce4e, []int{2, 2}
 }
@@ -554,8 +558,9 @@ type WlstCom_3E02_Group04 struct {
 	Yecx string `protobuf:"bytes,3,opt,name=yecx,proto3" json:"yecx,omitempty"`
 }
 
-func (m *WlstCom_3E02_Group04) Reset()      { *m = WlstCom_3E02_Group04{} }
-func (*WlstCom_3E02_Group04) ProtoMessage() {}
+func (m *WlstCom_3E02_Group04) Reset()         { *m = WlstCom_3E02_Group04{} }
+func (m *WlstCom_3E02_Group04) String() string { return proto.CompactTextString(m) }
+func (*WlstCom_3E02_Group04) ProtoMessage()    {}
 func (*WlstCom_3E02_Group04) Descriptor() ([]byte, []int) {
 	return fileDescriptor_800322016269ce4e, []int{2, 3}
 }
@@ -616,8 +621,9 @@ type WlstCom_3E02_Group05 struct {
 	BatchNumber string `protobuf:"bytes,3,opt,name=batch_number,json=batchNumber,proto3" json:"batch_number,omitempty"`
 }
 
-func (m *WlstCom_3E02_Group05) Reset()      { *m = WlstCom_3E02_Group05{} }
-func (*WlstCom_3E02_Group05) ProtoMessage() {}
+func (m *WlstCom_3E02_Group05) Reset()         { *m = WlstCom_3E02_Group05{} }
+func (m *WlstCom_3E02_Group05) String() string { return proto.CompactTextString(m) }
+func (*WlstCom_3E02_Group05) ProtoMessage()    {}
 func (*WlstCom_3E02_Group05) Descriptor() ([]byte, []int) {
 	return fileDescriptor_800322016269ce4e, []int{2, 4}
 }
@@ -678,8 +684,9 @@ type WlstCom_3E02_Group06 struct {
 	Ver string `protobuf:"bytes,3,opt,name=ver,proto3" json:"ver,omitempty"`
 }
 
-func (m *WlstCom_3E02_Group06) Reset()      { *m = WlstCom_3E02_Group06{} }
-func (*WlstCom_3E02_Group06) ProtoMessage() {}
+func (m *WlstCom_3E02_Group06) Reset()         { *m = WlstCom_3E02_Group06{} }
+func (m *WlstCom_3E02_Group06) String() string { return proto.CompactTextString(m) }
+func (*WlstCom_3E02_Group06) ProtoMessage()    {}
 func (*WlstCom_3E02_Group06) Descriptor() ([]byte, []int) {
 	return fileDescriptor_800322016269ce4e, []int{2, 5}
 }
@@ -740,8 +747,9 @@ type WlstCom_3E82 struct {
 	ArgsMark []int32 `protobuf:"varint,3,rep,packed,name=args_mark,json=argsMark,proto3" json:"args_mark,omitempty"`
 }
 
-func (m *WlstCom_3E82) Reset()      { *m = WlstCom_3E82{} }
-func (*WlstCom_3E82) ProtoMessage() {}
+func (m *WlstCom_3E82) Reset()         { *m = WlstCom_3E82{} }
+func (m *WlstCom_3E82) String() string { return proto.CompactTextString(m) }
+func (*WlstCom_3E82) ProtoMessage()    {}
 func (*WlstCom_3E82) Descriptor() ([]byte, []int) {
 	return fileDescriptor_800322016269ce4e, []int{3}
 }
@@ -806,8 +814,9 @@ type WlstCom_3E84 struct {
 	ResetCount int32 `protobuf:"varint,5,opt,name=reset_count,json=resetCount,proto3" json:"reset_count,omitempty"`
 }
 
-func (m *WlstCom_3E84) Reset()      { *m = WlstCom_3E84{} }
-func (*WlstCom_3E84) ProtoMessage() {}
+func (m *WlstCom_3E84) Reset()         { *m = WlstCom_3E84{} }
+func (m *WlstCom_3E84) String() string { return proto.CompactTextString(m) }
+func (*WlstCom_3E84) ProtoMessage()    {}
 func (*WlstCom_3E84) Descriptor() ([]byte, []int) {
 	return fileDescriptor_800322016269ce4e, []int{4}
 }
@@ -890,662 +899,60 @@ func init() {
 func init() { proto.RegisterFile("protocol_3c.proto", fileDescriptor_800322016269ce4e) }
 
 var fileDescriptor_800322016269ce4e = []byte{
-	// 844 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xac, 0x55, 0x41, 0x6f, 0xe3, 0x44,
-	0x14, 0x8e, 0xeb, 0xb4, 0x89, 0x27, 0xad, 0xc4, 0x0e, 0x08, 0x99, 0x20, 0xdc, 0xa5, 0x7b, 0xd9,
-	0x53, 0x94, 0x4c, 0xba, 0x05, 0x0e, 0x1c, 0x76, 0x11, 0x82, 0x95, 0x58, 0x54, 0x59, 0x20, 0xb8,
-	0x59, 0x13, 0x7b, 0xe8, 0x5a, 0xb5, 0x3d, 0xd6, 0x8c, 0x93, 0xb0, 0x37, 0x7e, 0x02, 0xe2, 0xcc,
-	0x0f, 0xe0, 0xa7, 0x70, 0xec, 0x71, 0x8f, 0x34, 0xbd, 0x70, 0x42, 0x2b, 0xfe, 0x00, 0xe8, 0xbd,
-	0x99, 0x89, 0xeb, 0x0a, 0x14, 0x24, 0xf6, 0xf6, 0xe6, 0xfb, 0xde, 0xfb, 0xe6, 0xf9, 0xbd, 0x37,
-	0xcf, 0xe4, 0x5e, 0xad, 0x64, 0x23, 0x53, 0x59, 0x24, 0xf3, 0x74, 0x82, 0x36, 0x1d, 0xae, 0x0b,
-	0xdd, 0x4c, 0xea, 0x05, 0x3b, 0xf9, 0xc3, 0x23, 0x47, 0xdf, 0x14, 0xba, 0x49, 0x52, 0x59, 0x26,
-	0xd3, 0xe9, 0x74, 0x4a, 0xdf, 0x25, 0x81, 0x16, 0x6a, 0x25, 0x54, 0x92, 0xd7, 0xa1, 0x77, 0xdf,
-	0x7b, 0x18, 0xc4, 0x43, 0x03, 0x3c, 0xad, 0xe9, 0x31, 0x19, 0x59, 0xb2, 0x96, 0xaa, 0x09, 0xf7,
-	0x90, 0x26, 0x06, 0x3a, 0x97, 0xaa, 0xa1, 0x6f, 0x10, 0x9f, 0xd7, 0x55, 0xe8, 0x23, 0x01, 0x26,
-	0x7d, 0x8f, 0x90, 0x4b, 0x21, 0xea, 0x84, 0x17, 0xf9, 0x4a, 0x84, 0x7d, 0x24, 0x02, 0x40, 0x1e,
-	0x03, 0x40, 0x29, 0xe9, 0x37, 0x2f, 0x6a, 0x11, 0xee, 0x23, 0x81, 0x36, 0x88, 0xe8, 0xbc, 0x0c,
-	0x0f, 0x8c, 0x88, 0xce, 0x4b, 0xfa, 0x80, 0x1c, 0xa5, 0x59, 0xc9, 0x93, 0xa5, 0x16, 0xaa, 0xe2,
-	0xa5, 0x08, 0x07, 0xc8, 0x1d, 0x02, 0xf8, 0xb5, 0xc5, 0xb6, 0x4e, 0x35, 0xd7, 0x7a, 0x2d, 0x55,
-	0x16, 0x0e, 0x5b, 0xa7, 0x73, 0x8b, 0x9d, 0x24, 0xb7, 0xbe, 0x77, 0x2e, 0xa6, 0x33, 0x48, 0x80,
-	0x67, 0x99, 0xb2, 0x9f, 0x8a, 0x36, 0xe4, 0x7c, 0xa1, 0xe4, 0xb2, 0x4e, 0x4a, 0xae, 0x2e, 0xf1,
-	0x2b, 0xf7, 0xe3, 0x00, 0x91, 0x67, 0x5c, 0x5d, 0x42, 0x89, 0xb8, 0xba, 0xd0, 0x86, 0xf5, 0xef,
-	0xfb, 0x0f, 0xf7, 0xe3, 0x21, 0x00, 0x40, 0x9e, 0xfc, 0x15, 0x74, 0x6f, 0x60, 0xaf, 0xfb, 0x06,
-	0xfa, 0x31, 0x09, 0x64, 0x2d, 0x14, 0x6f, 0xa4, 0xd2, 0x58, 0xd0, 0x11, 0x3b, 0x9e, 0xb8, 0x8e,
-	0x4e, 0x3a, 0x77, 0x4f, 0x3e, 0x03, 0xc9, 0xe9, 0x2c, 0x6e, 0x23, 0xe8, 0x47, 0x64, 0x90, 0x3e,
-	0xe7, 0x55, 0x25, 0x0a, 0x2c, 0xfa, 0xce, 0x60, 0x16, 0x3b, 0x7f, 0xb8, 0x39, 0xaf, 0x1a, 0xa1,
-	0xbe, 0xe3, 0xa9, 0xc0, 0xf6, 0xec, 0x0c, 0x9e, 0xc7, 0x6d, 0x04, 0x9d, 0x11, 0x5f, 0x97, 0x1a,
-	0x7b, 0xb7, 0x33, 0xf0, 0x34, 0x06, 0x5f, 0x48, 0x16, 0xea, 0x25, 0xb4, 0xc6, 0x6e, 0xee, 0x0c,
-	0x7b, 0x14, 0x3b, 0x7f, 0xfa, 0x01, 0x39, 0xd0, 0x0d, 0x6f, 0x96, 0x3a, 0x0c, 0xfe, 0x4b, 0xe4,
-	0x59, 0x6c, 0xdd, 0xc7, 0x8f, 0xc9, 0xc0, 0x96, 0xcd, 0x8d, 0xb3, 0xd7, 0x8e, 0x33, 0x25, 0x7d,
-	0x18, 0x42, 0x3b, 0xfa, 0x68, 0x83, 0x57, 0xbd, 0xce, 0xdc, 0xd0, 0xd7, 0xeb, 0x6c, 0xfc, 0xe7,
-	0x9e, 0xd3, 0x60, 0x38, 0x96, 0xa6, 0x7e, 0xb3, 0x04, 0x47, 0xdd, 0xc3, 0x6e, 0x1f, 0x3a, 0xf0,
-	0x2b, 0x18, 0xf9, 0x63, 0x32, 0xda, 0x3a, 0xe5, 0x75, 0xb8, 0x87, 0x2d, 0x27, 0x0e, 0x7a, 0x5a,
-	0x77, 0x54, 0xf0, 0xed, 0xf9, 0x5d, 0x15, 0x7c, 0x7d, 0x13, 0xf2, 0xe6, 0xd6, 0xa9, 0x90, 0x29,
-	0x2f, 0x8c, 0x6b, 0x1f, 0x5d, 0xef, 0x39, 0xea, 0x0b, 0x60, 0xd0, 0xbf, 0x15, 0x65, 0xc9, 0xf6,
-	0x15, 0xb6, 0xa2, 0xec, 0x4e, 0x6a, 0x0c, 0x52, 0x3b, 0xe8, 0xa4, 0xc6, 0x3a, 0xa9, 0x31, 0x73,
-	0xdf, 0xa0, 0xab, 0x72, 0x27, 0x35, 0x76, 0x3b, 0xb5, 0x61, 0x27, 0x35, 0xd6, 0xa6, 0xd6, 0x5d,
-	0x1b, 0x81, 0x79, 0x20, 0x9d, 0xb5, 0x91, 0x67, 0x85, 0x08, 0x09, 0x12, 0x68, 0x8f, 0x7f, 0xf2,
-	0x5c, 0xd1, 0xe7, 0xf4, 0x1d, 0x32, 0x04, 0xfd, 0x59, 0xb2, 0x50, 0xb6, 0xde, 0x03, 0x3c, 0x3f,
-	0x51, 0x2d, 0xa5, 0x52, 0xfb, 0xf0, 0x0c, 0x15, 0xa7, 0x8e, 0x62, 0x10, 0xe5, 0xb7, 0x14, 0x6b,
-	0xa3, 0x18, 0x44, 0xf5, 0x6f, 0x51, 0x71, 0x0a, 0x8f, 0x75, 0x2d, 0xd5, 0x65, 0x52, 0xca, 0xcc,
-	0x55, 0x70, 0x08, 0xc0, 0x33, 0x99, 0x89, 0xf1, 0xb9, 0xcb, 0xe9, 0x14, 0x0a, 0xb9, 0xe2, 0x45,
-	0x9e, 0x25, 0xa9, 0x5c, 0x56, 0x8d, 0x4d, 0x8b, 0x20, 0xf4, 0x09, 0x20, 0x6e, 0xef, 0x41, 0xf3,
-	0xed, 0xde, 0xa3, 0xa4, 0xff, 0x42, 0xa4, 0xdf, 0xdb, 0xd1, 0x42, 0x7b, 0xfc, 0xad, 0x53, 0x7c,
-	0xf4, 0x8f, 0x9b, 0xe5, 0x6d, 0x18, 0x7b, 0x25, 0x84, 0xdb, 0xce, 0xf6, 0x44, 0xdf, 0x27, 0x87,
-	0x0b, 0xde, 0xa4, 0xcf, 0x93, 0x6a, 0x59, 0x2e, 0x84, 0xb2, 0x92, 0x23, 0xc4, 0xbe, 0x44, 0x68,
-	0xfc, 0xa9, 0x53, 0x3e, 0xa3, 0x6f, 0x91, 0x7d, 0x78, 0x0d, 0xc2, 0x4a, 0x9b, 0x03, 0x56, 0xbd,
-	0x14, 0x39, 0x2a, 0xfb, 0x31, 0xda, 0x90, 0xf4, 0x6a, 0x2b, 0x07, 0xe6, 0x49, 0xda, 0x59, 0x80,
-	0x1f, 0x32, 0x93, 0x12, 0xbe, 0x44, 0xf3, 0xcd, 0xf6, 0xf4, 0xbf, 0xd6, 0xec, 0xcf, 0x5e, 0xf7,
-	0x96, 0xd3, 0x7f, 0x2d, 0x46, 0x7e, 0x51, 0xf1, 0xc2, 0xaa, 0xdb, 0x13, 0x74, 0xb3, 0x12, 0x8d,
-	0x99, 0x79, 0xdb, 0xe8, 0x4a, 0x34, 0x38, 0xee, 0x0f, 0xc8, 0x51, 0x96, 0xeb, 0x54, 0x56, 0x95,
-	0xed, 0x93, 0xe9, 0xf6, 0xa1, 0x05, 0x4d, 0xa7, 0x8e, 0xc9, 0x48, 0x09, 0x2d, 0x1a, 0xeb, 0x62,
-	0x9a, 0x4e, 0x10, 0x42, 0x87, 0x27, 0x67, 0x57, 0xd7, 0x51, 0xef, 0xe5, 0x75, 0xd4, 0x7b, 0x75,
-	0x1d, 0x79, 0x3f, 0x6c, 0x22, 0xef, 0x97, 0x4d, 0xe4, 0xfd, 0xba, 0x89, 0xbc, 0xab, 0x4d, 0xe4,
-	0xfd, 0xb6, 0x89, 0xbc, 0xdf, 0x37, 0x51, 0xef, 0xd5, 0x26, 0xf2, 0x7e, 0xbc, 0x89, 0x7a, 0x57,
-	0x37, 0x51, 0xef, 0xe5, 0x4d, 0xd4, 0xfb, 0xdc, 0x5b, 0x1c, 0xe0, 0x0f, 0x7a, 0xfe, 0x77, 0x00,
-	0x00, 0x00, 0xff, 0xff, 0x6a, 0x20, 0xf5, 0x85, 0xb5, 0x07, 0x00, 0x00,
+	// 811 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xac, 0x55, 0xcd, 0x8e, 0xe3, 0x44,
+	0x10, 0x1e, 0x8f, 0xf3, 0xe7, 0x4e, 0x46, 0x62, 0x1b, 0x84, 0x4c, 0x10, 0xc9, 0x92, 0xbd, 0xec,
+	0x29, 0x4a, 0x3a, 0xb3, 0x0b, 0x1c, 0x38, 0xec, 0x22, 0x04, 0x2b, 0xb1, 0x68, 0x64, 0x81, 0xe0,
+	0x66, 0x75, 0xec, 0x66, 0xc6, 0x8a, 0xed, 0xb6, 0xba, 0x9d, 0x84, 0x79, 0x0b, 0xc4, 0x99, 0x07,
+	0xe2, 0x38, 0x47, 0x8e, 0x68, 0xe6, 0xce, 0x81, 0x17, 0x00, 0x55, 0x75, 0x77, 0x3c, 0x1e, 0x81,
+	0x82, 0xc4, 0xde, 0xaa, 0xbf, 0xaf, 0xea, 0xeb, 0x72, 0x55, 0x75, 0x99, 0x3c, 0xaa, 0x94, 0xac,
+	0x65, 0x22, 0xf3, 0x78, 0x95, 0xcc, 0xd1, 0xa6, 0x83, 0x7d, 0xae, 0xeb, 0x79, 0xb5, 0x66, 0xb3,
+	0x3f, 0x3c, 0x72, 0xf6, 0x5d, 0xae, 0xeb, 0x38, 0x91, 0x45, 0xbc, 0x58, 0x2c, 0x16, 0xf4, 0x7d,
+	0x12, 0x68, 0xa1, 0x76, 0x42, 0xc5, 0x59, 0x15, 0x7a, 0x8f, 0xbd, 0xa7, 0x41, 0x34, 0x30, 0xc0,
+	0xab, 0x8a, 0x4e, 0xc9, 0xd0, 0x92, 0x95, 0x54, 0x75, 0x78, 0x8a, 0x34, 0x31, 0xd0, 0x85, 0x54,
+	0x35, 0x7d, 0x8b, 0xf8, 0xbc, 0x2a, 0x43, 0x1f, 0x09, 0x30, 0xe9, 0x07, 0x84, 0x6c, 0x84, 0xa8,
+	0x62, 0x9e, 0x67, 0x3b, 0x11, 0x76, 0x90, 0x08, 0x00, 0x79, 0x01, 0x00, 0xa5, 0xa4, 0x53, 0x5f,
+	0x57, 0x22, 0xec, 0x22, 0x81, 0x36, 0x88, 0xe8, 0xac, 0x08, 0x7b, 0x46, 0x44, 0x67, 0x05, 0x7d,
+	0x42, 0xce, 0x92, 0xb4, 0xe0, 0xf1, 0x56, 0x0b, 0x55, 0xf2, 0x42, 0x84, 0x7d, 0xe4, 0x46, 0x00,
+	0x7e, 0x6b, 0xb1, 0x83, 0x53, 0xc5, 0xb5, 0xde, 0x4b, 0x95, 0x86, 0x83, 0xc6, 0xe9, 0xc2, 0x62,
+	0xb3, 0xf8, 0xde, 0xf7, 0xae, 0xc4, 0x62, 0x09, 0x09, 0xf0, 0x34, 0x55, 0xf6, 0x53, 0xd1, 0x86,
+	0x9c, 0x2f, 0x95, 0xdc, 0x56, 0x71, 0xc1, 0xd5, 0x06, 0xbf, 0xb2, 0x1b, 0x05, 0x88, 0xbc, 0xe6,
+	0x6a, 0x03, 0x25, 0xe2, 0xea, 0x52, 0x1b, 0xd6, 0x7f, 0xec, 0x3f, 0xed, 0x46, 0x03, 0x00, 0x80,
+	0x9c, 0xfd, 0x15, 0xb4, 0x6f, 0x60, 0x6f, 0xfa, 0x06, 0xfa, 0x29, 0x09, 0x64, 0x25, 0x14, 0xaf,
+	0xa5, 0xd2, 0x58, 0xd0, 0x21, 0x9b, 0xce, 0x5d, 0x47, 0xe7, 0xad, 0xbb, 0xe7, 0x5f, 0x80, 0xe4,
+	0x62, 0x19, 0x35, 0x11, 0xf4, 0x13, 0xd2, 0x4f, 0xae, 0x78, 0x59, 0x8a, 0x1c, 0x8b, 0x7e, 0x34,
+	0x98, 0x45, 0xce, 0x1f, 0x6e, 0xce, 0xca, 0x5a, 0xa8, 0x1f, 0x78, 0x22, 0xb0, 0x3d, 0x47, 0x83,
+	0x57, 0x51, 0x13, 0x41, 0x97, 0xc4, 0xd7, 0x85, 0xc6, 0xde, 0x1d, 0x0d, 0x3c, 0x8f, 0xc0, 0x17,
+	0x92, 0x85, 0x7a, 0x09, 0xad, 0xb1, 0x9b, 0x47, 0xc3, 0x9e, 0x45, 0xce, 0x9f, 0x7e, 0x44, 0x7a,
+	0xba, 0xe6, 0xf5, 0x56, 0x87, 0xc1, 0x7f, 0x89, 0x7c, 0x1e, 0x59, 0xf7, 0xf1, 0x0b, 0xd2, 0xb7,
+	0x65, 0x73, 0xe3, 0xec, 0x35, 0xe3, 0x4c, 0x49, 0x07, 0x86, 0xd0, 0x8e, 0x3e, 0xda, 0xe0, 0x55,
+	0xed, 0x53, 0x37, 0xf4, 0xd5, 0x3e, 0x1d, 0xff, 0x79, 0xea, 0x34, 0x18, 0x8e, 0xa5, 0xa9, 0xdf,
+	0x32, 0xc6, 0x51, 0xf7, 0xb0, 0xdb, 0x23, 0x07, 0x7e, 0x03, 0x23, 0x3f, 0x25, 0xc3, 0x83, 0x53,
+	0x56, 0x85, 0xa7, 0xd8, 0x72, 0xe2, 0xa0, 0x57, 0x55, 0x4b, 0x05, 0xdf, 0x9e, 0xdf, 0x56, 0xc1,
+	0xd7, 0x37, 0x27, 0x6f, 0x1f, 0x9c, 0x72, 0x99, 0xf0, 0xdc, 0xb8, 0x76, 0xd0, 0xf5, 0x91, 0xa3,
+	0xbe, 0x02, 0x06, 0xfd, 0x1b, 0x51, 0x16, 0x1f, 0x5e, 0x61, 0x23, 0xca, 0x1e, 0xa4, 0xc6, 0x20,
+	0xb5, 0x5e, 0x2b, 0x35, 0xd6, 0x4a, 0x8d, 0x99, 0xfb, 0xfa, 0x6d, 0x95, 0x07, 0xa9, 0xb1, 0xfb,
+	0xa9, 0x0d, 0x5a, 0xa9, 0xb1, 0x26, 0xb5, 0xf6, 0xda, 0x08, 0xcc, 0x03, 0x69, 0xad, 0x8d, 0x2c,
+	0xcd, 0x45, 0x48, 0x90, 0x40, 0x7b, 0xfc, 0xb3, 0xe7, 0x8a, 0xbe, 0xa2, 0xef, 0x91, 0x01, 0xe8,
+	0x2f, 0xe3, 0xb5, 0xb2, 0xf5, 0xee, 0xe3, 0xf9, 0xa5, 0x6a, 0x28, 0x95, 0xd8, 0x87, 0x67, 0xa8,
+	0x28, 0x71, 0x14, 0x83, 0x28, 0xbf, 0xa1, 0x58, 0x13, 0xc5, 0x20, 0xaa, 0x73, 0x8f, 0x8a, 0x12,
+	0x78, 0xac, 0x7b, 0xa9, 0x36, 0x71, 0x21, 0x53, 0x57, 0xc1, 0x01, 0x00, 0xaf, 0x65, 0x2a, 0xc6,
+	0x17, 0x2e, 0xa7, 0x73, 0x28, 0xe4, 0x8e, 0xe7, 0x59, 0x1a, 0x27, 0x72, 0x5b, 0xd6, 0x36, 0x2d,
+	0x82, 0xd0, 0x67, 0x80, 0xb8, 0xbd, 0x07, 0xcd, 0xb7, 0x7b, 0x8f, 0x92, 0xce, 0xb5, 0x48, 0x7e,
+	0xb4, 0xa3, 0x85, 0xf6, 0xf8, 0x7b, 0xa7, 0xf8, 0xec, 0x1f, 0x37, 0xcb, 0xbb, 0x30, 0xf6, 0x4a,
+	0x08, 0xb7, 0x9d, 0xed, 0x89, 0x7e, 0x48, 0x46, 0x6b, 0x5e, 0x27, 0x57, 0x71, 0xb9, 0x2d, 0xd6,
+	0x42, 0x59, 0xc9, 0x21, 0x62, 0x5f, 0x23, 0x34, 0xfe, 0xdc, 0x29, 0x3f, 0xa7, 0xef, 0x90, 0x2e,
+	0xbc, 0x06, 0x61, 0xa5, 0xcd, 0x01, 0xab, 0x5e, 0x88, 0x0c, 0x95, 0xfd, 0x08, 0x6d, 0x48, 0x7a,
+	0x77, 0x90, 0x03, 0x73, 0x96, 0xb4, 0x16, 0xe0, 0xc7, 0xcc, 0xa4, 0x84, 0x2f, 0xd1, 0x7c, 0xb3,
+	0x3d, 0xfd, 0xaf, 0x35, 0xfb, 0x8b, 0xd7, 0xbe, 0xe5, 0xfc, 0x5f, 0x8b, 0x91, 0x5d, 0x96, 0x3c,
+	0xb7, 0xea, 0xf6, 0x04, 0xdd, 0x2c, 0x45, 0x6d, 0x66, 0xde, 0x36, 0xba, 0x14, 0x35, 0x8e, 0xfb,
+	0x13, 0x72, 0x96, 0x66, 0x3a, 0x91, 0x65, 0x69, 0xfb, 0x64, 0xba, 0x3d, 0xb2, 0xa0, 0xe9, 0xd4,
+	0x94, 0x0c, 0x95, 0xd0, 0xa2, 0xb6, 0x2e, 0xa6, 0xe9, 0x04, 0x21, 0x74, 0x78, 0x39, 0xfe, 0xf5,
+	0x76, 0xe2, 0xdd, 0xdc, 0x4e, 0xbc, 0xdf, 0x6f, 0x27, 0xde, 0x4f, 0x77, 0x93, 0x93, 0x9b, 0xbb,
+	0xc9, 0xc9, 0x6f, 0x77, 0x93, 0x93, 0x2f, 0xbd, 0x75, 0x0f, 0x7f, 0xc2, 0xab, 0xbf, 0x03, 0x00,
+	0x00, 0xff, 0xff, 0x6a, 0x47, 0xec, 0xc4, 0x99, 0x07, 0x00, 0x00,
 }
 
-func (this *WlstCom_0000) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*WlstCom_0000)
-	if !ok {
-		that2, ok := that.(WlstCom_0000)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.ServerIp != that1.ServerIp {
-		return false
-	}
-	if this.ServerPort != that1.ServerPort {
-		return false
-	}
-	if this.Apn != that1.Apn {
-		return false
-	}
-	if this.KeepAlive != that1.KeepAlive {
-		return false
-	}
-	if this.Type != that1.Type {
-		return false
-	}
-	if this.Sim != that1.Sim {
-		return false
-	}
-	if this.CdmaUsername != that1.CdmaUsername {
-		return false
-	}
-	if this.CdmaPassword != that1.CdmaPassword {
-		return false
-	}
-	return true
-}
-func (this *WlstCom_3E01) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*WlstCom_3E01)
-	if !ok {
-		that2, ok := that.(WlstCom_3E01)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.Addr != that1.Addr {
-		return false
-	}
-	if this.GroupMark != that1.GroupMark {
-		return false
-	}
-	if len(this.ArgsMark) != len(that1.ArgsMark) {
-		return false
-	}
-	for i := range this.ArgsMark {
-		if this.ArgsMark[i] != that1.ArgsMark[i] {
-			return false
-		}
-	}
-	return true
-}
-func (this *WlstCom_3E02) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*WlstCom_3E02)
-	if !ok {
-		that2, ok := that.(WlstCom_3E02)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.Addr != that1.Addr {
-		return false
-	}
-	if this.GroupMark != that1.GroupMark {
-		return false
-	}
-	if len(this.ArgsMark) != len(that1.ArgsMark) {
-		return false
-	}
-	for i := range this.ArgsMark {
-		if this.ArgsMark[i] != that1.ArgsMark[i] {
-			return false
-		}
-	}
-	if !this.Operators.Equal(that1.Operators) {
-		return false
-	}
-	if !this.Channel.Equal(that1.Channel) {
-		return false
-	}
-	if !this.Interface.Equal(that1.Interface) {
-		return false
-	}
-	if !this.Sms.Equal(that1.Sms) {
-		return false
-	}
-	if !this.Address.Equal(that1.Address) {
-		return false
-	}
-	if !this.Status.Equal(that1.Status) {
-		return false
-	}
-	return true
-}
-func (this *WlstCom_3E02_Group01) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*WlstCom_3E02_Group01)
-	if !ok {
-		that2, ok := that.(WlstCom_3E02_Group01)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.Apn != that1.Apn {
-		return false
-	}
-	if this.User != that1.User {
-		return false
-	}
-	if this.Pwd != that1.Pwd {
-		return false
-	}
-	return true
-}
-func (this *WlstCom_3E02_Group02) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*WlstCom_3E02_Group02)
-	if !ok {
-		that2, ok := that.(WlstCom_3E02_Group02)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.Channel1Type != that1.Channel1Type {
-		return false
-	}
-	if len(this.Channel1Ip) != len(that1.Channel1Ip) {
-		return false
-	}
-	for i := range this.Channel1Ip {
-		if this.Channel1Ip[i] != that1.Channel1Ip[i] {
-			return false
-		}
-	}
-	if this.Channel1Port != that1.Channel1Port {
-		return false
-	}
-	if this.Channel1LocalPort != that1.Channel1LocalPort {
-		return false
-	}
-	if this.Channel2Type != that1.Channel2Type {
-		return false
-	}
-	if len(this.Channel2Ip) != len(that1.Channel2Ip) {
-		return false
-	}
-	for i := range this.Channel2Ip {
-		if this.Channel2Ip[i] != that1.Channel2Ip[i] {
-			return false
-		}
-	}
-	if this.Channel2Port != that1.Channel2Port {
-		return false
-	}
-	if this.Channel2LocalPort != that1.Channel2LocalPort {
-		return false
-	}
-	if this.KeepAlive != that1.KeepAlive {
-		return false
-	}
-	if this.Idle != that1.Idle {
-		return false
-	}
-	return true
-}
-func (this *WlstCom_3E02_Group03) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*WlstCom_3E02_Group03)
-	if !ok {
-		that2, ok := that.(WlstCom_3E02_Group03)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.Port1Br != that1.Port1Br {
-		return false
-	}
-	if this.Port1Rc != that1.Port1Rc {
-		return false
-	}
-	if this.Port2Br != that1.Port2Br {
-		return false
-	}
-	if this.Port2Rc != that1.Port2Rc {
-		return false
-	}
-	if this.WorkMode != that1.WorkMode {
-		return false
-	}
-	return true
-}
-func (this *WlstCom_3E02_Group04) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*WlstCom_3E02_Group04)
-	if !ok {
-		that2, ok := that.(WlstCom_3E02_Group04)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.ValidCount != that1.ValidCount {
-		return false
-	}
-	if len(this.Sim) != len(that1.Sim) {
-		return false
-	}
-	for i := range this.Sim {
-		if this.Sim[i] != that1.Sim[i] {
-			return false
-		}
-	}
-	if this.Yecx != that1.Yecx {
-		return false
-	}
-	return true
-}
-func (this *WlstCom_3E02_Group05) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*WlstCom_3E02_Group05)
-	if !ok {
-		that2, ok := that.(WlstCom_3E02_Group05)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.Addr != that1.Addr {
-		return false
-	}
-	if this.Street != that1.Street {
-		return false
-	}
-	if this.BatchNumber != that1.BatchNumber {
-		return false
-	}
-	return true
-}
-func (this *WlstCom_3E02_Group06) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*WlstCom_3E02_Group06)
-	if !ok {
-		that2, ok := that.(WlstCom_3E02_Group06)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.State != that1.State {
-		return false
-	}
-	if this.Imei != that1.Imei {
-		return false
-	}
-	if this.Ver != that1.Ver {
-		return false
-	}
-	return true
-}
-func (this *WlstCom_3E82) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*WlstCom_3E82)
-	if !ok {
-		that2, ok := that.(WlstCom_3E82)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.Status != that1.Status {
-		return false
-	}
-	if this.GroupMark != that1.GroupMark {
-		return false
-	}
-	if len(this.ArgsMark) != len(that1.ArgsMark) {
-		return false
-	}
-	for i := range this.ArgsMark {
-		if this.ArgsMark[i] != that1.ArgsMark[i] {
-			return false
-		}
-	}
-	return true
-}
-func (this *WlstCom_3E84) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*WlstCom_3E84)
-	if !ok {
-		that2, ok := that.(WlstCom_3E84)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.Addr != that1.Addr {
-		return false
-	}
-	if this.Signal != that1.Signal {
-		return false
-	}
-	if this.NetType != that1.NetType {
-		return false
-	}
-	if this.DisconnCount != that1.DisconnCount {
-		return false
-	}
-	if this.ResetCount != that1.ResetCount {
-		return false
-	}
-	return true
-}
-func (this *WlstCom_0000) GoString() string {
-	if this == nil {
-		return "nil"
-	}
-	s := make([]string, 0, 12)
-	s = append(s, "&wlst_pb2.WlstCom_0000{")
-	s = append(s, "ServerIp: "+fmt.Sprintf("%#v", this.ServerIp)+",\n")
-	s = append(s, "ServerPort: "+fmt.Sprintf("%#v", this.ServerPort)+",\n")
-	s = append(s, "Apn: "+fmt.Sprintf("%#v", this.Apn)+",\n")
-	s = append(s, "KeepAlive: "+fmt.Sprintf("%#v", this.KeepAlive)+",\n")
-	s = append(s, "Type: "+fmt.Sprintf("%#v", this.Type)+",\n")
-	s = append(s, "Sim: "+fmt.Sprintf("%#v", this.Sim)+",\n")
-	s = append(s, "CdmaUsername: "+fmt.Sprintf("%#v", this.CdmaUsername)+",\n")
-	s = append(s, "CdmaPassword: "+fmt.Sprintf("%#v", this.CdmaPassword)+",\n")
-	s = append(s, "}")
-	return strings.Join(s, "")
-}
-func (this *WlstCom_3E01) GoString() string {
-	if this == nil {
-		return "nil"
-	}
-	s := make([]string, 0, 7)
-	s = append(s, "&wlst_pb2.WlstCom_3E01{")
-	s = append(s, "Addr: "+fmt.Sprintf("%#v", this.Addr)+",\n")
-	s = append(s, "GroupMark: "+fmt.Sprintf("%#v", this.GroupMark)+",\n")
-	s = append(s, "ArgsMark: "+fmt.Sprintf("%#v", this.ArgsMark)+",\n")
-	s = append(s, "}")
-	return strings.Join(s, "")
-}
-func (this *WlstCom_3E02) GoString() string {
-	if this == nil {
-		return "nil"
-	}
-	s := make([]string, 0, 13)
-	s = append(s, "&wlst_pb2.WlstCom_3E02{")
-	s = append(s, "Addr: "+fmt.Sprintf("%#v", this.Addr)+",\n")
-	s = append(s, "GroupMark: "+fmt.Sprintf("%#v", this.GroupMark)+",\n")
-	s = append(s, "ArgsMark: "+fmt.Sprintf("%#v", this.ArgsMark)+",\n")
-	if this.Operators != nil {
-		s = append(s, "Operators: "+fmt.Sprintf("%#v", this.Operators)+",\n")
-	}
-	if this.Channel != nil {
-		s = append(s, "Channel: "+fmt.Sprintf("%#v", this.Channel)+",\n")
-	}
-	if this.Interface != nil {
-		s = append(s, "Interface: "+fmt.Sprintf("%#v", this.Interface)+",\n")
-	}
-	if this.Sms != nil {
-		s = append(s, "Sms: "+fmt.Sprintf("%#v", this.Sms)+",\n")
-	}
-	if this.Address != nil {
-		s = append(s, "Address: "+fmt.Sprintf("%#v", this.Address)+",\n")
-	}
-	if this.Status != nil {
-		s = append(s, "Status: "+fmt.Sprintf("%#v", this.Status)+",\n")
-	}
-	s = append(s, "}")
-	return strings.Join(s, "")
-}
-func (this *WlstCom_3E02_Group01) GoString() string {
-	if this == nil {
-		return "nil"
-	}
-	s := make([]string, 0, 7)
-	s = append(s, "&wlst_pb2.WlstCom_3E02_Group01{")
-	s = append(s, "Apn: "+fmt.Sprintf("%#v", this.Apn)+",\n")
-	s = append(s, "User: "+fmt.Sprintf("%#v", this.User)+",\n")
-	s = append(s, "Pwd: "+fmt.Sprintf("%#v", this.Pwd)+",\n")
-	s = append(s, "}")
-	return strings.Join(s, "")
-}
-func (this *WlstCom_3E02_Group02) GoString() string {
-	if this == nil {
-		return "nil"
-	}
-	s := make([]string, 0, 14)
-	s = append(s, "&wlst_pb2.WlstCom_3E02_Group02{")
-	s = append(s, "Channel1Type: "+fmt.Sprintf("%#v", this.Channel1Type)+",\n")
-	s = append(s, "Channel1Ip: "+fmt.Sprintf("%#v", this.Channel1Ip)+",\n")
-	s = append(s, "Channel1Port: "+fmt.Sprintf("%#v", this.Channel1Port)+",\n")
-	s = append(s, "Channel1LocalPort: "+fmt.Sprintf("%#v", this.Channel1LocalPort)+",\n")
-	s = append(s, "Channel2Type: "+fmt.Sprintf("%#v", this.Channel2Type)+",\n")
-	s = append(s, "Channel2Ip: "+fmt.Sprintf("%#v", this.Channel2Ip)+",\n")
-	s = append(s, "Channel2Port: "+fmt.Sprintf("%#v", this.Channel2Port)+",\n")
-	s = append(s, "Channel2LocalPort: "+fmt.Sprintf("%#v", this.Channel2LocalPort)+",\n")
-	s = append(s, "KeepAlive: "+fmt.Sprintf("%#v", this.KeepAlive)+",\n")
-	s = append(s, "Idle: "+fmt.Sprintf("%#v", this.Idle)+",\n")
-	s = append(s, "}")
-	return strings.Join(s, "")
-}
-func (this *WlstCom_3E02_Group03) GoString() string {
-	if this == nil {
-		return "nil"
-	}
-	s := make([]string, 0, 9)
-	s = append(s, "&wlst_pb2.WlstCom_3E02_Group03{")
-	s = append(s, "Port1Br: "+fmt.Sprintf("%#v", this.Port1Br)+",\n")
-	s = append(s, "Port1Rc: "+fmt.Sprintf("%#v", this.Port1Rc)+",\n")
-	s = append(s, "Port2Br: "+fmt.Sprintf("%#v", this.Port2Br)+",\n")
-	s = append(s, "Port2Rc: "+fmt.Sprintf("%#v", this.Port2Rc)+",\n")
-	s = append(s, "WorkMode: "+fmt.Sprintf("%#v", this.WorkMode)+",\n")
-	s = append(s, "}")
-	return strings.Join(s, "")
-}
-func (this *WlstCom_3E02_Group04) GoString() string {
-	if this == nil {
-		return "nil"
-	}
-	s := make([]string, 0, 7)
-	s = append(s, "&wlst_pb2.WlstCom_3E02_Group04{")
-	s = append(s, "ValidCount: "+fmt.Sprintf("%#v", this.ValidCount)+",\n")
-	s = append(s, "Sim: "+fmt.Sprintf("%#v", this.Sim)+",\n")
-	s = append(s, "Yecx: "+fmt.Sprintf("%#v", this.Yecx)+",\n")
-	s = append(s, "}")
-	return strings.Join(s, "")
-}
-func (this *WlstCom_3E02_Group05) GoString() string {
-	if this == nil {
-		return "nil"
-	}
-	s := make([]string, 0, 7)
-	s = append(s, "&wlst_pb2.WlstCom_3E02_Group05{")
-	s = append(s, "Addr: "+fmt.Sprintf("%#v", this.Addr)+",\n")
-	s = append(s, "Street: "+fmt.Sprintf("%#v", this.Street)+",\n")
-	s = append(s, "BatchNumber: "+fmt.Sprintf("%#v", this.BatchNumber)+",\n")
-	s = append(s, "}")
-	return strings.Join(s, "")
-}
-func (this *WlstCom_3E02_Group06) GoString() string {
-	if this == nil {
-		return "nil"
-	}
-	s := make([]string, 0, 7)
-	s = append(s, "&wlst_pb2.WlstCom_3E02_Group06{")
-	s = append(s, "State: "+fmt.Sprintf("%#v", this.State)+",\n")
-	s = append(s, "Imei: "+fmt.Sprintf("%#v", this.Imei)+",\n")
-	s = append(s, "Ver: "+fmt.Sprintf("%#v", this.Ver)+",\n")
-	s = append(s, "}")
-	return strings.Join(s, "")
-}
-func (this *WlstCom_3E82) GoString() string {
-	if this == nil {
-		return "nil"
-	}
-	s := make([]string, 0, 7)
-	s = append(s, "&wlst_pb2.WlstCom_3E82{")
-	s = append(s, "Status: "+fmt.Sprintf("%#v", this.Status)+",\n")
-	s = append(s, "GroupMark: "+fmt.Sprintf("%#v", this.GroupMark)+",\n")
-	s = append(s, "ArgsMark: "+fmt.Sprintf("%#v", this.ArgsMark)+",\n")
-	s = append(s, "}")
-	return strings.Join(s, "")
-}
-func (this *WlstCom_3E84) GoString() string {
-	if this == nil {
-		return "nil"
-	}
-	s := make([]string, 0, 9)
-	s = append(s, "&wlst_pb2.WlstCom_3E84{")
-	s = append(s, "Addr: "+fmt.Sprintf("%#v", this.Addr)+",\n")
-	s = append(s, "Signal: "+fmt.Sprintf("%#v", this.Signal)+",\n")
-	s = append(s, "NetType: "+fmt.Sprintf("%#v", this.NetType)+",\n")
-	s = append(s, "DisconnCount: "+fmt.Sprintf("%#v", this.DisconnCount)+",\n")
-	s = append(s, "ResetCount: "+fmt.Sprintf("%#v", this.ResetCount)+",\n")
-	s = append(s, "}")
-	return strings.Join(s, "")
-}
-func valueToGoStringProtocol_3C(v interface{}, typ string) string {
-	rv := reflect.ValueOf(v)
-	if rv.IsNil() {
-		return "nil"
-	}
-	pv := reflect.Indirect(rv).Interface()
-	return fmt.Sprintf("func(v %v) *%v { return &v } ( %#v )", typ, typ, pv)
-}
 func (m *WlstCom_0000) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
@@ -2559,168 +1966,6 @@ func sovProtocol_3C(x uint64) (n int) {
 }
 func sozProtocol_3C(x uint64) (n int) {
 	return sovProtocol_3C(uint64((x << 1) ^ uint64((int64(x) >> 63))))
-}
-func (this *WlstCom_0000) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&WlstCom_0000{`,
-		`ServerIp:` + fmt.Sprintf("%v", this.ServerIp) + `,`,
-		`ServerPort:` + fmt.Sprintf("%v", this.ServerPort) + `,`,
-		`Apn:` + fmt.Sprintf("%v", this.Apn) + `,`,
-		`KeepAlive:` + fmt.Sprintf("%v", this.KeepAlive) + `,`,
-		`Type:` + fmt.Sprintf("%v", this.Type) + `,`,
-		`Sim:` + fmt.Sprintf("%v", this.Sim) + `,`,
-		`CdmaUsername:` + fmt.Sprintf("%v", this.CdmaUsername) + `,`,
-		`CdmaPassword:` + fmt.Sprintf("%v", this.CdmaPassword) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *WlstCom_3E01) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&WlstCom_3E01{`,
-		`Addr:` + fmt.Sprintf("%v", this.Addr) + `,`,
-		`GroupMark:` + fmt.Sprintf("%v", this.GroupMark) + `,`,
-		`ArgsMark:` + fmt.Sprintf("%v", this.ArgsMark) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *WlstCom_3E02) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&WlstCom_3E02{`,
-		`Addr:` + fmt.Sprintf("%v", this.Addr) + `,`,
-		`GroupMark:` + fmt.Sprintf("%v", this.GroupMark) + `,`,
-		`ArgsMark:` + fmt.Sprintf("%v", this.ArgsMark) + `,`,
-		`Operators:` + strings.Replace(fmt.Sprintf("%v", this.Operators), "WlstCom_3E02_Group01", "WlstCom_3E02_Group01", 1) + `,`,
-		`Channel:` + strings.Replace(fmt.Sprintf("%v", this.Channel), "WlstCom_3E02_Group02", "WlstCom_3E02_Group02", 1) + `,`,
-		`Interface:` + strings.Replace(fmt.Sprintf("%v", this.Interface), "WlstCom_3E02_Group03", "WlstCom_3E02_Group03", 1) + `,`,
-		`Sms:` + strings.Replace(fmt.Sprintf("%v", this.Sms), "WlstCom_3E02_Group04", "WlstCom_3E02_Group04", 1) + `,`,
-		`Address:` + strings.Replace(fmt.Sprintf("%v", this.Address), "WlstCom_3E02_Group05", "WlstCom_3E02_Group05", 1) + `,`,
-		`Status:` + strings.Replace(fmt.Sprintf("%v", this.Status), "WlstCom_3E02_Group06", "WlstCom_3E02_Group06", 1) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *WlstCom_3E02_Group01) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&WlstCom_3E02_Group01{`,
-		`Apn:` + fmt.Sprintf("%v", this.Apn) + `,`,
-		`User:` + fmt.Sprintf("%v", this.User) + `,`,
-		`Pwd:` + fmt.Sprintf("%v", this.Pwd) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *WlstCom_3E02_Group02) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&WlstCom_3E02_Group02{`,
-		`Channel1Type:` + fmt.Sprintf("%v", this.Channel1Type) + `,`,
-		`Channel1Ip:` + fmt.Sprintf("%v", this.Channel1Ip) + `,`,
-		`Channel1Port:` + fmt.Sprintf("%v", this.Channel1Port) + `,`,
-		`Channel1LocalPort:` + fmt.Sprintf("%v", this.Channel1LocalPort) + `,`,
-		`Channel2Type:` + fmt.Sprintf("%v", this.Channel2Type) + `,`,
-		`Channel2Ip:` + fmt.Sprintf("%v", this.Channel2Ip) + `,`,
-		`Channel2Port:` + fmt.Sprintf("%v", this.Channel2Port) + `,`,
-		`Channel2LocalPort:` + fmt.Sprintf("%v", this.Channel2LocalPort) + `,`,
-		`KeepAlive:` + fmt.Sprintf("%v", this.KeepAlive) + `,`,
-		`Idle:` + fmt.Sprintf("%v", this.Idle) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *WlstCom_3E02_Group03) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&WlstCom_3E02_Group03{`,
-		`Port1Br:` + fmt.Sprintf("%v", this.Port1Br) + `,`,
-		`Port1Rc:` + fmt.Sprintf("%v", this.Port1Rc) + `,`,
-		`Port2Br:` + fmt.Sprintf("%v", this.Port2Br) + `,`,
-		`Port2Rc:` + fmt.Sprintf("%v", this.Port2Rc) + `,`,
-		`WorkMode:` + fmt.Sprintf("%v", this.WorkMode) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *WlstCom_3E02_Group04) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&WlstCom_3E02_Group04{`,
-		`ValidCount:` + fmt.Sprintf("%v", this.ValidCount) + `,`,
-		`Sim:` + fmt.Sprintf("%v", this.Sim) + `,`,
-		`Yecx:` + fmt.Sprintf("%v", this.Yecx) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *WlstCom_3E02_Group05) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&WlstCom_3E02_Group05{`,
-		`Addr:` + fmt.Sprintf("%v", this.Addr) + `,`,
-		`Street:` + fmt.Sprintf("%v", this.Street) + `,`,
-		`BatchNumber:` + fmt.Sprintf("%v", this.BatchNumber) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *WlstCom_3E02_Group06) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&WlstCom_3E02_Group06{`,
-		`State:` + fmt.Sprintf("%v", this.State) + `,`,
-		`Imei:` + fmt.Sprintf("%v", this.Imei) + `,`,
-		`Ver:` + fmt.Sprintf("%v", this.Ver) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *WlstCom_3E82) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&WlstCom_3E82{`,
-		`Status:` + fmt.Sprintf("%v", this.Status) + `,`,
-		`GroupMark:` + fmt.Sprintf("%v", this.GroupMark) + `,`,
-		`ArgsMark:` + fmt.Sprintf("%v", this.ArgsMark) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *WlstCom_3E84) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&WlstCom_3E84{`,
-		`Addr:` + fmt.Sprintf("%v", this.Addr) + `,`,
-		`Signal:` + fmt.Sprintf("%v", this.Signal) + `,`,
-		`NetType:` + fmt.Sprintf("%v", this.NetType) + `,`,
-		`DisconnCount:` + fmt.Sprintf("%v", this.DisconnCount) + `,`,
-		`ResetCount:` + fmt.Sprintf("%v", this.ResetCount) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func valueToStringProtocol_3C(v interface{}) string {
-	rv := reflect.ValueOf(v)
-	if rv.IsNil() {
-		return "nil"
-	}
-	pv := reflect.Indirect(rv).Interface()
-	return fmt.Sprintf("*%v", pv)
 }
 func (m *WlstCom_0000) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)

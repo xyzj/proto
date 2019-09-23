@@ -10,8 +10,6 @@ import (
 	io "io"
 	math "math"
 	math_bits "math/bits"
-	reflect "reflect"
-	strings "strings"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -39,8 +37,9 @@ type AhhfRtu_6804 struct {
 	Status []int32 `protobuf:"varint,9,rep,packed,name=status,proto3" json:"status,omitempty"`
 }
 
-func (m *AhhfRtu_6804) Reset()      { *m = AhhfRtu_6804{} }
-func (*AhhfRtu_6804) ProtoMessage() {}
+func (m *AhhfRtu_6804) Reset()         { *m = AhhfRtu_6804{} }
+func (m *AhhfRtu_6804) String() string { return proto.CompactTextString(m) }
+func (*AhhfRtu_6804) ProtoMessage()    {}
 func (*AhhfRtu_6804) Descriptor() ([]byte, []int) {
 	return fileDescriptor_905abe2d3bf4d8dd, []int{0}
 }
@@ -127,8 +126,9 @@ type AhhfRtu_6804_SwitchOut struct {
 	SwitchOutLoop []int32 `protobuf:"varint,2,rep,packed,name=switch_out_loop,json=switchOutLoop,proto3" json:"switch_out_loop,omitempty"`
 }
 
-func (m *AhhfRtu_6804_SwitchOut) Reset()      { *m = AhhfRtu_6804_SwitchOut{} }
-func (*AhhfRtu_6804_SwitchOut) ProtoMessage() {}
+func (m *AhhfRtu_6804_SwitchOut) Reset()         { *m = AhhfRtu_6804_SwitchOut{} }
+func (m *AhhfRtu_6804_SwitchOut) String() string { return proto.CompactTextString(m) }
+func (*AhhfRtu_6804_SwitchOut) ProtoMessage()    {}
 func (*AhhfRtu_6804_SwitchOut) Descriptor() ([]byte, []int) {
 	return fileDescriptor_905abe2d3bf4d8dd, []int{0, 0}
 }
@@ -184,8 +184,9 @@ type AhhfRtu_6804_SwitchIn struct {
 	CurrentPhase []int32 `protobuf:"varint,4,rep,packed,name=current_phase,json=currentPhase,proto3" json:"current_phase,omitempty"`
 }
 
-func (m *AhhfRtu_6804_SwitchIn) Reset()      { *m = AhhfRtu_6804_SwitchIn{} }
-func (*AhhfRtu_6804_SwitchIn) ProtoMessage() {}
+func (m *AhhfRtu_6804_SwitchIn) Reset()         { *m = AhhfRtu_6804_SwitchIn{} }
+func (m *AhhfRtu_6804_SwitchIn) String() string { return proto.CompactTextString(m) }
+func (*AhhfRtu_6804_SwitchIn) ProtoMessage()    {}
 func (*AhhfRtu_6804_SwitchIn) Descriptor() ([]byte, []int) {
 	return fileDescriptor_905abe2d3bf4d8dd, []int{0, 1}
 }
@@ -255,8 +256,9 @@ type AhhfRtu_6804_SwitchInLimit struct {
 	CurrentLowlimit []float64 `protobuf:"fixed64,4,rep,packed,name=current_lowlimit,json=currentLowlimit,proto3" json:"current_lowlimit,omitempty"`
 }
 
-func (m *AhhfRtu_6804_SwitchInLimit) Reset()      { *m = AhhfRtu_6804_SwitchInLimit{} }
-func (*AhhfRtu_6804_SwitchInLimit) ProtoMessage() {}
+func (m *AhhfRtu_6804_SwitchInLimit) Reset()         { *m = AhhfRtu_6804_SwitchInLimit{} }
+func (m *AhhfRtu_6804_SwitchInLimit) String() string { return proto.CompactTextString(m) }
+func (*AhhfRtu_6804_SwitchInLimit) ProtoMessage()    {}
 func (*AhhfRtu_6804_SwitchInLimit) Descriptor() ([]byte, []int) {
 	return fileDescriptor_905abe2d3bf4d8dd, []int{0, 2}
 }
@@ -333,8 +335,9 @@ type WxjyEsu_5500 struct {
 	XVoltage []int32 `protobuf:"varint,3,rep,packed,name=x_voltage,json=xVoltage,proto3" json:"x_voltage,omitempty"`
 }
 
-func (m *WxjyEsu_5500) Reset()      { *m = WxjyEsu_5500{} }
-func (*WxjyEsu_5500) ProtoMessage() {}
+func (m *WxjyEsu_5500) Reset()         { *m = WxjyEsu_5500{} }
+func (m *WxjyEsu_5500) String() string { return proto.CompactTextString(m) }
+func (*WxjyEsu_5500) ProtoMessage()    {}
 func (*WxjyEsu_5500) Descriptor() ([]byte, []int) {
 	return fileDescriptor_905abe2d3bf4d8dd, []int{1}
 }
@@ -401,8 +404,9 @@ type WxjyEsuD700 struct {
 	PhaseCOut int32 `protobuf:"varint,6,opt,name=phase_c_out,json=phaseCOut,proto3" json:"phase_c_out,omitempty"`
 }
 
-func (m *WxjyEsuD700) Reset()      { *m = WxjyEsuD700{} }
-func (*WxjyEsuD700) ProtoMessage() {}
+func (m *WxjyEsuD700) Reset()         { *m = WxjyEsuD700{} }
+func (m *WxjyEsuD700) String() string { return proto.CompactTextString(m) }
+func (*WxjyEsuD700) ProtoMessage()    {}
 func (*WxjyEsuD700) Descriptor() ([]byte, []int) {
 	return fileDescriptor_905abe2d3bf4d8dd, []int{2}
 }
@@ -480,8 +484,9 @@ type WxjyEsuD800 struct {
 	Status string `protobuf:"bytes,1,opt,name=status,proto3" json:"status,omitempty"`
 }
 
-func (m *WxjyEsuD800) Reset()      { *m = WxjyEsuD800{} }
-func (*WxjyEsuD800) ProtoMessage() {}
+func (m *WxjyEsuD800) Reset()         { *m = WxjyEsuD800{} }
+func (m *WxjyEsuD800) String() string { return proto.CompactTextString(m) }
+func (*WxjyEsuD800) ProtoMessage()    {}
 func (*WxjyEsuD800) Descriptor() ([]byte, []int) {
 	return fileDescriptor_905abe2d3bf4d8dd, []int{3}
 }
@@ -533,8 +538,9 @@ type BlkSlu_6891 struct {
 	Status int32 `protobuf:"varint,5,opt,name=status,proto3" json:"status,omitempty"`
 }
 
-func (m *BlkSlu_6891) Reset()      { *m = BlkSlu_6891{} }
-func (*BlkSlu_6891) ProtoMessage() {}
+func (m *BlkSlu_6891) Reset()         { *m = BlkSlu_6891{} }
+func (m *BlkSlu_6891) String() string { return proto.CompactTextString(m) }
+func (*BlkSlu_6891) ProtoMessage()    {}
 func (*BlkSlu_6891) Descriptor() ([]byte, []int) {
 	return fileDescriptor_905abe2d3bf4d8dd, []int{4}
 }
@@ -606,8 +612,9 @@ type BlkSlu_6892 struct {
 	SluitemData []*BlkSlu_6892_SluitemData `protobuf:"bytes,2,rep,name=sluitem_data,json=sluitemData,proto3" json:"sluitem_data,omitempty"`
 }
 
-func (m *BlkSlu_6892) Reset()      { *m = BlkSlu_6892{} }
-func (*BlkSlu_6892) ProtoMessage() {}
+func (m *BlkSlu_6892) Reset()         { *m = BlkSlu_6892{} }
+func (m *BlkSlu_6892) String() string { return proto.CompactTextString(m) }
+func (*BlkSlu_6892) ProtoMessage()    {}
 func (*BlkSlu_6892) Descriptor() ([]byte, []int) {
 	return fileDescriptor_905abe2d3bf4d8dd, []int{5}
 }
@@ -669,8 +676,9 @@ type BlkSlu_6892_SluitemData struct {
 	SluitemLoop int32 `protobuf:"varint,8,opt,name=sluitem_loop,json=sluitemLoop,proto3" json:"sluitem_loop,omitempty"`
 }
 
-func (m *BlkSlu_6892_SluitemData) Reset()      { *m = BlkSlu_6892_SluitemData{} }
-func (*BlkSlu_6892_SluitemData) ProtoMessage() {}
+func (m *BlkSlu_6892_SluitemData) Reset()         { *m = BlkSlu_6892_SluitemData{} }
+func (m *BlkSlu_6892_SluitemData) String() string { return proto.CompactTextString(m) }
+func (*BlkSlu_6892_SluitemData) ProtoMessage()    {}
 func (*BlkSlu_6892_SluitemData) Descriptor() ([]byte, []int) {
 	return fileDescriptor_905abe2d3bf4d8dd, []int{5, 0}
 }
@@ -773,8 +781,9 @@ type BlkSlu_6895 struct {
 	Status int32 `protobuf:"varint,10,opt,name=status,proto3" json:"status,omitempty"`
 }
 
-func (m *BlkSlu_6895) Reset()      { *m = BlkSlu_6895{} }
-func (*BlkSlu_6895) ProtoMessage() {}
+func (m *BlkSlu_6895) Reset()         { *m = BlkSlu_6895{} }
+func (m *BlkSlu_6895) String() string { return proto.CompactTextString(m) }
+func (*BlkSlu_6895) ProtoMessage()    {}
 func (*BlkSlu_6895) Descriptor() ([]byte, []int) {
 	return fileDescriptor_905abe2d3bf4d8dd, []int{6}
 }
@@ -892,728 +901,67 @@ func init() {
 func init() { proto.RegisterFile("protocol_tp.proto", fileDescriptor_905abe2d3bf4d8dd) }
 
 var fileDescriptor_905abe2d3bf4d8dd = []byte{
-	// 949 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x9c, 0x56, 0x4d, 0x6f, 0xe3, 0xc4,
-	0x1f, 0xce, 0x24, 0x75, 0x5e, 0x7e, 0x6d, 0xda, 0xfe, 0x67, 0xf5, 0x5f, 0xbc, 0x61, 0x31, 0x6d,
-	0xd0, 0xaa, 0x11, 0x2b, 0x42, 0xe8, 0xd2, 0x65, 0xb9, 0x20, 0x35, 0x45, 0x88, 0x48, 0x85, 0xae,
-	0xdc, 0xb2, 0x1c, 0x47, 0x4e, 0x3c, 0xdd, 0x9a, 0x3a, 0x1e, 0xcb, 0x1e, 0x6f, 0xd2, 0x1b, 0x1f,
-	0x81, 0x8f, 0x81, 0xf8, 0x02, 0x88, 0x6f, 0xb0, 0xdc, 0x7a, 0xec, 0x91, 0xa6, 0x07, 0xf6, 0xb8,
-	0x1f, 0x01, 0xcd, 0x78, 0xc6, 0x9e, 0x44, 0x42, 0x2b, 0x71, 0xcb, 0x3c, 0xcf, 0x33, 0x8f, 0x7f,
-	0xaf, 0x76, 0xe0, 0x7f, 0x71, 0xc2, 0x38, 0x9b, 0xb0, 0x90, 0xf0, 0xb8, 0x2f, 0x7f, 0xe3, 0xe6,
-	0x2c, 0x4c, 0x79, 0x3f, 0x1e, 0xef, 0x77, 0xff, 0xae, 0x43, 0xfb, 0xf0, 0xe2, 0xe2, 0x9c, 0x24,
-	0x3c, 0x23, 0x4f, 0x9f, 0x0d, 0x3e, 0xc7, 0xef, 0x41, 0x63, 0x32, 0xf5, 0x49, 0xe0, 0xcf, 0x6d,
-	0xb4, 0x83, 0x7a, 0x96, 0x5b, 0x9f, 0x4c, 0xfd, 0x91, 0x3f, 0xc7, 0x1f, 0x42, 0xcb, 0xf7, 0xb8,
-	0x47, 0xa6, 0x5e, 0x72, 0x69, 0x57, 0x77, 0x6a, 0x3d, 0x6b, 0x58, 0xdd, 0x46, 0x6e, 0x53, 0x80,
-	0xdf, 0x79, 0xc9, 0x25, 0xde, 0x05, 0x90, 0x82, 0x98, 0x05, 0x11, 0xb7, 0x6b, 0x85, 0x42, 0x5e,
-	0x7b, 0x2e, 0x40, 0x7c, 0x08, 0x90, 0xce, 0x02, 0x3e, 0xb9, 0x20, 0x2c, 0xe3, 0xf6, 0xda, 0x0e,
-	0xea, 0xad, 0xef, 0x77, 0xfb, 0x3a, 0x9a, 0xfe, 0x52, 0x24, 0xfd, 0xd3, 0x42, 0xe9, 0xb6, 0xf2,
-	0x5b, 0x27, 0x19, 0xc7, 0x5f, 0x81, 0x3a, 0x90, 0x20, 0xb2, 0x2d, 0xe9, 0xb0, 0xfb, 0x0e, 0x87,
-	0x20, 0x72, 0x9b, 0xf9, 0x9d, 0x51, 0x84, 0x4f, 0x60, 0xab, 0xb8, 0x4f, 0xc2, 0x60, 0x1a, 0x70,
-	0xbb, 0x2e, 0x5d, 0xf6, 0xde, 0xe9, 0x92, 0xcb, 0xdd, 0xb6, 0xf6, 0x3a, 0x16, 0x47, 0xdc, 0x81,
-	0x7a, 0xca, 0x3d, 0x9e, 0xa5, 0x76, 0xab, 0x48, 0x59, 0x21, 0x9d, 0x31, 0x40, 0x99, 0x05, 0xee,
-	0xc1, 0x76, 0x99, 0x3d, 0xe1, 0x8c, 0x7b, 0xa1, 0xaa, 0xf1, 0x66, 0x91, 0xdf, 0x99, 0x40, 0xf1,
-	0xc7, 0x45, 0x90, 0x42, 0x19, 0x32, 0x16, 0x1b, 0x15, 0x6f, 0x17, 0xe2, 0x63, 0xc6, 0xe2, 0xce,
-	0x1f, 0x08, 0x5a, 0x45, 0x88, 0xf8, 0x53, 0xb8, 0xf7, 0x8a, 0x85, 0xdc, 0x7b, 0x49, 0x09, 0x4f,
-	0xbc, 0x28, 0x3d, 0x67, 0xc9, 0x94, 0x26, 0xea, 0x31, 0x58, 0x51, 0x67, 0x25, 0x83, 0x3f, 0x00,
-	0x10, 0xfe, 0x2a, 0x9c, 0xaa, 0xd4, 0xb5, 0x04, 0x92, 0x47, 0xf2, 0x04, 0xee, 0x4d, 0xb2, 0x24,
-	0xa1, 0x11, 0x5f, 0xf2, 0x2b, 0xbb, 0x8b, 0x15, 0x6d, 0x7a, 0xee, 0x41, 0x5b, 0x5f, 0x8a, 0x2f,
-	0xbc, 0x94, 0xda, 0x6b, 0x85, 0x7c, 0x43, 0x11, 0xcf, 0x05, 0xde, 0x79, 0x83, 0x60, 0x6b, 0xa5,
-	0xbc, 0x2b, 0x01, 0x59, 0xab, 0x01, 0x3d, 0x86, 0x2d, 0x9d, 0x60, 0x16, 0xe7, 0xfd, 0x43, 0x3b,
-	0xb5, 0x1e, 0x92, 0xee, 0x9b, 0x8a, 0xfa, 0x21, 0x67, 0xf0, 0x27, 0xb0, 0xad, 0xc5, 0x21, 0x9b,
-	0xe5, 0xea, 0x6a, 0xa1, 0xd6, 0x46, 0xc7, 0x8a, 0x12, 0xde, 0x3a, 0x6e, 0xed, 0x5d, 0x2b, 0xbd,
-	0x15, 0x65, 0x78, 0x6b, 0x71, 0xe1, 0xbd, 0x56, 0x7a, 0x2b, 0x4e, 0x7b, 0x77, 0xcf, 0xa1, 0xfd,
-	0xe3, 0xfc, 0xa7, 0x2b, 0x42, 0xd3, 0x8c, 0x1c, 0x1c, 0x0c, 0x06, 0xf8, 0x01, 0x34, 0x79, 0x30,
-	0xa5, 0x24, 0x62, 0x33, 0xd9, 0x9e, 0x96, 0xdb, 0x10, 0xe7, 0xef, 0xd9, 0x0c, 0x3f, 0x80, 0xfa,
-	0x9c, 0x88, 0x83, 0xd1, 0x75, 0x6b, 0x7e, 0x16, 0x4c, 0xa9, 0xd8, 0xc2, 0x39, 0x51, 0x71, 0x1b,
-	0x5d, 0x68, 0xce, 0x5f, 0xe4, 0x58, 0xf7, 0x4f, 0x64, 0x3c, 0xc8, 0xff, 0x62, 0x30, 0xc0, 0x0f,
-	0x01, 0x64, 0x17, 0x88, 0x27, 0x56, 0x26, 0x9f, 0x84, 0xa6, 0x44, 0x0e, 0x47, 0x51, 0xc9, 0x8e,
-	0x05, 0x5b, 0x35, 0xd8, 0xa1, 0xc9, 0x4e, 0x04, 0x5b, 0x33, 0xd8, 0xa3, 0x51, 0x84, 0x1d, 0x58,
-	0xd7, 0xce, 0x7a, 0x9f, 0x2d, 0xb7, 0x95, 0x5b, 0x8b, 0x5d, 0x2d, 0xf8, 0xb1, 0xe4, 0x2d, 0x83,
-	0x1f, 0x2e, 0xf1, 0x13, 0xc9, 0xd7, 0x0d, 0xfe, 0xe8, 0x24, 0xe3, 0xdd, 0x3d, 0x33, 0x95, 0x67,
-	0x83, 0x01, 0xbe, 0x5f, 0xec, 0x5a, 0x5e, 0x31, 0x75, 0xea, 0xfe, 0x86, 0x60, 0x63, 0x18, 0x5e,
-	0x92, 0x34, 0x14, 0x3b, 0xfb, 0xe5, 0x67, 0xf8, 0xff, 0x50, 0x17, 0xbf, 0x03, 0x5f, 0xe5, 0x6b,
-	0xa5, 0x61, 0x36, 0xf2, 0xc5, 0x6c, 0xa5, 0x61, 0x16, 0x70, 0x3a, 0x15, 0x94, 0x1a, 0x76, 0x85,
-	0x8c, 0x7c, 0xfc, 0x08, 0x36, 0x35, 0x3d, 0x61, 0xd1, 0x79, 0xf0, 0x52, 0x66, 0x5c, 0x73, 0xdb,
-	0x0a, 0x3d, 0x92, 0x20, 0x7e, 0x04, 0x1b, 0x5a, 0x26, 0x57, 0xb3, 0x9c, 0xee, 0x75, 0x85, 0x8b,
-	0xc5, 0x34, 0x82, 0xcd, 0x13, 0xd7, 0xc1, 0xbe, 0xae, 0x2e, 0x05, 0xbb, 0xff, 0x6f, 0xc1, 0x7e,
-	0x53, 0x3e, 0x46, 0xbc, 0x41, 0xe5, 0x2c, 0xac, 0xef, 0x7f, 0x54, 0xbe, 0xa6, 0x4c, 0x93, 0xfe,
-	0xa9, 0x21, 0x2d, 0xe2, 0xf8, 0xda, 0xe3, 0x5e, 0xe7, 0x06, 0xc1, 0x86, 0xc9, 0xe2, 0x87, 0xd0,
-	0xd0, 0x13, 0x54, 0xae, 0x8e, 0x86, 0x04, 0xab, 0x66, 0xd7, 0x58, 0x15, 0x0d, 0x61, 0x1b, 0xac,
-	0x98, 0xcd, 0xd4, 0x1b, 0x20, 0xe7, 0x72, 0x40, 0x30, 0x34, 0x49, 0x58, 0x62, 0x5b, 0xe5, 0xcc,
-	0x4a, 0x00, 0xdf, 0x87, 0xb5, 0x88, 0xf9, 0xd4, 0xae, 0x17, 0x84, 0x3c, 0xaf, 0x74, 0xa3, 0xb1,
-	0xda, 0x8d, 0xdd, 0x95, 0x32, 0x37, 0xa5, 0xc0, 0x2c, 0x71, 0xf7, 0xf7, 0xe5, 0x52, 0x1e, 0xfc,
-	0xc7, 0xbe, 0xbf, 0x0f, 0x2d, 0xcf, 0xf7, 0x13, 0xc2, 0xaf, 0x62, 0xaa, 0x87, 0x5c, 0x00, 0x67,
-	0x57, 0x31, 0x15, 0x43, 0xc1, 0x62, 0x9a, 0x78, 0x3c, 0x60, 0x51, 0xae, 0xc8, 0xe7, 0xbc, 0x5d,
-	0xa0, 0x52, 0xf6, 0x18, 0xb6, 0x4a, 0xd9, 0x2b, 0x2f, 0xcc, 0xa8, 0x51, 0x88, 0xd2, 0xe1, 0x85,
-	0x60, 0xf4, 0xee, 0x27, 0x22, 0x9a, 0x7c, 0xea, 0xe5, 0xee, 0x27, 0x23, 0x5f, 0x50, 0x33, 0x4a,
-	0x2f, 0x49, 0x4a, 0xb9, 0xdd, 0x10, 0x06, 0x6e, 0x43, 0x9c, 0x4f, 0x29, 0x2f, 0xde, 0x18, 0x82,
-	0x6a, 0x96, 0xb7, 0x04, 0x65, 0x7c, 0xb5, 0x5b, 0x4b, 0x5f, 0xed, 0x72, 0x08, 0xc1, 0x1c, 0xc2,
-	0xe1, 0xd3, 0xeb, 0x5b, 0xa7, 0x72, 0x73, 0xeb, 0x54, 0xde, 0xde, 0x3a, 0xe8, 0xe7, 0x85, 0x83,
-	0x7e, 0x5d, 0x38, 0xe8, 0xf5, 0xc2, 0x41, 0xd7, 0x0b, 0x07, 0xfd, 0xb5, 0x70, 0xd0, 0x9b, 0x85,
-	0x53, 0x79, 0xbb, 0x70, 0xd0, 0x2f, 0x77, 0x4e, 0xe5, 0xfa, 0xce, 0xa9, 0xdc, 0xdc, 0x39, 0x95,
-	0x6f, 0xd1, 0xb8, 0x2e, 0xff, 0x41, 0x3c, 0xf9, 0x27, 0x00, 0x00, 0xff, 0xff, 0xe2, 0x28, 0x5d,
-	0xa2, 0x56, 0x08, 0x00, 0x00,
+	// 916 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x9c, 0x56, 0xdf, 0x6e, 0xdb, 0x54,
+	0x1c, 0xae, 0x93, 0xda, 0x89, 0x7f, 0x6d, 0xda, 0x72, 0x26, 0x86, 0x17, 0x46, 0x68, 0x83, 0xa6,
+	0x56, 0x4c, 0x84, 0xd0, 0x51, 0x18, 0x37, 0x48, 0x4d, 0x11, 0x22, 0x52, 0xa1, 0x93, 0x5b, 0xc6,
+	0xe5, 0x91, 0x13, 0x9f, 0xae, 0xa6, 0x8e, 0x8f, 0x65, 0x1f, 0x2f, 0xe9, 0x5b, 0xf0, 0x1c, 0xbc,
+	0x00, 0xe2, 0x0d, 0xc6, 0xdd, 0x2e, 0x77, 0x89, 0xda, 0x0b, 0x78, 0x0c, 0x74, 0xfe, 0xfa, 0x24,
+	0x12, 0x9a, 0xb4, 0xbb, 0x9c, 0xef, 0xfb, 0xce, 0xe7, 0xdf, 0x5f, 0x3b, 0xf0, 0x5e, 0x5e, 0x50,
+	0x46, 0xa7, 0x34, 0xc5, 0x2c, 0x1f, 0x88, 0xdf, 0xa8, 0x3d, 0x4f, 0x4b, 0x36, 0xc8, 0x27, 0x87,
+	0xfd, 0x7f, 0x3c, 0xe8, 0x1c, 0x5f, 0x5d, 0x5d, 0xe2, 0x82, 0x55, 0xf8, 0xab, 0xa7, 0xc3, 0x2f,
+	0xd1, 0x07, 0xd0, 0x9a, 0xce, 0x62, 0x9c, 0xc4, 0x8b, 0xc0, 0xd9, 0x75, 0x0e, 0xdc, 0xd0, 0x9b,
+	0xce, 0xe2, 0x71, 0xbc, 0x40, 0x1f, 0x83, 0x1f, 0x47, 0x2c, 0xc2, 0xb3, 0xa8, 0xb8, 0x0e, 0x1a,
+	0xbb, 0xcd, 0x03, 0x77, 0xd4, 0xd8, 0x71, 0xc2, 0x36, 0x07, 0x7f, 0x8c, 0x8a, 0x6b, 0xb4, 0x07,
+	0x20, 0x04, 0x39, 0x4d, 0x32, 0x16, 0x34, 0x8d, 0x42, 0x5c, 0x7b, 0xc6, 0x41, 0x74, 0x0c, 0x50,
+	0xce, 0x13, 0x36, 0xbd, 0xc2, 0xb4, 0x62, 0xc1, 0xfa, 0xae, 0x73, 0xb0, 0x71, 0xd8, 0x1f, 0xe8,
+	0x68, 0x06, 0x4b, 0x91, 0x0c, 0xce, 0x8d, 0x32, 0xf4, 0xe5, 0xad, 0xb3, 0x8a, 0xa1, 0x6f, 0x41,
+	0x1d, 0x70, 0x92, 0x05, 0xae, 0x70, 0xd8, 0x7b, 0x8b, 0x43, 0x92, 0x85, 0x6d, 0x79, 0x67, 0x9c,
+	0xa1, 0x33, 0xd8, 0x36, 0xf7, 0x71, 0x9a, 0xcc, 0x12, 0x16, 0x78, 0xc2, 0x65, 0xff, 0xad, 0x2e,
+	0x52, 0x1e, 0x76, 0xb4, 0xd7, 0x29, 0x3f, 0xa2, 0x2e, 0x78, 0x25, 0x8b, 0x58, 0x55, 0x06, 0xbe,
+	0x49, 0x59, 0x21, 0xdd, 0x09, 0x40, 0x9d, 0x05, 0x3a, 0x80, 0x9d, 0x3a, 0x7b, 0xcc, 0x28, 0x8b,
+	0x52, 0x55, 0xe3, 0x2d, 0x93, 0xdf, 0x05, 0x47, 0xd1, 0xa7, 0x26, 0x48, 0xae, 0x4c, 0x29, 0xcd,
+	0xad, 0x8a, 0x77, 0x8c, 0xf8, 0x94, 0xd2, 0xbc, 0xfb, 0xa7, 0x03, 0xbe, 0x09, 0x11, 0x7d, 0x0e,
+	0xf7, 0x5e, 0xd2, 0x94, 0x45, 0x2f, 0x08, 0x66, 0x45, 0x94, 0x95, 0x97, 0xb4, 0x98, 0x91, 0x42,
+	0x3d, 0x06, 0x29, 0xea, 0xa2, 0x66, 0xd0, 0x47, 0x00, 0xdc, 0x5f, 0x85, 0xd3, 0x10, 0x3a, 0x9f,
+	0x23, 0x32, 0x92, 0x27, 0x70, 0x6f, 0x5a, 0x15, 0x05, 0xc9, 0xd8, 0x92, 0x5f, 0xdd, 0x5d, 0xa4,
+	0x68, 0xdb, 0x73, 0x1f, 0x3a, 0xfa, 0x52, 0x7e, 0x15, 0x95, 0x24, 0x58, 0x37, 0xf2, 0x4d, 0x45,
+	0x3c, 0xe3, 0x78, 0xf7, 0x5f, 0x07, 0xb6, 0x57, 0xca, 0xbb, 0x12, 0x90, 0xbb, 0x1a, 0xd0, 0x63,
+	0xd8, 0xd6, 0x09, 0x56, 0xb9, 0xec, 0x9f, 0xb3, 0xdb, 0x3c, 0x70, 0x84, 0xfb, 0x96, 0xa2, 0x7e,
+	0x96, 0x0c, 0xfa, 0x0c, 0x76, 0xb4, 0x38, 0xa5, 0x73, 0xa9, 0x6e, 0x18, 0xb5, 0x36, 0x3a, 0x55,
+	0x14, 0xf7, 0xd6, 0x71, 0x6b, 0xef, 0x66, 0xed, 0xad, 0x28, 0xcb, 0x5b, 0x8b, 0x8d, 0xf7, 0x7a,
+	0xed, 0xad, 0x38, 0xed, 0xdd, 0xbf, 0x84, 0xce, 0x2f, 0x8b, 0x5f, 0x6f, 0x30, 0x29, 0x2b, 0x7c,
+	0x74, 0x34, 0x1c, 0xa2, 0x07, 0xd0, 0x66, 0xc9, 0x8c, 0xe0, 0x8c, 0xce, 0x45, 0x7b, 0xfc, 0xb0,
+	0xc5, 0xcf, 0x3f, 0xd1, 0x39, 0x7a, 0x00, 0xde, 0x02, 0xf3, 0x83, 0xd5, 0x75, 0x77, 0x71, 0x91,
+	0xcc, 0x08, 0xdf, 0xc2, 0x05, 0x56, 0x71, 0x5b, 0x5d, 0x68, 0x2f, 0x9e, 0x4b, 0xac, 0xff, 0x97,
+	0x63, 0x3d, 0x28, 0xfe, 0x7a, 0x38, 0x44, 0x0f, 0x01, 0x44, 0x17, 0x70, 0xc4, 0x57, 0x46, 0x4e,
+	0x42, 0x5b, 0x20, 0xc7, 0xe3, 0xac, 0x66, 0x27, 0x9c, 0x6d, 0x58, 0xec, 0xc8, 0x66, 0xa7, 0x9c,
+	0x6d, 0x5a, 0xec, 0xc9, 0x38, 0x43, 0x3d, 0xd8, 0xd0, 0xce, 0x7a, 0x9f, 0xdd, 0xd0, 0x97, 0xd6,
+	0x7c, 0x57, 0x0d, 0x3f, 0x11, 0xbc, 0x6b, 0xf1, 0xa3, 0x25, 0x7e, 0x2a, 0x78, 0xcf, 0xe2, 0x4f,
+	0xce, 0x2a, 0xd6, 0xdf, 0xb7, 0x53, 0x79, 0x3a, 0x1c, 0xa2, 0xfb, 0x66, 0xd7, 0x64, 0xc5, 0xd4,
+	0xa9, 0xff, 0xbb, 0x03, 0x9b, 0xa3, 0xf4, 0x1a, 0x97, 0x29, 0xdf, 0xd9, 0x6f, 0xbe, 0x40, 0xef,
+	0x83, 0xc7, 0x7f, 0x27, 0xb1, 0xca, 0xd7, 0x2d, 0xd3, 0x6a, 0x1c, 0xf3, 0xd9, 0x2a, 0xd3, 0x2a,
+	0x61, 0x64, 0xc6, 0x29, 0x35, 0xec, 0x0a, 0x19, 0xc7, 0xe8, 0x11, 0x6c, 0x69, 0x7a, 0x4a, 0xb3,
+	0xcb, 0xe4, 0x85, 0xc8, 0xb8, 0x19, 0x76, 0x14, 0x7a, 0x22, 0x40, 0xf4, 0x08, 0x36, 0xb5, 0x4c,
+	0xac, 0x66, 0x3d, 0xdd, 0x1b, 0x0a, 0xe7, 0x8b, 0x69, 0x05, 0x2b, 0x13, 0xd7, 0xc1, 0xbe, 0x6a,
+	0x2c, 0x05, 0x7b, 0xf8, 0x7f, 0xc1, 0x7e, 0x5f, 0x3f, 0x86, 0xbf, 0x41, 0xc5, 0x2c, 0x6c, 0x1c,
+	0x7e, 0x52, 0xbf, 0xa6, 0x6c, 0x93, 0xc1, 0xb9, 0x25, 0x35, 0x71, 0x7c, 0x17, 0xb1, 0xa8, 0xfb,
+	0xc6, 0x81, 0x4d, 0x9b, 0x45, 0x0f, 0xa1, 0xa5, 0x27, 0xa8, 0x5e, 0x1d, 0x0d, 0x71, 0x56, 0xcd,
+	0xae, 0xb5, 0x2a, 0x1a, 0x42, 0x01, 0xb8, 0x39, 0x9d, 0xab, 0x37, 0x80, 0xe4, 0x24, 0xc0, 0x19,
+	0x52, 0x14, 0xb4, 0x08, 0xdc, 0x7a, 0x66, 0x05, 0x80, 0xee, 0xc3, 0x7a, 0x46, 0x63, 0x12, 0x78,
+	0x86, 0x10, 0xe7, 0x95, 0x6e, 0xb4, 0x56, 0xbb, 0xb1, 0xb7, 0x52, 0xe6, 0xb6, 0x10, 0xd8, 0x25,
+	0xee, 0xff, 0xb1, 0x5c, 0xca, 0xa3, 0x77, 0xec, 0xfb, 0x87, 0xe0, 0x47, 0x71, 0x5c, 0x60, 0x76,
+	0x93, 0x13, 0x3d, 0xe4, 0x1c, 0xb8, 0xb8, 0xc9, 0x09, 0x1f, 0x0a, 0x9a, 0x93, 0x22, 0x62, 0x09,
+	0xcd, 0xa4, 0x42, 0xce, 0x79, 0xc7, 0xa0, 0x42, 0xf6, 0x18, 0xb6, 0x6b, 0xd9, 0xcb, 0x28, 0xad,
+	0x88, 0x55, 0x88, 0xda, 0xe1, 0x39, 0x67, 0xf4, 0xee, 0x17, 0x3c, 0x1a, 0x39, 0xf5, 0x62, 0xf7,
+	0x8b, 0x71, 0xcc, 0xa9, 0x39, 0x21, 0xd7, 0xb8, 0x24, 0x2c, 0x68, 0x71, 0x83, 0xb0, 0xc5, 0xcf,
+	0xe7, 0x84, 0x99, 0x37, 0x06, 0xa7, 0xda, 0xf5, 0x2d, 0x4e, 0x59, 0x5f, 0x6d, 0x7f, 0xe9, 0xab,
+	0x5d, 0x0f, 0x21, 0xd8, 0x43, 0x38, 0xea, 0xbe, 0xba, 0xed, 0x39, 0xaf, 0x6f, 0x7b, 0xce, 0xdf,
+	0xb7, 0x3d, 0xe7, 0xb7, 0xbb, 0xde, 0xda, 0xeb, 0xbb, 0xde, 0xda, 0x9b, 0xbb, 0xde, 0xda, 0x0f,
+	0xce, 0xc4, 0x13, 0xff, 0x12, 0x9e, 0xfc, 0x17, 0x00, 0x00, 0xff, 0xff, 0xcf, 0xd8, 0x1e, 0xdb,
+	0x3a, 0x08, 0x00, 0x00,
 }
 
-func (this *AhhfRtu_6804) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*AhhfRtu_6804)
-	if !ok {
-		that2, ok := that.(AhhfRtu_6804)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.CmdIdx != that1.CmdIdx {
-		return false
-	}
-	if len(this.DataMark) != len(that1.DataMark) {
-		return false
-	}
-	for i := range this.DataMark {
-		if this.DataMark[i] != that1.DataMark[i] {
-			return false
-		}
-	}
-	if len(this.DataPoint) != len(that1.DataPoint) {
-		return false
-	}
-	for i := range this.DataPoint {
-		if this.DataPoint[i] != that1.DataPoint[i] {
-			return false
-		}
-	}
-	if !this.SwitchOut.Equal(that1.SwitchOut) {
-		return false
-	}
-	if !this.SwitchIn.Equal(that1.SwitchIn) {
-		return false
-	}
-	if !this.SwitchInLimit.Equal(that1.SwitchInLimit) {
-		return false
-	}
-	if len(this.Status) != len(that1.Status) {
-		return false
-	}
-	for i := range this.Status {
-		if this.Status[i] != that1.Status[i] {
-			return false
-		}
-	}
-	return true
-}
-func (this *AhhfRtu_6804_SwitchOut) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*AhhfRtu_6804_SwitchOut)
-	if !ok {
-		that2, ok := that.(AhhfRtu_6804_SwitchOut)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.SwitchOutTotal != that1.SwitchOutTotal {
-		return false
-	}
-	if len(this.SwitchOutLoop) != len(that1.SwitchOutLoop) {
-		return false
-	}
-	for i := range this.SwitchOutLoop {
-		if this.SwitchOutLoop[i] != that1.SwitchOutLoop[i] {
-			return false
-		}
-	}
-	return true
-}
-func (this *AhhfRtu_6804_SwitchIn) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*AhhfRtu_6804_SwitchIn)
-	if !ok {
-		that2, ok := that.(AhhfRtu_6804_SwitchIn)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.VoltageTransformer != that1.VoltageTransformer {
-		return false
-	}
-	if this.LoopTotal != that1.LoopTotal {
-		return false
-	}
-	if len(this.CurrentTransformer) != len(that1.CurrentTransformer) {
-		return false
-	}
-	for i := range this.CurrentTransformer {
-		if this.CurrentTransformer[i] != that1.CurrentTransformer[i] {
-			return false
-		}
-	}
-	if len(this.CurrentPhase) != len(that1.CurrentPhase) {
-		return false
-	}
-	for i := range this.CurrentPhase {
-		if this.CurrentPhase[i] != that1.CurrentPhase[i] {
-			return false
-		}
-	}
-	return true
-}
-func (this *AhhfRtu_6804_SwitchInLimit) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*AhhfRtu_6804_SwitchInLimit)
-	if !ok {
-		that2, ok := that.(AhhfRtu_6804_SwitchInLimit)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.LoopTotal != that1.LoopTotal {
-		return false
-	}
-	if len(this.VoltageUplimit) != len(that1.VoltageUplimit) {
-		return false
-	}
-	for i := range this.VoltageUplimit {
-		if this.VoltageUplimit[i] != that1.VoltageUplimit[i] {
-			return false
-		}
-	}
-	if len(this.VoltageLowlimit) != len(that1.VoltageLowlimit) {
-		return false
-	}
-	for i := range this.VoltageLowlimit {
-		if this.VoltageLowlimit[i] != that1.VoltageLowlimit[i] {
-			return false
-		}
-	}
-	if len(this.CurrentUplimit) != len(that1.CurrentUplimit) {
-		return false
-	}
-	for i := range this.CurrentUplimit {
-		if this.CurrentUplimit[i] != that1.CurrentUplimit[i] {
-			return false
-		}
-	}
-	if len(this.CurrentLowlimit) != len(that1.CurrentLowlimit) {
-		return false
-	}
-	for i := range this.CurrentLowlimit {
-		if this.CurrentLowlimit[i] != that1.CurrentLowlimit[i] {
-			return false
-		}
-	}
-	return true
-}
-func (this *WxjyEsu_5500) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*WxjyEsu_5500)
-	if !ok {
-		that2, ok := that.(WxjyEsu_5500)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.TimeNow != that1.TimeNow {
-		return false
-	}
-	if len(this.XTime) != len(that1.XTime) {
-		return false
-	}
-	for i := range this.XTime {
-		if this.XTime[i] != that1.XTime[i] {
-			return false
-		}
-	}
-	if len(this.XVoltage) != len(that1.XVoltage) {
-		return false
-	}
-	for i := range this.XVoltage {
-		if this.XVoltage[i] != that1.XVoltage[i] {
-			return false
-		}
-	}
-	return true
-}
-func (this *WxjyEsuD700) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*WxjyEsuD700)
-	if !ok {
-		that2, ok := that.(WxjyEsuD700)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.PhaseAIn != that1.PhaseAIn {
-		return false
-	}
-	if this.PhaseBIn != that1.PhaseBIn {
-		return false
-	}
-	if this.PhaseCIn != that1.PhaseCIn {
-		return false
-	}
-	if this.PhaseAOut != that1.PhaseAOut {
-		return false
-	}
-	if this.PhaseBOut != that1.PhaseBOut {
-		return false
-	}
-	if this.PhaseCOut != that1.PhaseCOut {
-		return false
-	}
-	return true
-}
-func (this *WxjyEsuD800) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*WxjyEsuD800)
-	if !ok {
-		that2, ok := that.(WxjyEsuD800)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.Status != that1.Status {
-		return false
-	}
-	return true
-}
-func (this *BlkSlu_6891) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*BlkSlu_6891)
-	if !ok {
-		that2, ok := that.(BlkSlu_6891)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.SluId != that1.SluId {
-		return false
-	}
-	if this.SluitemId != that1.SluitemId {
-		return false
-	}
-	if this.SluitemConfig != that1.SluitemConfig {
-		return false
-	}
-	if len(this.SluitemLoop) != len(that1.SluitemLoop) {
-		return false
-	}
-	for i := range this.SluitemLoop {
-		if this.SluitemLoop[i] != that1.SluitemLoop[i] {
-			return false
-		}
-	}
-	if this.Status != that1.Status {
-		return false
-	}
-	return true
-}
-func (this *BlkSlu_6892) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*BlkSlu_6892)
-	if !ok {
-		that2, ok := that.(BlkSlu_6892)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.SluId != that1.SluId {
-		return false
-	}
-	if len(this.SluitemData) != len(that1.SluitemData) {
-		return false
-	}
-	for i := range this.SluitemData {
-		if !this.SluitemData[i].Equal(that1.SluitemData[i]) {
-			return false
-		}
-	}
-	return true
-}
-func (this *BlkSlu_6892_SluitemData) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*BlkSlu_6892_SluitemData)
-	if !ok {
-		that2, ok := that.(BlkSlu_6892_SluitemData)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if len(this.Voltage) != len(that1.Voltage) {
-		return false
-	}
-	for i := range this.Voltage {
-		if this.Voltage[i] != that1.Voltage[i] {
-			return false
-		}
-	}
-	if len(this.Current) != len(that1.Current) {
-		return false
-	}
-	for i := range this.Current {
-		if this.Current[i] != that1.Current[i] {
-			return false
-		}
-	}
-	if len(this.Power) != len(that1.Power) {
-		return false
-	}
-	for i := range this.Power {
-		if this.Power[i] != that1.Power[i] {
-			return false
-		}
-	}
-	if len(this.Error) != len(that1.Error) {
-		return false
-	}
-	for i := range this.Error {
-		if this.Error[i] != that1.Error[i] {
-			return false
-		}
-	}
-	if len(this.Node) != len(that1.Node) {
-		return false
-	}
-	for i := range this.Node {
-		if this.Node[i] != that1.Node[i] {
-			return false
-		}
-	}
-	if this.SluitemId != that1.SluitemId {
-		return false
-	}
-	if this.SluitemLoop != that1.SluitemLoop {
-		return false
-	}
-	return true
-}
-func (this *BlkSlu_6895) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*BlkSlu_6895)
-	if !ok {
-		that2, ok := that.(BlkSlu_6895)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.SluId != that1.SluId {
-		return false
-	}
-	if this.SluitemId != that1.SluitemId {
-		return false
-	}
-	if this.AddrType != that1.AddrType {
-		return false
-	}
-	if this.OperationType != that1.OperationType {
-		return false
-	}
-	if len(this.OperationValue) != len(that1.OperationValue) {
-		return false
-	}
-	for i := range this.OperationValue {
-		if this.OperationValue[i] != that1.OperationValue[i] {
-			return false
-		}
-	}
-	if this.TimerId != that1.TimerId {
-		return false
-	}
-	if len(this.WeekSet) != len(that1.WeekSet) {
-		return false
-	}
-	for i := range this.WeekSet {
-		if this.WeekSet[i] != that1.WeekSet[i] {
-			return false
-		}
-	}
-	if this.TimeSet != that1.TimeSet {
-		return false
-	}
-	if this.CmdIdx != that1.CmdIdx {
-		return false
-	}
-	if this.Status != that1.Status {
-		return false
-	}
-	return true
-}
-func (this *AhhfRtu_6804) GoString() string {
-	if this == nil {
-		return "nil"
-	}
-	s := make([]string, 0, 11)
-	s = append(s, "&wlst_pb2.AhhfRtu_6804{")
-	s = append(s, "CmdIdx: "+fmt.Sprintf("%#v", this.CmdIdx)+",\n")
-	s = append(s, "DataMark: "+fmt.Sprintf("%#v", this.DataMark)+",\n")
-	s = append(s, "DataPoint: "+fmt.Sprintf("%#v", this.DataPoint)+",\n")
-	if this.SwitchOut != nil {
-		s = append(s, "SwitchOut: "+fmt.Sprintf("%#v", this.SwitchOut)+",\n")
-	}
-	if this.SwitchIn != nil {
-		s = append(s, "SwitchIn: "+fmt.Sprintf("%#v", this.SwitchIn)+",\n")
-	}
-	if this.SwitchInLimit != nil {
-		s = append(s, "SwitchInLimit: "+fmt.Sprintf("%#v", this.SwitchInLimit)+",\n")
-	}
-	s = append(s, "Status: "+fmt.Sprintf("%#v", this.Status)+",\n")
-	s = append(s, "}")
-	return strings.Join(s, "")
-}
-func (this *AhhfRtu_6804_SwitchOut) GoString() string {
-	if this == nil {
-		return "nil"
-	}
-	s := make([]string, 0, 6)
-	s = append(s, "&wlst_pb2.AhhfRtu_6804_SwitchOut{")
-	s = append(s, "SwitchOutTotal: "+fmt.Sprintf("%#v", this.SwitchOutTotal)+",\n")
-	s = append(s, "SwitchOutLoop: "+fmt.Sprintf("%#v", this.SwitchOutLoop)+",\n")
-	s = append(s, "}")
-	return strings.Join(s, "")
-}
-func (this *AhhfRtu_6804_SwitchIn) GoString() string {
-	if this == nil {
-		return "nil"
-	}
-	s := make([]string, 0, 8)
-	s = append(s, "&wlst_pb2.AhhfRtu_6804_SwitchIn{")
-	s = append(s, "VoltageTransformer: "+fmt.Sprintf("%#v", this.VoltageTransformer)+",\n")
-	s = append(s, "LoopTotal: "+fmt.Sprintf("%#v", this.LoopTotal)+",\n")
-	s = append(s, "CurrentTransformer: "+fmt.Sprintf("%#v", this.CurrentTransformer)+",\n")
-	s = append(s, "CurrentPhase: "+fmt.Sprintf("%#v", this.CurrentPhase)+",\n")
-	s = append(s, "}")
-	return strings.Join(s, "")
-}
-func (this *AhhfRtu_6804_SwitchInLimit) GoString() string {
-	if this == nil {
-		return "nil"
-	}
-	s := make([]string, 0, 9)
-	s = append(s, "&wlst_pb2.AhhfRtu_6804_SwitchInLimit{")
-	s = append(s, "LoopTotal: "+fmt.Sprintf("%#v", this.LoopTotal)+",\n")
-	s = append(s, "VoltageUplimit: "+fmt.Sprintf("%#v", this.VoltageUplimit)+",\n")
-	s = append(s, "VoltageLowlimit: "+fmt.Sprintf("%#v", this.VoltageLowlimit)+",\n")
-	s = append(s, "CurrentUplimit: "+fmt.Sprintf("%#v", this.CurrentUplimit)+",\n")
-	s = append(s, "CurrentLowlimit: "+fmt.Sprintf("%#v", this.CurrentLowlimit)+",\n")
-	s = append(s, "}")
-	return strings.Join(s, "")
-}
-func (this *WxjyEsu_5500) GoString() string {
-	if this == nil {
-		return "nil"
-	}
-	s := make([]string, 0, 7)
-	s = append(s, "&wlst_pb2.WxjyEsu_5500{")
-	s = append(s, "TimeNow: "+fmt.Sprintf("%#v", this.TimeNow)+",\n")
-	s = append(s, "XTime: "+fmt.Sprintf("%#v", this.XTime)+",\n")
-	s = append(s, "XVoltage: "+fmt.Sprintf("%#v", this.XVoltage)+",\n")
-	s = append(s, "}")
-	return strings.Join(s, "")
-}
-func (this *WxjyEsuD700) GoString() string {
-	if this == nil {
-		return "nil"
-	}
-	s := make([]string, 0, 10)
-	s = append(s, "&wlst_pb2.WxjyEsuD700{")
-	s = append(s, "PhaseAIn: "+fmt.Sprintf("%#v", this.PhaseAIn)+",\n")
-	s = append(s, "PhaseBIn: "+fmt.Sprintf("%#v", this.PhaseBIn)+",\n")
-	s = append(s, "PhaseCIn: "+fmt.Sprintf("%#v", this.PhaseCIn)+",\n")
-	s = append(s, "PhaseAOut: "+fmt.Sprintf("%#v", this.PhaseAOut)+",\n")
-	s = append(s, "PhaseBOut: "+fmt.Sprintf("%#v", this.PhaseBOut)+",\n")
-	s = append(s, "PhaseCOut: "+fmt.Sprintf("%#v", this.PhaseCOut)+",\n")
-	s = append(s, "}")
-	return strings.Join(s, "")
-}
-func (this *WxjyEsuD800) GoString() string {
-	if this == nil {
-		return "nil"
-	}
-	s := make([]string, 0, 5)
-	s = append(s, "&wlst_pb2.WxjyEsuD800{")
-	s = append(s, "Status: "+fmt.Sprintf("%#v", this.Status)+",\n")
-	s = append(s, "}")
-	return strings.Join(s, "")
-}
-func (this *BlkSlu_6891) GoString() string {
-	if this == nil {
-		return "nil"
-	}
-	s := make([]string, 0, 9)
-	s = append(s, "&wlst_pb2.BlkSlu_6891{")
-	s = append(s, "SluId: "+fmt.Sprintf("%#v", this.SluId)+",\n")
-	s = append(s, "SluitemId: "+fmt.Sprintf("%#v", this.SluitemId)+",\n")
-	s = append(s, "SluitemConfig: "+fmt.Sprintf("%#v", this.SluitemConfig)+",\n")
-	s = append(s, "SluitemLoop: "+fmt.Sprintf("%#v", this.SluitemLoop)+",\n")
-	s = append(s, "Status: "+fmt.Sprintf("%#v", this.Status)+",\n")
-	s = append(s, "}")
-	return strings.Join(s, "")
-}
-func (this *BlkSlu_6892) GoString() string {
-	if this == nil {
-		return "nil"
-	}
-	s := make([]string, 0, 6)
-	s = append(s, "&wlst_pb2.BlkSlu_6892{")
-	s = append(s, "SluId: "+fmt.Sprintf("%#v", this.SluId)+",\n")
-	if this.SluitemData != nil {
-		s = append(s, "SluitemData: "+fmt.Sprintf("%#v", this.SluitemData)+",\n")
-	}
-	s = append(s, "}")
-	return strings.Join(s, "")
-}
-func (this *BlkSlu_6892_SluitemData) GoString() string {
-	if this == nil {
-		return "nil"
-	}
-	s := make([]string, 0, 11)
-	s = append(s, "&wlst_pb2.BlkSlu_6892_SluitemData{")
-	s = append(s, "Voltage: "+fmt.Sprintf("%#v", this.Voltage)+",\n")
-	s = append(s, "Current: "+fmt.Sprintf("%#v", this.Current)+",\n")
-	s = append(s, "Power: "+fmt.Sprintf("%#v", this.Power)+",\n")
-	s = append(s, "Error: "+fmt.Sprintf("%#v", this.Error)+",\n")
-	s = append(s, "Node: "+fmt.Sprintf("%#v", this.Node)+",\n")
-	s = append(s, "SluitemId: "+fmt.Sprintf("%#v", this.SluitemId)+",\n")
-	s = append(s, "SluitemLoop: "+fmt.Sprintf("%#v", this.SluitemLoop)+",\n")
-	s = append(s, "}")
-	return strings.Join(s, "")
-}
-func (this *BlkSlu_6895) GoString() string {
-	if this == nil {
-		return "nil"
-	}
-	s := make([]string, 0, 14)
-	s = append(s, "&wlst_pb2.BlkSlu_6895{")
-	s = append(s, "SluId: "+fmt.Sprintf("%#v", this.SluId)+",\n")
-	s = append(s, "SluitemId: "+fmt.Sprintf("%#v", this.SluitemId)+",\n")
-	s = append(s, "AddrType: "+fmt.Sprintf("%#v", this.AddrType)+",\n")
-	s = append(s, "OperationType: "+fmt.Sprintf("%#v", this.OperationType)+",\n")
-	s = append(s, "OperationValue: "+fmt.Sprintf("%#v", this.OperationValue)+",\n")
-	s = append(s, "TimerId: "+fmt.Sprintf("%#v", this.TimerId)+",\n")
-	s = append(s, "WeekSet: "+fmt.Sprintf("%#v", this.WeekSet)+",\n")
-	s = append(s, "TimeSet: "+fmt.Sprintf("%#v", this.TimeSet)+",\n")
-	s = append(s, "CmdIdx: "+fmt.Sprintf("%#v", this.CmdIdx)+",\n")
-	s = append(s, "Status: "+fmt.Sprintf("%#v", this.Status)+",\n")
-	s = append(s, "}")
-	return strings.Join(s, "")
-}
-func valueToGoStringProtocolTp(v interface{}, typ string) string {
-	rv := reflect.ValueOf(v)
-	if rv.IsNil() {
-		return "nil"
-	}
-	pv := reflect.Indirect(rv).Interface()
-	return fmt.Sprintf("func(v %v) *%v { return &v } ( %#v )", typ, typ, pv)
-}
 func (m *AhhfRtu_6804) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
@@ -2709,170 +2057,6 @@ func sovProtocolTp(x uint64) (n int) {
 }
 func sozProtocolTp(x uint64) (n int) {
 	return sovProtocolTp(uint64((x << 1) ^ uint64((int64(x) >> 63))))
-}
-func (this *AhhfRtu_6804) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&AhhfRtu_6804{`,
-		`CmdIdx:` + fmt.Sprintf("%v", this.CmdIdx) + `,`,
-		`DataMark:` + fmt.Sprintf("%v", this.DataMark) + `,`,
-		`DataPoint:` + fmt.Sprintf("%v", this.DataPoint) + `,`,
-		`SwitchOut:` + strings.Replace(fmt.Sprintf("%v", this.SwitchOut), "AhhfRtu_6804_SwitchOut", "AhhfRtu_6804_SwitchOut", 1) + `,`,
-		`SwitchIn:` + strings.Replace(fmt.Sprintf("%v", this.SwitchIn), "AhhfRtu_6804_SwitchIn", "AhhfRtu_6804_SwitchIn", 1) + `,`,
-		`SwitchInLimit:` + strings.Replace(fmt.Sprintf("%v", this.SwitchInLimit), "AhhfRtu_6804_SwitchInLimit", "AhhfRtu_6804_SwitchInLimit", 1) + `,`,
-		`Status:` + fmt.Sprintf("%v", this.Status) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *AhhfRtu_6804_SwitchOut) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&AhhfRtu_6804_SwitchOut{`,
-		`SwitchOutTotal:` + fmt.Sprintf("%v", this.SwitchOutTotal) + `,`,
-		`SwitchOutLoop:` + fmt.Sprintf("%v", this.SwitchOutLoop) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *AhhfRtu_6804_SwitchIn) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&AhhfRtu_6804_SwitchIn{`,
-		`VoltageTransformer:` + fmt.Sprintf("%v", this.VoltageTransformer) + `,`,
-		`LoopTotal:` + fmt.Sprintf("%v", this.LoopTotal) + `,`,
-		`CurrentTransformer:` + fmt.Sprintf("%v", this.CurrentTransformer) + `,`,
-		`CurrentPhase:` + fmt.Sprintf("%v", this.CurrentPhase) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *AhhfRtu_6804_SwitchInLimit) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&AhhfRtu_6804_SwitchInLimit{`,
-		`VoltageUplimit:` + fmt.Sprintf("%v", this.VoltageUplimit) + `,`,
-		`VoltageLowlimit:` + fmt.Sprintf("%v", this.VoltageLowlimit) + `,`,
-		`CurrentUplimit:` + fmt.Sprintf("%v", this.CurrentUplimit) + `,`,
-		`CurrentLowlimit:` + fmt.Sprintf("%v", this.CurrentLowlimit) + `,`,
-		`LoopTotal:` + fmt.Sprintf("%v", this.LoopTotal) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *WxjyEsu_5500) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&WxjyEsu_5500{`,
-		`TimeNow:` + fmt.Sprintf("%v", this.TimeNow) + `,`,
-		`XTime:` + fmt.Sprintf("%v", this.XTime) + `,`,
-		`XVoltage:` + fmt.Sprintf("%v", this.XVoltage) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *WxjyEsuD700) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&WxjyEsuD700{`,
-		`PhaseAIn:` + fmt.Sprintf("%v", this.PhaseAIn) + `,`,
-		`PhaseBIn:` + fmt.Sprintf("%v", this.PhaseBIn) + `,`,
-		`PhaseCIn:` + fmt.Sprintf("%v", this.PhaseCIn) + `,`,
-		`PhaseAOut:` + fmt.Sprintf("%v", this.PhaseAOut) + `,`,
-		`PhaseBOut:` + fmt.Sprintf("%v", this.PhaseBOut) + `,`,
-		`PhaseCOut:` + fmt.Sprintf("%v", this.PhaseCOut) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *WxjyEsuD800) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&WxjyEsuD800{`,
-		`Status:` + fmt.Sprintf("%v", this.Status) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *BlkSlu_6891) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&BlkSlu_6891{`,
-		`SluId:` + fmt.Sprintf("%v", this.SluId) + `,`,
-		`SluitemId:` + fmt.Sprintf("%v", this.SluitemId) + `,`,
-		`SluitemConfig:` + fmt.Sprintf("%v", this.SluitemConfig) + `,`,
-		`SluitemLoop:` + fmt.Sprintf("%v", this.SluitemLoop) + `,`,
-		`Status:` + fmt.Sprintf("%v", this.Status) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *BlkSlu_6892) String() string {
-	if this == nil {
-		return "nil"
-	}
-	repeatedStringForSluitemData := "[]*BlkSlu_6892_SluitemData{"
-	for _, f := range this.SluitemData {
-		repeatedStringForSluitemData += strings.Replace(fmt.Sprintf("%v", f), "BlkSlu_6892_SluitemData", "BlkSlu_6892_SluitemData", 1) + ","
-	}
-	repeatedStringForSluitemData += "}"
-	s := strings.Join([]string{`&BlkSlu_6892{`,
-		`SluId:` + fmt.Sprintf("%v", this.SluId) + `,`,
-		`SluitemData:` + repeatedStringForSluitemData + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *BlkSlu_6892_SluitemData) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&BlkSlu_6892_SluitemData{`,
-		`Voltage:` + fmt.Sprintf("%v", this.Voltage) + `,`,
-		`Current:` + fmt.Sprintf("%v", this.Current) + `,`,
-		`Power:` + fmt.Sprintf("%v", this.Power) + `,`,
-		`Error:` + fmt.Sprintf("%v", this.Error) + `,`,
-		`Node:` + fmt.Sprintf("%v", this.Node) + `,`,
-		`SluitemId:` + fmt.Sprintf("%v", this.SluitemId) + `,`,
-		`SluitemLoop:` + fmt.Sprintf("%v", this.SluitemLoop) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *BlkSlu_6895) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&BlkSlu_6895{`,
-		`SluId:` + fmt.Sprintf("%v", this.SluId) + `,`,
-		`SluitemId:` + fmt.Sprintf("%v", this.SluitemId) + `,`,
-		`AddrType:` + fmt.Sprintf("%v", this.AddrType) + `,`,
-		`OperationType:` + fmt.Sprintf("%v", this.OperationType) + `,`,
-		`OperationValue:` + fmt.Sprintf("%v", this.OperationValue) + `,`,
-		`TimerId:` + fmt.Sprintf("%v", this.TimerId) + `,`,
-		`WeekSet:` + fmt.Sprintf("%v", this.WeekSet) + `,`,
-		`TimeSet:` + fmt.Sprintf("%v", this.TimeSet) + `,`,
-		`CmdIdx:` + fmt.Sprintf("%v", this.CmdIdx) + `,`,
-		`Status:` + fmt.Sprintf("%v", this.Status) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func valueToStringProtocolTp(v interface{}) string {
-	rv := reflect.ValueOf(v)
-	if rv.IsNil() {
-		return "nil"
-	}
-	pv := reflect.Indirect(rv).Interface()
-	return fmt.Sprintf("*%v", pv)
 }
 func (m *AhhfRtu_6804) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)

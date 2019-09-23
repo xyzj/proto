@@ -10,8 +10,6 @@ import (
 	io "io"
 	math "math"
 	math_bits "math/bits"
-	reflect "reflect"
-	strings "strings"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -31,8 +29,9 @@ type WlstEsu_9000 struct {
 	Status int32 `protobuf:"varint,1,opt,name=status,proto3" json:"status,omitempty"`
 }
 
-func (m *WlstEsu_9000) Reset()      { *m = WlstEsu_9000{} }
-func (*WlstEsu_9000) ProtoMessage() {}
+func (m *WlstEsu_9000) Reset()         { *m = WlstEsu_9000{} }
+func (m *WlstEsu_9000) String() string { return proto.CompactTextString(m) }
+func (*WlstEsu_9000) ProtoMessage()    {}
 func (*WlstEsu_9000) Descriptor() ([]byte, []int) {
 	return fileDescriptor_cdb47e59a3bfe786, []int{0}
 }
@@ -75,8 +74,9 @@ type WlstEsu_9400 struct {
 	Status int32 `protobuf:"varint,1,opt,name=status,proto3" json:"status,omitempty"`
 }
 
-func (m *WlstEsu_9400) Reset()      { *m = WlstEsu_9400{} }
-func (*WlstEsu_9400) ProtoMessage() {}
+func (m *WlstEsu_9400) Reset()         { *m = WlstEsu_9400{} }
+func (m *WlstEsu_9400) String() string { return proto.CompactTextString(m) }
+func (*WlstEsu_9400) ProtoMessage()    {}
 func (*WlstEsu_9400) Descriptor() ([]byte, []int) {
 	return fileDescriptor_cdb47e59a3bfe786, []int{1}
 }
@@ -138,8 +138,9 @@ type WlstEsu_9200 struct {
 	PhaseCount int32 `protobuf:"varint,10,opt,name=phase_count,json=phaseCount,proto3" json:"phase_count,omitempty"`
 }
 
-func (m *WlstEsu_9200) Reset()      { *m = WlstEsu_9200{} }
-func (*WlstEsu_9200) ProtoMessage() {}
+func (m *WlstEsu_9200) Reset()         { *m = WlstEsu_9200{} }
+func (m *WlstEsu_9200) String() string { return proto.CompactTextString(m) }
+func (*WlstEsu_9200) ProtoMessage()    {}
 func (*WlstEsu_9200) Descriptor() ([]byte, []int) {
 	return fileDescriptor_cdb47e59a3bfe786, []int{2}
 }
@@ -318,8 +319,9 @@ type WlstEsu_9F00 struct {
 	RunStatus int32 `protobuf:"varint,37,opt,name=run_status,json=runStatus,proto3" json:"run_status,omitempty"`
 }
 
-func (m *WlstEsu_9F00) Reset()      { *m = WlstEsu_9F00{} }
-func (*WlstEsu_9F00) ProtoMessage() {}
+func (m *WlstEsu_9F00) Reset()         { *m = WlstEsu_9F00{} }
+func (m *WlstEsu_9F00) String() string { return proto.CompactTextString(m) }
+func (*WlstEsu_9F00) ProtoMessage()    {}
 func (*WlstEsu_9F00) Descriptor() ([]byte, []int) {
 	return fileDescriptor_cdb47e59a3bfe786, []int{3}
 }
@@ -614,8 +616,9 @@ type WlstEsu_1600 struct {
 	DateTime string `protobuf:"bytes,1,opt,name=date_time,json=dateTime,proto3" json:"date_time,omitempty"`
 }
 
-func (m *WlstEsu_1600) Reset()      { *m = WlstEsu_1600{} }
-func (*WlstEsu_1600) ProtoMessage() {}
+func (m *WlstEsu_1600) Reset()         { *m = WlstEsu_1600{} }
+func (m *WlstEsu_1600) String() string { return proto.CompactTextString(m) }
+func (*WlstEsu_1600) ProtoMessage()    {}
 func (*WlstEsu_1600) Descriptor() ([]byte, []int) {
 	return fileDescriptor_cdb47e59a3bfe786, []int{4}
 }
@@ -661,8 +664,9 @@ type WlstEsu_9500 struct {
 	XAdjustValue []int32 `protobuf:"varint,2,rep,packed,name=x_adjust_value,json=xAdjustValue,proto3" json:"x_adjust_value,omitempty"`
 }
 
-func (m *WlstEsu_9500) Reset()      { *m = WlstEsu_9500{} }
-func (*WlstEsu_9500) ProtoMessage() {}
+func (m *WlstEsu_9500) Reset()         { *m = WlstEsu_9500{} }
+func (m *WlstEsu_9500) String() string { return proto.CompactTextString(m) }
+func (*WlstEsu_9500) ProtoMessage()    {}
 func (*WlstEsu_9500) Descriptor() ([]byte, []int) {
 	return fileDescriptor_cdb47e59a3bfe786, []int{5}
 }
@@ -747,8 +751,9 @@ type WlstEsu_9700 struct {
 	RunTime int32 `protobuf:"varint,18,opt,name=run_time,json=runTime,proto3" json:"run_time,omitempty"`
 }
 
-func (m *WlstEsu_9700) Reset()      { *m = WlstEsu_9700{} }
-func (*WlstEsu_9700) ProtoMessage() {}
+func (m *WlstEsu_9700) Reset()         { *m = WlstEsu_9700{} }
+func (m *WlstEsu_9700) String() string { return proto.CompactTextString(m) }
+func (*WlstEsu_9700) ProtoMessage()    {}
 func (*WlstEsu_9700) Descriptor() ([]byte, []int) {
 	return fileDescriptor_cdb47e59a3bfe786, []int{6}
 }
@@ -910,8 +915,9 @@ type WlstEsu_1800 struct {
 	AdjustValue int32 `protobuf:"varint,1,opt,name=adjust_value,json=adjustValue,proto3" json:"adjust_value,omitempty"`
 }
 
-func (m *WlstEsu_1800) Reset()      { *m = WlstEsu_1800{} }
-func (*WlstEsu_1800) ProtoMessage() {}
+func (m *WlstEsu_1800) Reset()         { *m = WlstEsu_1800{} }
+func (m *WlstEsu_1800) String() string { return proto.CompactTextString(m) }
+func (*WlstEsu_1800) ProtoMessage()    {}
 func (*WlstEsu_1800) Descriptor() ([]byte, []int) {
 	return fileDescriptor_cdb47e59a3bfe786, []int{7}
 }
@@ -955,8 +961,9 @@ type WlstEsu_1900 struct {
 	ManualControl int32 `protobuf:"varint,1,opt,name=manual_control,json=manualControl,proto3" json:"manual_control,omitempty"`
 }
 
-func (m *WlstEsu_1900) Reset()      { *m = WlstEsu_1900{} }
-func (*WlstEsu_1900) ProtoMessage() {}
+func (m *WlstEsu_1900) Reset()         { *m = WlstEsu_1900{} }
+func (m *WlstEsu_1900) String() string { return proto.CompactTextString(m) }
+func (*WlstEsu_1900) ProtoMessage()    {}
 func (*WlstEsu_1900) Descriptor() ([]byte, []int) {
 	return fileDescriptor_cdb47e59a3bfe786, []int{8}
 }
@@ -1005,8 +1012,9 @@ type WlstEsu_9A00 struct {
 	SaverTime int32 `protobuf:"varint,4,opt,name=saver_time,json=saverTime,proto3" json:"saver_time,omitempty"`
 }
 
-func (m *WlstEsu_9A00) Reset()      { *m = WlstEsu_9A00{} }
-func (*WlstEsu_9A00) ProtoMessage() {}
+func (m *WlstEsu_9A00) Reset()         { *m = WlstEsu_9A00{} }
+func (m *WlstEsu_9A00) String() string { return proto.CompactTextString(m) }
+func (*WlstEsu_9A00) ProtoMessage()    {}
 func (*WlstEsu_9A00) Descriptor() ([]byte, []int) {
 	return fileDescriptor_cdb47e59a3bfe786, []int{9}
 }
@@ -1117,8 +1125,9 @@ type WlstEsu_9E00 struct {
 	SaverMode int32 `protobuf:"varint,24,opt,name=saver_mode,json=saverMode,proto3" json:"saver_mode,omitempty"`
 }
 
-func (m *WlstEsu_9E00) Reset()      { *m = WlstEsu_9E00{} }
-func (*WlstEsu_9E00) ProtoMessage() {}
+func (m *WlstEsu_9E00) Reset()         { *m = WlstEsu_9E00{} }
+func (m *WlstEsu_9E00) String() string { return proto.CompactTextString(m) }
+func (*WlstEsu_9E00) ProtoMessage()    {}
 func (*WlstEsu_9E00) Descriptor() ([]byte, []int) {
 	return fileDescriptor_cdb47e59a3bfe786, []int{10}
 }
@@ -1334,842 +1343,92 @@ func init() {
 func init() { proto.RegisterFile("protocol_esu.proto", fileDescriptor_cdb47e59a3bfe786) }
 
 var fileDescriptor_cdb47e59a3bfe786 = []byte{
-	// 1348 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xb4, 0x58, 0xbd, 0x73, 0xdb, 0x36,
-	0x14, 0x37, 0xfd, 0x25, 0x09, 0xfa, 0xb0, 0x4d, 0x7f, 0x84, 0x6e, 0x6a, 0xc6, 0x51, 0x9a, 0xc6,
-	0xfd, 0x4a, 0x68, 0x3b, 0x49, 0x9b, 0x6e, 0xb1, 0x73, 0xbd, 0x66, 0x68, 0x9c, 0xb3, 0xd3, 0x74,
-	0xe4, 0x81, 0x14, 0xe4, 0xa8, 0xa5, 0x08, 0x1e, 0x09, 0xca, 0xf1, 0xd6, 0x3f, 0xa1, 0x43, 0xff,
-	0x88, 0x2e, 0x9d, 0xfb, 0x2f, 0x74, 0xcc, 0x98, 0xb1, 0x51, 0x96, 0x8e, 0x59, 0xba, 0xf7, 0xf0,
-	0x1e, 0x68, 0x81, 0x14, 0x9d, 0x9e, 0x74, 0xd7, 0x51, 0xbf, 0x0f, 0x00, 0x7c, 0xc0, 0x7b, 0x0f,
-	0x10, 0x31, 0xa3, 0x98, 0x0b, 0xee, 0xf3, 0xc0, 0x65, 0x49, 0x7a, 0x1b, 0x7e, 0x98, 0xd5, 0xb3,
-	0x20, 0x11, 0xb7, 0x23, 0x6f, 0xaf, 0x7d, 0x8b, 0x34, 0x7f, 0x08, 0x12, 0x21, 0x39, 0xf7, 0x81,
-	0xe3, 0x38, 0xe6, 0x06, 0x59, 0x4c, 0x04, 0x15, 0x69, 0x62, 0x19, 0xdb, 0xc6, 0xce, 0xc2, 0xb1,
-	0xfa, 0x95, 0x17, 0xde, 0x7d, 0x8f, 0xf0, 0xd7, 0x39, 0x5d, 0xb9, 0xe7, 0x38, 0xe6, 0x35, 0x52,
-	0x3f, 0xa3, 0x71, 0x3f, 0x8d, 0x5c, 0xd1, 0xeb, 0x33, 0x25, 0x27, 0x08, 0x3d, 0xeb, 0xf5, 0x99,
-	0x79, 0x85, 0x54, 0x78, 0x88, 0xe4, 0x2c, 0x8e, 0xc5, 0x43, 0x20, 0x36, 0x49, 0x95, 0x77, 0xbb,
-	0xc8, 0xcc, 0x01, 0x53, 0xe1, 0xdd, 0x2e, 0x50, 0x7b, 0x64, 0xbd, 0x4b, 0x43, 0x37, 0x11, 0x34,
-	0x16, 0xae, 0x60, 0xfd, 0x88, 0xc5, 0x54, 0xa4, 0x31, 0xb3, 0xe6, 0x41, 0xb7, 0xda, 0xa5, 0xe1,
-	0x89, 0xe4, 0x9e, 0x8d, 0x28, 0x73, 0x8b, 0x90, 0x44, 0xf0, 0xc8, 0x4d, 0xe8, 0x80, 0xc5, 0xd6,
-	0x02, 0x08, 0x6b, 0x12, 0x39, 0x91, 0x80, 0x79, 0x8f, 0x6c, 0xc8, 0xf0, 0x30, 0x5f, 0xf4, 0xe4,
-	0x72, 0xb4, 0x31, 0x17, 0x41, 0xba, 0x3e, 0x62, 0xf5, 0x51, 0x3f, 0x23, 0x2b, 0xbd, 0x30, 0x4a,
-	0x85, 0xcb, 0x07, 0x2c, 0x1e, 0xf0, 0x40, 0xd0, 0x53, 0x66, 0x55, 0xc0, 0xb1, 0x0c, 0xc4, 0xd1,
-	0x08, 0x37, 0xbf, 0x20, 0x26, 0x8a, 0xd3, 0xb0, 0x33, 0x52, 0x57, 0x41, 0x8d, 0xc3, 0x7c, 0xaf,
-	0x11, 0xe6, 0x2d, 0xb2, 0xc4, 0x53, 0x91, 0x0d, 0x1e, 0x70, 0xda, 0xb1, 0x6a, 0xa0, 0x6d, 0x21,
-	0x7c, 0xa4, 0x50, 0x19, 0xe3, 0xe8, 0x05, 0x4d, 0x98, 0xeb, 0xf3, 0x34, 0x14, 0x16, 0xc1, 0x18,
-	0x03, 0x74, 0x28, 0x91, 0xf6, 0xef, 0x75, 0x7d, 0x5b, 0xba, 0x8e, 0x63, 0x5e, 0x25, 0xb5, 0x0e,
-	0x15, 0x6c, 0xb4, 0x29, 0xb5, 0xe3, 0xaa, 0x04, 0x20, 0xbc, 0xdb, 0xa4, 0xae, 0x07, 0x00, 0xb7,
-	0x45, 0x87, 0xcc, 0x5d, 0xb2, 0x4e, 0x5d, 0x9c, 0x13, 0xbf, 0x28, 0xfb, 0x18, 0xb9, 0x51, 0xc6,
-	0xb1, 0x49, 0x9f, 0x4a, 0xee, 0xb1, 0xa4, 0x9e, 0xab, 0xaf, 0xd9, 0x25, 0xeb, 0x5e, 0xa9, 0x65,
-	0x1e, 0x2d, 0x5e, 0xa9, 0xc5, 0x2f, 0xb5, 0x2c, 0xa0, 0xc5, 0x1f, 0xb7, 0xec, 0x93, 0x8d, 0x6c,
-	0x61, 0x2a, 0x76, 0x99, 0x67, 0x11, 0x3c, 0xab, 0xb8, 0xb2, 0x23, 0xe0, 0x34, 0x93, 0x57, 0x6e,
-	0xaa, 0xa0, 0xc9, 0x2b, 0x37, 0xf9, 0xe5, 0xa6, 0x2a, 0x9a, 0xfc, 0x72, 0x53, 0x61, 0x79, 0x7e,
-	0x1a, 0xc7, 0x2c, 0x14, 0xb0, 0xb3, 0x85, 0xe5, 0x1d, 0x22, 0x55, 0xb2, 0xbc, 0xcc, 0x44, 0xc6,
-	0x97, 0xa7, 0x99, 0xfc, 0x72, 0x53, 0x7d, 0x7c, 0x79, 0x99, 0xe9, 0x0e, 0x59, 0x2b, 0x2c, 0x2f,
-	0xe2, 0x67, 0x2c, 0xb6, 0x1a, 0x60, 0x59, 0xd1, 0x17, 0xf7, 0x54, 0x12, 0xd2, 0xe0, 0x95, 0x19,
-	0x9a, 0x68, 0xf0, 0xca, 0x0c, 0x7e, 0x99, 0xa1, 0x85, 0x06, 0x7f, 0xcc, 0xb0, 0x45, 0x88, 0x4a,
-	0x75, 0x59, 0x6d, 0x96, 0x30, 0x6d, 0x31, 0xbf, 0x45, 0x9a, 0x98, 0xd7, 0x49, 0x03, 0x12, 0x3a,
-	0x13, 0x2c, 0xe3, 0x59, 0x05, 0x4c, 0x49, 0x36, 0x49, 0x35, 0x4e, 0x55, 0x85, 0x59, 0xc1, 0x3a,
-	0x12, 0xa7, 0x58, 0x62, 0x64, 0x4d, 0x00, 0x37, 0x90, 0xa6, 0xaa, 0x09, 0x12, 0x01, 0xfa, 0x3a,
-	0x69, 0xd0, 0xce, 0x8f, 0x69, 0x22, 0xdc, 0x01, 0x0d, 0x52, 0x66, 0xad, 0xc2, 0x22, 0xeb, 0x88,
-	0x3d, 0x97, 0x90, 0x79, 0x93, 0xb4, 0xd8, 0xcb, 0x5e, 0x22, 0x7a, 0xe1, 0xa9, 0xdb, 0xa5, 0x69,
-	0x20, 0xac, 0x35, 0x18, 0xa5, 0x99, 0xa1, 0xdf, 0x48, 0x50, 0x4e, 0x14, 0xb3, 0x84, 0x09, 0xb7,
-	0x43, 0xcf, 0x1d, 0x6b, 0x1d, 0x27, 0x02, 0xe4, 0x11, 0x3d, 0x77, 0x72, 0xf4, 0xae, 0xb5, 0x91,
-	0xa7, 0x77, 0x73, 0xf4, 0x9e, 0x75, 0x25, 0x4f, 0xef, 0xe5, 0xe8, 0x7d, 0xcb, 0xca, 0xd3, 0xfb,
-	0xb2, 0x3a, 0xd0, 0xf8, 0x34, 0xc9, 0x22, 0xb4, 0xb9, 0x6d, 0xec, 0xcc, 0x1d, 0x13, 0x09, 0xa9,
-	0x00, 0x5d, 0x44, 0xa1, 0xcf, 0x3b, 0xcc, 0xfa, 0x40, 0x8b, 0xc2, 0x77, 0xbc, 0xc3, 0xcc, 0x1b,
-	0xa4, 0xa9, 0xa2, 0x90, 0x08, 0x1a, 0x04, 0x89, 0x75, 0x15, 0x14, 0x2a, 0x34, 0x27, 0x80, 0xc1,
-	0x24, 0x28, 0x82, 0x50, 0x7e, 0x88, 0x25, 0x08, 0xa1, 0xac, 0x9a, 0x2b, 0x01, 0xb5, 0xb6, 0x70,
-	0x17, 0xf0, 0xf7, 0x43, 0x8d, 0xf2, 0x2c, 0x5b, 0xa7, 0x0e, 0x34, 0xca, 0xb7, 0xae, 0xe9, 0xd4,
-	0xa1, 0x9c, 0xb1, 0x77, 0xea, 0x89, 0xec, 0xb3, 0xb6, 0x71, 0x46, 0x09, 0xa9, 0xcf, 0xfa, 0x84,
-	0x2c, 0x83, 0x40, 0x2f, 0x65, 0xd7, 0x41, 0xb5, 0x24, 0x71, 0xbd, 0x8a, 0x6f, 0x92, 0x2a, 0x1b,
-	0xb0, 0x50, 0xb8, 0x21, 0xb7, 0xda, 0x38, 0x0d, 0xfc, 0x7e, 0xc2, 0xcd, 0x4f, 0xc9, 0x4a, 0x72,
-	0xd6, 0x13, 0xfe, 0x0b, 0x79, 0x5e, 0xb3, 0xc9, 0x6e, 0xe0, 0x30, 0x48, 0x1c, 0xa5, 0xd9, 0x8c,
-	0x3b, 0x64, 0x59, 0x69, 0x7b, 0x17, 0x27, 0xf6, 0x23, 0xac, 0xd8, 0x88, 0x3f, 0x0e, 0x47, 0x21,
-	0x97, 0x67, 0x52, 0x69, 0x6e, 0xaa, 0x2d, 0x4b, 0x15, 0xdd, 0xfe, 0x5c, 0x2b, 0xd7, 0xbb, 0xf7,
-	0xff, 0xa3, 0x5c, 0xb7, 0xa9, 0x5e, 0xdc, 0xef, 0x39, 0x8e, 0xf9, 0x31, 0x69, 0xbe, 0x74, 0xf5,
-	0xed, 0x30, 0xb6, 0xe7, 0x76, 0x16, 0x0e, 0x66, 0x97, 0x8d, 0xe3, 0xfa, 0xcb, 0x87, 0xa3, 0x3d,
-	0xd9, 0x21, 0xad, 0x0b, 0x1d, 0x9e, 0xf0, 0xd9, 0x0b, 0x61, 0x43, 0x09, 0xe1, 0x98, 0xb7, 0xff,
-	0x59, 0xd0, 0xe7, 0xf8, 0xd2, 0x71, 0xcc, 0x16, 0x99, 0x0d, 0xb9, 0x6a, 0xe7, 0xb3, 0x21, 0xcf,
-	0xaf, 0x70, 0xb6, 0xd0, 0x50, 0x8a, 0x89, 0x34, 0x37, 0x9e, 0x48, 0x97, 0x76, 0x94, 0xf9, 0xc9,
-	0x3b, 0xca, 0xc2, 0xe4, 0x1d, 0x65, 0x71, 0x8a, 0x8e, 0x52, 0x99, 0xa6, 0xa3, 0x54, 0xa7, 0xe9,
-	0x28, 0xb5, 0x69, 0x3a, 0x0a, 0x99, 0xa6, 0xa3, 0xd4, 0xa7, 0xe9, 0x28, 0x8d, 0xcb, 0x3b, 0x4a,
-	0xbe, 0xc2, 0x36, 0x4b, 0x2a, 0x6c, 0xae, 0x7c, 0xb7, 0xc6, 0xcb, 0x77, 0xe1, 0x32, 0xb2, 0x34,
-	0x7e, 0x19, 0xd9, 0x22, 0x04, 0xb3, 0x57, 0x9c, 0x47, 0x4c, 0x75, 0x80, 0x1a, 0x20, 0xcf, 0xce,
-	0x23, 0x06, 0x85, 0x22, 0xec, 0x72, 0x37, 0x4c, 0xfb, 0x1e, 0x8b, 0x55, 0x0b, 0x20, 0x12, 0x7a,
-	0x02, 0x48, 0xae, 0x41, 0x98, 0xb9, 0x06, 0xd1, 0xde, 0xd3, 0x13, 0xf1, 0x2b, 0xc7, 0x19, 0x3b,
-	0xc9, 0x98, 0x00, 0xfa, 0x49, 0x6e, 0xdf, 0xd7, 0x3d, 0x0f, 0x1c, 0x47, 0xf6, 0x88, 0x3e, 0x0d,
-	0x53, 0x1a, 0xb8, 0x3e, 0x0f, 0x45, 0xcc, 0x03, 0xe5, 0x6a, 0x22, 0x7a, 0x88, 0x60, 0x7b, 0xa0,
-	0xa7, 0x18, 0x9d, 0x34, 0xc5, 0xf4, 0x8f, 0x98, 0x7b, 0x5f, 0x97, 0x9b, 0x2f, 0xec, 0x41, 0xfb,
-	0x8f, 0x8a, 0x3e, 0x31, 0xfb, 0xbf, 0xee, 0xec, 0x37, 0x48, 0x53, 0xc4, 0x34, 0x4c, 0xba, 0x3c,
-	0xee, 0xb3, 0xd8, 0xa5, 0x6a, 0x21, 0x0d, 0x0d, 0x7c, 0x58, 0x14, 0x79, 0xea, 0x9e, 0xae, 0x8b,
-	0x0e, 0x8a, 0x22, 0x5f, 0xdd, 0xd0, 0x75, 0xd1, 0xa1, 0x0c, 0x96, 0x5c, 0x05, 0xf6, 0x34, 0xbc,
-	0x90, 0x57, 0x25, 0x00, 0x2d, 0x4d, 0x05, 0x0b, 0xb8, 0xea, 0x45, 0xb0, 0x80, 0xba, 0xf4, 0x69,
-	0x51, 0xbb, 0xfc, 0x69, 0xe1, 0x90, 0x35, 0xf4, 0xf0, 0x28, 0x67, 0xc1, 0x8b, 0xb8, 0x09, 0x16,
-	0x1e, 0xe9, 0x8e, 0xbb, 0x64, 0x23, 0x3b, 0xf7, 0x05, 0x4f, 0x1d, 0x3c, 0x6b, 0x2a, 0x03, 0xf2,
-	0xae, 0xaf, 0xc9, 0x26, 0xba, 0x62, 0xe6, 0x73, 0xd8, 0x50, 0xcd, 0xd8, 0x00, 0xe3, 0x15, 0x10,
-	0x1c, 0x23, 0xaf, 0x7b, 0x2f, 0x7f, 0xdf, 0x34, 0x27, 0x7e, 0xdf, 0xb4, 0x26, 0x7a, 0xdf, 0x2c,
-	0x4d, 0xf0, 0xbe, 0x59, 0x2e, 0x7d, 0xdf, 0xdc, 0x21, 0xab, 0x4a, 0x98, 0x1b, 0x18, 0x33, 0xd9,
-	0x44, 0x2a, 0x37, 0xf2, 0x28, 0x4b, 0x93, 0x88, 0xb1, 0x8e, 0xca, 0x6a, 0x95, 0xa5, 0x27, 0x12,
-	0x2a, 0xbe, 0x99, 0x56, 0x8b, 0x6f, 0x26, 0x79, 0x7d, 0xf0, 0x79, 0xbf, 0x9f, 0x86, 0x3d, 0x5f,
-	0x26, 0x1d, 0x9c, 0x15, 0xbc, 0xdb, 0x2d, 0x69, 0x38, 0x9c, 0x99, 0xab, 0xa4, 0x76, 0xc6, 0xe3,
-	0x9f, 0x50, 0x83, 0x97, 0xbb, 0xaa, 0x04, 0xb2, 0xb3, 0x46, 0x03, 0x1a, 0xf7, 0x5d, 0x1e, 0xaa,
-	0x9b, 0x5d, 0x05, 0x7e, 0x1f, 0x85, 0x70, 0x69, 0x02, 0xaa, 0xc3, 0x02, 0x7a, 0xae, 0x2e, 0x76,
-	0x04, 0xa0, 0x47, 0x12, 0x29, 0xdc, 0xcc, 0xac, 0xc2, 0xcd, 0xec, 0xe0, 0xfe, 0xab, 0x37, 0xf6,
-	0xcc, 0xeb, 0x37, 0xf6, 0xcc, 0xbb, 0x37, 0xb6, 0xf1, 0xf3, 0xd0, 0x36, 0x7e, 0x1b, 0xda, 0xc6,
-	0x9f, 0x43, 0xdb, 0x78, 0x35, 0xb4, 0x8d, 0xbf, 0x86, 0xb6, 0xf1, 0xf7, 0xd0, 0x9e, 0x79, 0x37,
-	0xb4, 0x8d, 0x5f, 0xde, 0xda, 0x33, 0xaf, 0xde, 0xda, 0x33, 0xaf, 0xdf, 0xda, 0x33, 0xdf, 0x1a,
-	0xde, 0x22, 0xfc, 0x11, 0xb0, 0xff, 0x6f, 0x00, 0x00, 0x00, 0xff, 0xff, 0x52, 0xf6, 0x5d, 0x20,
-	0x1e, 0x10, 0x00, 0x00,
+	// 1314 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xb4, 0x57, 0x4b, 0x73, 0xdb, 0xb6,
+	0x13, 0x8f, 0xfc, 0x92, 0xb4, 0x7a, 0xd8, 0xa6, 0x1f, 0xa1, 0x93, 0xbf, 0x15, 0x47, 0xf9, 0xa7,
+	0x71, 0x5f, 0x09, 0x6d, 0x27, 0x69, 0xd3, 0x5b, 0xec, 0x4c, 0xa7, 0x39, 0x34, 0xce, 0xd8, 0x69,
+	0x7a, 0xe4, 0x80, 0x14, 0xe4, 0xa8, 0xa5, 0x08, 0x0e, 0x09, 0xca, 0xf1, 0xb7, 0xe8, 0xa1, 0x5f,
+	0xa3, 0xe7, 0x7e, 0x85, 0x1e, 0x73, 0xec, 0xb1, 0x93, 0x7c, 0x86, 0xde, 0x3b, 0xd8, 0x05, 0x2d,
+	0x90, 0xa2, 0xd3, 0x91, 0x66, 0x7a, 0xe4, 0xef, 0x01, 0x80, 0x0b, 0xec, 0x2e, 0x00, 0x56, 0x14,
+	0x0b, 0x29, 0x7c, 0x11, 0xb8, 0x3c, 0x49, 0xef, 0xe3, 0x87, 0x55, 0x3b, 0x0f, 0x12, 0x79, 0x3f,
+	0xf2, 0xf6, 0xbb, 0xf7, 0xa0, 0xf5, 0x63, 0x90, 0x48, 0xc5, 0xb9, 0x4f, 0x1c, 0xc7, 0xb1, 0x36,
+	0x61, 0x29, 0x91, 0x4c, 0xa6, 0x89, 0x5d, 0xd9, 0xa9, 0xec, 0x2e, 0x9e, 0xe8, 0xaf, 0xbc, 0xf0,
+	0xe1, 0x47, 0x84, 0xbf, 0xce, 0x9b, 0xca, 0x7d, 0xc7, 0xb1, 0x6e, 0x41, 0xe3, 0x9c, 0xc5, 0xc3,
+	0x34, 0x72, 0xe5, 0x60, 0xc8, 0xb5, 0x1c, 0x08, 0x7a, 0x35, 0x18, 0x72, 0xeb, 0x3a, 0x54, 0x45,
+	0x48, 0xe4, 0x1c, 0x8d, 0x25, 0x42, 0x24, 0xb6, 0xa0, 0x26, 0xfa, 0x7d, 0x62, 0xe6, 0x91, 0xa9,
+	0x8a, 0x7e, 0x1f, 0xa9, 0x7d, 0xd8, 0xe8, 0xb3, 0xd0, 0x4d, 0x24, 0x8b, 0xa5, 0x2b, 0xf9, 0x30,
+	0xe2, 0x31, 0x93, 0x69, 0xcc, 0xed, 0x05, 0xd4, 0xad, 0xf5, 0x59, 0x78, 0xaa, 0xb8, 0x57, 0x63,
+	0xca, 0xda, 0x06, 0x48, 0xa4, 0x88, 0xdc, 0x84, 0x8d, 0x78, 0x6c, 0x2f, 0xa2, 0xb0, 0xae, 0x90,
+	0x53, 0x05, 0x58, 0x8f, 0x60, 0x53, 0x85, 0x87, 0xfb, 0x72, 0xa0, 0x96, 0x63, 0x8c, 0xb9, 0x84,
+	0xd2, 0x8d, 0x31, 0x6b, 0x8e, 0xfa, 0x39, 0xac, 0x0e, 0xc2, 0x28, 0x95, 0xae, 0x18, 0xf1, 0x78,
+	0x24, 0x02, 0xc9, 0xce, 0xb8, 0x5d, 0x45, 0xc7, 0x0a, 0x12, 0xc7, 0x63, 0xdc, 0xfa, 0x12, 0x2c,
+	0x12, 0xa7, 0x61, 0x6f, 0xac, 0xae, 0xa1, 0x9a, 0x86, 0xf9, 0xc1, 0x20, 0xac, 0x7b, 0xb0, 0x2c,
+	0x52, 0x99, 0x0d, 0x1e, 0x08, 0xd6, 0xb3, 0xeb, 0xa8, 0x6d, 0x13, 0x7c, 0xac, 0x51, 0x15, 0xe3,
+	0xe8, 0x0d, 0x4b, 0xb8, 0xeb, 0x8b, 0x34, 0x94, 0x36, 0x50, 0x8c, 0x11, 0x3a, 0x52, 0x48, 0xf7,
+	0xb7, 0x86, 0xb9, 0x2d, 0x7d, 0xc7, 0xb1, 0x6e, 0x42, 0xbd, 0xc7, 0x24, 0x1f, 0x6f, 0x4a, 0xfd,
+	0xa4, 0xa6, 0x00, 0x0c, 0xef, 0x0e, 0x34, 0xcc, 0x00, 0xd0, 0xb6, 0x98, 0x90, 0xb5, 0x07, 0x1b,
+	0xcc, 0xa5, 0x39, 0xe9, 0x8f, 0xb2, 0x9f, 0x51, 0x1b, 0x55, 0x39, 0xb1, 0xd8, 0x4b, 0xc5, 0x3d,
+	0x57, 0xd4, 0x6b, 0xfd, 0x37, 0x7b, 0xb0, 0xe1, 0x95, 0x5a, 0x16, 0xc8, 0xe2, 0x95, 0x5a, 0xfc,
+	0x52, 0xcb, 0x22, 0x59, 0xfc, 0x49, 0xcb, 0x01, 0x6c, 0x66, 0x0b, 0xd3, 0xb1, 0xcb, 0x3c, 0x4b,
+	0xe8, 0x59, 0xa3, 0x95, 0x1d, 0x23, 0x67, 0x98, 0xbc, 0x72, 0x53, 0x95, 0x4c, 0x5e, 0xb9, 0xc9,
+	0x2f, 0x37, 0xd5, 0xc8, 0xe4, 0x97, 0x9b, 0x0a, 0xcb, 0xf3, 0xd3, 0x38, 0xe6, 0xa1, 0xc4, 0x9d,
+	0x2d, 0x2c, 0xef, 0x88, 0xa8, 0x92, 0xe5, 0x65, 0x26, 0x98, 0x5c, 0x9e, 0x61, 0xf2, 0xcb, 0x4d,
+	0x8d, 0xc9, 0xe5, 0x65, 0xa6, 0x07, 0xb0, 0x5e, 0x58, 0x5e, 0x24, 0xce, 0x79, 0x6c, 0x37, 0xd1,
+	0xb2, 0x6a, 0x2e, 0xee, 0xa5, 0x22, 0x94, 0xc1, 0x2b, 0x33, 0xb4, 0xc8, 0xe0, 0x95, 0x19, 0xfc,
+	0x32, 0x43, 0x9b, 0x0c, 0xfe, 0x84, 0x61, 0x1b, 0x40, 0xa7, 0xba, 0xaa, 0x36, 0xcb, 0x94, 0xb6,
+	0x94, 0xdf, 0x32, 0x4d, 0xac, 0xdb, 0xd0, 0xc4, 0x84, 0xce, 0x04, 0x2b, 0x74, 0x56, 0x11, 0xd3,
+	0x92, 0x2d, 0xa8, 0xc5, 0xa9, 0xae, 0x30, 0xab, 0x54, 0x47, 0xe2, 0x94, 0x4a, 0x8c, 0xaa, 0x09,
+	0xe8, 0x46, 0xd2, 0xd2, 0x35, 0x41, 0x21, 0x48, 0xdf, 0x86, 0x26, 0xeb, 0xfd, 0x94, 0x26, 0xd2,
+	0x1d, 0xb1, 0x20, 0xe5, 0xf6, 0x1a, 0x2e, 0xb2, 0x41, 0xd8, 0x6b, 0x05, 0x59, 0x77, 0xa1, 0xcd,
+	0xdf, 0x0e, 0x12, 0x39, 0x08, 0xcf, 0xdc, 0x3e, 0x4b, 0x03, 0x69, 0xaf, 0xe3, 0x28, 0xad, 0x0c,
+	0xfd, 0x56, 0x81, 0x6a, 0xa2, 0x98, 0x27, 0x5c, 0xba, 0x3d, 0x76, 0xe1, 0xd8, 0x1b, 0x34, 0x11,
+	0x22, 0xcf, 0xd8, 0x85, 0x93, 0xa3, 0xf7, 0xec, 0xcd, 0x3c, 0xbd, 0x97, 0xa3, 0xf7, 0xed, 0xeb,
+	0x79, 0x7a, 0x3f, 0x47, 0x1f, 0xd8, 0x76, 0x9e, 0x3e, 0x50, 0xd5, 0x81, 0xc5, 0x67, 0x49, 0x16,
+	0xa1, 0xad, 0x9d, 0xca, 0xee, 0xfc, 0x09, 0x28, 0x48, 0x07, 0xe8, 0x32, 0x0a, 0x43, 0xd1, 0xe3,
+	0xf6, 0x0d, 0x23, 0x0a, 0xdf, 0x8b, 0x1e, 0xb7, 0xee, 0x40, 0x4b, 0x47, 0x21, 0x91, 0x2c, 0x08,
+	0x12, 0xfb, 0x26, 0x2a, 0x74, 0x68, 0x4e, 0x11, 0xc3, 0x49, 0x48, 0x84, 0xa1, 0xfc, 0x1f, 0x95,
+	0x20, 0x82, 0xb2, 0x6a, 0xae, 0x05, 0xcc, 0xde, 0xa6, 0x5d, 0xa0, 0xef, 0xa7, 0x06, 0xe5, 0xd9,
+	0x1d, 0x93, 0x3a, 0x34, 0x28, 0xdf, 0xbe, 0x65, 0x52, 0x47, 0x6a, 0xc6, 0xc1, 0x99, 0x27, 0xb3,
+	0xdf, 0xda, 0xa1, 0x19, 0x15, 0xa4, 0x7f, 0xeb, 0x53, 0x58, 0x41, 0x81, 0x59, 0xca, 0x6e, 0xa3,
+	0x6a, 0x59, 0xe1, 0x66, 0x15, 0xdf, 0x82, 0x1a, 0x1f, 0xf1, 0x50, 0xba, 0xa1, 0xb0, 0xbb, 0x34,
+	0x0d, 0x7e, 0xbf, 0x10, 0xd6, 0x67, 0xb0, 0x9a, 0x9c, 0x0f, 0xa4, 0xff, 0x46, 0x9d, 0xd7, 0x6c,
+	0xb2, 0x3b, 0x34, 0x0c, 0x11, 0xc7, 0x69, 0x36, 0xe3, 0x2e, 0xac, 0x68, 0xed, 0xe0, 0xf2, 0xc4,
+	0xfe, 0x9f, 0x2a, 0x36, 0xe1, 0xcf, 0xc3, 0x71, 0xc8, 0xd5, 0x99, 0xd4, 0x9a, 0xbb, 0x7a, 0xcb,
+	0x52, 0x4d, 0x77, 0xbf, 0x30, 0xca, 0xf5, 0xde, 0xe3, 0x7f, 0x29, 0xd7, 0x5d, 0x66, 0x16, 0xf7,
+	0x47, 0x8e, 0x63, 0x7d, 0x02, 0xad, 0xb7, 0xae, 0xb9, 0x1d, 0x95, 0x9d, 0xf9, 0xdd, 0xc5, 0xc3,
+	0xb9, 0x95, 0xca, 0x49, 0xe3, 0xed, 0xd3, 0xf1, 0x9e, 0xec, 0x42, 0xfb, 0x52, 0x47, 0x27, 0x7c,
+	0xee, 0x52, 0xd8, 0xd4, 0x42, 0x3c, 0xe6, 0xdd, 0xbf, 0x17, 0xcd, 0x39, 0xbe, 0x72, 0x1c, 0xab,
+	0x0d, 0x73, 0xa1, 0xd0, 0xed, 0x7c, 0x2e, 0x14, 0xf9, 0x15, 0xce, 0x15, 0x1a, 0x4a, 0x31, 0x91,
+	0xe6, 0x27, 0x13, 0xe9, 0xca, 0x8e, 0xb2, 0x30, 0x7d, 0x47, 0x59, 0x9c, 0xbe, 0xa3, 0x2c, 0xcd,
+	0xd0, 0x51, 0xaa, 0xb3, 0x74, 0x94, 0xda, 0x2c, 0x1d, 0xa5, 0x3e, 0x4b, 0x47, 0x81, 0x59, 0x3a,
+	0x4a, 0x63, 0x96, 0x8e, 0xd2, 0xbc, 0xba, 0xa3, 0xe4, 0x2b, 0x6c, 0xab, 0xa4, 0xc2, 0xe6, 0xca,
+	0x77, 0x7b, 0xb2, 0x7c, 0x17, 0x2e, 0x23, 0xcb, 0x93, 0x97, 0x91, 0x6d, 0x00, 0xca, 0x5e, 0x79,
+	0x11, 0x71, 0xdd, 0x01, 0xea, 0x88, 0xbc, 0xba, 0x88, 0x38, 0x16, 0x8a, 0xb0, 0x2f, 0xdc, 0x30,
+	0x1d, 0x7a, 0x3c, 0xd6, 0x2d, 0x00, 0x14, 0xf4, 0x02, 0x91, 0x5c, 0x83, 0xb0, 0x72, 0x0d, 0xa2,
+	0xbb, 0x6f, 0x26, 0xe2, 0xd7, 0x8e, 0x33, 0x71, 0x92, 0x29, 0x01, 0xcc, 0x93, 0xdc, 0x7d, 0x6c,
+	0x7a, 0x9e, 0x38, 0x8e, 0xea, 0x11, 0x43, 0x16, 0xa6, 0x2c, 0x70, 0x7d, 0x11, 0xca, 0x58, 0x04,
+	0xda, 0xd5, 0x22, 0xf4, 0x88, 0xc0, 0xee, 0xc8, 0x4c, 0x31, 0x36, 0x6d, 0x8a, 0x99, 0x3f, 0x31,
+	0xff, 0xb1, 0x2e, 0xb7, 0x50, 0xd8, 0x83, 0xee, 0xef, 0x55, 0x73, 0x62, 0xfe, 0x5f, 0xdd, 0xd9,
+	0xef, 0x40, 0x4b, 0xc6, 0x2c, 0x4c, 0xfa, 0x22, 0x1e, 0xf2, 0xd8, 0x65, 0x7a, 0x21, 0x4d, 0x03,
+	0x7c, 0x5a, 0x14, 0x79, 0xfa, 0x9e, 0x6e, 0x8a, 0x0e, 0x8b, 0x22, 0x5f, 0xdf, 0xd0, 0x4d, 0xd1,
+	0x91, 0x0a, 0x96, 0x5a, 0x05, 0xf5, 0x34, 0xba, 0x90, 0xd7, 0x14, 0x80, 0x2d, 0x4d, 0x07, 0x0b,
+	0xb9, 0xda, 0x65, 0xb0, 0x90, 0xba, 0xf2, 0x69, 0x51, 0xbf, 0xfa, 0x69, 0xe1, 0xc0, 0x3a, 0x79,
+	0x44, 0x94, 0xb3, 0xd0, 0x45, 0xdc, 0x42, 0x8b, 0x88, 0x4c, 0xc7, 0x43, 0xd8, 0xcc, 0xce, 0x7d,
+	0xc1, 0xd3, 0x40, 0xcf, 0xba, 0xce, 0x80, 0xbc, 0xeb, 0x1b, 0xd8, 0x22, 0x57, 0xcc, 0x7d, 0x81,
+	0x1b, 0x6a, 0x18, 0x9b, 0x68, 0xbc, 0x8e, 0x82, 0x13, 0xe2, 0x4d, 0xef, 0xd5, 0xef, 0x9b, 0xd6,
+	0xd4, 0xef, 0x9b, 0xf6, 0x54, 0xef, 0x9b, 0xe5, 0x29, 0xde, 0x37, 0x2b, 0xa5, 0xef, 0x9b, 0x07,
+	0xb0, 0xa6, 0x85, 0xb9, 0x81, 0x29, 0x93, 0x2d, 0xa2, 0x72, 0x23, 0x8f, 0xb3, 0x34, 0x89, 0x38,
+	0xef, 0xe9, 0xac, 0xd6, 0x59, 0x7a, 0xaa, 0xa0, 0xe2, 0x9b, 0x69, 0xad, 0xf8, 0x66, 0x52, 0xd7,
+	0x07, 0x5f, 0x0c, 0x87, 0x69, 0x38, 0xf0, 0x55, 0xd2, 0xe1, 0x59, 0xa1, 0xbb, 0xdd, 0xb2, 0x81,
+	0xe3, 0x99, 0xb9, 0x09, 0xf5, 0x73, 0x11, 0xff, 0x4c, 0x1a, 0xba, 0xdc, 0xd5, 0x14, 0x90, 0x9d,
+	0x35, 0x16, 0xb0, 0x78, 0xe8, 0x8a, 0x50, 0xdf, 0xec, 0xaa, 0xf8, 0x7d, 0x1c, 0xe2, 0xa5, 0x09,
+	0xa9, 0x1e, 0x0f, 0xd8, 0x85, 0xbe, 0xd8, 0x01, 0x42, 0xcf, 0x14, 0x52, 0xb8, 0x99, 0xd9, 0x85,
+	0x9b, 0xd9, 0xe1, 0x8d, 0x3f, 0xde, 0x77, 0x2a, 0xef, 0xde, 0x77, 0x2a, 0x7f, 0xbd, 0xef, 0x54,
+	0x7e, 0xf9, 0xd0, 0xb9, 0xf6, 0xee, 0x43, 0xe7, 0xda, 0x9f, 0x1f, 0x3a, 0xd7, 0xbe, 0xab, 0x78,
+	0x4b, 0xf8, 0xd8, 0x3f, 0xf8, 0x27, 0x00, 0x00, 0xff, 0xff, 0xcc, 0x7f, 0x82, 0xf5, 0x02, 0x10,
+	0x00, 0x00,
 }
 
-func (this *WlstEsu_9000) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*WlstEsu_9000)
-	if !ok {
-		that2, ok := that.(WlstEsu_9000)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.Status != that1.Status {
-		return false
-	}
-	return true
-}
-func (this *WlstEsu_9400) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*WlstEsu_9400)
-	if !ok {
-		that2, ok := that.(WlstEsu_9400)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.Status != that1.Status {
-		return false
-	}
-	return true
-}
-func (this *WlstEsu_9200) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*WlstEsu_9200)
-	if !ok {
-		that2, ok := that.(WlstEsu_9200)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.WarmupTime != that1.WarmupTime {
-		return false
-	}
-	if this.OnTime != that1.OnTime {
-		return false
-	}
-	if this.OffTime != that1.OffTime {
-		return false
-	}
-	if this.FanStartTemperature != that1.FanStartTemperature {
-		return false
-	}
-	if this.StopSaver != that1.StopSaver {
-		return false
-	}
-	if this.ProtectionTemperature != that1.ProtectionTemperature {
-		return false
-	}
-	if this.InputOvervoltage != that1.InputOvervoltage {
-		return false
-	}
-	if this.InputUndervoltage != that1.InputUndervoltage {
-		return false
-	}
-	if this.OutputOverload != that1.OutputOverload {
-		return false
-	}
-	if this.PhaseCount != that1.PhaseCount {
-		return false
-	}
-	return true
-}
-func (this *WlstEsu_9F00) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*WlstEsu_9F00)
-	if !ok {
-		that2, ok := that.(WlstEsu_9F00)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.DateTime != that1.DateTime {
-		return false
-	}
-	if this.Temperature != that1.Temperature {
-		return false
-	}
-	if this.APhaseInputVoltage != that1.APhaseInputVoltage {
-		return false
-	}
-	if this.BPhaseInputVoltage != that1.BPhaseInputVoltage {
-		return false
-	}
-	if this.CPhaseInputVoltage != that1.CPhaseInputVoltage {
-		return false
-	}
-	if this.APhaseOutputVoltage != that1.APhaseOutputVoltage {
-		return false
-	}
-	if this.BPhaseOutputVoltage != that1.BPhaseOutputVoltage {
-		return false
-	}
-	if this.CPhaseOutputVoltage != that1.CPhaseOutputVoltage {
-		return false
-	}
-	if this.APhaseOutputCurrent != that1.APhaseOutputCurrent {
-		return false
-	}
-	if this.BPhaseOutputCurrent != that1.BPhaseOutputCurrent {
-		return false
-	}
-	if this.CPhaseOutputCurrent != that1.CPhaseOutputCurrent {
-		return false
-	}
-	if this.APhaseOutputPower != that1.APhaseOutputPower {
-		return false
-	}
-	if this.BPhaseOutputPower != that1.BPhaseOutputPower {
-		return false
-	}
-	if this.CPhaseOutputPower != that1.CPhaseOutputPower {
-		return false
-	}
-	if this.FanStatus != that1.FanStatus {
-		return false
-	}
-	if this.SaverStatus != that1.SaverStatus {
-		return false
-	}
-	if this.RunTime != that1.RunTime {
-		return false
-	}
-	if this.SaverTime != that1.SaverTime {
-		return false
-	}
-	if this.AdjustValue != that1.AdjustValue {
-		return false
-	}
-	if this.ExistingFault != that1.ExistingFault {
-		return false
-	}
-	if this.ResetDay0 != that1.ResetDay0 {
-		return false
-	}
-	if this.ResetDay1 != that1.ResetDay1 {
-		return false
-	}
-	if this.ResetDay2 != that1.ResetDay2 {
-		return false
-	}
-	if this.ResetDay3 != that1.ResetDay3 {
-		return false
-	}
-	if this.ArgsStatus != that1.ArgsStatus {
-		return false
-	}
-	if this.SaverMode != that1.SaverMode {
-		return false
-	}
-	if this.AdjustStalls != that1.AdjustStalls {
-		return false
-	}
-	if this.AdjustTime != that1.AdjustTime {
-		return false
-	}
-	if this.AdjustA != that1.AdjustA {
-		return false
-	}
-	if this.AdjustB != that1.AdjustB {
-		return false
-	}
-	if this.AdjustC != that1.AdjustC {
-		return false
-	}
-	if this.IgbtStatus != that1.IgbtStatus {
-		return false
-	}
-	if this.IgbtTemperature != that1.IgbtTemperature {
-		return false
-	}
-	if this.EventNo != that1.EventNo {
-		return false
-	}
-	if this.SwitchOutStatus != that1.SwitchOutStatus {
-		return false
-	}
-	if this.SwitchInStatus != that1.SwitchInStatus {
-		return false
-	}
-	if this.RunStatus != that1.RunStatus {
-		return false
-	}
-	return true
-}
-func (this *WlstEsu_1600) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*WlstEsu_1600)
-	if !ok {
-		that2, ok := that.(WlstEsu_1600)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.DateTime != that1.DateTime {
-		return false
-	}
-	return true
-}
-func (this *WlstEsu_9500) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*WlstEsu_9500)
-	if !ok {
-		that2, ok := that.(WlstEsu_9500)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if len(this.XAdjustTime) != len(that1.XAdjustTime) {
-		return false
-	}
-	for i := range this.XAdjustTime {
-		if this.XAdjustTime[i] != that1.XAdjustTime[i] {
-			return false
-		}
-	}
-	if len(this.XAdjustValue) != len(that1.XAdjustValue) {
-		return false
-	}
-	for i := range this.XAdjustValue {
-		if this.XAdjustValue[i] != that1.XAdjustValue[i] {
-			return false
-		}
-	}
-	return true
-}
-func (this *WlstEsu_9700) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*WlstEsu_9700)
-	if !ok {
-		that2, ok := that.(WlstEsu_9700)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.No != that1.No {
-		return false
-	}
-	if this.DateTime != that1.DateTime {
-		return false
-	}
-	if this.AdjustValue != that1.AdjustValue {
-		return false
-	}
-	if this.APhaseInputVoltage != that1.APhaseInputVoltage {
-		return false
-	}
-	if this.BPhaseInputVoltage != that1.BPhaseInputVoltage {
-		return false
-	}
-	if this.CPhaseInputVoltage != that1.CPhaseInputVoltage {
-		return false
-	}
-	if this.APhaseOutputVoltage != that1.APhaseOutputVoltage {
-		return false
-	}
-	if this.BPhaseOutputVoltage != that1.BPhaseOutputVoltage {
-		return false
-	}
-	if this.CPhaseOutputVoltage != that1.CPhaseOutputVoltage {
-		return false
-	}
-	if this.APhaseOutputCurrent != that1.APhaseOutputCurrent {
-		return false
-	}
-	if this.BPhaseOutputCurrent != that1.BPhaseOutputCurrent {
-		return false
-	}
-	if this.CPhaseOutputCurrent != that1.CPhaseOutputCurrent {
-		return false
-	}
-	if this.SaverTime != that1.SaverTime {
-		return false
-	}
-	if this.SaverStatus != that1.SaverStatus {
-		return false
-	}
-	if this.Temperature != that1.Temperature {
-		return false
-	}
-	if this.EventType != that1.EventType {
-		return false
-	}
-	if this.InfoNumber != that1.InfoNumber {
-		return false
-	}
-	if this.RunTime != that1.RunTime {
-		return false
-	}
-	return true
-}
-func (this *WlstEsu_1800) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*WlstEsu_1800)
-	if !ok {
-		that2, ok := that.(WlstEsu_1800)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.AdjustValue != that1.AdjustValue {
-		return false
-	}
-	return true
-}
-func (this *WlstEsu_1900) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*WlstEsu_1900)
-	if !ok {
-		that2, ok := that.(WlstEsu_1900)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.ManualControl != that1.ManualControl {
-		return false
-	}
-	return true
-}
-func (this *WlstEsu_9A00) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*WlstEsu_9A00)
-	if !ok {
-		that2, ok := that.(WlstEsu_9A00)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.No != that1.No {
-		return false
-	}
-	if this.DateTime != that1.DateTime {
-		return false
-	}
-	if this.RunTime != that1.RunTime {
-		return false
-	}
-	if this.SaverTime != that1.SaverTime {
-		return false
-	}
-	return true
-}
-func (this *WlstEsu_9E00) Equal(that interface{}) bool {
-	if that == nil {
-		return this == nil
-	}
-
-	that1, ok := that.(*WlstEsu_9E00)
-	if !ok {
-		that2, ok := that.(WlstEsu_9E00)
-		if ok {
-			that1 = &that2
-		} else {
-			return false
-		}
-	}
-	if that1 == nil {
-		return this == nil
-	} else if this == nil {
-		return false
-	}
-	if this.WarmupTime != that1.WarmupTime {
-		return false
-	}
-	if this.OnTime != that1.OnTime {
-		return false
-	}
-	if this.OffTime != that1.OffTime {
-		return false
-	}
-	if this.TransformerA != that1.TransformerA {
-		return false
-	}
-	if this.TransformerB != that1.TransformerB {
-		return false
-	}
-	if this.TransformerC != that1.TransformerC {
-		return false
-	}
-	if this.TimeMode != that1.TimeMode {
-		return false
-	}
-	if this.RunMode != that1.RunMode {
-		return false
-	}
-	if this.FanStartTemperature != that1.FanStartTemperature {
-		return false
-	}
-	if this.FanStopTemperature != that1.FanStopTemperature {
-		return false
-	}
-	if this.SaverStopTemperature != that1.SaverStopTemperature {
-		return false
-	}
-	if this.SaverRecoverTemperature != that1.SaverRecoverTemperature {
-		return false
-	}
-	if this.ProtectionTemperature != that1.ProtectionTemperature {
-		return false
-	}
-	if this.InputOvervoltage != that1.InputOvervoltage {
-		return false
-	}
-	if this.InputUndervoltage != that1.InputUndervoltage {
-		return false
-	}
-	if this.OutputOverload != that1.OutputOverload {
-		return false
-	}
-	if this.OutputUndervoltage != that1.OutputUndervoltage {
-		return false
-	}
-	if this.AdjustSpeed != that1.AdjustSpeed {
-		return false
-	}
-	if this.PhaseCount != that1.PhaseCount {
-		return false
-	}
-	if this.CommunicateMode != that1.CommunicateMode {
-		return false
-	}
-	if this.WorkMode != that1.WorkMode {
-		return false
-	}
-	if this.AlarmOn != that1.AlarmOn {
-		return false
-	}
-	if this.AlarmDelay != that1.AlarmDelay {
-		return false
-	}
-	if this.SaverMode != that1.SaverMode {
-		return false
-	}
-	return true
-}
-func (this *WlstEsu_9000) GoString() string {
-	if this == nil {
-		return "nil"
-	}
-	s := make([]string, 0, 5)
-	s = append(s, "&wlst_pb2.WlstEsu_9000{")
-	s = append(s, "Status: "+fmt.Sprintf("%#v", this.Status)+",\n")
-	s = append(s, "}")
-	return strings.Join(s, "")
-}
-func (this *WlstEsu_9400) GoString() string {
-	if this == nil {
-		return "nil"
-	}
-	s := make([]string, 0, 5)
-	s = append(s, "&wlst_pb2.WlstEsu_9400{")
-	s = append(s, "Status: "+fmt.Sprintf("%#v", this.Status)+",\n")
-	s = append(s, "}")
-	return strings.Join(s, "")
-}
-func (this *WlstEsu_9200) GoString() string {
-	if this == nil {
-		return "nil"
-	}
-	s := make([]string, 0, 14)
-	s = append(s, "&wlst_pb2.WlstEsu_9200{")
-	s = append(s, "WarmupTime: "+fmt.Sprintf("%#v", this.WarmupTime)+",\n")
-	s = append(s, "OnTime: "+fmt.Sprintf("%#v", this.OnTime)+",\n")
-	s = append(s, "OffTime: "+fmt.Sprintf("%#v", this.OffTime)+",\n")
-	s = append(s, "FanStartTemperature: "+fmt.Sprintf("%#v", this.FanStartTemperature)+",\n")
-	s = append(s, "StopSaver: "+fmt.Sprintf("%#v", this.StopSaver)+",\n")
-	s = append(s, "ProtectionTemperature: "+fmt.Sprintf("%#v", this.ProtectionTemperature)+",\n")
-	s = append(s, "InputOvervoltage: "+fmt.Sprintf("%#v", this.InputOvervoltage)+",\n")
-	s = append(s, "InputUndervoltage: "+fmt.Sprintf("%#v", this.InputUndervoltage)+",\n")
-	s = append(s, "OutputOverload: "+fmt.Sprintf("%#v", this.OutputOverload)+",\n")
-	s = append(s, "PhaseCount: "+fmt.Sprintf("%#v", this.PhaseCount)+",\n")
-	s = append(s, "}")
-	return strings.Join(s, "")
-}
-func (this *WlstEsu_9F00) GoString() string {
-	if this == nil {
-		return "nil"
-	}
-	s := make([]string, 0, 41)
-	s = append(s, "&wlst_pb2.WlstEsu_9F00{")
-	s = append(s, "DateTime: "+fmt.Sprintf("%#v", this.DateTime)+",\n")
-	s = append(s, "Temperature: "+fmt.Sprintf("%#v", this.Temperature)+",\n")
-	s = append(s, "APhaseInputVoltage: "+fmt.Sprintf("%#v", this.APhaseInputVoltage)+",\n")
-	s = append(s, "BPhaseInputVoltage: "+fmt.Sprintf("%#v", this.BPhaseInputVoltage)+",\n")
-	s = append(s, "CPhaseInputVoltage: "+fmt.Sprintf("%#v", this.CPhaseInputVoltage)+",\n")
-	s = append(s, "APhaseOutputVoltage: "+fmt.Sprintf("%#v", this.APhaseOutputVoltage)+",\n")
-	s = append(s, "BPhaseOutputVoltage: "+fmt.Sprintf("%#v", this.BPhaseOutputVoltage)+",\n")
-	s = append(s, "CPhaseOutputVoltage: "+fmt.Sprintf("%#v", this.CPhaseOutputVoltage)+",\n")
-	s = append(s, "APhaseOutputCurrent: "+fmt.Sprintf("%#v", this.APhaseOutputCurrent)+",\n")
-	s = append(s, "BPhaseOutputCurrent: "+fmt.Sprintf("%#v", this.BPhaseOutputCurrent)+",\n")
-	s = append(s, "CPhaseOutputCurrent: "+fmt.Sprintf("%#v", this.CPhaseOutputCurrent)+",\n")
-	s = append(s, "APhaseOutputPower: "+fmt.Sprintf("%#v", this.APhaseOutputPower)+",\n")
-	s = append(s, "BPhaseOutputPower: "+fmt.Sprintf("%#v", this.BPhaseOutputPower)+",\n")
-	s = append(s, "CPhaseOutputPower: "+fmt.Sprintf("%#v", this.CPhaseOutputPower)+",\n")
-	s = append(s, "FanStatus: "+fmt.Sprintf("%#v", this.FanStatus)+",\n")
-	s = append(s, "SaverStatus: "+fmt.Sprintf("%#v", this.SaverStatus)+",\n")
-	s = append(s, "RunTime: "+fmt.Sprintf("%#v", this.RunTime)+",\n")
-	s = append(s, "SaverTime: "+fmt.Sprintf("%#v", this.SaverTime)+",\n")
-	s = append(s, "AdjustValue: "+fmt.Sprintf("%#v", this.AdjustValue)+",\n")
-	s = append(s, "ExistingFault: "+fmt.Sprintf("%#v", this.ExistingFault)+",\n")
-	s = append(s, "ResetDay0: "+fmt.Sprintf("%#v", this.ResetDay0)+",\n")
-	s = append(s, "ResetDay1: "+fmt.Sprintf("%#v", this.ResetDay1)+",\n")
-	s = append(s, "ResetDay2: "+fmt.Sprintf("%#v", this.ResetDay2)+",\n")
-	s = append(s, "ResetDay3: "+fmt.Sprintf("%#v", this.ResetDay3)+",\n")
-	s = append(s, "ArgsStatus: "+fmt.Sprintf("%#v", this.ArgsStatus)+",\n")
-	s = append(s, "SaverMode: "+fmt.Sprintf("%#v", this.SaverMode)+",\n")
-	s = append(s, "AdjustStalls: "+fmt.Sprintf("%#v", this.AdjustStalls)+",\n")
-	s = append(s, "AdjustTime: "+fmt.Sprintf("%#v", this.AdjustTime)+",\n")
-	s = append(s, "AdjustA: "+fmt.Sprintf("%#v", this.AdjustA)+",\n")
-	s = append(s, "AdjustB: "+fmt.Sprintf("%#v", this.AdjustB)+",\n")
-	s = append(s, "AdjustC: "+fmt.Sprintf("%#v", this.AdjustC)+",\n")
-	s = append(s, "IgbtStatus: "+fmt.Sprintf("%#v", this.IgbtStatus)+",\n")
-	s = append(s, "IgbtTemperature: "+fmt.Sprintf("%#v", this.IgbtTemperature)+",\n")
-	s = append(s, "EventNo: "+fmt.Sprintf("%#v", this.EventNo)+",\n")
-	s = append(s, "SwitchOutStatus: "+fmt.Sprintf("%#v", this.SwitchOutStatus)+",\n")
-	s = append(s, "SwitchInStatus: "+fmt.Sprintf("%#v", this.SwitchInStatus)+",\n")
-	s = append(s, "RunStatus: "+fmt.Sprintf("%#v", this.RunStatus)+",\n")
-	s = append(s, "}")
-	return strings.Join(s, "")
-}
-func (this *WlstEsu_1600) GoString() string {
-	if this == nil {
-		return "nil"
-	}
-	s := make([]string, 0, 5)
-	s = append(s, "&wlst_pb2.WlstEsu_1600{")
-	s = append(s, "DateTime: "+fmt.Sprintf("%#v", this.DateTime)+",\n")
-	s = append(s, "}")
-	return strings.Join(s, "")
-}
-func (this *WlstEsu_9500) GoString() string {
-	if this == nil {
-		return "nil"
-	}
-	s := make([]string, 0, 6)
-	s = append(s, "&wlst_pb2.WlstEsu_9500{")
-	s = append(s, "XAdjustTime: "+fmt.Sprintf("%#v", this.XAdjustTime)+",\n")
-	s = append(s, "XAdjustValue: "+fmt.Sprintf("%#v", this.XAdjustValue)+",\n")
-	s = append(s, "}")
-	return strings.Join(s, "")
-}
-func (this *WlstEsu_9700) GoString() string {
-	if this == nil {
-		return "nil"
-	}
-	s := make([]string, 0, 22)
-	s = append(s, "&wlst_pb2.WlstEsu_9700{")
-	s = append(s, "No: "+fmt.Sprintf("%#v", this.No)+",\n")
-	s = append(s, "DateTime: "+fmt.Sprintf("%#v", this.DateTime)+",\n")
-	s = append(s, "AdjustValue: "+fmt.Sprintf("%#v", this.AdjustValue)+",\n")
-	s = append(s, "APhaseInputVoltage: "+fmt.Sprintf("%#v", this.APhaseInputVoltage)+",\n")
-	s = append(s, "BPhaseInputVoltage: "+fmt.Sprintf("%#v", this.BPhaseInputVoltage)+",\n")
-	s = append(s, "CPhaseInputVoltage: "+fmt.Sprintf("%#v", this.CPhaseInputVoltage)+",\n")
-	s = append(s, "APhaseOutputVoltage: "+fmt.Sprintf("%#v", this.APhaseOutputVoltage)+",\n")
-	s = append(s, "BPhaseOutputVoltage: "+fmt.Sprintf("%#v", this.BPhaseOutputVoltage)+",\n")
-	s = append(s, "CPhaseOutputVoltage: "+fmt.Sprintf("%#v", this.CPhaseOutputVoltage)+",\n")
-	s = append(s, "APhaseOutputCurrent: "+fmt.Sprintf("%#v", this.APhaseOutputCurrent)+",\n")
-	s = append(s, "BPhaseOutputCurrent: "+fmt.Sprintf("%#v", this.BPhaseOutputCurrent)+",\n")
-	s = append(s, "CPhaseOutputCurrent: "+fmt.Sprintf("%#v", this.CPhaseOutputCurrent)+",\n")
-	s = append(s, "SaverTime: "+fmt.Sprintf("%#v", this.SaverTime)+",\n")
-	s = append(s, "SaverStatus: "+fmt.Sprintf("%#v", this.SaverStatus)+",\n")
-	s = append(s, "Temperature: "+fmt.Sprintf("%#v", this.Temperature)+",\n")
-	s = append(s, "EventType: "+fmt.Sprintf("%#v", this.EventType)+",\n")
-	s = append(s, "InfoNumber: "+fmt.Sprintf("%#v", this.InfoNumber)+",\n")
-	s = append(s, "RunTime: "+fmt.Sprintf("%#v", this.RunTime)+",\n")
-	s = append(s, "}")
-	return strings.Join(s, "")
-}
-func (this *WlstEsu_1800) GoString() string {
-	if this == nil {
-		return "nil"
-	}
-	s := make([]string, 0, 5)
-	s = append(s, "&wlst_pb2.WlstEsu_1800{")
-	s = append(s, "AdjustValue: "+fmt.Sprintf("%#v", this.AdjustValue)+",\n")
-	s = append(s, "}")
-	return strings.Join(s, "")
-}
-func (this *WlstEsu_1900) GoString() string {
-	if this == nil {
-		return "nil"
-	}
-	s := make([]string, 0, 5)
-	s = append(s, "&wlst_pb2.WlstEsu_1900{")
-	s = append(s, "ManualControl: "+fmt.Sprintf("%#v", this.ManualControl)+",\n")
-	s = append(s, "}")
-	return strings.Join(s, "")
-}
-func (this *WlstEsu_9A00) GoString() string {
-	if this == nil {
-		return "nil"
-	}
-	s := make([]string, 0, 8)
-	s = append(s, "&wlst_pb2.WlstEsu_9A00{")
-	s = append(s, "No: "+fmt.Sprintf("%#v", this.No)+",\n")
-	s = append(s, "DateTime: "+fmt.Sprintf("%#v", this.DateTime)+",\n")
-	s = append(s, "RunTime: "+fmt.Sprintf("%#v", this.RunTime)+",\n")
-	s = append(s, "SaverTime: "+fmt.Sprintf("%#v", this.SaverTime)+",\n")
-	s = append(s, "}")
-	return strings.Join(s, "")
-}
-func (this *WlstEsu_9E00) GoString() string {
-	if this == nil {
-		return "nil"
-	}
-	s := make([]string, 0, 28)
-	s = append(s, "&wlst_pb2.WlstEsu_9E00{")
-	s = append(s, "WarmupTime: "+fmt.Sprintf("%#v", this.WarmupTime)+",\n")
-	s = append(s, "OnTime: "+fmt.Sprintf("%#v", this.OnTime)+",\n")
-	s = append(s, "OffTime: "+fmt.Sprintf("%#v", this.OffTime)+",\n")
-	s = append(s, "TransformerA: "+fmt.Sprintf("%#v", this.TransformerA)+",\n")
-	s = append(s, "TransformerB: "+fmt.Sprintf("%#v", this.TransformerB)+",\n")
-	s = append(s, "TransformerC: "+fmt.Sprintf("%#v", this.TransformerC)+",\n")
-	s = append(s, "TimeMode: "+fmt.Sprintf("%#v", this.TimeMode)+",\n")
-	s = append(s, "RunMode: "+fmt.Sprintf("%#v", this.RunMode)+",\n")
-	s = append(s, "FanStartTemperature: "+fmt.Sprintf("%#v", this.FanStartTemperature)+",\n")
-	s = append(s, "FanStopTemperature: "+fmt.Sprintf("%#v", this.FanStopTemperature)+",\n")
-	s = append(s, "SaverStopTemperature: "+fmt.Sprintf("%#v", this.SaverStopTemperature)+",\n")
-	s = append(s, "SaverRecoverTemperature: "+fmt.Sprintf("%#v", this.SaverRecoverTemperature)+",\n")
-	s = append(s, "ProtectionTemperature: "+fmt.Sprintf("%#v", this.ProtectionTemperature)+",\n")
-	s = append(s, "InputOvervoltage: "+fmt.Sprintf("%#v", this.InputOvervoltage)+",\n")
-	s = append(s, "InputUndervoltage: "+fmt.Sprintf("%#v", this.InputUndervoltage)+",\n")
-	s = append(s, "OutputOverload: "+fmt.Sprintf("%#v", this.OutputOverload)+",\n")
-	s = append(s, "OutputUndervoltage: "+fmt.Sprintf("%#v", this.OutputUndervoltage)+",\n")
-	s = append(s, "AdjustSpeed: "+fmt.Sprintf("%#v", this.AdjustSpeed)+",\n")
-	s = append(s, "PhaseCount: "+fmt.Sprintf("%#v", this.PhaseCount)+",\n")
-	s = append(s, "CommunicateMode: "+fmt.Sprintf("%#v", this.CommunicateMode)+",\n")
-	s = append(s, "WorkMode: "+fmt.Sprintf("%#v", this.WorkMode)+",\n")
-	s = append(s, "AlarmOn: "+fmt.Sprintf("%#v", this.AlarmOn)+",\n")
-	s = append(s, "AlarmDelay: "+fmt.Sprintf("%#v", this.AlarmDelay)+",\n")
-	s = append(s, "SaverMode: "+fmt.Sprintf("%#v", this.SaverMode)+",\n")
-	s = append(s, "}")
-	return strings.Join(s, "")
-}
-func valueToGoStringProtocolEsu(v interface{}, typ string) string {
-	rv := reflect.ValueOf(v)
-	if rv.IsNil() {
-		return "nil"
-	}
-	pv := reflect.Indirect(rv).Interface()
-	return fmt.Sprintf("func(v %v) *%v { return &v } ( %#v )", typ, typ, pv)
-}
 func (m *WlstEsu_9000) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
@@ -3477,213 +2736,6 @@ func sovProtocolEsu(x uint64) (n int) {
 }
 func sozProtocolEsu(x uint64) (n int) {
 	return sovProtocolEsu(uint64((x << 1) ^ uint64((int64(x) >> 63))))
-}
-func (this *WlstEsu_9000) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&WlstEsu_9000{`,
-		`Status:` + fmt.Sprintf("%v", this.Status) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *WlstEsu_9400) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&WlstEsu_9400{`,
-		`Status:` + fmt.Sprintf("%v", this.Status) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *WlstEsu_9200) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&WlstEsu_9200{`,
-		`WarmupTime:` + fmt.Sprintf("%v", this.WarmupTime) + `,`,
-		`OnTime:` + fmt.Sprintf("%v", this.OnTime) + `,`,
-		`OffTime:` + fmt.Sprintf("%v", this.OffTime) + `,`,
-		`FanStartTemperature:` + fmt.Sprintf("%v", this.FanStartTemperature) + `,`,
-		`StopSaver:` + fmt.Sprintf("%v", this.StopSaver) + `,`,
-		`ProtectionTemperature:` + fmt.Sprintf("%v", this.ProtectionTemperature) + `,`,
-		`InputOvervoltage:` + fmt.Sprintf("%v", this.InputOvervoltage) + `,`,
-		`InputUndervoltage:` + fmt.Sprintf("%v", this.InputUndervoltage) + `,`,
-		`OutputOverload:` + fmt.Sprintf("%v", this.OutputOverload) + `,`,
-		`PhaseCount:` + fmt.Sprintf("%v", this.PhaseCount) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *WlstEsu_9F00) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&WlstEsu_9F00{`,
-		`DateTime:` + fmt.Sprintf("%v", this.DateTime) + `,`,
-		`Temperature:` + fmt.Sprintf("%v", this.Temperature) + `,`,
-		`APhaseInputVoltage:` + fmt.Sprintf("%v", this.APhaseInputVoltage) + `,`,
-		`BPhaseInputVoltage:` + fmt.Sprintf("%v", this.BPhaseInputVoltage) + `,`,
-		`CPhaseInputVoltage:` + fmt.Sprintf("%v", this.CPhaseInputVoltage) + `,`,
-		`APhaseOutputVoltage:` + fmt.Sprintf("%v", this.APhaseOutputVoltage) + `,`,
-		`BPhaseOutputVoltage:` + fmt.Sprintf("%v", this.BPhaseOutputVoltage) + `,`,
-		`CPhaseOutputVoltage:` + fmt.Sprintf("%v", this.CPhaseOutputVoltage) + `,`,
-		`APhaseOutputCurrent:` + fmt.Sprintf("%v", this.APhaseOutputCurrent) + `,`,
-		`BPhaseOutputCurrent:` + fmt.Sprintf("%v", this.BPhaseOutputCurrent) + `,`,
-		`CPhaseOutputCurrent:` + fmt.Sprintf("%v", this.CPhaseOutputCurrent) + `,`,
-		`APhaseOutputPower:` + fmt.Sprintf("%v", this.APhaseOutputPower) + `,`,
-		`BPhaseOutputPower:` + fmt.Sprintf("%v", this.BPhaseOutputPower) + `,`,
-		`CPhaseOutputPower:` + fmt.Sprintf("%v", this.CPhaseOutputPower) + `,`,
-		`FanStatus:` + fmt.Sprintf("%v", this.FanStatus) + `,`,
-		`SaverStatus:` + fmt.Sprintf("%v", this.SaverStatus) + `,`,
-		`RunTime:` + fmt.Sprintf("%v", this.RunTime) + `,`,
-		`SaverTime:` + fmt.Sprintf("%v", this.SaverTime) + `,`,
-		`AdjustValue:` + fmt.Sprintf("%v", this.AdjustValue) + `,`,
-		`ExistingFault:` + fmt.Sprintf("%v", this.ExistingFault) + `,`,
-		`ResetDay0:` + fmt.Sprintf("%v", this.ResetDay0) + `,`,
-		`ResetDay1:` + fmt.Sprintf("%v", this.ResetDay1) + `,`,
-		`ResetDay2:` + fmt.Sprintf("%v", this.ResetDay2) + `,`,
-		`ResetDay3:` + fmt.Sprintf("%v", this.ResetDay3) + `,`,
-		`ArgsStatus:` + fmt.Sprintf("%v", this.ArgsStatus) + `,`,
-		`SaverMode:` + fmt.Sprintf("%v", this.SaverMode) + `,`,
-		`AdjustStalls:` + fmt.Sprintf("%v", this.AdjustStalls) + `,`,
-		`AdjustTime:` + fmt.Sprintf("%v", this.AdjustTime) + `,`,
-		`AdjustA:` + fmt.Sprintf("%v", this.AdjustA) + `,`,
-		`AdjustB:` + fmt.Sprintf("%v", this.AdjustB) + `,`,
-		`AdjustC:` + fmt.Sprintf("%v", this.AdjustC) + `,`,
-		`IgbtStatus:` + fmt.Sprintf("%v", this.IgbtStatus) + `,`,
-		`IgbtTemperature:` + fmt.Sprintf("%v", this.IgbtTemperature) + `,`,
-		`EventNo:` + fmt.Sprintf("%v", this.EventNo) + `,`,
-		`SwitchOutStatus:` + fmt.Sprintf("%v", this.SwitchOutStatus) + `,`,
-		`SwitchInStatus:` + fmt.Sprintf("%v", this.SwitchInStatus) + `,`,
-		`RunStatus:` + fmt.Sprintf("%v", this.RunStatus) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *WlstEsu_1600) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&WlstEsu_1600{`,
-		`DateTime:` + fmt.Sprintf("%v", this.DateTime) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *WlstEsu_9500) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&WlstEsu_9500{`,
-		`XAdjustTime:` + fmt.Sprintf("%v", this.XAdjustTime) + `,`,
-		`XAdjustValue:` + fmt.Sprintf("%v", this.XAdjustValue) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *WlstEsu_9700) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&WlstEsu_9700{`,
-		`No:` + fmt.Sprintf("%v", this.No) + `,`,
-		`DateTime:` + fmt.Sprintf("%v", this.DateTime) + `,`,
-		`AdjustValue:` + fmt.Sprintf("%v", this.AdjustValue) + `,`,
-		`APhaseInputVoltage:` + fmt.Sprintf("%v", this.APhaseInputVoltage) + `,`,
-		`BPhaseInputVoltage:` + fmt.Sprintf("%v", this.BPhaseInputVoltage) + `,`,
-		`CPhaseInputVoltage:` + fmt.Sprintf("%v", this.CPhaseInputVoltage) + `,`,
-		`APhaseOutputVoltage:` + fmt.Sprintf("%v", this.APhaseOutputVoltage) + `,`,
-		`BPhaseOutputVoltage:` + fmt.Sprintf("%v", this.BPhaseOutputVoltage) + `,`,
-		`CPhaseOutputVoltage:` + fmt.Sprintf("%v", this.CPhaseOutputVoltage) + `,`,
-		`APhaseOutputCurrent:` + fmt.Sprintf("%v", this.APhaseOutputCurrent) + `,`,
-		`BPhaseOutputCurrent:` + fmt.Sprintf("%v", this.BPhaseOutputCurrent) + `,`,
-		`CPhaseOutputCurrent:` + fmt.Sprintf("%v", this.CPhaseOutputCurrent) + `,`,
-		`SaverTime:` + fmt.Sprintf("%v", this.SaverTime) + `,`,
-		`SaverStatus:` + fmt.Sprintf("%v", this.SaverStatus) + `,`,
-		`Temperature:` + fmt.Sprintf("%v", this.Temperature) + `,`,
-		`EventType:` + fmt.Sprintf("%v", this.EventType) + `,`,
-		`InfoNumber:` + fmt.Sprintf("%v", this.InfoNumber) + `,`,
-		`RunTime:` + fmt.Sprintf("%v", this.RunTime) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *WlstEsu_1800) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&WlstEsu_1800{`,
-		`AdjustValue:` + fmt.Sprintf("%v", this.AdjustValue) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *WlstEsu_1900) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&WlstEsu_1900{`,
-		`ManualControl:` + fmt.Sprintf("%v", this.ManualControl) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *WlstEsu_9A00) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&WlstEsu_9A00{`,
-		`No:` + fmt.Sprintf("%v", this.No) + `,`,
-		`DateTime:` + fmt.Sprintf("%v", this.DateTime) + `,`,
-		`RunTime:` + fmt.Sprintf("%v", this.RunTime) + `,`,
-		`SaverTime:` + fmt.Sprintf("%v", this.SaverTime) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func (this *WlstEsu_9E00) String() string {
-	if this == nil {
-		return "nil"
-	}
-	s := strings.Join([]string{`&WlstEsu_9E00{`,
-		`WarmupTime:` + fmt.Sprintf("%v", this.WarmupTime) + `,`,
-		`OnTime:` + fmt.Sprintf("%v", this.OnTime) + `,`,
-		`OffTime:` + fmt.Sprintf("%v", this.OffTime) + `,`,
-		`TransformerA:` + fmt.Sprintf("%v", this.TransformerA) + `,`,
-		`TransformerB:` + fmt.Sprintf("%v", this.TransformerB) + `,`,
-		`TransformerC:` + fmt.Sprintf("%v", this.TransformerC) + `,`,
-		`TimeMode:` + fmt.Sprintf("%v", this.TimeMode) + `,`,
-		`RunMode:` + fmt.Sprintf("%v", this.RunMode) + `,`,
-		`FanStartTemperature:` + fmt.Sprintf("%v", this.FanStartTemperature) + `,`,
-		`FanStopTemperature:` + fmt.Sprintf("%v", this.FanStopTemperature) + `,`,
-		`SaverStopTemperature:` + fmt.Sprintf("%v", this.SaverStopTemperature) + `,`,
-		`SaverRecoverTemperature:` + fmt.Sprintf("%v", this.SaverRecoverTemperature) + `,`,
-		`ProtectionTemperature:` + fmt.Sprintf("%v", this.ProtectionTemperature) + `,`,
-		`InputOvervoltage:` + fmt.Sprintf("%v", this.InputOvervoltage) + `,`,
-		`InputUndervoltage:` + fmt.Sprintf("%v", this.InputUndervoltage) + `,`,
-		`OutputOverload:` + fmt.Sprintf("%v", this.OutputOverload) + `,`,
-		`OutputUndervoltage:` + fmt.Sprintf("%v", this.OutputUndervoltage) + `,`,
-		`AdjustSpeed:` + fmt.Sprintf("%v", this.AdjustSpeed) + `,`,
-		`PhaseCount:` + fmt.Sprintf("%v", this.PhaseCount) + `,`,
-		`CommunicateMode:` + fmt.Sprintf("%v", this.CommunicateMode) + `,`,
-		`WorkMode:` + fmt.Sprintf("%v", this.WorkMode) + `,`,
-		`AlarmOn:` + fmt.Sprintf("%v", this.AlarmOn) + `,`,
-		`AlarmDelay:` + fmt.Sprintf("%v", this.AlarmDelay) + `,`,
-		`SaverMode:` + fmt.Sprintf("%v", this.SaverMode) + `,`,
-		`}`,
-	}, "")
-	return s
-}
-func valueToStringProtocolEsu(v interface{}) string {
-	rv := reflect.ValueOf(v)
-	if rv.IsNil() {
-		return "nil"
-	}
-	pv := reflect.Indirect(rv).Interface()
-	return fmt.Sprintf("*%v", pv)
 }
 func (m *WlstEsu_9000) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
