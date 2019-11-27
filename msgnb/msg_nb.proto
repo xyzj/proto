@@ -280,3 +280,158 @@ message SluitemData {
         int32 uplink_reply = 6;
     }
 }
+
+// 网络参数 (不进行设置的参数的值下发时置零)
+message NB_slu_3100{
+    // APN
+    string apn = 1;
+    // 用户名
+    string user_name = 2;
+    // 密码
+    string password = 3;
+    // 接入运营商
+    int32 operater = 4;
+    // ip (每1字节分别代表地址中1个数字)
+    repeated int32 ip_address = 5 [packed=true];
+    // 远程端口
+    int32 teleport = 6;
+    // 本地端口
+    int32 localport = 7;
+    // 虚连接时间 (单位为分)
+    int32 vlink_time = 8;
+    // 组入网间隔 (单位为秒)
+    int32 group_access_interval = 9;
+    // 组内设备个数
+    int32 group_device_count = 10;
+    // 扇区最大允许接入设备总数
+    int32 max_device_count = 11;
+    // IMEI
+    string imsi = 12;
+    // IMSI
+    string imsi = 13;
+    // ICCID
+    string iccid = 14;
+    // 应答状态 (0x35为成功，其它失败)
+    int32 status = 15;
+}
+
+// 登录信息数据主报
+message NB_slu_3700{
+    // IMEI
+    string imsi = 1;
+    // IMSI
+    string imsi = 2;
+    // ICCID 集成电路卡识别码
+    string iccid = 3;
+    // 频段
+    int32 band = 4;
+    // 参考信号接收功率
+    int32 rsrp = 5;
+    // 信噪比
+    int32 snr = 6;
+}
+
+// 时间
+message NB_slu_1500{
+    // 时间
+    int32 sluitem_time = 1;
+    // 星期
+    int32 week = 2;
+    // 应答状态 (0x35为成功，其它失败)
+    int32 status = 3;
+}
+
+// 版本
+message NB_slu_5100{
+    // 版本
+    string ver = 1;
+    // 应答状态 (0x35为成功，其它失败)
+    int32 status = 2;
+}
+
+// 运行参数
+message NB_slu_5200{
+    // 经度
+    double longitude = 1;
+    // 纬度
+    double latitude = 2;
+    // 控制器状态 0-停运，1-投运
+    int32 sluitem_status = 3;
+    // 控制器上电开灯 1-开灯，0-关灯
+    repeated int32 sluitem_power_turnon = 4 [packed=true];
+    // 控制器主报 0-禁止主报，1-允许主报
+    int32 sluitem_enable_alarm = 5;
+    // 1-4回路额定功率
+    repeated int32 rated_power = 6 [packed=true];
+    // nb主报间隔，(0～127)*5
+    int32 uplink_timer = 7;
+    // nb主报需要主站应答，0-不需要，1-需要
+    int32 uplink_reply = 8;
+    // 应答状态 (0x35为成功，其它失败)
+    int32 status = 9;
+}
+
+// 即时控制
+message NB_slu_5400{
+    // 输出类型0-继电器，1-pwm输出
+    int32 output_type = 1;
+    // 继电器操作回路1-4, 0x0-不操作，0x3-开灯，0xc-关灯
+    repeated int32 relay_operate = 2 [packed=true];
+    // PWM操作回路
+    repeated int32 pwm_loop = 3 [packed=true];
+    // PWM操作占空比
+    int32 pwm_power = 4;
+    // PWM频率 (1~15) * 100 默认为4
+    int32 pwm_baudrate = 5;
+    // 应答状态 (0x35为成功，其它失败)
+    int32 status = 6;
+}
+
+// 复位
+message NB_slu_5500{
+    // MCU复位 0-不勾选 1-勾选
+    int32 mcu = 1;
+    // 初始化MCU硬件配置 0-不勾选 1-勾选
+    int32 initialize_mcu = 2;
+    // 初始化RAM区所有变量 0-不勾选 1-勾选
+    int32 initialize_ram = 3;
+    // EEPROM全部清零 0-不勾选 1-勾选
+    int32 initialize_eeprom = 4;
+    // 电能计量值清零 0-不勾选 1-勾选
+    int32 initialize_elec = 5;    
+    // 应答状态 (0x35为成功，其它失败)
+    int32 status = 6;
+}
+
+// 本地控制方案
+message NB_slu_5600{
+    // 是否清除原方案 0-保留 1-清除
+    int32 clear_old_runtime = 1
+    // 后续方案个数
+    int32 sluitem_runtime_count = 2
+    // 方案    
+    repeated Sluitem_runtime sluitem_runtime = 3;
+    // 应答状态 (0x35为成功，其它失败)
+    int32 status = 4;
+    
+    message Sluitem_runtime {
+        // 输出类型0-继电器，1-pwm输出
+        int32 output_type = 1;
+        // 操作类型1-定时操作，2-经纬度操作
+        int32 operate_type = 2;
+        // 有效日期，0-6～周日-周6
+        repeated int32 date_enable = 3 [packed=true];
+        // 开关灯操作时间 hhmm->int32
+        int32 operate_time = 4;
+        // 操作偏移 -720~+720
+        int32 operate_offset = 5;
+        // 继电器操作回路1-4, 0x0-不操作，0x3-开灯，0xc-关灯
+        repeated int32 relay_operate = 6 [packed=true];
+        // PWM操作回路
+        repeated int32 pwm_loop = 7 [packed=true];
+        // PWM操作占空比
+        int32 pwm_power = 8;
+        // PWM频率 (1~15) * 100 默认为4
+        int32 pwm_baudrate = 9;
+    }
+}
