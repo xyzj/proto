@@ -546,7 +546,7 @@ message Wlst_rtu_4104 {
 }
 
 message Wlst_rtu_4110 {
-    //开关量输入路数总数
+    //开关量输出路数总数
     int32 switch_in_sum = 1;
 }
 

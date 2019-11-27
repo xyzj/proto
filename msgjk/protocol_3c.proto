@@ -110,3 +110,20 @@ message Wlst_com_3e84 {
     // 重启次数
     int32 reset_count = 5;
 }
+
+message Wlst_ftp_0000{
+    // 升级目标，rtu，com，slu，gb
+    string target = 1;
+    // ftp 地址
+    string ftp_ip = 2;
+    // ftp 端口
+    int32 ftp_port = 3;
+    // ftp 用户名
+    string ftp_user = 4;
+    // ftp 密码
+    string ftp_pwd = 5;
+    // ftp 文件名
+    string ftp_file = 6;
+    // ftp 路径
+    string ftp_dir = 7;
+}

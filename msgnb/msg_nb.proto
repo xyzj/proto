@@ -26,7 +26,7 @@ message MsgNBOpen {
     int64 dt_receive = 2;
     // 数据类型，1-设备最新数据，2-控制应答，3-参数设置/读取应答
     int32 data_type = 3;
-    // 内部命令名称
+    // 内部命令名称: 选测 wlst.vslu.b900,
     string data_cmd = 9;
     // 设备最新数据
     SluitemData sluitem_data = 10;
