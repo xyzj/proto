@@ -214,7 +214,7 @@ message SluitemData {
         // 字符串型号（V0.2改为协议版本）
         string sluitem_type = 7;
         // 实际使用回路数（V0.2增加）
-        int32 use_loop = 8
+        int32 use_loop = 8;
     }
 
     message Light_data {
@@ -308,7 +308,7 @@ message NB_slu_3100{
     // 扇区最大允许接入设备总数
     int32 max_device_count = 11;
     // IMEI
-    string imsi = 12;
+    string imei = 12;
     // IMSI
     string imsi = 13;
     // ICCID
@@ -320,7 +320,7 @@ message NB_slu_3100{
 // 登录信息数据主报
 message NB_slu_3700{
     // IMEI
-    string imsi = 1;
+    string imei = 1;
     // IMSI
     string imsi = 2;
     // ICCID 集成电路卡识别码
@@ -370,7 +370,7 @@ message NB_slu_5200{
     // nb主报需要主站应答，0-不需要，1-需要
     int32 uplink_reply = 8;
     // 实际使用回路数
-    int32 use_loop = 9
+    int32 use_loop = 9;
     // 应答状态 (0x35为成功，其它失败)
     int32 status = 10;
 }
@@ -410,9 +410,9 @@ message NB_slu_5500{
 // 本地控制方案
 message NB_slu_5600{
     // 是否清除原方案 0-保留 1-清除
-    int32 clear_old_runtime = 1
+    int32 clear_old_runtime = 1;
     // 后续方案个数
-    int32 sluitem_runtime_count = 2
+    int32 sluitem_runtime_count = 2;
     // 方案    
     repeated Sluitem_runtime sluitem_runtime = 3;
     // 应答状态 (0x35为成功，其它失败)
