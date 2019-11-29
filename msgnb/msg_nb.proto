@@ -209,10 +209,12 @@ message SluitemData {
         int32 has_temperature = 4;
         // 时钟 0-无，1-有
         int32 has_timer = 5;
-        // 型号 0-unknow
+        // 型号 0-unknow（V0.2改为协议版本）
         int32 model = 6;
-        // 字符串型号
+        // 字符串型号（V0.2改为协议版本）
         string sluitem_type = 7;
+        // 实际使用回路数（V0.2增加）
+        int32 use_loop = 8
     }
 
     message Light_data {
@@ -367,8 +369,10 @@ message NB_slu_5200{
     int32 uplink_timer = 7;
     // nb主报需要主站应答，0-不需要，1-需要
     int32 uplink_reply = 8;
+    // 实际使用回路数
+    int32 use_loop = 9
     // 应答状态 (0x35为成功，其它失败)
-    int32 status = 9;
+    int32 status = 10;
 }
 
 // 即时控制
@@ -391,11 +395,11 @@ message NB_slu_5400{
 message NB_slu_5500{
     // MCU复位 0-不勾选 1-勾选
     int32 mcu = 1;
-    // 初始化MCU硬件配置 0-不勾选 1-勾选
+    // 初始化MCU硬件配置 0-不勾选 1-勾选 (暂不使用)
     int32 initialize_mcu = 2;
-    // 初始化RAM区所有变量 0-不勾选 1-勾选
+    // 初始化RAM区所有变量 0-不勾选 1-勾选 (暂不使用)
     int32 initialize_ram = 3;
-    // EEPROM全部清零 0-不勾选 1-勾选
+    // EEPROM全部清零 0-不勾选 1-勾选 (暂不使用)
     int32 initialize_eeprom = 4;
     // 电能计量值清零 0-不勾选 1-勾选
     int32 initialize_elec = 5;    
