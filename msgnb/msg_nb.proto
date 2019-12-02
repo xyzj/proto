@@ -43,13 +43,13 @@ message MsgNBOpen {
     // 版本读取
     NBSlu_5100 nb_slu_5100 = 16;
     // 运行参数设置/读取
-    NBSlu_5200 NB_slu_5200 = 17;
+    NBSlu_5200 Nb_slu_5200 = 17;
     // 即时控制
-    NBSlu_5400 NB_slu_5400 = 18;
+    NBSlu_5400 Nb_slu_5400 = 18;
     // 复位
-    NBSlu_5500 NB_slu_5500 = 19;
+    NBSlu_5500 Nb_slu_5500 = 19;
     // 本地控制方案设置/读取
-    NBSlu_5600 NB_slu_5600 = 20;
+    NBSlu_5600 Nb_slu_5600 = 20;
 }
 
 message SluitemConfig {
