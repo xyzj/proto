@@ -79,6 +79,8 @@ message Wlst_slu_3900 {
         int32 model = 6;
         // 字符串型号
         string sluitem_type = 7;
+        // 实际使用回路数（V0.2增加）
+        int32 use_loop = 8;
     }
 
     message Light_data {
