@@ -4,12 +4,8 @@
 package wlst_pb2
 
 import (
-	context "context"
 	fmt "fmt"
 	proto "github.com/gogo/protobuf/proto"
-	grpc "google.golang.org/grpc"
-	codes "google.golang.org/grpc/codes"
-	status "google.golang.org/grpc/status"
 	io "io"
 	math "math"
 	math_bits "math/bits"
@@ -604,86 +600,6 @@ var fileDescriptor_17a284b5b5297b67 = []byte{
 	0x8d, 0xd2, 0xe7, 0x97, 0x8d, 0xb5, 0xf3, 0xcb, 0xc6, 0xda, 0xef, 0x97, 0x8d, 0xb5, 0xc7, 0xa5,
 	0xe1, 0xa6, 0x7e, 0x92, 0xb4, 0xff, 0x0f, 0x00, 0x00, 0xff, 0xff, 0x81, 0xfd, 0xef, 0x0a, 0x02,
 	0x09, 0x00, 0x00,
-}
-
-// Reference imports to suppress errors if they are not otherwise used.
-var _ context.Context
-var _ grpc.ClientConn
-
-// This is a compile-time assertion to ensure that this generated file
-// is compatible with the grpc package it is being compiled against.
-const _ = grpc.SupportPackageIsVersion4
-
-// DeviceCtrlClient is the client API for DeviceCtrl service.
-//
-// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-type DeviceCtrlClient interface {
-	DeviceEcho(ctx context.Context, in *MsgWithCtrl, opts ...grpc.CallOption) (*MsgWithCtrl, error)
-}
-
-type deviceCtrlClient struct {
-	cc *grpc.ClientConn
-}
-
-func NewDeviceCtrlClient(cc *grpc.ClientConn) DeviceCtrlClient {
-	return &deviceCtrlClient{cc}
-}
-
-func (c *deviceCtrlClient) DeviceEcho(ctx context.Context, in *MsgWithCtrl, opts ...grpc.CallOption) (*MsgWithCtrl, error) {
-	out := new(MsgWithCtrl)
-	err := c.cc.Invoke(ctx, "/wlst.pb2.DeviceCtrl/DeviceEcho", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-// DeviceCtrlServer is the server API for DeviceCtrl service.
-type DeviceCtrlServer interface {
-	DeviceEcho(context.Context, *MsgWithCtrl) (*MsgWithCtrl, error)
-}
-
-// UnimplementedDeviceCtrlServer can be embedded to have forward compatible implementations.
-type UnimplementedDeviceCtrlServer struct {
-}
-
-func (*UnimplementedDeviceCtrlServer) DeviceEcho(ctx context.Context, req *MsgWithCtrl) (*MsgWithCtrl, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeviceEcho not implemented")
-}
-
-func RegisterDeviceCtrlServer(s *grpc.Server, srv DeviceCtrlServer) {
-	s.RegisterService(&_DeviceCtrl_serviceDesc, srv)
-}
-
-func _DeviceCtrl_DeviceEcho_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(MsgWithCtrl)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(DeviceCtrlServer).DeviceEcho(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/wlst.pb2.DeviceCtrl/DeviceEcho",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(DeviceCtrlServer).DeviceEcho(ctx, req.(*MsgWithCtrl))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-var _DeviceCtrl_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "wlst.pb2.DeviceCtrl",
-	HandlerType: (*DeviceCtrlServer)(nil),
-	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "DeviceEcho",
-			Handler:    _DeviceCtrl_DeviceEcho_Handler,
-		},
-	},
-	Streams:  []grpc.StreamDesc{},
-	Metadata: "msg_with_ctrl.proto",
 }
 
 func (m *MsgWithCtrl) Marshal() (dAtA []byte, err error) {
@@ -3077,6 +2993,7 @@ func (m *SubmitSettingChange) Unmarshal(dAtA []byte) error {
 func skipMsgWithCtrl(dAtA []byte) (n int, err error) {
 	l := len(dAtA)
 	iNdEx := 0
+	depth := 0
 	for iNdEx < l {
 		var wire uint64
 		for shift := uint(0); ; shift += 7 {
@@ -3108,10 +3025,8 @@ func skipMsgWithCtrl(dAtA []byte) (n int, err error) {
 					break
 				}
 			}
-			return iNdEx, nil
 		case 1:
 			iNdEx += 8
-			return iNdEx, nil
 		case 2:
 			var length int
 			for shift := uint(0); ; shift += 7 {
@@ -3132,55 +3047,30 @@ func skipMsgWithCtrl(dAtA []byte) (n int, err error) {
 				return 0, ErrInvalidLengthMsgWithCtrl
 			}
 			iNdEx += length
-			if iNdEx < 0 {
-				return 0, ErrInvalidLengthMsgWithCtrl
-			}
-			return iNdEx, nil
 		case 3:
-			for {
-				var innerWire uint64
-				var start int = iNdEx
-				for shift := uint(0); ; shift += 7 {
-					if shift >= 64 {
-						return 0, ErrIntOverflowMsgWithCtrl
-					}
-					if iNdEx >= l {
-						return 0, io.ErrUnexpectedEOF
-					}
-					b := dAtA[iNdEx]
-					iNdEx++
-					innerWire |= (uint64(b) & 0x7F) << shift
-					if b < 0x80 {
-						break
-					}
-				}
-				innerWireType := int(innerWire & 0x7)
-				if innerWireType == 4 {
-					break
-				}
-				next, err := skipMsgWithCtrl(dAtA[start:])
-				if err != nil {
-					return 0, err
-				}
-				iNdEx = start + next
-				if iNdEx < 0 {
-					return 0, ErrInvalidLengthMsgWithCtrl
-				}
-			}
-			return iNdEx, nil
+			depth++
 		case 4:
-			return iNdEx, nil
+			if depth == 0 {
+				return 0, ErrUnexpectedEndOfGroupMsgWithCtrl
+			}
+			depth--
 		case 5:
 			iNdEx += 4
-			return iNdEx, nil
 		default:
 			return 0, fmt.Errorf("proto: illegal wireType %d", wireType)
 		}
+		if iNdEx < 0 {
+			return 0, ErrInvalidLengthMsgWithCtrl
+		}
+		if depth == 0 {
+			return iNdEx, nil
+		}
 	}
-	panic("unreachable")
+	return 0, io.ErrUnexpectedEOF
 }
 
 var (
-	ErrInvalidLengthMsgWithCtrl = fmt.Errorf("proto: negative length found during unmarshaling")
-	ErrIntOverflowMsgWithCtrl   = fmt.Errorf("proto: integer overflow")
+	ErrInvalidLengthMsgWithCtrl        = fmt.Errorf("proto: negative length found during unmarshaling")
+	ErrIntOverflowMsgWithCtrl          = fmt.Errorf("proto: integer overflow")
+	ErrUnexpectedEndOfGroupMsgWithCtrl = fmt.Errorf("proto: unexpected end of group")
 )
