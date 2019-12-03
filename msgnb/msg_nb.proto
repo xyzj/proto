@@ -358,7 +358,7 @@ message NBSlu_1400{
     // 序号
     int32 cmd_idx =  1;
     // 时间
-    int32 sluitem_time = 2;
+    int64 sluitem_time = 2;
     // 星期
     int32 week = 3;
     // 应答状态 (0x35为成功，其它失败)
