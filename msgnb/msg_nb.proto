@@ -24,7 +24,7 @@ message MsgNBOpen {
     int64 imei = 1;
     // 数据接收时间
     int64 dt_receive = 2;
-    // 数据类型，1-设备最新数据，2-控制应答，3-参数设置/读取应答
+    // 数据类型，1-设备最新数据，2-控制应答，3-参数设置/读取应答,4-登录主报，5-时间应答，6-即时控制应答，7-复位应答，8-本地控制方案应答
     int32 data_type = 3;
     // 内部命令名称: 选测 wlst.vslu.b900,
     string data_cmd = 9;
@@ -301,138 +301,154 @@ message SluitemData {
 
 // 网络参数 (不进行设置的参数的值下发时置零)
 message NBSlu_3100{
+    // 序号
+    int32 cmd_idx =  1;
     // APN
-    string apn = 1;
+    string apn = 2;
     // 用户名
-    string user_name = 2;
+    string user_name = 3;
     // 密码
-    string password = 3;
+    string password = 4;
     // 接入运营商
-    int32 operater = 4;
+    int32 operater = 5;
     // ip (每1字节分别代表地址中1个数字)
-    repeated int32 ip_address = 5 [packed=true];
+    repeated int32 ip_address = 6 [packed=true];
     // 远程端口
-    int32 teleport = 6;
+    int32 teleport = 7;
     // 本地端口
-    int32 localport = 7;
+    int32 localport = 8;
     // 虚连接时间 (单位为分)
-    int32 vlink_time = 8;
+    int32 vlink_time = 9;
     // 组入网间隔 (单位为秒)
-    int32 group_access_interval = 9;
+    int32 group_access_interval = 10;
     // 组内设备个数
-    int32 group_device_count = 10;
+    int32 group_device_count = 11;
     // 扇区最大允许接入设备总数
-    int32 max_device_count = 11;
+    int32 max_device_count = 12;
     // IMEI
-    string imei = 12;
+    string imei = 13;
     // IMSI
-    string imsi = 13;
+    string imsi = 14;
     // ICCID
-    string iccid = 14;
+    string iccid = 15;
     // 应答状态 (0x35为成功，其它失败)
-    int32 status = 15;
+    int32 status = 16;
 }
 
 // 登录信息数据主报
 message NBSlu_3700{
+    // 序号
+    int32 cmd_idx =  1;
     // IMEI
-    string imei = 1;
+    string imei = 2;
     // IMSI
-    string imsi = 2;
+    string imsi = 3;
     // ICCID 集成电路卡识别码
-    string iccid = 3;
+    string iccid = 4;
     // 频段
-    int32 band = 4;
+    int32 band = 5;
     // 参考信号接收功率
-    int32 rsrp = 5;
+    int32 rsrp = 6;
     // 信噪比
-    int32 snr = 6;
+    int32 snr = 7;
 }
 
 // 时间
 message NBSlu_1500{
+    // 序号
+    int32 cmd_idx =  1;
     // 时间
-    int32 sluitem_time = 1;
+    int32 sluitem_time = 2;
     // 星期
-    int32 week = 2;
+    int32 week = 3;
     // 应答状态 (0x35为成功，其它失败)
-    int32 status = 3;
+    int32 status = 4;
 }
 
 // 版本
 message NBSlu_5100{
+    // 序号
+    int32 cmd_idx =  1;
     // 版本
-    string ver = 1;
+    string ver = 2;
     // 应答状态 (0x35为成功，其它失败)
-    int32 status = 2;
+    int32 status = 3;
 }
 
 // 运行参数
 message NBSlu_5200{
+    // 序号
+    int32 cmd_idx =  1;
     // 经度
-    double longitude = 1;
+    double longitude = 2;
     // 纬度
-    double latitude = 2;
+    double latitude = 3;
     // 控制器状态 0-停运，1-投运
-    int32 sluitem_status = 3;
+    int32 sluitem_status = 4;
     // 控制器上电开灯 1-开灯，0-关灯
-    repeated int32 sluitem_power_turnon = 4 [packed=true];
+    repeated int32 sluitem_power_turnon = 5 [packed=true];
     // 控制器主报 0-禁止主报，1-允许主报
-    int32 sluitem_enable_alarm = 5;
+    int32 sluitem_enable_alarm = 6;
     // 1-4回路额定功率
-    repeated int32 rated_power = 6 [packed=true];
+    repeated int32 rated_power = 7 [packed=true];
     // nb主报间隔，(0～127)*5
-    int32 uplink_timer = 7;
+    int32 uplink_timer = 8;
     // nb主报需要主站应答，0-不需要，1-需要
-    int32 uplink_reply = 8;
+    int32 uplink_reply = 9;
     // 实际使用回路数
-    int32 use_loop = 9;
+    int32 use_loop = 10;
     // 应答状态 (0x35为成功，其它失败)
-    int32 status = 10;
+    int32 status = 11;
 }
 
 // 即时控制
 message NBSlu_5400{
+    // 序号
+    int32 cmd_idx =  1;
     // 输出类型0-继电器，1-pwm输出
-    int32 output_type = 1;
+    int32 output_type = 2;
     // 继电器操作回路1-4, 0x0-不操作，0x3-开灯，0xc-关灯
-    repeated int32 relay_operate = 2 [packed=true];
+    repeated int32 relay_operate = 3 [packed=true];
     // PWM操作回路
-    repeated int32 pwm_loop = 3 [packed=true];
+    repeated int32 pwm_loop = 4 [packed=true];
     // PWM操作占空比
-    int32 pwm_power = 4;
+    int32 pwm_power = 5;
     // PWM频率 (1~15) * 100 默认为4
-    int32 pwm_baudrate = 5;
+    int32 pwm_baudrate = 6;
     // 应答状态 (0x35为成功，其它失败)
-    int32 status = 6;
+    int32 status = 7;
 }
 
 // 复位
 message NBSlu_5500{
+    // 序号
+    int32 cmd_idx =  1;
     // MCU复位 0-不勾选 1-勾选
-    int32 mcu = 1;
+    int32 mcu = 2
     // 初始化MCU硬件配置 0-不勾选 1-勾选 (暂不使用)
-    int32 initialize_mcu = 2;
+    int32 initialize_mcu = 3;
     // 初始化RAM区所有变量 0-不勾选 1-勾选 (暂不使用)
-    int32 initialize_ram = 3;
+    int32 initialize_ram = 4;
     // EEPROM全部清零 0-不勾选 1-勾选 (暂不使用)
-    int32 initialize_eeprom = 4;
+    int32 initialize_eeprom = 5;
     // 电能计量值清零 0-不勾选 1-勾选
-    int32 initialize_elec = 5;    
+    int32 initialize_elec = 6;    
     // 应答状态 (0x35为成功，其它失败)
-    int32 status = 6;
+    int32 status = 7;
 }
 
 // 本地控制方案
 message NBSlu_5600{
+    // 序号
+    int32 cmd_idx =  1;
     // 是否清除原方案 0-保留 1-清除
-    int32 clear_old_runtime = 1;
+    int32 clear_old_runtime = 2;
     // 后续方案个数
-    int32 sluitem_runtime_count = 2;
+    int32 sluitem_runtime_count = 3;
     // 方案    
-    repeated Sluitem_runtime sluitem_runtime = 3;
+    repeated Sluitem_runtime sluitem_runtime = 4;
     // 应答状态 (0x35为成功，其它失败)
-    int32 status = 4;
+    int32 status = 5;
     
     message Sluitem_runtime {
         // 输出类型0-继电器，1-pwm输出
