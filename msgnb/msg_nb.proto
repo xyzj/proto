@@ -424,7 +424,7 @@ message NBSlu_5500{
     // 序号
     int32 cmd_idx =  1;
     // MCU复位 0-不勾选 1-勾选
-    int32 mcu = 2
+    int32 mcu = 2;
     // 初始化MCU硬件配置 0-不勾选 1-勾选 (暂不使用)
     int32 initialize_mcu = 3;
     // 初始化RAM区所有变量 0-不勾选 1-勾选 (暂不使用)
