@@ -24,7 +24,7 @@ message MsgNBOpen {
     int64 imei = 1;
     // 数据接收时间
     int64 dt_receive = 2;
-    // 数据类型，1-设备最新数据，2-控制应答，3-参数设置/读取应答,4-登录主报，5-时间应答，6-即时控制应答，7-复位应答，8-本地控制方案应答
+    // 数据类型，1-设备最新数据，2-控制应答，3-参数设置/读取应答,4-登录主报，5-时间应答，6-即时控制应答，7-复位应答，8-本地控制方案应答,9-版本读取，10-运行参数
     int32 data_type = 3;
     // 内部命令名称: 选测 wlst.vslu.b900,
     string data_cmd = 9;
@@ -39,7 +39,7 @@ message MsgNBOpen {
     // 登录信息数据主报
     NBSlu_3700 nb_slu_3700 = 14;
     // 时间设置/读取
-    NBSlu_1500 nb_slu_1500 = 15;
+    NBSlu_1400 nb_slu_1400 = 15;
     // 版本读取
     NBSlu_5100 nb_slu_5100 = 16;
     // 运行参数设置/读取
@@ -348,13 +348,13 @@ message NBSlu_3700{
     // 频段
     int32 band = 5;
     // 参考信号接收功率
-    int32 rsrp = 6;
+    int64 rsrp = 6;
     // 信噪比
-    int32 snr = 7;
+    int64 snr = 7;
 }
 
 // 时间
-message NBSlu_1500{
+message NBSlu_1400{
     // 序号
     int32 cmd_idx =  1;
     // 时间
@@ -443,12 +443,14 @@ message NBSlu_5600{
     int32 cmd_idx =  1;
     // 是否清除原方案 0-保留 1-清除
     int32 clear_old_runtime = 2;
+    // 是否含有后续数据
+    int32 data_continue = 3;
     // 后续方案个数
-    int32 sluitem_runtime_count = 3;
+    int32 sluitem_runtime_count = 4;
     // 方案    
-    repeated Sluitem_runtime sluitem_runtime = 4;
+    repeated Sluitem_runtime sluitem_runtime = 5;
     // 应答状态 (0x35为成功，其它失败)
-    int32 status = 5;
+    int32 status = 6;
     
     message Sluitem_runtime {
         // 输出类型0-继电器，1-pwm输出
