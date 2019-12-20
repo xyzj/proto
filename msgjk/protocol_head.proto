@@ -64,11 +64,17 @@ message SysCommands {
     //日志信息
     string logger_msg = 5;
     message OnlineInfo {
+        // ip地址
 		int64 ip = 1;
+        // 该ip下各主设备信息 格式为厂商-型号-物理地址 如wlst-rtu-1 其中型号有rtu-终端/slu-单灯/als-光控/mru-电表/elu-漏电/sim-通讯模块/com-通讯模块
 		repeated string members = 2;
+        // 网络模式 0-未知 2-2G/3G网络 4-4G网络
 		int32 net_type = 3;
+        // 通讯模块信号
 		int32 signal = 4;
+        // 主设备物理地址 填充顺序为终端、单灯、其它设备
 		int64 phy_id = 5;
+        // SIM卡IMEI
 		int64 imei = 6;
 	}
 	repeated OnlineInfo online_info = 6;
