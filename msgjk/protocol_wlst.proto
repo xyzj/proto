@@ -4,15 +4,33 @@ package wlst.pb2;
 option optimize_for = SPEED;
 
 // 结构体命名规则：Wlst_open_[2位链路层功能码][2位afn功能码]
+
+// 数据单元标识
 message UnitIdentification {
-  int32 pn = 1;
-  int32 fn = 2;
+  // 信息点DA
+  int32 pn = 1; 
+  // 信息类DT
+  int32 fn = 2; 
 }
+// 头信息
+message DataIdentification {
+  // 数据单元标识，具体定义见详细结构
+  repeated UnitIdentification uintID = 1;
+  // 请求访问0-无数据，1-有数据
+  int32 acd = 2; 
+  // 时间戳，unix格式
+  int64 tp = 3; 
+  // 允许延迟的分钟数
+  int32 delay = 4; 
+  // 认证码
+  string pw = 5;
+}
+
 // 状态应答
 message Wlst_open_0000 {
   // pn: 0
   // fn: 1-全部确认，2-全部否认,3-部分确认/否认（要填充数据段，保留）
-  repeated UnitIdentification uintID = 1;
+  repeated DataIdentification DataID = 1;
   // 依据上行填
   int32 afn = 3;
 }
@@ -20,12 +38,12 @@ message Wlst_open_0000 {
 message Wlst_open_0101 {
   // pn: 0
   // fn: 1-硬件初始化（重启），2-数据区初始化，3-恢复出厂值，4-参数全体数据区
-  repeated UnitIdentification uintID = 1;
+  repeated DataIdentification DataID = 1;
 }
 
 // 登录上行
 message Wlst_open_0902 {
   // pn: 0
   // fn: 1-登录，2-退出，3-心跳
-  repeated UnitIdentification uintID = 1;
+  repeated DataIdentification DataID = 1;
 }
