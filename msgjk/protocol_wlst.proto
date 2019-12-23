@@ -30,7 +30,7 @@ message DataIdentification {
 message Wlst_open_0000 {
   // pn: 0
   // fn: 1-全部确认，2-全部否认,3-部分确认/否认（要填充数据段，保留）
-  repeated DataIdentification DataID = 1;
+  DataIdentification DataID = 1;
   // 依据上行填
   int32 afn = 3;
 }
@@ -38,12 +38,12 @@ message Wlst_open_0000 {
 message Wlst_open_0101 {
   // pn: 0
   // fn: 1-硬件初始化（重启），2-数据区初始化，3-恢复出厂值，4-参数全体数据区
-  repeated DataIdentification DataID = 1;
+  DataIdentification DataID = 1;
 }
 
 // 登录上行
 message Wlst_open_0902 {
   // pn: 0
   // fn: 1-登录，2-退出，3-心跳
-  repeated DataIdentification DataID = 1;
+  DataIdentification DataID = 1;
 }
