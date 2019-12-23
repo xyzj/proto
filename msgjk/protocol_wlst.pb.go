@@ -22,12 +22,64 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.GoGoProtoPackageIsVersion3 // please upgrade the proto package
 
+// 结构体命名规则：Wlst_open_[2位链路层功能码][2位afn功能码]
+type UnitIdentification struct {
+	Pn int32 `protobuf:"varint,1,opt,name=pn,proto3" json:"pn,omitempty"`
+	Fn int32 `protobuf:"varint,2,opt,name=fn,proto3" json:"fn,omitempty"`
+}
+
+func (m *UnitIdentification) Reset()         { *m = UnitIdentification{} }
+func (m *UnitIdentification) String() string { return proto.CompactTextString(m) }
+func (*UnitIdentification) ProtoMessage()    {}
+func (*UnitIdentification) Descriptor() ([]byte, []int) {
+	return fileDescriptor_f614763c9ca1b9b8, []int{0}
+}
+func (m *UnitIdentification) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *UnitIdentification) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_UnitIdentification.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *UnitIdentification) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_UnitIdentification.Merge(m, src)
+}
+func (m *UnitIdentification) XXX_Size() int {
+	return m.Size()
+}
+func (m *UnitIdentification) XXX_DiscardUnknown() {
+	xxx_messageInfo_UnitIdentification.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_UnitIdentification proto.InternalMessageInfo
+
+func (m *UnitIdentification) GetPn() int32 {
+	if m != nil {
+		return m.Pn
+	}
+	return 0
+}
+
+func (m *UnitIdentification) GetFn() int32 {
+	if m != nil {
+		return m.Fn
+	}
+	return 0
+}
+
 // 状态应答
 type WlstOpen_0000 struct {
-	// 0
-	Pn int32 `protobuf:"varint,1,opt,name=pn,proto3" json:"pn,omitempty"`
-	// 1-全部确认，2-全部否认,3-部分确认/否认（要填充数据段，保留）
-	Fn int32 `protobuf:"varint,2,opt,name=fn,proto3" json:"fn,omitempty"`
+	// pn: 0
+	// fn: 1-全部确认，2-全部否认,3-部分确认/否认（要填充数据段，保留）
+	UintID []*UnitIdentification `protobuf:"bytes,1,rep,name=uintID,proto3" json:"uintID,omitempty"`
 	// 依据上行填
 	Afn int32 `protobuf:"varint,3,opt,name=afn,proto3" json:"afn,omitempty"`
 }
@@ -36,7 +88,7 @@ func (m *WlstOpen_0000) Reset()         { *m = WlstOpen_0000{} }
 func (m *WlstOpen_0000) String() string { return proto.CompactTextString(m) }
 func (*WlstOpen_0000) ProtoMessage()    {}
 func (*WlstOpen_0000) Descriptor() ([]byte, []int) {
-	return fileDescriptor_f614763c9ca1b9b8, []int{0}
+	return fileDescriptor_f614763c9ca1b9b8, []int{1}
 }
 func (m *WlstOpen_0000) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -65,18 +117,11 @@ func (m *WlstOpen_0000) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_WlstOpen_0000 proto.InternalMessageInfo
 
-func (m *WlstOpen_0000) GetPn() int32 {
+func (m *WlstOpen_0000) GetUintID() []*UnitIdentification {
 	if m != nil {
-		return m.Pn
+		return m.UintID
 	}
-	return 0
-}
-
-func (m *WlstOpen_0000) GetFn() int32 {
-	if m != nil {
-		return m.Fn
-	}
-	return 0
+	return nil
 }
 
 func (m *WlstOpen_0000) GetAfn() int32 {
@@ -88,17 +133,16 @@ func (m *WlstOpen_0000) GetAfn() int32 {
 
 // 复位下行
 type WlstOpen_0101 struct {
-	// 0
-	Pn int32 `protobuf:"varint,1,opt,name=pn,proto3" json:"pn,omitempty"`
-	// 1-硬件初始化（重启），2-数据区初始化，3-恢复出厂值，4-参数全体数据区
-	Fn int32 `protobuf:"varint,2,opt,name=fn,proto3" json:"fn,omitempty"`
+	// pn: 0
+	// fn: 1-硬件初始化（重启），2-数据区初始化，3-恢复出厂值，4-参数全体数据区
+	UintID []*UnitIdentification `protobuf:"bytes,1,rep,name=uintID,proto3" json:"uintID,omitempty"`
 }
 
 func (m *WlstOpen_0101) Reset()         { *m = WlstOpen_0101{} }
 func (m *WlstOpen_0101) String() string { return proto.CompactTextString(m) }
 func (*WlstOpen_0101) ProtoMessage()    {}
 func (*WlstOpen_0101) Descriptor() ([]byte, []int) {
-	return fileDescriptor_f614763c9ca1b9b8, []int{1}
+	return fileDescriptor_f614763c9ca1b9b8, []int{2}
 }
 func (m *WlstOpen_0101) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -127,33 +171,25 @@ func (m *WlstOpen_0101) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_WlstOpen_0101 proto.InternalMessageInfo
 
-func (m *WlstOpen_0101) GetPn() int32 {
+func (m *WlstOpen_0101) GetUintID() []*UnitIdentification {
 	if m != nil {
-		return m.Pn
+		return m.UintID
 	}
-	return 0
+	return nil
 }
 
-func (m *WlstOpen_0101) GetFn() int32 {
-	if m != nil {
-		return m.Fn
-	}
-	return 0
-}
-
-// 登录
+// 登录上行
 type WlstOpen_0902 struct {
-	// 0
-	Pn int32 `protobuf:"varint,1,opt,name=pn,proto3" json:"pn,omitempty"`
-	// 1-登录，2-退出，3-心跳
-	Fn int32 `protobuf:"varint,2,opt,name=fn,proto3" json:"fn,omitempty"`
+	// pn: 0
+	// fn: 1-登录，2-退出，3-心跳
+	UintID []*UnitIdentification `protobuf:"bytes,1,rep,name=uintID,proto3" json:"uintID,omitempty"`
 }
 
 func (m *WlstOpen_0902) Reset()         { *m = WlstOpen_0902{} }
 func (m *WlstOpen_0902) String() string { return proto.CompactTextString(m) }
 func (*WlstOpen_0902) ProtoMessage()    {}
 func (*WlstOpen_0902) Descriptor() ([]byte, []int) {
-	return fileDescriptor_f614763c9ca1b9b8, []int{2}
+	return fileDescriptor_f614763c9ca1b9b8, []int{3}
 }
 func (m *WlstOpen_0902) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -182,21 +218,15 @@ func (m *WlstOpen_0902) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_WlstOpen_0902 proto.InternalMessageInfo
 
-func (m *WlstOpen_0902) GetPn() int32 {
+func (m *WlstOpen_0902) GetUintID() []*UnitIdentification {
 	if m != nil {
-		return m.Pn
+		return m.UintID
 	}
-	return 0
-}
-
-func (m *WlstOpen_0902) GetFn() int32 {
-	if m != nil {
-		return m.Fn
-	}
-	return 0
+	return nil
 }
 
 func init() {
+	proto.RegisterType((*UnitIdentification)(nil), "wlst.pb2.UnitIdentification")
 	proto.RegisterType((*WlstOpen_0000)(nil), "wlst.pb2.Wlst_open_0000")
 	proto.RegisterType((*WlstOpen_0101)(nil), "wlst.pb2.Wlst_open_0101")
 	proto.RegisterType((*WlstOpen_0902)(nil), "wlst.pb2.Wlst_open_0902")
@@ -205,17 +235,53 @@ func init() {
 func init() { proto.RegisterFile("protocol_wlst.proto", fileDescriptor_f614763c9ca1b9b8) }
 
 var fileDescriptor_f614763c9ca1b9b8 = []byte{
-	// 155 bytes of a gzipped FileDescriptorProto
+	// 205 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0x12, 0x2e, 0x28, 0xca, 0x2f,
 	0xc9, 0x4f, 0xce, 0xcf, 0x89, 0x2f, 0xcf, 0x29, 0x2e, 0xd1, 0x03, 0xf3, 0x84, 0x38, 0x20, 0xec,
-	0x24, 0x23, 0x25, 0x27, 0x2e, 0xbe, 0xf0, 0x9c, 0xe2, 0x92, 0xf8, 0xfc, 0x82, 0xd4, 0xbc, 0x78,
-	0x03, 0x03, 0x03, 0x03, 0x21, 0x3e, 0x2e, 0xa6, 0x82, 0x3c, 0x09, 0x46, 0x05, 0x46, 0x0d, 0xd6,
-	0x20, 0xa6, 0x82, 0x3c, 0x10, 0x3f, 0x2d, 0x4f, 0x82, 0x09, 0xc2, 0x4f, 0xcb, 0x13, 0x12, 0xe0,
-	0x62, 0x4e, 0x4c, 0xcb, 0x93, 0x60, 0x06, 0x0b, 0x80, 0x98, 0x4a, 0x06, 0x28, 0x66, 0x18, 0x1a,
-	0x18, 0x12, 0x32, 0x03, 0x4d, 0x87, 0xa5, 0x81, 0x11, 0x21, 0x1d, 0x4e, 0x52, 0x27, 0x1e, 0xc9,
-	0x31, 0x5e, 0x78, 0x24, 0xc7, 0xf8, 0xe0, 0x91, 0x1c, 0xe3, 0x84, 0xc7, 0x72, 0x0c, 0x17, 0x1e,
-	0xcb, 0x31, 0xdc, 0x78, 0x2c, 0xc7, 0xe0, 0xc1, 0x98, 0xc4, 0x06, 0xf6, 0x94, 0x31, 0x20, 0x00,
-	0x00, 0xff, 0xff, 0xec, 0x68, 0xb1, 0x76, 0xeb, 0x00, 0x00, 0x00,
+	0x24, 0x23, 0x25, 0x13, 0x2e, 0xa1, 0xd0, 0xbc, 0xcc, 0x12, 0xcf, 0x94, 0xd4, 0xbc, 0x92, 0xcc,
+	0xb4, 0xcc, 0xe4, 0xc4, 0x92, 0xcc, 0xfc, 0x3c, 0x21, 0x3e, 0x2e, 0xa6, 0x82, 0x3c, 0x09, 0x46,
+	0x05, 0x46, 0x0d, 0xd6, 0x20, 0xa6, 0x02, 0x30, 0x3f, 0x2d, 0x4f, 0x82, 0x09, 0xc2, 0x4f, 0xcb,
+	0x53, 0x8a, 0xe0, 0xe2, 0x0b, 0xcf, 0x29, 0x2e, 0x89, 0xcf, 0x2f, 0x48, 0xcd, 0x8b, 0x37, 0x30,
+	0x30, 0x30, 0x10, 0x32, 0xe1, 0x62, 0x2b, 0xcd, 0xcc, 0x2b, 0xf1, 0x74, 0x91, 0x60, 0x54, 0x60,
+	0xd6, 0xe0, 0x36, 0x92, 0xd1, 0x83, 0x59, 0xa1, 0x87, 0x69, 0x7e, 0x10, 0x54, 0xad, 0x90, 0x00,
+	0x17, 0x73, 0x62, 0x5a, 0x9e, 0x04, 0x33, 0xd8, 0x60, 0x10, 0x53, 0xc9, 0x0d, 0xc5, 0x64, 0x43,
+	0x03, 0x43, 0xf2, 0x4c, 0x46, 0x33, 0xc7, 0xd2, 0xc0, 0x88, 0x3c, 0x73, 0x9c, 0xa4, 0x4e, 0x3c,
+	0x92, 0x63, 0xbc, 0xf0, 0x48, 0x8e, 0xf1, 0xc1, 0x23, 0x39, 0xc6, 0x09, 0x8f, 0xe5, 0x18, 0x2e,
+	0x3c, 0x96, 0x63, 0xb8, 0xf1, 0x58, 0x8e, 0xc1, 0x83, 0x31, 0x89, 0x0d, 0x1c, 0x98, 0xc6, 0x80,
+	0x00, 0x00, 0x00, 0xff, 0xff, 0x4e, 0x67, 0x0e, 0x9b, 0x63, 0x01, 0x00, 0x00,
+}
+
+func (m *UnitIdentification) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *UnitIdentification) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *UnitIdentification) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.Fn != 0 {
+		i = encodeVarintProtocolWlst(dAtA, i, uint64(m.Fn))
+		i--
+		dAtA[i] = 0x10
+	}
+	if m.Pn != 0 {
+		i = encodeVarintProtocolWlst(dAtA, i, uint64(m.Pn))
+		i--
+		dAtA[i] = 0x8
+	}
+	return len(dAtA) - i, nil
 }
 
 func (m *WlstOpen_0000) Marshal() (dAtA []byte, err error) {
@@ -243,15 +309,19 @@ func (m *WlstOpen_0000) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0x18
 	}
-	if m.Fn != 0 {
-		i = encodeVarintProtocolWlst(dAtA, i, uint64(m.Fn))
-		i--
-		dAtA[i] = 0x10
-	}
-	if m.Pn != 0 {
-		i = encodeVarintProtocolWlst(dAtA, i, uint64(m.Pn))
-		i--
-		dAtA[i] = 0x8
+	if len(m.UintID) > 0 {
+		for iNdEx := len(m.UintID) - 1; iNdEx >= 0; iNdEx-- {
+			{
+				size, err := m.UintID[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				if err != nil {
+					return 0, err
+				}
+				i -= size
+				i = encodeVarintProtocolWlst(dAtA, i, uint64(size))
+			}
+			i--
+			dAtA[i] = 0xa
+		}
 	}
 	return len(dAtA) - i, nil
 }
@@ -276,15 +346,19 @@ func (m *WlstOpen_0101) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	_ = i
 	var l int
 	_ = l
-	if m.Fn != 0 {
-		i = encodeVarintProtocolWlst(dAtA, i, uint64(m.Fn))
-		i--
-		dAtA[i] = 0x10
-	}
-	if m.Pn != 0 {
-		i = encodeVarintProtocolWlst(dAtA, i, uint64(m.Pn))
-		i--
-		dAtA[i] = 0x8
+	if len(m.UintID) > 0 {
+		for iNdEx := len(m.UintID) - 1; iNdEx >= 0; iNdEx-- {
+			{
+				size, err := m.UintID[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				if err != nil {
+					return 0, err
+				}
+				i -= size
+				i = encodeVarintProtocolWlst(dAtA, i, uint64(size))
+			}
+			i--
+			dAtA[i] = 0xa
+		}
 	}
 	return len(dAtA) - i, nil
 }
@@ -309,15 +383,19 @@ func (m *WlstOpen_0902) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	_ = i
 	var l int
 	_ = l
-	if m.Fn != 0 {
-		i = encodeVarintProtocolWlst(dAtA, i, uint64(m.Fn))
-		i--
-		dAtA[i] = 0x10
-	}
-	if m.Pn != 0 {
-		i = encodeVarintProtocolWlst(dAtA, i, uint64(m.Pn))
-		i--
-		dAtA[i] = 0x8
+	if len(m.UintID) > 0 {
+		for iNdEx := len(m.UintID) - 1; iNdEx >= 0; iNdEx-- {
+			{
+				size, err := m.UintID[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				if err != nil {
+					return 0, err
+				}
+				i -= size
+				i = encodeVarintProtocolWlst(dAtA, i, uint64(size))
+			}
+			i--
+			dAtA[i] = 0xa
+		}
 	}
 	return len(dAtA) - i, nil
 }
@@ -333,7 +411,7 @@ func encodeVarintProtocolWlst(dAtA []byte, offset int, v uint64) int {
 	dAtA[offset] = uint8(v)
 	return base
 }
-func (m *WlstOpen_0000) Size() (n int) {
+func (m *UnitIdentification) Size() (n int) {
 	if m == nil {
 		return 0
 	}
@@ -344,6 +422,21 @@ func (m *WlstOpen_0000) Size() (n int) {
 	}
 	if m.Fn != 0 {
 		n += 1 + sovProtocolWlst(uint64(m.Fn))
+	}
+	return n
+}
+
+func (m *WlstOpen_0000) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if len(m.UintID) > 0 {
+		for _, e := range m.UintID {
+			l = e.Size()
+			n += 1 + l + sovProtocolWlst(uint64(l))
+		}
 	}
 	if m.Afn != 0 {
 		n += 1 + sovProtocolWlst(uint64(m.Afn))
@@ -357,11 +450,11 @@ func (m *WlstOpen_0101) Size() (n int) {
 	}
 	var l int
 	_ = l
-	if m.Pn != 0 {
-		n += 1 + sovProtocolWlst(uint64(m.Pn))
-	}
-	if m.Fn != 0 {
-		n += 1 + sovProtocolWlst(uint64(m.Fn))
+	if len(m.UintID) > 0 {
+		for _, e := range m.UintID {
+			l = e.Size()
+			n += 1 + l + sovProtocolWlst(uint64(l))
+		}
 	}
 	return n
 }
@@ -372,11 +465,11 @@ func (m *WlstOpen_0902) Size() (n int) {
 	}
 	var l int
 	_ = l
-	if m.Pn != 0 {
-		n += 1 + sovProtocolWlst(uint64(m.Pn))
-	}
-	if m.Fn != 0 {
-		n += 1 + sovProtocolWlst(uint64(m.Fn))
+	if len(m.UintID) > 0 {
+		for _, e := range m.UintID {
+			l = e.Size()
+			n += 1 + l + sovProtocolWlst(uint64(l))
+		}
 	}
 	return n
 }
@@ -387,7 +480,7 @@ func sovProtocolWlst(x uint64) (n int) {
 func sozProtocolWlst(x uint64) (n int) {
 	return sovProtocolWlst(uint64((x << 1) ^ uint64((int64(x) >> 63))))
 }
-func (m *WlstOpen_0000) Unmarshal(dAtA []byte) error {
+func (m *UnitIdentification) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -410,10 +503,10 @@ func (m *WlstOpen_0000) Unmarshal(dAtA []byte) error {
 		fieldNum := int32(wire >> 3)
 		wireType := int(wire & 0x7)
 		if wireType == 4 {
-			return fmt.Errorf("proto: Wlst_open_0000: wiretype end group for non-group")
+			return fmt.Errorf("proto: UnitIdentification: wiretype end group for non-group")
 		}
 		if fieldNum <= 0 {
-			return fmt.Errorf("proto: Wlst_open_0000: illegal tag %d (wire type %d)", fieldNum, wire)
+			return fmt.Errorf("proto: UnitIdentification: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		case 1:
@@ -454,6 +547,93 @@ func (m *WlstOpen_0000) Unmarshal(dAtA []byte) error {
 					break
 				}
 			}
+		default:
+			iNdEx = preIndex
+			skippy, err := skipProtocolWlst(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if skippy < 0 {
+				return ErrInvalidLengthProtocolWlst
+			}
+			if (iNdEx + skippy) < 0 {
+				return ErrInvalidLengthProtocolWlst
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *WlstOpen_0000) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowProtocolWlst
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: Wlst_open_0000: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: Wlst_open_0000: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field UintID", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowProtocolWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthProtocolWlst
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthProtocolWlst
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.UintID = append(m.UintID, &UnitIdentification{})
+			if err := m.UintID[len(m.UintID)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
 		case 3:
 			if wireType != 0 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Afn", wireType)
@@ -527,10 +707,10 @@ func (m *WlstOpen_0101) Unmarshal(dAtA []byte) error {
 		}
 		switch fieldNum {
 		case 1:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Pn", wireType)
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field UintID", wireType)
 			}
-			m.Pn = 0
+			var msglen int
 			for shift := uint(0); ; shift += 7 {
 				if shift >= 64 {
 					return ErrIntOverflowProtocolWlst
@@ -540,30 +720,26 @@ func (m *WlstOpen_0101) Unmarshal(dAtA []byte) error {
 				}
 				b := dAtA[iNdEx]
 				iNdEx++
-				m.Pn |= int32(b&0x7F) << shift
+				msglen |= int(b&0x7F) << shift
 				if b < 0x80 {
 					break
 				}
 			}
-		case 2:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Fn", wireType)
+			if msglen < 0 {
+				return ErrInvalidLengthProtocolWlst
 			}
-			m.Fn = 0
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowProtocolWlst
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				m.Fn |= int32(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthProtocolWlst
 			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.UintID = append(m.UintID, &UnitIdentification{})
+			if err := m.UintID[len(m.UintID)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
 			skippy, err := skipProtocolWlst(dAtA[iNdEx:])
@@ -618,10 +794,10 @@ func (m *WlstOpen_0902) Unmarshal(dAtA []byte) error {
 		}
 		switch fieldNum {
 		case 1:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Pn", wireType)
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field UintID", wireType)
 			}
-			m.Pn = 0
+			var msglen int
 			for shift := uint(0); ; shift += 7 {
 				if shift >= 64 {
 					return ErrIntOverflowProtocolWlst
@@ -631,30 +807,26 @@ func (m *WlstOpen_0902) Unmarshal(dAtA []byte) error {
 				}
 				b := dAtA[iNdEx]
 				iNdEx++
-				m.Pn |= int32(b&0x7F) << shift
+				msglen |= int(b&0x7F) << shift
 				if b < 0x80 {
 					break
 				}
 			}
-		case 2:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Fn", wireType)
+			if msglen < 0 {
+				return ErrInvalidLengthProtocolWlst
 			}
-			m.Fn = 0
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowProtocolWlst
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				m.Fn |= int32(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthProtocolWlst
 			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.UintID = append(m.UintID, &UnitIdentification{})
+			if err := m.UintID[len(m.UintID)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
 			skippy, err := skipProtocolWlst(dAtA[iNdEx:])
