@@ -829,7 +829,8 @@ type WlstRtu_70A0 struct {
 	SwitchInStPacked []int32 `protobuf:"varint,12,rep,packed,name=switch_in_st_packed,json=switchInStPacked,proto3" json:"switch_in_st_packed,omitempty"`
 	// 开关量输出状态 0-断,1-通，cmd_type==3时填
 	SwitchOutStPacked []int32 `protobuf:"varint,13,rep,packed,name=switch_out_st_packed,json=switchOutStPacked,proto3" json:"switch_out_st_packed,omitempty"`
-	// 终端运行状态，cmd_type==3时填 [供电位0-有电,1-无电;开机申请位,0-无,1-开机;停运位,0-正常,1-停运;报警位,0-无警,1-告警;电压超限,0-正常,1-超限;电流超限,0-正常,1-超限;无电流报警,0-正常,1-报警;参数错误,0-正常,1-错误]
+	// 终端运行状态，cmd_type==3时填
+	// [供电位0-有电,1-无电;开机申请位,0-无,1-开机;停运位,0-正常,1-停运;报警位,0-无警,1-告警;电压超限,0-正常,1-超限;电流超限,0-正常,1-超限;无电流报警,0-正常,1-报警;参数错误,0-正常,1-错误]
 	TmlStPacked []int32 `protobuf:"varint,14,rep,packed,name=tml_st_packed,json=tmlStPacked,proto3" json:"tml_st_packed,omitempty"`
 	// 终端复位次数[当前,昨天,前天,大前天]，cmd_type==3时填
 	TmlReset []int32 `protobuf:"varint,15,rep,packed,name=tml_reset,json=tmlReset,proto3" json:"tml_reset,omitempty"`
@@ -1650,7 +1651,8 @@ func (m *WlstRtu_7050) GetDataMark() int32 {
 }
 
 type WlstRtu_70D0 struct {
-	// 序号 (老版选测也将升级为该结构,若idx==-1表示为老版数据,idx>=0表示新版，idx==-2表示sd卡数据)
+	// 序号
+	// (老版选测也将升级为该结构,若idx==-1表示为老版数据,idx>=0表示新版，idx==-2表示sd卡数据)
 	CmdIdx int32 `protobuf:"varint,1,opt,name=cmd_idx,json=cmdIdx,proto3" json:"cmd_idx,omitempty"`
 	// 数据标示
 	DataMark *WlstRtu_70D0_DataMark `protobuf:"bytes,2,opt,name=data_mark,json=dataMark,proto3" json:"data_mark,omitempty"`
@@ -1658,7 +1660,8 @@ type WlstRtu_70D0 struct {
 	SwitchInStPacked []int32 `protobuf:"varint,3,rep,packed,name=switch_in_st_packed,json=switchInStPacked,proto3" json:"switch_in_st_packed,omitempty"`
 	// 开关量输出状态 0-断,1-通
 	SwitchOutStPacked []int32 `protobuf:"varint,4,rep,packed,name=switch_out_st_packed,json=switchOutStPacked,proto3" json:"switch_out_st_packed,omitempty"`
-	// 终端运行状态 [供电位0-有电,1-无电;开机申请位,0-无,1-开机;停运位,0-正常,1-停运;报警位,0-无警,1-告警;电压超限,0-正常,1-超限;电流超限,0-正常,1-超限;无电流报警,0-正常,1-报警;参数错误,0-正常,1-错误]
+	// 终端运行状态
+	// [供电位0-有电,1-无电;开机申请位,0-无,1-开机;停运位,0-正常,1-停运;报警位,0-无警,1-告警;电压超限,0-正常,1-超限;电流超限,0-正常,1-超限;无电流报警,0-正常,1-报警;参数错误,0-正常,1-错误]
 	TmlStPacked []int32 `protobuf:"varint,5,rep,packed,name=tml_st_packed,json=tmlStPacked,proto3" json:"tml_st_packed,omitempty"`
 	// 温度
 	Temperature int32 `protobuf:"varint,6,opt,name=temperature,proto3" json:"temperature,omitempty"`
@@ -2468,7 +2471,7 @@ func (m *WlstRtu_7010) GetStatus() int32 {
 type WlstRtu_7003 struct {
 	//序号
 	CmdIdx int32 `protobuf:"varint,1,opt,name=cmd_idx,json=cmdIdx,proto3" json:"cmd_idx,omitempty"`
-	//ftp升级命令数据
+	// ftp升级命令数据
 	FtpData []int32 `protobuf:"varint,2,rep,packed,name=ftp_data,json=ftpData,proto3" json:"ftp_data,omitempty"`
 }
 
@@ -2519,13 +2522,13 @@ func (m *WlstRtu_7003) GetFtpData() []int32 {
 	return nil
 }
 
-//3006终端升级准备
+// 3006终端升级准备
 type WlstRtu_7006 struct {
 	//序号
 	CmdIdx int32 `protobuf:"varint,1,opt,name=cmd_idx,json=cmdIdx,proto3" json:"cmd_idx,omitempty"`
 	//总数
 	AllCount int32 `protobuf:"varint,2,opt,name=all_count,json=allCount,proto3" json:"all_count,omitempty"`
-	//cache文件名
+	// cache文件名
 	CacheName string `protobuf:"bytes,3,opt,name=cache_name,json=cacheName,proto3" json:"cache_name,omitempty"`
 }
 
@@ -2583,7 +2586,7 @@ func (m *WlstRtu_7006) GetCacheName() string {
 	return ""
 }
 
-//3006终端升级数据包发送状态查询
+// 3006终端升级数据包发送状态查询
 type WlstRtu_7007 struct {
 	//序号
 	CmdIdx int32 `protobuf:"varint,1,opt,name=cmd_idx,json=cmdIdx,proto3" json:"cmd_idx,omitempty"`
@@ -2629,8 +2632,8 @@ func (m *WlstRtu_7007) GetCmdIdx() int32 {
 	return 0
 }
 
-//3006终端数据包状态查询应答
-//Wlst_rtu_7083
+// 3006终端数据包状态查询应答
+// Wlst_rtu_7083
 type WlstRtu_7087 struct {
 	//序号
 	CmdIdx int32 `protobuf:"varint,1,opt,name=cmd_idx,json=cmdIdx,proto3" json:"cmd_idx,omitempty"`
@@ -2785,15 +2788,15 @@ func (m *WlstRtu_7081) GetDataLocation() int32 {
 	return 0
 }
 
-//3006终端升级发送数据包
+// 3006终端升级发送数据包
 type WlstRtu_7008 struct {
 	//序号
 	CmdIdx int32 `protobuf:"varint,1,opt,name=cmd_idx,json=cmdIdx,proto3" json:"cmd_idx,omitempty"`
 	//数据
 	UpdData []string `protobuf:"bytes,2,rep,name=upd_data,json=updData,proto3" json:"upd_data,omitempty"`
-	//cache文件名
+	// cache文件名
 	CacheName string `protobuf:"bytes,3,opt,name=cache_name,json=cacheName,proto3" json:"cache_name,omitempty"`
-	//0-写缓存，1-清缓存
+	// 0-写缓存，1-清缓存
 	Clean      int32   `protobuf:"varint,4,opt,name=clean,proto3" json:"clean,omitempty"`
 	IntUpdData []int32 `protobuf:"varint,5,rep,packed,name=int_upd_data,json=intUpdData,proto3" json:"int_upd_data,omitempty"`
 }
@@ -2866,7 +2869,7 @@ func (m *WlstRtu_7008) GetIntUpdData() []int32 {
 	return nil
 }
 
-//wlst_rtu_70e1
+// wlst_rtu_70e1
 type WlstRtu_7060 struct {
 	//序号
 	CmdIdx int32 `protobuf:"varint,1,opt,name=cmd_idx,json=cmdIdx,proto3" json:"cmd_idx,omitempty"`
@@ -3128,7 +3131,7 @@ func (m *WlstRtu_70E0) GetStatus() int32 {
 }
 
 type WlstRtu_7B00 struct {
-	//sim卡号码
+	// sim卡号码
 	Sim string `protobuf:"bytes,1,opt,name=sim,proto3" json:"sim,omitempty"`
 	//信号强度
 	Signal int32 `protobuf:"varint,2,opt,name=signal,proto3" json:"signal,omitempty"`
@@ -4073,7 +4076,7 @@ func (m *WlstRtu_6100) GetXVoltagePhase() []int32 {
 	return nil
 }
 
-//Wlst_rtu_af00
+// Wlst_rtu_af00
 type WlstRtuA000 struct {
 	//模拟量回路x电压  需要*电压量程
 	XAnalogVoltage []float64 `protobuf:"fixed64,1,rep,packed,name=x_analog_voltage,json=xAnalogVoltage,proto3" json:"x_analog_voltage,omitempty"`
@@ -4198,7 +4201,7 @@ func (m *WlstRtuA000) GetTemperature() int32 {
 	return 0
 }
 
-//Wlst_rtu_2210
+// Wlst_rtu_2210
 type WlstRtuA200 struct {
 	//开关量输出
 	KNo int32 `protobuf:"varint,1,opt,name=k_no,json=kNo,proto3" json:"k_no,omitempty"`
@@ -4254,7 +4257,7 @@ func (m *WlstRtuA200) GetOperation() int32 {
 }
 
 type WlstRtu_4B00 struct {
-	//kx操作，0-关，1-开，2-不变
+	// kx操作，0-关，1-开，2-不变
 	Operation []int32 `protobuf:"varint,1,rep,packed,name=operation,proto3" json:"operation,omitempty"`
 }
 
@@ -4298,9 +4301,9 @@ func (m *WlstRtu_4B00) GetOperation() []int32 {
 	return nil
 }
 
-//Wlst_rtu_1200
+// Wlst_rtu_1200
 type WlstRtu_9300 struct {
-	//yyyy-mm-dd hh:mm:ss w 格式
+	// yyyy-mm-dd hh:mm:ss w 格式
 	TmlDate string `protobuf:"bytes,1,opt,name=tml_date,json=tmlDate,proto3" json:"tml_date,omitempty"`
 }
 
@@ -4344,7 +4347,7 @@ func (m *WlstRtu_9300) GetTmlDate() string {
 	return ""
 }
 
-//Wlst_rtu_3100_5800_6800_d900_e900
+// Wlst_rtu_3100_5800_6800_d900_e900
 type WlstRtuB200 struct {
 	//周日~周六k1开关时间 hhmm-hhmm
 	XK1OptTime []string `protobuf:"bytes,1,rep,name=x_k1_opt_time,json=xK1OptTime,proto3" json:"x_k1_opt_time,omitempty"`
@@ -4471,25 +4474,25 @@ func (m *WlstRtuB200) GetXK8OptTime() []string {
 	return nil
 }
 
-//Wlst_rtu_4600_6500_c700
+// Wlst_rtu_4600_6500_c700
 type WlstRtuE600 struct {
 	//时间段1-4(或5-8)起始日期 mmdd-mmdd
 	XHolidays []string `protobuf:"bytes,1,rep,name=x_holidays,json=xHolidays,proto3" json:"x_holidays,omitempty"`
-	//K1时间段1-4(或5-8)开关时间 hhmm-hhmm
+	// K1时间段1-4(或5-8)开关时间 hhmm-hhmm
 	XK1Time []string `protobuf:"bytes,2,rep,name=x_k1_time,json=xK1Time,proto3" json:"x_k1_time,omitempty"`
-	//K2时间段1-4(或5-8)开关时间 hhmm-hhmm
+	// K2时间段1-4(或5-8)开关时间 hhmm-hhmm
 	XK2Time []string `protobuf:"bytes,3,rep,name=x_k2_time,json=xK2Time,proto3" json:"x_k2_time,omitempty"`
-	//K3时间段1-4(或5-8)开关时间 hhmm-hhmm
+	// K3时间段1-4(或5-8)开关时间 hhmm-hhmm
 	XK3Time []string `protobuf:"bytes,4,rep,name=x_k3_time,json=xK3Time,proto3" json:"x_k3_time,omitempty"`
-	//K4时间段1-4(或5-8)开关时间 hhmm-hhmm
+	// K4时间段1-4(或5-8)开关时间 hhmm-hhmm
 	XK4Time []string `protobuf:"bytes,5,rep,name=x_k4_time,json=xK4Time,proto3" json:"x_k4_time,omitempty"`
-	//K5时间段1-4(或5-8)开关时间 hhmm-hhmm
+	// K5时间段1-4(或5-8)开关时间 hhmm-hhmm
 	XK5Time []string `protobuf:"bytes,6,rep,name=x_k5_time,json=xK5Time,proto3" json:"x_k5_time,omitempty"`
-	//K6时间段1-4(或5-8)开关时间 hhmm-hhmm
+	// K6时间段1-4(或5-8)开关时间 hhmm-hhmm
 	XK6Time []string `protobuf:"bytes,7,rep,name=x_k6_time,json=xK6Time,proto3" json:"x_k6_time,omitempty"`
-	//K7时间段1-4(或5-8)开关时间 hhmm-hhmm
+	// K7时间段1-4(或5-8)开关时间 hhmm-hhmm
 	XK7Time []string `protobuf:"bytes,10,rep,name=x_k7_time,json=xK7Time,proto3" json:"x_k7_time,omitempty"`
-	//K8时间段1-4(或5-8)开关时间 hhmm-hhmm
+	// K8时间段1-4(或5-8)开关时间 hhmm-hhmm
 	XK8Time []string `protobuf:"bytes,11,rep,name=x_k8_time,json=xK8Time,proto3" json:"x_k8_time,omitempty"`
 	//时间段1-4(或5-8)市付
 	XCityPayTime []string `protobuf:"bytes,8,rep,name=x_city_pay_time,json=xCityPayTime,proto3" json:"x_city_pay_time,omitempty"`
@@ -4607,9 +4610,9 @@ func (m *WlstRtuE600) GetXSelfPayTime() []string {
 	return nil
 }
 
-//Wlst_rtu_4c00_cc00
+// Wlst_rtu_4c00_cc00
 type WlstRtu_9800 struct {
-	//4c00和cc00时表示：设置档位，1-1档，2-2档，3-3档，4-旁路，5-返回状态。9800时表示：终端开机申请状态1-参数正常，0-参数错误，2-时钟错误
+	// 4c00和cc00时表示：设置档位，1-1档，2-2档，3-3档，4-旁路，5-返回状态。9800时表示：终端开机申请状态1-参数正常，0-参数错误，2-时钟错误
 	Status int32 `protobuf:"varint,1,opt,name=status,proto3" json:"status,omitempty"`
 }
 
@@ -4653,9 +4656,9 @@ func (m *WlstRtu_9800) GetStatus() int32 {
 	return 0
 }
 
-//Wlst_rtu_ab00
+// Wlst_rtu_ab00
 type WlstRtuDc00 struct {
-	//ab00-》序列号,dc00-》版本字符串
+	// ab00-》序列号,dc00-》版本字符串
 	Ver string `protobuf:"bytes,1,opt,name=ver,proto3" json:"ver,omitempty"`
 }
 

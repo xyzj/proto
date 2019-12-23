@@ -334,7 +334,8 @@ func (m *WlstSlu_3900) GetSunset() int32 {
 type WlstSlu_3900_ModelInfo struct {
 	// 控制器回路数量
 	SluitemLoop int32 `protobuf:"varint,1,opt,name=sluitem_loop,json=sluitemLoop,proto3" json:"sluitem_loop,omitempty"`
-	// 节能方式 0-无控制，1-只有开关灯，2-一档节能，3-二档节能，4-RS485，5-PWM，6-0~10V
+	// 节能方式
+	// 0-无控制，1-只有开关灯，2-一档节能，3-二档节能，4-RS485，5-PWM，6-0~10V
 	PowerSaving int32 `protobuf:"varint,2,opt,name=power_saving,json=powerSaving,proto3" json:"power_saving,omitempty"`
 	// 漏电流测量 0-无，1-有
 	HasLeakage int32 `protobuf:"varint,3,opt,name=has_leakage,json=hasLeakage,proto3" json:"has_leakage,omitempty"`
@@ -847,7 +848,8 @@ func (m *WlstSlu_3900_SluitemPara) GetUplinkReply() int32 {
 // 单灯事件查询
 type WlstSlu_7800 struct {
 	CmdIdx int32 `protobuf:"varint,1,opt,name=cmd_idx,json=cmdIdx,proto3" json:"cmd_idx,omitempty"`
-	// 事件类型, 0-上电复位记录，1-开关灯操作记录，2-液晶操作记录，3-控制器告警记录，4-集中器告警记录，5-主站操作记录
+	// 事件类型,
+	// 0-上电复位记录，1-开关灯操作记录，2-液晶操作记录，3-控制器告警记录，4-集中器告警记录，5-主站操作记录
 	EventType int32 `protobuf:"varint,2,opt,name=event_type,json=eventType,proto3" json:"event_type,omitempty"`
 	// 分类标记，默认0xff
 	ClassType int32 `protobuf:"varint,3,opt,name=class_type,json=classType,proto3" json:"class_type,omitempty"`
@@ -937,7 +939,8 @@ func (m *WlstSlu_7800) GetDtEnd() int64 {
 // 单灯事件查询应答
 type WlstSluF800 struct {
 	CmdIdx int32 `protobuf:"varint,1,opt,name=cmd_idx,json=cmdIdx,proto3" json:"cmd_idx,omitempty"`
-	// 事件类型, 0-上电复位记录，1-开关灯操作记录，2-液晶操作记录，3-控制器告警记录，4-集中器告警记录，5-主站操作记录
+	// 事件类型,
+	// 0-上电复位记录，1-开关灯操作记录，2-液晶操作记录，3-控制器告警记录，4-集中器告警记录，5-主站操作记录
 	EventType int32 `protobuf:"varint,2,opt,name=event_type,json=eventType,proto3" json:"event_type,omitempty"`
 	// 分类标记，默认0xff
 	ClassType int32 `protobuf:"varint,3,opt,name=class_type,json=classType,proto3" json:"class_type,omitempty"`
@@ -1259,9 +1262,8 @@ type WlstSluF800_View0X23 struct {
 	// 漏电流(0-无，1-有),
 	// 温度采集(0-无，1-有),
 	// 时钟(0-无，1-有),
-	// 型号(0-无法确定，1-wj2090j，2-wj2090k，3-wj2080c,4-wj2080d,5-wj2090l,6-wj2090m, 7-wj4090),
-	// 通信成功次数范围(0-16)，
-	// 通信总次数范围(0-16)]
+	// 型号(0-无法确定，1-wj2090j，2-wj2090k，3-wj2080c,4-wj2080d,5-wj2090l,6-wj2090m,
+	// 7-wj4090), 通信成功次数范围(0-16)， 通信总次数范围(0-16)]
 	SluitemPhyinfo []int32 `protobuf:"varint,12,rep,packed,name=sluitem_phyinfo,json=sluitemPhyinfo,proto3" json:"sluitem_phyinfo,omitempty"`
 }
 
@@ -1474,7 +1476,8 @@ type WlstSlu_6B00 struct {
 	Addrs []int32 `protobuf:"varint,9,rep,packed,name=addrs,proto3" json:"addrs,omitempty"`
 	// 操作类型 3-经纬度关灯，4-混合控制，5-pwm调节
 	CmdType int32 `protobuf:"varint,10,opt,name=cmd_type,json=cmdType,proto3" json:"cmd_type,omitempty"`
-	// 混合回路操作 0-不操作，1-开灯，2-1档节能，3-2档节能，4-关灯（经纬度关灯时，cmd_type<4视为不操作）
+	// 混合回路操作
+	// 0-不操作，1-开灯，2-1档节能，3-2档节能，4-关灯（经纬度关灯时，cmd_type<4视为不操作）
 	CmdMix []int32 `protobuf:"varint,11,rep,packed,name=cmd_mix,json=cmdMix,proto3" json:"cmd_mix,omitempty"`
 	// pwm功率调节
 	CmdPwm *WlstSlu_6B00_CmdPwm `protobuf:"bytes,12,opt,name=cmd_pwm,json=cmdPwm,proto3" json:"cmd_pwm,omitempty"`
@@ -4184,7 +4187,9 @@ type WlstSlu_7300 struct {
 	SluitemStart int32 `protobuf:"varint,2,opt,name=sluitem_start,json=sluitemStart,proto3" json:"sluitem_start,omitempty"`
 	// 控制器数量
 	SluitemCount int32 `protobuf:"varint,3,opt,name=sluitem_count,json=sluitemCount,proto3" json:"sluitem_count,omitempty"`
-	// 选测数据类型 0-选测集中器，1-选测控制器基本数据（不用），2-选测未知控制器，3-选测控制器辅助参数（不用），4-选测控制器物理信息，5-选测控制器带时标数据，6-选测控制器带时标辅助数据, 7-控制器双字节电压电流数据，带电量
+	// 选测数据类型
+	// 0-选测集中器，1-选测控制器基本数据（不用），2-选测未知控制器，3-选测控制器辅助参数（不用），4-选测控制器物理信息，5-选测控制器带时标数据，6-选测控制器带时标辅助数据,
+	// 7-控制器双字节电压电流数据，带电量
 	DataMark int32 `protobuf:"varint,4,opt,name=data_mark,json=dataMark,proto3" json:"data_mark,omitempty"`
 	// 选测集中器
 	ConcentratorData *WlstSlu_7300_ConcentratorData `protobuf:"bytes,5,opt,name=concentrator_data,json=concentratorData,proto3" json:"concentrator_data,omitempty"`
@@ -4825,7 +4830,8 @@ type WlstSlu_7300_BaseSluitemData_LightStatus struct {
 	PowerStatus int32 `protobuf:"varint,1,opt,name=power_status,json=powerStatus,proto3" json:"power_status,omitempty"`
 	// 灯具漏电 0-正常，1-漏电
 	Leakage int32 `protobuf:"varint,2,opt,name=leakage,proto3" json:"leakage,omitempty"`
-	// 故障 0-正常，1-光源故障，2-补偿电容故障，3-意外灭灯，4-意外亮灯，5-自熄灯，6-控制器断电告警（苏州）,7-继电器故障
+	// 故障
+	// 0-正常，1-光源故障，2-补偿电容故障，3-意外灭灯，4-意外亮灯，5-自熄灯，6-控制器断电告警（苏州）,7-继电器故障
 	Fault int32 `protobuf:"varint,3,opt,name=fault,proto3" json:"fault,omitempty"`
 	// 工作状态 0-正常亮灯，1-一档节能，2-二档节能，3-关灯
 	WorkingOn int32 `protobuf:"varint,4,opt,name=working_on,json=workingOn,proto3" json:"working_on,omitempty"`
@@ -5369,7 +5375,9 @@ func (m *WlstSlu_7300_ModelInfo) GetSluitemType() string {
 type WlstSluF900 struct {
 	// 序号
 	CmdIdx int32 `protobuf:"varint,1,opt,name=cmd_idx,json=cmdIdx,proto3" json:"cmd_idx,omitempty"`
-	// 告警类型 0-集中器告警，1-控制器通讯故障，2-控制器状态告警，3-主动上报巡测结束，4-蓝牙模块连接申请，5-设置新域名成功, 6-控制器基本数据(双字节)
+	// 告警类型
+	// 0-集中器告警，1-控制器通讯故障，2-控制器状态告警，3-主动上报巡测结束，4-蓝牙模块连接申请，5-设置新域名成功,
+	// 6-控制器基本数据(双字节)
 	AlarmType int32 `protobuf:"varint,2,opt,name=alarm_type,json=alarmType,proto3" json:"alarm_type,omitempty"`
 	// 集中器数据
 	ConcentratorData *WlstSlu_7300_ConcentratorData `protobuf:"bytes,3,opt,name=concentrator_data,json=concentratorData,proto3" json:"concentrator_data,omitempty"`
@@ -5980,7 +5988,8 @@ type WlstSlu_7400 struct {
 	TimerOrOffset int32 `protobuf:"varint,8,opt,name=timer_or_offset,json=timerOrOffset,proto3" json:"timer_or_offset,omitempty"`
 	// 操作类型 3-经纬度关灯，4-混合控制，5-pwm调节，6-485调节
 	CmdType int32 `protobuf:"varint,9,opt,name=cmd_type,json=cmdType,proto3" json:"cmd_type,omitempty"`
-	// 混合回路操作 0-不操作，1-开灯，2-1档节能，3-2档节能，4-关灯（经纬度关灯时，cmd_type<4视为不操作）
+	// 混合回路操作
+	// 0-不操作，1-开灯，2-1档节能，3-2档节能，4-关灯（经纬度关灯时，cmd_type<4视为不操作）
 	CmdMix []int32 `protobuf:"varint,10,rep,packed,name=cmd_mix,json=cmdMix,proto3" json:"cmd_mix,omitempty"`
 	// pwm功率调节
 	CmdPwm *WlstSlu_7400_CmdPwm `protobuf:"bytes,11,opt,name=cmd_pwm,json=cmdPwm,proto3" json:"cmd_pwm,omitempty"`
@@ -6495,7 +6504,8 @@ type WlstSlu_6F00 struct {
 	Addr int32 `protobuf:"varint,3,opt,name=addr,proto3" json:"addr,omitempty"`
 	// 操作标识
 	ResetMark *WlstSlu_6F00_ResetMark `protobuf:"bytes,4,opt,name=reset_mark,json=resetMark,proto3" json:"reset_mark,omitempty"`
-	// 操作结果 0x3a-成功，0x5a-失败, 0x60-数据错误，0x61-正在操作，0x62-等待操作，0x63-队列已满
+	// 操作结果 0x3a-成功，0x5a-失败,
+	// 0x60-数据错误，0x61-正在操作，0x62-等待操作，0x63-队列已满
 	Status int32 `protobuf:"varint,5,opt,name=status,proto3" json:"status,omitempty"`
 }
 

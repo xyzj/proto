@@ -23,7 +23,7 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.GoGoProtoPackageIsVersion3 // please upgrade the proto package
 
-//Wlst_ldu_5b00_c900_4a01_ca01_4d01_4d02_cd02_4d03_cd03
+// Wlst_ldu_5b00_c900_4a01_ca01_4d01_4d02_cd02_4d03_cd03
 type WlstLdu_2600 struct {
 	//回路标识，二进制转十进制
 	LoopMark int32 `protobuf:"varint,1,opt,name=loop_mark,json=loopMark,proto3" json:"loop_mark,omitempty"`
@@ -266,7 +266,7 @@ func (m *WlstLduA600_LduLoopData) GetXAlarmFlag() int32 {
 	return 0
 }
 
-//Wlst_ldu_db00
+// Wlst_ldu_db00
 type WlstLdu_4900 struct {
 	//回路标识，二进制转十进制
 	LoopMark    int32                       `protobuf:"varint,1,opt,name=loop_mark,json=loopMark,proto3" json:"loop_mark,omitempty"`

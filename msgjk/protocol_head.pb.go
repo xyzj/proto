@@ -24,19 +24,20 @@ var _ = math.Inf
 const _ = proto.GoGoProtoPackageIsVersion3 // please upgrade the proto package
 
 type Head struct {
-	//mod：1-系统指令，2-数传指令，3-SQL指令，4-错误数据
+	// mod：1-系统指令，2-数传指令，3-SQL指令，4-错误数据
 	Mod int32 `protobuf:"varint,1,opt,name=mod,proto3" json:"mod,omitempty"`
-	//src：1-通讯服务，2-数据服务，3-客户端，4-串口采集（光照度，GPS），5-控制台，6-远程升级, 7-webservice接口
+	// src：1-通讯服务，2-数据服务，3-客户端，4-串口采集（光照度，GPS），5-控制台，6-远程升级,
+	// 7-webservice接口
 	Src int32 `protobuf:"varint,2,opt,name=src,proto3" json:"src,omitempty"`
-	//ver：1-内部协议版本v1.0
+	// ver：1-内部协议版本v1.0
 	Ver int32 `protobuf:"varint,3,opt,name=ver,proto3" json:"ver,omitempty"`
-	//tver：1-公司终端协议版本,2-合肥版本协议
+	// tver：1-公司终端协议版本,2-合肥版本协议
 	Tver int32 `protobuf:"varint,4,opt,name=tver,proto3" json:"tver,omitempty"`
-	//tra：1-数据通过模块直接传输，2-数据通过485传输
+	// tra：1-数据通过模块直接传输，2-数据通过485传输
 	Tra int32 `protobuf:"varint,5,opt,name=tra,proto3" json:"tra,omitempty"`
-	//ret: 发送等级，0-normal，1-high
+	// ret: 发送等级，0-normal，1-high
 	Ret int32 `protobuf:"varint,6,opt,name=ret,proto3" json:"ret,omitempty"`
-	//cmd：单位.设备.指令
+	// cmd：单位.设备.指令
 	Cmd  string  `protobuf:"bytes,7,opt,name=cmd,proto3" json:"cmd,omitempty"`
 	Code float64 `protobuf:"fixed64,8,opt,name=code,proto3" json:"code,omitempty"`
 	//目的地:1-终端，2-数据服务
@@ -183,15 +184,15 @@ func (m *Head) GetDt() int64 {
 }
 
 type Args struct {
-	//ip：目的ip
+	// ip：目的ip
 	Ip []int64 `protobuf:"varint,1,rep,packed,name=ip,proto3" json:"ip,omitempty"`
-	//port：目的端口
+	// port：目的端口
 	Port int32 `protobuf:"varint,2,opt,name=port,proto3" json:"port,omitempty"`
-	//addr：终端地址，列表格式
+	// addr：终端地址，列表格式
 	Addr []int64 `protobuf:"varint,3,rep,packed,name=addr,proto3" json:"addr,omitempty"`
-	//sim：手机卡号，字符串格式
+	// sim：手机卡号，字符串格式
 	Sim string `protobuf:"bytes,4,opt,name=sim,proto3" json:"sim,omitempty"`
-	//cid：集中器地址
+	// cid：集中器地址
 	Cid int32 `protobuf:"varint,5,opt,name=cid,proto3" json:"cid,omitempty"`
 	// 手机卡号，和ip对应
 	Sims []int64 `protobuf:"varint,6,rep,packed,name=sims,proto3" json:"sims,omitempty"`
@@ -403,12 +404,19 @@ func (m *SysCommands) GetOnlineInfo() []*SysCommands_OnlineInfo {
 }
 
 type SysCommands_OnlineInfo struct {
-	Ip      int64    `protobuf:"varint,1,opt,name=ip,proto3" json:"ip,omitempty"`
+	// ip地址
+	Ip int64 `protobuf:"varint,1,opt,name=ip,proto3" json:"ip,omitempty"`
+	// 该ip下各主设备信息 格式为厂商-型号-物理地址 如wlst-rtu-1
+	// 其中型号有rtu-终端/slu-单灯/als-光控/mru-电表/elu-漏电/sim-通讯模块/com-通讯模块
 	Members []string `protobuf:"bytes,2,rep,name=members,proto3" json:"members,omitempty"`
-	NetType int32    `protobuf:"varint,3,opt,name=net_type,json=netType,proto3" json:"net_type,omitempty"`
-	Signal  int32    `protobuf:"varint,4,opt,name=signal,proto3" json:"signal,omitempty"`
-	PhyId   int64    `protobuf:"varint,5,opt,name=phy_id,json=phyId,proto3" json:"phy_id,omitempty"`
-	Imei    int64    `protobuf:"varint,6,opt,name=imei,proto3" json:"imei,omitempty"`
+	// 网络模式 0-未知 2-2G/3G网络 4-4G网络
+	NetType int32 `protobuf:"varint,3,opt,name=net_type,json=netType,proto3" json:"net_type,omitempty"`
+	// 通讯模块信号
+	Signal int32 `protobuf:"varint,4,opt,name=signal,proto3" json:"signal,omitempty"`
+	// 主设备物理地址 填充顺序为终端、单灯、其它设备
+	PhyId int64 `protobuf:"varint,5,opt,name=phy_id,json=phyId,proto3" json:"phy_id,omitempty"`
+	// SIM卡IMEI
+	Imei int64 `protobuf:"varint,6,opt,name=imei,proto3" json:"imei,omitempty"`
 }
 
 func (m *SysCommands_OnlineInfo) Reset()         { *m = SysCommands_OnlineInfo{} }

@@ -1,0 +1,31 @@
+syntax = "proto3";
+package wlst.pb2;
+
+option optimize_for = SPEED;
+
+// 结构体命名规则：Wlst_open_[2位链路层功能码][2位afn功能码]
+
+// 状态应答
+message Wlst_open_0000 {
+  // 0
+  int32 pn = 1;
+  // 1-全部确认，2-全部否认,3-部分确认/否认（要填充数据段，保留）
+  int32 fn = 2;
+  // 依据上行填
+  int32 afn = 3;
+}
+// 复位下行
+message Wlst_open_0101 {
+  // 0
+  int32 pn = 1;
+  // 1-硬件初始化（重启），2-数据区初始化，3-恢复出厂值，4-参数全体数据区
+  int32 fn = 2;
+}
+
+// 登录
+message Wlst_open_0902 {
+  // 0
+  int32 pn = 1;
+  // 1-登录，2-退出，3-心跳
+  int32 fn = 2;
+}

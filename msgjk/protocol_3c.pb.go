@@ -22,7 +22,7 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.GoGoProtoPackageIsVersion3 // please upgrade the proto package
 
-//3c协议模块基本修改
+// 3c协议模块基本修改
 type WlstCom_0000 struct {
 	ServerIp   string `protobuf:"bytes,1,opt,name=server_ip,json=serverIp,proto3" json:"server_ip,omitempty"`
 	ServerPort string `protobuf:"bytes,2,opt,name=server_port,json=serverPort,proto3" json:"server_port,omitempty"`
@@ -125,7 +125,7 @@ func (m *WlstCom_0000) GetCdmaPassword() string {
 }
 
 type WlstCom_3E01 struct {
-	//11位地址，默认”00000000000“
+	// 11位地址，默认”00000000000“
 	Addr string `protobuf:"bytes,1,opt,name=addr,proto3" json:"addr,omitempty"`
 	//组号
 	GroupMark int32 `protobuf:"varint,2,opt,name=group_mark,json=groupMark,proto3" json:"group_mark,omitempty"`
@@ -188,7 +188,7 @@ func (m *WlstCom_3E01) GetArgsMark() []int32 {
 }
 
 type WlstCom_3E02 struct {
-	//11位地址，默认”00000000000“
+	// 11位地址，默认”00000000000“
 	Addr string `protobuf:"bytes,1,opt,name=addr,proto3" json:"addr,omitempty"`
 	//组号
 	GroupMark int32 `protobuf:"varint,2,opt,name=group_mark,json=groupMark,proto3" json:"group_mark,omitempty"`
@@ -552,7 +552,7 @@ func (m *WlstCom_3E02_Group03) GetWorkMode() int32 {
 
 type WlstCom_3E02_Group04 struct {
 	ValidCount int32 `protobuf:"varint,1,opt,name=valid_count,json=validCount,proto3" json:"valid_count,omitempty"`
-	//sim号码列表，最大10，ascii,不足补“0”（0x30）
+	// sim号码列表，最大10，ascii,不足补“0”（0x30）
 	Sim []string `protobuf:"bytes,2,rep,name=sim,proto3" json:"sim,omitempty"`
 	//最大16个字符，不足补0
 	Yecx string `protobuf:"bytes,3,opt,name=yecx,proto3" json:"yecx,omitempty"`
@@ -613,9 +613,9 @@ func (m *WlstCom_3E02_Group04) GetYecx() string {
 }
 
 type WlstCom_3E02_Group05 struct {
-	//11位bcd，不足补“0”（0x30）
+	// 11位bcd，不足补“0”（0x30）
 	Addr string `protobuf:"bytes,1,opt,name=addr,proto3" json:"addr,omitempty"`
-	//32位unicode，最大16个中文字符
+	// 32位unicode，最大16个中文字符
 	Street string `protobuf:"bytes,2,opt,name=street,proto3" json:"street,omitempty"`
 	//批号，20个ascII字符
 	BatchNumber string `protobuf:"bytes,3,opt,name=batch_number,json=batchNumber,proto3" json:"batch_number,omitempty"`
@@ -802,7 +802,7 @@ func (m *WlstCom_3E82) GetArgsMark() []int32 {
 }
 
 type WlstCom_3E84 struct {
-	//11位地址，默认”00000000000“
+	// 11位地址，默认”00000000000“
 	Addr string `protobuf:"bytes,1,opt,name=addr,proto3" json:"addr,omitempty"`
 	// 信号强度
 	Signal int32 `protobuf:"varint,2,opt,name=signal,proto3" json:"signal,omitempty"`

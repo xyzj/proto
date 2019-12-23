@@ -325,7 +325,7 @@ func (m *AhhfRtu_6804_SwitchInLimit) GetCurrentLowlimit() []float64 {
 }
 
 //江阴节能协议
-//Wxjy_esu_d500
+// Wxjy_esu_d500
 type WxjyEsu_5500 struct {
 	//当前时间 hhmmss
 	TimeNow string `protobuf:"bytes,1,opt,name=time_now,json=timeNow,proto3" json:"time_now,omitempty"`
@@ -390,17 +390,17 @@ func (m *WxjyEsu_5500) GetXVoltage() []int32 {
 }
 
 type WxjyEsuD700 struct {
-	//A相输入电压
+	// A相输入电压
 	PhaseAIn int32 `protobuf:"varint,1,opt,name=phase_a_in,json=phaseAIn,proto3" json:"phase_a_in,omitempty"`
-	//B相输入电压
+	// B相输入电压
 	PhaseBIn int32 `protobuf:"varint,2,opt,name=phase_b_in,json=phaseBIn,proto3" json:"phase_b_in,omitempty"`
-	//C相输入电压
+	// C相输入电压
 	PhaseCIn int32 `protobuf:"varint,3,opt,name=phase_c_in,json=phaseCIn,proto3" json:"phase_c_in,omitempty"`
-	//A相输出电压
+	// A相输出电压
 	PhaseAOut int32 `protobuf:"varint,4,opt,name=phase_a_out,json=phaseAOut,proto3" json:"phase_a_out,omitempty"`
-	//B相输出电压
+	// B相输出电压
 	PhaseBOut int32 `protobuf:"varint,5,opt,name=phase_b_out,json=phaseBOut,proto3" json:"phase_b_out,omitempty"`
-	//C相输出电压
+	// C相输出电压
 	PhaseCOut int32 `protobuf:"varint,6,opt,name=phase_c_out,json=phaseCOut,proto3" json:"phase_c_out,omitempty"`
 }
 

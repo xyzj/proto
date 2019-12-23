@@ -3,160 +3,169 @@ package devproto;
 
 // 设置/读取经纬度以及开关灯偏移时间
 message Nr_slu_1004 {
-    double longitude = 1; // 经度
-    double latitude = 2;  // 纬度
-    int32 on_deviation = 3;  // 开灯偏移，-60～60
-    int32 off_deviation = 4; // 关灯偏移，-60～60
-    repeated int32 on_do = 5 [packed=true]; // 开灯控制启动，最大32个值，0-关闭，1-启用
-    repeated int32 off_do = 6 [packed=true]; // 关灯控制启动，最大32个值，0-关闭，1-启用
+  double longitude = 1;    // 经度
+  double latitude = 2;     // 纬度
+  int32 on_deviation = 3;  // 开灯偏移，-60～60
+  int32 off_deviation = 4; // 关灯偏移，-60～60
+  repeated int32 on_do = 5
+      [ packed = true ]; // 开灯控制启动，最大32个值，0-关闭，1-启用
+  repeated int32 off_do = 6
+      [ packed = true ]; // 关灯控制启动，最大32个值，0-关闭，1-启用
 }
 // 设置/读取经纬度
 message Nr_slu_1010 {
-    double longitude = 1; // 经度
-    double latitude = 2;  // 纬度    
+  double longitude = 1; // 经度
+  double latitude = 2;  // 纬度
 }
 // 设置/读取控制器id以及灯头分组
 message Nr_slu_1030 {
-    int32 sluitem_num = 1; // 控制器数量
-    repeated Sluitem_config sluitem_config = 2; // 控制器配置信息
-    message Sluitem_config {
-        int64 sluitem_id = 1; // 控制器标识
-        int32 sluitem_lamps = 2; // 控制器灯头数量，1-3
-        repeated int32 group_id = 3 [packed=true]; // 灯头分组，依据灯头数量填写，依次为1-3灯头的所属组号，组号范围0-255,默认0
-    }
+  int32 sluitem_num = 1;                      // 控制器数量
+  repeated Sluitem_config sluitem_config = 2; // 控制器配置信息
+  message Sluitem_config {
+    int64 sluitem_id = 1;    // 控制器标识
+    int32 sluitem_lamps = 2; // 控制器灯头数量，1-3
+    repeated int32 group_id = 3 [
+      packed = true
+    ]; // 灯头分组，依据灯头数量填写，依次为1-3灯头的所属组号，组号范围0-255,默认0
+  }
 }
 // 删除控制器id
 message Nr_slu_1031 {
-    int32 sluitem_num = 1; // 需要删除的数量，0xff表示删除全部
-    repeated int64 sluitem_id = 2 [packed=true]; // 需要删除的控制器地址
+  int32 sluitem_num = 1; // 需要删除的数量，0xff表示删除全部
+  repeated int64 sluitem_id = 2 [ packed = true ]; // 需要删除的控制器地址
 }
 // 选测单灯
 message Nr_slu_1032 {
-    int32 sluitem_num = 1; // 要读取的控制器数量，最大50（下行）
-    repeated int64 sluitem_id = 2 [packed=true]; // 控制器地址（下行）
-    repeated Sluitem_data sluitem_data = 3; // 控制器数据(上行)
-    message Sluitem_data {
-        int64 sluitem_id = 1; // 控制器地址
-        Sluitem_status sluitem_status = 2; // 控制器状态
-        double sluitem_voltage = 3; // 控制器电压
-        double leakage_current = 4;  // 漏电流
-        double lamp_voltage = 5; // 灯杆电压
-        int32 sluitem_lamps = 6; // 灯头数量
-        repeated Lamp_data lamp_data = 7; // 灯头数据
-    }
-    message Sluitem_status {
-        repeated int32 lamp_status = 1 [packed=true]; // 依次3个灯头的开关状态，0-关灯，1-开灯
-        int32 sluitem_offline = 2; // 0-在线，1-掉线
-    }
-    message Lamp_data {
-        double current = 1; // 电流
-        double power = 2; // 功率
-        double power_factor = 3; // 功率因数
-    }
+  int32 sluitem_num = 1; // 要读取的控制器数量，最大50（下行）
+  repeated int64 sluitem_id = 2 [ packed = true ]; // 控制器地址（下行）
+  repeated Sluitem_data sluitem_data = 3;          // 控制器数据(上行)
+  message Sluitem_data {
+    int64 sluitem_id = 1;              // 控制器地址
+    Sluitem_status sluitem_status = 2; // 控制器状态
+    double sluitem_voltage = 3;        // 控制器电压
+    double leakage_current = 4;        // 漏电流
+    double lamp_voltage = 5;           // 灯杆电压
+    int32 sluitem_lamps = 6;           // 灯头数量
+    repeated Lamp_data lamp_data = 7;  // 灯头数据
+  }
+  message Sluitem_status {
+    repeated int32 lamp_status = 1
+        [ packed = true ]; // 依次3个灯头的开关状态，0-关灯，1-开灯
+    int32 sluitem_offline = 2; // 0-在线，1-掉线
+  }
+  message Lamp_data {
+    double current = 1;      // 电流
+    double power = 2;        // 功率
+    double power_factor = 3; // 功率因数
+  }
 }
 // 单灯控制
 message Nr_slu_1033 {
-    int32 sluitem_num = 1; // 控制器数量，最大50
-    repeated Sluitem_ctrl sluitem_ctrl = 2;
-    message Sluitem_ctrl {
-        int64 sluitem_id = 1; // 控制器id
-        int32 sluitem_lamps = 2; // 灯头数量
-        repeated int32 lamps_ctrl = 3 [packed=true]; // 依次1-3每个灯头控制状态，0-关灯，1～100-开灯以及亮度
-    }
+  int32 sluitem_num = 1; // 控制器数量，最大50
+  repeated Sluitem_ctrl sluitem_ctrl = 2;
+  message Sluitem_ctrl {
+    int64 sluitem_id = 1;    // 控制器id
+    int32 sluitem_lamps = 2; // 灯头数量
+    repeated int32 lamps_ctrl = 3
+        [ packed =
+              true ]; // 依次1-3每个灯头控制状态，0-关灯，1～100-开灯以及亮度
+  }
 }
 // 组控制
 message Nr_slu_1034 {
-    int32 group_num = 1; // 组数量
-    repeated Group_ctrl group_ctrl = 2;
-    message Group_ctrl {
-        int32 group_id = 1; // 组id，0-255
-        int32 group_do = 2; // 组控制状态，0-关灯，1～100-开灯以及亮度
-    }
+  int32 group_num = 1; // 组数量
+  repeated Group_ctrl group_ctrl = 2;
+  message Group_ctrl {
+    int32 group_id = 1; // 组id，0-255
+    int32 group_do = 2; // 组控制状态，0-关灯，1～100-开灯以及亮度
+  }
 }
 // 设置/读取组策略（时间表）
 message Nr_slu_1035 {
-    int32 group_num = 1; // 组数量,最大64
-    repeated Group_config group_config = 2; 
+  int32 group_num = 1; // 组数量,最大64
+  repeated Group_config group_config = 2;
 
-    message Group_config {
-        int32 group_id = 1; // 组id,0-255
-        int32 ctrl_by_ll = 2; // 允许经纬度控制
-        int32 ctrl_by_timer = 3; // 允许时控
-        repeated Lamp_setup lamp_setup = 4; // 最大6段        
-    }
+  message Group_config {
+    int32 group_id = 1;                 // 组id,0-255
+    int32 ctrl_by_ll = 2;               // 允许经纬度控制
+    int32 ctrl_by_timer = 3;            // 允许时控
+    repeated Lamp_setup lamp_setup = 4; // 最大6段
+  }
 
-    message Lamp_setup {
-        int32 lamp_ctrl = 1; // 0-关灯，1～100-开灯以及亮度
-        int32 lamp_time = 2; // 控制时间，hh*60+mm
-    }
+  message Lamp_setup {
+    int32 lamp_ctrl = 1; // 0-关灯，1～100-开灯以及亮度
+    int32 lamp_time = 2; // 控制时间，hh*60+mm
+  }
 }
 message Nr_slu_1135 {
-    int32 group_num = 1; // 组数量
-    repeated int32 group_id = 2 [packed=true]; // 组号
+  int32 group_num = 1;                           // 组数量
+  repeated int32 group_id = 2 [ packed = true ]; // 组号
 }
 // 终端选测
 message Nr_rtu_2032 {
-    repeated Rtu_data rtu_data = 3; // 终端数据
-    message Rtu_data {
-        double electricity = 1; // 电量
-        double voltage_a = 2; // a相电压
-        double voltage_b = 3; // b相电压
-        double voltage_c = 4; // c相电压
-        double current_a = 5; // a相总电流
-        double current_b = 6; // b相总电流
-        double current_c = 7; // c相总电流
-        int32 loop_num = 8; // 回路数量
-        repeated int32 alarm_status = 9 [packed=true]; // 报警标识，0-无报警，1-有报警。依次为：过流,过压,输出断路器跳闸,参数越限,漏电,继电器故障
-    	repeated Rtuloop_status rtuloop_status = 10;
-    }
-    message Rtuloop_data {
-        int32 loop_id = 1; // 回路序号
-        double voltage = 2; // 回路电压
-        double current = 3; // 回路电流
-        double power = 4; // 回路功率
-        double power_factor = 5; // 回路功率因数
-        int32 loop_status = 6; // 回路接触器状态，0-断，1-通
-    }
-    message Rtuloop_status {
-    	int32 switch_id = 1; // 开关量输出序号
-        int32 switch_status = 2; // 开关量输出状态，0-断，1-通
-        repeated Rtuloop_data loop_data = 3; // 输出下各个回路的数据
-    }
+  repeated Rtu_data rtu_data = 3; // 终端数据
+  message Rtu_data {
+    double electricity = 1; // 电量
+    double voltage_a = 2;   // a相电压
+    double voltage_b = 3;   // b相电压
+    double voltage_c = 4;   // c相电压
+    double current_a = 5;   // a相总电流
+    double current_b = 6;   // b相总电流
+    double current_c = 7;   // c相总电流
+    int32 loop_num = 8;     // 回路数量
+    repeated int32 alarm_status = 9 [
+      packed = true
+    ]; // 报警标识，0-无报警，1-有报警。依次为：过流,过压,输出断路器跳闸,参数越限,漏电,继电器故障
+    repeated Rtuloop_status rtuloop_status = 10;
+  }
+  message Rtuloop_data {
+    int32 loop_id = 1;       // 回路序号
+    double voltage = 2;      // 回路电压
+    double current = 3;      // 回路电流
+    double power = 4;        // 回路功率
+    double power_factor = 5; // 回路功率因数
+    int32 loop_status = 6;   // 回路接触器状态，0-断，1-通
+  }
+  message Rtuloop_status {
+    int32 switch_id = 1;     // 开关量输出序号
+    int32 switch_status = 2; // 开关量输出状态，0-断，1-通
+    repeated Rtuloop_data loop_data = 3; // 输出下各个回路的数据
+  }
 }
 // 终端控制
 message Nr_rtu_2033 {
-    int32 switch_id = 1; // 开关量输出序号
-    int32 switch_ctrl = 2; // 开关量输出动作后状态，0-关，1-开
+  int32 switch_id = 1;   // 开关量输出序号
+  int32 switch_ctrl = 2; // 开关量输出动作后状态，0-关，1-开
 }
 // 设置开关灯策略
 // 未设置的开关量输出应清除已有策略
 message Nr_rtu_2035 {
-    int32 setting_type = 1; // 1-时钟（按周循环），2-经纬度（全年循环）
-    repeated Switchout_ctrl switchout_ctrl = 2;
+  int32 setting_type = 1; // 1-时钟（按周循环），2-经纬度（全年循环）
+  repeated Switchout_ctrl switchout_ctrl = 2;
 
-    message Switchout_ctrl { 
-        int32 switchout_id = 1; // 开关量输出序号（必填）
+  message Switchout_ctrl {
+    int32 switchout_id = 1; // 开关量输出序号（必填）
 
-        double longitude = 2; // 经度，setting_type==2时有效
-        double latitude = 3;  // 纬度，setting_type==2时有效
-        int32 on_deviation = 4;  // 开灯偏移（分钟），-60～60，setting_type==2时有效
-        int32 off_deviation = 5; // 关灯偏移（分钟），-60～60，setting_type==2时有效
+    double longitude = 2; // 经度，setting_type==2时有效
+    double latitude = 3;  // 纬度，setting_type==2时有效
+    int32 on_deviation = 4; // 开灯偏移（分钟），-60～60，setting_type==2时有效
+    int32 off_deviation = 5; // 关灯偏移（分钟），-60～60，setting_type==2时有效
 
-        int32 weekset = 6; // 周日～周6，0-6，setting_type==1时有效
-        repeated Lamp_setup lamp_setup = 7; // 最大2条，setting_type==1时有效
-    }
-    message Lamp_setup {
-        int32 lamp_ctrl = 1; // 0-关灯，1-开灯
-        int32 lamp_time = 2; // 控制时间，hh*60+mm
-    }
+    int32 weekset = 6; // 周日～周6，0-6，setting_type==1时有效
+    repeated Lamp_setup lamp_setup = 7; // 最大2条，setting_type==1时有效
+  }
+  message Lamp_setup {
+    int32 lamp_ctrl = 1; // 0-关灯，1-开灯
+    int32 lamp_time = 2; // 控制时间，hh*60+mm
+  }
 }
 // 设置/读取时钟
 message Nr_dev_3003 {
-    int64 timer = 1; // unix时间戳，精确到秒
+  int64 timer = 1; // unix时间戳，精确到秒
 }
 // 查询/升级固件
 message Nr_dev_4003 {
-    string file_name = 1; // 固件文件名
-    string file_crc = 2; // 固件crc校验值，8字符长度16进制字符串
-    string ftp_addr = 3; // 升级用ftp地址
+  string file_name = 1; // 固件文件名
+  string file_crc = 2;  // 固件crc校验值，8字符长度16进制字符串
+  string ftp_addr = 3;  // 升级用ftp地址
 }

@@ -297,11 +297,12 @@ func (m *WlstElu_62D8) GetAlarmData() []*WlstElu_62D8_AlarmData {
 }
 
 type WlstElu_62D8_AlarmData struct {
-	SwitchStatus  []int32 `protobuf:"varint,1,rep,packed,name=switch_status,json=switchStatus,proto3" json:"switch_status,omitempty"`
-	AlarmValueSet int32   `protobuf:"varint,2,opt,name=alarm_value_set,json=alarmValueSet,proto3" json:"alarm_value_set,omitempty"`
-	OptDelay      int32   `protobuf:"varint,3,opt,name=opt_delay,json=optDelay,proto3" json:"opt_delay,omitempty"`
-	NowValue      int32   `protobuf:"varint,4,opt,name=now_value,json=nowValue,proto3" json:"now_value,omitempty"`
-	ElValue       int32   `protobuf:"varint,5,opt,name=el_value,json=elValue,proto3" json:"el_value,omitempty"`
+	SwitchStatus []int32 `protobuf:"varint,1,rep,packed,name=switch_status,json=switchStatus,proto3" json:"switch_status,omitempty"`
+	// [主动报警(0-报警不动作,1-报警并动作),分合闸状态(0-分闸,1-合闸),报警状态(1-漏电/温度报警,0-漏电/温度消警)]
+	AlarmValueSet int32 `protobuf:"varint,2,opt,name=alarm_value_set,json=alarmValueSet,proto3" json:"alarm_value_set,omitempty"`
+	OptDelay      int32 `protobuf:"varint,3,opt,name=opt_delay,json=optDelay,proto3" json:"opt_delay,omitempty"`
+	NowValue      int32 `protobuf:"varint,4,opt,name=now_value,json=nowValue,proto3" json:"now_value,omitempty"`
+	ElValue       int32 `protobuf:"varint,5,opt,name=el_value,json=elValue,proto3" json:"el_value,omitempty"`
 }
 
 func (m *WlstElu_62D8_AlarmData) Reset()         { *m = WlstElu_62D8_AlarmData{} }
@@ -567,9 +568,9 @@ func (m *WlstElu_625C) GetStatus() int32 {
 type WlstAlsA700 struct {
 	//光照度地址
 	Addr int32 `protobuf:"varint,1,opt,name=addr,proto3" json:"addr,omitempty"`
-	//1-设置成功，0-设置失败，b700_a500_b800
+	// 1-设置成功，0-设置失败，b700_a500_b800
 	Status int32 `protobuf:"varint,2,opt,name=status,proto3" json:"status,omitempty"`
-	//0-每5s主动上报，1-选测上报,b600_3600_c600,2-按自定义间隔主动上报（多光控），3-按自定义间隔主动上报（485）,3700_b700_c700
+	// 0-每5s主动上报，1-选测上报,b600_3600_c600,2-按自定义间隔主动上报（多光控），3-按自定义间隔主动上报（485）,3700_b700_c700
 	Mode int32 `protobuf:"varint,3,opt,name=mode,proto3" json:"mode,omitempty"`
 	//时间间隔（s），3800_c800
 	Time int32 `protobuf:"varint,4,opt,name=time,proto3" json:"time,omitempty"`
@@ -663,13 +664,13 @@ func (m *WlstAlsA700) GetError() int32 {
 	return 0
 }
 
-//gps较时
+// gps较时
 type WlstGps_0000 struct {
 	//经度
 	Longitude float64 `protobuf:"fixed64,1,opt,name=longitude,proto3" json:"longitude,omitempty"`
 	//纬度
 	Latitude float64 `protobuf:"fixed64,2,opt,name=latitude,proto3" json:"latitude,omitempty"`
-	//gps时间
+	// gps时间
 	Gpsdate string `protobuf:"bytes,3,opt,name=gpsdate,proto3" json:"gpsdate,omitempty"`
 }
 
@@ -733,11 +734,11 @@ type WlstGps_5901 struct {
 	WorkMode int32 `protobuf:"varint,1,opt,name=work_mode,json=workMode,proto3" json:"work_mode,omitempty"`
 	//纬度
 	TimeInterval int32 `protobuf:"varint,2,opt,name=time_interval,json=timeInterval,proto3" json:"time_interval,omitempty"`
-	//gps时间
+	// gps时间
 	AlarmDistance int32 `protobuf:"varint,3,opt,name=alarm_distance,json=alarmDistance,proto3" json:"alarm_distance,omitempty"`
 	//设置结果
 	Status int32 `protobuf:"varint,4,opt,name=status,proto3" json:"status,omitempty"`
-	//index
+	// index
 	Nindex int32 `protobuf:"varint,5,opt,name=nindex,proto3" json:"nindex,omitempty"`
 }
 
@@ -813,7 +814,7 @@ func (m *WlstGps_5901) GetNindex() int32 {
 type WlstGps_5902 struct {
 	//经度
 	NewAddr int32 `protobuf:"varint,1,opt,name=new_addr,json=newAddr,proto3" json:"new_addr,omitempty"`
-	//index
+	// index
 	Nindex int32 `protobuf:"varint,2,opt,name=nindex,proto3" json:"nindex,omitempty"`
 }
 
@@ -868,7 +869,7 @@ func (m *WlstGps_5902) GetNindex() int32 {
 type WlstGps_5903 struct {
 	//经度
 	Ver string `protobuf:"bytes,1,opt,name=ver,proto3" json:"ver,omitempty"`
-	//index
+	// index
 	Nindex int32 `protobuf:"varint,2,opt,name=nindex,proto3" json:"nindex,omitempty"`
 }
 
@@ -925,9 +926,9 @@ type WlstGps_5904 struct {
 	Longitude float64 `protobuf:"fixed64,1,opt,name=longitude,proto3" json:"longitude,omitempty"`
 	//纬度
 	Latitude float64 `protobuf:"fixed64,2,opt,name=latitude,proto3" json:"latitude,omitempty"`
-	//gps时间
+	// gps时间
 	Gpsdate int64 `protobuf:"varint,3,opt,name=gpsdate,proto3" json:"gpsdate,omitempty"`
-	//index
+	// index
 	Nindex int32 `protobuf:"varint,4,opt,name=nindex,proto3" json:"nindex,omitempty"`
 	//报警半径(m)
 	Radius int32 `protobuf:"varint,5,opt,name=radius,proto3" json:"radius,omitempty"`
@@ -1002,7 +1003,7 @@ func (m *WlstGps_5904) GetRadius() int32 {
 }
 
 type WlstMru_9100 struct {
-	//2007协议电表地址1
+	// 2007协议电表地址1
 	Addr []int32 `protobuf:"varint,1,rep,packed,name=addr,proto3" json:"addr,omitempty"`
 	//抄表类型(1A相，2B相，3C相，4正向有功总电能，5组合有功总电能)
 	MeterReadingType int32 `protobuf:"varint,2,opt,name=meter_reading_type,json=meterReadingType,proto3" json:"meter_reading_type,omitempty"`

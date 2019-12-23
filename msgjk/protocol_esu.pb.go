@@ -23,9 +23,9 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.GoGoProtoPackageIsVersion3 // please upgrade the proto package
 
-//Wlst_esu_9100_9900_9d00_a500
+// Wlst_esu_9100_9900_9d00_a500
 type WlstEsu_9000 struct {
-	//1-成功，0-失败
+	// 1-成功，0-失败
 	Status int32 `protobuf:"varint,1,opt,name=status,proto3" json:"status,omitempty"`
 }
 
@@ -114,7 +114,7 @@ func (m *WlstEsu_9400) GetStatus() int32 {
 	return 0
 }
 
-//Wlst_esu_1100
+// Wlst_esu_1100
 type WlstEsu_9200 struct {
 	//预热时间，2-30,默认10
 	WarmupTime int32 `protobuf:"varint,1,opt,name=warmup_time,json=warmupTime,proto3" json:"warmup_time,omitempty"`
@@ -241,35 +241,35 @@ func (m *WlstEsu_9200) GetPhaseCount() int32 {
 	return 0
 }
 
-//Wlst_esu_9300
+// Wlst_esu_9300
 type WlstEsu_9F00 struct {
 	//时间,yyyy-mm-dd hh:mm:ss
 	DateTime string `protobuf:"bytes,1,opt,name=date_time,json=dateTime,proto3" json:"date_time,omitempty"`
 	//温度  （1字节）
 	Temperature int32 `protobuf:"varint,2,opt,name=temperature,proto3" json:"temperature,omitempty"`
-	//A相输入电压
+	// A相输入电压
 	APhaseInputVoltage float64 `protobuf:"fixed64,3,opt,name=a_phase_input_voltage,json=aPhaseInputVoltage,proto3" json:"a_phase_input_voltage,omitempty"`
-	//B相输入电压
+	// B相输入电压
 	BPhaseInputVoltage float64 `protobuf:"fixed64,4,opt,name=b_phase_input_voltage,json=bPhaseInputVoltage,proto3" json:"b_phase_input_voltage,omitempty"`
-	//C相输入电压
+	// C相输入电压
 	CPhaseInputVoltage float64 `protobuf:"fixed64,5,opt,name=c_phase_input_voltage,json=cPhaseInputVoltage,proto3" json:"c_phase_input_voltage,omitempty"`
-	//A相输出电压
+	// A相输出电压
 	APhaseOutputVoltage float64 `protobuf:"fixed64,6,opt,name=a_phase_output_voltage,json=aPhaseOutputVoltage,proto3" json:"a_phase_output_voltage,omitempty"`
-	//B相输出电压
+	// B相输出电压
 	BPhaseOutputVoltage float64 `protobuf:"fixed64,7,opt,name=b_phase_output_voltage,json=bPhaseOutputVoltage,proto3" json:"b_phase_output_voltage,omitempty"`
-	//C相输出电压
+	// C相输出电压
 	CPhaseOutputVoltage float64 `protobuf:"fixed64,8,opt,name=c_phase_output_voltage,json=cPhaseOutputVoltage,proto3" json:"c_phase_output_voltage,omitempty"`
-	//A相输出电流
+	// A相输出电流
 	APhaseOutputCurrent float64 `protobuf:"fixed64,9,opt,name=a_phase_output_current,json=aPhaseOutputCurrent,proto3" json:"a_phase_output_current,omitempty"`
-	//B相输出电流
+	// B相输出电流
 	BPhaseOutputCurrent float64 `protobuf:"fixed64,10,opt,name=b_phase_output_current,json=bPhaseOutputCurrent,proto3" json:"b_phase_output_current,omitempty"`
-	//C相输出电流
+	// C相输出电流
 	CPhaseOutputCurrent float64 `protobuf:"fixed64,11,opt,name=c_phase_output_current,json=cPhaseOutputCurrent,proto3" json:"c_phase_output_current,omitempty"`
-	//A相输出功率
+	// A相输出功率
 	APhaseOutputPower float64 `protobuf:"fixed64,12,opt,name=a_phase_output_power,json=aPhaseOutputPower,proto3" json:"a_phase_output_power,omitempty"`
-	//B相输出功率
+	// B相输出功率
 	BPhaseOutputPower float64 `protobuf:"fixed64,13,opt,name=b_phase_output_power,json=bPhaseOutputPower,proto3" json:"b_phase_output_power,omitempty"`
-	//C相输出功率
+	// C相输出功率
 	CPhaseOutputPower float64 `protobuf:"fixed64,14,opt,name=c_phase_output_power,json=cPhaseOutputPower,proto3" json:"c_phase_output_power,omitempty"`
 	//风机状态（1字节）
 	FanStatus int32 `protobuf:"varint,15,opt,name=fan_status,json=fanStatus,proto3" json:"fan_status,omitempty"`
@@ -299,15 +299,15 @@ type WlstEsu_9F00 struct {
 	AdjustStalls int32 `protobuf:"varint,27,opt,name=adjust_stalls,json=adjustStalls,proto3" json:"adjust_stalls,omitempty"`
 	//调压等待时间（1字节）
 	AdjustTime int32 `protobuf:"varint,28,opt,name=adjust_time,json=adjustTime,proto3" json:"adjust_time,omitempty"`
-	//a相电压调节位置（1字节）
+	// a相电压调节位置（1字节）
 	AdjustA int32 `protobuf:"varint,29,opt,name=adjust_a,json=adjustA,proto3" json:"adjust_a,omitempty"`
-	//b相电压调节位置（1字节）
+	// b相电压调节位置（1字节）
 	AdjustB int32 `protobuf:"varint,30,opt,name=adjust_b,json=adjustB,proto3" json:"adjust_b,omitempty"`
-	//C相电压调节位置（1字节）
+	// C相电压调节位置（1字节）
 	AdjustC int32 `protobuf:"varint,31,opt,name=adjust_c,json=adjustC,proto3" json:"adjust_c,omitempty"`
-	//IGBT状态（1字节）
+	// IGBT状态（1字节）
 	IgbtStatus int32 `protobuf:"varint,32,opt,name=igbt_status,json=igbtStatus,proto3" json:"igbt_status,omitempty"`
-	//IGBT温度（1字节）
+	// IGBT温度（1字节）
 	IgbtTemperature int32 `protobuf:"varint,33,opt,name=igbt_temperature,json=igbtTemperature,proto3" json:"igbt_temperature,omitempty"`
 	//事件记录序号（1字节）
 	EventNo int32 `protobuf:"varint,34,opt,name=event_no,json=eventNo,proto3" json:"event_no,omitempty"`
@@ -656,7 +656,7 @@ func (m *WlstEsu_1600) GetDateTime() string {
 	return ""
 }
 
-//Wlst_esu_1400
+// Wlst_esu_1400
 type WlstEsu_9500 struct {
 	//调压时间x，hh*60+mm
 	XAdjustTime []int32 `protobuf:"varint,1,rep,packed,name=x_adjust_time,json=xAdjustTime,proto3" json:"x_adjust_time,omitempty"`
@@ -711,7 +711,7 @@ func (m *WlstEsu_9500) GetXAdjustValue() []int32 {
 	return nil
 }
 
-//Wlst_esu_1700_1a00
+// Wlst_esu_1700_1a00
 type WlstEsu_9700 struct {
 	//记录序号
 	No int32 `protobuf:"varint,1,opt,name=no,proto3" json:"no,omitempty"`
@@ -719,23 +719,23 @@ type WlstEsu_9700 struct {
 	DateTime string `protobuf:"bytes,2,opt,name=date_time,json=dateTime,proto3" json:"date_time,omitempty"`
 	//目标调压值（2字节）
 	AdjustValue float64 `protobuf:"fixed64,3,opt,name=adjust_value,json=adjustValue,proto3" json:"adjust_value,omitempty"`
-	//A相输入电压
+	// A相输入电压
 	APhaseInputVoltage float64 `protobuf:"fixed64,4,opt,name=a_phase_input_voltage,json=aPhaseInputVoltage,proto3" json:"a_phase_input_voltage,omitempty"`
-	//B相输入电压
+	// B相输入电压
 	BPhaseInputVoltage float64 `protobuf:"fixed64,5,opt,name=b_phase_input_voltage,json=bPhaseInputVoltage,proto3" json:"b_phase_input_voltage,omitempty"`
-	//C相输入电压
+	// C相输入电压
 	CPhaseInputVoltage float64 `protobuf:"fixed64,6,opt,name=c_phase_input_voltage,json=cPhaseInputVoltage,proto3" json:"c_phase_input_voltage,omitempty"`
-	//A相输出电压
+	// A相输出电压
 	APhaseOutputVoltage float64 `protobuf:"fixed64,7,opt,name=a_phase_output_voltage,json=aPhaseOutputVoltage,proto3" json:"a_phase_output_voltage,omitempty"`
-	//B相输出电压
+	// B相输出电压
 	BPhaseOutputVoltage float64 `protobuf:"fixed64,8,opt,name=b_phase_output_voltage,json=bPhaseOutputVoltage,proto3" json:"b_phase_output_voltage,omitempty"`
-	//C相输出电压
+	// C相输出电压
 	CPhaseOutputVoltage float64 `protobuf:"fixed64,9,opt,name=c_phase_output_voltage,json=cPhaseOutputVoltage,proto3" json:"c_phase_output_voltage,omitempty"`
-	//A相输出电流
+	// A相输出电流
 	APhaseOutputCurrent float64 `protobuf:"fixed64,10,opt,name=a_phase_output_current,json=aPhaseOutputCurrent,proto3" json:"a_phase_output_current,omitempty"`
-	//B相输出电流
+	// B相输出电流
 	BPhaseOutputCurrent float64 `protobuf:"fixed64,11,opt,name=b_phase_output_current,json=bPhaseOutputCurrent,proto3" json:"b_phase_output_current,omitempty"`
-	//C相输出电流
+	// C相输出电流
 	CPhaseOutputCurrent float64 `protobuf:"fixed64,12,opt,name=c_phase_output_current,json=cPhaseOutputCurrent,proto3" json:"c_phase_output_current,omitempty"`
 	//节能运行时间，hh*60+mm
 	SaverTime int32 `protobuf:"varint,13,opt,name=saver_time,json=saverTime,proto3" json:"saver_time,omitempty"`
@@ -955,9 +955,9 @@ func (m *WlstEsu_1800) GetAdjustValue() int32 {
 	return 0
 }
 
-//Wlst_esu_2500
+// Wlst_esu_2500
 type WlstEsu_1900 struct {
-	//1900->手动开关机，0-关机，1-开机.2500->0-停运，1-投运
+	// 1900->手动开关机，0-关机，1-开机.2500->0-停运，1-投运
 	ManualControl int32 `protobuf:"varint,1,opt,name=manual_control,json=manualControl,proto3" json:"manual_control,omitempty"`
 }
 
@@ -1073,7 +1073,7 @@ func (m *WlstEsu_9A00) GetSaverTime() int32 {
 	return 0
 }
 
-//Wlst_esu_1d00
+// Wlst_esu_1d00
 type WlstEsu_9E00 struct {
 	//预热时间，2-30,默认10
 	WarmupTime int32 `protobuf:"varint,1,opt,name=warmup_time,json=warmupTime,proto3" json:"warmup_time,omitempty"`
@@ -1081,11 +1081,11 @@ type WlstEsu_9E00 struct {
 	OnTime int32 `protobuf:"varint,2,opt,name=on_time,json=onTime,proto3" json:"on_time,omitempty"`
 	//关机时间，hh*60+mm
 	OffTime int32 `protobuf:"varint,3,opt,name=off_time,json=offTime,proto3" json:"off_time,omitempty"`
-	//A相变比
+	// A相变比
 	TransformerA int32 `protobuf:"varint,4,opt,name=transformer_a,json=transformerA,proto3" json:"transformer_a,omitempty"`
-	//B相变比
+	// B相变比
 	TransformerB int32 `protobuf:"varint,5,opt,name=transformer_b,json=transformerB,proto3" json:"transformer_b,omitempty"`
-	//C相变比
+	// C相变比
 	TransformerC int32 `protobuf:"varint,6,opt,name=transformer_c,json=transformerC,proto3" json:"transformer_c,omitempty"`
 	//时间模式
 	TimeMode int32 `protobuf:"varint,7,opt,name=time_mode,json=timeMode,proto3" json:"time_mode,omitempty"`

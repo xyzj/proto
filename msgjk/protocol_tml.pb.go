@@ -107,11 +107,11 @@ type WlstTerminal struct {
 	WlstRtu_7008 *WlstRtu_7008 `protobuf:"bytes,49,opt,name=wlst_rtu_7008,json=wlstRtu7008,proto3" json:"wlst_rtu_7008,omitempty"`
 	//发送缓存文件
 	WlstRtuCupd *WlstRtu_7008 `protobuf:"bytes,50,opt,name=wlst_rtu_cupd,json=wlstRtuCupd,proto3" json:"wlst_rtu_cupd,omitempty"`
-	//ftp升级数据
+	// ftp升级数据
 	WlstRtu_7003 *WlstRtu_7003 `protobuf:"bytes,51,opt,name=wlst_rtu_7003,json=wlstRtu7003,proto3" json:"wlst_rtu_7003,omitempty"`
 	//升级数据包状态应答
 	WlstRtu_7087 *WlstRtu_7087 `protobuf:"bytes,52,opt,name=wlst_rtu_7087,json=wlstRtu7087,proto3" json:"wlst_rtu_7087,omitempty"`
-	//FTP升级应答
+	// FTP升级应答
 	WlstRtu_7083 *WlstRtu_7087 `protobuf:"bytes,53,opt,name=wlst_rtu_7083,json=wlstRtu7083,proto3" json:"wlst_rtu_7083,omitempty"`
 	//修改主板通讯参数
 	WlstRtu_700A *WlstRtu_700A `protobuf:"bytes,54,opt,name=wlst_rtu_700a,json=wlstRtu700a,proto3" json:"wlst_rtu_700a,omitempty"`
@@ -235,12 +235,12 @@ type WlstTerminal struct {
 	WlstEsuA200  *WlstEsu_9000 `protobuf:"bytes,826,opt,name=wlst_esu_a200,json=wlstEsuA200,proto3" json:"wlst_esu_a200,omitempty"`
 	WlstEsuA300  *WlstEsu_9000 `protobuf:"bytes,827,opt,name=wlst_esu_a300,json=wlstEsuA300,proto3" json:"wlst_esu_a300,omitempty"`
 	//光照度,GPS,抄表
-	//gps数据
+	// gps数据
 	WlstGps_0000 *WlstGps_0000 `protobuf:"bytes,400,opt,name=wlst_gps_0000,json=wlstGps0000,proto3" json:"wlst_gps_0000,omitempty"`
-	//wx2002gps 读版本
+	// wx2002gps 读版本
 	WlstGps_5903 *WlstGps_5903 `protobuf:"bytes,434,opt,name=wlst_gps_5903,json=wlstGps5903,proto3" json:"wlst_gps_5903,omitempty"`
 	WlstGps_5983 *WlstGps_5903 `protobuf:"bytes,435,opt,name=wlst_gps_5983,json=wlstGps5983,proto3" json:"wlst_gps_5983,omitempty"`
-	//wx2002gps 选测
+	// wx2002gps 选测
 	WlstGps_5904 *WlstGps_5904 `protobuf:"bytes,436,opt,name=wlst_gps_5904,json=wlstGps5904,proto3" json:"wlst_gps_5904,omitempty"`
 	WlstGps_5984 *WlstGps_5904 `protobuf:"bytes,437,opt,name=wlst_gps_5984,json=wlstGps5984,proto3" json:"wlst_gps_5984,omitempty"`
 	//选测2（多光控）
@@ -276,13 +276,13 @@ type WlstTerminal struct {
 	WlstAls_4A00 *WlstAlsA700 `protobuf:"bytes,418,opt,name=wlst_als_4a00,json=wlstAls4a00,proto3" json:"wlst_als_4a00,omitempty"`
 	//选测1
 	WlstAlsA600 *WlstAlsA700 `protobuf:"bytes,419,opt,name=wlst_als_a600,json=wlstAlsA600,proto3" json:"wlst_als_a600,omitempty"`
-	//2007读电表数据
+	// 2007读电表数据
 	WlstMru_9100 *WlstMru_9100 `protobuf:"bytes,430,opt,name=wlst_mru_9100,json=wlstMru9100,proto3" json:"wlst_mru_9100,omitempty"`
-	//2007读电表数据
+	// 2007读电表数据
 	WlstMru_1100 *WlstMru_9100 `protobuf:"bytes,431,opt,name=wlst_mru_1100,json=wlstMru1100,proto3" json:"wlst_mru_1100,omitempty"`
-	//2007读电表地址
+	// 2007读电表地址
 	WlstMru_9300 *WlstMru_9100 `protobuf:"bytes,432,opt,name=wlst_mru_9300,json=wlstMru9300,proto3" json:"wlst_mru_9300,omitempty"`
-	//2007读电表地址
+	// 2007读电表地址
 	WlstMru_1300 *WlstMru_9100 `protobuf:"bytes,433,opt,name=wlst_mru_1300,json=wlstMru1300,proto3" json:"wlst_mru_1300,omitempty"`
 	// 漏电
 	// 手动操作
@@ -365,9 +365,9 @@ type WlstTerminal struct {
 	//设置时间（485用，到集中器） 应答
 	WlstSluF400 *WlstSluF400 `protobuf:"bytes,626,opt,name=wlst_slu_f400,json=wlstSluF400,proto3" json:"wlst_slu_f400,omitempty"`
 	//设置时间（gprs用，到集中器）
-	//wlst.pb2.Wlst_slu_7400 wlst_slu_7d00 = 627;
+	// Wlst_slu_7400 wlst_slu_7d00 = 627;
 	//设置时间（gprs用，到集中器） 应答
-	//wlst.pb2.Wlst_slu_f400 wlst_slu_fd00 = 628;
+	// Wlst_slu_f400 wlst_slu_fd00 = 628;
 	//设置集中器报警参数
 	WlstSlu_7600 *WlstSluCd00 `protobuf:"bytes,629,opt,name=wlst_slu_7600,json=wlstSlu7600,proto3" json:"wlst_slu_7600,omitempty"`
 	//设置集中器报警参数 应答
