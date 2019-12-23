@@ -28,6 +28,8 @@ message DataIdentification {
   int32 ec1 = 6;
   // 普通优先级事件数量
   int32 ec2 = 7;
+  // 顺序码0-15
+  int32 seq =8;
 }
 
 // 状态应答
