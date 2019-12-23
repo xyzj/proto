@@ -24,6 +24,10 @@ message DataIdentification {
   int32 delay = 4; 
   // 认证码
   string pw = 5;
+  // 高优先级事件数量
+  int32 ec1 = 6;
+  // 普通优先级事件数量
+  int32 ec2 = 7;
 }
 
 // 状态应答
@@ -34,6 +38,7 @@ message Wlst_open_0000 {
   // 依据上行填
   int32 afn = 3;
 }
+
 // 复位下行
 message Wlst_open_0101 {
   // pn: 0
