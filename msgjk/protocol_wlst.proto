@@ -8,20 +8,20 @@ option optimize_for = SPEED;
 // 数据单元标识
 message UnitIdentification {
   // 信息点DA
-  int32 pn = 1; 
+  int32 pn = 1;
   // 信息类DT
-  int32 fn = 2; 
+  int32 fn = 2;
 }
 // 头信息
 message DataIdentification {
   // 数据单元标识，具体定义见详细结构
   repeated UnitIdentification uintID = 1;
   // 请求访问0-无数据，1-有数据
-  int32 acd = 2; 
+  int32 acd = 2;
   // 时间戳，unix格式
-  int64 tp = 3; 
+  int64 tp = 3;
   // 允许延迟的分钟数
-  int32 delay = 4; 
+  int32 delay = 4;
   // 认证码
   string pw = 5;
   // 高优先级事件数量
@@ -29,7 +29,9 @@ message DataIdentification {
   // 普通优先级事件数量
   int32 ec2 = 7;
   // 顺序码0-15
-  int32 seq =8;
+  int32 seq = 8;
+  // afn 功能码
+  int32 afn = 9;
 }
 
 // 状态应答
