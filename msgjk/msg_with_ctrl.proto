@@ -76,11 +76,11 @@ message MsgWithCtrl {
 
   // 国标
   // 应答确认/否认
-  Wlst_Open_0000 open_0000 = 3001;
+  Wlst_Open_0000 wlst_open_0000 = 3001;
   // 复位下行
-  Wlst_Open_0101 open_0101 = 3002;
+  Wlst_Open_0101 wlst_open_0101 = 3002;
   // 登录/心跳上行
-  Wlst_Open_0902 open_0902 = 3003;
+  Wlst_Open_0902 wlst_open_0902 = 3003;
 }
 
 // 中间层报警信息提交
