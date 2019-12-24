@@ -40,7 +40,7 @@ message DataIdentification {
 }
 
 // 状态应答
-message Wlst_gb_up_0000 {
+message Wlst_Open_0000 {
   // pn: 0
   // fn: 1-全部确认，2-全部否认,3-部分确认/否认（要填充数据段，保留）
   DataIdentification DataID = 1;
@@ -49,14 +49,14 @@ message Wlst_gb_up_0000 {
 }
 
 // 复位下行
-message Wlst_gb_down_0101 {
+message Wlst_Open_0101 {
   // pn: 0
   // fn: 1-硬件初始化（重启），2-数据区初始化，3-恢复出厂值，4-参数全体数据区
   DataIdentification DataID = 1;
 }
 
 // 登录上行
-message Wlst_gb_up_0902 {
+message Wlst_Open_0902 {
   // pn: 0
   // fn: 1-登录，2-退出，3-心跳
   DataIdentification DataID = 1;

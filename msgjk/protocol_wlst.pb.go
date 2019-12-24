@@ -215,7 +215,7 @@ func (m *DataIdentification) GetDir() int32 {
 }
 
 // 状态应答
-type WlstGbUp_0000 struct {
+type Wlst_Open_0000 struct {
 	// pn: 0
 	// fn: 1-全部确认，2-全部否认,3-部分确认/否认（要填充数据段，保留）
 	DataID *DataIdentification `protobuf:"bytes,1,opt,name=DataID,json=dataID,proto3" json:"DataID,omitempty"`
@@ -223,18 +223,18 @@ type WlstGbUp_0000 struct {
 	Afn int32 `protobuf:"varint,3,opt,name=afn,proto3" json:"afn,omitempty"`
 }
 
-func (m *WlstGbUp_0000) Reset()         { *m = WlstGbUp_0000{} }
-func (m *WlstGbUp_0000) String() string { return proto.CompactTextString(m) }
-func (*WlstGbUp_0000) ProtoMessage()    {}
-func (*WlstGbUp_0000) Descriptor() ([]byte, []int) {
+func (m *Wlst_Open_0000) Reset()         { *m = Wlst_Open_0000{} }
+func (m *Wlst_Open_0000) String() string { return proto.CompactTextString(m) }
+func (*Wlst_Open_0000) ProtoMessage()    {}
+func (*Wlst_Open_0000) Descriptor() ([]byte, []int) {
 	return fileDescriptor_f614763c9ca1b9b8, []int{2}
 }
-func (m *WlstGbUp_0000) XXX_Unmarshal(b []byte) error {
+func (m *Wlst_Open_0000) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-func (m *WlstGbUp_0000) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+func (m *Wlst_Open_0000) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	if deterministic {
-		return xxx_messageInfo_WlstGbUp_0000.Marshal(b, m, deterministic)
+		return xxx_messageInfo_Wlst_Open_0000.Marshal(b, m, deterministic)
 	} else {
 		b = b[:cap(b)]
 		n, err := m.MarshalToSizedBuffer(b)
@@ -244,26 +244,26 @@ func (m *WlstGbUp_0000) XXX_Marshal(b []byte, deterministic bool) ([]byte, error
 		return b[:n], nil
 	}
 }
-func (m *WlstGbUp_0000) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_WlstGbUp_0000.Merge(m, src)
+func (m *Wlst_Open_0000) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Wlst_Open_0000.Merge(m, src)
 }
-func (m *WlstGbUp_0000) XXX_Size() int {
+func (m *Wlst_Open_0000) XXX_Size() int {
 	return m.Size()
 }
-func (m *WlstGbUp_0000) XXX_DiscardUnknown() {
-	xxx_messageInfo_WlstGbUp_0000.DiscardUnknown(m)
+func (m *Wlst_Open_0000) XXX_DiscardUnknown() {
+	xxx_messageInfo_Wlst_Open_0000.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_WlstGbUp_0000 proto.InternalMessageInfo
+var xxx_messageInfo_Wlst_Open_0000 proto.InternalMessageInfo
 
-func (m *WlstGbUp_0000) GetDataID() *DataIdentification {
+func (m *Wlst_Open_0000) GetDataID() *DataIdentification {
 	if m != nil {
 		return m.DataID
 	}
 	return nil
 }
 
-func (m *WlstGbUp_0000) GetAfn() int32 {
+func (m *Wlst_Open_0000) GetAfn() int32 {
 	if m != nil {
 		return m.Afn
 	}
@@ -271,24 +271,24 @@ func (m *WlstGbUp_0000) GetAfn() int32 {
 }
 
 // 复位下行
-type WlstGbDown_0101 struct {
+type Wlst_Open_0101 struct {
 	// pn: 0
 	// fn: 1-硬件初始化（重启），2-数据区初始化，3-恢复出厂值，4-参数全体数据区
 	DataID *DataIdentification `protobuf:"bytes,1,opt,name=DataID,json=dataID,proto3" json:"DataID,omitempty"`
 }
 
-func (m *WlstGbDown_0101) Reset()         { *m = WlstGbDown_0101{} }
-func (m *WlstGbDown_0101) String() string { return proto.CompactTextString(m) }
-func (*WlstGbDown_0101) ProtoMessage()    {}
-func (*WlstGbDown_0101) Descriptor() ([]byte, []int) {
+func (m *Wlst_Open_0101) Reset()         { *m = Wlst_Open_0101{} }
+func (m *Wlst_Open_0101) String() string { return proto.CompactTextString(m) }
+func (*Wlst_Open_0101) ProtoMessage()    {}
+func (*Wlst_Open_0101) Descriptor() ([]byte, []int) {
 	return fileDescriptor_f614763c9ca1b9b8, []int{3}
 }
-func (m *WlstGbDown_0101) XXX_Unmarshal(b []byte) error {
+func (m *Wlst_Open_0101) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-func (m *WlstGbDown_0101) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+func (m *Wlst_Open_0101) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	if deterministic {
-		return xxx_messageInfo_WlstGbDown_0101.Marshal(b, m, deterministic)
+		return xxx_messageInfo_Wlst_Open_0101.Marshal(b, m, deterministic)
 	} else {
 		b = b[:cap(b)]
 		n, err := m.MarshalToSizedBuffer(b)
@@ -298,19 +298,19 @@ func (m *WlstGbDown_0101) XXX_Marshal(b []byte, deterministic bool) ([]byte, err
 		return b[:n], nil
 	}
 }
-func (m *WlstGbDown_0101) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_WlstGbDown_0101.Merge(m, src)
+func (m *Wlst_Open_0101) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Wlst_Open_0101.Merge(m, src)
 }
-func (m *WlstGbDown_0101) XXX_Size() int {
+func (m *Wlst_Open_0101) XXX_Size() int {
 	return m.Size()
 }
-func (m *WlstGbDown_0101) XXX_DiscardUnknown() {
-	xxx_messageInfo_WlstGbDown_0101.DiscardUnknown(m)
+func (m *Wlst_Open_0101) XXX_DiscardUnknown() {
+	xxx_messageInfo_Wlst_Open_0101.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_WlstGbDown_0101 proto.InternalMessageInfo
+var xxx_messageInfo_Wlst_Open_0101 proto.InternalMessageInfo
 
-func (m *WlstGbDown_0101) GetDataID() *DataIdentification {
+func (m *Wlst_Open_0101) GetDataID() *DataIdentification {
 	if m != nil {
 		return m.DataID
 	}
@@ -318,24 +318,24 @@ func (m *WlstGbDown_0101) GetDataID() *DataIdentification {
 }
 
 // 登录上行
-type WlstGbUp_0902 struct {
+type Wlst_Open_0902 struct {
 	// pn: 0
 	// fn: 1-登录，2-退出，3-心跳
 	DataID *DataIdentification `protobuf:"bytes,1,opt,name=DataID,json=dataID,proto3" json:"DataID,omitempty"`
 }
 
-func (m *WlstGbUp_0902) Reset()         { *m = WlstGbUp_0902{} }
-func (m *WlstGbUp_0902) String() string { return proto.CompactTextString(m) }
-func (*WlstGbUp_0902) ProtoMessage()    {}
-func (*WlstGbUp_0902) Descriptor() ([]byte, []int) {
+func (m *Wlst_Open_0902) Reset()         { *m = Wlst_Open_0902{} }
+func (m *Wlst_Open_0902) String() string { return proto.CompactTextString(m) }
+func (*Wlst_Open_0902) ProtoMessage()    {}
+func (*Wlst_Open_0902) Descriptor() ([]byte, []int) {
 	return fileDescriptor_f614763c9ca1b9b8, []int{4}
 }
-func (m *WlstGbUp_0902) XXX_Unmarshal(b []byte) error {
+func (m *Wlst_Open_0902) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-func (m *WlstGbUp_0902) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+func (m *Wlst_Open_0902) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	if deterministic {
-		return xxx_messageInfo_WlstGbUp_0902.Marshal(b, m, deterministic)
+		return xxx_messageInfo_Wlst_Open_0902.Marshal(b, m, deterministic)
 	} else {
 		b = b[:cap(b)]
 		n, err := m.MarshalToSizedBuffer(b)
@@ -345,19 +345,19 @@ func (m *WlstGbUp_0902) XXX_Marshal(b []byte, deterministic bool) ([]byte, error
 		return b[:n], nil
 	}
 }
-func (m *WlstGbUp_0902) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_WlstGbUp_0902.Merge(m, src)
+func (m *Wlst_Open_0902) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Wlst_Open_0902.Merge(m, src)
 }
-func (m *WlstGbUp_0902) XXX_Size() int {
+func (m *Wlst_Open_0902) XXX_Size() int {
 	return m.Size()
 }
-func (m *WlstGbUp_0902) XXX_DiscardUnknown() {
-	xxx_messageInfo_WlstGbUp_0902.DiscardUnknown(m)
+func (m *Wlst_Open_0902) XXX_DiscardUnknown() {
+	xxx_messageInfo_Wlst_Open_0902.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_WlstGbUp_0902 proto.InternalMessageInfo
+var xxx_messageInfo_Wlst_Open_0902 proto.InternalMessageInfo
 
-func (m *WlstGbUp_0902) GetDataID() *DataIdentification {
+func (m *Wlst_Open_0902) GetDataID() *DataIdentification {
 	if m != nil {
 		return m.DataID
 	}
@@ -367,37 +367,37 @@ func (m *WlstGbUp_0902) GetDataID() *DataIdentification {
 func init() {
 	proto.RegisterType((*UnitIdentification)(nil), "wlst.pb2.UnitIdentification")
 	proto.RegisterType((*DataIdentification)(nil), "wlst.pb2.DataIdentification")
-	proto.RegisterType((*WlstGbUp_0000)(nil), "wlst.pb2.Wlst_gb_up_0000")
-	proto.RegisterType((*WlstGbDown_0101)(nil), "wlst.pb2.Wlst_gb_down_0101")
-	proto.RegisterType((*WlstGbUp_0902)(nil), "wlst.pb2.Wlst_gb_up_0902")
+	proto.RegisterType((*Wlst_Open_0000)(nil), "wlst.pb2.Wlst_Open_0000")
+	proto.RegisterType((*Wlst_Open_0101)(nil), "wlst.pb2.Wlst_Open_0101")
+	proto.RegisterType((*Wlst_Open_0902)(nil), "wlst.pb2.Wlst_Open_0902")
 }
 
 func init() { proto.RegisterFile("protocol_wlst.proto", fileDescriptor_f614763c9ca1b9b8) }
 
 var fileDescriptor_f614763c9ca1b9b8 = []byte{
-	// 347 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x9c, 0x92, 0x4f, 0x4b, 0xc3, 0x30,
-	0x18, 0xc6, 0x97, 0x76, 0xab, 0x5b, 0x06, 0xfe, 0x89, 0x97, 0xa0, 0x52, 0x46, 0x4f, 0x3b, 0x8d,
-	0xae, 0xee, 0xe2, 0x55, 0x07, 0xba, 0x6b, 0x41, 0xc4, 0x53, 0xc9, 0x9a, 0x46, 0x02, 0x23, 0xc9,
-	0xda, 0x94, 0x7e, 0x04, 0xaf, 0x7e, 0x2c, 0x8f, 0x3b, 0x7a, 0x94, 0xed, 0x8b, 0x48, 0x12, 0x2b,
-	0xcc, 0xdd, 0x76, 0x7b, 0xdf, 0x1f, 0x6f, 0x9e, 0xe7, 0xe1, 0x21, 0xf0, 0x52, 0x95, 0x52, 0xcb,
-	0x5c, 0xae, 0xb2, 0x66, 0x55, 0xe9, 0x89, 0xdd, 0x50, 0xdf, 0xcd, 0xcb, 0x24, 0x9a, 0x41, 0xf4,
-	0x2c, 0xb8, 0x5e, 0xd0, 0x42, 0x68, 0xce, 0x78, 0x4e, 0x34, 0x97, 0x02, 0x9d, 0x42, 0x4f, 0x09,
-	0x0c, 0x46, 0x60, 0xdc, 0x4b, 0x3d, 0x65, 0x77, 0x26, 0xb0, 0xe7, 0x76, 0x26, 0xa2, 0x77, 0x0f,
-	0xa2, 0x39, 0xd1, 0xe4, 0xdf, 0xb3, 0x19, 0x0c, 0x6a, 0x2e, 0xf4, 0x62, 0x8e, 0xc1, 0xc8, 0x1f,
-	0x0f, 0x93, 0x9b, 0x49, 0xeb, 0x33, 0x39, 0x34, 0x49, 0x7f, 0x6f, 0xd1, 0x35, 0x1c, 0x90, 0xb2,
-	0x20, 0x59, 0x2e, 0x69, 0x61, 0x3d, 0x06, 0x69, 0xdf, 0x80, 0x07, 0x49, 0x0b, 0x84, 0x60, 0x97,
-	0x50, 0x5a, 0x62, 0x7f, 0x04, 0xc6, 0x7e, 0x6a, 0x67, 0x93, 0x46, 0x2b, 0xdc, 0x75, 0x69, 0xb4,
-	0xb2, 0x69, 0x1b, 0xdc, 0xb3, 0x2f, 0x3d, 0xd5, 0xa0, 0x73, 0xe8, 0x17, 0xf9, 0x14, 0x07, 0xf6,
-	0xc0, 0x8c, 0x8e, 0x24, 0xf8, 0xa4, 0x25, 0x89, 0x21, 0x55, 0xb1, 0xc6, 0x7d, 0x47, 0xaa, 0x62,
-	0x6d, 0x08, 0x61, 0x02, 0x0f, 0x1c, 0x21, 0x4c, 0x18, 0xc2, 0x6a, 0x81, 0xa1, 0x23, 0xac, 0xb6,
-	0x84, 0xf2, 0x12, 0x0f, 0x1d, 0xa1, 0xbc, 0x8c, 0x5e, 0xe1, 0xd9, 0xcb, 0xaa, 0xd2, 0xd9, 0xdb,
-	0x32, 0xab, 0x55, 0x16, 0xc7, 0x71, 0x6c, 0x5a, 0xb0, 0xdd, 0xcc, 0x6d, 0x81, 0x7b, 0x2d, 0x1c,
-	0x76, 0x96, 0x06, 0xd4, 0xde, 0xb6, 0xf6, 0xfe, 0x9f, 0x7d, 0xb4, 0x80, 0x17, 0xad, 0x34, 0x95,
-	0x8d, 0xc8, 0xe2, 0x69, 0x3c, 0x3d, 0x4e, 0x3c, 0x7a, 0xdc, 0x4f, 0x79, 0x17, 0x27, 0xc7, 0x09,
-	0xdd, 0x5f, 0x7d, 0x6e, 0x43, 0xb0, 0xd9, 0x86, 0xe0, 0x7b, 0x1b, 0x82, 0x8f, 0x5d, 0xd8, 0xd9,
-	0xec, 0xc2, 0xce, 0xd7, 0x2e, 0xec, 0x3c, 0x81, 0x65, 0x60, 0xff, 0xd6, 0xed, 0x4f, 0x00, 0x00,
-	0x00, 0xff, 0xff, 0x41, 0x78, 0xb3, 0xd7, 0x72, 0x02, 0x00, 0x00,
+	// 338 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x9c, 0x92, 0x31, 0x6b, 0x02, 0x31,
+	0x1c, 0xc5, 0xcd, 0x9d, 0x5e, 0x35, 0x82, 0x94, 0x74, 0x09, 0x6d, 0x39, 0xe4, 0x26, 0x27, 0x39,
+	0xaf, 0x2e, 0x5d, 0x5b, 0x29, 0x75, 0x2a, 0x1c, 0x94, 0x76, 0x3b, 0xe2, 0x25, 0x81, 0x80, 0x24,
+	0xf1, 0x2e, 0xe2, 0x47, 0xe8, 0xda, 0x8f, 0xd5, 0xd1, 0xb1, 0x63, 0xd1, 0x2f, 0x52, 0x92, 0xf4,
+	0x0a, 0xea, 0xe6, 0xf6, 0xff, 0xff, 0xf8, 0xe7, 0xbd, 0xc7, 0x23, 0xf0, 0x4a, 0x57, 0xca, 0xa8,
+	0x52, 0x2d, 0x8b, 0xcd, 0xb2, 0x36, 0x63, 0xb7, 0xa1, 0xae, 0x9f, 0x17, 0x59, 0x32, 0x85, 0xe8,
+	0x55, 0x0a, 0x33, 0xa7, 0x4c, 0x1a, 0xc1, 0x45, 0x49, 0x8c, 0x50, 0x12, 0x0d, 0x60, 0xa0, 0x25,
+	0x06, 0x43, 0x30, 0xea, 0xe4, 0x81, 0x76, 0x3b, 0x97, 0x38, 0xf0, 0x3b, 0x97, 0xc9, 0x47, 0x00,
+	0xd1, 0x8c, 0x18, 0x72, 0xf4, 0x6c, 0x0a, 0xa3, 0xb5, 0x90, 0x66, 0x3e, 0xc3, 0x60, 0x18, 0x8e,
+	0xfa, 0xd9, 0xed, 0xb8, 0xf1, 0x19, 0x9f, 0x9a, 0xe4, 0x7f, 0xb7, 0xe8, 0x06, 0xf6, 0x48, 0xc5,
+	0x48, 0x51, 0x2a, 0xca, 0x9c, 0x47, 0x2f, 0xef, 0x5a, 0xf0, 0xa8, 0x28, 0x43, 0x08, 0xb6, 0x09,
+	0xa5, 0x15, 0x0e, 0x87, 0x60, 0x14, 0xe6, 0x6e, 0xb6, 0x69, 0x8c, 0xc6, 0x6d, 0x9f, 0xc6, 0x68,
+	0x97, 0x76, 0x83, 0x3b, 0xee, 0x65, 0xa0, 0x37, 0xe8, 0x12, 0x86, 0xac, 0x9c, 0xe0, 0xc8, 0x1d,
+	0xd8, 0xd1, 0x93, 0x0c, 0x5f, 0x34, 0x24, 0xb3, 0xa4, 0x66, 0x2b, 0xdc, 0xf5, 0xa4, 0x66, 0x2b,
+	0x4b, 0x08, 0x97, 0xb8, 0xe7, 0x09, 0xe1, 0xd2, 0x12, 0xbe, 0x96, 0x18, 0x7a, 0xc2, 0xd7, 0x8e,
+	0x50, 0x51, 0xe1, 0xbe, 0x27, 0x54, 0x54, 0xc9, 0x3b, 0x1c, 0xbc, 0x2d, 0x6b, 0x53, 0xbc, 0x68,
+	0x26, 0x8b, 0x34, 0x4d, 0x53, 0x5b, 0x82, 0xab, 0x66, 0xe6, 0xfa, 0x3b, 0x28, 0xe1, 0xb4, 0xb2,
+	0x3c, 0xa2, 0xee, 0xb6, 0x71, 0x0f, 0xff, 0xdd, 0x93, 0xa7, 0x03, 0xe5, 0x49, 0x3a, 0x39, 0x4f,
+	0xf9, 0x48, 0xe7, 0x3e, 0xcd, 0xce, 0xd3, 0x79, 0xb8, 0xfe, 0xda, 0xc5, 0x60, 0xbb, 0x8b, 0xc1,
+	0xcf, 0x2e, 0x06, 0x9f, 0xfb, 0xb8, 0xb5, 0xdd, 0xc7, 0xad, 0xef, 0x7d, 0xdc, 0x7a, 0x06, 0x8b,
+	0xc8, 0x7d, 0xab, 0xbb, 0xdf, 0x00, 0x00, 0x00, 0xff, 0xff, 0x27, 0xdf, 0x40, 0x2d, 0x6d, 0x02,
+	0x00, 0x00,
 }
 
 func (m *UnitIdentification) Marshal() (dAtA []byte, err error) {
@@ -524,7 +524,7 @@ func (m *DataIdentification) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
-func (m *WlstGbUp_0000) Marshal() (dAtA []byte, err error) {
+func (m *Wlst_Open_0000) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
 	n, err := m.MarshalToSizedBuffer(dAtA[:size])
@@ -534,12 +534,12 @@ func (m *WlstGbUp_0000) Marshal() (dAtA []byte, err error) {
 	return dAtA[:n], nil
 }
 
-func (m *WlstGbUp_0000) MarshalTo(dAtA []byte) (int, error) {
+func (m *Wlst_Open_0000) MarshalTo(dAtA []byte) (int, error) {
 	size := m.Size()
 	return m.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (m *WlstGbUp_0000) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (m *Wlst_Open_0000) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
@@ -564,7 +564,7 @@ func (m *WlstGbUp_0000) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
-func (m *WlstGbDown_0101) Marshal() (dAtA []byte, err error) {
+func (m *Wlst_Open_0101) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
 	n, err := m.MarshalToSizedBuffer(dAtA[:size])
@@ -574,12 +574,12 @@ func (m *WlstGbDown_0101) Marshal() (dAtA []byte, err error) {
 	return dAtA[:n], nil
 }
 
-func (m *WlstGbDown_0101) MarshalTo(dAtA []byte) (int, error) {
+func (m *Wlst_Open_0101) MarshalTo(dAtA []byte) (int, error) {
 	size := m.Size()
 	return m.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (m *WlstGbDown_0101) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (m *Wlst_Open_0101) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
@@ -599,7 +599,7 @@ func (m *WlstGbDown_0101) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
-func (m *WlstGbUp_0902) Marshal() (dAtA []byte, err error) {
+func (m *Wlst_Open_0902) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
 	n, err := m.MarshalToSizedBuffer(dAtA[:size])
@@ -609,12 +609,12 @@ func (m *WlstGbUp_0902) Marshal() (dAtA []byte, err error) {
 	return dAtA[:n], nil
 }
 
-func (m *WlstGbUp_0902) MarshalTo(dAtA []byte) (int, error) {
+func (m *Wlst_Open_0902) MarshalTo(dAtA []byte) (int, error) {
 	size := m.Size()
 	return m.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (m *WlstGbUp_0902) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (m *Wlst_Open_0902) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
@@ -707,7 +707,7 @@ func (m *DataIdentification) Size() (n int) {
 	return n
 }
 
-func (m *WlstGbUp_0000) Size() (n int) {
+func (m *Wlst_Open_0000) Size() (n int) {
 	if m == nil {
 		return 0
 	}
@@ -723,7 +723,7 @@ func (m *WlstGbUp_0000) Size() (n int) {
 	return n
 }
 
-func (m *WlstGbDown_0101) Size() (n int) {
+func (m *Wlst_Open_0101) Size() (n int) {
 	if m == nil {
 		return 0
 	}
@@ -736,7 +736,7 @@ func (m *WlstGbDown_0101) Size() (n int) {
 	return n
 }
 
-func (m *WlstGbUp_0902) Size() (n int) {
+func (m *Wlst_Open_0902) Size() (n int) {
 	if m == nil {
 		return 0
 	}
@@ -1149,7 +1149,7 @@ func (m *DataIdentification) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *WlstGbUp_0000) Unmarshal(dAtA []byte) error {
+func (m *Wlst_Open_0000) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -1172,10 +1172,10 @@ func (m *WlstGbUp_0000) Unmarshal(dAtA []byte) error {
 		fieldNum := int32(wire >> 3)
 		wireType := int(wire & 0x7)
 		if wireType == 4 {
-			return fmt.Errorf("proto: Wlst_gb_up_0000: wiretype end group for non-group")
+			return fmt.Errorf("proto: Wlst_Open_0000: wiretype end group for non-group")
 		}
 		if fieldNum <= 0 {
-			return fmt.Errorf("proto: Wlst_gb_up_0000: illegal tag %d (wire type %d)", fieldNum, wire)
+			return fmt.Errorf("proto: Wlst_Open_0000: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		case 1:
@@ -1257,7 +1257,7 @@ func (m *WlstGbUp_0000) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *WlstGbDown_0101) Unmarshal(dAtA []byte) error {
+func (m *Wlst_Open_0101) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -1280,10 +1280,10 @@ func (m *WlstGbDown_0101) Unmarshal(dAtA []byte) error {
 		fieldNum := int32(wire >> 3)
 		wireType := int(wire & 0x7)
 		if wireType == 4 {
-			return fmt.Errorf("proto: Wlst_gb_down_0101: wiretype end group for non-group")
+			return fmt.Errorf("proto: Wlst_Open_0101: wiretype end group for non-group")
 		}
 		if fieldNum <= 0 {
-			return fmt.Errorf("proto: Wlst_gb_down_0101: illegal tag %d (wire type %d)", fieldNum, wire)
+			return fmt.Errorf("proto: Wlst_Open_0101: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		case 1:
@@ -1346,7 +1346,7 @@ func (m *WlstGbDown_0101) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *WlstGbUp_0902) Unmarshal(dAtA []byte) error {
+func (m *Wlst_Open_0902) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -1369,10 +1369,10 @@ func (m *WlstGbUp_0902) Unmarshal(dAtA []byte) error {
 		fieldNum := int32(wire >> 3)
 		wireType := int(wire & 0x7)
 		if wireType == 4 {
-			return fmt.Errorf("proto: Wlst_gb_up_0902: wiretype end group for non-group")
+			return fmt.Errorf("proto: Wlst_Open_0902: wiretype end group for non-group")
 		}
 		if fieldNum <= 0 {
-			return fmt.Errorf("proto: Wlst_gb_up_0902: illegal tag %d (wire type %d)", fieldNum, wire)
+			return fmt.Errorf("proto: Wlst_Open_0902: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		case 1:
