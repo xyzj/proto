@@ -37,10 +37,8 @@ message DataIdentification {
 message Wlst_GB_Open {
   // 指令头
   DataIdentification DataID = 1;
-  // 通用应答 p0f1，全部确认
-  Afn00_P0_F1 afn00_p0_f1 = 2;
-  // 通用应答 p0f2，全部否认
-  Afn00_P0_F1 afn00_p0_f2 = 3;
+  // 通用应答 p0f1，全部确认;p0f2，全部否认
+  Afn00_P0_F1 afn00_p0_fn = 2;
   // 复位（无数据区）
   //  pn: 0
   //  fn: 1-硬件初始化（重启），2-数据区初始化，3-恢复出厂值，4-参数全体数据区
