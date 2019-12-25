@@ -3,7 +3,7 @@ package wlst.pb2;
 
 option optimize_for = SPEED;
 
-// 结构体命名规则：Wlst_gb_[up/down]_[2位链路层功能码][2位afn功能码]
+// 结构体命名规则：Wlst_open_[2位链路层功能码][2位afn功能码]
 
 // 数据单元标识
 message UnitIdentification {
@@ -16,13 +16,10 @@ message UnitIdentification {
 message DataIdentification {
   // 数据单元标识，具体定义见详细结构
   repeated UnitIdentification uintID = 1;
-  // area code
-  // 区域码，4位字符串，如果下行不提供，则忽略区域码，仅匹配设备地址，提供区域码时，需同时匹配区域码和设备地址
-  string area_code = 2;
-  // addr 设备地址，0～65534,65535为广播地址
-  int64 addr = 3;
+  // dir 数据方向,0-下行，1-上行
+  int32 dir = 2;
   // 指令有效的分钟数，0-不启用（默认），>0指令在指定的分钟内才有效，超时丢弃（下行有，暂不用）
-  int32 tp = 4;
+  int32 tp = 3;
   // 认证码(未支持)
   string pw = 5;
   // 高优先级事件数量（上行才有）
@@ -35,8 +32,6 @@ message DataIdentification {
   int32 afn = 9;
   // fun 功能码
   int32 fun = 10;
-  // dir 数据方向,0-下行，1-上行
-  int32 dir = 11;
 }
 
 // 状态应答

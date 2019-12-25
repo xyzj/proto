@@ -47,15 +47,16 @@ message Args {
   repeated int64 sims = 6 [ packed = true ];
   //字符串压缩格式地址（xx-xx）
   repeated string saddr = 7;
-  repeated int64 status = 8 [
-    packed = true
-  ]; // 1-ip目标掉线或无法连接，0-正常（下行不填充，用于通讯层通知数据层指令对象状态，暂未启用）
+  // 1-ip目标掉线或无法连接，0-正常（下行不填充，用于通讯层通知数据层指令对象状态，暂未启用）
+  repeated int64 status = 8 [ packed = true ];
   // 485校验, 0-无校验，1-偶校验,防盗默认1,其他默认0
   int32 rc = 9;
   // 485波特率，0-300,1-600,2-1200,3-2400,4-4800,5-9600，防盗默认2,其他默认5
   int32 br = 10;
   // 设备标识，用于电信nb平台，本公司产品使用0xd0
   repeated int32 data_flag = 11 [ packed = true ];
+  // 区域码(国标用)，4位字符串，如果下行不提供，则忽略区域码，仅匹配设备地址，提供区域码时，需同时匹配区域码和设备地址
+  string area = 12;
 }
 
 message SysCommands {
