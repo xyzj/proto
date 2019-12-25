@@ -34,25 +34,18 @@ message DataIdentification {
   int32 fun = 10;
 }
 
-// 状态应答
-message Wlst_Open_0000 {
-  // pn: 0
-  // fn: 1-全部确认，2-全部否认,3-部分确认/否认（要填充数据段，保留）
+message Wlst_GB_Open {
+  // 指令头
   DataIdentification DataID = 1;
+  // 通用应答 p0f1，全部确认
+  Afn00_P0_F1 afn00_p0_f1 = 2;
+  // 通用应答 p0f2，全部否认
+  Afn00_P0_F1 afn00_p0_f2 = 3;
+  // 复位（无数据区）
+  //  pn: 0
+  //  fn: 1-硬件初始化（重启），2-数据区初始化，3-恢复出厂值，4-参数全体数据区
+}
+message Afn00_P0_F1 {
   // 被确认的功能码 依据上行填
-  int32 afn = 3;
-}
-
-// 复位下行
-message Wlst_Open_0101 {
-  // pn: 0
-  // fn: 1-硬件初始化（重启），2-数据区初始化，3-恢复出厂值，4-参数全体数据区
-  DataIdentification DataID = 1;
-}
-
-// 登录上行
-message Wlst_Open_0902 {
-  // pn: 0
-  // fn: 1-登录，2-退出，3-心跳
-  DataIdentification DataID = 1;
+  int32 afn = 1;
 }
