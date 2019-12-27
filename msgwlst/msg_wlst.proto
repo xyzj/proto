@@ -1,0 +1,672 @@
+syntax = "proto3";
+package wlst.gb;
+
+option optimize_for = SPEED;
+
+// command命名规则：wlst.open.[2位十六进制链路层功能码][2位十六进制afn功能码]
+// 发起（主要为主站下行，也包括设备主报）：
+//  0101-复位
+//  0a04-设置参数
+//  0a05-控制命令
+//  0b03-中继站命令
+//  0b06-身份认证以及密钥协商
+//  0b08-请求被级联终端主动上报
+//  0b09-请求终端配置
+//  0b0a-查询参数
+//  0b0b-请求任务数据
+//  0b0c-请求实时数据
+//  0b0d-请求历史数据
+//  0b0e-请求事件数据
+//  0b0f-文件传输
+//  0b10-数据转发
+// 应答（主要为设备应答，对于设备主报，通讯层直接进行高优先级应答，无需上层下发）：
+//  0000-复位应答
+//  0800-设置/控制类应答
+//  0803-中继站命令应答
+//  0806-身份认证以及密钥协商应答
+//  0808-请求被级联终端主动上报应答
+//  0809-请求终端配置应答
+//  080a-查询参数应答
+//  080b-请求任务数据应答
+//  080c-请求实时数据应答
+//  080d-请求历史数据应答
+//  080e-请求事件数据应答
+//  0810-数据转发应答
+
+// 结构体命名说明
+// Afn[2位十六进制afn代码]_P[十进制代码]_F[十进制代码]
+// 为标记（上行，下行）方向的结构体，默认为下行填充
+
+// 数据单元标识
+message UnitIdentification {
+  // 信息点DA
+  int32 pn = 1;
+  // 信息类DT
+  int32 fn = 2;
+}
+// 数据标识信息
+message DataIdentification {
+  // 数据单元标识
+  repeated UnitIdentification uintID = 1;
+  // dir 数据方向,0-下行，1-上行
+  int32 dir = 2;
+  // 指令有效的分钟数，0-不启用（默认），>0指令在指定的分钟内才有效，超时丢弃（下行有，暂不用）
+  int32 tp = 3;
+  // 认证码(未支持)
+  string pw = 5;
+  // 高优先级事件数量（上行才有）
+  int32 ec1 = 6;
+  // 普通优先级事件数量（上行才有）
+  int32 ec2 = 7;
+  // 顺序码0-15
+  int32 seq = 8;
+  // afn 功能码
+  int32 afn = 9;
+  // fun 功能码
+  int32 fun = 10;
+  // 区域码
+  string area = 11;
+  // 设备地址，1-65534，65535为广播地址
+  int64 addr = 12;
+}
+
+message WlstGBOpen {
+  // 指令头
+  // 依据DataID.unitid的内容读取对应结构体数据
+  // 一条指令可能存在多个unitid，因此可以读取多个结构体数据
+  // 但是注意：多个unitid必须属于同一个fun和afn的组合
+  DataIdentification DataID = 1;
+  // 通用应答
+  // 全部确认
+  Afn00_P0_F1 afn00_p0_f1 = 10;
+  // 全部否认
+  Afn00_P0_F1 afn00_p0_f2 = 11;
+  // 按单元标识确认/否认
+  Afn00_P0_F3 afn00_p0_f3 = 12;
+  // 复位（下行无数据区）通用应答
+  //  pn: 0
+  //  fn: 1-硬件初始化（重启），2-数据区初始化，3-恢复出厂值，4-参数全体数据区
+  // 设置参数，所有设置指令均为通用应答
+  // 终端上行通信口通信参数设置
+  Afn04_P0_F1 afn04_p0_f1 = 100;
+  // 主站 IP 地址  和端口设置
+  Afn04_P0_F3 afn04_p0_f3 = 101;
+  // 终端事件记录配置设置
+  Afn04_P0_F9 afn04_p0_f9 = 102;
+  // 设备状态输入参数
+  Afn04_P0_F10 afn04_p0_f10 = 103;
+  // GPS 地理位置信息
+  Afn04_P0_F11 afn04_p0_f11 = 104;
+  // 扩展设备配置参数
+  // pn: n为0-99
+  Afn04_Pn_F14 afn04_pn_f14 = 105;
+  // 继电器输出控制方案
+  // pn: n为方案号，1-8
+  Afn04_Pn_F15 afn04_pn_f15 = 106;
+  // 开关量输出参数关联
+  Afn04_P0_F41 afn04_p0_f41 = 107;
+  // 模拟量采集参数关联
+  Afn04_P0_F42 afn04_p0_f42 = 108;
+  // 周回路控制表
+  Afn04_P0_F46 afn04_p0_f46 = 109;
+  // 经纬度开关灯偏移
+  Afn04_P0_F49 afn04_p0_f49 = 110;
+  // 设定全数据上送周期
+  Afn04_P0_F50 afn04_p0_f50 = 111;
+  // 设置模拟量上下限
+  Afn04_P0_F51 afn04_p0_f51 = 112;
+  // 设置漏电保护参数
+  Afn04_P0_F52 afn04_p0_f52 = 113;
+  // 设置光照度限值 参数
+  Afn04_P0_F53 afn04_p0_f53 = 114;
+  // 停运/投运
+  Afn04_P0_F57 afn04_p0_f57 = 115;
+  // 电流回路矢量
+  Afn04_P0_F65 afn04_p0_f65 = 116;
+  // 开关量输入矢量
+  Afn04_P0_F66 afn04_p0_f66 = 117;
+  // 开关量输出矢量
+  Afn04_P0_F67 afn04_p0_f67 = 118;
+  // 控制命令，所有控制指令均为通用应答
+  // pn:0
+  // fn: 29-允许主报，37-禁止主报（这两个下行没有数据单元）
+  // 允许合闸/跳闸
+  Afn05_P0_F1 afn05_p0_f1 = 200;
+  // 消除漏电分闸/报警
+  Afn05_P0_F9 afn05_p0_f9 = 201;
+  // 对时命令
+  Afn05_P0_F31 afn05_p0_f31 = 202;
+  // 查询终端信息，下行均无数据单元
+  // 终端版本信息（上行格式）
+  Afn09_P0_F1 afn09_p0_f1 = 300;
+  // 查询参数，下行大多无数据单元
+  // 终端上行通信口通信参数设置（上行）
+  Afn0a_P0_F1 afn0a_p0_f1 = 400;
+  // 主站 IP 地址  和端口（上行）
+  Afn0a_P0_F3 afn0a_p0_f3 = 401;
+  // 终端上行通信消息认∕否认(证参数设置
+  // Afn0a_P0_F5 afn0a_p0_f5 = 402;
+  // 终端组地址  设置
+  // Afn0a_P0_F6 afn0a_p0_f6 = 403;
+  // 终端 IP 地址  和端口
+  // Afn0a_P0_F7 afn0a_p0_f7 = 404;
+  // 终端上行通信工作方式
+  // Afn0a_P0_F8 afn0a_p0_f8 = 405;
+  // 终端事件记录配置设置（上行）
+  Afn0a_P0_F9 afn0a_p0_f9 = 406;
+  // 终端上行通信口通信参数设置（上行）
+  Afn0a_P0_F10 afn0a_p0_f10 = 407;
+  // GPS 地理位置信息（上行）
+  Afn0a_P0_F11 afn0a_p0_f11 = 408;
+  // 终端月流量控制阈值 设置
+  // Afn0a_P0_F12 afn0a_p0_f12 = 409;
+  // 终端电能表/路灯控制器配置参数
+  // Afn0a_Pn_F13 afn0a_pn_f13 = 410;
+  // 扩展设备配置参数（上行）
+  Afn0a_Pn_F14 afn0a_pn_f14 = 411;
+  // 继电器输出控制方案（上行）
+  // pn: n为方案号，1-8
+  Afn0a_Pn_F15 afn0a_pn_f15 = 412;
+  // 台区集中抄表停抄/投抄设置
+  // Afn0a_Pn_F30 afn0a_pn_f30 = 413;
+  // 终端抄表运行参数设置
+  // Afn0a_Pn_F33 afn0a_pn_f33 = 414;
+  // 开关量输出参数关联（上行）
+  Afn0a_P0_F41 afn0a_p0_f41 = 415;
+  // 模拟量采集参数关联（上行）
+  Afn0a_P0_F42 afn0a_p0_f42 = 416;
+  // 周回路控制表（上行）
+  Afn0a_P0_F46 afn0a_p0_f46 = 417;
+  // 经纬度开关灯偏移（上行）
+  Afn0a_P0_F49 afn0a_p0_f49 = 418;
+  // 查询全数据上送周期（上行）
+  Afn0a_P0_F50 afn0a_p0_f50 = 419;
+  // 查询模拟量上下限（上行）
+  Afn0a_P0_F51 afn0a_p0_f51 = 420;
+  // 查询漏电保护参数（上行）
+  Afn0a_P0_F52 afn0a_p0_f52 = 421;
+  // 查询光照度限值 参数（上行）
+  Afn0a_P0_F53 afn0a_p0_f53 = 422;
+  // 停运/投运（上行）
+  Afn0a_P0_F57 afn0a_p0_f57 = 423;
+  // 电流回路矢量（上行）
+  Afn0a_P0_F65 afn0a_p0_f65 = 424;
+  // 开关量输入矢量（上行）
+  Afn0a_P0_F66 afn0a_p0_f66 = 425;
+  // 开关量输出矢量（上行）
+  Afn0a_P0_F67 afn0a_p0_f67 = 426;
+  // 请求实时数据
+  // 出线模拟量数据(全数据)(报警主报)
+  Afn0c_P0_F1 afn0c_p0_f1 = 500;
+  // 终端日历时钟
+  Afn0c_P0_F2 afn0c_p0_f2 = 501;
+  // 进线模拟量数据(全数据)(报警主报)
+  Afn0c_P0_F3 afn0c_p0_f3 = 502;
+  // 终端上行通信状态
+  Afn0c_P0_F4 afn0c_p0_f4 = 503;
+  // 终端当前控制状态
+  Afn0c_P0_F6 afn0c_p0_f6 = 504;
+  // 终端事件计数器当前值
+  Afn0c_P0_F7 afn0c_p0_f7 = 505;
+  // 终端状态量及变位标志(全数据)
+  Afn0c_P0_F9 afn0c_p0_f9 = 506;
+  // 终端回路事件报警状态(全数据)
+  Afn0c_P0_F18 afn0c_p0_f18 = 507;
+  // 漏电检测数据(全数据)
+  Afn0c_P0_F19 afn0c_p0_f19 = 508;
+  // 光照度数据(主报)
+  Afn0c_P0_F20 afn0c_p0_f20 = 509;
+  // 请求历史数据
+  // 模拟量历史数据曲线(出线)
+  // pn：n为电流回路n<=30
+  Afn0d_Pn_F1 afn0d_pn_f1 = 600;
+  // 模拟量历史数据曲线(进线)
+  Afn0d_P0_F2 afn0d_p0_f2 = 601;
+  // 漏电历史数据曲线
+  // pn：n为漏电回路n<=150
+  Afn0d_Pn_F3 afn0d_pn_f3 = 602;
+  // 请求事件记录
+  // 请求重要事件
+  Afn0e_P0_F1 afn0e_p0_f1 = 700;
+  // 请求一般事件
+  Afn0e_P0_F2 afn0e_p0_f2 = 701;
+  // 数据转发
+  // 透明转发
+  Afn10_P0_F1 afn10_p0_f1 = 800;
+  // FTP升级命令
+  Afn10_P0_F9 afn10_p0_f9 = 801;
+  // 终端FTP升级结果
+  Afn10_P0_F10 afn10_p0_f10 = 802;
+  // 模块FTP升级结果
+  Afn10_P0_F10 afn10_p0_f41 = 803;
+}
+// 确认否认（仅上行）
+message Afn00_P0_F1 {
+  // 被确认的功能码
+  int32 afn = 1;
+}
+// 按单元标识确认/否认（仅上行）
+message Afn00_P0_F3 {
+  // 被确认的功能码
+  int32 afn = 1;
+  // 数据单元标识
+  repeated UnitIdentification unit_id = 2;
+  // 单元标识状态，0-失败，1-正确（原始数据为0-正确，1-错误，通讯层解析时反转）
+  repeated int32 status = 3 [ packed = true ];
+}
+// 设置参数
+// 终端上行通信口通信参数设置
+message Afn04_P0_F1 {
+  // 终端数据传输延时时间 RTS 20ms*value
+  int32 rts = 1;
+  // 终端作为启动站允许发送传输延时时间,分钟
+  int32 master_rts = 2;
+  // 终端等待从动站响应的超时时间,秒
+  int32 resend_timeout = 3;
+  // 终端等待从动站响应的重发次数，0-3,0-不重发
+  int32 resend_num = 4;
+  // 主动上报是否需要主站下发确认0-不需要，1-需要,
+  // 依次：实时数据，历史数据，事件记录
+  repeated int32 report_mark = 5 [ packed = true ];
+  // 心跳周期,分钟
+  int32 keep_alive = 6;
+}
+// 主站 IP 地址  和端口设置
+message Afn04_P0_F3 {
+  // 主ip
+  string main_ip = 1;
+  // 主端口
+  int32 main_port = 2;
+  // 备用ip
+  string backup_ip = 3;
+  // 备用端口
+  int32 backup_port = 4;
+  // apn
+  string apn = 5;
+  // 用户名
+  string user = 6;
+  // 密码
+  string pwd = 7;
+}
+// 终端事件记录配置设置
+message Afn04_P0_F9 {
+  // 事件代码：（1）-默认主报
+  // 1 数据初始化和版本变更
+  // 2 参数丢失
+  // 3 参数变更
+  // 4 终端状态量变位（1）
+  // 5 终端遥控跳闸（1）
+  // 6 电流回路异常
+  // 7 电能表参数变更
+  // 8 电压回路异常
+  // 9 消息认∕否认证错误
+  // 10 电压越限
+  // 11 电流越限
+  // 12 路灯控制器批量设置参数异常
+  // 13 终端停/上电（1）
+  // 14 直流模拟量越限
+  // 15 电压/电流不平衡越限
+  // 16 终端故障
+  // 17 终端和路灯控制器通信失败
+  // 18 路灯控制器运行状态字变位
+  // 19 路灯控制器异常
+  // 20 漏电报警（1）
+  // 21 保护跳闸（1）
+  // 22 缺相报警（1）
+  // 23 过压（1）
+  // 24 欠压（1）
+  // 25 过流（1）
+  // 26 欠流（1）
+  // 27 接触器未释放 ( 有I&开关闭合)（1）
+  // 28 接触器断开(无 I&开关断开)（1）
+  // 29 白天亮灯(有 I&开关断开)（1）
+  // 30 夜间灭灯(无 I&开关闭合)（1）
+  // 需要记录的事件标识0-不记录，1-记录
+  repeated int32 events_available = 1 [ packed = true ];
+  // 需要主报的事件表示0-不主报，1-主报
+  repeated int32 events_report = 2 [ packed = true ];
+}
+// 设备状态输入参数
+message Afn04_P0_F10 {
+  // 状态量接入标志位(对应 1~32 路状态量)1-接入，0-未接入
+  repeated int32 switchin_available = 1 [ packed = true ];
+  // 状态量属性标志位(对应 1~32 路状态量) 1-常开，0-常闭
+  repeated int32 switchin_hopping = 2 [ packed = true ];
+}
+// GPS 地理位置信息
+message Afn04_P0_F11 {
+  // 经度
+  double longitude = 1;
+  // 纬度
+  double latitude = 2;
+  // 标识，0-东经，1-西经
+  int32 longitude_mark = 3;
+  // 标识，0-北纬，1-南纬
+  int32 latitude_mark = 4;
+}
+// 扩展设备配置参数(有问题，看不懂)
+message Afn04_Pn_F14 {}
+// 继电器输出控制方案（年设置）
+// pn:n 方案序号1-8
+message Afn04_Pn_F15 {
+  // 起始年月日，unix时间戳，0-表示每日执行，低优先级
+  int64 dt_start = 1;
+  // 持续时间1-31天
+  int32 dt_days = 2;
+  // 开关量输出启用标识1-启用，0-不用
+  repeated int32 switchout_indx = 3 [ packed = true ];
+  // 时段设置，留空表示清除所有时段
+  // 数量1-4为有效时段
+  repeated Time_Slot time_slot = 4;
+  message Time_Slot {
+    // 开灯时间hh*60+mm，6039表示经纬度开灯
+    int32 time_on = 1;
+    // 关灯时间hh*60+mm，5368表示经纬度关灯
+    int32 time_off = 2;
+  }
+}
+// 开关量输出参数关联
+message Afn04_P0_F41 {
+  // 开关量输出控制回路数量，启用多少个输出就填充多少个数据，依次为k1-kn
+  repeated int32 switchout_loops = 1 [ packed = true ];
+}
+// 模拟量采集参数关联
+message Afn04_P0_F42 {
+  // 电压互感比，如互感器的比值 为 100:5,调整则变比为 20,下同
+  int32 voltage_transformer = 1;
+  // A相电能互感比
+  int32 energy_a_transformer = 2;
+  // B相电能互感比
+  int32 energy_b_transformer = 3;
+  // C相电能互感比
+  int32 energy_c_transformer = 4;
+  // 启用了多少回路，填充多少数据
+  repeated Current_Setting current_setting = 5;
+  // 电流参数
+  message Current_Setting {
+    // 互感比
+    int32 transformer = 1;
+    // 相位，0-a相，1-b相，2-c相
+    int32 phase = 2;
+  }
+}
+// 周回路控制表,仅支持k1-k8（国标设备不建议使用）
+message Afn04_P0_F46 {
+  // 周一设置
+  Week_Slot week_day1 = 1;
+  // 周二设置
+  Week_Slot week_day2 = 2;
+  // 周三设置
+  Week_Slot week_day3 = 3;
+  // 周四设置
+  Week_Slot week_day4 = 4;
+  // 周五设置
+  Week_Slot week_day5 = 5;
+  // 周六设置
+  Week_Slot week_day6 = 6;
+  // 周日设置
+  Week_Slot week_day7 = 7;
+  // 周设置
+  message Week_Slot {
+    // k1~k8开关灯时间
+    Time_Slot k1 = 1;
+    Time_Slot k2 = 2;
+    Time_Slot k3 = 3;
+    Time_Slot k4 = 4;
+    Time_Slot k5 = 5;
+    Time_Slot k6 = 6;
+    Time_Slot k7 = 7;
+    Time_Slot k8 = 8;
+  }
+  message Time_Slot {
+    // 开灯时间hh*60+mm，15555保留当前值
+    int32 time_on = 1;
+    // 关灯时间hh*60+mm，15555保留当前值
+    int32 time_off = 2;
+  }
+}
+// 经纬度开关灯偏移
+message Afn04_P0_F49 {
+  // 开灯偏移（分钟）-120～120
+  int32 offset_on = 1;
+  // 关灯偏移（分钟）-120～120
+  int32 offset_off = 2;
+}
+// 设定全数据上送周期
+message Afn04_P0_F50 {
+  // 全数据主报周期（分钟）1-255
+  int32 report_timer = 1;
+}
+// 设置模拟量上下限
+message Afn04_P0_F51 {
+  // 电压下限(设备居然用bcd。。。)
+  double voltage_lower_limit = 1;
+  // 电压上限(设备居然用bcd。。。)
+  double voltage_upper_limit = 2;
+  // 回路电流上下限设置（依次1-64，不允许跳过回路）
+  repeated Current_Setting current_limit = 3;
+  message Current_Setting {
+    // 依次1-4（最大）时段设置
+    repeated Loop_Setting loop_setting = 1;
+  }
+  // 回路设置
+  message Loop_Setting {
+    // 启用时刻hh*60+mm
+    // 第一时段可使用特殊值：6039-终端自动判断每日第一次开灯或经纬度
+    // 最后一个时段（依据F15设置而定），可使用特殊值：5368-使用经纬度自动计算
+    int32 time_slot = 1;
+    // 电流下限
+    double current_lower_limit = 2;
+    // 电流上限
+    double current_upper_limit = 3;
+  }
+}
+// 设置漏电保护参数
+message Afn04_P0_F52 {
+  // 回路号(1-127)
+  int32 loop_no = 1;
+  // 是否启用(0-不启用，1-启用)
+  int32 loop_enable = 2;
+  // 关联的开关量输出号（1-255）
+  int32 loop_switchout = 3;
+  // 一级越限值
+  int32 level1_limit = 4;
+  // 二级越限值
+  int32 level2_limit = 5;
+  // 三级越限值
+  int32 level3_limit = 6;
+  // 四级越限值（断电）
+  int32 level4_limit = 7;
+}
+// 设置光照度限值 参数
+message Afn04_P0_F53 {
+  // 光照度阀值
+  int32 lux_threshold = 1;
+  // 数据传输间隔（秒）
+  int32 time_tick = 2;
+}
+// 停运/投运（看不懂）
+message Afn04_P0_F57 {
+  // 设备停运标识，0-停运，1-投运
+  int32 runtime_mark = 1;
+  // 回路停运标识,48个，0-停运，1-投运
+  repeated int32 loop_mark = 2 [ packed = true ];
+}
+// 电流回路矢量
+message Afn04_P0_F65 {
+  // 回路矢量，启用多少回路填多少个，不能跳回路
+  repeated int32 loop_vector = 1 [ packed = true ];
+}
+// 开关量输入矢量
+message Afn04_P0_F66 {
+  // 开关量输入矢量，启用多少回路填多少个，不能跳回路
+  repeated int32 switchin_vector = 1 [ packed = true ];
+}
+// 开关量输出矢量
+message Afn04_P0_F67 {
+  // 开关量输出矢量，启用多少回路填多少个，不能跳回路
+  repeated int32 switchout_vector = 1 [ packed = true ];
+}
+// 控制命令
+// 允许合闸/跳闸
+message Afn05_P0_F1 {
+  // 是否操作对应的输出，16个0-不操作
+  message Switchout_Ctrl {
+    // 开关量输出序号1-16
+    int32 switchout_indx = 1;
+    // 开关量输出操作，0-关，1-开
+    int32 switchout_do = 2;
+    // 开关量输出操作时间，0-立即执行，>0-unix时间戳，表示在指定时间执行该操作
+    int32 switchout_time = 3;
+  }
+}
+// 消除漏电分闸/报警
+message Afn05_P0_F9 {
+  // 消除漏电报警标识,0-不消除，1-消除，1-n回路，不能跳回路
+  repeated int32 loop_mark = 1 [ packed = true ];
+}
+// 对时命令
+message Afn05_P0_F31 {
+  // 时间，unix时间戳,0-表示使用通讯服务所在服务器时间，>0-表示使用设置值
+  int64 time_unix = 1;
+}
+// 查询终端信息
+// 终端版本信息
+message Afn09_P0_F1 {
+  // 厂商代码
+  string company = 1;
+  // 设备编号
+  string device_num = 2;
+  // 终端软件版本号
+  string software_ver = 3;
+  // 终端软件发布日期：日/月/年
+  string software_date = 4;
+  // 终端配置容量信息码
+  string device_info = 5;
+  // 终端硬件版本号
+  string hardware_ver = 6;
+  // 终端硬件发布日期：日/月/年
+  string hardware_date = 7;
+  // 远程通讯模块版本号
+  string remote_com_ver = 8;
+  // 远程通讯模块发布日期：日/月/年
+  string remote_com_date = 9;
+  // 本地通讯模块版本号
+  string local_com_ver = 10;
+  // 本地通讯模块发布日期：日/月/年
+  string local_com_date = 11;
+}
+// 查询参数
+// 终端上行通信口通信参数设置
+message Afn0a_P0_F1 {}
+// 主站 IP 地址  和端口
+message Afn0a_P0_F3 {}
+// 终端事件记录配置设置
+message Afn0a_P0_F9 {}
+// 终端上行通信口通信参数设置
+message Afn0a_P0_F10 {}
+// GPS 地理位置信息
+message Afn0a_P0_F11 {}
+// 扩展设备配置参数
+message Afn0a_Pn_F14 {}
+// 继电器输出控制方案
+message Afn0a_Pn_F15 {}
+// 开关量输出参数关联
+message Afn0a_P0_F41 {}
+// 模拟量采集参数关联
+message Afn0a_P0_F42 {}
+// 周回路控制表
+message Afn0a_P0_F46 {}
+// 经纬度开关灯偏移
+message Afn0a_P0_F49 {}
+// 查询全数据上送周期
+message Afn0a_P0_F50 {}
+// 查询模拟量上下限
+message Afn0a_P0_F51 {}
+// 查询漏电保护参数
+message Afn0a_P0_F52 {}
+// 查询光照度限值 参数
+message Afn0a_P0_F53 {}
+// 停运/投运
+message Afn0a_P0_F57 {}
+// 电流回路矢量
+message Afn0a_P0_F65 {}
+// 开关量输入矢量
+message Afn0a_P0_F66 {}
+// 开关量输出矢量
+message Afn0a_P0_F67 {}
+// 请求实时数据
+// 出线模拟量数据(全数据)(报警主报)
+message Afn0c_P0_F1 {}
+// 终端日历时钟
+message Afn0c_P0_F2 {}
+// 进线模拟量数据(全数据)(报警主报)
+message Afn0c_P0_F3 {}
+// 终端上行通信状态
+message Afn0c_P0_F4 {}
+// 终端当前控制状态
+message Afn0c_P0_F6 {}
+// 终端事件计数器当前值
+message Afn0c_P0_F7 {}
+// 终端状态量及变位标志(全数据)
+message Afn0c_P0_F9 {}
+// 终端回路事件报警状态(全数据)
+message Afn0c_P0_F18 {}
+// 漏电检测数据(全数据)
+message Afn0c_P0_F19 {}
+// 光照度数据(主报)
+message Afn0c_P0_F20 {}
+// 请求历史数据
+// 模拟量历史数据曲线(出线)
+// pn<=30
+message Afn0d_Pn_F1 {}
+// 模拟量历史数据曲线(进线)
+message Afn0d_P0_F2 {}
+// 漏电历史数据曲线
+// pn<=10
+message Afn0d_Pn_F3 {}
+// 请求事件记录
+// 请求重要事件
+message Afn0e_P0_F1 {}
+// 请求一般事件
+message Afn0e_P0_F2 {}
+// 数据转发
+// 透明转发（上下行）
+message Afn10_P0_F1 {
+  // 目标设备地址（上下行）
+  int64 dst_addr = 1;
+  // 等待报文超时（下行）
+  int32 dst_timeout1 = 2;
+  // 等待字节超时（下行）
+  int32 dst_timeout2 = 3;
+  // 子设备数据json字符串，格式定义依据不同设备另行定义（上下行）
+  string dst_data = 4;
+}
+// FTP升级命令
+message Afn10_P0_F9 {
+  // ftpip,int64算法
+  int64 ftp_ip = 1;
+  // ftp 端口号
+  int32 ftp_port = 2;
+  // ftp用户名，最大10个英文字符
+  string ftp_user = 3;
+  // ftp 密码，最大10个英文字符
+  string ftp_pwd = 4;
+  // 服务器文件路径，默认'/'，最大20个英文字符，不能有空格
+  string ftp_dir = 5;
+  // 文件名，最大10个英文字符（含扩展名）
+  string ftp_file = 6;
+}
+// 终端/模块FTP升级结果（上行）
+message Afn10_P0_F10 {
+  // 升级前软件版本号
+  string software_ver_old = 1;
+  // 升级前软件发布日期：日/月/年
+  string software_date_old = 2;
+  // 升级后软件版本号
+  string software_ver_new = 3;
+  // 升级后软件发布日期：日/月/年
+  string software_date_new = 4;
+  // 升级发生时间,unix时间戳
+  int64 dt_upgrade = 5;
+}

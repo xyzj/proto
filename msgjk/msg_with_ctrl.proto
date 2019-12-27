@@ -5,7 +5,6 @@ import "protocol_head.proto";
 import "protocol_tml.proto";
 import "protocol_tp.proto";
 import "protocol_3c.proto";
-import "protocol_wlst.proto";
 
 option optimize_for = SPEED;
 
@@ -73,9 +72,6 @@ message MsgWithCtrl {
   Blk_slu_6891 blk_slu_6893 = 2209;
   // 控制器回路数设置应答
   Blk_slu_6891 blk_slu_6894 = 2210;
-
-  // 国标
-  Wlst_GB_Open wlst_gb_open = 3000;
 }
 
 // 中间层报警信息提交

@@ -55,8 +55,6 @@ message Args {
   int32 br = 10;
   // 设备标识，用于电信nb平台，本公司产品使用0xd0
   repeated int32 data_flag = 11 [ packed = true ];
-  // 区域码(国标用)，4位字符串，如果下行不提供，则忽略区域码，仅匹配设备地址，提供区域码时，需同时匹配区域码和设备地址
-  string area = 12;
 }
 
 message SysCommands {
