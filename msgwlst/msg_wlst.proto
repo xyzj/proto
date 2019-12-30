@@ -429,9 +429,9 @@ message Afn04_P0_F50 {
 }
 // 设置模拟量上下限（有问题，待定）
 message Afn04_P0_F51 {
-  // 电压下限(设备居然用bcd。。。)
+  // 电压下限(1位小数bcd)
   double voltage_lower_limit = 1;
-  // 电压上限(设备居然用bcd。。。)
+  // 电压上限(1位小数bcd)
   double voltage_upper_limit = 2;
   // 回路电流上下限设置（依次1-64，不允许跳过回路）
   repeated Current_Setting current_limit = 3;
@@ -445,9 +445,9 @@ message Afn04_P0_F51 {
     // 第一时段可使用特殊值：6039-终端自动判断每日第一次开灯或经纬度
     // 最后一个时段（依据F15设置而定），可使用特殊值：5368-使用经纬度自动计算
     int32 time_slot = 1;
-    // 电流下限
+    // 电流下限（有符号3位小数）
     double current_lower_limit = 2;
-    // 电流上限
+    // 电流上限（有符号3位小数）
     double current_upper_limit = 3;
   }
 }
@@ -543,17 +543,17 @@ message Afn0c_Pn_F1 {
   // 回路数据，几个回路就几个数据
   repeated Loop_Data loop_data = 2;
   message Loop_Data {
-    // 电压
+    // 电压(1位小数bcd)
     double voltage = 1;
-    // 电流
+    // 电流(有符号3位小数bcd)
     double current = 2;
-    // 有功功率
+    // 有功功率(有符号4位小数bcd)
     double active_power = 3;
-    // 无功功率
+    // 无功功率(有符号4位小数bcd)
     double reactive_power = 4;
-    // 功率因数
+    // 功率因数(有符号1位小数bcd)
     double power_factor = 5;
-    // 光控值？？？
+    // 光控值？？？（0位小数bcd）
     double lux_value = 6;
     // 其他模拟量（没这玩意）
     double other = 7;
@@ -568,22 +568,22 @@ message Afn0c_P0_F2 {
 message Afn0c_P0_F3 {
   // 三相数据，依次ABC三相数据
   repeated Phase_Data phase_data = 1;
-  // 频率
+  // 频率（1位小数bcd）
   double frequency = 2;
   message Phase_Data {
-    // 电压
+    // 电压（1位小数bcd）
     double voltage = 1;
-    // 电流
+    // 电流（有符号3位小数bcd）
     double current = 2;
-    // 有功功率
+    // 有功功率（有符号4位小数bcd）
     double active_power = 3;
-    // 无功功率
+    // 无功功率（有符号4位小数bcd）
     double reactive_power = 4;
-    // 功率因数
+    // 功率因数（有符号1位小数bcd）
     double power_factor = 5;
-    // 有功电能
+    // 有功电能（2位小数bcd）
     double active_energy = 6;
-    // 无功电能
+    // 无功电能（2位小数bcd）
     double reactive_energy = 7;
   }
 }
@@ -626,14 +626,14 @@ message Afn0c_P0_F18 {
 }
 // 漏电检测数据(全数据)
 message Afn0c_P0_F19 {
-  // 一次n个回路漏电流，不跳回路
+  // 一次n个回路漏电流，不跳回路（有符号3位小数bcd）
   repeated double leakage_current = 1 [ packed = true ];
 }
 // 光照度数据(主报)
 message Afn0c_P0_F20 {
-  // 光照度
+  // 光照度（0位小数bcd）
   double lux = 1;
-  // 温度
+  // 温度（有符号2位小数bcd）
   double temperature = 2;
 }
 // 请求历史数据
@@ -652,17 +652,17 @@ message Afn0d_Pn_F1 {
   // 回路数据，依次为每个数据点的数据
   repeated Loop_Data loop_data = 5;
   message Loop_Data {
-    // 电压
+    // 电压（1位小数bcd）
     double voltage = 1;
-    // 电流
+    // 电流（有符号3位小数bcd）
     double current = 2;
-    // 有功功率
+    // 有功功率（有符号4位小数bcd）
     double active_power = 3;
-    // 无功功率
+    // 无功功率（有符号4位小数bcd）
     double reactive_power = 4;
-    // 功率因数
+    // 功率因数（有符号1位小数bcd）
     double power_factor = 5;
-    // 光控值？？？
+    // 光控值？？？（0位小数bcd）
     double lux_value = 6;
     // 其他模拟量（没这玩意）
     double other = 7;
@@ -686,15 +686,15 @@ message Afn0d_P0_F2 {
   // C相位数据，依次为每个数据点的数据
   repeated Phase_Data phase_c_data = 7;
   message Phase_Data {
-    // 电压
+    // 电压（1位小数bcd）
     double voltage = 1;
-    // 电流
+    // 电流（有符号3位小数bcd）
     double current = 2;
-    // 有功功率
+    // 有功功率（有符号4位小数bcd）
     double active_power = 3;
-    // 无功功率
+    // 无功功率（有符号4位小数bcd）
     double reactive_power = 4;
-    // 功率因数
+    // 功率因数（有符号1位小数bcd）
     double power_factor = 5;
   }
 }
@@ -710,7 +710,7 @@ message Afn0d_Pn_F3 {
   // 模拟量(上下行)
   int32 loop_no = 4;
   // 以下开始为上行填充
-  // 依次为每个数据点数据
+  // 依次为每个数据点数据（有符号3位小数bcd）
   repeated double leakage_current = 5 [ packed = true ];
 }
 // 请求事件记录

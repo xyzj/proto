@@ -2044,9 +2044,9 @@ func (m *Afn04_P0_F50) GetReportTimer() int32 {
 
 // 设置模拟量上下限（有问题，待定）
 type Afn04_P0_F51 struct {
-	// 电压下限(设备居然用bcd。。。)
+	// 电压下限(1位小数bcd)
 	VoltageLowerLimit float64 `protobuf:"fixed64,1,opt,name=voltage_lower_limit,json=voltageLowerLimit,proto3" json:"voltage_lower_limit,omitempty"`
-	// 电压上限(设备居然用bcd。。。)
+	// 电压上限(1位小数bcd)
 	VoltageUpperLimit float64 `protobuf:"fixed64,2,opt,name=voltage_upper_limit,json=voltageUpperLimit,proto3" json:"voltage_upper_limit,omitempty"`
 	// 回路电流上下限设置（依次1-64，不允许跳过回路）
 	CurrentLimit []*Afn04_P0_F51_Current_Setting `protobuf:"bytes,3,rep,name=current_limit,json=currentLimit,proto3" json:"current_limit,omitempty"`
@@ -2157,9 +2157,9 @@ type Afn04_P0_F51_Loop_Setting struct {
 	// 第一时段可使用特殊值：6039-终端自动判断每日第一次开灯或经纬度
 	// 最后一个时段（依据F15设置而定），可使用特殊值：5368-使用经纬度自动计算
 	TimeSlot int32 `protobuf:"varint,1,opt,name=time_slot,json=timeSlot,proto3" json:"time_slot,omitempty"`
-	// 电流下限
+	// 电流下限（有符号3位小数）
 	CurrentLowerLimit float64 `protobuf:"fixed64,2,opt,name=current_lower_limit,json=currentLowerLimit,proto3" json:"current_lower_limit,omitempty"`
-	// 电流上限
+	// 电流上限（有符号3位小数）
 	CurrentUpperLimit float64 `protobuf:"fixed64,3,opt,name=current_upper_limit,json=currentUpperLimit,proto3" json:"current_upper_limit,omitempty"`
 }
 
@@ -2816,17 +2816,17 @@ func (m *Afn0C_Pn_F1) GetLoopData() []*Afn0C_Pn_F1_Loop_Data {
 }
 
 type Afn0C_Pn_F1_Loop_Data struct {
-	// 电压
+	// 电压(1位小数bcd)
 	Voltage float64 `protobuf:"fixed64,1,opt,name=voltage,proto3" json:"voltage,omitempty"`
-	// 电流
+	// 电流(有符号3位小数bcd)
 	Current float64 `protobuf:"fixed64,2,opt,name=current,proto3" json:"current,omitempty"`
-	// 有功功率
+	// 有功功率(有符号4位小数bcd)
 	ActivePower float64 `protobuf:"fixed64,3,opt,name=active_power,json=activePower,proto3" json:"active_power,omitempty"`
-	// 无功功率
+	// 无功功率(有符号4位小数bcd)
 	ReactivePower float64 `protobuf:"fixed64,4,opt,name=reactive_power,json=reactivePower,proto3" json:"reactive_power,omitempty"`
-	// 功率因数
+	// 功率因数(有符号1位小数bcd)
 	PowerFactor float64 `protobuf:"fixed64,5,opt,name=power_factor,json=powerFactor,proto3" json:"power_factor,omitempty"`
-	// 光控值？？？
+	// 光控值？？？（0位小数bcd）
 	LuxValue float64 `protobuf:"fixed64,6,opt,name=lux_value,json=luxValue,proto3" json:"lux_value,omitempty"`
 	// 其他模拟量（没这玩意）
 	Other float64 `protobuf:"fixed64,7,opt,name=other,proto3" json:"other,omitempty"`
@@ -2964,7 +2964,7 @@ func (m *Afn0C_P0_F2) GetTimeUnix() int64 {
 type Afn0C_P0_F3 struct {
 	// 三相数据，依次ABC三相数据
 	PhaseData []*Afn0C_P0_F3_Phase_Data `protobuf:"bytes,1,rep,name=phase_data,json=phaseData,proto3" json:"phase_data,omitempty"`
-	// 频率
+	// 频率（1位小数bcd）
 	Frequency float64 `protobuf:"fixed64,2,opt,name=frequency,proto3" json:"frequency,omitempty"`
 }
 
@@ -3016,19 +3016,19 @@ func (m *Afn0C_P0_F3) GetFrequency() float64 {
 }
 
 type Afn0C_P0_F3_Phase_Data struct {
-	// 电压
+	// 电压（1位小数bcd）
 	Voltage float64 `protobuf:"fixed64,1,opt,name=voltage,proto3" json:"voltage,omitempty"`
-	// 电流
+	// 电流（有符号3位小数bcd）
 	Current float64 `protobuf:"fixed64,2,opt,name=current,proto3" json:"current,omitempty"`
-	// 有功功率
+	// 有功功率（有符号4位小数bcd）
 	ActivePower float64 `protobuf:"fixed64,3,opt,name=active_power,json=activePower,proto3" json:"active_power,omitempty"`
-	// 无功功率
+	// 无功功率（有符号4位小数bcd）
 	ReactivePower float64 `protobuf:"fixed64,4,opt,name=reactive_power,json=reactivePower,proto3" json:"reactive_power,omitempty"`
-	// 功率因数
+	// 功率因数（有符号1位小数bcd）
 	PowerFactor float64 `protobuf:"fixed64,5,opt,name=power_factor,json=powerFactor,proto3" json:"power_factor,omitempty"`
-	// 有功电能
+	// 有功电能（2位小数bcd）
 	ActiveEnergy float64 `protobuf:"fixed64,6,opt,name=active_energy,json=activeEnergy,proto3" json:"active_energy,omitempty"`
-	// 无功电能
+	// 无功电能（2位小数bcd）
 	ReactiveEnergy float64 `protobuf:"fixed64,7,opt,name=reactive_energy,json=reactiveEnergy,proto3" json:"reactive_energy,omitempty"`
 }
 
@@ -3427,7 +3427,7 @@ func (m *Afn0C_P0_F18) GetEventsDo() []int32 {
 
 // 漏电检测数据(全数据)
 type Afn0C_P0_F19 struct {
-	// 一次n个回路漏电流，不跳回路
+	// 一次n个回路漏电流，不跳回路（有符号3位小数bcd）
 	LeakageCurrent []float64 `protobuf:"fixed64,1,rep,packed,name=leakage_current,json=leakageCurrent,proto3" json:"leakage_current,omitempty"`
 }
 
@@ -3473,9 +3473,9 @@ func (m *Afn0C_P0_F19) GetLeakageCurrent() []float64 {
 
 // 光照度数据(主报)
 type Afn0C_P0_F20 struct {
-	// 光照度
+	// 光照度（0位小数bcd）
 	Lux float64 `protobuf:"fixed64,1,opt,name=lux,proto3" json:"lux,omitempty"`
-	// 温度
+	// 温度（有符号2位小数bcd）
 	Temperature float64 `protobuf:"fixed64,2,opt,name=temperature,proto3" json:"temperature,omitempty"`
 }
 
@@ -3612,17 +3612,17 @@ func (m *Afn0D_Pn_F1) GetLoopData() []*Afn0D_Pn_F1_Loop_Data {
 }
 
 type Afn0D_Pn_F1_Loop_Data struct {
-	// 电压
+	// 电压（1位小数bcd）
 	Voltage float64 `protobuf:"fixed64,1,opt,name=voltage,proto3" json:"voltage,omitempty"`
-	// 电流
+	// 电流（有符号3位小数bcd）
 	Current float64 `protobuf:"fixed64,2,opt,name=current,proto3" json:"current,omitempty"`
-	// 有功功率
+	// 有功功率（有符号4位小数bcd）
 	ActivePower float64 `protobuf:"fixed64,3,opt,name=active_power,json=activePower,proto3" json:"active_power,omitempty"`
-	// 无功功率
+	// 无功功率（有符号4位小数bcd）
 	ReactivePower float64 `protobuf:"fixed64,4,opt,name=reactive_power,json=reactivePower,proto3" json:"reactive_power,omitempty"`
-	// 功率因数
+	// 功率因数（有符号1位小数bcd）
 	PowerFactor float64 `protobuf:"fixed64,5,opt,name=power_factor,json=powerFactor,proto3" json:"power_factor,omitempty"`
-	// 光控值？？？
+	// 光控值？？？（0位小数bcd）
 	LuxValue float64 `protobuf:"fixed64,6,opt,name=lux_value,json=luxValue,proto3" json:"lux_value,omitempty"`
 	// 其他模拟量（没这玩意）
 	Other float64 `protobuf:"fixed64,7,opt,name=other,proto3" json:"other,omitempty"`
@@ -3812,15 +3812,15 @@ func (m *Afn0D_P0_F2) GetPhaseCData() []*Afn0D_P0_F2_Phase_Data {
 }
 
 type Afn0D_P0_F2_Phase_Data struct {
-	// 电压
+	// 电压（1位小数bcd）
 	Voltage float64 `protobuf:"fixed64,1,opt,name=voltage,proto3" json:"voltage,omitempty"`
-	// 电流
+	// 电流（有符号3位小数bcd）
 	Current float64 `protobuf:"fixed64,2,opt,name=current,proto3" json:"current,omitempty"`
-	// 有功功率
+	// 有功功率（有符号4位小数bcd）
 	ActivePower float64 `protobuf:"fixed64,3,opt,name=active_power,json=activePower,proto3" json:"active_power,omitempty"`
-	// 无功功率
+	// 无功功率（有符号4位小数bcd）
 	ReactivePower float64 `protobuf:"fixed64,4,opt,name=reactive_power,json=reactivePower,proto3" json:"reactive_power,omitempty"`
-	// 功率因数
+	// 功率因数（有符号1位小数bcd）
 	PowerFactor float64 `protobuf:"fixed64,5,opt,name=power_factor,json=powerFactor,proto3" json:"power_factor,omitempty"`
 }
 
@@ -3904,7 +3904,7 @@ type Afn0D_Pn_F3 struct {
 	// 模拟量(上下行)
 	LoopNo int32 `protobuf:"varint,4,opt,name=loop_no,json=loopNo,proto3" json:"loop_no,omitempty"`
 	// 以下开始为上行填充
-	// 依次为每个数据点数据
+	// 依次为每个数据点数据（有符号3位小数bcd）
 	LeakageCurrent []float64 `protobuf:"fixed64,5,rep,packed,name=leakage_current,json=leakageCurrent,proto3" json:"leakage_current,omitempty"`
 }
 
