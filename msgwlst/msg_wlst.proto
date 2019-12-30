@@ -3,7 +3,9 @@ package wlst.gb;
 
 option optimize_for = SPEED;
 
-// command命名规则：wlst.open.[2位十六进制链路层功能码][2位十六进制afn功能码]
+// rabbitmq过滤器命名规则：
+//    [wlst-micro].devdown.[dataparser-wlst].wlst-open-[2位十六进制链路层功能码][2位十六进制afn功能码].[设备地址].[设备区域码，默认0000]
+//
 // 发起（主要为主站下行，也包括设备主报）：
 //  0101-复位
 //  0a04-设置参数
@@ -17,7 +19,7 @@ option optimize_for = SPEED;
 //  0b0c-请求实时数据
 //  0b0d-请求历史数据
 //  0b0e-请求事件数据
-//  0b0f-文件传输
+//  0b0f-文件传输（保留）
 //  0b10-数据转发
 // 应答（主要为设备应答，对于设备主报，通讯层直接进行高优先级应答，无需上层下发）：
 //  0000-复位应答
@@ -121,12 +123,6 @@ message WlstGBOpen {
   Afn04_P0_F53 afn04_p0_f53 = 114;
   // 停运/投运
   Afn04_P0_F57 afn04_p0_f57 = 115;
-  // 电流回路矢量
-  Afn04_P0_F65 afn04_p0_f65 = 116;
-  // 开关量输入矢量
-  Afn04_P0_F66 afn04_p0_f66 = 117;
-  // 开关量输出矢量
-  Afn04_P0_F67 afn04_p0_f67 = 118;
   // 控制命令，所有控制指令均为通用应答
   // pn:0
   // fn: 29-允许主报，37-禁止主报（这两个下行没有数据单元）
@@ -141,80 +137,74 @@ message WlstGBOpen {
   Afn09_P0_F1 afn09_p0_f1 = 300;
   // 查询参数，下行大多无数据单元
   // 终端上行通信口通信参数设置（上行）
-  Afn0a_P0_F1 afn0a_p0_f1 = 400;
+  Afn04_P0_F1 afn0a_p0_f1 = 400;
   // 主站 IP 地址  和端口（上行）
-  Afn0a_P0_F3 afn0a_p0_f3 = 401;
+  Afn04_P0_F3 afn0a_p0_f3 = 401;
   // 终端上行通信消息认∕否认(证参数设置
-  // Afn0a_P0_F5 afn0a_p0_f5 = 402;
+  // Afn04_P0_F5 afn0a_p0_f5 = 402;
   // 终端组地址  设置
-  // Afn0a_P0_F6 afn0a_p0_f6 = 403;
+  // Afn04_P0_F6 afn0a_p0_f6 = 403;
   // 终端 IP 地址  和端口
-  // Afn0a_P0_F7 afn0a_p0_f7 = 404;
+  // Afn04_P0_F7 afn0a_p0_f7 = 404;
   // 终端上行通信工作方式
-  // Afn0a_P0_F8 afn0a_p0_f8 = 405;
+  // Afn04_P0_F8 afn0a_p0_f8 = 405;
   // 终端事件记录配置设置（上行）
-  Afn0a_P0_F9 afn0a_p0_f9 = 406;
+  Afn04_P0_F9 afn0a_p0_f9 = 406;
   // 终端上行通信口通信参数设置（上行）
-  Afn0a_P0_F10 afn0a_p0_f10 = 407;
+  Afn04_P0_F10 afn0a_p0_f10 = 407;
   // GPS 地理位置信息（上行）
-  Afn0a_P0_F11 afn0a_p0_f11 = 408;
+  Afn04_P0_F11 afn0a_p0_f11 = 408;
   // 终端月流量控制阈值 设置
-  // Afn0a_P0_F12 afn0a_p0_f12 = 409;
+  // Afn04_P0_F12 afn0a_p0_f12 = 409;
   // 终端电能表/路灯控制器配置参数
-  // Afn0a_Pn_F13 afn0a_pn_f13 = 410;
+  // Afn04_Pn_F13 afn0a_pn_f13 = 410;
   // 扩展设备配置参数（上行）
-  Afn0a_Pn_F14 afn0a_pn_f14 = 411;
+  Afn04_Pn_F14 afn0a_pn_f14 = 411;
   // 继电器输出控制方案（上行）
   // pn: n为方案号，1-8
-  Afn0a_Pn_F15 afn0a_pn_f15 = 412;
+  Afn04_Pn_F15 afn0a_pn_f15 = 412;
   // 台区集中抄表停抄/投抄设置
-  // Afn0a_Pn_F30 afn0a_pn_f30 = 413;
+  // Afn04_Pn_F30 afn0a_pn_f30 = 413;
   // 终端抄表运行参数设置
-  // Afn0a_Pn_F33 afn0a_pn_f33 = 414;
+  // Afn04_Pn_F33 afn0a_pn_f33 = 414;
   // 开关量输出参数关联（上行）
-  Afn0a_P0_F41 afn0a_p0_f41 = 415;
+  Afn04_P0_F41 afn0a_p0_f41 = 415;
   // 模拟量采集参数关联（上行）
-  Afn0a_P0_F42 afn0a_p0_f42 = 416;
+  Afn04_P0_F42 afn0a_p0_f42 = 416;
   // 周回路控制表（上行）
-  Afn0a_P0_F46 afn0a_p0_f46 = 417;
+  Afn04_P0_F46 afn0a_p0_f46 = 417;
   // 经纬度开关灯偏移（上行）
-  Afn0a_P0_F49 afn0a_p0_f49 = 418;
+  Afn04_P0_F49 afn0a_p0_f49 = 418;
   // 查询全数据上送周期（上行）
-  Afn0a_P0_F50 afn0a_p0_f50 = 419;
+  Afn04_P0_F50 afn0a_p0_f50 = 419;
   // 查询模拟量上下限（上行）
-  Afn0a_P0_F51 afn0a_p0_f51 = 420;
+  Afn04_P0_F51 afn0a_p0_f51 = 420;
   // 查询漏电保护参数（上行）
-  Afn0a_P0_F52 afn0a_p0_f52 = 421;
+  Afn04_P0_F52 afn0a_p0_f52 = 421;
   // 查询光照度限值 参数（上行）
-  Afn0a_P0_F53 afn0a_p0_f53 = 422;
+  Afn04_P0_F53 afn0a_p0_f53 = 422;
   // 停运/投运（上行）
-  Afn0a_P0_F57 afn0a_p0_f57 = 423;
-  // 电流回路矢量（上行）
-  Afn0a_P0_F65 afn0a_p0_f65 = 424;
-  // 开关量输入矢量（上行）
-  Afn0a_P0_F66 afn0a_p0_f66 = 425;
-  // 开关量输出矢量（上行）
-  Afn0a_P0_F67 afn0a_p0_f67 = 426;
-  // 请求实时数据
-  // 出线模拟量数据(全数据)(报警主报)
-  Afn0c_P0_F1 afn0c_p0_f1 = 500;
-  // 终端日历时钟
+  Afn04_P0_F57 afn0a_p0_f57 = 423;
+  // 请求实时数据，下行无数据单元，数据结构均为上行结构
+  // 出线模拟量数据(全数据)(报警主报)（上行）
+  Afn0c_Pn_F1 afn0c_pn_f1 = 500;
+  // 终端日历时钟（上行）
   Afn0c_P0_F2 afn0c_p0_f2 = 501;
-  // 进线模拟量数据(全数据)(报警主报)
+  // 进线模拟量数据(全数据)(报警主报)（上行）
   Afn0c_P0_F3 afn0c_p0_f3 = 502;
-  // 终端上行通信状态
+  // 终端上行通信状态（上行）
   Afn0c_P0_F4 afn0c_p0_f4 = 503;
-  // 终端当前控制状态
+  // 终端当前控制状态（上行）
   Afn0c_P0_F6 afn0c_p0_f6 = 504;
-  // 终端事件计数器当前值
+  // 终端事件计数器当前值（上行）
   Afn0c_P0_F7 afn0c_p0_f7 = 505;
-  // 终端状态量及变位标志(全数据)
+  // 终端状态量及变位标志(全数据)（上行）
   Afn0c_P0_F9 afn0c_p0_f9 = 506;
-  // 终端回路事件报警状态(全数据)
+  // 终端回路事件报警状态(全数据)（上行）
   Afn0c_P0_F18 afn0c_p0_f18 = 507;
-  // 漏电检测数据(全数据)
+  // 漏电检测数据(全数据)（上行）
   Afn0c_P0_F19 afn0c_p0_f19 = 508;
-  // 光照度数据(主报)
+  // 光照度数据(主报)（上行）
   Afn0c_P0_F20 afn0c_p0_f20 = 509;
   // 请求历史数据
   // 模拟量历史数据曲线(出线)
@@ -229,7 +219,7 @@ message WlstGBOpen {
   // 请求重要事件
   Afn0e_P0_F1 afn0e_p0_f1 = 700;
   // 请求一般事件
-  Afn0e_P0_F2 afn0e_p0_f2 = 701;
+  Afn0e_P0_F1 afn0e_p0_f2 = 701;
   // 数据转发
   // 透明转发
   Afn10_P0_F1 afn10_p0_f1 = 800;
@@ -359,9 +349,9 @@ message Afn04_Pn_F15 {
   // 数量1-4为有效时段
   repeated Time_Slot time_slot = 4;
   message Time_Slot {
-    // 开灯时间hh*60+mm，6039表示经纬度开灯
+    // 开灯时间hh*60+mm，6039表示经纬度开灯,1500删除
     int32 time_on = 1;
-    // 关灯时间hh*60+mm，5368表示经纬度关灯
+    // 关灯时间hh*60+mm，5368表示经纬度关灯，1500删除
     int32 time_off = 2;
   }
 }
@@ -390,7 +380,7 @@ message Afn04_P0_F42 {
     int32 phase = 2;
   }
 }
-// 周回路控制表,仅支持k1-k8（国标设备不建议使用）
+// 周回路控制表,仅支持k1-k8（国标设备不建议使用）2500清除对应设置
 message Afn04_P0_F46 {
   // 周一设置
   Week_Slot week_day1 = 1;
@@ -437,7 +427,7 @@ message Afn04_P0_F50 {
   // 全数据主报周期（分钟）1-255
   int32 report_timer = 1;
 }
-// 设置模拟量上下限
+// 设置模拟量上下限（有问题，待定）
 message Afn04_P0_F51 {
   // 电压下限(设备居然用bcd。。。)
   double voltage_lower_limit = 1;
@@ -485,27 +475,12 @@ message Afn04_P0_F53 {
   // 数据传输间隔（秒）
   int32 time_tick = 2;
 }
-// 停运/投运（看不懂）
+// 停运/投运
 message Afn04_P0_F57 {
   // 设备停运标识，0-停运，1-投运
   int32 runtime_mark = 1;
-  // 回路停运标识,48个，0-停运，1-投运
+  // 回路停运标识,48个，0-停运，1-投运（没用，不用填）
   repeated int32 loop_mark = 2 [ packed = true ];
-}
-// 电流回路矢量
-message Afn04_P0_F65 {
-  // 回路矢量，启用多少回路填多少个，不能跳回路
-  repeated int32 loop_vector = 1 [ packed = true ];
-}
-// 开关量输入矢量
-message Afn04_P0_F66 {
-  // 开关量输入矢量，启用多少回路填多少个，不能跳回路
-  repeated int32 switchin_vector = 1 [ packed = true ];
-}
-// 开关量输出矢量
-message Afn04_P0_F67 {
-  // 开关量输出矢量，启用多少回路填多少个，不能跳回路
-  repeated int32 switchout_vector = 1 [ packed = true ];
 }
 // 控制命令
 // 允许合闸/跳闸
@@ -556,80 +531,203 @@ message Afn09_P0_F1 {
   // 本地通讯模块发布日期：日/月/年
   string local_com_date = 11;
 }
-// 查询参数
-// 终端上行通信口通信参数设置
-message Afn0a_P0_F1 {}
-// 主站 IP 地址  和端口
-message Afn0a_P0_F3 {}
-// 终端事件记录配置设置
-message Afn0a_P0_F9 {}
-// 终端上行通信口通信参数设置
-message Afn0a_P0_F10 {}
-// GPS 地理位置信息
-message Afn0a_P0_F11 {}
-// 扩展设备配置参数
-message Afn0a_Pn_F14 {}
-// 继电器输出控制方案
-message Afn0a_Pn_F15 {}
-// 开关量输出参数关联
-message Afn0a_P0_F41 {}
-// 模拟量采集参数关联
-message Afn0a_P0_F42 {}
-// 周回路控制表
-message Afn0a_P0_F46 {}
-// 经纬度开关灯偏移
-message Afn0a_P0_F49 {}
-// 查询全数据上送周期
-message Afn0a_P0_F50 {}
-// 查询模拟量上下限
-message Afn0a_P0_F51 {}
-// 查询漏电保护参数
-message Afn0a_P0_F52 {}
-// 查询光照度限值 参数
-message Afn0a_P0_F53 {}
-// 停运/投运
-message Afn0a_P0_F57 {}
-// 电流回路矢量
-message Afn0a_P0_F65 {}
-// 开关量输入矢量
-message Afn0a_P0_F66 {}
-// 开关量输出矢量
-message Afn0a_P0_F67 {}
-// 请求实时数据
+
+// 查询参数，结构和afn04相同
+
+// 请求实时数据，下行无数据单元
 // 出线模拟量数据(全数据)(报警主报)
-message Afn0c_P0_F1 {}
+// pn: n是模拟量回路序号，1-48,0xffff表示所有回路
+message Afn0c_Pn_F1 {
+  // 主报时间
+  int64 dt_report = 1;
+  // 回路数据，几个回路就几个数据
+  repeated Loop_Data loop_data = 2;
+  message Loop_Data {
+    // 电压
+    double voltage = 1;
+    // 电流
+    double current = 2;
+    // 有功功率
+    double active_power = 3;
+    // 无功功率
+    double reactive_power = 4;
+    // 功率因数
+    double power_factor = 5;
+    // 光控值？？？
+    double lux_value = 6;
+    // 其他模拟量（没这玩意）
+    double other = 7;
+  }
+}
 // 终端日历时钟
-message Afn0c_P0_F2 {}
+message Afn0c_P0_F2 {
+  // 设备时钟，unix时间戳
+  int64 time_unix = 1;
+}
 // 进线模拟量数据(全数据)(报警主报)
-message Afn0c_P0_F3 {}
+message Afn0c_P0_F3 {
+  // 三相数据，依次ABC三相数据
+  repeated Phase_Data phase_data = 1;
+  // 频率
+  double frequency = 2;
+  message Phase_Data {
+    // 电压
+    double voltage = 1;
+    // 电流
+    double current = 2;
+    // 有功功率
+    double active_power = 3;
+    // 无功功率
+    double reactive_power = 4;
+    // 功率因数
+    double power_factor = 5;
+    // 有功电能
+    double active_energy = 6;
+    // 无功电能
+    double reactive_energy = 7;
+  }
+}
 // 终端上行通信状态
-message Afn0c_P0_F4 {}
+message Afn0c_P0_F4 {
+  // 是否允许主报,0-禁止，1-允许，（设备为1-允许，2-禁止）
+  int32 enable_report = 1;
+}
 // 终端当前控制状态
-message Afn0c_P0_F6 {}
+message Afn0c_P0_F6 {
+  // 依次k1-k16状态，0-断，1-通（设备为1-断，0-通）
+  repeated int32 switchout_status = 1 [ packed = true ];
+}
 // 终端事件计数器当前值
-message Afn0c_P0_F7 {}
+message Afn0c_P0_F7 {
+  // 重要事件计数器
+  int32 ec1 = 1;
+  // 一般事件计数器
+  int32 ec2 = 2;
+}
 // 终端状态量及变位标志(全数据)
-message Afn0c_P0_F9 {}
+message Afn0c_P0_F9 {
+  // 回路状态量状态，依次为1-32路
+  repeated Loop_Status loop_status = 1;
+  message Loop_Status {
+    // 回路当前状态，0-断，1-通
+    int32 st_now = 1;
+    // 回路状态自上次读取后，是否变化过，0-未变化，1-有变化
+    int32 st_changed = 2;
+  }
+}
 // 终端回路事件报警状态(全数据)
-message Afn0c_P0_F18 {}
+message Afn0c_P0_F18 {
+  // 回路序号,0xee表示非回路事件
+  int32 loop_no = 1;
+  // 回路相位，非回路事件填0xee
+  int32 loop_phase = 2;
+  // 事件状态，参考Afn04_P0_F9的事件代码，1-64个事件，0-无事件，1-发生对应事件
+  repeated int32 events_do = 3 [ packed = true ];
+}
 // 漏电检测数据(全数据)
-message Afn0c_P0_F19 {}
+message Afn0c_P0_F19 {
+  // 一次n个回路漏电流，不跳回路
+  repeated double leakage_current = 1 [ packed = true ];
+}
 // 光照度数据(主报)
-message Afn0c_P0_F20 {}
+message Afn0c_P0_F20 {
+  // 光照度
+  double lux = 1;
+  // 温度
+  double temperature = 2;
+}
 // 请求历史数据
 // 模拟量历史数据曲线(出线)
-// pn<=30
-message Afn0d_Pn_F1 {}
+// pn: n 1-48，模拟量回路数量
+message Afn0d_Pn_F1 {
+  // 起始时间，unix时间戳(上下行)
+  int64 dt_start = 1;
+  // 数据密度(分钟)，可选0,1,2,3,4,5,10,15,30,60，表示每小时0分起累加指定密度的分钟数(上下行)
+  int32 data_density = 2;
+  // 数据点数(上下行)（最大20）
+  int32 data_num = 3;
+  // 模拟量(上下行)
+  int32 loop_no = 4;
+  // 以下开始为上行填充
+  // 回路数据，依次为每个数据点的数据
+  repeated Loop_Data loop_data = 5;
+  message Loop_Data {
+    // 电压
+    double voltage = 1;
+    // 电流
+    double current = 2;
+    // 有功功率
+    double active_power = 3;
+    // 无功功率
+    double reactive_power = 4;
+    // 功率因数
+    double power_factor = 5;
+    // 光控值？？？
+    double lux_value = 6;
+    // 其他模拟量（没这玩意）
+    double other = 7;
+  }
+}
 // 模拟量历史数据曲线(进线)
-message Afn0d_P0_F2 {}
+message Afn0d_P0_F2 {
+  // 起始时间，unix时间戳(上下行)
+  int64 dt_start = 1;
+  // 数据密度(分钟)，可选0,1,2,3,4,5,10,15,30,60，表示每小时0分起累加指定密度的分钟数(上下行)
+  int32 data_density = 2;
+  // 数据点数(上下行)（最大20）
+  int32 data_num = 3;
+  // 模拟量(上下行)
+  int32 loop_no = 4;
+  // 以下开始为上行填充
+  // A相位数据，依次为每个数据点的数据
+  repeated Phase_Data phase_a_data = 5;
+  // B相位数据，依次为每个数据点的数据
+  repeated Phase_Data phase_b_data = 6;
+  // C相位数据，依次为每个数据点的数据
+  repeated Phase_Data phase_c_data = 7;
+  message Phase_Data {
+    // 电压
+    double voltage = 1;
+    // 电流
+    double current = 2;
+    // 有功功率
+    double active_power = 3;
+    // 无功功率
+    double reactive_power = 4;
+    // 功率因数
+    double power_factor = 5;
+  }
+}
 // 漏电历史数据曲线
-// pn<=10
-message Afn0d_Pn_F3 {}
+// pn:n1-8,漏电回路数量
+message Afn0d_Pn_F3 {
+  // 起始时间，unix时间戳(上下行)
+  int64 dt_start = 1;
+  // 数据密度(分钟)，可选0,1,2,3,4,5,10,15,30,60，表示每小时0分起累加指定密度的分钟数(上下行)
+  int32 data_density = 2;
+  // 数据点数(上下行)（最大20）
+  int32 data_num = 3;
+  // 模拟量(上下行)
+  int32 loop_no = 4;
+  // 以下开始为上行填充
+  // 依次为每个数据点数据
+  repeated double leakage_current = 5 [ packed = true ];
+}
 // 请求事件记录
-// 请求重要事件
-message Afn0e_P0_F1 {}
-// 请求一般事件
-message Afn0e_P0_F2 {}
+// 请求重要/一般事件
+message Afn0e_P0_F1 {
+  // pn应大于pm
+  // 事件起始指针（上下行）0-254
+  int32 pm = 1;
+  // 事件结束指针（上下行）1-255
+  int32 pn = 2;
+  // 以下为上行填充字段
+  // 当前读到的位置
+  int32 ec_now = 3;
+  // 事件信息（看不懂，待定）
+  repeated Events_Data events_data = 4;
+  message Events_Data {}
+}
 // 数据转发
 // 透明转发（上下行）
 message Afn10_P0_F1 {

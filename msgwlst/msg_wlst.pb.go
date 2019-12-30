@@ -265,12 +265,6 @@ type WlstGBOpen struct {
 	Afn04P0F53 *Afn04_P0_F53 `protobuf:"bytes,114,opt,name=afn04_p0_f53,json=afn04P0F53,proto3" json:"afn04_p0_f53,omitempty"`
 	// 停运/投运
 	Afn04P0F57 *Afn04_P0_F57 `protobuf:"bytes,115,opt,name=afn04_p0_f57,json=afn04P0F57,proto3" json:"afn04_p0_f57,omitempty"`
-	// 电流回路矢量
-	Afn04P0F65 *Afn04_P0_F65 `protobuf:"bytes,116,opt,name=afn04_p0_f65,json=afn04P0F65,proto3" json:"afn04_p0_f65,omitempty"`
-	// 开关量输入矢量
-	Afn04P0F66 *Afn04_P0_F66 `protobuf:"bytes,117,opt,name=afn04_p0_f66,json=afn04P0F66,proto3" json:"afn04_p0_f66,omitempty"`
-	// 开关量输出矢量
-	Afn04P0F67 *Afn04_P0_F67 `protobuf:"bytes,118,opt,name=afn04_p0_f67,json=afn04P0F67,proto3" json:"afn04_p0_f67,omitempty"`
 	// 控制命令，所有控制指令均为通用应答
 	// pn:0
 	// fn: 29-允许主报，37-禁止主报（这两个下行没有数据单元）
@@ -285,80 +279,74 @@ type WlstGBOpen struct {
 	Afn09P0F1 *Afn09_P0_F1 `protobuf:"bytes,300,opt,name=afn09_p0_f1,json=afn09P0F1,proto3" json:"afn09_p0_f1,omitempty"`
 	// 查询参数，下行大多无数据单元
 	// 终端上行通信口通信参数设置（上行）
-	Afn0AP0F1 *Afn0A_P0_F1 `protobuf:"bytes,400,opt,name=afn0a_p0_f1,json=afn0aP0F1,proto3" json:"afn0a_p0_f1,omitempty"`
+	Afn0AP0F1 *Afn04_P0_F1 `protobuf:"bytes,400,opt,name=afn0a_p0_f1,json=afn0aP0F1,proto3" json:"afn0a_p0_f1,omitempty"`
 	// 主站 IP 地址  和端口（上行）
-	Afn0AP0F3 *Afn0A_P0_F3 `protobuf:"bytes,401,opt,name=afn0a_p0_f3,json=afn0aP0F3,proto3" json:"afn0a_p0_f3,omitempty"`
+	Afn0AP0F3 *Afn04_P0_F3 `protobuf:"bytes,401,opt,name=afn0a_p0_f3,json=afn0aP0F3,proto3" json:"afn0a_p0_f3,omitempty"`
 	// 终端上行通信消息认∕否认(证参数设置
-	// Afn0a_P0_F5 afn0a_p0_f5 = 402;
+	// Afn04_P0_F5 afn0a_p0_f5 = 402;
 	// 终端组地址  设置
-	// Afn0a_P0_F6 afn0a_p0_f6 = 403;
+	// Afn04_P0_F6 afn0a_p0_f6 = 403;
 	// 终端 IP 地址  和端口
-	// Afn0a_P0_F7 afn0a_p0_f7 = 404;
+	// Afn04_P0_F7 afn0a_p0_f7 = 404;
 	// 终端上行通信工作方式
-	// Afn0a_P0_F8 afn0a_p0_f8 = 405;
+	// Afn04_P0_F8 afn0a_p0_f8 = 405;
 	// 终端事件记录配置设置（上行）
-	Afn0AP0F9 *Afn0A_P0_F9 `protobuf:"bytes,406,opt,name=afn0a_p0_f9,json=afn0aP0F9,proto3" json:"afn0a_p0_f9,omitempty"`
+	Afn0AP0F9 *Afn04_P0_F9 `protobuf:"bytes,406,opt,name=afn0a_p0_f9,json=afn0aP0F9,proto3" json:"afn0a_p0_f9,omitempty"`
 	// 终端上行通信口通信参数设置（上行）
-	Afn0AP0F10 *Afn0A_P0_F10 `protobuf:"bytes,407,opt,name=afn0a_p0_f10,json=afn0aP0F10,proto3" json:"afn0a_p0_f10,omitempty"`
+	Afn0AP0F10 *Afn04_P0_F10 `protobuf:"bytes,407,opt,name=afn0a_p0_f10,json=afn0aP0F10,proto3" json:"afn0a_p0_f10,omitempty"`
 	// GPS 地理位置信息（上行）
-	Afn0AP0F11 *Afn0A_P0_F11 `protobuf:"bytes,408,opt,name=afn0a_p0_f11,json=afn0aP0F11,proto3" json:"afn0a_p0_f11,omitempty"`
+	Afn0AP0F11 *Afn04_P0_F11 `protobuf:"bytes,408,opt,name=afn0a_p0_f11,json=afn0aP0F11,proto3" json:"afn0a_p0_f11,omitempty"`
 	// 终端月流量控制阈值 设置
-	// Afn0a_P0_F12 afn0a_p0_f12 = 409;
+	// Afn04_P0_F12 afn0a_p0_f12 = 409;
 	// 终端电能表/路灯控制器配置参数
-	// Afn0a_Pn_F13 afn0a_pn_f13 = 410;
+	// Afn04_Pn_F13 afn0a_pn_f13 = 410;
 	// 扩展设备配置参数（上行）
-	Afn0APnF14 *Afn0A_Pn_F14 `protobuf:"bytes,411,opt,name=afn0a_pn_f14,json=afn0aPnF14,proto3" json:"afn0a_pn_f14,omitempty"`
+	Afn0APnF14 *Afn04_Pn_F14 `protobuf:"bytes,411,opt,name=afn0a_pn_f14,json=afn0aPnF14,proto3" json:"afn0a_pn_f14,omitempty"`
 	// 继电器输出控制方案（上行）
 	// pn: n为方案号，1-8
-	Afn0APnF15 *Afn0A_Pn_F15 `protobuf:"bytes,412,opt,name=afn0a_pn_f15,json=afn0aPnF15,proto3" json:"afn0a_pn_f15,omitempty"`
+	Afn0APnF15 *Afn04_Pn_F15 `protobuf:"bytes,412,opt,name=afn0a_pn_f15,json=afn0aPnF15,proto3" json:"afn0a_pn_f15,omitempty"`
 	// 台区集中抄表停抄/投抄设置
-	// Afn0a_Pn_F30 afn0a_pn_f30 = 413;
+	// Afn04_Pn_F30 afn0a_pn_f30 = 413;
 	// 终端抄表运行参数设置
-	// Afn0a_Pn_F33 afn0a_pn_f33 = 414;
+	// Afn04_Pn_F33 afn0a_pn_f33 = 414;
 	// 开关量输出参数关联（上行）
-	Afn0AP0F41 *Afn0A_P0_F41 `protobuf:"bytes,415,opt,name=afn0a_p0_f41,json=afn0aP0F41,proto3" json:"afn0a_p0_f41,omitempty"`
+	Afn0AP0F41 *Afn04_P0_F41 `protobuf:"bytes,415,opt,name=afn0a_p0_f41,json=afn0aP0F41,proto3" json:"afn0a_p0_f41,omitempty"`
 	// 模拟量采集参数关联（上行）
-	Afn0AP0F42 *Afn0A_P0_F42 `protobuf:"bytes,416,opt,name=afn0a_p0_f42,json=afn0aP0F42,proto3" json:"afn0a_p0_f42,omitempty"`
+	Afn0AP0F42 *Afn04_P0_F42 `protobuf:"bytes,416,opt,name=afn0a_p0_f42,json=afn0aP0F42,proto3" json:"afn0a_p0_f42,omitempty"`
 	// 周回路控制表（上行）
-	Afn0AP0F46 *Afn0A_P0_F46 `protobuf:"bytes,417,opt,name=afn0a_p0_f46,json=afn0aP0F46,proto3" json:"afn0a_p0_f46,omitempty"`
+	Afn0AP0F46 *Afn04_P0_F46 `protobuf:"bytes,417,opt,name=afn0a_p0_f46,json=afn0aP0F46,proto3" json:"afn0a_p0_f46,omitempty"`
 	// 经纬度开关灯偏移（上行）
-	Afn0AP0F49 *Afn0A_P0_F49 `protobuf:"bytes,418,opt,name=afn0a_p0_f49,json=afn0aP0F49,proto3" json:"afn0a_p0_f49,omitempty"`
+	Afn0AP0F49 *Afn04_P0_F49 `protobuf:"bytes,418,opt,name=afn0a_p0_f49,json=afn0aP0F49,proto3" json:"afn0a_p0_f49,omitempty"`
 	// 查询全数据上送周期（上行）
-	Afn0AP0F50 *Afn0A_P0_F50 `protobuf:"bytes,419,opt,name=afn0a_p0_f50,json=afn0aP0F50,proto3" json:"afn0a_p0_f50,omitempty"`
+	Afn0AP0F50 *Afn04_P0_F50 `protobuf:"bytes,419,opt,name=afn0a_p0_f50,json=afn0aP0F50,proto3" json:"afn0a_p0_f50,omitempty"`
 	// 查询模拟量上下限（上行）
-	Afn0AP0F51 *Afn0A_P0_F51 `protobuf:"bytes,420,opt,name=afn0a_p0_f51,json=afn0aP0F51,proto3" json:"afn0a_p0_f51,omitempty"`
+	Afn0AP0F51 *Afn04_P0_F51 `protobuf:"bytes,420,opt,name=afn0a_p0_f51,json=afn0aP0F51,proto3" json:"afn0a_p0_f51,omitempty"`
 	// 查询漏电保护参数（上行）
-	Afn0AP0F52 *Afn0A_P0_F52 `protobuf:"bytes,421,opt,name=afn0a_p0_f52,json=afn0aP0F52,proto3" json:"afn0a_p0_f52,omitempty"`
+	Afn0AP0F52 *Afn04_P0_F52 `protobuf:"bytes,421,opt,name=afn0a_p0_f52,json=afn0aP0F52,proto3" json:"afn0a_p0_f52,omitempty"`
 	// 查询光照度限值 参数（上行）
-	Afn0AP0F53 *Afn0A_P0_F53 `protobuf:"bytes,422,opt,name=afn0a_p0_f53,json=afn0aP0F53,proto3" json:"afn0a_p0_f53,omitempty"`
+	Afn0AP0F53 *Afn04_P0_F53 `protobuf:"bytes,422,opt,name=afn0a_p0_f53,json=afn0aP0F53,proto3" json:"afn0a_p0_f53,omitempty"`
 	// 停运/投运（上行）
-	Afn0AP0F57 *Afn0A_P0_F57 `protobuf:"bytes,423,opt,name=afn0a_p0_f57,json=afn0aP0F57,proto3" json:"afn0a_p0_f57,omitempty"`
-	// 电流回路矢量（上行）
-	Afn0AP0F65 *Afn0A_P0_F65 `protobuf:"bytes,424,opt,name=afn0a_p0_f65,json=afn0aP0F65,proto3" json:"afn0a_p0_f65,omitempty"`
-	// 开关量输入矢量（上行）
-	Afn0AP0F66 *Afn0A_P0_F66 `protobuf:"bytes,425,opt,name=afn0a_p0_f66,json=afn0aP0F66,proto3" json:"afn0a_p0_f66,omitempty"`
-	// 开关量输出矢量（上行）
-	Afn0AP0F67 *Afn0A_P0_F67 `protobuf:"bytes,426,opt,name=afn0a_p0_f67,json=afn0aP0F67,proto3" json:"afn0a_p0_f67,omitempty"`
-	// 请求实时数据
-	// 出线模拟量数据(全数据)(报警主报)
-	Afn0CP0F1 *Afn0C_P0_F1 `protobuf:"bytes,500,opt,name=afn0c_p0_f1,json=afn0cP0F1,proto3" json:"afn0c_p0_f1,omitempty"`
-	// 终端日历时钟
+	Afn0AP0F57 *Afn04_P0_F57 `protobuf:"bytes,423,opt,name=afn0a_p0_f57,json=afn0aP0F57,proto3" json:"afn0a_p0_f57,omitempty"`
+	// 请求实时数据，下行无数据单元，数据结构均为上行结构
+	// 出线模拟量数据(全数据)(报警主报)（上行）
+	Afn0CPnF1 *Afn0C_Pn_F1 `protobuf:"bytes,500,opt,name=afn0c_pn_f1,json=afn0cPnF1,proto3" json:"afn0c_pn_f1,omitempty"`
+	// 终端日历时钟（上行）
 	Afn0CP0F2 *Afn0C_P0_F2 `protobuf:"bytes,501,opt,name=afn0c_p0_f2,json=afn0cP0F2,proto3" json:"afn0c_p0_f2,omitempty"`
-	// 进线模拟量数据(全数据)(报警主报)
+	// 进线模拟量数据(全数据)(报警主报)（上行）
 	Afn0CP0F3 *Afn0C_P0_F3 `protobuf:"bytes,502,opt,name=afn0c_p0_f3,json=afn0cP0F3,proto3" json:"afn0c_p0_f3,omitempty"`
-	// 终端上行通信状态
+	// 终端上行通信状态（上行）
 	Afn0CP0F4 *Afn0C_P0_F4 `protobuf:"bytes,503,opt,name=afn0c_p0_f4,json=afn0cP0F4,proto3" json:"afn0c_p0_f4,omitempty"`
-	// 终端当前控制状态
+	// 终端当前控制状态（上行）
 	Afn0CP0F6 *Afn0C_P0_F6 `protobuf:"bytes,504,opt,name=afn0c_p0_f6,json=afn0cP0F6,proto3" json:"afn0c_p0_f6,omitempty"`
-	// 终端事件计数器当前值
+	// 终端事件计数器当前值（上行）
 	Afn0CP0F7 *Afn0C_P0_F7 `protobuf:"bytes,505,opt,name=afn0c_p0_f7,json=afn0cP0F7,proto3" json:"afn0c_p0_f7,omitempty"`
-	// 终端状态量及变位标志(全数据)
+	// 终端状态量及变位标志(全数据)（上行）
 	Afn0CP0F9 *Afn0C_P0_F9 `protobuf:"bytes,506,opt,name=afn0c_p0_f9,json=afn0cP0F9,proto3" json:"afn0c_p0_f9,omitempty"`
-	// 终端回路事件报警状态(全数据)
+	// 终端回路事件报警状态(全数据)（上行）
 	Afn0CP0F18 *Afn0C_P0_F18 `protobuf:"bytes,507,opt,name=afn0c_p0_f18,json=afn0cP0F18,proto3" json:"afn0c_p0_f18,omitempty"`
-	// 漏电检测数据(全数据)
+	// 漏电检测数据(全数据)（上行）
 	Afn0CP0F19 *Afn0C_P0_F19 `protobuf:"bytes,508,opt,name=afn0c_p0_f19,json=afn0cP0F19,proto3" json:"afn0c_p0_f19,omitempty"`
-	// 光照度数据(主报)
+	// 光照度数据(主报)（上行）
 	Afn0CP0F20 *Afn0C_P0_F20 `protobuf:"bytes,509,opt,name=afn0c_p0_f20,json=afn0cP0F20,proto3" json:"afn0c_p0_f20,omitempty"`
 	// 请求历史数据
 	// 模拟量历史数据曲线(出线)
@@ -373,7 +361,7 @@ type WlstGBOpen struct {
 	// 请求重要事件
 	Afn0EP0F1 *Afn0E_P0_F1 `protobuf:"bytes,700,opt,name=afn0e_p0_f1,json=afn0eP0F1,proto3" json:"afn0e_p0_f1,omitempty"`
 	// 请求一般事件
-	Afn0EP0F2 *Afn0E_P0_F2 `protobuf:"bytes,701,opt,name=afn0e_p0_f2,json=afn0eP0F2,proto3" json:"afn0e_p0_f2,omitempty"`
+	Afn0EP0F2 *Afn0E_P0_F1 `protobuf:"bytes,701,opt,name=afn0e_p0_f2,json=afn0eP0F2,proto3" json:"afn0e_p0_f2,omitempty"`
 	// 数据转发
 	// 透明转发
 	Afn10P0F1 *Afn10_P0_F1 `protobuf:"bytes,800,opt,name=afn10_p0_f1,json=afn10P0F1,proto3" json:"afn10_p0_f1,omitempty"`
@@ -558,27 +546,6 @@ func (m *WlstGBOpen) GetAfn04P0F57() *Afn04_P0_F57 {
 	return nil
 }
 
-func (m *WlstGBOpen) GetAfn04P0F65() *Afn04_P0_F65 {
-	if m != nil {
-		return m.Afn04P0F65
-	}
-	return nil
-}
-
-func (m *WlstGBOpen) GetAfn04P0F66() *Afn04_P0_F66 {
-	if m != nil {
-		return m.Afn04P0F66
-	}
-	return nil
-}
-
-func (m *WlstGBOpen) GetAfn04P0F67() *Afn04_P0_F67 {
-	if m != nil {
-		return m.Afn04P0F67
-	}
-	return nil
-}
-
 func (m *WlstGBOpen) GetAfn05P0F1() *Afn05_P0_F1 {
 	if m != nil {
 		return m.Afn05P0F1
@@ -607,142 +574,121 @@ func (m *WlstGBOpen) GetAfn09P0F1() *Afn09_P0_F1 {
 	return nil
 }
 
-func (m *WlstGBOpen) GetAfn0AP0F1() *Afn0A_P0_F1 {
+func (m *WlstGBOpen) GetAfn0AP0F1() *Afn04_P0_F1 {
 	if m != nil {
 		return m.Afn0AP0F1
 	}
 	return nil
 }
 
-func (m *WlstGBOpen) GetAfn0AP0F3() *Afn0A_P0_F3 {
+func (m *WlstGBOpen) GetAfn0AP0F3() *Afn04_P0_F3 {
 	if m != nil {
 		return m.Afn0AP0F3
 	}
 	return nil
 }
 
-func (m *WlstGBOpen) GetAfn0AP0F9() *Afn0A_P0_F9 {
+func (m *WlstGBOpen) GetAfn0AP0F9() *Afn04_P0_F9 {
 	if m != nil {
 		return m.Afn0AP0F9
 	}
 	return nil
 }
 
-func (m *WlstGBOpen) GetAfn0AP0F10() *Afn0A_P0_F10 {
+func (m *WlstGBOpen) GetAfn0AP0F10() *Afn04_P0_F10 {
 	if m != nil {
 		return m.Afn0AP0F10
 	}
 	return nil
 }
 
-func (m *WlstGBOpen) GetAfn0AP0F11() *Afn0A_P0_F11 {
+func (m *WlstGBOpen) GetAfn0AP0F11() *Afn04_P0_F11 {
 	if m != nil {
 		return m.Afn0AP0F11
 	}
 	return nil
 }
 
-func (m *WlstGBOpen) GetAfn0APnF14() *Afn0A_Pn_F14 {
+func (m *WlstGBOpen) GetAfn0APnF14() *Afn04_Pn_F14 {
 	if m != nil {
 		return m.Afn0APnF14
 	}
 	return nil
 }
 
-func (m *WlstGBOpen) GetAfn0APnF15() *Afn0A_Pn_F15 {
+func (m *WlstGBOpen) GetAfn0APnF15() *Afn04_Pn_F15 {
 	if m != nil {
 		return m.Afn0APnF15
 	}
 	return nil
 }
 
-func (m *WlstGBOpen) GetAfn0AP0F41() *Afn0A_P0_F41 {
+func (m *WlstGBOpen) GetAfn0AP0F41() *Afn04_P0_F41 {
 	if m != nil {
 		return m.Afn0AP0F41
 	}
 	return nil
 }
 
-func (m *WlstGBOpen) GetAfn0AP0F42() *Afn0A_P0_F42 {
+func (m *WlstGBOpen) GetAfn0AP0F42() *Afn04_P0_F42 {
 	if m != nil {
 		return m.Afn0AP0F42
 	}
 	return nil
 }
 
-func (m *WlstGBOpen) GetAfn0AP0F46() *Afn0A_P0_F46 {
+func (m *WlstGBOpen) GetAfn0AP0F46() *Afn04_P0_F46 {
 	if m != nil {
 		return m.Afn0AP0F46
 	}
 	return nil
 }
 
-func (m *WlstGBOpen) GetAfn0AP0F49() *Afn0A_P0_F49 {
+func (m *WlstGBOpen) GetAfn0AP0F49() *Afn04_P0_F49 {
 	if m != nil {
 		return m.Afn0AP0F49
 	}
 	return nil
 }
 
-func (m *WlstGBOpen) GetAfn0AP0F50() *Afn0A_P0_F50 {
+func (m *WlstGBOpen) GetAfn0AP0F50() *Afn04_P0_F50 {
 	if m != nil {
 		return m.Afn0AP0F50
 	}
 	return nil
 }
 
-func (m *WlstGBOpen) GetAfn0AP0F51() *Afn0A_P0_F51 {
+func (m *WlstGBOpen) GetAfn0AP0F51() *Afn04_P0_F51 {
 	if m != nil {
 		return m.Afn0AP0F51
 	}
 	return nil
 }
 
-func (m *WlstGBOpen) GetAfn0AP0F52() *Afn0A_P0_F52 {
+func (m *WlstGBOpen) GetAfn0AP0F52() *Afn04_P0_F52 {
 	if m != nil {
 		return m.Afn0AP0F52
 	}
 	return nil
 }
 
-func (m *WlstGBOpen) GetAfn0AP0F53() *Afn0A_P0_F53 {
+func (m *WlstGBOpen) GetAfn0AP0F53() *Afn04_P0_F53 {
 	if m != nil {
 		return m.Afn0AP0F53
 	}
 	return nil
 }
 
-func (m *WlstGBOpen) GetAfn0AP0F57() *Afn0A_P0_F57 {
+func (m *WlstGBOpen) GetAfn0AP0F57() *Afn04_P0_F57 {
 	if m != nil {
 		return m.Afn0AP0F57
 	}
 	return nil
 }
 
-func (m *WlstGBOpen) GetAfn0AP0F65() *Afn0A_P0_F65 {
+func (m *WlstGBOpen) GetAfn0CPnF1() *Afn0C_Pn_F1 {
 	if m != nil {
-		return m.Afn0AP0F65
-	}
-	return nil
-}
-
-func (m *WlstGBOpen) GetAfn0AP0F66() *Afn0A_P0_F66 {
-	if m != nil {
-		return m.Afn0AP0F66
-	}
-	return nil
-}
-
-func (m *WlstGBOpen) GetAfn0AP0F67() *Afn0A_P0_F67 {
-	if m != nil {
-		return m.Afn0AP0F67
-	}
-	return nil
-}
-
-func (m *WlstGBOpen) GetAfn0CP0F1() *Afn0C_P0_F1 {
-	if m != nil {
-		return m.Afn0CP0F1
+		return m.Afn0CPnF1
 	}
 	return nil
 }
@@ -838,7 +784,7 @@ func (m *WlstGBOpen) GetAfn0EP0F1() *Afn0E_P0_F1 {
 	return nil
 }
 
-func (m *WlstGBOpen) GetAfn0EP0F2() *Afn0E_P0_F2 {
+func (m *WlstGBOpen) GetAfn0EP0F2() *Afn0E_P0_F1 {
 	if m != nil {
 		return m.Afn0EP0F2
 	}
@@ -1503,9 +1449,9 @@ func (m *Afn04_Pn_F15) GetTimeSlot() []*Afn04_Pn_F15_Time_Slot {
 }
 
 type Afn04_Pn_F15_Time_Slot struct {
-	// 开灯时间hh*60+mm，6039表示经纬度开灯
+	// 开灯时间hh*60+mm，6039表示经纬度开灯,1500删除
 	TimeOn int32 `protobuf:"varint,1,opt,name=time_on,json=timeOn,proto3" json:"time_on,omitempty"`
-	// 关灯时间hh*60+mm，5368表示经纬度关灯
+	// 关灯时间hh*60+mm，5368表示经纬度关灯，1500删除
 	TimeOff int32 `protobuf:"varint,2,opt,name=time_off,json=timeOff,proto3" json:"time_off,omitempty"`
 }
 
@@ -1739,7 +1685,7 @@ func (m *Afn04_P0_F42_Current_Setting) GetPhase() int32 {
 	return 0
 }
 
-// 周回路控制表,仅支持k1-k8（国标设备不建议使用）
+// 周回路控制表,仅支持k1-k8（国标设备不建议使用）2500清除对应设置
 type Afn04_P0_F46 struct {
 	// 周一设置
 	WeekDay1 *Afn04_P0_F46_Week_Slot `protobuf:"bytes,1,opt,name=week_day1,json=weekDay1,proto3" json:"week_day1,omitempty"`
@@ -2096,7 +2042,7 @@ func (m *Afn04_P0_F50) GetReportTimer() int32 {
 	return 0
 }
 
-// 设置模拟量上下限
+// 设置模拟量上下限（有问题，待定）
 type Afn04_P0_F51 struct {
 	// 电压下限(设备居然用bcd。。。)
 	VoltageLowerLimit float64 `protobuf:"fixed64,1,opt,name=voltage_lower_limit,json=voltageLowerLimit,proto3" json:"voltage_lower_limit,omitempty"`
@@ -2426,11 +2372,11 @@ func (m *Afn04_P0_F53) GetTimeTick() int32 {
 	return 0
 }
 
-// 停运/投运（看不懂）
+// 停运/投运
 type Afn04_P0_F57 struct {
 	// 设备停运标识，0-停运，1-投运
 	RuntimeMark int32 `protobuf:"varint,1,opt,name=runtime_mark,json=runtimeMark,proto3" json:"runtime_mark,omitempty"`
-	// 回路停运标识,48个，0-停运，1-投运
+	// 回路停运标识,48个，0-停运，1-投运（没用，不用填）
 	LoopMark []int32 `protobuf:"varint,2,rep,packed,name=loop_mark,json=loopMark,proto3" json:"loop_mark,omitempty"`
 }
 
@@ -2481,144 +2427,6 @@ func (m *Afn04_P0_F57) GetLoopMark() []int32 {
 	return nil
 }
 
-// 电流回路矢量
-type Afn04_P0_F65 struct {
-	// 回路矢量，启用多少回路填多少个，不能跳回路
-	LoopVector []int32 `protobuf:"varint,1,rep,packed,name=loop_vector,json=loopVector,proto3" json:"loop_vector,omitempty"`
-}
-
-func (m *Afn04_P0_F65) Reset()         { *m = Afn04_P0_F65{} }
-func (m *Afn04_P0_F65) String() string { return proto.CompactTextString(m) }
-func (*Afn04_P0_F65) ProtoMessage()    {}
-func (*Afn04_P0_F65) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7c797d1dfec7a224, []int{21}
-}
-func (m *Afn04_P0_F65) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
-func (m *Afn04_P0_F65) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_Afn04_P0_F65.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
-}
-func (m *Afn04_P0_F65) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Afn04_P0_F65.Merge(m, src)
-}
-func (m *Afn04_P0_F65) XXX_Size() int {
-	return m.Size()
-}
-func (m *Afn04_P0_F65) XXX_DiscardUnknown() {
-	xxx_messageInfo_Afn04_P0_F65.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_Afn04_P0_F65 proto.InternalMessageInfo
-
-func (m *Afn04_P0_F65) GetLoopVector() []int32 {
-	if m != nil {
-		return m.LoopVector
-	}
-	return nil
-}
-
-// 开关量输入矢量
-type Afn04_P0_F66 struct {
-	// 开关量输入矢量，启用多少回路填多少个，不能跳回路
-	SwitchinVector []int32 `protobuf:"varint,1,rep,packed,name=switchin_vector,json=switchinVector,proto3" json:"switchin_vector,omitempty"`
-}
-
-func (m *Afn04_P0_F66) Reset()         { *m = Afn04_P0_F66{} }
-func (m *Afn04_P0_F66) String() string { return proto.CompactTextString(m) }
-func (*Afn04_P0_F66) ProtoMessage()    {}
-func (*Afn04_P0_F66) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7c797d1dfec7a224, []int{22}
-}
-func (m *Afn04_P0_F66) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
-func (m *Afn04_P0_F66) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_Afn04_P0_F66.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
-}
-func (m *Afn04_P0_F66) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Afn04_P0_F66.Merge(m, src)
-}
-func (m *Afn04_P0_F66) XXX_Size() int {
-	return m.Size()
-}
-func (m *Afn04_P0_F66) XXX_DiscardUnknown() {
-	xxx_messageInfo_Afn04_P0_F66.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_Afn04_P0_F66 proto.InternalMessageInfo
-
-func (m *Afn04_P0_F66) GetSwitchinVector() []int32 {
-	if m != nil {
-		return m.SwitchinVector
-	}
-	return nil
-}
-
-// 开关量输出矢量
-type Afn04_P0_F67 struct {
-	// 开关量输出矢量，启用多少回路填多少个，不能跳回路
-	SwitchoutVector []int32 `protobuf:"varint,1,rep,packed,name=switchout_vector,json=switchoutVector,proto3" json:"switchout_vector,omitempty"`
-}
-
-func (m *Afn04_P0_F67) Reset()         { *m = Afn04_P0_F67{} }
-func (m *Afn04_P0_F67) String() string { return proto.CompactTextString(m) }
-func (*Afn04_P0_F67) ProtoMessage()    {}
-func (*Afn04_P0_F67) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7c797d1dfec7a224, []int{23}
-}
-func (m *Afn04_P0_F67) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
-func (m *Afn04_P0_F67) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_Afn04_P0_F67.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
-}
-func (m *Afn04_P0_F67) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Afn04_P0_F67.Merge(m, src)
-}
-func (m *Afn04_P0_F67) XXX_Size() int {
-	return m.Size()
-}
-func (m *Afn04_P0_F67) XXX_DiscardUnknown() {
-	xxx_messageInfo_Afn04_P0_F67.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_Afn04_P0_F67 proto.InternalMessageInfo
-
-func (m *Afn04_P0_F67) GetSwitchoutVector() []int32 {
-	if m != nil {
-		return m.SwitchoutVector
-	}
-	return nil
-}
-
 // 控制命令
 // 允许合闸/跳闸
 type Afn05_P0_F1 struct {
@@ -2628,7 +2436,7 @@ func (m *Afn05_P0_F1) Reset()         { *m = Afn05_P0_F1{} }
 func (m *Afn05_P0_F1) String() string { return proto.CompactTextString(m) }
 func (*Afn05_P0_F1) ProtoMessage()    {}
 func (*Afn05_P0_F1) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7c797d1dfec7a224, []int{24}
+	return fileDescriptor_7c797d1dfec7a224, []int{21}
 }
 func (m *Afn05_P0_F1) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -2671,7 +2479,7 @@ func (m *Afn05_P0_F1_Switchout_Ctrl) Reset()         { *m = Afn05_P0_F1_Switchou
 func (m *Afn05_P0_F1_Switchout_Ctrl) String() string { return proto.CompactTextString(m) }
 func (*Afn05_P0_F1_Switchout_Ctrl) ProtoMessage()    {}
 func (*Afn05_P0_F1_Switchout_Ctrl) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7c797d1dfec7a224, []int{24, 0}
+	return fileDescriptor_7c797d1dfec7a224, []int{21, 0}
 }
 func (m *Afn05_P0_F1_Switchout_Ctrl) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -2731,7 +2539,7 @@ func (m *Afn05_P0_F9) Reset()         { *m = Afn05_P0_F9{} }
 func (m *Afn05_P0_F9) String() string { return proto.CompactTextString(m) }
 func (*Afn05_P0_F9) ProtoMessage()    {}
 func (*Afn05_P0_F9) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7c797d1dfec7a224, []int{25}
+	return fileDescriptor_7c797d1dfec7a224, []int{22}
 }
 func (m *Afn05_P0_F9) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -2777,7 +2585,7 @@ func (m *Afn05_P0_F31) Reset()         { *m = Afn05_P0_F31{} }
 func (m *Afn05_P0_F31) String() string { return proto.CompactTextString(m) }
 func (*Afn05_P0_F31) ProtoMessage()    {}
 func (*Afn05_P0_F31) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7c797d1dfec7a224, []int{26}
+	return fileDescriptor_7c797d1dfec7a224, []int{23}
 }
 func (m *Afn05_P0_F31) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -2844,7 +2652,7 @@ func (m *Afn09_P0_F1) Reset()         { *m = Afn09_P0_F1{} }
 func (m *Afn09_P0_F1) String() string { return proto.CompactTextString(m) }
 func (*Afn09_P0_F1) ProtoMessage()    {}
 func (*Afn09_P0_F1) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7c797d1dfec7a224, []int{27}
+	return fileDescriptor_7c797d1dfec7a224, []int{24}
 }
 func (m *Afn09_P0_F1) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -2950,727 +2758,28 @@ func (m *Afn09_P0_F1) GetLocalComDate() string {
 	return ""
 }
 
-// 查询参数
-// 终端上行通信口通信参数设置
-type Afn0A_P0_F1 struct {
-}
-
-func (m *Afn0A_P0_F1) Reset()         { *m = Afn0A_P0_F1{} }
-func (m *Afn0A_P0_F1) String() string { return proto.CompactTextString(m) }
-func (*Afn0A_P0_F1) ProtoMessage()    {}
-func (*Afn0A_P0_F1) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7c797d1dfec7a224, []int{28}
-}
-func (m *Afn0A_P0_F1) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
-func (m *Afn0A_P0_F1) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_Afn0A_P0_F1.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
-}
-func (m *Afn0A_P0_F1) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Afn0A_P0_F1.Merge(m, src)
-}
-func (m *Afn0A_P0_F1) XXX_Size() int {
-	return m.Size()
-}
-func (m *Afn0A_P0_F1) XXX_DiscardUnknown() {
-	xxx_messageInfo_Afn0A_P0_F1.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_Afn0A_P0_F1 proto.InternalMessageInfo
-
-// 主站 IP 地址  和端口
-type Afn0A_P0_F3 struct {
-}
-
-func (m *Afn0A_P0_F3) Reset()         { *m = Afn0A_P0_F3{} }
-func (m *Afn0A_P0_F3) String() string { return proto.CompactTextString(m) }
-func (*Afn0A_P0_F3) ProtoMessage()    {}
-func (*Afn0A_P0_F3) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7c797d1dfec7a224, []int{29}
-}
-func (m *Afn0A_P0_F3) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
-func (m *Afn0A_P0_F3) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_Afn0A_P0_F3.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
-}
-func (m *Afn0A_P0_F3) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Afn0A_P0_F3.Merge(m, src)
-}
-func (m *Afn0A_P0_F3) XXX_Size() int {
-	return m.Size()
-}
-func (m *Afn0A_P0_F3) XXX_DiscardUnknown() {
-	xxx_messageInfo_Afn0A_P0_F3.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_Afn0A_P0_F3 proto.InternalMessageInfo
-
-// 终端事件记录配置设置
-type Afn0A_P0_F9 struct {
-}
-
-func (m *Afn0A_P0_F9) Reset()         { *m = Afn0A_P0_F9{} }
-func (m *Afn0A_P0_F9) String() string { return proto.CompactTextString(m) }
-func (*Afn0A_P0_F9) ProtoMessage()    {}
-func (*Afn0A_P0_F9) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7c797d1dfec7a224, []int{30}
-}
-func (m *Afn0A_P0_F9) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
-func (m *Afn0A_P0_F9) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_Afn0A_P0_F9.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
-}
-func (m *Afn0A_P0_F9) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Afn0A_P0_F9.Merge(m, src)
-}
-func (m *Afn0A_P0_F9) XXX_Size() int {
-	return m.Size()
-}
-func (m *Afn0A_P0_F9) XXX_DiscardUnknown() {
-	xxx_messageInfo_Afn0A_P0_F9.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_Afn0A_P0_F9 proto.InternalMessageInfo
-
-// 终端上行通信口通信参数设置
-type Afn0A_P0_F10 struct {
-}
-
-func (m *Afn0A_P0_F10) Reset()         { *m = Afn0A_P0_F10{} }
-func (m *Afn0A_P0_F10) String() string { return proto.CompactTextString(m) }
-func (*Afn0A_P0_F10) ProtoMessage()    {}
-func (*Afn0A_P0_F10) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7c797d1dfec7a224, []int{31}
-}
-func (m *Afn0A_P0_F10) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
-func (m *Afn0A_P0_F10) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_Afn0A_P0_F10.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
-}
-func (m *Afn0A_P0_F10) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Afn0A_P0_F10.Merge(m, src)
-}
-func (m *Afn0A_P0_F10) XXX_Size() int {
-	return m.Size()
-}
-func (m *Afn0A_P0_F10) XXX_DiscardUnknown() {
-	xxx_messageInfo_Afn0A_P0_F10.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_Afn0A_P0_F10 proto.InternalMessageInfo
-
-// GPS 地理位置信息
-type Afn0A_P0_F11 struct {
-}
-
-func (m *Afn0A_P0_F11) Reset()         { *m = Afn0A_P0_F11{} }
-func (m *Afn0A_P0_F11) String() string { return proto.CompactTextString(m) }
-func (*Afn0A_P0_F11) ProtoMessage()    {}
-func (*Afn0A_P0_F11) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7c797d1dfec7a224, []int{32}
-}
-func (m *Afn0A_P0_F11) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
-func (m *Afn0A_P0_F11) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_Afn0A_P0_F11.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
-}
-func (m *Afn0A_P0_F11) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Afn0A_P0_F11.Merge(m, src)
-}
-func (m *Afn0A_P0_F11) XXX_Size() int {
-	return m.Size()
-}
-func (m *Afn0A_P0_F11) XXX_DiscardUnknown() {
-	xxx_messageInfo_Afn0A_P0_F11.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_Afn0A_P0_F11 proto.InternalMessageInfo
-
-// 扩展设备配置参数
-type Afn0A_Pn_F14 struct {
-}
-
-func (m *Afn0A_Pn_F14) Reset()         { *m = Afn0A_Pn_F14{} }
-func (m *Afn0A_Pn_F14) String() string { return proto.CompactTextString(m) }
-func (*Afn0A_Pn_F14) ProtoMessage()    {}
-func (*Afn0A_Pn_F14) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7c797d1dfec7a224, []int{33}
-}
-func (m *Afn0A_Pn_F14) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
-func (m *Afn0A_Pn_F14) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_Afn0A_Pn_F14.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
-}
-func (m *Afn0A_Pn_F14) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Afn0A_Pn_F14.Merge(m, src)
-}
-func (m *Afn0A_Pn_F14) XXX_Size() int {
-	return m.Size()
-}
-func (m *Afn0A_Pn_F14) XXX_DiscardUnknown() {
-	xxx_messageInfo_Afn0A_Pn_F14.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_Afn0A_Pn_F14 proto.InternalMessageInfo
-
-// 继电器输出控制方案
-type Afn0A_Pn_F15 struct {
-}
-
-func (m *Afn0A_Pn_F15) Reset()         { *m = Afn0A_Pn_F15{} }
-func (m *Afn0A_Pn_F15) String() string { return proto.CompactTextString(m) }
-func (*Afn0A_Pn_F15) ProtoMessage()    {}
-func (*Afn0A_Pn_F15) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7c797d1dfec7a224, []int{34}
-}
-func (m *Afn0A_Pn_F15) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
-func (m *Afn0A_Pn_F15) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_Afn0A_Pn_F15.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
-}
-func (m *Afn0A_Pn_F15) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Afn0A_Pn_F15.Merge(m, src)
-}
-func (m *Afn0A_Pn_F15) XXX_Size() int {
-	return m.Size()
-}
-func (m *Afn0A_Pn_F15) XXX_DiscardUnknown() {
-	xxx_messageInfo_Afn0A_Pn_F15.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_Afn0A_Pn_F15 proto.InternalMessageInfo
-
-// 开关量输出参数关联
-type Afn0A_P0_F41 struct {
-}
-
-func (m *Afn0A_P0_F41) Reset()         { *m = Afn0A_P0_F41{} }
-func (m *Afn0A_P0_F41) String() string { return proto.CompactTextString(m) }
-func (*Afn0A_P0_F41) ProtoMessage()    {}
-func (*Afn0A_P0_F41) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7c797d1dfec7a224, []int{35}
-}
-func (m *Afn0A_P0_F41) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
-func (m *Afn0A_P0_F41) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_Afn0A_P0_F41.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
-}
-func (m *Afn0A_P0_F41) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Afn0A_P0_F41.Merge(m, src)
-}
-func (m *Afn0A_P0_F41) XXX_Size() int {
-	return m.Size()
-}
-func (m *Afn0A_P0_F41) XXX_DiscardUnknown() {
-	xxx_messageInfo_Afn0A_P0_F41.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_Afn0A_P0_F41 proto.InternalMessageInfo
-
-// 模拟量采集参数关联
-type Afn0A_P0_F42 struct {
-}
-
-func (m *Afn0A_P0_F42) Reset()         { *m = Afn0A_P0_F42{} }
-func (m *Afn0A_P0_F42) String() string { return proto.CompactTextString(m) }
-func (*Afn0A_P0_F42) ProtoMessage()    {}
-func (*Afn0A_P0_F42) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7c797d1dfec7a224, []int{36}
-}
-func (m *Afn0A_P0_F42) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
-func (m *Afn0A_P0_F42) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_Afn0A_P0_F42.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
-}
-func (m *Afn0A_P0_F42) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Afn0A_P0_F42.Merge(m, src)
-}
-func (m *Afn0A_P0_F42) XXX_Size() int {
-	return m.Size()
-}
-func (m *Afn0A_P0_F42) XXX_DiscardUnknown() {
-	xxx_messageInfo_Afn0A_P0_F42.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_Afn0A_P0_F42 proto.InternalMessageInfo
-
-// 周回路控制表
-type Afn0A_P0_F46 struct {
-}
-
-func (m *Afn0A_P0_F46) Reset()         { *m = Afn0A_P0_F46{} }
-func (m *Afn0A_P0_F46) String() string { return proto.CompactTextString(m) }
-func (*Afn0A_P0_F46) ProtoMessage()    {}
-func (*Afn0A_P0_F46) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7c797d1dfec7a224, []int{37}
-}
-func (m *Afn0A_P0_F46) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
-func (m *Afn0A_P0_F46) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_Afn0A_P0_F46.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
-}
-func (m *Afn0A_P0_F46) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Afn0A_P0_F46.Merge(m, src)
-}
-func (m *Afn0A_P0_F46) XXX_Size() int {
-	return m.Size()
-}
-func (m *Afn0A_P0_F46) XXX_DiscardUnknown() {
-	xxx_messageInfo_Afn0A_P0_F46.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_Afn0A_P0_F46 proto.InternalMessageInfo
-
-// 经纬度开关灯偏移
-type Afn0A_P0_F49 struct {
-}
-
-func (m *Afn0A_P0_F49) Reset()         { *m = Afn0A_P0_F49{} }
-func (m *Afn0A_P0_F49) String() string { return proto.CompactTextString(m) }
-func (*Afn0A_P0_F49) ProtoMessage()    {}
-func (*Afn0A_P0_F49) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7c797d1dfec7a224, []int{38}
-}
-func (m *Afn0A_P0_F49) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
-func (m *Afn0A_P0_F49) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_Afn0A_P0_F49.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
-}
-func (m *Afn0A_P0_F49) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Afn0A_P0_F49.Merge(m, src)
-}
-func (m *Afn0A_P0_F49) XXX_Size() int {
-	return m.Size()
-}
-func (m *Afn0A_P0_F49) XXX_DiscardUnknown() {
-	xxx_messageInfo_Afn0A_P0_F49.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_Afn0A_P0_F49 proto.InternalMessageInfo
-
-// 查询全数据上送周期
-type Afn0A_P0_F50 struct {
-}
-
-func (m *Afn0A_P0_F50) Reset()         { *m = Afn0A_P0_F50{} }
-func (m *Afn0A_P0_F50) String() string { return proto.CompactTextString(m) }
-func (*Afn0A_P0_F50) ProtoMessage()    {}
-func (*Afn0A_P0_F50) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7c797d1dfec7a224, []int{39}
-}
-func (m *Afn0A_P0_F50) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
-func (m *Afn0A_P0_F50) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_Afn0A_P0_F50.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
-}
-func (m *Afn0A_P0_F50) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Afn0A_P0_F50.Merge(m, src)
-}
-func (m *Afn0A_P0_F50) XXX_Size() int {
-	return m.Size()
-}
-func (m *Afn0A_P0_F50) XXX_DiscardUnknown() {
-	xxx_messageInfo_Afn0A_P0_F50.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_Afn0A_P0_F50 proto.InternalMessageInfo
-
-// 查询模拟量上下限
-type Afn0A_P0_F51 struct {
-}
-
-func (m *Afn0A_P0_F51) Reset()         { *m = Afn0A_P0_F51{} }
-func (m *Afn0A_P0_F51) String() string { return proto.CompactTextString(m) }
-func (*Afn0A_P0_F51) ProtoMessage()    {}
-func (*Afn0A_P0_F51) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7c797d1dfec7a224, []int{40}
-}
-func (m *Afn0A_P0_F51) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
-func (m *Afn0A_P0_F51) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_Afn0A_P0_F51.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
-}
-func (m *Afn0A_P0_F51) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Afn0A_P0_F51.Merge(m, src)
-}
-func (m *Afn0A_P0_F51) XXX_Size() int {
-	return m.Size()
-}
-func (m *Afn0A_P0_F51) XXX_DiscardUnknown() {
-	xxx_messageInfo_Afn0A_P0_F51.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_Afn0A_P0_F51 proto.InternalMessageInfo
-
-// 查询漏电保护参数
-type Afn0A_P0_F52 struct {
-}
-
-func (m *Afn0A_P0_F52) Reset()         { *m = Afn0A_P0_F52{} }
-func (m *Afn0A_P0_F52) String() string { return proto.CompactTextString(m) }
-func (*Afn0A_P0_F52) ProtoMessage()    {}
-func (*Afn0A_P0_F52) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7c797d1dfec7a224, []int{41}
-}
-func (m *Afn0A_P0_F52) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
-func (m *Afn0A_P0_F52) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_Afn0A_P0_F52.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
-}
-func (m *Afn0A_P0_F52) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Afn0A_P0_F52.Merge(m, src)
-}
-func (m *Afn0A_P0_F52) XXX_Size() int {
-	return m.Size()
-}
-func (m *Afn0A_P0_F52) XXX_DiscardUnknown() {
-	xxx_messageInfo_Afn0A_P0_F52.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_Afn0A_P0_F52 proto.InternalMessageInfo
-
-// 查询光照度限值 参数
-type Afn0A_P0_F53 struct {
-}
-
-func (m *Afn0A_P0_F53) Reset()         { *m = Afn0A_P0_F53{} }
-func (m *Afn0A_P0_F53) String() string { return proto.CompactTextString(m) }
-func (*Afn0A_P0_F53) ProtoMessage()    {}
-func (*Afn0A_P0_F53) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7c797d1dfec7a224, []int{42}
-}
-func (m *Afn0A_P0_F53) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
-func (m *Afn0A_P0_F53) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_Afn0A_P0_F53.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
-}
-func (m *Afn0A_P0_F53) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Afn0A_P0_F53.Merge(m, src)
-}
-func (m *Afn0A_P0_F53) XXX_Size() int {
-	return m.Size()
-}
-func (m *Afn0A_P0_F53) XXX_DiscardUnknown() {
-	xxx_messageInfo_Afn0A_P0_F53.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_Afn0A_P0_F53 proto.InternalMessageInfo
-
-// 停运/投运
-type Afn0A_P0_F57 struct {
-}
-
-func (m *Afn0A_P0_F57) Reset()         { *m = Afn0A_P0_F57{} }
-func (m *Afn0A_P0_F57) String() string { return proto.CompactTextString(m) }
-func (*Afn0A_P0_F57) ProtoMessage()    {}
-func (*Afn0A_P0_F57) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7c797d1dfec7a224, []int{43}
-}
-func (m *Afn0A_P0_F57) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
-func (m *Afn0A_P0_F57) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_Afn0A_P0_F57.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
-}
-func (m *Afn0A_P0_F57) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Afn0A_P0_F57.Merge(m, src)
-}
-func (m *Afn0A_P0_F57) XXX_Size() int {
-	return m.Size()
-}
-func (m *Afn0A_P0_F57) XXX_DiscardUnknown() {
-	xxx_messageInfo_Afn0A_P0_F57.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_Afn0A_P0_F57 proto.InternalMessageInfo
-
-// 电流回路矢量
-type Afn0A_P0_F65 struct {
-}
-
-func (m *Afn0A_P0_F65) Reset()         { *m = Afn0A_P0_F65{} }
-func (m *Afn0A_P0_F65) String() string { return proto.CompactTextString(m) }
-func (*Afn0A_P0_F65) ProtoMessage()    {}
-func (*Afn0A_P0_F65) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7c797d1dfec7a224, []int{44}
-}
-func (m *Afn0A_P0_F65) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
-func (m *Afn0A_P0_F65) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_Afn0A_P0_F65.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
-}
-func (m *Afn0A_P0_F65) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Afn0A_P0_F65.Merge(m, src)
-}
-func (m *Afn0A_P0_F65) XXX_Size() int {
-	return m.Size()
-}
-func (m *Afn0A_P0_F65) XXX_DiscardUnknown() {
-	xxx_messageInfo_Afn0A_P0_F65.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_Afn0A_P0_F65 proto.InternalMessageInfo
-
-// 开关量输入矢量
-type Afn0A_P0_F66 struct {
-}
-
-func (m *Afn0A_P0_F66) Reset()         { *m = Afn0A_P0_F66{} }
-func (m *Afn0A_P0_F66) String() string { return proto.CompactTextString(m) }
-func (*Afn0A_P0_F66) ProtoMessage()    {}
-func (*Afn0A_P0_F66) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7c797d1dfec7a224, []int{45}
-}
-func (m *Afn0A_P0_F66) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
-func (m *Afn0A_P0_F66) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_Afn0A_P0_F66.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
-}
-func (m *Afn0A_P0_F66) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Afn0A_P0_F66.Merge(m, src)
-}
-func (m *Afn0A_P0_F66) XXX_Size() int {
-	return m.Size()
-}
-func (m *Afn0A_P0_F66) XXX_DiscardUnknown() {
-	xxx_messageInfo_Afn0A_P0_F66.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_Afn0A_P0_F66 proto.InternalMessageInfo
-
-// 开关量输出矢量
-type Afn0A_P0_F67 struct {
-}
-
-func (m *Afn0A_P0_F67) Reset()         { *m = Afn0A_P0_F67{} }
-func (m *Afn0A_P0_F67) String() string { return proto.CompactTextString(m) }
-func (*Afn0A_P0_F67) ProtoMessage()    {}
-func (*Afn0A_P0_F67) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7c797d1dfec7a224, []int{46}
-}
-func (m *Afn0A_P0_F67) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
-func (m *Afn0A_P0_F67) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_Afn0A_P0_F67.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
-}
-func (m *Afn0A_P0_F67) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Afn0A_P0_F67.Merge(m, src)
-}
-func (m *Afn0A_P0_F67) XXX_Size() int {
-	return m.Size()
-}
-func (m *Afn0A_P0_F67) XXX_DiscardUnknown() {
-	xxx_messageInfo_Afn0A_P0_F67.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_Afn0A_P0_F67 proto.InternalMessageInfo
-
-// 请求实时数据
+// 请求实时数据，下行无数据单元
 // 出线模拟量数据(全数据)(报警主报)
-type Afn0C_P0_F1 struct {
+// pn: n是模拟量回路序号，1-48,0xffff表示所有回路
+type Afn0C_Pn_F1 struct {
+	// 主报时间
+	DtReport int64 `protobuf:"varint,1,opt,name=dt_report,json=dtReport,proto3" json:"dt_report,omitempty"`
+	// 回路数据，几个回路就几个数据
+	LoopData []*Afn0C_Pn_F1_Loop_Data `protobuf:"bytes,2,rep,name=loop_data,json=loopData,proto3" json:"loop_data,omitempty"`
 }
 
-func (m *Afn0C_P0_F1) Reset()         { *m = Afn0C_P0_F1{} }
-func (m *Afn0C_P0_F1) String() string { return proto.CompactTextString(m) }
-func (*Afn0C_P0_F1) ProtoMessage()    {}
-func (*Afn0C_P0_F1) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7c797d1dfec7a224, []int{47}
+func (m *Afn0C_Pn_F1) Reset()         { *m = Afn0C_Pn_F1{} }
+func (m *Afn0C_Pn_F1) String() string { return proto.CompactTextString(m) }
+func (*Afn0C_Pn_F1) ProtoMessage()    {}
+func (*Afn0C_Pn_F1) Descriptor() ([]byte, []int) {
+	return fileDescriptor_7c797d1dfec7a224, []int{25}
 }
-func (m *Afn0C_P0_F1) XXX_Unmarshal(b []byte) error {
+func (m *Afn0C_Pn_F1) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-func (m *Afn0C_P0_F1) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+func (m *Afn0C_Pn_F1) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	if deterministic {
-		return xxx_messageInfo_Afn0C_P0_F1.Marshal(b, m, deterministic)
+		return xxx_messageInfo_Afn0C_Pn_F1.Marshal(b, m, deterministic)
 	} else {
 		b = b[:cap(b)]
 		n, err := m.MarshalToSizedBuffer(b)
@@ -3680,27 +2789,142 @@ func (m *Afn0C_P0_F1) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) 
 		return b[:n], nil
 	}
 }
-func (m *Afn0C_P0_F1) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Afn0C_P0_F1.Merge(m, src)
+func (m *Afn0C_Pn_F1) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Afn0C_Pn_F1.Merge(m, src)
 }
-func (m *Afn0C_P0_F1) XXX_Size() int {
+func (m *Afn0C_Pn_F1) XXX_Size() int {
 	return m.Size()
 }
-func (m *Afn0C_P0_F1) XXX_DiscardUnknown() {
-	xxx_messageInfo_Afn0C_P0_F1.DiscardUnknown(m)
+func (m *Afn0C_Pn_F1) XXX_DiscardUnknown() {
+	xxx_messageInfo_Afn0C_Pn_F1.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_Afn0C_P0_F1 proto.InternalMessageInfo
+var xxx_messageInfo_Afn0C_Pn_F1 proto.InternalMessageInfo
+
+func (m *Afn0C_Pn_F1) GetDtReport() int64 {
+	if m != nil {
+		return m.DtReport
+	}
+	return 0
+}
+
+func (m *Afn0C_Pn_F1) GetLoopData() []*Afn0C_Pn_F1_Loop_Data {
+	if m != nil {
+		return m.LoopData
+	}
+	return nil
+}
+
+type Afn0C_Pn_F1_Loop_Data struct {
+	// 电压
+	Voltage float64 `protobuf:"fixed64,1,opt,name=voltage,proto3" json:"voltage,omitempty"`
+	// 电流
+	Current float64 `protobuf:"fixed64,2,opt,name=current,proto3" json:"current,omitempty"`
+	// 有功功率
+	ActivePower float64 `protobuf:"fixed64,3,opt,name=active_power,json=activePower,proto3" json:"active_power,omitempty"`
+	// 无功功率
+	ReactivePower float64 `protobuf:"fixed64,4,opt,name=reactive_power,json=reactivePower,proto3" json:"reactive_power,omitempty"`
+	// 功率因数
+	PowerFactor float64 `protobuf:"fixed64,5,opt,name=power_factor,json=powerFactor,proto3" json:"power_factor,omitempty"`
+	// 光控值？？？
+	LuxValue float64 `protobuf:"fixed64,6,opt,name=lux_value,json=luxValue,proto3" json:"lux_value,omitempty"`
+	// 其他模拟量（没这玩意）
+	Other float64 `protobuf:"fixed64,7,opt,name=other,proto3" json:"other,omitempty"`
+}
+
+func (m *Afn0C_Pn_F1_Loop_Data) Reset()         { *m = Afn0C_Pn_F1_Loop_Data{} }
+func (m *Afn0C_Pn_F1_Loop_Data) String() string { return proto.CompactTextString(m) }
+func (*Afn0C_Pn_F1_Loop_Data) ProtoMessage()    {}
+func (*Afn0C_Pn_F1_Loop_Data) Descriptor() ([]byte, []int) {
+	return fileDescriptor_7c797d1dfec7a224, []int{25, 0}
+}
+func (m *Afn0C_Pn_F1_Loop_Data) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *Afn0C_Pn_F1_Loop_Data) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_Afn0C_Pn_F1_Loop_Data.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *Afn0C_Pn_F1_Loop_Data) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Afn0C_Pn_F1_Loop_Data.Merge(m, src)
+}
+func (m *Afn0C_Pn_F1_Loop_Data) XXX_Size() int {
+	return m.Size()
+}
+func (m *Afn0C_Pn_F1_Loop_Data) XXX_DiscardUnknown() {
+	xxx_messageInfo_Afn0C_Pn_F1_Loop_Data.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_Afn0C_Pn_F1_Loop_Data proto.InternalMessageInfo
+
+func (m *Afn0C_Pn_F1_Loop_Data) GetVoltage() float64 {
+	if m != nil {
+		return m.Voltage
+	}
+	return 0
+}
+
+func (m *Afn0C_Pn_F1_Loop_Data) GetCurrent() float64 {
+	if m != nil {
+		return m.Current
+	}
+	return 0
+}
+
+func (m *Afn0C_Pn_F1_Loop_Data) GetActivePower() float64 {
+	if m != nil {
+		return m.ActivePower
+	}
+	return 0
+}
+
+func (m *Afn0C_Pn_F1_Loop_Data) GetReactivePower() float64 {
+	if m != nil {
+		return m.ReactivePower
+	}
+	return 0
+}
+
+func (m *Afn0C_Pn_F1_Loop_Data) GetPowerFactor() float64 {
+	if m != nil {
+		return m.PowerFactor
+	}
+	return 0
+}
+
+func (m *Afn0C_Pn_F1_Loop_Data) GetLuxValue() float64 {
+	if m != nil {
+		return m.LuxValue
+	}
+	return 0
+}
+
+func (m *Afn0C_Pn_F1_Loop_Data) GetOther() float64 {
+	if m != nil {
+		return m.Other
+	}
+	return 0
+}
 
 // 终端日历时钟
 type Afn0C_P0_F2 struct {
+	// 设备时钟，unix时间戳
+	TimeUnix int64 `protobuf:"varint,1,opt,name=time_unix,json=timeUnix,proto3" json:"time_unix,omitempty"`
 }
 
 func (m *Afn0C_P0_F2) Reset()         { *m = Afn0C_P0_F2{} }
 func (m *Afn0C_P0_F2) String() string { return proto.CompactTextString(m) }
 func (*Afn0C_P0_F2) ProtoMessage()    {}
 func (*Afn0C_P0_F2) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7c797d1dfec7a224, []int{48}
+	return fileDescriptor_7c797d1dfec7a224, []int{26}
 }
 func (m *Afn0C_P0_F2) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -3729,15 +2953,26 @@ func (m *Afn0C_P0_F2) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_Afn0C_P0_F2 proto.InternalMessageInfo
 
+func (m *Afn0C_P0_F2) GetTimeUnix() int64 {
+	if m != nil {
+		return m.TimeUnix
+	}
+	return 0
+}
+
 // 进线模拟量数据(全数据)(报警主报)
 type Afn0C_P0_F3 struct {
+	// 三相数据，依次ABC三相数据
+	PhaseData []*Afn0C_P0_F3_Phase_Data `protobuf:"bytes,1,rep,name=phase_data,json=phaseData,proto3" json:"phase_data,omitempty"`
+	// 频率
+	Frequency float64 `protobuf:"fixed64,2,opt,name=frequency,proto3" json:"frequency,omitempty"`
 }
 
 func (m *Afn0C_P0_F3) Reset()         { *m = Afn0C_P0_F3{} }
 func (m *Afn0C_P0_F3) String() string { return proto.CompactTextString(m) }
 func (*Afn0C_P0_F3) ProtoMessage()    {}
 func (*Afn0C_P0_F3) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7c797d1dfec7a224, []int{49}
+	return fileDescriptor_7c797d1dfec7a224, []int{27}
 }
 func (m *Afn0C_P0_F3) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -3766,15 +3001,130 @@ func (m *Afn0C_P0_F3) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_Afn0C_P0_F3 proto.InternalMessageInfo
 
+func (m *Afn0C_P0_F3) GetPhaseData() []*Afn0C_P0_F3_Phase_Data {
+	if m != nil {
+		return m.PhaseData
+	}
+	return nil
+}
+
+func (m *Afn0C_P0_F3) GetFrequency() float64 {
+	if m != nil {
+		return m.Frequency
+	}
+	return 0
+}
+
+type Afn0C_P0_F3_Phase_Data struct {
+	// 电压
+	Voltage float64 `protobuf:"fixed64,1,opt,name=voltage,proto3" json:"voltage,omitempty"`
+	// 电流
+	Current float64 `protobuf:"fixed64,2,opt,name=current,proto3" json:"current,omitempty"`
+	// 有功功率
+	ActivePower float64 `protobuf:"fixed64,3,opt,name=active_power,json=activePower,proto3" json:"active_power,omitempty"`
+	// 无功功率
+	ReactivePower float64 `protobuf:"fixed64,4,opt,name=reactive_power,json=reactivePower,proto3" json:"reactive_power,omitempty"`
+	// 功率因数
+	PowerFactor float64 `protobuf:"fixed64,5,opt,name=power_factor,json=powerFactor,proto3" json:"power_factor,omitempty"`
+	// 有功电能
+	ActiveEnergy float64 `protobuf:"fixed64,6,opt,name=active_energy,json=activeEnergy,proto3" json:"active_energy,omitempty"`
+	// 无功电能
+	ReactiveEnergy float64 `protobuf:"fixed64,7,opt,name=reactive_energy,json=reactiveEnergy,proto3" json:"reactive_energy,omitempty"`
+}
+
+func (m *Afn0C_P0_F3_Phase_Data) Reset()         { *m = Afn0C_P0_F3_Phase_Data{} }
+func (m *Afn0C_P0_F3_Phase_Data) String() string { return proto.CompactTextString(m) }
+func (*Afn0C_P0_F3_Phase_Data) ProtoMessage()    {}
+func (*Afn0C_P0_F3_Phase_Data) Descriptor() ([]byte, []int) {
+	return fileDescriptor_7c797d1dfec7a224, []int{27, 0}
+}
+func (m *Afn0C_P0_F3_Phase_Data) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *Afn0C_P0_F3_Phase_Data) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_Afn0C_P0_F3_Phase_Data.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *Afn0C_P0_F3_Phase_Data) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Afn0C_P0_F3_Phase_Data.Merge(m, src)
+}
+func (m *Afn0C_P0_F3_Phase_Data) XXX_Size() int {
+	return m.Size()
+}
+func (m *Afn0C_P0_F3_Phase_Data) XXX_DiscardUnknown() {
+	xxx_messageInfo_Afn0C_P0_F3_Phase_Data.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_Afn0C_P0_F3_Phase_Data proto.InternalMessageInfo
+
+func (m *Afn0C_P0_F3_Phase_Data) GetVoltage() float64 {
+	if m != nil {
+		return m.Voltage
+	}
+	return 0
+}
+
+func (m *Afn0C_P0_F3_Phase_Data) GetCurrent() float64 {
+	if m != nil {
+		return m.Current
+	}
+	return 0
+}
+
+func (m *Afn0C_P0_F3_Phase_Data) GetActivePower() float64 {
+	if m != nil {
+		return m.ActivePower
+	}
+	return 0
+}
+
+func (m *Afn0C_P0_F3_Phase_Data) GetReactivePower() float64 {
+	if m != nil {
+		return m.ReactivePower
+	}
+	return 0
+}
+
+func (m *Afn0C_P0_F3_Phase_Data) GetPowerFactor() float64 {
+	if m != nil {
+		return m.PowerFactor
+	}
+	return 0
+}
+
+func (m *Afn0C_P0_F3_Phase_Data) GetActiveEnergy() float64 {
+	if m != nil {
+		return m.ActiveEnergy
+	}
+	return 0
+}
+
+func (m *Afn0C_P0_F3_Phase_Data) GetReactiveEnergy() float64 {
+	if m != nil {
+		return m.ReactiveEnergy
+	}
+	return 0
+}
+
 // 终端上行通信状态
 type Afn0C_P0_F4 struct {
+	// 是否允许主报,0-禁止，1-允许，（设备为1-允许，2-禁止）
+	EnableReport int32 `protobuf:"varint,1,opt,name=enable_report,json=enableReport,proto3" json:"enable_report,omitempty"`
 }
 
 func (m *Afn0C_P0_F4) Reset()         { *m = Afn0C_P0_F4{} }
 func (m *Afn0C_P0_F4) String() string { return proto.CompactTextString(m) }
 func (*Afn0C_P0_F4) ProtoMessage()    {}
 func (*Afn0C_P0_F4) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7c797d1dfec7a224, []int{50}
+	return fileDescriptor_7c797d1dfec7a224, []int{28}
 }
 func (m *Afn0C_P0_F4) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -3803,15 +3153,24 @@ func (m *Afn0C_P0_F4) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_Afn0C_P0_F4 proto.InternalMessageInfo
 
+func (m *Afn0C_P0_F4) GetEnableReport() int32 {
+	if m != nil {
+		return m.EnableReport
+	}
+	return 0
+}
+
 // 终端当前控制状态
 type Afn0C_P0_F6 struct {
+	// 依次k1-k16状态，0-断，1-通（设备为1-断，0-通）
+	SwitchoutStatus []int32 `protobuf:"varint,1,rep,packed,name=switchout_status,json=switchoutStatus,proto3" json:"switchout_status,omitempty"`
 }
 
 func (m *Afn0C_P0_F6) Reset()         { *m = Afn0C_P0_F6{} }
 func (m *Afn0C_P0_F6) String() string { return proto.CompactTextString(m) }
 func (*Afn0C_P0_F6) ProtoMessage()    {}
 func (*Afn0C_P0_F6) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7c797d1dfec7a224, []int{51}
+	return fileDescriptor_7c797d1dfec7a224, []int{29}
 }
 func (m *Afn0C_P0_F6) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -3840,15 +3199,26 @@ func (m *Afn0C_P0_F6) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_Afn0C_P0_F6 proto.InternalMessageInfo
 
+func (m *Afn0C_P0_F6) GetSwitchoutStatus() []int32 {
+	if m != nil {
+		return m.SwitchoutStatus
+	}
+	return nil
+}
+
 // 终端事件计数器当前值
 type Afn0C_P0_F7 struct {
+	// 重要事件计数器
+	Ec1 int32 `protobuf:"varint,1,opt,name=ec1,proto3" json:"ec1,omitempty"`
+	// 一般事件计数器
+	Ec2 int32 `protobuf:"varint,2,opt,name=ec2,proto3" json:"ec2,omitempty"`
 }
 
 func (m *Afn0C_P0_F7) Reset()         { *m = Afn0C_P0_F7{} }
 func (m *Afn0C_P0_F7) String() string { return proto.CompactTextString(m) }
 func (*Afn0C_P0_F7) ProtoMessage()    {}
 func (*Afn0C_P0_F7) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7c797d1dfec7a224, []int{52}
+	return fileDescriptor_7c797d1dfec7a224, []int{30}
 }
 func (m *Afn0C_P0_F7) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -3877,15 +3247,31 @@ func (m *Afn0C_P0_F7) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_Afn0C_P0_F7 proto.InternalMessageInfo
 
+func (m *Afn0C_P0_F7) GetEc1() int32 {
+	if m != nil {
+		return m.Ec1
+	}
+	return 0
+}
+
+func (m *Afn0C_P0_F7) GetEc2() int32 {
+	if m != nil {
+		return m.Ec2
+	}
+	return 0
+}
+
 // 终端状态量及变位标志(全数据)
 type Afn0C_P0_F9 struct {
+	// 回路状态量状态，依次为1-32路
+	LoopStatus []*Afn0C_P0_F9_Loop_Status `protobuf:"bytes,1,rep,name=loop_status,json=loopStatus,proto3" json:"loop_status,omitempty"`
 }
 
 func (m *Afn0C_P0_F9) Reset()         { *m = Afn0C_P0_F9{} }
 func (m *Afn0C_P0_F9) String() string { return proto.CompactTextString(m) }
 func (*Afn0C_P0_F9) ProtoMessage()    {}
 func (*Afn0C_P0_F9) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7c797d1dfec7a224, []int{53}
+	return fileDescriptor_7c797d1dfec7a224, []int{31}
 }
 func (m *Afn0C_P0_F9) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -3914,15 +3300,82 @@ func (m *Afn0C_P0_F9) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_Afn0C_P0_F9 proto.InternalMessageInfo
 
+func (m *Afn0C_P0_F9) GetLoopStatus() []*Afn0C_P0_F9_Loop_Status {
+	if m != nil {
+		return m.LoopStatus
+	}
+	return nil
+}
+
+type Afn0C_P0_F9_Loop_Status struct {
+	// 回路当前状态，0-断，1-通
+	StNow int32 `protobuf:"varint,1,opt,name=st_now,json=stNow,proto3" json:"st_now,omitempty"`
+	// 回路状态自上次读取后，是否变化过，0-未变化，1-有变化
+	StChanged int32 `protobuf:"varint,2,opt,name=st_changed,json=stChanged,proto3" json:"st_changed,omitempty"`
+}
+
+func (m *Afn0C_P0_F9_Loop_Status) Reset()         { *m = Afn0C_P0_F9_Loop_Status{} }
+func (m *Afn0C_P0_F9_Loop_Status) String() string { return proto.CompactTextString(m) }
+func (*Afn0C_P0_F9_Loop_Status) ProtoMessage()    {}
+func (*Afn0C_P0_F9_Loop_Status) Descriptor() ([]byte, []int) {
+	return fileDescriptor_7c797d1dfec7a224, []int{31, 0}
+}
+func (m *Afn0C_P0_F9_Loop_Status) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *Afn0C_P0_F9_Loop_Status) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_Afn0C_P0_F9_Loop_Status.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *Afn0C_P0_F9_Loop_Status) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Afn0C_P0_F9_Loop_Status.Merge(m, src)
+}
+func (m *Afn0C_P0_F9_Loop_Status) XXX_Size() int {
+	return m.Size()
+}
+func (m *Afn0C_P0_F9_Loop_Status) XXX_DiscardUnknown() {
+	xxx_messageInfo_Afn0C_P0_F9_Loop_Status.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_Afn0C_P0_F9_Loop_Status proto.InternalMessageInfo
+
+func (m *Afn0C_P0_F9_Loop_Status) GetStNow() int32 {
+	if m != nil {
+		return m.StNow
+	}
+	return 0
+}
+
+func (m *Afn0C_P0_F9_Loop_Status) GetStChanged() int32 {
+	if m != nil {
+		return m.StChanged
+	}
+	return 0
+}
+
 // 终端回路事件报警状态(全数据)
 type Afn0C_P0_F18 struct {
+	// 回路序号,0xee表示非回路事件
+	LoopNo int32 `protobuf:"varint,1,opt,name=loop_no,json=loopNo,proto3" json:"loop_no,omitempty"`
+	// 回路相位，非回路事件填0xee
+	LoopPhase int32 `protobuf:"varint,2,opt,name=loop_phase,json=loopPhase,proto3" json:"loop_phase,omitempty"`
+	// 事件状态，参考Afn04_P0_F9的事件代码，1-64个事件，0-无事件，1-发生对应事件
+	EventsDo []int32 `protobuf:"varint,3,rep,packed,name=events_do,json=eventsDo,proto3" json:"events_do,omitempty"`
 }
 
 func (m *Afn0C_P0_F18) Reset()         { *m = Afn0C_P0_F18{} }
 func (m *Afn0C_P0_F18) String() string { return proto.CompactTextString(m) }
 func (*Afn0C_P0_F18) ProtoMessage()    {}
 func (*Afn0C_P0_F18) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7c797d1dfec7a224, []int{54}
+	return fileDescriptor_7c797d1dfec7a224, []int{32}
 }
 func (m *Afn0C_P0_F18) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -3951,15 +3404,38 @@ func (m *Afn0C_P0_F18) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_Afn0C_P0_F18 proto.InternalMessageInfo
 
+func (m *Afn0C_P0_F18) GetLoopNo() int32 {
+	if m != nil {
+		return m.LoopNo
+	}
+	return 0
+}
+
+func (m *Afn0C_P0_F18) GetLoopPhase() int32 {
+	if m != nil {
+		return m.LoopPhase
+	}
+	return 0
+}
+
+func (m *Afn0C_P0_F18) GetEventsDo() []int32 {
+	if m != nil {
+		return m.EventsDo
+	}
+	return nil
+}
+
 // 漏电检测数据(全数据)
 type Afn0C_P0_F19 struct {
+	// 一次n个回路漏电流，不跳回路
+	LeakageCurrent []float64 `protobuf:"fixed64,1,rep,packed,name=leakage_current,json=leakageCurrent,proto3" json:"leakage_current,omitempty"`
 }
 
 func (m *Afn0C_P0_F19) Reset()         { *m = Afn0C_P0_F19{} }
 func (m *Afn0C_P0_F19) String() string { return proto.CompactTextString(m) }
 func (*Afn0C_P0_F19) ProtoMessage()    {}
 func (*Afn0C_P0_F19) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7c797d1dfec7a224, []int{55}
+	return fileDescriptor_7c797d1dfec7a224, []int{33}
 }
 func (m *Afn0C_P0_F19) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -3988,15 +3464,26 @@ func (m *Afn0C_P0_F19) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_Afn0C_P0_F19 proto.InternalMessageInfo
 
+func (m *Afn0C_P0_F19) GetLeakageCurrent() []float64 {
+	if m != nil {
+		return m.LeakageCurrent
+	}
+	return nil
+}
+
 // 光照度数据(主报)
 type Afn0C_P0_F20 struct {
+	// 光照度
+	Lux float64 `protobuf:"fixed64,1,opt,name=lux,proto3" json:"lux,omitempty"`
+	// 温度
+	Temperature float64 `protobuf:"fixed64,2,opt,name=temperature,proto3" json:"temperature,omitempty"`
 }
 
 func (m *Afn0C_P0_F20) Reset()         { *m = Afn0C_P0_F20{} }
 func (m *Afn0C_P0_F20) String() string { return proto.CompactTextString(m) }
 func (*Afn0C_P0_F20) ProtoMessage()    {}
 func (*Afn0C_P0_F20) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7c797d1dfec7a224, []int{56}
+	return fileDescriptor_7c797d1dfec7a224, []int{34}
 }
 func (m *Afn0C_P0_F20) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -4025,17 +3512,42 @@ func (m *Afn0C_P0_F20) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_Afn0C_P0_F20 proto.InternalMessageInfo
 
+func (m *Afn0C_P0_F20) GetLux() float64 {
+	if m != nil {
+		return m.Lux
+	}
+	return 0
+}
+
+func (m *Afn0C_P0_F20) GetTemperature() float64 {
+	if m != nil {
+		return m.Temperature
+	}
+	return 0
+}
+
 // 请求历史数据
 // 模拟量历史数据曲线(出线)
-// pn<=30
+// pn: n 1-48，模拟量回路数量
 type Afn0D_Pn_F1 struct {
+	// 起始时间，unix时间戳(上下行)
+	DtStart int64 `protobuf:"varint,1,opt,name=dt_start,json=dtStart,proto3" json:"dt_start,omitempty"`
+	// 数据密度(分钟)，可选0,1,2,3,4,5,10,15,30,60，表示每小时0分起累加指定密度的分钟数(上下行)
+	DataDensity int32 `protobuf:"varint,2,opt,name=data_density,json=dataDensity,proto3" json:"data_density,omitempty"`
+	// 数据点数(上下行)（最大20）
+	DataNum int32 `protobuf:"varint,3,opt,name=data_num,json=dataNum,proto3" json:"data_num,omitempty"`
+	// 模拟量(上下行)
+	LoopNo int32 `protobuf:"varint,4,opt,name=loop_no,json=loopNo,proto3" json:"loop_no,omitempty"`
+	// 以下开始为上行填充
+	// 回路数据，依次为每个数据点的数据
+	LoopData []*Afn0D_Pn_F1_Loop_Data `protobuf:"bytes,5,rep,name=loop_data,json=loopData,proto3" json:"loop_data,omitempty"`
 }
 
 func (m *Afn0D_Pn_F1) Reset()         { *m = Afn0D_Pn_F1{} }
 func (m *Afn0D_Pn_F1) String() string { return proto.CompactTextString(m) }
 func (*Afn0D_Pn_F1) ProtoMessage()    {}
 func (*Afn0D_Pn_F1) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7c797d1dfec7a224, []int{57}
+	return fileDescriptor_7c797d1dfec7a224, []int{35}
 }
 func (m *Afn0D_Pn_F1) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -4064,15 +3576,164 @@ func (m *Afn0D_Pn_F1) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_Afn0D_Pn_F1 proto.InternalMessageInfo
 
+func (m *Afn0D_Pn_F1) GetDtStart() int64 {
+	if m != nil {
+		return m.DtStart
+	}
+	return 0
+}
+
+func (m *Afn0D_Pn_F1) GetDataDensity() int32 {
+	if m != nil {
+		return m.DataDensity
+	}
+	return 0
+}
+
+func (m *Afn0D_Pn_F1) GetDataNum() int32 {
+	if m != nil {
+		return m.DataNum
+	}
+	return 0
+}
+
+func (m *Afn0D_Pn_F1) GetLoopNo() int32 {
+	if m != nil {
+		return m.LoopNo
+	}
+	return 0
+}
+
+func (m *Afn0D_Pn_F1) GetLoopData() []*Afn0D_Pn_F1_Loop_Data {
+	if m != nil {
+		return m.LoopData
+	}
+	return nil
+}
+
+type Afn0D_Pn_F1_Loop_Data struct {
+	// 电压
+	Voltage float64 `protobuf:"fixed64,1,opt,name=voltage,proto3" json:"voltage,omitempty"`
+	// 电流
+	Current float64 `protobuf:"fixed64,2,opt,name=current,proto3" json:"current,omitempty"`
+	// 有功功率
+	ActivePower float64 `protobuf:"fixed64,3,opt,name=active_power,json=activePower,proto3" json:"active_power,omitempty"`
+	// 无功功率
+	ReactivePower float64 `protobuf:"fixed64,4,opt,name=reactive_power,json=reactivePower,proto3" json:"reactive_power,omitempty"`
+	// 功率因数
+	PowerFactor float64 `protobuf:"fixed64,5,opt,name=power_factor,json=powerFactor,proto3" json:"power_factor,omitempty"`
+	// 光控值？？？
+	LuxValue float64 `protobuf:"fixed64,6,opt,name=lux_value,json=luxValue,proto3" json:"lux_value,omitempty"`
+	// 其他模拟量（没这玩意）
+	Other float64 `protobuf:"fixed64,7,opt,name=other,proto3" json:"other,omitempty"`
+}
+
+func (m *Afn0D_Pn_F1_Loop_Data) Reset()         { *m = Afn0D_Pn_F1_Loop_Data{} }
+func (m *Afn0D_Pn_F1_Loop_Data) String() string { return proto.CompactTextString(m) }
+func (*Afn0D_Pn_F1_Loop_Data) ProtoMessage()    {}
+func (*Afn0D_Pn_F1_Loop_Data) Descriptor() ([]byte, []int) {
+	return fileDescriptor_7c797d1dfec7a224, []int{35, 0}
+}
+func (m *Afn0D_Pn_F1_Loop_Data) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *Afn0D_Pn_F1_Loop_Data) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_Afn0D_Pn_F1_Loop_Data.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *Afn0D_Pn_F1_Loop_Data) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Afn0D_Pn_F1_Loop_Data.Merge(m, src)
+}
+func (m *Afn0D_Pn_F1_Loop_Data) XXX_Size() int {
+	return m.Size()
+}
+func (m *Afn0D_Pn_F1_Loop_Data) XXX_DiscardUnknown() {
+	xxx_messageInfo_Afn0D_Pn_F1_Loop_Data.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_Afn0D_Pn_F1_Loop_Data proto.InternalMessageInfo
+
+func (m *Afn0D_Pn_F1_Loop_Data) GetVoltage() float64 {
+	if m != nil {
+		return m.Voltage
+	}
+	return 0
+}
+
+func (m *Afn0D_Pn_F1_Loop_Data) GetCurrent() float64 {
+	if m != nil {
+		return m.Current
+	}
+	return 0
+}
+
+func (m *Afn0D_Pn_F1_Loop_Data) GetActivePower() float64 {
+	if m != nil {
+		return m.ActivePower
+	}
+	return 0
+}
+
+func (m *Afn0D_Pn_F1_Loop_Data) GetReactivePower() float64 {
+	if m != nil {
+		return m.ReactivePower
+	}
+	return 0
+}
+
+func (m *Afn0D_Pn_F1_Loop_Data) GetPowerFactor() float64 {
+	if m != nil {
+		return m.PowerFactor
+	}
+	return 0
+}
+
+func (m *Afn0D_Pn_F1_Loop_Data) GetLuxValue() float64 {
+	if m != nil {
+		return m.LuxValue
+	}
+	return 0
+}
+
+func (m *Afn0D_Pn_F1_Loop_Data) GetOther() float64 {
+	if m != nil {
+		return m.Other
+	}
+	return 0
+}
+
 // 模拟量历史数据曲线(进线)
 type Afn0D_P0_F2 struct {
+	// 起始时间，unix时间戳(上下行)
+	DtStart int64 `protobuf:"varint,1,opt,name=dt_start,json=dtStart,proto3" json:"dt_start,omitempty"`
+	// 数据密度(分钟)，可选0,1,2,3,4,5,10,15,30,60，表示每小时0分起累加指定密度的分钟数(上下行)
+	DataDensity int32 `protobuf:"varint,2,opt,name=data_density,json=dataDensity,proto3" json:"data_density,omitempty"`
+	// 数据点数(上下行)（最大20）
+	DataNum int32 `protobuf:"varint,3,opt,name=data_num,json=dataNum,proto3" json:"data_num,omitempty"`
+	// 模拟量(上下行)
+	LoopNo int32 `protobuf:"varint,4,opt,name=loop_no,json=loopNo,proto3" json:"loop_no,omitempty"`
+	// 以下开始为上行填充
+	// A相位数据，依次为每个数据点的数据
+	PhaseAData []*Afn0D_P0_F2_Phase_Data `protobuf:"bytes,5,rep,name=phase_a_data,json=phaseAData,proto3" json:"phase_a_data,omitempty"`
+	// B相位数据，依次为每个数据点的数据
+	PhaseBData []*Afn0D_P0_F2_Phase_Data `protobuf:"bytes,6,rep,name=phase_b_data,json=phaseBData,proto3" json:"phase_b_data,omitempty"`
+	// C相位数据，依次为每个数据点的数据
+	PhaseCData []*Afn0D_P0_F2_Phase_Data `protobuf:"bytes,7,rep,name=phase_c_data,json=phaseCData,proto3" json:"phase_c_data,omitempty"`
 }
 
 func (m *Afn0D_P0_F2) Reset()         { *m = Afn0D_P0_F2{} }
 func (m *Afn0D_P0_F2) String() string { return proto.CompactTextString(m) }
 func (*Afn0D_P0_F2) ProtoMessage()    {}
 func (*Afn0D_P0_F2) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7c797d1dfec7a224, []int{58}
+	return fileDescriptor_7c797d1dfec7a224, []int{36}
 }
 func (m *Afn0D_P0_F2) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -4101,16 +3762,157 @@ func (m *Afn0D_P0_F2) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_Afn0D_P0_F2 proto.InternalMessageInfo
 
+func (m *Afn0D_P0_F2) GetDtStart() int64 {
+	if m != nil {
+		return m.DtStart
+	}
+	return 0
+}
+
+func (m *Afn0D_P0_F2) GetDataDensity() int32 {
+	if m != nil {
+		return m.DataDensity
+	}
+	return 0
+}
+
+func (m *Afn0D_P0_F2) GetDataNum() int32 {
+	if m != nil {
+		return m.DataNum
+	}
+	return 0
+}
+
+func (m *Afn0D_P0_F2) GetLoopNo() int32 {
+	if m != nil {
+		return m.LoopNo
+	}
+	return 0
+}
+
+func (m *Afn0D_P0_F2) GetPhaseAData() []*Afn0D_P0_F2_Phase_Data {
+	if m != nil {
+		return m.PhaseAData
+	}
+	return nil
+}
+
+func (m *Afn0D_P0_F2) GetPhaseBData() []*Afn0D_P0_F2_Phase_Data {
+	if m != nil {
+		return m.PhaseBData
+	}
+	return nil
+}
+
+func (m *Afn0D_P0_F2) GetPhaseCData() []*Afn0D_P0_F2_Phase_Data {
+	if m != nil {
+		return m.PhaseCData
+	}
+	return nil
+}
+
+type Afn0D_P0_F2_Phase_Data struct {
+	// 电压
+	Voltage float64 `protobuf:"fixed64,1,opt,name=voltage,proto3" json:"voltage,omitempty"`
+	// 电流
+	Current float64 `protobuf:"fixed64,2,opt,name=current,proto3" json:"current,omitempty"`
+	// 有功功率
+	ActivePower float64 `protobuf:"fixed64,3,opt,name=active_power,json=activePower,proto3" json:"active_power,omitempty"`
+	// 无功功率
+	ReactivePower float64 `protobuf:"fixed64,4,opt,name=reactive_power,json=reactivePower,proto3" json:"reactive_power,omitempty"`
+	// 功率因数
+	PowerFactor float64 `protobuf:"fixed64,5,opt,name=power_factor,json=powerFactor,proto3" json:"power_factor,omitempty"`
+}
+
+func (m *Afn0D_P0_F2_Phase_Data) Reset()         { *m = Afn0D_P0_F2_Phase_Data{} }
+func (m *Afn0D_P0_F2_Phase_Data) String() string { return proto.CompactTextString(m) }
+func (*Afn0D_P0_F2_Phase_Data) ProtoMessage()    {}
+func (*Afn0D_P0_F2_Phase_Data) Descriptor() ([]byte, []int) {
+	return fileDescriptor_7c797d1dfec7a224, []int{36, 0}
+}
+func (m *Afn0D_P0_F2_Phase_Data) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *Afn0D_P0_F2_Phase_Data) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_Afn0D_P0_F2_Phase_Data.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *Afn0D_P0_F2_Phase_Data) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Afn0D_P0_F2_Phase_Data.Merge(m, src)
+}
+func (m *Afn0D_P0_F2_Phase_Data) XXX_Size() int {
+	return m.Size()
+}
+func (m *Afn0D_P0_F2_Phase_Data) XXX_DiscardUnknown() {
+	xxx_messageInfo_Afn0D_P0_F2_Phase_Data.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_Afn0D_P0_F2_Phase_Data proto.InternalMessageInfo
+
+func (m *Afn0D_P0_F2_Phase_Data) GetVoltage() float64 {
+	if m != nil {
+		return m.Voltage
+	}
+	return 0
+}
+
+func (m *Afn0D_P0_F2_Phase_Data) GetCurrent() float64 {
+	if m != nil {
+		return m.Current
+	}
+	return 0
+}
+
+func (m *Afn0D_P0_F2_Phase_Data) GetActivePower() float64 {
+	if m != nil {
+		return m.ActivePower
+	}
+	return 0
+}
+
+func (m *Afn0D_P0_F2_Phase_Data) GetReactivePower() float64 {
+	if m != nil {
+		return m.ReactivePower
+	}
+	return 0
+}
+
+func (m *Afn0D_P0_F2_Phase_Data) GetPowerFactor() float64 {
+	if m != nil {
+		return m.PowerFactor
+	}
+	return 0
+}
+
 // 漏电历史数据曲线
-// pn<=10
+// pn:n1-8,漏电回路数量
 type Afn0D_Pn_F3 struct {
+	// 起始时间，unix时间戳(上下行)
+	DtStart int64 `protobuf:"varint,1,opt,name=dt_start,json=dtStart,proto3" json:"dt_start,omitempty"`
+	// 数据密度(分钟)，可选0,1,2,3,4,5,10,15,30,60，表示每小时0分起累加指定密度的分钟数(上下行)
+	DataDensity int32 `protobuf:"varint,2,opt,name=data_density,json=dataDensity,proto3" json:"data_density,omitempty"`
+	// 数据点数(上下行)（最大20）
+	DataNum int32 `protobuf:"varint,3,opt,name=data_num,json=dataNum,proto3" json:"data_num,omitempty"`
+	// 模拟量(上下行)
+	LoopNo int32 `protobuf:"varint,4,opt,name=loop_no,json=loopNo,proto3" json:"loop_no,omitempty"`
+	// 以下开始为上行填充
+	// 依次为每个数据点数据
+	LeakageCurrent []float64 `protobuf:"fixed64,5,rep,packed,name=leakage_current,json=leakageCurrent,proto3" json:"leakage_current,omitempty"`
 }
 
 func (m *Afn0D_Pn_F3) Reset()         { *m = Afn0D_Pn_F3{} }
 func (m *Afn0D_Pn_F3) String() string { return proto.CompactTextString(m) }
 func (*Afn0D_Pn_F3) ProtoMessage()    {}
 func (*Afn0D_Pn_F3) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7c797d1dfec7a224, []int{59}
+	return fileDescriptor_7c797d1dfec7a224, []int{37}
 }
 func (m *Afn0D_Pn_F3) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -4139,16 +3941,61 @@ func (m *Afn0D_Pn_F3) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_Afn0D_Pn_F3 proto.InternalMessageInfo
 
+func (m *Afn0D_Pn_F3) GetDtStart() int64 {
+	if m != nil {
+		return m.DtStart
+	}
+	return 0
+}
+
+func (m *Afn0D_Pn_F3) GetDataDensity() int32 {
+	if m != nil {
+		return m.DataDensity
+	}
+	return 0
+}
+
+func (m *Afn0D_Pn_F3) GetDataNum() int32 {
+	if m != nil {
+		return m.DataNum
+	}
+	return 0
+}
+
+func (m *Afn0D_Pn_F3) GetLoopNo() int32 {
+	if m != nil {
+		return m.LoopNo
+	}
+	return 0
+}
+
+func (m *Afn0D_Pn_F3) GetLeakageCurrent() []float64 {
+	if m != nil {
+		return m.LeakageCurrent
+	}
+	return nil
+}
+
 // 请求事件记录
-// 请求重要事件
+// 请求重要/一般事件
 type Afn0E_P0_F1 struct {
+	// pn应大于pm
+	// 事件起始指针（上下行）0-254
+	Pm int32 `protobuf:"varint,1,opt,name=pm,proto3" json:"pm,omitempty"`
+	// 事件结束指针（上下行）1-255
+	Pn int32 `protobuf:"varint,2,opt,name=pn,proto3" json:"pn,omitempty"`
+	// 以下为上行填充字段
+	// 当前读到的位置
+	EcNow int32 `protobuf:"varint,3,opt,name=ec_now,json=ecNow,proto3" json:"ec_now,omitempty"`
+	// 事件信息（看不懂，待定）
+	EventsData []*Afn0E_P0_F1_Events_Data `protobuf:"bytes,4,rep,name=events_data,json=eventsData,proto3" json:"events_data,omitempty"`
 }
 
 func (m *Afn0E_P0_F1) Reset()         { *m = Afn0E_P0_F1{} }
 func (m *Afn0E_P0_F1) String() string { return proto.CompactTextString(m) }
 func (*Afn0E_P0_F1) ProtoMessage()    {}
 func (*Afn0E_P0_F1) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7c797d1dfec7a224, []int{60}
+	return fileDescriptor_7c797d1dfec7a224, []int{38}
 }
 func (m *Afn0E_P0_F1) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -4177,22 +4024,49 @@ func (m *Afn0E_P0_F1) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_Afn0E_P0_F1 proto.InternalMessageInfo
 
-// 请求一般事件
-type Afn0E_P0_F2 struct {
+func (m *Afn0E_P0_F1) GetPm() int32 {
+	if m != nil {
+		return m.Pm
+	}
+	return 0
 }
 
-func (m *Afn0E_P0_F2) Reset()         { *m = Afn0E_P0_F2{} }
-func (m *Afn0E_P0_F2) String() string { return proto.CompactTextString(m) }
-func (*Afn0E_P0_F2) ProtoMessage()    {}
-func (*Afn0E_P0_F2) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7c797d1dfec7a224, []int{61}
+func (m *Afn0E_P0_F1) GetPn() int32 {
+	if m != nil {
+		return m.Pn
+	}
+	return 0
 }
-func (m *Afn0E_P0_F2) XXX_Unmarshal(b []byte) error {
+
+func (m *Afn0E_P0_F1) GetEcNow() int32 {
+	if m != nil {
+		return m.EcNow
+	}
+	return 0
+}
+
+func (m *Afn0E_P0_F1) GetEventsData() []*Afn0E_P0_F1_Events_Data {
+	if m != nil {
+		return m.EventsData
+	}
+	return nil
+}
+
+type Afn0E_P0_F1_Events_Data struct {
+}
+
+func (m *Afn0E_P0_F1_Events_Data) Reset()         { *m = Afn0E_P0_F1_Events_Data{} }
+func (m *Afn0E_P0_F1_Events_Data) String() string { return proto.CompactTextString(m) }
+func (*Afn0E_P0_F1_Events_Data) ProtoMessage()    {}
+func (*Afn0E_P0_F1_Events_Data) Descriptor() ([]byte, []int) {
+	return fileDescriptor_7c797d1dfec7a224, []int{38, 0}
+}
+func (m *Afn0E_P0_F1_Events_Data) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
 }
-func (m *Afn0E_P0_F2) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+func (m *Afn0E_P0_F1_Events_Data) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
 	if deterministic {
-		return xxx_messageInfo_Afn0E_P0_F2.Marshal(b, m, deterministic)
+		return xxx_messageInfo_Afn0E_P0_F1_Events_Data.Marshal(b, m, deterministic)
 	} else {
 		b = b[:cap(b)]
 		n, err := m.MarshalToSizedBuffer(b)
@@ -4202,17 +4076,17 @@ func (m *Afn0E_P0_F2) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) 
 		return b[:n], nil
 	}
 }
-func (m *Afn0E_P0_F2) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Afn0E_P0_F2.Merge(m, src)
+func (m *Afn0E_P0_F1_Events_Data) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Afn0E_P0_F1_Events_Data.Merge(m, src)
 }
-func (m *Afn0E_P0_F2) XXX_Size() int {
+func (m *Afn0E_P0_F1_Events_Data) XXX_Size() int {
 	return m.Size()
 }
-func (m *Afn0E_P0_F2) XXX_DiscardUnknown() {
-	xxx_messageInfo_Afn0E_P0_F2.DiscardUnknown(m)
+func (m *Afn0E_P0_F1_Events_Data) XXX_DiscardUnknown() {
+	xxx_messageInfo_Afn0E_P0_F1_Events_Data.DiscardUnknown(m)
 }
 
-var xxx_messageInfo_Afn0E_P0_F2 proto.InternalMessageInfo
+var xxx_messageInfo_Afn0E_P0_F1_Events_Data proto.InternalMessageInfo
 
 // 数据转发
 // 透明转发（上下行）
@@ -4231,7 +4105,7 @@ func (m *Afn10_P0_F1) Reset()         { *m = Afn10_P0_F1{} }
 func (m *Afn10_P0_F1) String() string { return proto.CompactTextString(m) }
 func (*Afn10_P0_F1) ProtoMessage()    {}
 func (*Afn10_P0_F1) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7c797d1dfec7a224, []int{62}
+	return fileDescriptor_7c797d1dfec7a224, []int{39}
 }
 func (m *Afn10_P0_F1) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -4308,7 +4182,7 @@ func (m *Afn10_P0_F9) Reset()         { *m = Afn10_P0_F9{} }
 func (m *Afn10_P0_F9) String() string { return proto.CompactTextString(m) }
 func (*Afn10_P0_F9) ProtoMessage()    {}
 func (*Afn10_P0_F9) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7c797d1dfec7a224, []int{63}
+	return fileDescriptor_7c797d1dfec7a224, []int{40}
 }
 func (m *Afn10_P0_F9) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -4397,7 +4271,7 @@ func (m *Afn10_P0_F10) Reset()         { *m = Afn10_P0_F10{} }
 func (m *Afn10_P0_F10) String() string { return proto.CompactTextString(m) }
 func (*Afn10_P0_F10) ProtoMessage()    {}
 func (*Afn10_P0_F10) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7c797d1dfec7a224, []int{64}
+	return fileDescriptor_7c797d1dfec7a224, []int{41}
 }
 func (m *Afn10_P0_F10) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -4489,48 +4363,31 @@ func init() {
 	proto.RegisterType((*Afn04_P0_F52)(nil), "wlst.gb.Afn04_P0_F52")
 	proto.RegisterType((*Afn04_P0_F53)(nil), "wlst.gb.Afn04_P0_F53")
 	proto.RegisterType((*Afn04_P0_F57)(nil), "wlst.gb.Afn04_P0_F57")
-	proto.RegisterType((*Afn04_P0_F65)(nil), "wlst.gb.Afn04_P0_F65")
-	proto.RegisterType((*Afn04_P0_F66)(nil), "wlst.gb.Afn04_P0_F66")
-	proto.RegisterType((*Afn04_P0_F67)(nil), "wlst.gb.Afn04_P0_F67")
 	proto.RegisterType((*Afn05_P0_F1)(nil), "wlst.gb.Afn05_P0_F1")
 	proto.RegisterType((*Afn05_P0_F1_Switchout_Ctrl)(nil), "wlst.gb.Afn05_P0_F1.Switchout_Ctrl")
 	proto.RegisterType((*Afn05_P0_F9)(nil), "wlst.gb.Afn05_P0_F9")
 	proto.RegisterType((*Afn05_P0_F31)(nil), "wlst.gb.Afn05_P0_F31")
 	proto.RegisterType((*Afn09_P0_F1)(nil), "wlst.gb.Afn09_P0_F1")
-	proto.RegisterType((*Afn0A_P0_F1)(nil), "wlst.gb.Afn0a_P0_F1")
-	proto.RegisterType((*Afn0A_P0_F3)(nil), "wlst.gb.Afn0a_P0_F3")
-	proto.RegisterType((*Afn0A_P0_F9)(nil), "wlst.gb.Afn0a_P0_F9")
-	proto.RegisterType((*Afn0A_P0_F10)(nil), "wlst.gb.Afn0a_P0_F10")
-	proto.RegisterType((*Afn0A_P0_F11)(nil), "wlst.gb.Afn0a_P0_F11")
-	proto.RegisterType((*Afn0A_Pn_F14)(nil), "wlst.gb.Afn0a_Pn_F14")
-	proto.RegisterType((*Afn0A_Pn_F15)(nil), "wlst.gb.Afn0a_Pn_F15")
-	proto.RegisterType((*Afn0A_P0_F41)(nil), "wlst.gb.Afn0a_P0_F41")
-	proto.RegisterType((*Afn0A_P0_F42)(nil), "wlst.gb.Afn0a_P0_F42")
-	proto.RegisterType((*Afn0A_P0_F46)(nil), "wlst.gb.Afn0a_P0_F46")
-	proto.RegisterType((*Afn0A_P0_F49)(nil), "wlst.gb.Afn0a_P0_F49")
-	proto.RegisterType((*Afn0A_P0_F50)(nil), "wlst.gb.Afn0a_P0_F50")
-	proto.RegisterType((*Afn0A_P0_F51)(nil), "wlst.gb.Afn0a_P0_F51")
-	proto.RegisterType((*Afn0A_P0_F52)(nil), "wlst.gb.Afn0a_P0_F52")
-	proto.RegisterType((*Afn0A_P0_F53)(nil), "wlst.gb.Afn0a_P0_F53")
-	proto.RegisterType((*Afn0A_P0_F57)(nil), "wlst.gb.Afn0a_P0_F57")
-	proto.RegisterType((*Afn0A_P0_F65)(nil), "wlst.gb.Afn0a_P0_F65")
-	proto.RegisterType((*Afn0A_P0_F66)(nil), "wlst.gb.Afn0a_P0_F66")
-	proto.RegisterType((*Afn0A_P0_F67)(nil), "wlst.gb.Afn0a_P0_F67")
-	proto.RegisterType((*Afn0C_P0_F1)(nil), "wlst.gb.Afn0c_P0_F1")
+	proto.RegisterType((*Afn0C_Pn_F1)(nil), "wlst.gb.Afn0c_Pn_F1")
+	proto.RegisterType((*Afn0C_Pn_F1_Loop_Data)(nil), "wlst.gb.Afn0c_Pn_F1.Loop_Data")
 	proto.RegisterType((*Afn0C_P0_F2)(nil), "wlst.gb.Afn0c_P0_F2")
 	proto.RegisterType((*Afn0C_P0_F3)(nil), "wlst.gb.Afn0c_P0_F3")
+	proto.RegisterType((*Afn0C_P0_F3_Phase_Data)(nil), "wlst.gb.Afn0c_P0_F3.Phase_Data")
 	proto.RegisterType((*Afn0C_P0_F4)(nil), "wlst.gb.Afn0c_P0_F4")
 	proto.RegisterType((*Afn0C_P0_F6)(nil), "wlst.gb.Afn0c_P0_F6")
 	proto.RegisterType((*Afn0C_P0_F7)(nil), "wlst.gb.Afn0c_P0_F7")
 	proto.RegisterType((*Afn0C_P0_F9)(nil), "wlst.gb.Afn0c_P0_F9")
+	proto.RegisterType((*Afn0C_P0_F9_Loop_Status)(nil), "wlst.gb.Afn0c_P0_F9.Loop_Status")
 	proto.RegisterType((*Afn0C_P0_F18)(nil), "wlst.gb.Afn0c_P0_F18")
 	proto.RegisterType((*Afn0C_P0_F19)(nil), "wlst.gb.Afn0c_P0_F19")
 	proto.RegisterType((*Afn0C_P0_F20)(nil), "wlst.gb.Afn0c_P0_F20")
 	proto.RegisterType((*Afn0D_Pn_F1)(nil), "wlst.gb.Afn0d_Pn_F1")
+	proto.RegisterType((*Afn0D_Pn_F1_Loop_Data)(nil), "wlst.gb.Afn0d_Pn_F1.Loop_Data")
 	proto.RegisterType((*Afn0D_P0_F2)(nil), "wlst.gb.Afn0d_P0_F2")
+	proto.RegisterType((*Afn0D_P0_F2_Phase_Data)(nil), "wlst.gb.Afn0d_P0_F2.Phase_Data")
 	proto.RegisterType((*Afn0D_Pn_F3)(nil), "wlst.gb.Afn0d_Pn_F3")
 	proto.RegisterType((*Afn0E_P0_F1)(nil), "wlst.gb.Afn0e_P0_F1")
-	proto.RegisterType((*Afn0E_P0_F2)(nil), "wlst.gb.Afn0e_P0_F2")
+	proto.RegisterType((*Afn0E_P0_F1_Events_Data)(nil), "wlst.gb.Afn0e_P0_F1.Events_Data")
 	proto.RegisterType((*Afn10_P0_F1)(nil), "wlst.gb.Afn10_P0_F1")
 	proto.RegisterType((*Afn10_P0_F9)(nil), "wlst.gb.Afn10_P0_F9")
 	proto.RegisterType((*Afn10_P0_F10)(nil), "wlst.gb.Afn10_P0_F10")
@@ -4539,185 +4396,211 @@ func init() {
 func init() { proto.RegisterFile("msg_wlst.proto", fileDescriptor_7c797d1dfec7a224) }
 
 var fileDescriptor_7c797d1dfec7a224 = []byte{
-	// 2848 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xa4, 0x9a, 0xcd, 0x8f, 0x1c, 0x47,
-	0x15, 0xc0, 0x33, 0x33, 0xbb, 0xb3, 0x3b, 0x35, 0xfb, 0xe1, 0x34, 0x89, 0x28, 0x36, 0xc1, 0x76,
-	0x3a, 0x09, 0x18, 0xa2, 0x6c, 0xa6, 0x3f, 0xc7, 0x2d, 0x40, 0xc8, 0xf6, 0xc6, 0x64, 0xa3, 0x60,
-	0x5b, 0x63, 0x3b, 0xe1, 0xd6, 0x6a, 0x4f, 0x57, 0xef, 0x36, 0x3b, 0xd3, 0xdd, 0xee, 0xae, 0xd9,
-	0xb5, 0x8f, 0x1c, 0x11, 0x07, 0x12, 0x81, 0x08, 0x12, 0x48, 0xe4, 0x03, 0x08, 0x20, 0xfe, 0x01,
-	0x24, 0xb8, 0x07, 0x4e, 0x39, 0x26, 0x48, 0x48, 0x28, 0xb9, 0x72, 0xe0, 0xc0, 0x77, 0x88, 0x84,
-	0xea, 0xab, 0xbb, 0xaa, 0x67, 0x7a, 0xd7, 0x2b, 0x6e, 0x53, 0xaf, 0xde, 0xaf, 0xde, 0xab, 0xf7,
-	0xaa, 0x5e, 0x57, 0xd5, 0x2e, 0xd8, 0x98, 0x16, 0x7b, 0xfe, 0xd1, 0xa4, 0xc0, 0xdb, 0x59, 0x9e,
-	0xe2, 0x54, 0x5b, 0xa1, 0xbf, 0xf7, 0xee, 0xe8, 0x36, 0xd0, 0x6e, 0x27, 0x31, 0xde, 0x0d, 0x51,
-	0x82, 0xe3, 0x28, 0x1e, 0x07, 0x38, 0x4e, 0x13, 0x6d, 0x03, 0xb4, 0xb3, 0x04, 0xb6, 0xce, 0xb7,
-	0x2e, 0x2c, 0x8f, 0xda, 0x19, 0x6d, 0x47, 0x09, 0x6c, 0xb3, 0x76, 0x94, 0xe8, 0x9f, 0xb4, 0x80,
-	0xb6, 0x13, 0xe0, 0xa0, 0x86, 0x59, 0xa0, 0x3b, 0x8b, 0x13, 0xbc, 0xbb, 0x03, 0x5b, 0xe7, 0x3b,
-	0x17, 0xfa, 0xe6, 0x63, 0xdb, 0xdc, 0xcc, 0xf6, 0xbc, 0x8d, 0x11, 0x57, 0xd5, 0xce, 0x80, 0x4e,
-	0x18, 0xe7, 0x7c, 0x70, 0xf2, 0x93, 0x58, 0xc3, 0x19, 0xec, 0x30, 0x6b, 0x38, 0xa3, 0xde, 0x1c,
-	0xc1, 0xe5, 0xf3, 0xad, 0x0b, 0xbd, 0x51, 0x3b, 0x3b, 0x22, 0x04, 0x1a, 0x1b, 0xb0, 0xcb, 0x08,
-	0x34, 0x36, 0x98, 0xc4, 0x84, 0x2b, 0x42, 0x62, 0x12, 0x49, 0x81, 0xee, 0xc2, 0x55, 0x26, 0x29,
-	0xd0, 0x5d, 0x22, 0x09, 0xa2, 0x04, 0xf6, 0x98, 0x24, 0x88, 0x12, 0x22, 0x89, 0x66, 0x09, 0x04,
-	0x4c, 0x12, 0xcd, 0x12, 0x4d, 0x03, 0x4b, 0x41, 0x8e, 0x02, 0xd8, 0xa7, 0xb6, 0xe8, 0x6f, 0x2a,
-	0x0b, 0xc3, 0x1c, 0xae, 0x9d, 0x6f, 0x5d, 0xe8, 0x8c, 0xe8, 0x6f, 0xfd, 0x4f, 0x8f, 0x03, 0xf0,
-	0xca, 0xa4, 0xc0, 0x5f, 0xbb, 0x7c, 0x3d, 0x43, 0x74, 0xde, 0x34, 0x1a, 0x3b, 0x34, 0x64, 0xf2,
-	0xbc, 0xe7, 0x83, 0x34, 0xea, 0x86, 0x54, 0x55, 0xb3, 0x41, 0x3f, 0x88, 0x92, 0xc1, 0xc0, 0xcf,
-	0x06, 0x7e, 0x64, 0x50, 0x2f, 0xfa, 0xe6, 0x23, 0x25, 0x79, 0x89, 0xf6, 0xdd, 0x18, 0xf8, 0x57,
-	0x8d, 0x51, 0x8f, 0x2a, 0xde, 0x18, 0x5c, 0x35, 0x54, 0xca, 0xa4, 0x8e, 0x9e, 0x48, 0x99, 0x2a,
-	0x65, 0xd1, 0xa9, 0x2c, 0xa6, 0xac, 0x8a, 0xb2, 0x04, 0x65, 0x73, 0x0f, 0xc3, 0x05, 0x94, 0x2d,
-	0xdb, 0xb2, 0x65, 0x0f, 0x6d, 0x6e, 0x0b, 0x35, 0x52, 0x56, 0x45, 0xd5, 0x6c, 0x79, 0x30, 0x6a,
-	0xa4, 0xbc, 0x8a, 0xf2, 0xb4, 0x21, 0x58, 0x93, 0x3c, 0x1c, 0xc0, 0x3d, 0x8a, 0x3d, 0xba, 0xc8,
-	0xc5, 0xc1, 0x08, 0x94, 0x3e, 0x0e, 0x6a, 0xa0, 0x01, 0xf7, 0x9b, 0x41, 0x43, 0x02, 0x0d, 0x09,
-	0x4c, 0xfc, 0xc8, 0xb0, 0x61, 0xbc, 0x18, 0x4c, 0xfc, 0xab, 0x86, 0x2d, 0xc0, 0xe4, 0xaa, 0x61,
-	0xd7, 0x40, 0x07, 0x7e, 0xb3, 0x19, 0x74, 0x24, 0xd0, 0x51, 0x5d, 0xb5, 0x0d, 0x78, 0xd0, 0xe8,
-	0xaa, 0x2d, 0xb9, 0x6a, 0x1b, 0x35, 0xd0, 0x84, 0x93, 0x66, 0xd0, 0x94, 0x40, 0xb3, 0x06, 0xba,
-	0x70, 0xda, 0x0c, 0xba, 0x12, 0xe8, 0xd6, 0x40, 0x0f, 0x26, 0xcd, 0xa0, 0x27, 0x81, 0xb5, 0x3c,
-	0x3a, 0x03, 0x98, 0x36, 0x82, 0x8e, 0x94, 0x47, 0xa7, 0x96, 0x47, 0xc7, 0x80, 0x59, 0x33, 0x28,
-	0x05, 0xc7, 0xa9, 0x05, 0xc7, 0x31, 0xe1, 0xdd, 0x66, 0x50, 0x0a, 0x8e, 0x53, 0x0b, 0x8e, 0x63,
-	0xc1, 0xbc, 0x19, 0xb4, 0x24, 0xd0, 0xaa, 0x81, 0x43, 0x58, 0x34, 0x83, 0x43, 0x09, 0x1c, 0xaa,
-	0xa0, 0xeb, 0x40, 0xdc, 0x08, 0xba, 0x4e, 0x05, 0xba, 0xb5, 0x95, 0xe3, 0xba, 0x70, 0xd6, 0x0c,
-	0x4a, 0x79, 0x74, 0x6b, 0x79, 0x74, 0x87, 0xf0, 0xb0, 0x19, 0x94, 0x5c, 0x75, 0x87, 0x9a, 0xc3,
-	0x76, 0xb1, 0xc3, 0x2b, 0xc6, 0xbb, 0xad, 0x05, 0xdb, 0xd8, 0x91, 0x4b, 0x86, 0x43, 0x4b, 0x86,
-	0x82, 0x79, 0xf0, 0xf7, 0xcd, 0x98, 0x57, 0x61, 0x9e, 0x76, 0x91, 0xb9, 0xc9, 0x30, 0xcb, 0x80,
-	0x7f, 0x68, 0x2d, 0xf0, 0x93, 0x71, 0x16, 0xcf, 0x3e, 0x01, 0xad, 0xd2, 0xa0, 0xc7, 0xfd, 0xfc,
-	0x75, 0x7b, 0x81, 0x41, 0x4f, 0xf6, 0xd3, 0x93, 0xfd, 0x0c, 0x38, 0xf6, 0x6a, 0x67, 0x01, 0x16,
-	0xc8, 0x58, 0x30, 0x8f, 0x59, 0xf0, 0xb5, 0x66, 0xcc, 0xaa, 0x30, 0x4b, 0xc5, 0x3c, 0xf8, 0x83,
-	0x66, 0xcc, 0xab, 0xb0, 0x32, 0x2a, 0x81, 0xa8, 0x89, 0xaf, 0x77, 0x16, 0x44, 0x25, 0x50, 0x8a,
-	0x62, 0xc0, 0x8a, 0xa2, 0x4a, 0x1a, 0xf0, 0x87, 0xc7, 0x90, 0x86, 0x44, 0x1a, 0x12, 0xc9, 0xaa,
-	0xe2, 0x8f, 0x1a, 0x48, 0xa9, 0x2c, 0x06, 0xac, 0x2c, 0xaa, 0xa4, 0x03, 0x7f, 0x7c, 0x0c, 0xe9,
-	0x48, 0xa4, 0xa3, 0x7a, 0x6b, 0x1b, 0xf0, 0x27, 0xcd, 0xde, 0xda, 0x92, 0xb7, 0xb6, 0x51, 0x23,
-	0x4d, 0xf8, 0xc6, 0x31, 0xa4, 0x29, 0x91, 0x66, 0x8d, 0x74, 0xe1, 0x9b, 0xc7, 0x90, 0xae, 0x44,
-	0xba, 0x35, 0xd2, 0x83, 0x6f, 0x1d, 0x43, 0x7a, 0x12, 0x59, 0xcb, 0xa7, 0x33, 0x80, 0x6f, 0x37,
-	0x93, 0x8e, 0x94, 0x4f, 0xa7, 0x96, 0x4f, 0xc7, 0x80, 0x3f, 0x3d, 0x86, 0x94, 0x22, 0xe4, 0xd4,
-	0x22, 0xe4, 0x98, 0xf0, 0x67, 0xc7, 0x90, 0x52, 0x84, 0x9c, 0x5a, 0x84, 0x1c, 0x0b, 0xfe, 0xfc,
-	0x18, 0xd2, 0x92, 0x48, 0xab, 0x46, 0x0e, 0xe1, 0x3b, 0xc7, 0x90, 0x43, 0x89, 0x1c, 0xaa, 0xa4,
-	0xeb, 0xc0, 0x5f, 0x34, 0x93, 0xae, 0x53, 0x91, 0x6e, 0x6d, 0x0d, 0xb9, 0x2e, 0xfc, 0xe5, 0x31,
-	0xa4, 0x94, 0x4f, 0xb7, 0x96, 0x4f, 0x77, 0x08, 0x7f, 0x75, 0x0c, 0x29, 0x79, 0x5b, 0xd5, 0xc8,
-	0x31, 0x2f, 0x22, 0x7f, 0x5b, 0xb4, 0xad, 0xc7, 0x72, 0x11, 0x19, 0xcb, 0x45, 0x64, 0xcc, 0x0f,
-	0x7e, 0x7f, 0x6f, 0xc6, 0xcc, 0x0a, 0x33, 0x55, 0xcc, 0x82, 0xff, 0x68, 0xc6, 0xac, 0x0a, 0xb3,
-	0x54, 0xcc, 0x86, 0xff, 0x6c, 0xc6, 0xec, 0x0a, 0xb3, 0x55, 0xcc, 0x85, 0xff, 0x6a, 0xc6, 0xdc,
-	0x0a, 0x73, 0x55, 0x6c, 0x08, 0xff, 0xdd, 0x8c, 0x0d, 0x2b, 0xac, 0x16, 0x49, 0x0f, 0xfe, 0xa7,
-	0x19, 0xf3, 0x2a, 0xac, 0xdc, 0x50, 0x3c, 0x01, 0x17, 0xe1, 0xc7, 0x8b, 0x52, 0xc7, 0x33, 0x70,
-	0x91, 0xa5, 0x8e, 0xa6, 0xe0, 0x62, 0x8d, 0xf4, 0xe0, 0x7f, 0x8f, 0x21, 0x3d, 0x89, 0xac, 0xd9,
-	0x34, 0x07, 0xf0, 0x93, 0x66, 0xd2, 0x1c, 0x54, 0xa4, 0x39, 0x10, 0x93, 0x0c, 0x59, 0x81, 0x84,
-	0xef, 0x2f, 0x2d, 0x98, 0x64, 0xc8, 0xea, 0x23, 0x9b, 0x64, 0x48, 0xca, 0xa3, 0x84, 0xd1, 0xe5,
-	0xf2, 0x41, 0x03, 0x56, 0x2d, 0x97, 0x50, 0x5e, 0x2e, 0xcc, 0x9a, 0x05, 0xff, 0xd8, 0x6c, 0xcd,
-	0xaa, 0xac, 0x95, 0xcb, 0x05, 0xf1, 0x35, 0xfd, 0xdb, 0xe5, 0x05, 0x18, 0x92, 0xd7, 0x34, 0x92,
-	0xd7, 0x34, 0xe2, 0x4e, 0xfe, 0xae, 0x19, 0x33, 0x2b, 0x4c, 0x38, 0x69, 0x88, 0x9b, 0xd3, 0x1b,
-	0xdd, 0x79, 0xcc, 0x90, 0x2f, 0x41, 0xc6, 0x40, 0xb2, 0xc6, 0x31, 0x0f, 0xbe, 0xd9, 0x8c, 0x79,
-	0x15, 0x26, 0x52, 0x27, 0xac, 0x0d, 0xe0, 0x5b, 0xdd, 0xf9, 0xd4, 0x09, 0x73, 0x2c, 0x75, 0xcc,
-	0xde, 0x40, 0x25, 0x6d, 0x03, 0xbe, 0xfd, 0x60, 0xa4, 0x6d, 0xe8, 0xe7, 0x40, 0x5f, 0xba, 0xc9,
-	0x89, 0xab, 0x6b, 0xab, 0xbc, 0xba, 0xea, 0x77, 0x65, 0x05, 0x6b, 0x5e, 0x41, 0xb3, 0xc1, 0xca,
-	0x2c, 0x89, 0xb1, 0x1f, 0x87, 0xb0, 0xfd, 0x20, 0x77, 0x71, 0x2a, 0xd3, 0xb6, 0x40, 0xb7, 0xc0,
-	0x01, 0x9e, 0x15, 0xb0, 0x73, 0xbe, 0x73, 0x61, 0xf9, 0x72, 0xfb, 0x4c, 0x6b, 0xc4, 0x25, 0xfa,
-	0xbb, 0x2d, 0x66, 0xd3, 0xae, 0x9c, 0xca, 0x71, 0x21, 0x6c, 0xe6, 0xb8, 0xd0, 0x3e, 0x0b, 0xc0,
-	0x34, 0x28, 0x30, 0xca, 0x7d, 0xd2, 0xc1, 0x2e, 0xf4, 0x3d, 0x26, 0x19, 0xe1, 0x42, 0x7b, 0x1a,
-	0x6c, 0xe4, 0xa8, 0x40, 0x49, 0xe8, 0xe3, 0x78, 0x8a, 0xd2, 0x19, 0xe6, 0x57, 0xfc, 0x75, 0x26,
-	0xbd, 0xc5, 0x84, 0x64, 0x14, 0xae, 0x96, 0xcc, 0xa6, 0x70, 0x89, 0x8d, 0xc2, 0x24, 0xd7, 0x66,
-	0x53, 0xed, 0x49, 0xd0, 0xcf, 0x51, 0x96, 0xe6, 0xd8, 0x9f, 0x06, 0xf9, 0x01, 0x5c, 0x2e, 0xfd,
-	0x04, 0x4c, 0xfc, 0xf5, 0x20, 0x3f, 0x20, 0x63, 0x1c, 0x20, 0x94, 0xf9, 0xc1, 0x24, 0x3e, 0x44,
-	0xfc, 0xa1, 0xa0, 0x47, 0x24, 0x97, 0x88, 0x40, 0xff, 0x8d, 0x32, 0x15, 0x4b, 0xfb, 0x34, 0x58,
-	0x99, 0x06, 0x71, 0xe2, 0xc7, 0x19, 0x9d, 0x4e, 0x6f, 0xd4, 0x25, 0xcd, 0xdd, 0x4c, 0x7b, 0x0c,
-	0xf4, 0x68, 0x07, 0x19, 0x98, 0x4f, 0x68, 0x95, 0x08, 0x6e, 0xa4, 0x39, 0x26, 0x9d, 0x77, 0x82,
-	0xf1, 0xc1, 0x2c, 0x23, 0x5c, 0x87, 0x72, 0xab, 0x4c, 0xb0, 0x9b, 0x69, 0xe7, 0x40, 0x9f, 0x77,
-	0x52, 0x96, 0x4d, 0x03, 0x30, 0x11, 0xa5, 0x49, 0xca, 0xb2, 0x84, 0xbf, 0x6a, 0x90, 0x9f, 0x9a,
-	0x06, 0x96, 0x66, 0x05, 0xca, 0xa9, 0xbb, 0xbd, 0x11, 0xfd, 0x4d, 0xb4, 0xb2, 0xa3, 0x90, 0x3e,
-	0x6c, 0xf4, 0x46, 0xe4, 0xa7, 0x8e, 0x64, 0xd7, 0x3d, 0xed, 0x59, 0x70, 0x06, 0x1d, 0xa2, 0x04,
-	0x17, 0x7e, 0x70, 0x18, 0xc4, 0x93, 0xe0, 0xce, 0x04, 0xd1, 0xc7, 0x17, 0x16, 0x93, 0x4d, 0xd6,
-	0x77, 0x49, 0x74, 0x69, 0x9f, 0x07, 0xeb, 0x5c, 0x9d, 0x45, 0x8b, 0x2e, 0x0e, 0xa6, 0xbb, 0xc6,
-	0x3a, 0x46, 0x54, 0xae, 0x67, 0x60, 0x4d, 0xbe, 0x3c, 0x6b, 0x06, 0xd0, 0x8a, 0xa3, 0x18, 0x8f,
-	0xf7, 0xe3, 0x64, 0xa1, 0xa5, 0x87, 0x45, 0x6f, 0x65, 0xeb, 0x59, 0x70, 0xa6, 0x44, 0xf6, 0xd3,
-	0x2c, 0x8b, 0x93, 0x3d, 0xc9, 0xdc, 0xa6, 0xe8, 0x7b, 0x81, 0x75, 0xe9, 0xdf, 0x6f, 0x29, 0x26,
-	0x0d, 0xed, 0x71, 0xd0, 0x9b, 0xa4, 0xc9, 0x5e, 0x8c, 0x67, 0x21, 0xa2, 0x79, 0x69, 0x8d, 0x2a,
-	0x81, 0xb6, 0x05, 0x56, 0x27, 0x01, 0x66, 0x9d, 0x6d, 0xda, 0x59, 0xb6, 0xc9, 0x4a, 0x2b, 0x15,
-	0xd9, 0x32, 0xe1, 0x2b, 0xad, 0x94, 0xd2, 0x55, 0xf2, 0x24, 0x58, 0x17, 0x08, 0xd3, 0x62, 0x59,
-	0x5a, 0x13, 0x42, 0xa2, 0xa4, 0x6f, 0x94, 0x5e, 0xd1, 0xc3, 0xab, 0xfe, 0x97, 0x96, 0x22, 0x70,
-	0xb4, 0xcf, 0x80, 0xd5, 0x10, 0xfb, 0x05, 0x0e, 0x72, 0x4c, 0xbd, 0xec, 0x8c, 0x56, 0x42, 0x7c,
-	0x93, 0x34, 0xc9, 0xba, 0x0a, 0xb1, 0x1f, 0x06, 0xf7, 0xc5, 0x6e, 0xe8, 0x86, 0x78, 0x27, 0xb8,
-	0x5f, 0x68, 0x5f, 0x00, 0x1b, 0x6c, 0xfa, 0xe9, 0x0c, 0xfb, 0x71, 0x12, 0xde, 0x93, 0xf6, 0xdb,
-	0x7a, 0xd9, 0xb3, 0x9b, 0x84, 0xf7, 0xb4, 0x2f, 0x83, 0x1e, 0xd9, 0x2e, 0x7e, 0x31, 0x49, 0xc9,
-	0x32, 0x22, 0x5b, 0xf9, 0xdc, 0xc2, 0x47, 0x83, 0x6d, 0xb2, 0x81, 0xfc, 0x9b, 0x93, 0x14, 0x8f,
-	0x56, 0x09, 0x41, 0x7e, 0x6d, 0x7d, 0x15, 0xf4, 0x4a, 0x31, 0x71, 0x87, 0x0e, 0x95, 0x8a, 0x4a,
-	0xd1, 0x25, 0xcd, 0xeb, 0x09, 0x99, 0x02, 0xeb, 0x88, 0x22, 0xee, 0x28, 0x55, 0xbc, 0x1e, 0x45,
-	0xfa, 0x97, 0xe4, 0xa4, 0xd8, 0x86, 0xf6, 0x0c, 0xd8, 0xac, 0x3c, 0x9f, 0xa4, 0x69, 0x56, 0x48,
-	0x8b, 0xa0, 0x9a, 0xd4, 0x4b, 0xa4, 0x47, 0xff, 0x6b, 0x5b, 0xa1, 0x4d, 0xed, 0x39, 0xf0, 0xa9,
-	0xc3, 0x74, 0x82, 0x83, 0x3d, 0xe4, 0xe3, 0x3c, 0x48, 0x8a, 0x28, 0xcd, 0xa7, 0x28, 0xe7, 0xde,
-	0x68, 0xbc, 0xeb, 0x56, 0xd5, 0xa3, 0x0d, 0xc0, 0x23, 0x28, 0x41, 0xf9, 0xde, 0x7d, 0x3f, 0x50,
-	0x08, 0xe6, 0xa5, 0xc6, 0xfa, 0x2e, 0x2d, 0x26, 0xee, 0x28, 0x44, 0x47, 0x26, 0x2e, 0x2f, 0x26,
-	0xc6, 0x0a, 0xb1, 0x24, 0x13, 0x57, 0x64, 0xe2, 0x1a, 0xd8, 0x1c, 0xcf, 0xf2, 0x1c, 0x25, 0xd8,
-	0x2f, 0x10, 0xc6, 0x64, 0x61, 0x2f, 0xd3, 0xcc, 0x3c, 0xbd, 0xf0, 0x71, 0x65, 0xfb, 0x0a, 0x57,
-	0xbe, 0xc9, 0x94, 0x47, 0x1b, 0x9c, 0xe6, 0xed, 0xad, 0x5d, 0xb0, 0x59, 0x53, 0xd1, 0xce, 0x83,
-	0xfe, 0x7c, 0x84, 0x64, 0x91, 0xf6, 0x08, 0x58, 0xce, 0xf6, 0x83, 0x02, 0xf1, 0x58, 0xb0, 0x86,
-	0xfe, 0xfa, 0x8a, 0x12, 0x72, 0x97, 0xac, 0x9f, 0x23, 0x84, 0x0e, 0xc8, 0x2a, 0x34, 0xf8, 0xf3,
-	0xe4, 0xb9, 0x85, 0x2f, 0x39, 0xdb, 0xaf, 0x10, 0x35, 0xb6, 0x7e, 0x08, 0xb1, 0x13, 0xdc, 0x37,
-	0x64, 0xda, 0x84, 0xed, 0xd3, 0xd1, 0xa6, 0x4c, 0x5b, 0xb0, 0x73, 0x3a, 0xda, 0x92, 0x69, 0x1b,
-	0x2e, 0x9d, 0x8e, 0xb6, 0x65, 0xda, 0x81, 0xcb, 0xa7, 0xa3, 0x1d, 0x99, 0x76, 0x61, 0xf7, 0x74,
-	0xb4, 0x12, 0xf3, 0x21, 0xad, 0xdd, 0xa7, 0xa0, 0x87, 0x5b, 0xdf, 0xeb, 0x80, 0x5e, 0x29, 0xd7,
-	0x9e, 0x03, 0xed, 0x83, 0x13, 0x12, 0x57, 0x6d, 0xfc, 0xf6, 0x81, 0x41, 0x81, 0x13, 0x72, 0x25,
-	0x03, 0x26, 0x05, 0x4e, 0x48, 0x8f, 0x0c, 0x58, 0x14, 0x38, 0x21, 0x23, 0x32, 0x60, 0x53, 0xe0,
-	0x84, 0x24, 0xc8, 0x80, 0x43, 0x81, 0x13, 0xe2, 0x2e, 0x03, 0x2e, 0x05, 0x4e, 0x08, 0xb5, 0x0c,
-	0x0c, 0x29, 0x70, 0x91, 0xfe, 0x79, 0xe0, 0x81, 0x80, 0x8b, 0xff, 0x7f, 0x25, 0x7d, 0x51, 0xd9,
-	0x98, 0x1e, 0x39, 0x3e, 0xa4, 0x51, 0x54, 0x20, 0x5c, 0x8d, 0xb2, 0xca, 0x04, 0xd7, 0x13, 0x72,
-	0x80, 0x11, 0x9d, 0xe5, 0x48, 0x5c, 0x9d, 0x8c, 0x65, 0xc8, 0x63, 0x39, 0x03, 0xed, 0x09, 0xb0,
-	0xc6, 0x0f, 0x45, 0xc4, 0x5a, 0x59, 0x2e, 0x98, 0x8c, 0xb8, 0x9d, 0xeb, 0x6f, 0x75, 0x14, 0xc6,
-	0xd0, 0xb6, 0xab, 0x5a, 0x3c, 0x49, 0x8f, 0x50, 0xee, 0x4f, 0xe2, 0x69, 0x8c, 0xf9, 0x87, 0xf6,
-	0x61, 0xde, 0xf5, 0x12, 0xe9, 0x79, 0x89, 0x74, 0xc8, 0xfa, 0xb3, 0x2c, 0x2b, 0xf5, 0xdb, 0x8a,
-	0xfe, 0x6d, 0xd2, 0xc3, 0xf4, 0x5f, 0x04, 0xeb, 0xa2, 0x48, 0x32, 0xcd, 0x4e, 0x63, 0x89, 0x74,
-	0x8c, 0xb9, 0x12, 0xb9, 0xc6, 0x59, 0x3a, 0xd6, 0xd6, 0x37, 0xe6, 0x0b, 0xe4, 0xf3, 0x60, 0x8d,
-	0x7c, 0x7e, 0xca, 0x02, 0xcc, 0xfe, 0xe2, 0xa4, 0x2f, 0x1e, 0x9d, 0x7c, 0x8e, 0xca, 0xa1, 0xfb,
-	0x84, 0x13, 0xa5, 0xf7, 0x3b, 0x2d, 0xb0, 0x26, 0xf7, 0x92, 0xb4, 0x54, 0xdf, 0x5b, 0x9e, 0x16,
-	0xf1, 0x39, 0x25, 0x31, 0x28, 0xe7, 0x24, 0xc5, 0x8c, 0xc7, 0x40, 0xb8, 0xac, 0xc4, 0x4c, 0xe8,
-	0xcb, 0x31, 0xeb, 0x28, 0xfa, 0x55, 0xcc, 0xf4, 0x8f, 0x95, 0x33, 0x90, 0x63, 0x92, 0x85, 0x46,
-	0x67, 0x99, 0xa4, 0x62, 0xa1, 0x91, 0xe6, 0xb5, 0x94, 0x9c, 0x2f, 0x69, 0x07, 0x4a, 0xe8, 0x41,
-	0x8c, 0xad, 0x10, 0x40, 0x44, 0xcf, 0x53, 0x09, 0x3b, 0x03, 0x91, 0xf8, 0x88, 0x4f, 0x72, 0x75,
-	0x06, 0x4a, 0xb3, 0x9b, 0x42, 0x48, 0x56, 0xce, 0x04, 0x1d, 0xa2, 0x89, 0xc1, 0x5d, 0x63, 0x1f,
-	0xbd, 0x3e, 0x93, 0xb1, 0x49, 0x08, 0x15, 0x93, 0xab, 0x2c, 0x4b, 0x2a, 0xa6, 0xaa, 0x62, 0x71,
-	0x95, 0xae, 0xa4, 0x62, 0xa9, 0x2a, 0x36, 0x57, 0x59, 0x91, 0x54, 0x6c, 0x36, 0xfb, 0x1b, 0xca,
-	0xe4, 0x2d, 0x7a, 0x3e, 0x9b, 0xdd, 0xf3, 0xf1, 0x7e, 0x8e, 0x8a, 0xfd, 0x74, 0x12, 0xf2, 0x10,
-	0xac, 0x4d, 0x66, 0xf7, 0x6e, 0x09, 0x59, 0x99, 0x2f, 0x1c, 0x8f, 0x0f, 0xc4, 0x11, 0x9d, 0x08,
-	0x6e, 0xc5, 0xe3, 0x03, 0x7d, 0xa4, 0x8c, 0x38, 0xa4, 0xfb, 0x64, 0x96, 0x50, 0x7d, 0x7a, 0xe0,
-	0x13, 0xfb, 0x84, 0xc9, 0xe8, 0xa1, 0xf0, 0x1c, 0x39, 0x75, 0xa6, 0x19, 0xeb, 0xaf, 0x8e, 0xab,
-	0xab, 0x44, 0x48, 0x0f, 0x84, 0x96, 0x3c, 0xa6, 0xeb, 0x90, 0x0b, 0x09, 0x05, 0x0e, 0xd1, 0x18,
-	0xa7, 0xb9, 0x74, 0x1a, 0xa2, 0xd9, 0x78, 0x99, 0x4a, 0xd5, 0x63, 0x94, 0xeb, 0x56, 0xc7, 0xa8,
-	0x38, 0x99, 0x07, 0x37, 0x44, 0x17, 0x87, 0xbf, 0xa2, 0xc0, 0xc3, 0xea, 0x60, 0x4d, 0xce, 0x60,
-	0x73, 0x74, 0x75, 0x3e, 0xe3, 0xf8, 0x6b, 0xfc, 0xb6, 0xc3, 0x1f, 0xde, 0xb7, 0xbe, 0xd5, 0x02,
-	0x1b, 0xe5, 0x02, 0xf0, 0xaf, 0xe0, 0x7c, 0x42, 0x16, 0x4b, 0xed, 0x3c, 0xca, 0x22, 0x53, 0x3b,
-	0x8b, 0x3e, 0x01, 0xd6, 0x2a, 0xb5, 0x30, 0xe5, 0xe1, 0xee, 0x97, 0xb2, 0x9d, 0x54, 0x1d, 0x89,
-	0x04, 0x55, 0x2c, 0xbb, 0x52, 0x4a, 0xca, 0x91, 0xbe, 0x2d, 0xbb, 0xe4, 0xa9, 0x41, 0x6f, 0x2d,
-	0x08, 0xfa, 0x33, 0x2c, 0x04, 0xe2, 0x31, 0xbf, 0xcc, 0xfa, 0x2c, 0x89, 0xef, 0xf1, 0x53, 0x37,
-	0xcd, 0xfa, 0xed, 0x24, 0xbe, 0xa7, 0x7f, 0xb7, 0xc3, 0x46, 0xe7, 0x2f, 0xf8, 0x1a, 0x04, 0x2b,
-	0xe3, 0x74, 0x9a, 0x05, 0xc9, 0x7d, 0x7e, 0xbd, 0x13, 0x4d, 0x52, 0x66, 0x43, 0x74, 0x18, 0x8f,
-	0x11, 0xbd, 0x6b, 0xb6, 0x69, 0x67, 0x8f, 0x49, 0xc8, 0x5d, 0x93, 0xcc, 0x37, 0x8d, 0xf0, 0x51,
-	0x90, 0x23, 0xff, 0x90, 0x9f, 0x21, 0x7b, 0xa3, 0xbe, 0x90, 0xbd, 0x8c, 0x72, 0xb2, 0x46, 0x4b,
-	0x95, 0x30, 0xc0, 0x88, 0x6e, 0xa0, 0xde, 0xa8, 0xe4, 0x76, 0x02, 0x8c, 0xc8, 0x66, 0xe5, 0x66,
-	0xe2, 0x24, 0x4a, 0xf9, 0x9d, 0x8f, 0x5b, 0xde, 0x4d, 0xa2, 0x94, 0x18, 0xda, 0x0f, 0xf2, 0xb0,
-	0x34, 0xc4, 0xae, 0x80, 0x7d, 0x21, 0xe3, 0x86, 0x4a, 0x15, 0x6a, 0x88, 0xdd, 0x09, 0x4b, 0x8e,
-	0x1a, 0x7a, 0x8a, 0x5c, 0xb1, 0xa7, 0x29, 0x46, 0xfe, 0x38, 0x9d, 0xd2, 0x91, 0x56, 0x99, 0x16,
-	0x93, 0x5e, 0x49, 0xa7, 0x64, 0xa8, 0xcf, 0x81, 0x4d, 0x49, 0x8b, 0x0e, 0xd6, 0xa3, 0x6a, 0xeb,
-	0xa5, 0x1a, 0x1d, 0x4d, 0x07, 0xeb, 0x93, 0x74, 0x1c, 0x4c, 0xca, 0xc1, 0x00, 0x73, 0x8b, 0x0a,
-	0xf9, 0x58, 0x4f, 0x91, 0x32, 0x23, 0x74, 0xe8, 0x50, 0xec, 0x6f, 0xe7, 0x6b, 0x42, 0x89, 0x8c,
-	0xa4, 0xaf, 0xb3, 0x84, 0xf0, 0xbf, 0x1d, 0xa8, 0x4d, 0x4b, 0x6d, 0x7a, 0xe2, 0xc6, 0x25, 0xfe,
-	0x44, 0x51, 0x6b, 0x1b, 0x52, 0x9b, 0xdd, 0xc8, 0xd4, 0xb6, 0xa3, 0xea, 0xdb, 0x46, 0xad, 0x6d,
-	0xd6, 0xda, 0x6e, 0xad, 0x5d, 0xb3, 0xef, 0xd4, 0xec, 0x3b, 0xb5, 0xf1, 0x9c, 0xda, 0x78, 0x8e,
-	0x55, 0x6b, 0x0f, 0xd5, 0xb6, 0x5b, 0xf3, 0xcf, 0xad, 0xd9, 0x77, 0x87, 0x22, 0x1c, 0x63, 0x35,
-	0x58, 0xfc, 0x71, 0x50, 0x6d, 0x5a, 0x6a, 0xd3, 0x56, 0x9b, 0xae, 0xda, 0xac, 0x8d, 0x5c, 0x4e,
-	0x54, 0x3c, 0x75, 0xd6, 0xda, 0xb5, 0x7e, 0x73, 0x20, 0x70, 0xfe, 0xda, 0x28, 0x35, 0x65, 0xc7,
-	0xf8, 0xeb, 0xa0, 0x68, 0x22, 0x75, 0x16, 0xfc, 0x35, 0x4f, 0xff, 0x36, 0xab, 0x49, 0xe2, 0xf5,
-	0x8b, 0x5e, 0xa2, 0x0b, 0xec, 0xd3, 0x7f, 0xb4, 0x10, 0x97, 0xe8, 0x02, 0x5f, 0x0a, 0xc3, 0x9c,
-	0xec, 0x0d, 0xd2, 0xc5, 0xdf, 0x8c, 0x0c, 0x51, 0x74, 0xc2, 0x02, 0xf3, 0x17, 0x23, 0xa3, 0xa6,
-	0x62, 0xf2, 0x92, 0x23, 0xa9, 0x98, 0xc2, 0x40, 0x18, 0xe0, 0x80, 0x6f, 0x51, 0x62, 0x60, 0x27,
-	0xc0, 0x81, 0xfe, 0x8e, 0xe2, 0x8b, 0xa7, 0x3d, 0x0a, 0xba, 0x11, 0xce, 0xc4, 0x63, 0x50, 0x67,
-	0xb4, 0x1c, 0xe1, 0x6c, 0x37, 0x23, 0x23, 0x10, 0xb1, 0xf4, 0x14, 0xb4, 0x12, 0x61, 0xf6, 0x96,
-	0xc3, 0xbb, 0xe8, 0xeb, 0x0d, 0xab, 0x11, 0xa4, 0xeb, 0x76, 0x81, 0x72, 0xf2, 0x01, 0xa7, 0xd4,
-	0x51, 0xc8, 0xcd, 0x92, 0xb1, 0x6f, 0x1c, 0x85, 0xa2, 0x23, 0x8c, 0x73, 0x5e, 0x0f, 0x48, 0xc7,
-	0x4e, 0x9c, 0x8b, 0xc1, 0xa2, 0x78, 0x82, 0x78, 0x1d, 0x20, 0x8a, 0x57, 0xe3, 0x09, 0xd2, 0x3f,
-	0x60, 0xc7, 0x83, 0xf2, 0xcd, 0x50, 0xbb, 0x00, 0xce, 0xc8, 0x05, 0xca, 0x17, 0x1f, 0xc9, 0xde,
-	0x68, 0x43, 0x2a, 0x52, 0xd7, 0x27, 0xa1, 0xf6, 0x45, 0xf0, 0xb0, 0x52, 0xa7, 0xa8, 0x2a, 0x2b,
-	0x78, 0x9b, 0x72, 0xad, 0x22, 0xba, 0xf5, 0x51, 0x13, 0x74, 0xc4, 0xa7, 0x25, 0x8f, 0x7a, 0x0d,
-	0x1d, 0xcd, 0x8f, 0x4a, 0x54, 0x97, 0xe6, 0x47, 0x25, 0xba, 0xa4, 0xd6, 0x92, 0x63, 0xd0, 0x5e,
-	0x1e, 0x84, 0x88, 0xce, 0xb9, 0x33, 0xea, 0x85, 0xf8, 0x36, 0x13, 0x5c, 0xde, 0x7a, 0xf7, 0xc3,
-	0xb3, 0xad, 0xf7, 0x3e, 0x3c, 0xdb, 0xfa, 0xf3, 0x87, 0x67, 0x5b, 0xaf, 0x7e, 0x74, 0xf6, 0xa1,
-	0xf7, 0x3e, 0x3a, 0xfb, 0xd0, 0xfb, 0x1f, 0x9d, 0x7d, 0xe8, 0x85, 0xd6, 0x9d, 0x2e, 0xfd, 0xa7,
-	0x25, 0xeb, 0x7f, 0x01, 0x00, 0x00, 0xff, 0xff, 0x57, 0xf3, 0xd6, 0x16, 0xc6, 0x24, 0x00, 0x00,
+	// 3261 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe4, 0x9a, 0xdb, 0x6f, 0x24, 0x47,
+	0xd5, 0xc0, 0xd3, 0xd3, 0xf6, 0xd8, 0x53, 0x33, 0xb6, 0x37, 0xfd, 0x25, 0xfa, 0xea, 0x73, 0x92,
+	0xbd, 0x74, 0x92, 0x2f, 0x4b, 0xa2, 0x38, 0xd3, 0x73, 0xb1, 0x77, 0x94, 0x08, 0xe4, 0x5d, 0xaf,
+	0x89, 0xa3, 0xb0, 0xbb, 0x9a, 0xdd, 0x4d, 0x78, 0x6b, 0xd5, 0x4e, 0xd7, 0xd8, 0x8d, 0x67, 0xba,
+	0x7b, 0xbb, 0x6b, 0x6c, 0xef, 0x23, 0x12, 0x2f, 0x88, 0x07, 0x12, 0x01, 0x09, 0x12, 0x08, 0x72,
+	0x01, 0xf2, 0x12, 0xfe, 0x00, 0x24, 0x78, 0x4f, 0x78, 0xca, 0x63, 0xc2, 0x0b, 0x28, 0x79, 0x42,
+	0xe2, 0x81, 0x07, 0x2e, 0x81, 0x10, 0x09, 0x9d, 0x3a, 0xd5, 0xdd, 0xd5, 0xe3, 0x99, 0xcc, 0x5a,
+	0x48, 0x5c, 0xc4, 0x5b, 0xf7, 0xa9, 0xf3, 0xab, 0x3a, 0x75, 0x4e, 0xd5, 0xa9, 0x4b, 0x37, 0x59,
+	0x1e, 0x26, 0xbb, 0xee, 0xe1, 0x20, 0x11, 0x6b, 0x51, 0x1c, 0x8a, 0xd0, 0x5a, 0x90, 0xcf, 0xbb,
+	0xb7, 0xec, 0x16, 0xb1, 0x6e, 0x06, 0xbe, 0xd8, 0xf1, 0x78, 0x20, 0xfc, 0xbe, 0xdf, 0x63, 0xc2,
+	0x0f, 0x03, 0x6b, 0x99, 0x94, 0xa2, 0x80, 0x1a, 0x67, 0x8d, 0xf3, 0xf3, 0xdd, 0x52, 0x24, 0xdf,
+	0xfb, 0x01, 0x2d, 0xe1, 0x7b, 0x3f, 0xb0, 0x3f, 0x35, 0x88, 0xb5, 0xc5, 0x04, 0x1b, 0xc3, 0x9a,
+	0xa4, 0x3c, 0xf2, 0x03, 0xb1, 0xb3, 0x45, 0x8d, 0xb3, 0xe6, 0xf9, 0x6a, 0xe3, 0x81, 0x35, 0xd5,
+	0xcc, 0xda, 0xf1, 0x36, 0xba, 0x4a, 0xd5, 0x3a, 0x45, 0x4c, 0xcf, 0x8f, 0x55, 0xe5, 0xf0, 0x08,
+	0xad, 0x89, 0x88, 0x9a, 0xd8, 0x9a, 0x88, 0xa4, 0x35, 0x87, 0x74, 0xfe, 0xac, 0x71, 0xbe, 0xd2,
+	0x2d, 0x45, 0x87, 0x40, 0xf0, 0x9e, 0x43, 0xcb, 0x48, 0xf0, 0x9e, 0x83, 0x92, 0x06, 0x5d, 0x48,
+	0x25, 0x0d, 0x90, 0x24, 0xfc, 0x36, 0x5d, 0x44, 0x49, 0xc2, 0x6f, 0x83, 0x84, 0xf5, 0x03, 0x5a,
+	0x41, 0x09, 0xeb, 0x07, 0x20, 0xe9, 0x8f, 0x02, 0x4a, 0x50, 0xd2, 0x1f, 0x05, 0x96, 0x45, 0xe6,
+	0x58, 0xcc, 0x19, 0xad, 0xca, 0xb6, 0xe4, 0xb3, 0x94, 0x79, 0x5e, 0x4c, 0x6b, 0x67, 0x8d, 0xf3,
+	0x66, 0x57, 0x3e, 0xdb, 0x5f, 0x5b, 0x25, 0xe4, 0xc5, 0x41, 0x22, 0xbe, 0x78, 0xf1, 0x6a, 0xc4,
+	0x65, 0xbf, 0xa5, 0x37, 0xb6, 0xa4, 0xcb, 0xf4, 0x7e, 0x1f, 0x77, 0x52, 0xb7, 0xec, 0x49, 0x55,
+	0xab, 0x45, 0xaa, 0xac, 0x1f, 0xd4, 0xeb, 0x6e, 0x54, 0x77, 0xfb, 0x8e, 0xb4, 0xa2, 0xda, 0xb8,
+	0x2f, 0x23, 0x37, 0x65, 0xd9, 0xb5, 0xba, 0xbb, 0xed, 0x74, 0x2b, 0x52, 0xf1, 0x5a, 0x7d, 0xdb,
+	0x29, 0x52, 0x0d, 0x69, 0xe8, 0x4c, 0xaa, 0x51, 0xa4, 0x9a, 0xb2, 0x2b, 0x93, 0xa9, 0x66, 0x4e,
+	0x35, 0x53, 0xaa, 0xa5, 0x2c, 0xf4, 0x26, 0x50, 0x2d, 0xbd, 0xad, 0x96, 0x6e, 0x61, 0x4b, 0xb5,
+	0xc5, 0xa7, 0x52, 0xcd, 0x9c, 0x1a, 0x6b, 0xab, 0x43, 0xfb, 0x53, 0xa9, 0x4e, 0x4e, 0x75, 0xac,
+	0x0d, 0x52, 0xd3, 0x2c, 0xac, 0xd3, 0x5d, 0x89, 0xdd, 0x3f, 0xc9, 0xc4, 0x7a, 0x97, 0x64, 0x36,
+	0xd6, 0xc7, 0x40, 0x87, 0xee, 0x4d, 0x07, 0x1d, 0x0d, 0x74, 0x34, 0x30, 0x70, 0xfb, 0x4e, 0x8b,
+	0xfa, 0x93, 0xc1, 0xc0, 0xdd, 0x76, 0x5a, 0x29, 0x18, 0x6c, 0x3b, 0xad, 0x31, 0xb0, 0x4d, 0xbf,
+	0x32, 0x1d, 0x6c, 0x6b, 0x60, 0xbb, 0x68, 0x6a, 0xcb, 0xa1, 0xfb, 0x53, 0x4d, 0x6d, 0x69, 0xa6,
+	0xb6, 0x9c, 0x31, 0xb0, 0x41, 0x07, 0xd3, 0xc1, 0x86, 0x06, 0x36, 0xc6, 0xc0, 0x75, 0x3a, 0x9c,
+	0x0e, 0xae, 0x6b, 0xe0, 0xfa, 0x18, 0xd8, 0xa1, 0xc1, 0x74, 0xb0, 0xa3, 0x81, 0x63, 0x71, 0x6c,
+	0xd7, 0x69, 0x38, 0x15, 0x6c, 0x6b, 0x71, 0x6c, 0x8f, 0xc5, 0xb1, 0xed, 0xd0, 0x68, 0x3a, 0xa8,
+	0x39, 0xa7, 0x3d, 0xe6, 0x9c, 0x76, 0x83, 0xde, 0x9e, 0x0e, 0x6a, 0xce, 0x69, 0x8f, 0x39, 0xa7,
+	0xdd, 0xa4, 0xf1, 0x74, 0xb0, 0xa9, 0x81, 0xcd, 0x31, 0x70, 0x83, 0x26, 0xd3, 0xc1, 0x0d, 0x0d,
+	0xdc, 0xb0, 0xda, 0x38, 0x35, 0xda, 0x6a, 0x1a, 0xbe, 0x63, 0x4c, 0x98, 0x1b, 0x6d, 0x7d, 0x1e,
+	0xb6, 0xe5, 0x3c, 0x2c, 0x60, 0x1d, 0xfa, 0xee, 0x74, 0xac, 0x93, 0x63, 0x1d, 0xeb, 0x02, 0x9a,
+	0x89, 0x58, 0xd3, 0xa1, 0xbf, 0x34, 0x26, 0xd8, 0x89, 0x5c, 0x53, 0xb9, 0x14, 0xc0, 0x66, 0xd6,
+	0x60, 0x47, 0xd9, 0xf9, 0x76, 0x69, 0x42, 0x83, 0x1d, 0xdd, 0xce, 0x8e, 0x6e, 0x27, 0x53, 0xd8,
+	0x4b, 0xe6, 0xac, 0x34, 0xc3, 0x8e, 0x63, 0x4d, 0xfa, 0xb2, 0x39, 0x2b, 0xcf, 0x30, 0x99, 0x67,
+	0x0a, 0x58, 0x87, 0xbe, 0x62, 0xce, 0x4a, 0x34, 0x4c, 0xf7, 0x0a, 0x4b, 0x13, 0xcd, 0xab, 0xe6,
+	0xcc, 0x4c, 0xc3, 0x30, 0xd3, 0x14, 0x49, 0x87, 0x7e, 0xd7, 0x9c, 0x99, 0x6a, 0x18, 0xa6, 0x9a,
+	0x9c, 0xc4, 0x54, 0xf3, 0x3d, 0x73, 0x66, 0xae, 0x61, 0x98, 0x6b, 0x8a, 0x64, 0x9b, 0x7e, 0xdf,
+	0x9c, 0x99, 0x6c, 0x18, 0x26, 0x9b, 0x82, 0xb5, 0x2d, 0x87, 0xfe, 0xd0, 0x9c, 0x99, 0x6d, 0x18,
+	0x66, 0x9b, 0x22, 0xd9, 0xa0, 0xaf, 0x99, 0x33, 0xd3, 0x0d, 0xc3, 0x74, 0x53, 0x24, 0xd7, 0xe9,
+	0xeb, 0xe6, 0xcc, 0x7c, 0xc3, 0x30, 0xdf, 0x14, 0xc9, 0x0e, 0x7d, 0xc3, 0x9c, 0x99, 0x70, 0x18,
+	0x26, 0x9c, 0x02, 0xd9, 0xae, 0xd3, 0x37, 0xcd, 0x99, 0x19, 0x87, 0x61, 0xc6, 0x29, 0x92, 0x0e,
+	0xfd, 0x91, 0x39, 0x33, 0xe5, 0x30, 0x4c, 0x39, 0x45, 0xb2, 0x41, 0x7f, 0x6c, 0xce, 0xcc, 0x39,
+	0x0c, 0x73, 0x4e, 0x91, 0x6c, 0xd2, 0x9f, 0x98, 0x33, 0x93, 0x0e, 0xc3, 0xa4, 0x53, 0x24, 0x37,
+	0xe8, 0x5b, 0xe6, 0xcc, 0xac, 0xc3, 0x0a, 0x59, 0xa7, 0x87, 0x63, 0x88, 0xfe, 0x61, 0xd2, 0x44,
+	0xe9, 0xe1, 0x10, 0xc2, 0x89, 0xd2, 0x83, 0x11, 0xa4, 0x61, 0x72, 0x7f, 0xf2, 0xc7, 0x29, 0x58,
+	0xdd, 0xdd, 0x6e, 0xa4, 0x18, 0x6c, 0x50, 0x0a, 0x58, 0x93, 0xfe, 0x69, 0x3a, 0xd6, 0xcc, 0xb1,
+	0x66, 0x11, 0x6b, 0xd1, 0x3f, 0x4f, 0xc7, 0x5a, 0x39, 0xd6, 0x2a, 0x62, 0xeb, 0xf4, 0xe3, 0xe9,
+	0xd8, 0x7a, 0x8e, 0xad, 0x17, 0xb1, 0x0d, 0xfa, 0x97, 0xe9, 0xd8, 0x46, 0x8e, 0x6d, 0x14, 0xb1,
+	0x0e, 0xfd, 0xeb, 0x74, 0xac, 0x93, 0x63, 0xd9, 0x10, 0x45, 0xcc, 0xb9, 0x40, 0x3f, 0x99, 0x14,
+	0x3a, 0xe4, 0x9c, 0x0b, 0x18, 0x3a, 0x00, 0x9d, 0x0b, 0x63, 0x64, 0x87, 0xfe, 0xed, 0x33, 0xc8,
+	0x8e, 0x46, 0x8e, 0xb5, 0xd9, 0xa8, 0xd3, 0x4f, 0xa7, 0x93, 0x8d, 0x7a, 0x4e, 0x36, 0xea, 0x69,
+	0x27, 0x3d, 0x35, 0x5c, 0xde, 0x9f, 0x9b, 0xd0, 0x49, 0x4f, 0x1f, 0x2e, 0x9e, 0x3e, 0x5c, 0x3c,
+	0x35, 0x5c, 0x3e, 0x98, 0x82, 0xe5, 0xc3, 0xc5, 0xd3, 0x87, 0x0b, 0xb6, 0xd6, 0xa4, 0xbf, 0x9a,
+	0xde, 0x5a, 0x33, 0x6f, 0x2d, 0x1b, 0x2e, 0x5c, 0x2d, 0x35, 0x3f, 0x9f, 0x9f, 0x80, 0x71, 0x7d,
+	0xa9, 0xe1, 0xfa, 0x52, 0xc3, 0x95, 0x91, 0xbf, 0xb8, 0x2b, 0x2c, 0x35, 0xd2, 0x49, 0x37, 0xf8,
+	0xaf, 0x95, 0x8f, 0x63, 0x8e, 0xbe, 0x57, 0x77, 0xea, 0x5a, 0x6b, 0x0a, 0xeb, 0xd0, 0xd7, 0xa7,
+	0x63, 0x9d, 0x1c, 0x4b, 0x43, 0x97, 0xb6, 0x56, 0xa7, 0x6f, 0x94, 0x8f, 0x87, 0x2e, 0x6d, 0x0e,
+	0x43, 0x87, 0xed, 0xd5, 0x8b, 0x64, 0xcb, 0xa1, 0x6f, 0xde, 0x1d, 0xd9, 0x72, 0xec, 0x33, 0xa4,
+	0xaa, 0x1d, 0x38, 0xd2, 0x13, 0x96, 0x91, 0x9d, 0xb0, 0xec, 0xdb, 0xba, 0x42, 0xf3, 0xb8, 0x82,
+	0xd5, 0x22, 0x0b, 0xa3, 0xc0, 0x17, 0xae, 0xef, 0xd1, 0xd2, 0xdd, 0x1c, 0x19, 0xa5, 0xcc, 0x5a,
+	0x25, 0xe5, 0x44, 0x30, 0x31, 0x4a, 0xa8, 0x79, 0xd6, 0x3c, 0x3f, 0x7f, 0xb1, 0x74, 0xca, 0xe8,
+	0x2a, 0x89, 0xfd, 0x8e, 0x81, 0x6d, 0xb6, 0x72, 0xa3, 0x62, 0x91, 0xa4, 0x6d, 0xc6, 0x22, 0xb1,
+	0x1e, 0x22, 0x64, 0xc8, 0x12, 0xc1, 0x63, 0x17, 0x0a, 0xf0, 0xdc, 0x59, 0x41, 0x49, 0x57, 0x24,
+	0xd6, 0xa3, 0x64, 0x39, 0xe6, 0x09, 0x0f, 0x3c, 0x57, 0xf8, 0x43, 0x1e, 0x8e, 0x84, 0x3a, 0x89,
+	0x2e, 0xa1, 0xf4, 0x06, 0x0a, 0xa1, 0x16, 0xa5, 0x16, 0x8c, 0x86, 0x74, 0x0e, 0x6b, 0x41, 0xc9,
+	0x95, 0xd1, 0xd0, 0x7a, 0x98, 0x54, 0x63, 0x1e, 0x85, 0xb1, 0x70, 0x87, 0x2c, 0xde, 0xa7, 0xf3,
+	0x99, 0x9d, 0x04, 0xc5, 0x5f, 0x62, 0xf1, 0x3e, 0xd4, 0xb1, 0xcf, 0x79, 0xe4, 0xb2, 0x81, 0x7f,
+	0xc0, 0xd5, 0x79, 0xb6, 0x02, 0x92, 0x4d, 0x10, 0xd8, 0x3f, 0x2b, 0x74, 0xa5, 0x69, 0xfd, 0x2f,
+	0x59, 0x18, 0x32, 0x3f, 0x70, 0xfd, 0x48, 0x76, 0xa7, 0xd2, 0x2d, 0xc3, 0xeb, 0x4e, 0x64, 0x3d,
+	0x40, 0x2a, 0xb2, 0x00, 0x2a, 0x56, 0x1d, 0x5a, 0x04, 0xc1, 0xb5, 0x30, 0x16, 0x50, 0x78, 0x8b,
+	0xf5, 0xf6, 0x47, 0x11, 0x70, 0xa6, 0xe4, 0x16, 0x51, 0xb0, 0x13, 0x59, 0x67, 0x48, 0x55, 0x15,
+	0x4a, 0x16, 0xbb, 0x41, 0x50, 0x24, 0x69, 0x08, 0x59, 0x14, 0xa8, 0xc3, 0x37, 0x3c, 0xc2, 0x79,
+	0x78, 0x94, 0xf0, 0x58, 0x9a, 0x5b, 0xe9, 0xca, 0x67, 0xd0, 0x8a, 0x0e, 0x3d, 0x79, 0xfe, 0xae,
+	0x74, 0xe1, 0xd1, 0xe6, 0xba, 0xe9, 0x1d, 0xeb, 0x49, 0x72, 0x8a, 0x1f, 0xf0, 0x40, 0x24, 0x2e,
+	0x3b, 0x60, 0xfe, 0x80, 0xdd, 0x1a, 0x70, 0x79, 0x47, 0x80, 0x3e, 0x59, 0xc1, 0xb2, 0xcd, 0xb4,
+	0xc8, 0x7a, 0x8c, 0x2c, 0x29, 0x75, 0xf4, 0x96, 0x1c, 0x1c, 0xa8, 0x5b, 0xc3, 0x82, 0xae, 0x94,
+	0xdb, 0x11, 0xa9, 0xe9, 0x3b, 0x2f, 0xcb, 0x21, 0x56, 0x72, 0xe8, 0x8b, 0xde, 0x9e, 0x1f, 0x4c,
+	0x6c, 0xe9, 0xde, 0xb4, 0x34, 0x6f, 0xeb, 0x49, 0x72, 0x2a, 0x43, 0xf6, 0xc2, 0x28, 0xf2, 0x83,
+	0x5d, 0xad, 0xb9, 0x95, 0xb4, 0xec, 0x59, 0x2c, 0xb2, 0xbf, 0x6d, 0x14, 0x9a, 0x74, 0xac, 0x07,
+	0x49, 0x65, 0x10, 0x06, 0xbb, 0xbe, 0x18, 0x79, 0x5c, 0xc6, 0xc5, 0xe8, 0xe6, 0x02, 0x6b, 0x95,
+	0x2c, 0x0e, 0x98, 0xc0, 0xc2, 0x92, 0x2c, 0xcc, 0xde, 0x61, 0xa4, 0x65, 0x8a, 0x38, 0x4c, 0xd4,
+	0x48, 0xcb, 0xa4, 0x72, 0x94, 0x3c, 0x4c, 0x96, 0x52, 0x04, 0xb5, 0x30, 0x4a, 0xb5, 0x54, 0x08,
+	0x4a, 0xf6, 0x72, 0x66, 0x95, 0xdc, 0x0e, 0xda, 0xbf, 0x33, 0x0a, 0x82, 0xb6, 0xf5, 0x7f, 0x64,
+	0xd1, 0x13, 0x6e, 0x22, 0x58, 0x2c, 0xa4, 0x95, 0x66, 0x77, 0xc1, 0x13, 0xd7, 0xe1, 0x15, 0xc6,
+	0x95, 0x27, 0x5c, 0x8f, 0xdd, 0x49, 0x67, 0x43, 0xd9, 0x13, 0x5b, 0xec, 0x4e, 0x62, 0x7d, 0x8e,
+	0x2c, 0x63, 0xf7, 0xc3, 0x91, 0x70, 0xfd, 0xc0, 0x3b, 0xd2, 0xe6, 0xdb, 0x52, 0x56, 0xb2, 0x13,
+	0x78, 0x47, 0xd6, 0x33, 0xa4, 0x02, 0xd3, 0xc5, 0x4d, 0x06, 0x21, 0x0c, 0x23, 0x98, 0xca, 0x67,
+	0x26, 0x6e, 0x37, 0xd7, 0x60, 0x02, 0xb9, 0xd7, 0x07, 0xa1, 0xe8, 0x2e, 0x02, 0x01, 0x4f, 0xab,
+	0x5f, 0x20, 0x95, 0x4c, 0x0c, 0xe6, 0xc8, 0xaa, 0xc2, 0x34, 0x53, 0x94, 0xe1, 0xf5, 0x6a, 0x00,
+	0x5d, 0xc0, 0x82, 0x7e, 0x5f, 0x19, 0x2a, 0x15, 0xaf, 0xf6, 0xfb, 0xf6, 0xd3, 0x7a, 0x50, 0x5a,
+	0x8e, 0xf5, 0x04, 0x59, 0xc9, 0x2d, 0x1f, 0x84, 0x61, 0x94, 0x68, 0x83, 0x20, 0xef, 0xd4, 0xf3,
+	0x50, 0x62, 0xff, 0xbe, 0x54, 0xa0, 0x1b, 0xd6, 0x53, 0xe4, 0x7f, 0x0e, 0xc2, 0x81, 0x60, 0xbb,
+	0xdc, 0x15, 0x31, 0x0b, 0x92, 0x7e, 0x18, 0x0f, 0x79, 0xac, 0xac, 0xb1, 0x54, 0xd1, 0x8d, 0xbc,
+	0xc4, 0xaa, 0x93, 0xfb, 0x78, 0xc0, 0xe3, 0xdd, 0x3b, 0x2e, 0x2b, 0x10, 0x68, 0xa5, 0x85, 0x65,
+	0x9b, 0x93, 0x89, 0x5b, 0x05, 0xc2, 0xd4, 0x89, 0x8b, 0x93, 0x89, 0x5e, 0x81, 0x98, 0xd3, 0x89,
+	0x4b, 0x3a, 0x71, 0x85, 0xac, 0xf4, 0x46, 0x71, 0xcc, 0x03, 0xe1, 0x26, 0x5c, 0x08, 0x18, 0xd8,
+	0xf3, 0x32, 0x32, 0x8f, 0x4e, 0xdc, 0x94, 0xaf, 0x5d, 0x52, 0xca, 0xd7, 0x51, 0xb9, 0xbb, 0xac,
+	0x68, 0xf5, 0xbe, 0xba, 0x43, 0x56, 0xc6, 0x54, 0xac, 0xb3, 0xa4, 0x7a, 0xdc, 0x43, 0xba, 0xc8,
+	0xba, 0x8f, 0xcc, 0x47, 0x7b, 0x2c, 0xe1, 0xca, 0x17, 0xf8, 0x62, 0xbf, 0xba, 0x50, 0x70, 0xf9,
+	0x3a, 0x8c, 0x9f, 0x43, 0xce, 0xf7, 0x61, 0x14, 0x3a, 0xea, 0x16, 0xed, 0xcc, 0xc4, 0x03, 0xc0,
+	0xda, 0x8b, 0xa0, 0x86, 0xe3, 0x07, 0x88, 0x2d, 0x76, 0xc7, 0xd1, 0xe9, 0x06, 0x2d, 0x9d, 0x8c,
+	0x6e, 0xe8, 0x74, 0x93, 0x9a, 0x27, 0xa3, 0x9b, 0x3a, 0xdd, 0xa2, 0x73, 0x27, 0xa3, 0x5b, 0x3a,
+	0xdd, 0xa6, 0xf3, 0x27, 0xa3, 0xdb, 0x3a, 0xbd, 0x4e, 0xcb, 0x27, 0xa3, 0x0b, 0x3e, 0xdf, 0x90,
+	0xb9, 0xfb, 0x04, 0xf4, 0xc6, 0xea, 0xb7, 0x4c, 0x52, 0xc9, 0xe4, 0xd6, 0x53, 0xa4, 0xb4, 0x3f,
+	0x23, 0x70, 0xf9, 0xc4, 0x2f, 0xed, 0x3b, 0x12, 0x98, 0x11, 0x2b, 0x1d, 0x68, 0x48, 0x60, 0x46,
+	0x78, 0x74, 0xa0, 0x29, 0x81, 0x19, 0x11, 0xd1, 0x81, 0x96, 0x04, 0x66, 0x04, 0x41, 0x07, 0xda,
+	0x12, 0x98, 0xe1, 0x77, 0x1d, 0x58, 0x97, 0xc0, 0x0c, 0x57, 0xeb, 0xc0, 0x86, 0x04, 0x2e, 0xc8,
+	0x5b, 0xec, 0xbb, 0x02, 0x2e, 0xfc, 0xe3, 0x99, 0xf4, 0xb9, 0xc2, 0xc4, 0xec, 0xc0, 0xf6, 0x21,
+	0xec, 0xf7, 0x13, 0x2e, 0xf2, 0x5a, 0x16, 0x51, 0x70, 0x35, 0x80, 0x0d, 0x4c, 0x5a, 0x98, 0xd5,
+	0xa4, 0xd4, 0xa1, 0x2e, 0x47, 0xaf, 0xab, 0x5d, 0xb7, 0xce, 0x91, 0x9a, 0xda, 0x14, 0x41, 0x6b,
+	0x59, 0xba, 0x40, 0x19, 0x98, 0x1d, 0xdb, 0x6f, 0x98, 0x05, 0xc6, 0xb1, 0xd6, 0xf2, 0x5c, 0x3c,
+	0x08, 0x0f, 0x79, 0xec, 0x0e, 0xfc, 0xa1, 0x2f, 0xd4, 0x42, 0x7b, 0xaf, 0x2a, 0x7a, 0x1e, 0x4a,
+	0x9e, 0x87, 0x02, 0x5d, 0x7f, 0x14, 0x45, 0x99, 0x7e, 0xa9, 0xa0, 0x7f, 0x13, 0x4a, 0x50, 0xff,
+	0x39, 0xb2, 0x94, 0x26, 0x49, 0xd4, 0x34, 0xa7, 0xa6, 0xc8, 0xb6, 0x73, 0x2c, 0x45, 0xd6, 0x14,
+	0x2b, 0xeb, 0x5a, 0xfd, 0xf2, 0xf1, 0x04, 0x79, 0x99, 0xd4, 0x60, 0xf9, 0xc9, 0x12, 0x30, 0x7e,
+	0x18, 0xb1, 0x27, 0xd7, 0x0e, 0xcb, 0x51, 0x56, 0x75, 0x15, 0xb8, 0x34, 0xf5, 0x7e, 0xc3, 0x20,
+	0x35, 0xbd, 0x14, 0xc2, 0x92, 0xaf, 0xb7, 0x2a, 0x2c, 0xe9, 0x72, 0x0a, 0x3e, 0xc8, 0xfa, 0xa4,
+	0xf9, 0x4c, 0xf9, 0x20, 0x35, 0xb9, 0xe0, 0xb3, 0x54, 0x5f, 0xf7, 0x99, 0x59, 0xd0, 0xcf, 0x7d,
+	0x66, 0x7f, 0x52, 0xd8, 0x03, 0xb5, 0x1b, 0x30, 0xd0, 0x64, 0x2f, 0x83, 0x30, 0x1d, 0x68, 0xf0,
+	0x7a, 0x25, 0x84, 0xfd, 0xa5, 0x2c, 0xe0, 0x81, 0xdc, 0x88, 0xe1, 0x08, 0x21, 0x20, 0xba, 0x2c,
+	0x25, 0xb8, 0x07, 0x02, 0xff, 0xa4, 0x4b, 0x72, 0xbe, 0x07, 0x0a, 0xa3, 0xeb, 0xa9, 0x10, 0x46,
+	0xce, 0x80, 0x1f, 0xf0, 0x81, 0xa3, 0x4c, 0xc3, 0x45, 0xaf, 0x8a, 0x32, 0xec, 0x44, 0xaa, 0xd2,
+	0x50, 0x2a, 0xf3, 0x9a, 0x4a, 0xa3, 0xa8, 0xd2, 0x54, 0x2a, 0x65, 0x4d, 0xa5, 0x59, 0x54, 0x69,
+	0x29, 0x95, 0x05, 0x4d, 0xa5, 0x85, 0xbd, 0xbf, 0x56, 0xe8, 0x7c, 0x53, 0xee, 0xcf, 0x46, 0x47,
+	0xae, 0xd8, 0x8b, 0x79, 0xb2, 0x17, 0x0e, 0x3c, 0xe5, 0x82, 0xda, 0x60, 0x74, 0x74, 0x23, 0x95,
+	0x65, 0xf1, 0x12, 0x7e, 0x6f, 0x3f, 0xdd, 0xa2, 0x83, 0xe0, 0x86, 0xdf, 0xdb, 0xb7, 0xbb, 0x85,
+	0x1a, 0x37, 0xe4, 0x3c, 0x19, 0x05, 0x52, 0x5f, 0x6e, 0xf8, 0xd2, 0x79, 0x82, 0x32, 0xb9, 0x29,
+	0x3c, 0x03, 0xbb, 0xce, 0x30, 0xc2, 0xf2, 0x7c, 0xbb, 0xba, 0x08, 0x42, 0xb9, 0x21, 0x7c, 0x59,
+	0x1d, 0x1e, 0xd4, 0xcd, 0xf0, 0xea, 0x57, 0x0d, 0xb2, 0x9c, 0xf9, 0xd3, 0xbd, 0x24, 0xe2, 0x01,
+	0xf8, 0x7e, 0x6c, 0x7b, 0x87, 0x0d, 0x8d, 0x6d, 0xed, 0xce, 0x91, 0x5a, 0xae, 0xe6, 0x85, 0xca,
+	0xfa, 0x6a, 0x26, 0xdb, 0x0a, 0x8b, 0x35, 0x81, 0x8d, 0x69, 0x14, 0x33, 0x29, 0xcc, 0x6e, 0x7b,
+	0x4d, 0x37, 0xa9, 0x53, 0xec, 0x83, 0x31, 0xa1, 0x0f, 0x4f, 0xa0, 0x5f, 0xd2, 0xdb, 0xe6, 0xcc,
+	0x89, 0xa3, 0xc0, 0x3f, 0x52, 0x9b, 0x58, 0xe9, 0xc4, 0x9b, 0x81, 0x7f, 0x64, 0x7f, 0xd3, 0xc4,
+	0xda, 0xd5, 0x15, 0xb3, 0x45, 0xc9, 0x42, 0x2f, 0x1c, 0x46, 0x2c, 0xb8, 0xa3, 0x4e, 0x4b, 0xe9,
+	0x2b, 0x64, 0x2d, 0x8f, 0x1f, 0xf8, 0x3d, 0x2e, 0x8f, 0x6e, 0x25, 0x59, 0x58, 0x41, 0x09, 0x1c,
+	0xdd, 0xa0, 0xbf, 0x61, 0x5f, 0x1c, 0xb2, 0x98, 0xbb, 0x07, 0x6a, 0x4b, 0x56, 0xe9, 0x56, 0x53,
+	0xd9, 0x0b, 0x3c, 0x86, 0x90, 0x67, 0x2a, 0x1e, 0x13, 0x5c, 0x8e, 0xc7, 0x4a, 0x37, 0xe3, 0xb6,
+	0x98, 0xe0, 0x30, 0xf6, 0x55, 0x33, 0x7e, 0xd0, 0x0f, 0xd5, 0x11, 0x4a, 0xb5, 0xbc, 0x13, 0xf4,
+	0x43, 0x68, 0x68, 0x8f, 0xc5, 0x5e, 0xd6, 0x10, 0x9e, 0xa8, 0xaa, 0xa9, 0x4c, 0x35, 0x94, 0xa9,
+	0xc8, 0x86, 0xf0, 0x88, 0x95, 0x71, 0xb2, 0xa1, 0x47, 0xe0, 0xc4, 0x3a, 0x0c, 0x05, 0x77, 0x7b,
+	0xe1, 0x50, 0xd6, 0xb4, 0x88, 0x5a, 0x28, 0xbd, 0x14, 0x0e, 0xa1, 0xaa, 0xff, 0x27, 0x2b, 0x9a,
+	0x96, 0xac, 0xac, 0x22, 0xd5, 0x96, 0x32, 0x35, 0x59, 0x9b, 0x4d, 0x96, 0x06, 0x61, 0x8f, 0x0d,
+	0xb2, 0xca, 0x08, 0x9a, 0x25, 0x85, 0xaa, 0xae, 0x47, 0x60, 0xd6, 0xa6, 0x3a, 0xb2, 0x2a, 0xfc,
+	0x62, 0x5a, 0x4b, 0x95, 0xa0, 0x26, 0xfb, 0xdd, 0x12, 0x46, 0x44, 0x5d, 0x13, 0x42, 0xf8, 0x3c,
+	0x91, 0x9e, 0xe8, 0x54, 0xf8, 0x3c, 0x81, 0x27, 0x39, 0xeb, 0x69, 0x35, 0x18, 0x3c, 0x26, 0x98,
+	0xba, 0x0b, 0x38, 0x3d, 0xe9, 0xb2, 0x11, 0x93, 0xe4, 0x16, 0x13, 0x0c, 0x07, 0x0a, 0x3c, 0xad,
+	0xfe, 0xda, 0x20, 0x95, 0x4c, 0x0e, 0x91, 0x57, 0x79, 0x5e, 0x2d, 0x13, 0xe9, 0xab, 0x1c, 0x13,
+	0x98, 0xcd, 0x54, 0x32, 0x4c, 0x5f, 0x21, 0x16, 0xac, 0x27, 0xfc, 0x03, 0xee, 0x46, 0x90, 0x17,
+	0x55, 0xee, 0xab, 0xa2, 0xec, 0x1a, 0x88, 0xf0, 0x62, 0xa0, 0xa0, 0x34, 0x27, 0x95, 0x96, 0x52,
+	0x29, 0xaa, 0x9d, 0x23, 0x35, 0x59, 0xea, 0xf6, 0x59, 0x4f, 0x84, 0xb1, 0x8c, 0xbb, 0xd1, 0xad,
+	0x4a, 0xd9, 0xb6, 0x14, 0x81, 0x23, 0x20, 0x63, 0x1c, 0xb0, 0xc1, 0x08, 0x8f, 0xfd, 0x30, 0xe8,
+	0x47, 0x47, 0x2f, 0xc0, 0x3b, 0x6c, 0x98, 0x43, 0xb1, 0xc7, 0x63, 0x19, 0x6a, 0xa3, 0x8b, 0x2f,
+	0xf6, 0xe3, 0x99, 0x2b, 0xeb, 0xee, 0x76, 0xe3, 0xb3, 0x67, 0xc2, 0x6f, 0x4b, 0xba, 0x72, 0xd3,
+	0xfa, 0x3c, 0x21, 0x72, 0xd7, 0x8d, 0xbe, 0x35, 0x26, 0x1c, 0xce, 0x94, 0xe6, 0xda, 0x35, 0xa9,
+	0x26, 0x9d, 0x5b, 0x91, 0x88, 0xf4, 0xe7, 0x83, 0xa4, 0xd2, 0x8f, 0xf9, 0xed, 0x11, 0x0f, 0x7a,
+	0x77, 0x94, 0xdf, 0x72, 0xc1, 0xea, 0x27, 0x06, 0x21, 0x39, 0xf7, 0xef, 0xef, 0xfc, 0x87, 0xc9,
+	0x92, 0xaa, 0x07, 0x8f, 0x4c, 0x2a, 0x00, 0xca, 0x82, 0xcb, 0x52, 0x66, 0x3d, 0x06, 0x93, 0xa5,
+	0xa8, 0x86, 0xe1, 0xc8, 0xac, 0x40, 0x45, 0xbb, 0xa1, 0xbb, 0xba, 0x05, 0x95, 0xe3, 0x52, 0xa7,
+	0x0f, 0xf3, 0xf9, 0x6e, 0x0d, 0x85, 0xea, 0xd2, 0xe2, 0x19, 0x9d, 0x59, 0xcf, 0x2f, 0x20, 0x20,
+	0x79, 0xaa, 0x7b, 0x2d, 0x63, 0xfc, 0x02, 0x22, 0x1c, 0xc1, 0x61, 0x5d, 0x8c, 0x12, 0xdb, 0xd1,
+	0xe9, 0x8d, 0xf4, 0x67, 0x08, 0xe3, 0xd8, 0xcf, 0x10, 0xa5, 0xec, 0x67, 0x08, 0xfb, 0x3b, 0x86,
+	0xce, 0x74, 0xac, 0x4d, 0xb5, 0x2a, 0x6b, 0x8d, 0x55, 0x1b, 0x67, 0x27, 0x5d, 0x48, 0xab, 0x2d,
+	0x89, 0xd4, 0xc3, 0x75, 0x1b, 0x9f, 0x57, 0x2f, 0x91, 0xaa, 0x56, 0x64, 0xdd, 0x4f, 0xca, 0x89,
+	0x70, 0x83, 0xf0, 0x50, 0x19, 0x32, 0x9f, 0x88, 0x2b, 0xe1, 0x21, 0x64, 0xda, 0x44, 0xb8, 0xbd,
+	0x3d, 0x16, 0xec, 0x72, 0x2f, 0xdd, 0x1f, 0x26, 0xe2, 0x12, 0x0a, 0xec, 0x5d, 0xcc, 0xef, 0xe9,
+	0x25, 0xf6, 0xf4, 0x6d, 0xc4, 0x43, 0x44, 0xb6, 0xed, 0xea, 0x27, 0x49, 0x99, 0x2e, 0xe4, 0xc0,
+	0x83, 0x85, 0x44, 0x5d, 0x17, 0x79, 0xa1, 0x76, 0x45, 0xb1, 0x88, 0xc2, 0xad, 0x30, 0xbd, 0x1e,
+	0x48, 0xef, 0xbc, 0xad, 0x27, 0xc8, 0xca, 0x80, 0xb3, 0x7d, 0xd8, 0x24, 0xa6, 0x43, 0x12, 0x9c,
+	0x60, 0xe0, 0xf5, 0x80, 0x2a, 0x52, 0x5b, 0x39, 0xfb, 0xa2, 0x0e, 0x37, 0xea, 0xe0, 0xdf, 0xc1,
+	0xe8, 0x48, 0x8d, 0x6e, 0x78, 0x94, 0xa7, 0x60, 0x3e, 0x8c, 0x78, 0xcc, 0xc4, 0x28, 0x4e, 0xef,
+	0x79, 0x74, 0x91, 0xfd, 0x03, 0xb5, 0x38, 0xa9, 0x2b, 0xf0, 0xcf, 0xba, 0x8d, 0x39, 0x47, 0x6a,
+	0x30, 0x4f, 0x5d, 0x8f, 0x07, 0x89, 0x2f, 0xee, 0xa4, 0xcb, 0x2d, 0xc8, 0xb6, 0x50, 0x24, 0x69,
+	0x50, 0x81, 0xe5, 0x0b, 0x17, 0xda, 0x05, 0x78, 0x87, 0xc5, 0x4b, 0x73, 0xe1, 0x5c, 0xc1, 0x85,
+	0x85, 0xfc, 0x3a, 0x3f, 0x21, 0xbf, 0x7a, 0xff, 0xd5, 0xf9, 0xf5, 0xe3, 0x3c, 0x40, 0x32, 0xc1,
+	0xfe, 0xf3, 0x03, 0xb4, 0x49, 0x6a, 0x98, 0xa5, 0x99, 0x1e, 0xa3, 0x33, 0x93, 0x3e, 0x85, 0xe8,
+	0x79, 0x1a, 0x53, 0xfb, 0xa6, 0x0c, 0x4c, 0x56, 0xc5, 0x2d, 0xac, 0xa2, 0x7c, 0x92, 0x2a, 0x2e,
+	0x16, 0xab, 0xe8, 0x61, 0x15, 0x0b, 0x27, 0xa9, 0xe2, 0x92, 0x1c, 0x2c, 0x3f, 0xfd, 0xcf, 0x5a,
+	0x10, 0xec, 0xb7, 0x0d, 0x7d, 0x6e, 0x36, 0xff, 0x05, 0xa1, 0x9f, 0x90, 0x8e, 0xe6, 0xa7, 0xa6,
+	0xa3, 0x57, 0x94, 0xb9, 0xea, 0x8b, 0x93, 0xfc, 0x3b, 0x6e, 0x98, 0xfd, 0xab, 0x37, 0x54, 0xff,
+	0xee, 0x95, 0xb2, 0x7f, 0xf7, 0xee, 0x27, 0x65, 0xde, 0x93, 0xa9, 0x19, 0xcd, 0x99, 0xe7, 0x3d,
+	0x48, 0xcd, 0x9b, 0xa4, 0x9a, 0xe6, 0x4c, 0x88, 0xf3, 0xdc, 0x84, 0x35, 0x40, 0xb5, 0xb0, 0x76,
+	0x19, 0xf5, 0x30, 0xd0, 0x2a, 0xa7, 0x42, 0xa0, 0x97, 0x48, 0x55, 0x2b, 0xb2, 0xbf, 0x8e, 0x86,
+	0xa5, 0x9f, 0x8a, 0xa4, 0x27, 0x12, 0xe1, 0xca, 0x9f, 0xe7, 0x52, 0x3f, 0x26, 0x62, 0xd3, 0xf3,
+	0x64, 0x54, 0xa0, 0x48, 0x7d, 0x60, 0x71, 0x32, 0x3f, 0x26, 0x42, 0x7d, 0x5e, 0x71, 0xc6, 0x54,
+	0x1a, 0xca, 0x78, 0x4d, 0xa5, 0x91, 0x36, 0xa0, 0xec, 0x97, 0x5b, 0x7c, 0x2f, 0x11, 0xd2, 0x96,
+	0xb7, 0x0a, 0xb6, 0x74, 0xc0, 0x09, 0x7d, 0x11, 0xa5, 0x5f, 0x4e, 0xcc, 0xee, 0x7c, 0x5f, 0x44,
+	0x3b, 0x11, 0xd4, 0x00, 0x62, 0xed, 0xbb, 0xc9, 0x42, 0x5f, 0xe0, 0x87, 0x0f, 0x55, 0x24, 0x3f,
+	0x75, 0xe0, 0x09, 0x00, 0x8a, 0x6e, 0x26, 0x3c, 0x86, 0x38, 0x4a, 0xea, 0xd0, 0x53, 0xcd, 0x42,
+	0xdd, 0xd7, 0x0e, 0xbd, 0xb4, 0xc0, 0xf3, 0x63, 0xb5, 0xdb, 0x87, 0x82, 0x2d, 0x3f, 0x4e, 0x2b,
+	0xeb, 0xfb, 0x03, 0xae, 0x76, 0xf9, 0xa0, 0xb8, 0xed, 0x0f, 0xb8, 0xfd, 0x01, 0x9e, 0xa5, 0xb3,
+	0x0f, 0x6c, 0xd6, 0x79, 0x72, 0x4a, 0x3f, 0x7e, 0xb8, 0xe9, 0x89, 0xb2, 0xd2, 0x5d, 0xd6, 0x8e,
+	0x20, 0x57, 0x07, 0x9e, 0xf5, 0x38, 0xb9, 0xb7, 0x70, 0x0a, 0x91, 0xaa, 0x78, 0x9c, 0x59, 0xd1,
+	0x4f, 0x22, 0xa0, 0x3b, 0x5e, 0x6b, 0xc0, 0x0f, 0x55, 0xb7, 0xf4, 0x5a, 0xaf, 0xf0, 0xc3, 0xe3,
+	0xb5, 0x82, 0xea, 0xdc, 0xf1, 0x5a, 0x41, 0x17, 0x4e, 0x52, 0xc2, 0x1d, 0x45, 0xbb, 0x31, 0xf3,
+	0xb8, 0xec, 0xb3, 0xd9, 0xad, 0x78, 0xe2, 0x26, 0x0a, 0x2e, 0xae, 0xbe, 0xf3, 0xe1, 0x69, 0xe3,
+	0xbd, 0x0f, 0x4f, 0x1b, 0xbf, 0xf9, 0xf0, 0xb4, 0xf1, 0xd2, 0x47, 0xa7, 0xef, 0x79, 0xef, 0xa3,
+	0xd3, 0xf7, 0xbc, 0xff, 0xd1, 0xe9, 0x7b, 0x9e, 0x35, 0x6e, 0x95, 0xe5, 0x8f, 0xa8, 0xcd, 0xbf,
+	0x07, 0x00, 0x00, 0xff, 0xff, 0x43, 0x27, 0x93, 0xb2, 0x9a, 0x2a, 0x00, 0x00,
 }
 
 func (m *UnitIdentification) Marshal() (dAtA []byte, err error) {
@@ -5116,9 +4999,9 @@ func (m *WlstGBOpen) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0xaa
 	}
-	if m.Afn0CP0F1 != nil {
+	if m.Afn0CPnF1 != nil {
 		{
-			size, err := m.Afn0CP0F1.MarshalToSizedBuffer(dAtA[:i])
+			size, err := m.Afn0CPnF1.MarshalToSizedBuffer(dAtA[:i])
 			if err != nil {
 				return 0, err
 			}
@@ -5129,48 +5012,6 @@ func (m *WlstGBOpen) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		dAtA[i] = 0x1f
 		i--
 		dAtA[i] = 0xa2
-	}
-	if m.Afn0AP0F67 != nil {
-		{
-			size, err := m.Afn0AP0F67.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintMsgWlst(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x1a
-		i--
-		dAtA[i] = 0xd2
-	}
-	if m.Afn0AP0F66 != nil {
-		{
-			size, err := m.Afn0AP0F66.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintMsgWlst(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x1a
-		i--
-		dAtA[i] = 0xca
-	}
-	if m.Afn0AP0F65 != nil {
-		{
-			size, err := m.Afn0AP0F65.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintMsgWlst(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x1a
-		i--
-		dAtA[i] = 0xc2
 	}
 	if m.Afn0AP0F57 != nil {
 		{
@@ -5451,48 +5292,6 @@ func (m *WlstGBOpen) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		dAtA[i] = 0xc
 		i--
 		dAtA[i] = 0xc2
-	}
-	if m.Afn04P0F67 != nil {
-		{
-			size, err := m.Afn04P0F67.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintMsgWlst(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x7
-		i--
-		dAtA[i] = 0xb2
-	}
-	if m.Afn04P0F66 != nil {
-		{
-			size, err := m.Afn04P0F66.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintMsgWlst(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x7
-		i--
-		dAtA[i] = 0xaa
-	}
-	if m.Afn04P0F65 != nil {
-		{
-			size, err := m.Afn04P0F65.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintMsgWlst(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x7
-		i--
-		dAtA[i] = 0xa2
 	}
 	if m.Afn04P0F57 != nil {
 		{
@@ -5818,21 +5617,21 @@ func (m *Afn00_P0_F3) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	var l int
 	_ = l
 	if len(m.Status) > 0 {
-		dAtA67 := make([]byte, len(m.Status)*10)
-		var j66 int
+		dAtA61 := make([]byte, len(m.Status)*10)
+		var j60 int
 		for _, num1 := range m.Status {
 			num := uint64(num1)
 			for num >= 1<<7 {
-				dAtA67[j66] = uint8(uint64(num)&0x7f | 0x80)
+				dAtA61[j60] = uint8(uint64(num)&0x7f | 0x80)
 				num >>= 7
-				j66++
+				j60++
 			}
-			dAtA67[j66] = uint8(num)
-			j66++
+			dAtA61[j60] = uint8(num)
+			j60++
 		}
-		i -= j66
-		copy(dAtA[i:], dAtA67[:j66])
-		i = encodeVarintMsgWlst(dAtA, i, uint64(j66))
+		i -= j60
+		copy(dAtA[i:], dAtA61[:j60])
+		i = encodeVarintMsgWlst(dAtA, i, uint64(j60))
 		i--
 		dAtA[i] = 0x1a
 	}
@@ -5884,21 +5683,21 @@ func (m *Afn04_P0_F1) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		dAtA[i] = 0x30
 	}
 	if len(m.ReportMark) > 0 {
-		dAtA69 := make([]byte, len(m.ReportMark)*10)
-		var j68 int
+		dAtA63 := make([]byte, len(m.ReportMark)*10)
+		var j62 int
 		for _, num1 := range m.ReportMark {
 			num := uint64(num1)
 			for num >= 1<<7 {
-				dAtA69[j68] = uint8(uint64(num)&0x7f | 0x80)
+				dAtA63[j62] = uint8(uint64(num)&0x7f | 0x80)
 				num >>= 7
-				j68++
+				j62++
 			}
-			dAtA69[j68] = uint8(num)
-			j68++
+			dAtA63[j62] = uint8(num)
+			j62++
 		}
-		i -= j68
-		copy(dAtA[i:], dAtA69[:j68])
-		i = encodeVarintMsgWlst(dAtA, i, uint64(j68))
+		i -= j62
+		copy(dAtA[i:], dAtA63[:j62])
+		i = encodeVarintMsgWlst(dAtA, i, uint64(j62))
 		i--
 		dAtA[i] = 0x2a
 	}
@@ -6014,40 +5813,40 @@ func (m *Afn04_P0_F9) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	var l int
 	_ = l
 	if len(m.EventsReport) > 0 {
-		dAtA71 := make([]byte, len(m.EventsReport)*10)
-		var j70 int
+		dAtA65 := make([]byte, len(m.EventsReport)*10)
+		var j64 int
 		for _, num1 := range m.EventsReport {
 			num := uint64(num1)
 			for num >= 1<<7 {
-				dAtA71[j70] = uint8(uint64(num)&0x7f | 0x80)
+				dAtA65[j64] = uint8(uint64(num)&0x7f | 0x80)
 				num >>= 7
-				j70++
+				j64++
 			}
-			dAtA71[j70] = uint8(num)
-			j70++
+			dAtA65[j64] = uint8(num)
+			j64++
 		}
-		i -= j70
-		copy(dAtA[i:], dAtA71[:j70])
-		i = encodeVarintMsgWlst(dAtA, i, uint64(j70))
+		i -= j64
+		copy(dAtA[i:], dAtA65[:j64])
+		i = encodeVarintMsgWlst(dAtA, i, uint64(j64))
 		i--
 		dAtA[i] = 0x12
 	}
 	if len(m.EventsAvailable) > 0 {
-		dAtA73 := make([]byte, len(m.EventsAvailable)*10)
-		var j72 int
+		dAtA67 := make([]byte, len(m.EventsAvailable)*10)
+		var j66 int
 		for _, num1 := range m.EventsAvailable {
 			num := uint64(num1)
 			for num >= 1<<7 {
-				dAtA73[j72] = uint8(uint64(num)&0x7f | 0x80)
+				dAtA67[j66] = uint8(uint64(num)&0x7f | 0x80)
 				num >>= 7
-				j72++
+				j66++
 			}
-			dAtA73[j72] = uint8(num)
-			j72++
+			dAtA67[j66] = uint8(num)
+			j66++
 		}
-		i -= j72
-		copy(dAtA[i:], dAtA73[:j72])
-		i = encodeVarintMsgWlst(dAtA, i, uint64(j72))
+		i -= j66
+		copy(dAtA[i:], dAtA67[:j66])
+		i = encodeVarintMsgWlst(dAtA, i, uint64(j66))
 		i--
 		dAtA[i] = 0xa
 	}
@@ -6075,40 +5874,40 @@ func (m *Afn04_P0_F10) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	var l int
 	_ = l
 	if len(m.SwitchinHopping) > 0 {
-		dAtA75 := make([]byte, len(m.SwitchinHopping)*10)
-		var j74 int
+		dAtA69 := make([]byte, len(m.SwitchinHopping)*10)
+		var j68 int
 		for _, num1 := range m.SwitchinHopping {
 			num := uint64(num1)
 			for num >= 1<<7 {
-				dAtA75[j74] = uint8(uint64(num)&0x7f | 0x80)
+				dAtA69[j68] = uint8(uint64(num)&0x7f | 0x80)
 				num >>= 7
-				j74++
+				j68++
 			}
-			dAtA75[j74] = uint8(num)
-			j74++
+			dAtA69[j68] = uint8(num)
+			j68++
 		}
-		i -= j74
-		copy(dAtA[i:], dAtA75[:j74])
-		i = encodeVarintMsgWlst(dAtA, i, uint64(j74))
+		i -= j68
+		copy(dAtA[i:], dAtA69[:j68])
+		i = encodeVarintMsgWlst(dAtA, i, uint64(j68))
 		i--
 		dAtA[i] = 0x12
 	}
 	if len(m.SwitchinAvailable) > 0 {
-		dAtA77 := make([]byte, len(m.SwitchinAvailable)*10)
-		var j76 int
+		dAtA71 := make([]byte, len(m.SwitchinAvailable)*10)
+		var j70 int
 		for _, num1 := range m.SwitchinAvailable {
 			num := uint64(num1)
 			for num >= 1<<7 {
-				dAtA77[j76] = uint8(uint64(num)&0x7f | 0x80)
+				dAtA71[j70] = uint8(uint64(num)&0x7f | 0x80)
 				num >>= 7
-				j76++
+				j70++
 			}
-			dAtA77[j76] = uint8(num)
-			j76++
+			dAtA71[j70] = uint8(num)
+			j70++
 		}
-		i -= j76
-		copy(dAtA[i:], dAtA77[:j76])
-		i = encodeVarintMsgWlst(dAtA, i, uint64(j76))
+		i -= j70
+		copy(dAtA[i:], dAtA71[:j70])
+		i = encodeVarintMsgWlst(dAtA, i, uint64(j70))
 		i--
 		dAtA[i] = 0xa
 	}
@@ -6218,21 +6017,21 @@ func (m *Afn04_Pn_F15) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		}
 	}
 	if len(m.SwitchoutIndx) > 0 {
-		dAtA79 := make([]byte, len(m.SwitchoutIndx)*10)
-		var j78 int
+		dAtA73 := make([]byte, len(m.SwitchoutIndx)*10)
+		var j72 int
 		for _, num1 := range m.SwitchoutIndx {
 			num := uint64(num1)
 			for num >= 1<<7 {
-				dAtA79[j78] = uint8(uint64(num)&0x7f | 0x80)
+				dAtA73[j72] = uint8(uint64(num)&0x7f | 0x80)
 				num >>= 7
-				j78++
+				j72++
 			}
-			dAtA79[j78] = uint8(num)
-			j78++
+			dAtA73[j72] = uint8(num)
+			j72++
 		}
-		i -= j78
-		copy(dAtA[i:], dAtA79[:j78])
-		i = encodeVarintMsgWlst(dAtA, i, uint64(j78))
+		i -= j72
+		copy(dAtA[i:], dAtA73[:j72])
+		i = encodeVarintMsgWlst(dAtA, i, uint64(j72))
 		i--
 		dAtA[i] = 0x1a
 	}
@@ -6303,21 +6102,21 @@ func (m *Afn04_P0_F41) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	var l int
 	_ = l
 	if len(m.SwitchoutLoops) > 0 {
-		dAtA81 := make([]byte, len(m.SwitchoutLoops)*10)
-		var j80 int
+		dAtA75 := make([]byte, len(m.SwitchoutLoops)*10)
+		var j74 int
 		for _, num1 := range m.SwitchoutLoops {
 			num := uint64(num1)
 			for num >= 1<<7 {
-				dAtA81[j80] = uint8(uint64(num)&0x7f | 0x80)
+				dAtA75[j74] = uint8(uint64(num)&0x7f | 0x80)
 				num >>= 7
-				j80++
+				j74++
 			}
-			dAtA81[j80] = uint8(num)
-			j80++
+			dAtA75[j74] = uint8(num)
+			j74++
 		}
-		i -= j80
-		copy(dAtA[i:], dAtA81[:j80])
-		i = encodeVarintMsgWlst(dAtA, i, uint64(j80))
+		i -= j74
+		copy(dAtA[i:], dAtA75[:j74])
+		i = encodeVarintMsgWlst(dAtA, i, uint64(j74))
 		i--
 		dAtA[i] = 0xa
 	}
@@ -6972,21 +6771,21 @@ func (m *Afn04_P0_F57) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	var l int
 	_ = l
 	if len(m.LoopMark) > 0 {
-		dAtA98 := make([]byte, len(m.LoopMark)*10)
-		var j97 int
+		dAtA92 := make([]byte, len(m.LoopMark)*10)
+		var j91 int
 		for _, num1 := range m.LoopMark {
 			num := uint64(num1)
 			for num >= 1<<7 {
-				dAtA98[j97] = uint8(uint64(num)&0x7f | 0x80)
+				dAtA92[j91] = uint8(uint64(num)&0x7f | 0x80)
 				num >>= 7
-				j97++
+				j91++
 			}
-			dAtA98[j97] = uint8(num)
-			j97++
+			dAtA92[j91] = uint8(num)
+			j91++
 		}
-		i -= j97
-		copy(dAtA[i:], dAtA98[:j97])
-		i = encodeVarintMsgWlst(dAtA, i, uint64(j97))
+		i -= j91
+		copy(dAtA[i:], dAtA92[:j91])
+		i = encodeVarintMsgWlst(dAtA, i, uint64(j91))
 		i--
 		dAtA[i] = 0x12
 	}
@@ -6994,132 +6793,6 @@ func (m *Afn04_P0_F57) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i = encodeVarintMsgWlst(dAtA, i, uint64(m.RuntimeMark))
 		i--
 		dAtA[i] = 0x8
-	}
-	return len(dAtA) - i, nil
-}
-
-func (m *Afn04_P0_F65) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
-}
-
-func (m *Afn04_P0_F65) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *Afn04_P0_F65) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.LoopVector) > 0 {
-		dAtA100 := make([]byte, len(m.LoopVector)*10)
-		var j99 int
-		for _, num1 := range m.LoopVector {
-			num := uint64(num1)
-			for num >= 1<<7 {
-				dAtA100[j99] = uint8(uint64(num)&0x7f | 0x80)
-				num >>= 7
-				j99++
-			}
-			dAtA100[j99] = uint8(num)
-			j99++
-		}
-		i -= j99
-		copy(dAtA[i:], dAtA100[:j99])
-		i = encodeVarintMsgWlst(dAtA, i, uint64(j99))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
-}
-
-func (m *Afn04_P0_F66) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
-}
-
-func (m *Afn04_P0_F66) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *Afn04_P0_F66) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.SwitchinVector) > 0 {
-		dAtA102 := make([]byte, len(m.SwitchinVector)*10)
-		var j101 int
-		for _, num1 := range m.SwitchinVector {
-			num := uint64(num1)
-			for num >= 1<<7 {
-				dAtA102[j101] = uint8(uint64(num)&0x7f | 0x80)
-				num >>= 7
-				j101++
-			}
-			dAtA102[j101] = uint8(num)
-			j101++
-		}
-		i -= j101
-		copy(dAtA[i:], dAtA102[:j101])
-		i = encodeVarintMsgWlst(dAtA, i, uint64(j101))
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
-}
-
-func (m *Afn04_P0_F67) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
-}
-
-func (m *Afn04_P0_F67) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *Afn04_P0_F67) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if len(m.SwitchoutVector) > 0 {
-		dAtA104 := make([]byte, len(m.SwitchoutVector)*10)
-		var j103 int
-		for _, num1 := range m.SwitchoutVector {
-			num := uint64(num1)
-			for num >= 1<<7 {
-				dAtA104[j103] = uint8(uint64(num)&0x7f | 0x80)
-				num >>= 7
-				j103++
-			}
-			dAtA104[j103] = uint8(num)
-			j103++
-		}
-		i -= j103
-		copy(dAtA[i:], dAtA104[:j103])
-		i = encodeVarintMsgWlst(dAtA, i, uint64(j103))
-		i--
-		dAtA[i] = 0xa
 	}
 	return len(dAtA) - i, nil
 }
@@ -7206,21 +6879,21 @@ func (m *Afn05_P0_F9) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	var l int
 	_ = l
 	if len(m.LoopMark) > 0 {
-		dAtA106 := make([]byte, len(m.LoopMark)*10)
-		var j105 int
+		dAtA94 := make([]byte, len(m.LoopMark)*10)
+		var j93 int
 		for _, num1 := range m.LoopMark {
 			num := uint64(num1)
 			for num >= 1<<7 {
-				dAtA106[j105] = uint8(uint64(num)&0x7f | 0x80)
+				dAtA94[j93] = uint8(uint64(num)&0x7f | 0x80)
 				num >>= 7
-				j105++
+				j93++
 			}
-			dAtA106[j105] = uint8(num)
-			j105++
+			dAtA94[j93] = uint8(num)
+			j93++
 		}
-		i -= j105
-		copy(dAtA[i:], dAtA106[:j105])
-		i = encodeVarintMsgWlst(dAtA, i, uint64(j105))
+		i -= j93
+		copy(dAtA[i:], dAtA94[:j93])
+		i = encodeVarintMsgWlst(dAtA, i, uint64(j93))
 		i--
 		dAtA[i] = 0xa
 	}
@@ -7355,7 +7028,7 @@ func (m *Afn09_P0_F1) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
-func (m *Afn0A_P0_F1) Marshal() (dAtA []byte, err error) {
+func (m *Afn0C_Pn_F1) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
 	n, err := m.MarshalToSizedBuffer(dAtA[:size])
@@ -7365,20 +7038,39 @@ func (m *Afn0A_P0_F1) Marshal() (dAtA []byte, err error) {
 	return dAtA[:n], nil
 }
 
-func (m *Afn0A_P0_F1) MarshalTo(dAtA []byte) (int, error) {
+func (m *Afn0C_Pn_F1) MarshalTo(dAtA []byte) (int, error) {
 	size := m.Size()
 	return m.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (m *Afn0A_P0_F1) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (m *Afn0C_Pn_F1) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
 	_ = l
+	if len(m.LoopData) > 0 {
+		for iNdEx := len(m.LoopData) - 1; iNdEx >= 0; iNdEx-- {
+			{
+				size, err := m.LoopData[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				if err != nil {
+					return 0, err
+				}
+				i -= size
+				i = encodeVarintMsgWlst(dAtA, i, uint64(size))
+			}
+			i--
+			dAtA[i] = 0x12
+		}
+	}
+	if m.DtReport != 0 {
+		i = encodeVarintMsgWlst(dAtA, i, uint64(m.DtReport))
+		i--
+		dAtA[i] = 0x8
+	}
 	return len(dAtA) - i, nil
 }
 
-func (m *Afn0A_P0_F3) Marshal() (dAtA []byte, err error) {
+func (m *Afn0C_Pn_F1_Loop_Data) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
 	n, err := m.MarshalToSizedBuffer(dAtA[:size])
@@ -7388,430 +7080,58 @@ func (m *Afn0A_P0_F3) Marshal() (dAtA []byte, err error) {
 	return dAtA[:n], nil
 }
 
-func (m *Afn0A_P0_F3) MarshalTo(dAtA []byte) (int, error) {
+func (m *Afn0C_Pn_F1_Loop_Data) MarshalTo(dAtA []byte) (int, error) {
 	size := m.Size()
 	return m.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (m *Afn0A_P0_F3) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (m *Afn0C_Pn_F1_Loop_Data) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
 	_ = l
-	return len(dAtA) - i, nil
-}
-
-func (m *Afn0A_P0_F9) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
+	if m.Other != 0 {
+		i -= 8
+		encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(math.Float64bits(float64(m.Other))))
+		i--
+		dAtA[i] = 0x39
 	}
-	return dAtA[:n], nil
-}
-
-func (m *Afn0A_P0_F9) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *Afn0A_P0_F9) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	return len(dAtA) - i, nil
-}
-
-func (m *Afn0A_P0_F10) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
+	if m.LuxValue != 0 {
+		i -= 8
+		encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(math.Float64bits(float64(m.LuxValue))))
+		i--
+		dAtA[i] = 0x31
 	}
-	return dAtA[:n], nil
-}
-
-func (m *Afn0A_P0_F10) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *Afn0A_P0_F10) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	return len(dAtA) - i, nil
-}
-
-func (m *Afn0A_P0_F11) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
+	if m.PowerFactor != 0 {
+		i -= 8
+		encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(math.Float64bits(float64(m.PowerFactor))))
+		i--
+		dAtA[i] = 0x29
 	}
-	return dAtA[:n], nil
-}
-
-func (m *Afn0A_P0_F11) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *Afn0A_P0_F11) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	return len(dAtA) - i, nil
-}
-
-func (m *Afn0A_Pn_F14) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
+	if m.ReactivePower != 0 {
+		i -= 8
+		encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(math.Float64bits(float64(m.ReactivePower))))
+		i--
+		dAtA[i] = 0x21
 	}
-	return dAtA[:n], nil
-}
-
-func (m *Afn0A_Pn_F14) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *Afn0A_Pn_F14) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	return len(dAtA) - i, nil
-}
-
-func (m *Afn0A_Pn_F15) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
+	if m.ActivePower != 0 {
+		i -= 8
+		encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(math.Float64bits(float64(m.ActivePower))))
+		i--
+		dAtA[i] = 0x19
 	}
-	return dAtA[:n], nil
-}
-
-func (m *Afn0A_Pn_F15) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *Afn0A_Pn_F15) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	return len(dAtA) - i, nil
-}
-
-func (m *Afn0A_P0_F41) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
+	if m.Current != 0 {
+		i -= 8
+		encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(math.Float64bits(float64(m.Current))))
+		i--
+		dAtA[i] = 0x11
 	}
-	return dAtA[:n], nil
-}
-
-func (m *Afn0A_P0_F41) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *Afn0A_P0_F41) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	return len(dAtA) - i, nil
-}
-
-func (m *Afn0A_P0_F42) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
+	if m.Voltage != 0 {
+		i -= 8
+		encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(math.Float64bits(float64(m.Voltage))))
+		i--
+		dAtA[i] = 0x9
 	}
-	return dAtA[:n], nil
-}
-
-func (m *Afn0A_P0_F42) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *Afn0A_P0_F42) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	return len(dAtA) - i, nil
-}
-
-func (m *Afn0A_P0_F46) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
-}
-
-func (m *Afn0A_P0_F46) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *Afn0A_P0_F46) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	return len(dAtA) - i, nil
-}
-
-func (m *Afn0A_P0_F49) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
-}
-
-func (m *Afn0A_P0_F49) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *Afn0A_P0_F49) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	return len(dAtA) - i, nil
-}
-
-func (m *Afn0A_P0_F50) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
-}
-
-func (m *Afn0A_P0_F50) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *Afn0A_P0_F50) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	return len(dAtA) - i, nil
-}
-
-func (m *Afn0A_P0_F51) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
-}
-
-func (m *Afn0A_P0_F51) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *Afn0A_P0_F51) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	return len(dAtA) - i, nil
-}
-
-func (m *Afn0A_P0_F52) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
-}
-
-func (m *Afn0A_P0_F52) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *Afn0A_P0_F52) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	return len(dAtA) - i, nil
-}
-
-func (m *Afn0A_P0_F53) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
-}
-
-func (m *Afn0A_P0_F53) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *Afn0A_P0_F53) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	return len(dAtA) - i, nil
-}
-
-func (m *Afn0A_P0_F57) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
-}
-
-func (m *Afn0A_P0_F57) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *Afn0A_P0_F57) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	return len(dAtA) - i, nil
-}
-
-func (m *Afn0A_P0_F65) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
-}
-
-func (m *Afn0A_P0_F65) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *Afn0A_P0_F65) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	return len(dAtA) - i, nil
-}
-
-func (m *Afn0A_P0_F66) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
-}
-
-func (m *Afn0A_P0_F66) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *Afn0A_P0_F66) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	return len(dAtA) - i, nil
-}
-
-func (m *Afn0A_P0_F67) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
-}
-
-func (m *Afn0A_P0_F67) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *Afn0A_P0_F67) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	return len(dAtA) - i, nil
-}
-
-func (m *Afn0C_P0_F1) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
-}
-
-func (m *Afn0C_P0_F1) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *Afn0C_P0_F1) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
 	return len(dAtA) - i, nil
 }
 
@@ -7835,6 +7155,11 @@ func (m *Afn0C_P0_F2) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	_ = i
 	var l int
 	_ = l
+	if m.TimeUnix != 0 {
+		i = encodeVarintMsgWlst(dAtA, i, uint64(m.TimeUnix))
+		i--
+		dAtA[i] = 0x8
+	}
 	return len(dAtA) - i, nil
 }
 
@@ -7858,6 +7183,91 @@ func (m *Afn0C_P0_F3) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	_ = i
 	var l int
 	_ = l
+	if m.Frequency != 0 {
+		i -= 8
+		encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(math.Float64bits(float64(m.Frequency))))
+		i--
+		dAtA[i] = 0x11
+	}
+	if len(m.PhaseData) > 0 {
+		for iNdEx := len(m.PhaseData) - 1; iNdEx >= 0; iNdEx-- {
+			{
+				size, err := m.PhaseData[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				if err != nil {
+					return 0, err
+				}
+				i -= size
+				i = encodeVarintMsgWlst(dAtA, i, uint64(size))
+			}
+			i--
+			dAtA[i] = 0xa
+		}
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *Afn0C_P0_F3_Phase_Data) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *Afn0C_P0_F3_Phase_Data) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *Afn0C_P0_F3_Phase_Data) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.ReactiveEnergy != 0 {
+		i -= 8
+		encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(math.Float64bits(float64(m.ReactiveEnergy))))
+		i--
+		dAtA[i] = 0x39
+	}
+	if m.ActiveEnergy != 0 {
+		i -= 8
+		encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(math.Float64bits(float64(m.ActiveEnergy))))
+		i--
+		dAtA[i] = 0x31
+	}
+	if m.PowerFactor != 0 {
+		i -= 8
+		encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(math.Float64bits(float64(m.PowerFactor))))
+		i--
+		dAtA[i] = 0x29
+	}
+	if m.ReactivePower != 0 {
+		i -= 8
+		encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(math.Float64bits(float64(m.ReactivePower))))
+		i--
+		dAtA[i] = 0x21
+	}
+	if m.ActivePower != 0 {
+		i -= 8
+		encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(math.Float64bits(float64(m.ActivePower))))
+		i--
+		dAtA[i] = 0x19
+	}
+	if m.Current != 0 {
+		i -= 8
+		encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(math.Float64bits(float64(m.Current))))
+		i--
+		dAtA[i] = 0x11
+	}
+	if m.Voltage != 0 {
+		i -= 8
+		encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(math.Float64bits(float64(m.Voltage))))
+		i--
+		dAtA[i] = 0x9
+	}
 	return len(dAtA) - i, nil
 }
 
@@ -7881,6 +7291,11 @@ func (m *Afn0C_P0_F4) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	_ = i
 	var l int
 	_ = l
+	if m.EnableReport != 0 {
+		i = encodeVarintMsgWlst(dAtA, i, uint64(m.EnableReport))
+		i--
+		dAtA[i] = 0x8
+	}
 	return len(dAtA) - i, nil
 }
 
@@ -7904,6 +7319,25 @@ func (m *Afn0C_P0_F6) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	_ = i
 	var l int
 	_ = l
+	if len(m.SwitchoutStatus) > 0 {
+		dAtA96 := make([]byte, len(m.SwitchoutStatus)*10)
+		var j95 int
+		for _, num1 := range m.SwitchoutStatus {
+			num := uint64(num1)
+			for num >= 1<<7 {
+				dAtA96[j95] = uint8(uint64(num)&0x7f | 0x80)
+				num >>= 7
+				j95++
+			}
+			dAtA96[j95] = uint8(num)
+			j95++
+		}
+		i -= j95
+		copy(dAtA[i:], dAtA96[:j95])
+		i = encodeVarintMsgWlst(dAtA, i, uint64(j95))
+		i--
+		dAtA[i] = 0xa
+	}
 	return len(dAtA) - i, nil
 }
 
@@ -7927,6 +7361,16 @@ func (m *Afn0C_P0_F7) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	_ = i
 	var l int
 	_ = l
+	if m.Ec2 != 0 {
+		i = encodeVarintMsgWlst(dAtA, i, uint64(m.Ec2))
+		i--
+		dAtA[i] = 0x10
+	}
+	if m.Ec1 != 0 {
+		i = encodeVarintMsgWlst(dAtA, i, uint64(m.Ec1))
+		i--
+		dAtA[i] = 0x8
+	}
 	return len(dAtA) - i, nil
 }
 
@@ -7950,6 +7394,53 @@ func (m *Afn0C_P0_F9) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	_ = i
 	var l int
 	_ = l
+	if len(m.LoopStatus) > 0 {
+		for iNdEx := len(m.LoopStatus) - 1; iNdEx >= 0; iNdEx-- {
+			{
+				size, err := m.LoopStatus[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				if err != nil {
+					return 0, err
+				}
+				i -= size
+				i = encodeVarintMsgWlst(dAtA, i, uint64(size))
+			}
+			i--
+			dAtA[i] = 0xa
+		}
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *Afn0C_P0_F9_Loop_Status) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *Afn0C_P0_F9_Loop_Status) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *Afn0C_P0_F9_Loop_Status) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.StChanged != 0 {
+		i = encodeVarintMsgWlst(dAtA, i, uint64(m.StChanged))
+		i--
+		dAtA[i] = 0x10
+	}
+	if m.StNow != 0 {
+		i = encodeVarintMsgWlst(dAtA, i, uint64(m.StNow))
+		i--
+		dAtA[i] = 0x8
+	}
 	return len(dAtA) - i, nil
 }
 
@@ -7973,6 +7464,35 @@ func (m *Afn0C_P0_F18) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	_ = i
 	var l int
 	_ = l
+	if len(m.EventsDo) > 0 {
+		dAtA98 := make([]byte, len(m.EventsDo)*10)
+		var j97 int
+		for _, num1 := range m.EventsDo {
+			num := uint64(num1)
+			for num >= 1<<7 {
+				dAtA98[j97] = uint8(uint64(num)&0x7f | 0x80)
+				num >>= 7
+				j97++
+			}
+			dAtA98[j97] = uint8(num)
+			j97++
+		}
+		i -= j97
+		copy(dAtA[i:], dAtA98[:j97])
+		i = encodeVarintMsgWlst(dAtA, i, uint64(j97))
+		i--
+		dAtA[i] = 0x1a
+	}
+	if m.LoopPhase != 0 {
+		i = encodeVarintMsgWlst(dAtA, i, uint64(m.LoopPhase))
+		i--
+		dAtA[i] = 0x10
+	}
+	if m.LoopNo != 0 {
+		i = encodeVarintMsgWlst(dAtA, i, uint64(m.LoopNo))
+		i--
+		dAtA[i] = 0x8
+	}
 	return len(dAtA) - i, nil
 }
 
@@ -7996,6 +7516,16 @@ func (m *Afn0C_P0_F19) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	_ = i
 	var l int
 	_ = l
+	if len(m.LeakageCurrent) > 0 {
+		for iNdEx := len(m.LeakageCurrent) - 1; iNdEx >= 0; iNdEx-- {
+			f99 := math.Float64bits(float64(m.LeakageCurrent[iNdEx]))
+			i -= 8
+			encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(f99))
+		}
+		i = encodeVarintMsgWlst(dAtA, i, uint64(len(m.LeakageCurrent)*8))
+		i--
+		dAtA[i] = 0xa
+	}
 	return len(dAtA) - i, nil
 }
 
@@ -8019,6 +7549,18 @@ func (m *Afn0C_P0_F20) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	_ = i
 	var l int
 	_ = l
+	if m.Temperature != 0 {
+		i -= 8
+		encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(math.Float64bits(float64(m.Temperature))))
+		i--
+		dAtA[i] = 0x11
+	}
+	if m.Lux != 0 {
+		i -= 8
+		encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(math.Float64bits(float64(m.Lux))))
+		i--
+		dAtA[i] = 0x9
+	}
 	return len(dAtA) - i, nil
 }
 
@@ -8042,6 +7584,105 @@ func (m *Afn0D_Pn_F1) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	_ = i
 	var l int
 	_ = l
+	if len(m.LoopData) > 0 {
+		for iNdEx := len(m.LoopData) - 1; iNdEx >= 0; iNdEx-- {
+			{
+				size, err := m.LoopData[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				if err != nil {
+					return 0, err
+				}
+				i -= size
+				i = encodeVarintMsgWlst(dAtA, i, uint64(size))
+			}
+			i--
+			dAtA[i] = 0x2a
+		}
+	}
+	if m.LoopNo != 0 {
+		i = encodeVarintMsgWlst(dAtA, i, uint64(m.LoopNo))
+		i--
+		dAtA[i] = 0x20
+	}
+	if m.DataNum != 0 {
+		i = encodeVarintMsgWlst(dAtA, i, uint64(m.DataNum))
+		i--
+		dAtA[i] = 0x18
+	}
+	if m.DataDensity != 0 {
+		i = encodeVarintMsgWlst(dAtA, i, uint64(m.DataDensity))
+		i--
+		dAtA[i] = 0x10
+	}
+	if m.DtStart != 0 {
+		i = encodeVarintMsgWlst(dAtA, i, uint64(m.DtStart))
+		i--
+		dAtA[i] = 0x8
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *Afn0D_Pn_F1_Loop_Data) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *Afn0D_Pn_F1_Loop_Data) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *Afn0D_Pn_F1_Loop_Data) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.Other != 0 {
+		i -= 8
+		encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(math.Float64bits(float64(m.Other))))
+		i--
+		dAtA[i] = 0x39
+	}
+	if m.LuxValue != 0 {
+		i -= 8
+		encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(math.Float64bits(float64(m.LuxValue))))
+		i--
+		dAtA[i] = 0x31
+	}
+	if m.PowerFactor != 0 {
+		i -= 8
+		encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(math.Float64bits(float64(m.PowerFactor))))
+		i--
+		dAtA[i] = 0x29
+	}
+	if m.ReactivePower != 0 {
+		i -= 8
+		encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(math.Float64bits(float64(m.ReactivePower))))
+		i--
+		dAtA[i] = 0x21
+	}
+	if m.ActivePower != 0 {
+		i -= 8
+		encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(math.Float64bits(float64(m.ActivePower))))
+		i--
+		dAtA[i] = 0x19
+	}
+	if m.Current != 0 {
+		i -= 8
+		encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(math.Float64bits(float64(m.Current))))
+		i--
+		dAtA[i] = 0x11
+	}
+	if m.Voltage != 0 {
+		i -= 8
+		encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(math.Float64bits(float64(m.Voltage))))
+		i--
+		dAtA[i] = 0x9
+	}
 	return len(dAtA) - i, nil
 }
 
@@ -8065,6 +7706,121 @@ func (m *Afn0D_P0_F2) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	_ = i
 	var l int
 	_ = l
+	if len(m.PhaseCData) > 0 {
+		for iNdEx := len(m.PhaseCData) - 1; iNdEx >= 0; iNdEx-- {
+			{
+				size, err := m.PhaseCData[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				if err != nil {
+					return 0, err
+				}
+				i -= size
+				i = encodeVarintMsgWlst(dAtA, i, uint64(size))
+			}
+			i--
+			dAtA[i] = 0x3a
+		}
+	}
+	if len(m.PhaseBData) > 0 {
+		for iNdEx := len(m.PhaseBData) - 1; iNdEx >= 0; iNdEx-- {
+			{
+				size, err := m.PhaseBData[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				if err != nil {
+					return 0, err
+				}
+				i -= size
+				i = encodeVarintMsgWlst(dAtA, i, uint64(size))
+			}
+			i--
+			dAtA[i] = 0x32
+		}
+	}
+	if len(m.PhaseAData) > 0 {
+		for iNdEx := len(m.PhaseAData) - 1; iNdEx >= 0; iNdEx-- {
+			{
+				size, err := m.PhaseAData[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				if err != nil {
+					return 0, err
+				}
+				i -= size
+				i = encodeVarintMsgWlst(dAtA, i, uint64(size))
+			}
+			i--
+			dAtA[i] = 0x2a
+		}
+	}
+	if m.LoopNo != 0 {
+		i = encodeVarintMsgWlst(dAtA, i, uint64(m.LoopNo))
+		i--
+		dAtA[i] = 0x20
+	}
+	if m.DataNum != 0 {
+		i = encodeVarintMsgWlst(dAtA, i, uint64(m.DataNum))
+		i--
+		dAtA[i] = 0x18
+	}
+	if m.DataDensity != 0 {
+		i = encodeVarintMsgWlst(dAtA, i, uint64(m.DataDensity))
+		i--
+		dAtA[i] = 0x10
+	}
+	if m.DtStart != 0 {
+		i = encodeVarintMsgWlst(dAtA, i, uint64(m.DtStart))
+		i--
+		dAtA[i] = 0x8
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *Afn0D_P0_F2_Phase_Data) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *Afn0D_P0_F2_Phase_Data) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *Afn0D_P0_F2_Phase_Data) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.PowerFactor != 0 {
+		i -= 8
+		encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(math.Float64bits(float64(m.PowerFactor))))
+		i--
+		dAtA[i] = 0x29
+	}
+	if m.ReactivePower != 0 {
+		i -= 8
+		encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(math.Float64bits(float64(m.ReactivePower))))
+		i--
+		dAtA[i] = 0x21
+	}
+	if m.ActivePower != 0 {
+		i -= 8
+		encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(math.Float64bits(float64(m.ActivePower))))
+		i--
+		dAtA[i] = 0x19
+	}
+	if m.Current != 0 {
+		i -= 8
+		encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(math.Float64bits(float64(m.Current))))
+		i--
+		dAtA[i] = 0x11
+	}
+	if m.Voltage != 0 {
+		i -= 8
+		encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(math.Float64bits(float64(m.Voltage))))
+		i--
+		dAtA[i] = 0x9
+	}
 	return len(dAtA) - i, nil
 }
 
@@ -8088,6 +7844,36 @@ func (m *Afn0D_Pn_F3) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	_ = i
 	var l int
 	_ = l
+	if len(m.LeakageCurrent) > 0 {
+		for iNdEx := len(m.LeakageCurrent) - 1; iNdEx >= 0; iNdEx-- {
+			f100 := math.Float64bits(float64(m.LeakageCurrent[iNdEx]))
+			i -= 8
+			encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(f100))
+		}
+		i = encodeVarintMsgWlst(dAtA, i, uint64(len(m.LeakageCurrent)*8))
+		i--
+		dAtA[i] = 0x2a
+	}
+	if m.LoopNo != 0 {
+		i = encodeVarintMsgWlst(dAtA, i, uint64(m.LoopNo))
+		i--
+		dAtA[i] = 0x20
+	}
+	if m.DataNum != 0 {
+		i = encodeVarintMsgWlst(dAtA, i, uint64(m.DataNum))
+		i--
+		dAtA[i] = 0x18
+	}
+	if m.DataDensity != 0 {
+		i = encodeVarintMsgWlst(dAtA, i, uint64(m.DataDensity))
+		i--
+		dAtA[i] = 0x10
+	}
+	if m.DtStart != 0 {
+		i = encodeVarintMsgWlst(dAtA, i, uint64(m.DtStart))
+		i--
+		dAtA[i] = 0x8
+	}
 	return len(dAtA) - i, nil
 }
 
@@ -8111,10 +7897,39 @@ func (m *Afn0E_P0_F1) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	_ = i
 	var l int
 	_ = l
+	if len(m.EventsData) > 0 {
+		for iNdEx := len(m.EventsData) - 1; iNdEx >= 0; iNdEx-- {
+			{
+				size, err := m.EventsData[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				if err != nil {
+					return 0, err
+				}
+				i -= size
+				i = encodeVarintMsgWlst(dAtA, i, uint64(size))
+			}
+			i--
+			dAtA[i] = 0x22
+		}
+	}
+	if m.EcNow != 0 {
+		i = encodeVarintMsgWlst(dAtA, i, uint64(m.EcNow))
+		i--
+		dAtA[i] = 0x18
+	}
+	if m.Pn != 0 {
+		i = encodeVarintMsgWlst(dAtA, i, uint64(m.Pn))
+		i--
+		dAtA[i] = 0x10
+	}
+	if m.Pm != 0 {
+		i = encodeVarintMsgWlst(dAtA, i, uint64(m.Pm))
+		i--
+		dAtA[i] = 0x8
+	}
 	return len(dAtA) - i, nil
 }
 
-func (m *Afn0E_P0_F2) Marshal() (dAtA []byte, err error) {
+func (m *Afn0E_P0_F1_Events_Data) Marshal() (dAtA []byte, err error) {
 	size := m.Size()
 	dAtA = make([]byte, size)
 	n, err := m.MarshalToSizedBuffer(dAtA[:size])
@@ -8124,12 +7939,12 @@ func (m *Afn0E_P0_F2) Marshal() (dAtA []byte, err error) {
 	return dAtA[:n], nil
 }
 
-func (m *Afn0E_P0_F2) MarshalTo(dAtA []byte) (int, error) {
+func (m *Afn0E_P0_F1_Events_Data) MarshalTo(dAtA []byte) (int, error) {
 	size := m.Size()
 	return m.MarshalToSizedBuffer(dAtA[:size])
 }
 
-func (m *Afn0E_P0_F2) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+func (m *Afn0E_P0_F1_Events_Data) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	i := len(dAtA)
 	_ = i
 	var l int
@@ -8458,18 +8273,6 @@ func (m *WlstGBOpen) Size() (n int) {
 		l = m.Afn04P0F57.Size()
 		n += 2 + l + sovMsgWlst(uint64(l))
 	}
-	if m.Afn04P0F65 != nil {
-		l = m.Afn04P0F65.Size()
-		n += 2 + l + sovMsgWlst(uint64(l))
-	}
-	if m.Afn04P0F66 != nil {
-		l = m.Afn04P0F66.Size()
-		n += 2 + l + sovMsgWlst(uint64(l))
-	}
-	if m.Afn04P0F67 != nil {
-		l = m.Afn04P0F67.Size()
-		n += 2 + l + sovMsgWlst(uint64(l))
-	}
 	if m.Afn05P0F1 != nil {
 		l = m.Afn05P0F1.Size()
 		n += 2 + l + sovMsgWlst(uint64(l))
@@ -8550,20 +8353,8 @@ func (m *WlstGBOpen) Size() (n int) {
 		l = m.Afn0AP0F57.Size()
 		n += 2 + l + sovMsgWlst(uint64(l))
 	}
-	if m.Afn0AP0F65 != nil {
-		l = m.Afn0AP0F65.Size()
-		n += 2 + l + sovMsgWlst(uint64(l))
-	}
-	if m.Afn0AP0F66 != nil {
-		l = m.Afn0AP0F66.Size()
-		n += 2 + l + sovMsgWlst(uint64(l))
-	}
-	if m.Afn0AP0F67 != nil {
-		l = m.Afn0AP0F67.Size()
-		n += 2 + l + sovMsgWlst(uint64(l))
-	}
-	if m.Afn0CP0F1 != nil {
-		l = m.Afn0CP0F1.Size()
+	if m.Afn0CPnF1 != nil {
+		l = m.Afn0CPnF1.Size()
 		n += 2 + l + sovMsgWlst(uint64(l))
 	}
 	if m.Afn0CP0F2 != nil {
@@ -9159,54 +8950,6 @@ func (m *Afn04_P0_F57) Size() (n int) {
 	return n
 }
 
-func (m *Afn04_P0_F65) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if len(m.LoopVector) > 0 {
-		l = 0
-		for _, e := range m.LoopVector {
-			l += sovMsgWlst(uint64(e))
-		}
-		n += 1 + sovMsgWlst(uint64(l)) + l
-	}
-	return n
-}
-
-func (m *Afn04_P0_F66) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if len(m.SwitchinVector) > 0 {
-		l = 0
-		for _, e := range m.SwitchinVector {
-			l += sovMsgWlst(uint64(e))
-		}
-		n += 1 + sovMsgWlst(uint64(l)) + l
-	}
-	return n
-}
-
-func (m *Afn04_P0_F67) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if len(m.SwitchoutVector) > 0 {
-		l = 0
-		for _, e := range m.SwitchoutVector {
-			l += sovMsgWlst(uint64(e))
-		}
-		n += 1 + sovMsgWlst(uint64(l)) + l
-	}
-	return n
-}
-
 func (m *Afn05_P0_F1) Size() (n int) {
 	if m == nil {
 		return 0
@@ -9315,183 +9058,51 @@ func (m *Afn09_P0_F1) Size() (n int) {
 	return n
 }
 
-func (m *Afn0A_P0_F1) Size() (n int) {
+func (m *Afn0C_Pn_F1) Size() (n int) {
 	if m == nil {
 		return 0
 	}
 	var l int
 	_ = l
+	if m.DtReport != 0 {
+		n += 1 + sovMsgWlst(uint64(m.DtReport))
+	}
+	if len(m.LoopData) > 0 {
+		for _, e := range m.LoopData {
+			l = e.Size()
+			n += 1 + l + sovMsgWlst(uint64(l))
+		}
+	}
 	return n
 }
 
-func (m *Afn0A_P0_F3) Size() (n int) {
+func (m *Afn0C_Pn_F1_Loop_Data) Size() (n int) {
 	if m == nil {
 		return 0
 	}
 	var l int
 	_ = l
-	return n
-}
-
-func (m *Afn0A_P0_F9) Size() (n int) {
-	if m == nil {
-		return 0
+	if m.Voltage != 0 {
+		n += 9
 	}
-	var l int
-	_ = l
-	return n
-}
-
-func (m *Afn0A_P0_F10) Size() (n int) {
-	if m == nil {
-		return 0
+	if m.Current != 0 {
+		n += 9
 	}
-	var l int
-	_ = l
-	return n
-}
-
-func (m *Afn0A_P0_F11) Size() (n int) {
-	if m == nil {
-		return 0
+	if m.ActivePower != 0 {
+		n += 9
 	}
-	var l int
-	_ = l
-	return n
-}
-
-func (m *Afn0A_Pn_F14) Size() (n int) {
-	if m == nil {
-		return 0
+	if m.ReactivePower != 0 {
+		n += 9
 	}
-	var l int
-	_ = l
-	return n
-}
-
-func (m *Afn0A_Pn_F15) Size() (n int) {
-	if m == nil {
-		return 0
+	if m.PowerFactor != 0 {
+		n += 9
 	}
-	var l int
-	_ = l
-	return n
-}
-
-func (m *Afn0A_P0_F41) Size() (n int) {
-	if m == nil {
-		return 0
+	if m.LuxValue != 0 {
+		n += 9
 	}
-	var l int
-	_ = l
-	return n
-}
-
-func (m *Afn0A_P0_F42) Size() (n int) {
-	if m == nil {
-		return 0
+	if m.Other != 0 {
+		n += 9
 	}
-	var l int
-	_ = l
-	return n
-}
-
-func (m *Afn0A_P0_F46) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	return n
-}
-
-func (m *Afn0A_P0_F49) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	return n
-}
-
-func (m *Afn0A_P0_F50) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	return n
-}
-
-func (m *Afn0A_P0_F51) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	return n
-}
-
-func (m *Afn0A_P0_F52) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	return n
-}
-
-func (m *Afn0A_P0_F53) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	return n
-}
-
-func (m *Afn0A_P0_F57) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	return n
-}
-
-func (m *Afn0A_P0_F65) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	return n
-}
-
-func (m *Afn0A_P0_F66) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	return n
-}
-
-func (m *Afn0A_P0_F67) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	return n
-}
-
-func (m *Afn0C_P0_F1) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
 	return n
 }
 
@@ -9501,6 +9112,9 @@ func (m *Afn0C_P0_F2) Size() (n int) {
 	}
 	var l int
 	_ = l
+	if m.TimeUnix != 0 {
+		n += 1 + sovMsgWlst(uint64(m.TimeUnix))
+	}
 	return n
 }
 
@@ -9510,6 +9124,45 @@ func (m *Afn0C_P0_F3) Size() (n int) {
 	}
 	var l int
 	_ = l
+	if len(m.PhaseData) > 0 {
+		for _, e := range m.PhaseData {
+			l = e.Size()
+			n += 1 + l + sovMsgWlst(uint64(l))
+		}
+	}
+	if m.Frequency != 0 {
+		n += 9
+	}
+	return n
+}
+
+func (m *Afn0C_P0_F3_Phase_Data) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if m.Voltage != 0 {
+		n += 9
+	}
+	if m.Current != 0 {
+		n += 9
+	}
+	if m.ActivePower != 0 {
+		n += 9
+	}
+	if m.ReactivePower != 0 {
+		n += 9
+	}
+	if m.PowerFactor != 0 {
+		n += 9
+	}
+	if m.ActiveEnergy != 0 {
+		n += 9
+	}
+	if m.ReactiveEnergy != 0 {
+		n += 9
+	}
 	return n
 }
 
@@ -9519,6 +9172,9 @@ func (m *Afn0C_P0_F4) Size() (n int) {
 	}
 	var l int
 	_ = l
+	if m.EnableReport != 0 {
+		n += 1 + sovMsgWlst(uint64(m.EnableReport))
+	}
 	return n
 }
 
@@ -9528,6 +9184,13 @@ func (m *Afn0C_P0_F6) Size() (n int) {
 	}
 	var l int
 	_ = l
+	if len(m.SwitchoutStatus) > 0 {
+		l = 0
+		for _, e := range m.SwitchoutStatus {
+			l += sovMsgWlst(uint64(e))
+		}
+		n += 1 + sovMsgWlst(uint64(l)) + l
+	}
 	return n
 }
 
@@ -9537,6 +9200,12 @@ func (m *Afn0C_P0_F7) Size() (n int) {
 	}
 	var l int
 	_ = l
+	if m.Ec1 != 0 {
+		n += 1 + sovMsgWlst(uint64(m.Ec1))
+	}
+	if m.Ec2 != 0 {
+		n += 1 + sovMsgWlst(uint64(m.Ec2))
+	}
 	return n
 }
 
@@ -9546,6 +9215,27 @@ func (m *Afn0C_P0_F9) Size() (n int) {
 	}
 	var l int
 	_ = l
+	if len(m.LoopStatus) > 0 {
+		for _, e := range m.LoopStatus {
+			l = e.Size()
+			n += 1 + l + sovMsgWlst(uint64(l))
+		}
+	}
+	return n
+}
+
+func (m *Afn0C_P0_F9_Loop_Status) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if m.StNow != 0 {
+		n += 1 + sovMsgWlst(uint64(m.StNow))
+	}
+	if m.StChanged != 0 {
+		n += 1 + sovMsgWlst(uint64(m.StChanged))
+	}
 	return n
 }
 
@@ -9555,6 +9245,19 @@ func (m *Afn0C_P0_F18) Size() (n int) {
 	}
 	var l int
 	_ = l
+	if m.LoopNo != 0 {
+		n += 1 + sovMsgWlst(uint64(m.LoopNo))
+	}
+	if m.LoopPhase != 0 {
+		n += 1 + sovMsgWlst(uint64(m.LoopPhase))
+	}
+	if len(m.EventsDo) > 0 {
+		l = 0
+		for _, e := range m.EventsDo {
+			l += sovMsgWlst(uint64(e))
+		}
+		n += 1 + sovMsgWlst(uint64(l)) + l
+	}
 	return n
 }
 
@@ -9564,6 +9267,9 @@ func (m *Afn0C_P0_F19) Size() (n int) {
 	}
 	var l int
 	_ = l
+	if len(m.LeakageCurrent) > 0 {
+		n += 1 + sovMsgWlst(uint64(len(m.LeakageCurrent)*8)) + len(m.LeakageCurrent)*8
+	}
 	return n
 }
 
@@ -9573,6 +9279,12 @@ func (m *Afn0C_P0_F20) Size() (n int) {
 	}
 	var l int
 	_ = l
+	if m.Lux != 0 {
+		n += 9
+	}
+	if m.Temperature != 0 {
+		n += 9
+	}
 	return n
 }
 
@@ -9582,6 +9294,54 @@ func (m *Afn0D_Pn_F1) Size() (n int) {
 	}
 	var l int
 	_ = l
+	if m.DtStart != 0 {
+		n += 1 + sovMsgWlst(uint64(m.DtStart))
+	}
+	if m.DataDensity != 0 {
+		n += 1 + sovMsgWlst(uint64(m.DataDensity))
+	}
+	if m.DataNum != 0 {
+		n += 1 + sovMsgWlst(uint64(m.DataNum))
+	}
+	if m.LoopNo != 0 {
+		n += 1 + sovMsgWlst(uint64(m.LoopNo))
+	}
+	if len(m.LoopData) > 0 {
+		for _, e := range m.LoopData {
+			l = e.Size()
+			n += 1 + l + sovMsgWlst(uint64(l))
+		}
+	}
+	return n
+}
+
+func (m *Afn0D_Pn_F1_Loop_Data) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if m.Voltage != 0 {
+		n += 9
+	}
+	if m.Current != 0 {
+		n += 9
+	}
+	if m.ActivePower != 0 {
+		n += 9
+	}
+	if m.ReactivePower != 0 {
+		n += 9
+	}
+	if m.PowerFactor != 0 {
+		n += 9
+	}
+	if m.LuxValue != 0 {
+		n += 9
+	}
+	if m.Other != 0 {
+		n += 9
+	}
 	return n
 }
 
@@ -9591,6 +9351,60 @@ func (m *Afn0D_P0_F2) Size() (n int) {
 	}
 	var l int
 	_ = l
+	if m.DtStart != 0 {
+		n += 1 + sovMsgWlst(uint64(m.DtStart))
+	}
+	if m.DataDensity != 0 {
+		n += 1 + sovMsgWlst(uint64(m.DataDensity))
+	}
+	if m.DataNum != 0 {
+		n += 1 + sovMsgWlst(uint64(m.DataNum))
+	}
+	if m.LoopNo != 0 {
+		n += 1 + sovMsgWlst(uint64(m.LoopNo))
+	}
+	if len(m.PhaseAData) > 0 {
+		for _, e := range m.PhaseAData {
+			l = e.Size()
+			n += 1 + l + sovMsgWlst(uint64(l))
+		}
+	}
+	if len(m.PhaseBData) > 0 {
+		for _, e := range m.PhaseBData {
+			l = e.Size()
+			n += 1 + l + sovMsgWlst(uint64(l))
+		}
+	}
+	if len(m.PhaseCData) > 0 {
+		for _, e := range m.PhaseCData {
+			l = e.Size()
+			n += 1 + l + sovMsgWlst(uint64(l))
+		}
+	}
+	return n
+}
+
+func (m *Afn0D_P0_F2_Phase_Data) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if m.Voltage != 0 {
+		n += 9
+	}
+	if m.Current != 0 {
+		n += 9
+	}
+	if m.ActivePower != 0 {
+		n += 9
+	}
+	if m.ReactivePower != 0 {
+		n += 9
+	}
+	if m.PowerFactor != 0 {
+		n += 9
+	}
 	return n
 }
 
@@ -9600,6 +9414,21 @@ func (m *Afn0D_Pn_F3) Size() (n int) {
 	}
 	var l int
 	_ = l
+	if m.DtStart != 0 {
+		n += 1 + sovMsgWlst(uint64(m.DtStart))
+	}
+	if m.DataDensity != 0 {
+		n += 1 + sovMsgWlst(uint64(m.DataDensity))
+	}
+	if m.DataNum != 0 {
+		n += 1 + sovMsgWlst(uint64(m.DataNum))
+	}
+	if m.LoopNo != 0 {
+		n += 1 + sovMsgWlst(uint64(m.LoopNo))
+	}
+	if len(m.LeakageCurrent) > 0 {
+		n += 1 + sovMsgWlst(uint64(len(m.LeakageCurrent)*8)) + len(m.LeakageCurrent)*8
+	}
 	return n
 }
 
@@ -9609,10 +9438,25 @@ func (m *Afn0E_P0_F1) Size() (n int) {
 	}
 	var l int
 	_ = l
+	if m.Pm != 0 {
+		n += 1 + sovMsgWlst(uint64(m.Pm))
+	}
+	if m.Pn != 0 {
+		n += 1 + sovMsgWlst(uint64(m.Pn))
+	}
+	if m.EcNow != 0 {
+		n += 1 + sovMsgWlst(uint64(m.EcNow))
+	}
+	if len(m.EventsData) > 0 {
+		for _, e := range m.EventsData {
+			l = e.Size()
+			n += 1 + l + sovMsgWlst(uint64(l))
+		}
+	}
 	return n
 }
 
-func (m *Afn0E_P0_F2) Size() (n int) {
+func (m *Afn0E_P0_F1_Events_Data) Size() (n int) {
 	if m == nil {
 		return 0
 	}
@@ -10851,114 +10695,6 @@ func (m *WlstGBOpen) Unmarshal(dAtA []byte) error {
 				return err
 			}
 			iNdEx = postIndex
-		case 116:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Afn04P0F65", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowMsgWlst
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Afn04P0F65 == nil {
-				m.Afn04P0F65 = &Afn04_P0_F65{}
-			}
-			if err := m.Afn04P0F65.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 117:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Afn04P0F66", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowMsgWlst
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Afn04P0F66 == nil {
-				m.Afn04P0F66 = &Afn04_P0_F66{}
-			}
-			if err := m.Afn04P0F66.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 118:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Afn04P0F67", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowMsgWlst
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Afn04P0F67 == nil {
-				m.Afn04P0F67 = &Afn04_P0_F67{}
-			}
-			if err := m.Afn04P0F67.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
 		case 200:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Afn05P0F1", wireType)
@@ -11133,7 +10869,7 @@ func (m *WlstGBOpen) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			if m.Afn0AP0F1 == nil {
-				m.Afn0AP0F1 = &Afn0A_P0_F1{}
+				m.Afn0AP0F1 = &Afn04_P0_F1{}
 			}
 			if err := m.Afn0AP0F1.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
@@ -11169,7 +10905,7 @@ func (m *WlstGBOpen) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			if m.Afn0AP0F3 == nil {
-				m.Afn0AP0F3 = &Afn0A_P0_F3{}
+				m.Afn0AP0F3 = &Afn04_P0_F3{}
 			}
 			if err := m.Afn0AP0F3.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
@@ -11205,7 +10941,7 @@ func (m *WlstGBOpen) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			if m.Afn0AP0F9 == nil {
-				m.Afn0AP0F9 = &Afn0A_P0_F9{}
+				m.Afn0AP0F9 = &Afn04_P0_F9{}
 			}
 			if err := m.Afn0AP0F9.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
@@ -11241,7 +10977,7 @@ func (m *WlstGBOpen) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			if m.Afn0AP0F10 == nil {
-				m.Afn0AP0F10 = &Afn0A_P0_F10{}
+				m.Afn0AP0F10 = &Afn04_P0_F10{}
 			}
 			if err := m.Afn0AP0F10.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
@@ -11277,7 +11013,7 @@ func (m *WlstGBOpen) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			if m.Afn0AP0F11 == nil {
-				m.Afn0AP0F11 = &Afn0A_P0_F11{}
+				m.Afn0AP0F11 = &Afn04_P0_F11{}
 			}
 			if err := m.Afn0AP0F11.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
@@ -11313,7 +11049,7 @@ func (m *WlstGBOpen) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			if m.Afn0APnF14 == nil {
-				m.Afn0APnF14 = &Afn0A_Pn_F14{}
+				m.Afn0APnF14 = &Afn04_Pn_F14{}
 			}
 			if err := m.Afn0APnF14.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
@@ -11349,7 +11085,7 @@ func (m *WlstGBOpen) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			if m.Afn0APnF15 == nil {
-				m.Afn0APnF15 = &Afn0A_Pn_F15{}
+				m.Afn0APnF15 = &Afn04_Pn_F15{}
 			}
 			if err := m.Afn0APnF15.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
@@ -11385,7 +11121,7 @@ func (m *WlstGBOpen) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			if m.Afn0AP0F41 == nil {
-				m.Afn0AP0F41 = &Afn0A_P0_F41{}
+				m.Afn0AP0F41 = &Afn04_P0_F41{}
 			}
 			if err := m.Afn0AP0F41.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
@@ -11421,7 +11157,7 @@ func (m *WlstGBOpen) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			if m.Afn0AP0F42 == nil {
-				m.Afn0AP0F42 = &Afn0A_P0_F42{}
+				m.Afn0AP0F42 = &Afn04_P0_F42{}
 			}
 			if err := m.Afn0AP0F42.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
@@ -11457,7 +11193,7 @@ func (m *WlstGBOpen) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			if m.Afn0AP0F46 == nil {
-				m.Afn0AP0F46 = &Afn0A_P0_F46{}
+				m.Afn0AP0F46 = &Afn04_P0_F46{}
 			}
 			if err := m.Afn0AP0F46.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
@@ -11493,7 +11229,7 @@ func (m *WlstGBOpen) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			if m.Afn0AP0F49 == nil {
-				m.Afn0AP0F49 = &Afn0A_P0_F49{}
+				m.Afn0AP0F49 = &Afn04_P0_F49{}
 			}
 			if err := m.Afn0AP0F49.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
@@ -11529,7 +11265,7 @@ func (m *WlstGBOpen) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			if m.Afn0AP0F50 == nil {
-				m.Afn0AP0F50 = &Afn0A_P0_F50{}
+				m.Afn0AP0F50 = &Afn04_P0_F50{}
 			}
 			if err := m.Afn0AP0F50.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
@@ -11565,7 +11301,7 @@ func (m *WlstGBOpen) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			if m.Afn0AP0F51 == nil {
-				m.Afn0AP0F51 = &Afn0A_P0_F51{}
+				m.Afn0AP0F51 = &Afn04_P0_F51{}
 			}
 			if err := m.Afn0AP0F51.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
@@ -11601,7 +11337,7 @@ func (m *WlstGBOpen) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			if m.Afn0AP0F52 == nil {
-				m.Afn0AP0F52 = &Afn0A_P0_F52{}
+				m.Afn0AP0F52 = &Afn04_P0_F52{}
 			}
 			if err := m.Afn0AP0F52.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
@@ -11637,7 +11373,7 @@ func (m *WlstGBOpen) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			if m.Afn0AP0F53 == nil {
-				m.Afn0AP0F53 = &Afn0A_P0_F53{}
+				m.Afn0AP0F53 = &Afn04_P0_F53{}
 			}
 			if err := m.Afn0AP0F53.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
@@ -11673,123 +11409,15 @@ func (m *WlstGBOpen) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			if m.Afn0AP0F57 == nil {
-				m.Afn0AP0F57 = &Afn0A_P0_F57{}
+				m.Afn0AP0F57 = &Afn04_P0_F57{}
 			}
 			if err := m.Afn0AP0F57.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
-		case 424:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Afn0AP0F65", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowMsgWlst
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Afn0AP0F65 == nil {
-				m.Afn0AP0F65 = &Afn0A_P0_F65{}
-			}
-			if err := m.Afn0AP0F65.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 425:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Afn0AP0F66", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowMsgWlst
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Afn0AP0F66 == nil {
-				m.Afn0AP0F66 = &Afn0A_P0_F66{}
-			}
-			if err := m.Afn0AP0F66.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 426:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Afn0AP0F67", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowMsgWlst
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Afn0AP0F67 == nil {
-				m.Afn0AP0F67 = &Afn0A_P0_F67{}
-			}
-			if err := m.Afn0AP0F67.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
 		case 500:
 			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Afn0CP0F1", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field Afn0CPnF1", wireType)
 			}
 			var msglen int
 			for shift := uint(0); ; shift += 7 {
@@ -11816,10 +11444,10 @@ func (m *WlstGBOpen) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if m.Afn0CP0F1 == nil {
-				m.Afn0CP0F1 = &Afn0C_P0_F1{}
+			if m.Afn0CPnF1 == nil {
+				m.Afn0CPnF1 = &Afn0C_Pn_F1{}
 			}
-			if err := m.Afn0CP0F1.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			if err := m.Afn0CPnF1.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -12321,7 +11949,7 @@ func (m *WlstGBOpen) Unmarshal(dAtA []byte) error {
 				return io.ErrUnexpectedEOF
 			}
 			if m.Afn0EP0F2 == nil {
-				m.Afn0EP0F2 = &Afn0E_P0_F2{}
+				m.Afn0EP0F2 = &Afn0E_P0_F1{}
 			}
 			if err := m.Afn0EP0F2.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
@@ -16090,393 +15718,6 @@ func (m *Afn04_P0_F57) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *Afn04_P0_F65) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowMsgWlst
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: Afn04_P0_F65: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: Afn04_P0_F65: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType == 0 {
-				var v int32
-				for shift := uint(0); ; shift += 7 {
-					if shift >= 64 {
-						return ErrIntOverflowMsgWlst
-					}
-					if iNdEx >= l {
-						return io.ErrUnexpectedEOF
-					}
-					b := dAtA[iNdEx]
-					iNdEx++
-					v |= int32(b&0x7F) << shift
-					if b < 0x80 {
-						break
-					}
-				}
-				m.LoopVector = append(m.LoopVector, v)
-			} else if wireType == 2 {
-				var packedLen int
-				for shift := uint(0); ; shift += 7 {
-					if shift >= 64 {
-						return ErrIntOverflowMsgWlst
-					}
-					if iNdEx >= l {
-						return io.ErrUnexpectedEOF
-					}
-					b := dAtA[iNdEx]
-					iNdEx++
-					packedLen |= int(b&0x7F) << shift
-					if b < 0x80 {
-						break
-					}
-				}
-				if packedLen < 0 {
-					return ErrInvalidLengthMsgWlst
-				}
-				postIndex := iNdEx + packedLen
-				if postIndex < 0 {
-					return ErrInvalidLengthMsgWlst
-				}
-				if postIndex > l {
-					return io.ErrUnexpectedEOF
-				}
-				var elementCount int
-				var count int
-				for _, integer := range dAtA[iNdEx:postIndex] {
-					if integer < 128 {
-						count++
-					}
-				}
-				elementCount = count
-				if elementCount != 0 && len(m.LoopVector) == 0 {
-					m.LoopVector = make([]int32, 0, elementCount)
-				}
-				for iNdEx < postIndex {
-					var v int32
-					for shift := uint(0); ; shift += 7 {
-						if shift >= 64 {
-							return ErrIntOverflowMsgWlst
-						}
-						if iNdEx >= l {
-							return io.ErrUnexpectedEOF
-						}
-						b := dAtA[iNdEx]
-						iNdEx++
-						v |= int32(b&0x7F) << shift
-						if b < 0x80 {
-							break
-						}
-					}
-					m.LoopVector = append(m.LoopVector, v)
-				}
-			} else {
-				return fmt.Errorf("proto: wrong wireType = %d for field LoopVector", wireType)
-			}
-		default:
-			iNdEx = preIndex
-			skippy, err := skipMsgWlst(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if skippy < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if (iNdEx + skippy) < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *Afn04_P0_F66) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowMsgWlst
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: Afn04_P0_F66: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: Afn04_P0_F66: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType == 0 {
-				var v int32
-				for shift := uint(0); ; shift += 7 {
-					if shift >= 64 {
-						return ErrIntOverflowMsgWlst
-					}
-					if iNdEx >= l {
-						return io.ErrUnexpectedEOF
-					}
-					b := dAtA[iNdEx]
-					iNdEx++
-					v |= int32(b&0x7F) << shift
-					if b < 0x80 {
-						break
-					}
-				}
-				m.SwitchinVector = append(m.SwitchinVector, v)
-			} else if wireType == 2 {
-				var packedLen int
-				for shift := uint(0); ; shift += 7 {
-					if shift >= 64 {
-						return ErrIntOverflowMsgWlst
-					}
-					if iNdEx >= l {
-						return io.ErrUnexpectedEOF
-					}
-					b := dAtA[iNdEx]
-					iNdEx++
-					packedLen |= int(b&0x7F) << shift
-					if b < 0x80 {
-						break
-					}
-				}
-				if packedLen < 0 {
-					return ErrInvalidLengthMsgWlst
-				}
-				postIndex := iNdEx + packedLen
-				if postIndex < 0 {
-					return ErrInvalidLengthMsgWlst
-				}
-				if postIndex > l {
-					return io.ErrUnexpectedEOF
-				}
-				var elementCount int
-				var count int
-				for _, integer := range dAtA[iNdEx:postIndex] {
-					if integer < 128 {
-						count++
-					}
-				}
-				elementCount = count
-				if elementCount != 0 && len(m.SwitchinVector) == 0 {
-					m.SwitchinVector = make([]int32, 0, elementCount)
-				}
-				for iNdEx < postIndex {
-					var v int32
-					for shift := uint(0); ; shift += 7 {
-						if shift >= 64 {
-							return ErrIntOverflowMsgWlst
-						}
-						if iNdEx >= l {
-							return io.ErrUnexpectedEOF
-						}
-						b := dAtA[iNdEx]
-						iNdEx++
-						v |= int32(b&0x7F) << shift
-						if b < 0x80 {
-							break
-						}
-					}
-					m.SwitchinVector = append(m.SwitchinVector, v)
-				}
-			} else {
-				return fmt.Errorf("proto: wrong wireType = %d for field SwitchinVector", wireType)
-			}
-		default:
-			iNdEx = preIndex
-			skippy, err := skipMsgWlst(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if skippy < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if (iNdEx + skippy) < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *Afn04_P0_F67) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowMsgWlst
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: Afn04_P0_F67: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: Afn04_P0_F67: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType == 0 {
-				var v int32
-				for shift := uint(0); ; shift += 7 {
-					if shift >= 64 {
-						return ErrIntOverflowMsgWlst
-					}
-					if iNdEx >= l {
-						return io.ErrUnexpectedEOF
-					}
-					b := dAtA[iNdEx]
-					iNdEx++
-					v |= int32(b&0x7F) << shift
-					if b < 0x80 {
-						break
-					}
-				}
-				m.SwitchoutVector = append(m.SwitchoutVector, v)
-			} else if wireType == 2 {
-				var packedLen int
-				for shift := uint(0); ; shift += 7 {
-					if shift >= 64 {
-						return ErrIntOverflowMsgWlst
-					}
-					if iNdEx >= l {
-						return io.ErrUnexpectedEOF
-					}
-					b := dAtA[iNdEx]
-					iNdEx++
-					packedLen |= int(b&0x7F) << shift
-					if b < 0x80 {
-						break
-					}
-				}
-				if packedLen < 0 {
-					return ErrInvalidLengthMsgWlst
-				}
-				postIndex := iNdEx + packedLen
-				if postIndex < 0 {
-					return ErrInvalidLengthMsgWlst
-				}
-				if postIndex > l {
-					return io.ErrUnexpectedEOF
-				}
-				var elementCount int
-				var count int
-				for _, integer := range dAtA[iNdEx:postIndex] {
-					if integer < 128 {
-						count++
-					}
-				}
-				elementCount = count
-				if elementCount != 0 && len(m.SwitchoutVector) == 0 {
-					m.SwitchoutVector = make([]int32, 0, elementCount)
-				}
-				for iNdEx < postIndex {
-					var v int32
-					for shift := uint(0); ; shift += 7 {
-						if shift >= 64 {
-							return ErrIntOverflowMsgWlst
-						}
-						if iNdEx >= l {
-							return io.ErrUnexpectedEOF
-						}
-						b := dAtA[iNdEx]
-						iNdEx++
-						v |= int32(b&0x7F) << shift
-						if b < 0x80 {
-							break
-						}
-					}
-					m.SwitchoutVector = append(m.SwitchoutVector, v)
-				}
-			} else {
-				return fmt.Errorf("proto: wrong wireType = %d for field SwitchoutVector", wireType)
-			}
-		default:
-			iNdEx = preIndex
-			skippy, err := skipMsgWlst(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if skippy < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if (iNdEx + skippy) < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
 func (m *Afn05_P0_F1) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
@@ -17246,7 +16487,7 @@ func (m *Afn09_P0_F1) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *Afn0A_P0_F1) Unmarshal(dAtA []byte) error {
+func (m *Afn0C_Pn_F1) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -17269,12 +16510,65 @@ func (m *Afn0A_P0_F1) Unmarshal(dAtA []byte) error {
 		fieldNum := int32(wire >> 3)
 		wireType := int(wire & 0x7)
 		if wireType == 4 {
-			return fmt.Errorf("proto: Afn0a_P0_F1: wiretype end group for non-group")
+			return fmt.Errorf("proto: Afn0c_Pn_F1: wiretype end group for non-group")
 		}
 		if fieldNum <= 0 {
-			return fmt.Errorf("proto: Afn0a_P0_F1: illegal tag %d (wire type %d)", fieldNum, wire)
+			return fmt.Errorf("proto: Afn0c_Pn_F1: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
+		case 1:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field DtReport", wireType)
+			}
+			m.DtReport = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.DtReport |= int64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field LoopData", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.LoopData = append(m.LoopData, &Afn0C_Pn_F1_Loop_Data{})
+			if err := m.LoopData[len(m.LoopData)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
 			skippy, err := skipMsgWlst(dAtA[iNdEx:])
@@ -17299,7 +16593,7 @@ func (m *Afn0A_P0_F1) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *Afn0A_P0_F3) Unmarshal(dAtA []byte) error {
+func (m *Afn0C_Pn_F1_Loop_Data) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -17322,966 +16616,89 @@ func (m *Afn0A_P0_F3) Unmarshal(dAtA []byte) error {
 		fieldNum := int32(wire >> 3)
 		wireType := int(wire & 0x7)
 		if wireType == 4 {
-			return fmt.Errorf("proto: Afn0a_P0_F3: wiretype end group for non-group")
+			return fmt.Errorf("proto: Loop_Data: wiretype end group for non-group")
 		}
 		if fieldNum <= 0 {
-			return fmt.Errorf("proto: Afn0a_P0_F3: illegal tag %d (wire type %d)", fieldNum, wire)
+			return fmt.Errorf("proto: Loop_Data: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
-		default:
-			iNdEx = preIndex
-			skippy, err := skipMsgWlst(dAtA[iNdEx:])
-			if err != nil {
-				return err
+		case 1:
+			if wireType != 1 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Voltage", wireType)
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if (iNdEx + skippy) < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if (iNdEx + skippy) > l {
+			var v uint64
+			if (iNdEx + 8) > l {
 				return io.ErrUnexpectedEOF
 			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *Afn0A_P0_F9) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowMsgWlst
+			v = uint64(encoding_binary.LittleEndian.Uint64(dAtA[iNdEx:]))
+			iNdEx += 8
+			m.Voltage = float64(math.Float64frombits(v))
+		case 2:
+			if wireType != 1 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Current", wireType)
 			}
-			if iNdEx >= l {
+			var v uint64
+			if (iNdEx + 8) > l {
 				return io.ErrUnexpectedEOF
 			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
+			v = uint64(encoding_binary.LittleEndian.Uint64(dAtA[iNdEx:]))
+			iNdEx += 8
+			m.Current = float64(math.Float64frombits(v))
+		case 3:
+			if wireType != 1 {
+				return fmt.Errorf("proto: wrong wireType = %d for field ActivePower", wireType)
 			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: Afn0a_P0_F9: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: Afn0a_P0_F9: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		default:
-			iNdEx = preIndex
-			skippy, err := skipMsgWlst(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if skippy < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if (iNdEx + skippy) < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if (iNdEx + skippy) > l {
+			var v uint64
+			if (iNdEx + 8) > l {
 				return io.ErrUnexpectedEOF
 			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *Afn0A_P0_F10) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowMsgWlst
+			v = uint64(encoding_binary.LittleEndian.Uint64(dAtA[iNdEx:]))
+			iNdEx += 8
+			m.ActivePower = float64(math.Float64frombits(v))
+		case 4:
+			if wireType != 1 {
+				return fmt.Errorf("proto: wrong wireType = %d for field ReactivePower", wireType)
 			}
-			if iNdEx >= l {
+			var v uint64
+			if (iNdEx + 8) > l {
 				return io.ErrUnexpectedEOF
 			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
+			v = uint64(encoding_binary.LittleEndian.Uint64(dAtA[iNdEx:]))
+			iNdEx += 8
+			m.ReactivePower = float64(math.Float64frombits(v))
+		case 5:
+			if wireType != 1 {
+				return fmt.Errorf("proto: wrong wireType = %d for field PowerFactor", wireType)
 			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: Afn0a_P0_F10: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: Afn0a_P0_F10: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		default:
-			iNdEx = preIndex
-			skippy, err := skipMsgWlst(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if skippy < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if (iNdEx + skippy) < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if (iNdEx + skippy) > l {
+			var v uint64
+			if (iNdEx + 8) > l {
 				return io.ErrUnexpectedEOF
 			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *Afn0A_P0_F11) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowMsgWlst
+			v = uint64(encoding_binary.LittleEndian.Uint64(dAtA[iNdEx:]))
+			iNdEx += 8
+			m.PowerFactor = float64(math.Float64frombits(v))
+		case 6:
+			if wireType != 1 {
+				return fmt.Errorf("proto: wrong wireType = %d for field LuxValue", wireType)
 			}
-			if iNdEx >= l {
+			var v uint64
+			if (iNdEx + 8) > l {
 				return io.ErrUnexpectedEOF
 			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
+			v = uint64(encoding_binary.LittleEndian.Uint64(dAtA[iNdEx:]))
+			iNdEx += 8
+			m.LuxValue = float64(math.Float64frombits(v))
+		case 7:
+			if wireType != 1 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Other", wireType)
 			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: Afn0a_P0_F11: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: Afn0a_P0_F11: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		default:
-			iNdEx = preIndex
-			skippy, err := skipMsgWlst(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if skippy < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if (iNdEx + skippy) < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if (iNdEx + skippy) > l {
+			var v uint64
+			if (iNdEx + 8) > l {
 				return io.ErrUnexpectedEOF
 			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *Afn0A_Pn_F14) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowMsgWlst
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: Afn0a_Pn_F14: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: Afn0a_Pn_F14: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		default:
-			iNdEx = preIndex
-			skippy, err := skipMsgWlst(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if skippy < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if (iNdEx + skippy) < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *Afn0A_Pn_F15) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowMsgWlst
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: Afn0a_Pn_F15: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: Afn0a_Pn_F15: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		default:
-			iNdEx = preIndex
-			skippy, err := skipMsgWlst(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if skippy < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if (iNdEx + skippy) < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *Afn0A_P0_F41) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowMsgWlst
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: Afn0a_P0_F41: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: Afn0a_P0_F41: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		default:
-			iNdEx = preIndex
-			skippy, err := skipMsgWlst(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if skippy < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if (iNdEx + skippy) < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *Afn0A_P0_F42) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowMsgWlst
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: Afn0a_P0_F42: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: Afn0a_P0_F42: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		default:
-			iNdEx = preIndex
-			skippy, err := skipMsgWlst(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if skippy < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if (iNdEx + skippy) < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *Afn0A_P0_F46) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowMsgWlst
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: Afn0a_P0_F46: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: Afn0a_P0_F46: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		default:
-			iNdEx = preIndex
-			skippy, err := skipMsgWlst(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if skippy < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if (iNdEx + skippy) < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *Afn0A_P0_F49) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowMsgWlst
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: Afn0a_P0_F49: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: Afn0a_P0_F49: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		default:
-			iNdEx = preIndex
-			skippy, err := skipMsgWlst(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if skippy < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if (iNdEx + skippy) < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *Afn0A_P0_F50) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowMsgWlst
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: Afn0a_P0_F50: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: Afn0a_P0_F50: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		default:
-			iNdEx = preIndex
-			skippy, err := skipMsgWlst(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if skippy < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if (iNdEx + skippy) < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *Afn0A_P0_F51) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowMsgWlst
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: Afn0a_P0_F51: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: Afn0a_P0_F51: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		default:
-			iNdEx = preIndex
-			skippy, err := skipMsgWlst(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if skippy < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if (iNdEx + skippy) < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *Afn0A_P0_F52) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowMsgWlst
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: Afn0a_P0_F52: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: Afn0a_P0_F52: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		default:
-			iNdEx = preIndex
-			skippy, err := skipMsgWlst(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if skippy < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if (iNdEx + skippy) < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *Afn0A_P0_F53) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowMsgWlst
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: Afn0a_P0_F53: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: Afn0a_P0_F53: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		default:
-			iNdEx = preIndex
-			skippy, err := skipMsgWlst(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if skippy < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if (iNdEx + skippy) < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *Afn0A_P0_F57) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowMsgWlst
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: Afn0a_P0_F57: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: Afn0a_P0_F57: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		default:
-			iNdEx = preIndex
-			skippy, err := skipMsgWlst(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if skippy < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if (iNdEx + skippy) < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *Afn0A_P0_F65) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowMsgWlst
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: Afn0a_P0_F65: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: Afn0a_P0_F65: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		default:
-			iNdEx = preIndex
-			skippy, err := skipMsgWlst(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if skippy < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if (iNdEx + skippy) < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *Afn0A_P0_F66) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowMsgWlst
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: Afn0a_P0_F66: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: Afn0a_P0_F66: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		default:
-			iNdEx = preIndex
-			skippy, err := skipMsgWlst(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if skippy < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if (iNdEx + skippy) < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *Afn0A_P0_F67) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowMsgWlst
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: Afn0a_P0_F67: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: Afn0a_P0_F67: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		default:
-			iNdEx = preIndex
-			skippy, err := skipMsgWlst(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if skippy < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if (iNdEx + skippy) < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *Afn0C_P0_F1) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowMsgWlst
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: Afn0c_P0_F1: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: Afn0c_P0_F1: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
+			v = uint64(encoding_binary.LittleEndian.Uint64(dAtA[iNdEx:]))
+			iNdEx += 8
+			m.Other = float64(math.Float64frombits(v))
 		default:
 			iNdEx = preIndex
 			skippy, err := skipMsgWlst(dAtA[iNdEx:])
@@ -18335,6 +16752,25 @@ func (m *Afn0C_P0_F2) Unmarshal(dAtA []byte) error {
 			return fmt.Errorf("proto: Afn0c_P0_F2: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
+		case 1:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field TimeUnix", wireType)
+			}
+			m.TimeUnix = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.TimeUnix |= int64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
 		default:
 			iNdEx = preIndex
 			skippy, err := skipMsgWlst(dAtA[iNdEx:])
@@ -18388,6 +16824,181 @@ func (m *Afn0C_P0_F3) Unmarshal(dAtA []byte) error {
 			return fmt.Errorf("proto: Afn0c_P0_F3: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field PhaseData", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.PhaseData = append(m.PhaseData, &Afn0C_P0_F3_Phase_Data{})
+			if err := m.PhaseData[len(m.PhaseData)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		case 2:
+			if wireType != 1 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Frequency", wireType)
+			}
+			var v uint64
+			if (iNdEx + 8) > l {
+				return io.ErrUnexpectedEOF
+			}
+			v = uint64(encoding_binary.LittleEndian.Uint64(dAtA[iNdEx:]))
+			iNdEx += 8
+			m.Frequency = float64(math.Float64frombits(v))
+		default:
+			iNdEx = preIndex
+			skippy, err := skipMsgWlst(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if skippy < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if (iNdEx + skippy) < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *Afn0C_P0_F3_Phase_Data) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowMsgWlst
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: Phase_Data: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: Phase_Data: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 1 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Voltage", wireType)
+			}
+			var v uint64
+			if (iNdEx + 8) > l {
+				return io.ErrUnexpectedEOF
+			}
+			v = uint64(encoding_binary.LittleEndian.Uint64(dAtA[iNdEx:]))
+			iNdEx += 8
+			m.Voltage = float64(math.Float64frombits(v))
+		case 2:
+			if wireType != 1 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Current", wireType)
+			}
+			var v uint64
+			if (iNdEx + 8) > l {
+				return io.ErrUnexpectedEOF
+			}
+			v = uint64(encoding_binary.LittleEndian.Uint64(dAtA[iNdEx:]))
+			iNdEx += 8
+			m.Current = float64(math.Float64frombits(v))
+		case 3:
+			if wireType != 1 {
+				return fmt.Errorf("proto: wrong wireType = %d for field ActivePower", wireType)
+			}
+			var v uint64
+			if (iNdEx + 8) > l {
+				return io.ErrUnexpectedEOF
+			}
+			v = uint64(encoding_binary.LittleEndian.Uint64(dAtA[iNdEx:]))
+			iNdEx += 8
+			m.ActivePower = float64(math.Float64frombits(v))
+		case 4:
+			if wireType != 1 {
+				return fmt.Errorf("proto: wrong wireType = %d for field ReactivePower", wireType)
+			}
+			var v uint64
+			if (iNdEx + 8) > l {
+				return io.ErrUnexpectedEOF
+			}
+			v = uint64(encoding_binary.LittleEndian.Uint64(dAtA[iNdEx:]))
+			iNdEx += 8
+			m.ReactivePower = float64(math.Float64frombits(v))
+		case 5:
+			if wireType != 1 {
+				return fmt.Errorf("proto: wrong wireType = %d for field PowerFactor", wireType)
+			}
+			var v uint64
+			if (iNdEx + 8) > l {
+				return io.ErrUnexpectedEOF
+			}
+			v = uint64(encoding_binary.LittleEndian.Uint64(dAtA[iNdEx:]))
+			iNdEx += 8
+			m.PowerFactor = float64(math.Float64frombits(v))
+		case 6:
+			if wireType != 1 {
+				return fmt.Errorf("proto: wrong wireType = %d for field ActiveEnergy", wireType)
+			}
+			var v uint64
+			if (iNdEx + 8) > l {
+				return io.ErrUnexpectedEOF
+			}
+			v = uint64(encoding_binary.LittleEndian.Uint64(dAtA[iNdEx:]))
+			iNdEx += 8
+			m.ActiveEnergy = float64(math.Float64frombits(v))
+		case 7:
+			if wireType != 1 {
+				return fmt.Errorf("proto: wrong wireType = %d for field ReactiveEnergy", wireType)
+			}
+			var v uint64
+			if (iNdEx + 8) > l {
+				return io.ErrUnexpectedEOF
+			}
+			v = uint64(encoding_binary.LittleEndian.Uint64(dAtA[iNdEx:]))
+			iNdEx += 8
+			m.ReactiveEnergy = float64(math.Float64frombits(v))
 		default:
 			iNdEx = preIndex
 			skippy, err := skipMsgWlst(dAtA[iNdEx:])
@@ -18441,6 +17052,25 @@ func (m *Afn0C_P0_F4) Unmarshal(dAtA []byte) error {
 			return fmt.Errorf("proto: Afn0c_P0_F4: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
+		case 1:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field EnableReport", wireType)
+			}
+			m.EnableReport = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.EnableReport |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
 		default:
 			iNdEx = preIndex
 			skippy, err := skipMsgWlst(dAtA[iNdEx:])
@@ -18494,6 +17124,82 @@ func (m *Afn0C_P0_F6) Unmarshal(dAtA []byte) error {
 			return fmt.Errorf("proto: Afn0c_P0_F6: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
+		case 1:
+			if wireType == 0 {
+				var v int32
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return ErrIntOverflowMsgWlst
+					}
+					if iNdEx >= l {
+						return io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					v |= int32(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				m.SwitchoutStatus = append(m.SwitchoutStatus, v)
+			} else if wireType == 2 {
+				var packedLen int
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return ErrIntOverflowMsgWlst
+					}
+					if iNdEx >= l {
+						return io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					packedLen |= int(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				if packedLen < 0 {
+					return ErrInvalidLengthMsgWlst
+				}
+				postIndex := iNdEx + packedLen
+				if postIndex < 0 {
+					return ErrInvalidLengthMsgWlst
+				}
+				if postIndex > l {
+					return io.ErrUnexpectedEOF
+				}
+				var elementCount int
+				var count int
+				for _, integer := range dAtA[iNdEx:postIndex] {
+					if integer < 128 {
+						count++
+					}
+				}
+				elementCount = count
+				if elementCount != 0 && len(m.SwitchoutStatus) == 0 {
+					m.SwitchoutStatus = make([]int32, 0, elementCount)
+				}
+				for iNdEx < postIndex {
+					var v int32
+					for shift := uint(0); ; shift += 7 {
+						if shift >= 64 {
+							return ErrIntOverflowMsgWlst
+						}
+						if iNdEx >= l {
+							return io.ErrUnexpectedEOF
+						}
+						b := dAtA[iNdEx]
+						iNdEx++
+						v |= int32(b&0x7F) << shift
+						if b < 0x80 {
+							break
+						}
+					}
+					m.SwitchoutStatus = append(m.SwitchoutStatus, v)
+				}
+			} else {
+				return fmt.Errorf("proto: wrong wireType = %d for field SwitchoutStatus", wireType)
+			}
 		default:
 			iNdEx = preIndex
 			skippy, err := skipMsgWlst(dAtA[iNdEx:])
@@ -18547,6 +17253,44 @@ func (m *Afn0C_P0_F7) Unmarshal(dAtA []byte) error {
 			return fmt.Errorf("proto: Afn0c_P0_F7: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
+		case 1:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Ec1", wireType)
+			}
+			m.Ec1 = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.Ec1 |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 2:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Ec2", wireType)
+			}
+			m.Ec2 = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.Ec2 |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
 		default:
 			iNdEx = preIndex
 			skippy, err := skipMsgWlst(dAtA[iNdEx:])
@@ -18600,6 +17344,131 @@ func (m *Afn0C_P0_F9) Unmarshal(dAtA []byte) error {
 			return fmt.Errorf("proto: Afn0c_P0_F9: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field LoopStatus", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.LoopStatus = append(m.LoopStatus, &Afn0C_P0_F9_Loop_Status{})
+			if err := m.LoopStatus[len(m.LoopStatus)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipMsgWlst(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if skippy < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if (iNdEx + skippy) < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *Afn0C_P0_F9_Loop_Status) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowMsgWlst
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: Loop_Status: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: Loop_Status: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field StNow", wireType)
+			}
+			m.StNow = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.StNow |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 2:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field StChanged", wireType)
+			}
+			m.StChanged = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.StChanged |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
 		default:
 			iNdEx = preIndex
 			skippy, err := skipMsgWlst(dAtA[iNdEx:])
@@ -18653,6 +17522,120 @@ func (m *Afn0C_P0_F18) Unmarshal(dAtA []byte) error {
 			return fmt.Errorf("proto: Afn0c_P0_F18: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
+		case 1:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field LoopNo", wireType)
+			}
+			m.LoopNo = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.LoopNo |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 2:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field LoopPhase", wireType)
+			}
+			m.LoopPhase = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.LoopPhase |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 3:
+			if wireType == 0 {
+				var v int32
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return ErrIntOverflowMsgWlst
+					}
+					if iNdEx >= l {
+						return io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					v |= int32(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				m.EventsDo = append(m.EventsDo, v)
+			} else if wireType == 2 {
+				var packedLen int
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return ErrIntOverflowMsgWlst
+					}
+					if iNdEx >= l {
+						return io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					packedLen |= int(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				if packedLen < 0 {
+					return ErrInvalidLengthMsgWlst
+				}
+				postIndex := iNdEx + packedLen
+				if postIndex < 0 {
+					return ErrInvalidLengthMsgWlst
+				}
+				if postIndex > l {
+					return io.ErrUnexpectedEOF
+				}
+				var elementCount int
+				var count int
+				for _, integer := range dAtA[iNdEx:postIndex] {
+					if integer < 128 {
+						count++
+					}
+				}
+				elementCount = count
+				if elementCount != 0 && len(m.EventsDo) == 0 {
+					m.EventsDo = make([]int32, 0, elementCount)
+				}
+				for iNdEx < postIndex {
+					var v int32
+					for shift := uint(0); ; shift += 7 {
+						if shift >= 64 {
+							return ErrIntOverflowMsgWlst
+						}
+						if iNdEx >= l {
+							return io.ErrUnexpectedEOF
+						}
+						b := dAtA[iNdEx]
+						iNdEx++
+						v |= int32(b&0x7F) << shift
+						if b < 0x80 {
+							break
+						}
+					}
+					m.EventsDo = append(m.EventsDo, v)
+				}
+			} else {
+				return fmt.Errorf("proto: wrong wireType = %d for field EventsDo", wireType)
+			}
 		default:
 			iNdEx = preIndex
 			skippy, err := skipMsgWlst(dAtA[iNdEx:])
@@ -18706,6 +17689,60 @@ func (m *Afn0C_P0_F19) Unmarshal(dAtA []byte) error {
 			return fmt.Errorf("proto: Afn0c_P0_F19: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
+		case 1:
+			if wireType == 1 {
+				var v uint64
+				if (iNdEx + 8) > l {
+					return io.ErrUnexpectedEOF
+				}
+				v = uint64(encoding_binary.LittleEndian.Uint64(dAtA[iNdEx:]))
+				iNdEx += 8
+				v2 := float64(math.Float64frombits(v))
+				m.LeakageCurrent = append(m.LeakageCurrent, v2)
+			} else if wireType == 2 {
+				var packedLen int
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return ErrIntOverflowMsgWlst
+					}
+					if iNdEx >= l {
+						return io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					packedLen |= int(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				if packedLen < 0 {
+					return ErrInvalidLengthMsgWlst
+				}
+				postIndex := iNdEx + packedLen
+				if postIndex < 0 {
+					return ErrInvalidLengthMsgWlst
+				}
+				if postIndex > l {
+					return io.ErrUnexpectedEOF
+				}
+				var elementCount int
+				elementCount = packedLen / 8
+				if elementCount != 0 && len(m.LeakageCurrent) == 0 {
+					m.LeakageCurrent = make([]float64, 0, elementCount)
+				}
+				for iNdEx < postIndex {
+					var v uint64
+					if (iNdEx + 8) > l {
+						return io.ErrUnexpectedEOF
+					}
+					v = uint64(encoding_binary.LittleEndian.Uint64(dAtA[iNdEx:]))
+					iNdEx += 8
+					v2 := float64(math.Float64frombits(v))
+					m.LeakageCurrent = append(m.LeakageCurrent, v2)
+				}
+			} else {
+				return fmt.Errorf("proto: wrong wireType = %d for field LeakageCurrent", wireType)
+			}
 		default:
 			iNdEx = preIndex
 			skippy, err := skipMsgWlst(dAtA[iNdEx:])
@@ -18759,6 +17796,28 @@ func (m *Afn0C_P0_F20) Unmarshal(dAtA []byte) error {
 			return fmt.Errorf("proto: Afn0c_P0_F20: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
+		case 1:
+			if wireType != 1 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Lux", wireType)
+			}
+			var v uint64
+			if (iNdEx + 8) > l {
+				return io.ErrUnexpectedEOF
+			}
+			v = uint64(encoding_binary.LittleEndian.Uint64(dAtA[iNdEx:]))
+			iNdEx += 8
+			m.Lux = float64(math.Float64frombits(v))
+		case 2:
+			if wireType != 1 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Temperature", wireType)
+			}
+			var v uint64
+			if (iNdEx + 8) > l {
+				return io.ErrUnexpectedEOF
+			}
+			v = uint64(encoding_binary.LittleEndian.Uint64(dAtA[iNdEx:]))
+			iNdEx += 8
+			m.Temperature = float64(math.Float64frombits(v))
 		default:
 			iNdEx = preIndex
 			skippy, err := skipMsgWlst(dAtA[iNdEx:])
@@ -18812,6 +17871,246 @@ func (m *Afn0D_Pn_F1) Unmarshal(dAtA []byte) error {
 			return fmt.Errorf("proto: Afn0d_Pn_F1: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
+		case 1:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field DtStart", wireType)
+			}
+			m.DtStart = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.DtStart |= int64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 2:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field DataDensity", wireType)
+			}
+			m.DataDensity = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.DataDensity |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 3:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field DataNum", wireType)
+			}
+			m.DataNum = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.DataNum |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 4:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field LoopNo", wireType)
+			}
+			m.LoopNo = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.LoopNo |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 5:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field LoopData", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.LoopData = append(m.LoopData, &Afn0D_Pn_F1_Loop_Data{})
+			if err := m.LoopData[len(m.LoopData)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipMsgWlst(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if skippy < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if (iNdEx + skippy) < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *Afn0D_Pn_F1_Loop_Data) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowMsgWlst
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: Loop_Data: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: Loop_Data: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 1 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Voltage", wireType)
+			}
+			var v uint64
+			if (iNdEx + 8) > l {
+				return io.ErrUnexpectedEOF
+			}
+			v = uint64(encoding_binary.LittleEndian.Uint64(dAtA[iNdEx:]))
+			iNdEx += 8
+			m.Voltage = float64(math.Float64frombits(v))
+		case 2:
+			if wireType != 1 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Current", wireType)
+			}
+			var v uint64
+			if (iNdEx + 8) > l {
+				return io.ErrUnexpectedEOF
+			}
+			v = uint64(encoding_binary.LittleEndian.Uint64(dAtA[iNdEx:]))
+			iNdEx += 8
+			m.Current = float64(math.Float64frombits(v))
+		case 3:
+			if wireType != 1 {
+				return fmt.Errorf("proto: wrong wireType = %d for field ActivePower", wireType)
+			}
+			var v uint64
+			if (iNdEx + 8) > l {
+				return io.ErrUnexpectedEOF
+			}
+			v = uint64(encoding_binary.LittleEndian.Uint64(dAtA[iNdEx:]))
+			iNdEx += 8
+			m.ActivePower = float64(math.Float64frombits(v))
+		case 4:
+			if wireType != 1 {
+				return fmt.Errorf("proto: wrong wireType = %d for field ReactivePower", wireType)
+			}
+			var v uint64
+			if (iNdEx + 8) > l {
+				return io.ErrUnexpectedEOF
+			}
+			v = uint64(encoding_binary.LittleEndian.Uint64(dAtA[iNdEx:]))
+			iNdEx += 8
+			m.ReactivePower = float64(math.Float64frombits(v))
+		case 5:
+			if wireType != 1 {
+				return fmt.Errorf("proto: wrong wireType = %d for field PowerFactor", wireType)
+			}
+			var v uint64
+			if (iNdEx + 8) > l {
+				return io.ErrUnexpectedEOF
+			}
+			v = uint64(encoding_binary.LittleEndian.Uint64(dAtA[iNdEx:]))
+			iNdEx += 8
+			m.PowerFactor = float64(math.Float64frombits(v))
+		case 6:
+			if wireType != 1 {
+				return fmt.Errorf("proto: wrong wireType = %d for field LuxValue", wireType)
+			}
+			var v uint64
+			if (iNdEx + 8) > l {
+				return io.ErrUnexpectedEOF
+			}
+			v = uint64(encoding_binary.LittleEndian.Uint64(dAtA[iNdEx:]))
+			iNdEx += 8
+			m.LuxValue = float64(math.Float64frombits(v))
+		case 7:
+			if wireType != 1 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Other", wireType)
+			}
+			var v uint64
+			if (iNdEx + 8) > l {
+				return io.ErrUnexpectedEOF
+			}
+			v = uint64(encoding_binary.LittleEndian.Uint64(dAtA[iNdEx:]))
+			iNdEx += 8
+			m.Other = float64(math.Float64frombits(v))
 		default:
 			iNdEx = preIndex
 			skippy, err := skipMsgWlst(dAtA[iNdEx:])
@@ -18865,6 +18164,292 @@ func (m *Afn0D_P0_F2) Unmarshal(dAtA []byte) error {
 			return fmt.Errorf("proto: Afn0d_P0_F2: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
+		case 1:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field DtStart", wireType)
+			}
+			m.DtStart = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.DtStart |= int64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 2:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field DataDensity", wireType)
+			}
+			m.DataDensity = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.DataDensity |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 3:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field DataNum", wireType)
+			}
+			m.DataNum = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.DataNum |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 4:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field LoopNo", wireType)
+			}
+			m.LoopNo = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.LoopNo |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 5:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field PhaseAData", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.PhaseAData = append(m.PhaseAData, &Afn0D_P0_F2_Phase_Data{})
+			if err := m.PhaseAData[len(m.PhaseAData)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		case 6:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field PhaseBData", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.PhaseBData = append(m.PhaseBData, &Afn0D_P0_F2_Phase_Data{})
+			if err := m.PhaseBData[len(m.PhaseBData)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		case 7:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field PhaseCData", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.PhaseCData = append(m.PhaseCData, &Afn0D_P0_F2_Phase_Data{})
+			if err := m.PhaseCData[len(m.PhaseCData)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipMsgWlst(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if skippy < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if (iNdEx + skippy) < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *Afn0D_P0_F2_Phase_Data) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowMsgWlst
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: Phase_Data: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: Phase_Data: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 1 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Voltage", wireType)
+			}
+			var v uint64
+			if (iNdEx + 8) > l {
+				return io.ErrUnexpectedEOF
+			}
+			v = uint64(encoding_binary.LittleEndian.Uint64(dAtA[iNdEx:]))
+			iNdEx += 8
+			m.Voltage = float64(math.Float64frombits(v))
+		case 2:
+			if wireType != 1 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Current", wireType)
+			}
+			var v uint64
+			if (iNdEx + 8) > l {
+				return io.ErrUnexpectedEOF
+			}
+			v = uint64(encoding_binary.LittleEndian.Uint64(dAtA[iNdEx:]))
+			iNdEx += 8
+			m.Current = float64(math.Float64frombits(v))
+		case 3:
+			if wireType != 1 {
+				return fmt.Errorf("proto: wrong wireType = %d for field ActivePower", wireType)
+			}
+			var v uint64
+			if (iNdEx + 8) > l {
+				return io.ErrUnexpectedEOF
+			}
+			v = uint64(encoding_binary.LittleEndian.Uint64(dAtA[iNdEx:]))
+			iNdEx += 8
+			m.ActivePower = float64(math.Float64frombits(v))
+		case 4:
+			if wireType != 1 {
+				return fmt.Errorf("proto: wrong wireType = %d for field ReactivePower", wireType)
+			}
+			var v uint64
+			if (iNdEx + 8) > l {
+				return io.ErrUnexpectedEOF
+			}
+			v = uint64(encoding_binary.LittleEndian.Uint64(dAtA[iNdEx:]))
+			iNdEx += 8
+			m.ReactivePower = float64(math.Float64frombits(v))
+		case 5:
+			if wireType != 1 {
+				return fmt.Errorf("proto: wrong wireType = %d for field PowerFactor", wireType)
+			}
+			var v uint64
+			if (iNdEx + 8) > l {
+				return io.ErrUnexpectedEOF
+			}
+			v = uint64(encoding_binary.LittleEndian.Uint64(dAtA[iNdEx:]))
+			iNdEx += 8
+			m.PowerFactor = float64(math.Float64frombits(v))
 		default:
 			iNdEx = preIndex
 			skippy, err := skipMsgWlst(dAtA[iNdEx:])
@@ -18918,6 +18503,136 @@ func (m *Afn0D_Pn_F3) Unmarshal(dAtA []byte) error {
 			return fmt.Errorf("proto: Afn0d_Pn_F3: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
+		case 1:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field DtStart", wireType)
+			}
+			m.DtStart = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.DtStart |= int64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 2:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field DataDensity", wireType)
+			}
+			m.DataDensity = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.DataDensity |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 3:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field DataNum", wireType)
+			}
+			m.DataNum = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.DataNum |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 4:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field LoopNo", wireType)
+			}
+			m.LoopNo = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.LoopNo |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 5:
+			if wireType == 1 {
+				var v uint64
+				if (iNdEx + 8) > l {
+					return io.ErrUnexpectedEOF
+				}
+				v = uint64(encoding_binary.LittleEndian.Uint64(dAtA[iNdEx:]))
+				iNdEx += 8
+				v2 := float64(math.Float64frombits(v))
+				m.LeakageCurrent = append(m.LeakageCurrent, v2)
+			} else if wireType == 2 {
+				var packedLen int
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return ErrIntOverflowMsgWlst
+					}
+					if iNdEx >= l {
+						return io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					packedLen |= int(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				if packedLen < 0 {
+					return ErrInvalidLengthMsgWlst
+				}
+				postIndex := iNdEx + packedLen
+				if postIndex < 0 {
+					return ErrInvalidLengthMsgWlst
+				}
+				if postIndex > l {
+					return io.ErrUnexpectedEOF
+				}
+				var elementCount int
+				elementCount = packedLen / 8
+				if elementCount != 0 && len(m.LeakageCurrent) == 0 {
+					m.LeakageCurrent = make([]float64, 0, elementCount)
+				}
+				for iNdEx < postIndex {
+					var v uint64
+					if (iNdEx + 8) > l {
+						return io.ErrUnexpectedEOF
+					}
+					v = uint64(encoding_binary.LittleEndian.Uint64(dAtA[iNdEx:]))
+					iNdEx += 8
+					v2 := float64(math.Float64frombits(v))
+					m.LeakageCurrent = append(m.LeakageCurrent, v2)
+				}
+			} else {
+				return fmt.Errorf("proto: wrong wireType = %d for field LeakageCurrent", wireType)
+			}
 		default:
 			iNdEx = preIndex
 			skippy, err := skipMsgWlst(dAtA[iNdEx:])
@@ -18971,6 +18686,97 @@ func (m *Afn0E_P0_F1) Unmarshal(dAtA []byte) error {
 			return fmt.Errorf("proto: Afn0e_P0_F1: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
+		case 1:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Pm", wireType)
+			}
+			m.Pm = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.Pm |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 2:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Pn", wireType)
+			}
+			m.Pn = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.Pn |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 3:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field EcNow", wireType)
+			}
+			m.EcNow = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.EcNow |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 4:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field EventsData", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.EventsData = append(m.EventsData, &Afn0E_P0_F1_Events_Data{})
+			if err := m.EventsData[len(m.EventsData)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
 			skippy, err := skipMsgWlst(dAtA[iNdEx:])
@@ -18995,7 +18801,7 @@ func (m *Afn0E_P0_F1) Unmarshal(dAtA []byte) error {
 	}
 	return nil
 }
-func (m *Afn0E_P0_F2) Unmarshal(dAtA []byte) error {
+func (m *Afn0E_P0_F1_Events_Data) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)
 	iNdEx := 0
 	for iNdEx < l {
@@ -19018,10 +18824,10 @@ func (m *Afn0E_P0_F2) Unmarshal(dAtA []byte) error {
 		fieldNum := int32(wire >> 3)
 		wireType := int(wire & 0x7)
 		if wireType == 4 {
-			return fmt.Errorf("proto: Afn0e_P0_F2: wiretype end group for non-group")
+			return fmt.Errorf("proto: Events_Data: wiretype end group for non-group")
 		}
 		if fieldNum <= 0 {
-			return fmt.Errorf("proto: Afn0e_P0_F2: illegal tag %d (wire type %d)", fieldNum, wire)
+			return fmt.Errorf("proto: Events_Data: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
 		default:
