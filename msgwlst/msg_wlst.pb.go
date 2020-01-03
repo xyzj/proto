@@ -282,33 +282,17 @@ type WlstGBOpen struct {
 	Afn0AP0F1 *Afn04_P0_F1 `protobuf:"bytes,400,opt,name=afn0a_p0_f1,json=afn0aP0F1,proto3" json:"afn0a_p0_f1,omitempty"`
 	// 主站 IP 地址  和端口（上行）
 	Afn0AP0F3 *Afn04_P0_F3 `protobuf:"bytes,401,opt,name=afn0a_p0_f3,json=afn0aP0F3,proto3" json:"afn0a_p0_f3,omitempty"`
-	// 终端上行通信消息认∕否认(证参数设置
-	// Afn04_P0_F5 afn0a_p0_f5 = 402;
-	// 终端组地址  设置
-	// Afn04_P0_F6 afn0a_p0_f6 = 403;
-	// 终端 IP 地址  和端口
-	// Afn04_P0_F7 afn0a_p0_f7 = 404;
-	// 终端上行通信工作方式
-	// Afn04_P0_F8 afn0a_p0_f8 = 405;
 	// 终端事件记录配置设置（上行）
 	Afn0AP0F9 *Afn04_P0_F9 `protobuf:"bytes,406,opt,name=afn0a_p0_f9,json=afn0aP0F9,proto3" json:"afn0a_p0_f9,omitempty"`
-	// 终端上行通信口通信参数设置（上行）
+	// 设备状态输入参数（上行）
 	Afn0AP0F10 *Afn04_P0_F10 `protobuf:"bytes,407,opt,name=afn0a_p0_f10,json=afn0aP0F10,proto3" json:"afn0a_p0_f10,omitempty"`
 	// GPS 地理位置信息（上行）
 	Afn0AP0F11 *Afn04_P0_F11 `protobuf:"bytes,408,opt,name=afn0a_p0_f11,json=afn0aP0F11,proto3" json:"afn0a_p0_f11,omitempty"`
-	// 终端月流量控制阈值 设置
-	// Afn04_P0_F12 afn0a_p0_f12 = 409;
-	// 终端电能表/路灯控制器配置参数
-	// Afn04_Pn_F13 afn0a_pn_f13 = 410;
 	// 扩展设备配置参数（上行）
 	Afn0APnF14 *Afn04_Pn_F14 `protobuf:"bytes,411,opt,name=afn0a_pn_f14,json=afn0aPnF14,proto3" json:"afn0a_pn_f14,omitempty"`
 	// 继电器输出控制方案（上行）
 	// pn: n为方案号，1-8
 	Afn0APnF15 *Afn04_Pn_F15 `protobuf:"bytes,412,opt,name=afn0a_pn_f15,json=afn0aPnF15,proto3" json:"afn0a_pn_f15,omitempty"`
-	// 台区集中抄表停抄/投抄设置
-	// Afn04_Pn_F30 afn0a_pn_f30 = 413;
-	// 终端抄表运行参数设置
-	// Afn04_Pn_F33 afn0a_pn_f33 = 414;
 	// 开关量输出参数关联（上行）
 	Afn0AP0F41 *Afn04_P0_F41 `protobuf:"bytes,415,opt,name=afn0a_p0_f41,json=afn0aP0F41,proto3" json:"afn0a_p0_f41,omitempty"`
 	// 模拟量采集参数关联（上行）
@@ -329,6 +313,7 @@ type WlstGBOpen struct {
 	Afn0AP0F57 *Afn04_P0_F57 `protobuf:"bytes,423,opt,name=afn0a_p0_f57,json=afn0aP0F57,proto3" json:"afn0a_p0_f57,omitempty"`
 	// 请求实时数据，下行无数据单元，数据结构均为上行结构
 	// 出线模拟量数据(全数据)(报警主报)（上行）
+	// pn: n是模拟量回路序号，0xffff表示所有回路(只用所有回路)
 	Afn0CPnF1 *Afn0C_Pn_F1 `protobuf:"bytes,500,opt,name=afn0c_pn_f1,json=afn0cPnF1,proto3" json:"afn0c_pn_f1,omitempty"`
 	// 终端日历时钟（上行）
 	Afn0CP0F2 *Afn0C_P0_F2 `protobuf:"bytes,501,opt,name=afn0c_p0_f2,json=afn0cP0F2,proto3" json:"afn0c_p0_f2,omitempty"`
@@ -358,10 +343,8 @@ type WlstGBOpen struct {
 	// pn：n为漏电回路n<=150
 	Afn0DPnF3 *Afn0D_Pn_F3 `protobuf:"bytes,602,opt,name=afn0d_pn_f3,json=afn0dPnF3,proto3" json:"afn0d_pn_f3,omitempty"`
 	// 请求事件记录
-	// 请求重要事件
+	// 请求重要/一般事件（上下行）
 	Afn0EP0F1 *Afn0E_P0_F1 `protobuf:"bytes,700,opt,name=afn0e_p0_f1,json=afn0eP0F1,proto3" json:"afn0e_p0_f1,omitempty"`
-	// 请求一般事件
-	Afn0EP0F2 *Afn0E_P0_F1 `protobuf:"bytes,701,opt,name=afn0e_p0_f2,json=afn0eP0F2,proto3" json:"afn0e_p0_f2,omitempty"`
 	// 数据转发
 	// 透明转发
 	Afn10P0F1 *Afn10_P0_F1 `protobuf:"bytes,800,opt,name=afn10_p0_f1,json=afn10P0F1,proto3" json:"afn10_p0_f1,omitempty"`
@@ -780,13 +763,6 @@ func (m *WlstGBOpen) GetAfn0DPnF3() *Afn0D_Pn_F3 {
 func (m *WlstGBOpen) GetAfn0EP0F1() *Afn0E_P0_F1 {
 	if m != nil {
 		return m.Afn0EP0F1
-	}
-	return nil
-}
-
-func (m *WlstGBOpen) GetAfn0EP0F2() *Afn0E_P0_F1 {
-	if m != nil {
-		return m.Afn0EP0F2
 	}
 	return nil
 }
@@ -1336,7 +1312,7 @@ func (m *Afn04_P0_F11) GetLatitudeMark() int32 {
 	return 0
 }
 
-// 扩展设备配置参数(有问题，看不懂)
+// 扩展设备配置参数(看不懂)
 type Afn04_Pn_F14 struct {
 }
 
@@ -1376,15 +1352,7 @@ var xxx_messageInfo_Afn04_Pn_F14 proto.InternalMessageInfo
 // 继电器输出控制方案（年设置）
 // pn:n 方案序号1-8
 type Afn04_Pn_F15 struct {
-	// 起始年月日，unix时间戳，0-表示每日执行，低优先级
-	DtStart int64 `protobuf:"varint,1,opt,name=dt_start,json=dtStart,proto3" json:"dt_start,omitempty"`
-	// 持续时间1-31天
-	DtDays int32 `protobuf:"varint,2,opt,name=dt_days,json=dtDays,proto3" json:"dt_days,omitempty"`
-	// 开关量输出启用标识1-启用，0-不用
-	SwitchoutIndx []int32 `protobuf:"varint,3,rep,packed,name=switchout_indx,json=switchoutIndx,proto3" json:"switchout_indx,omitempty"`
-	// 时段设置，留空表示清除所有时段
-	// 数量1-4为有效时段
-	TimeSlot []*Afn04_Pn_F15_Time_Slot `protobuf:"bytes,4,rep,name=time_slot,json=timeSlot,proto3" json:"time_slot,omitempty"`
+	PnData []*Afn04_Pn_F15_Pn_Data `protobuf:"bytes,1,rep,name=pn_data,json=pnData,proto3" json:"pn_data,omitempty"`
 }
 
 func (m *Afn04_Pn_F15) Reset()         { *m = Afn04_Pn_F15{} }
@@ -1420,28 +1388,88 @@ func (m *Afn04_Pn_F15) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_Afn04_Pn_F15 proto.InternalMessageInfo
 
-func (m *Afn04_Pn_F15) GetDtStart() int64 {
+func (m *Afn04_Pn_F15) GetPnData() []*Afn04_Pn_F15_Pn_Data {
 	if m != nil {
-		return m.DtStart
+		return m.PnData
+	}
+	return nil
+}
+
+type Afn04_Pn_F15_Pn_Data struct {
+	Pno int32 `protobuf:"varint,5,opt,name=pno,proto3" json:"pno,omitempty"`
+	// 起始年月日，unix时间戳，000000-表示每日执行，低优先级
+	DtStart string `protobuf:"bytes,1,opt,name=dt_start,json=dtStart,proto3" json:"dt_start,omitempty"`
+	// 持续时间1-31天
+	DtDays int32 `protobuf:"varint,2,opt,name=dt_days,json=dtDays,proto3" json:"dt_days,omitempty"`
+	// 开关量输出启用标识,依次1-16,1-启用，0-不用
+	SwitchoutNo []int32 `protobuf:"varint,3,rep,packed,name=switchout_no,json=switchoutNo,proto3" json:"switchout_no,omitempty"`
+	// 时段设置，留空表示清除所有时段
+	// 数量1-4为有效时段
+	TimeSlot []*Afn04_Pn_F15_Time_Slot `protobuf:"bytes,4,rep,name=time_slot,json=timeSlot,proto3" json:"time_slot,omitempty"`
+}
+
+func (m *Afn04_Pn_F15_Pn_Data) Reset()         { *m = Afn04_Pn_F15_Pn_Data{} }
+func (m *Afn04_Pn_F15_Pn_Data) String() string { return proto.CompactTextString(m) }
+func (*Afn04_Pn_F15_Pn_Data) ProtoMessage()    {}
+func (*Afn04_Pn_F15_Pn_Data) Descriptor() ([]byte, []int) {
+	return fileDescriptor_7c797d1dfec7a224, []int{11, 0}
+}
+func (m *Afn04_Pn_F15_Pn_Data) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *Afn04_Pn_F15_Pn_Data) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_Afn04_Pn_F15_Pn_Data.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *Afn04_Pn_F15_Pn_Data) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Afn04_Pn_F15_Pn_Data.Merge(m, src)
+}
+func (m *Afn04_Pn_F15_Pn_Data) XXX_Size() int {
+	return m.Size()
+}
+func (m *Afn04_Pn_F15_Pn_Data) XXX_DiscardUnknown() {
+	xxx_messageInfo_Afn04_Pn_F15_Pn_Data.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_Afn04_Pn_F15_Pn_Data proto.InternalMessageInfo
+
+func (m *Afn04_Pn_F15_Pn_Data) GetPno() int32 {
+	if m != nil {
+		return m.Pno
 	}
 	return 0
 }
 
-func (m *Afn04_Pn_F15) GetDtDays() int32 {
+func (m *Afn04_Pn_F15_Pn_Data) GetDtStart() string {
+	if m != nil {
+		return m.DtStart
+	}
+	return ""
+}
+
+func (m *Afn04_Pn_F15_Pn_Data) GetDtDays() int32 {
 	if m != nil {
 		return m.DtDays
 	}
 	return 0
 }
 
-func (m *Afn04_Pn_F15) GetSwitchoutIndx() []int32 {
+func (m *Afn04_Pn_F15_Pn_Data) GetSwitchoutNo() []int32 {
 	if m != nil {
-		return m.SwitchoutIndx
+		return m.SwitchoutNo
 	}
 	return nil
 }
 
-func (m *Afn04_Pn_F15) GetTimeSlot() []*Afn04_Pn_F15_Time_Slot {
+func (m *Afn04_Pn_F15_Pn_Data) GetTimeSlot() []*Afn04_Pn_F15_Time_Slot {
 	if m != nil {
 		return m.TimeSlot
 	}
@@ -1459,7 +1487,7 @@ func (m *Afn04_Pn_F15_Time_Slot) Reset()         { *m = Afn04_Pn_F15_Time_Slot{}
 func (m *Afn04_Pn_F15_Time_Slot) String() string { return proto.CompactTextString(m) }
 func (*Afn04_Pn_F15_Time_Slot) ProtoMessage()    {}
 func (*Afn04_Pn_F15_Time_Slot) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7c797d1dfec7a224, []int{11, 0}
+	return fileDescriptor_7c797d1dfec7a224, []int{11, 1}
 }
 func (m *Afn04_Pn_F15_Time_Slot) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1687,20 +1715,20 @@ func (m *Afn04_P0_F42_Current_Setting) GetPhase() int32 {
 
 // 周回路控制表,仅支持k1-k8（国标设备不建议使用）2500清除对应设置
 type Afn04_P0_F46 struct {
-	// 周一设置
-	WeekDay1 *Afn04_P0_F46_Week_Slot `protobuf:"bytes,1,opt,name=week_day1,json=weekDay1,proto3" json:"week_day1,omitempty"`
-	// 周二设置
-	WeekDay2 *Afn04_P0_F46_Week_Slot `protobuf:"bytes,2,opt,name=week_day2,json=weekDay2,proto3" json:"week_day2,omitempty"`
-	// 周三设置
-	WeekDay3 *Afn04_P0_F46_Week_Slot `protobuf:"bytes,3,opt,name=week_day3,json=weekDay3,proto3" json:"week_day3,omitempty"`
-	// 周四设置
-	WeekDay4 *Afn04_P0_F46_Week_Slot `protobuf:"bytes,4,opt,name=week_day4,json=weekDay4,proto3" json:"week_day4,omitempty"`
-	// 周五设置
-	WeekDay5 *Afn04_P0_F46_Week_Slot `protobuf:"bytes,5,opt,name=week_day5,json=weekDay5,proto3" json:"week_day5,omitempty"`
-	// 周六设置
-	WeekDay6 *Afn04_P0_F46_Week_Slot `protobuf:"bytes,6,opt,name=week_day6,json=weekDay6,proto3" json:"week_day6,omitempty"`
-	// 周日设置
-	WeekDay7 *Afn04_P0_F46_Week_Slot `protobuf:"bytes,7,opt,name=week_day7,json=weekDay7,proto3" json:"week_day7,omitempty"`
+	// 周一设置,k1~k8
+	WeekDay1 []*Afn04_P0_F46_Time_Slot `protobuf:"bytes,1,rep,name=week_day1,json=weekDay1,proto3" json:"week_day1,omitempty"`
+	// 周二设置,k1~k8
+	WeekDay2 []*Afn04_P0_F46_Time_Slot `protobuf:"bytes,2,rep,name=week_day2,json=weekDay2,proto3" json:"week_day2,omitempty"`
+	// 周三设置,k1~k8
+	WeekDay3 []*Afn04_P0_F46_Time_Slot `protobuf:"bytes,3,rep,name=week_day3,json=weekDay3,proto3" json:"week_day3,omitempty"`
+	// 周四设置,k1~k8
+	WeekDay4 []*Afn04_P0_F46_Time_Slot `protobuf:"bytes,4,rep,name=week_day4,json=weekDay4,proto3" json:"week_day4,omitempty"`
+	// 周五设置,k1~k8
+	WeekDay5 []*Afn04_P0_F46_Time_Slot `protobuf:"bytes,5,rep,name=week_day5,json=weekDay5,proto3" json:"week_day5,omitempty"`
+	// 周六设置,k1~k8
+	WeekDay6 []*Afn04_P0_F46_Time_Slot `protobuf:"bytes,6,rep,name=week_day6,json=weekDay6,proto3" json:"week_day6,omitempty"`
+	// 周日设置,k1~k8
+	WeekDay7 []*Afn04_P0_F46_Time_Slot `protobuf:"bytes,7,rep,name=week_day7,json=weekDay7,proto3" json:"week_day7,omitempty"`
 }
 
 func (m *Afn04_P0_F46) Reset()         { *m = Afn04_P0_F46{} }
@@ -1736,153 +1764,51 @@ func (m *Afn04_P0_F46) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_Afn04_P0_F46 proto.InternalMessageInfo
 
-func (m *Afn04_P0_F46) GetWeekDay1() *Afn04_P0_F46_Week_Slot {
+func (m *Afn04_P0_F46) GetWeekDay1() []*Afn04_P0_F46_Time_Slot {
 	if m != nil {
 		return m.WeekDay1
 	}
 	return nil
 }
 
-func (m *Afn04_P0_F46) GetWeekDay2() *Afn04_P0_F46_Week_Slot {
+func (m *Afn04_P0_F46) GetWeekDay2() []*Afn04_P0_F46_Time_Slot {
 	if m != nil {
 		return m.WeekDay2
 	}
 	return nil
 }
 
-func (m *Afn04_P0_F46) GetWeekDay3() *Afn04_P0_F46_Week_Slot {
+func (m *Afn04_P0_F46) GetWeekDay3() []*Afn04_P0_F46_Time_Slot {
 	if m != nil {
 		return m.WeekDay3
 	}
 	return nil
 }
 
-func (m *Afn04_P0_F46) GetWeekDay4() *Afn04_P0_F46_Week_Slot {
+func (m *Afn04_P0_F46) GetWeekDay4() []*Afn04_P0_F46_Time_Slot {
 	if m != nil {
 		return m.WeekDay4
 	}
 	return nil
 }
 
-func (m *Afn04_P0_F46) GetWeekDay5() *Afn04_P0_F46_Week_Slot {
+func (m *Afn04_P0_F46) GetWeekDay5() []*Afn04_P0_F46_Time_Slot {
 	if m != nil {
 		return m.WeekDay5
 	}
 	return nil
 }
 
-func (m *Afn04_P0_F46) GetWeekDay6() *Afn04_P0_F46_Week_Slot {
+func (m *Afn04_P0_F46) GetWeekDay6() []*Afn04_P0_F46_Time_Slot {
 	if m != nil {
 		return m.WeekDay6
 	}
 	return nil
 }
 
-func (m *Afn04_P0_F46) GetWeekDay7() *Afn04_P0_F46_Week_Slot {
+func (m *Afn04_P0_F46) GetWeekDay7() []*Afn04_P0_F46_Time_Slot {
 	if m != nil {
 		return m.WeekDay7
-	}
-	return nil
-}
-
-// 周设置
-type Afn04_P0_F46_Week_Slot struct {
-	// k1~k8开关灯时间
-	K1 *Afn04_P0_F46_Time_Slot `protobuf:"bytes,1,opt,name=k1,proto3" json:"k1,omitempty"`
-	K2 *Afn04_P0_F46_Time_Slot `protobuf:"bytes,2,opt,name=k2,proto3" json:"k2,omitempty"`
-	K3 *Afn04_P0_F46_Time_Slot `protobuf:"bytes,3,opt,name=k3,proto3" json:"k3,omitempty"`
-	K4 *Afn04_P0_F46_Time_Slot `protobuf:"bytes,4,opt,name=k4,proto3" json:"k4,omitempty"`
-	K5 *Afn04_P0_F46_Time_Slot `protobuf:"bytes,5,opt,name=k5,proto3" json:"k5,omitempty"`
-	K6 *Afn04_P0_F46_Time_Slot `protobuf:"bytes,6,opt,name=k6,proto3" json:"k6,omitempty"`
-	K7 *Afn04_P0_F46_Time_Slot `protobuf:"bytes,7,opt,name=k7,proto3" json:"k7,omitempty"`
-	K8 *Afn04_P0_F46_Time_Slot `protobuf:"bytes,8,opt,name=k8,proto3" json:"k8,omitempty"`
-}
-
-func (m *Afn04_P0_F46_Week_Slot) Reset()         { *m = Afn04_P0_F46_Week_Slot{} }
-func (m *Afn04_P0_F46_Week_Slot) String() string { return proto.CompactTextString(m) }
-func (*Afn04_P0_F46_Week_Slot) ProtoMessage()    {}
-func (*Afn04_P0_F46_Week_Slot) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7c797d1dfec7a224, []int{14, 0}
-}
-func (m *Afn04_P0_F46_Week_Slot) XXX_Unmarshal(b []byte) error {
-	return m.Unmarshal(b)
-}
-func (m *Afn04_P0_F46_Week_Slot) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
-	if deterministic {
-		return xxx_messageInfo_Afn04_P0_F46_Week_Slot.Marshal(b, m, deterministic)
-	} else {
-		b = b[:cap(b)]
-		n, err := m.MarshalToSizedBuffer(b)
-		if err != nil {
-			return nil, err
-		}
-		return b[:n], nil
-	}
-}
-func (m *Afn04_P0_F46_Week_Slot) XXX_Merge(src proto.Message) {
-	xxx_messageInfo_Afn04_P0_F46_Week_Slot.Merge(m, src)
-}
-func (m *Afn04_P0_F46_Week_Slot) XXX_Size() int {
-	return m.Size()
-}
-func (m *Afn04_P0_F46_Week_Slot) XXX_DiscardUnknown() {
-	xxx_messageInfo_Afn04_P0_F46_Week_Slot.DiscardUnknown(m)
-}
-
-var xxx_messageInfo_Afn04_P0_F46_Week_Slot proto.InternalMessageInfo
-
-func (m *Afn04_P0_F46_Week_Slot) GetK1() *Afn04_P0_F46_Time_Slot {
-	if m != nil {
-		return m.K1
-	}
-	return nil
-}
-
-func (m *Afn04_P0_F46_Week_Slot) GetK2() *Afn04_P0_F46_Time_Slot {
-	if m != nil {
-		return m.K2
-	}
-	return nil
-}
-
-func (m *Afn04_P0_F46_Week_Slot) GetK3() *Afn04_P0_F46_Time_Slot {
-	if m != nil {
-		return m.K3
-	}
-	return nil
-}
-
-func (m *Afn04_P0_F46_Week_Slot) GetK4() *Afn04_P0_F46_Time_Slot {
-	if m != nil {
-		return m.K4
-	}
-	return nil
-}
-
-func (m *Afn04_P0_F46_Week_Slot) GetK5() *Afn04_P0_F46_Time_Slot {
-	if m != nil {
-		return m.K5
-	}
-	return nil
-}
-
-func (m *Afn04_P0_F46_Week_Slot) GetK6() *Afn04_P0_F46_Time_Slot {
-	if m != nil {
-		return m.K6
-	}
-	return nil
-}
-
-func (m *Afn04_P0_F46_Week_Slot) GetK7() *Afn04_P0_F46_Time_Slot {
-	if m != nil {
-		return m.K7
-	}
-	return nil
-}
-
-func (m *Afn04_P0_F46_Week_Slot) GetK8() *Afn04_P0_F46_Time_Slot {
-	if m != nil {
-		return m.K8
 	}
 	return nil
 }
@@ -1898,7 +1824,7 @@ func (m *Afn04_P0_F46_Time_Slot) Reset()         { *m = Afn04_P0_F46_Time_Slot{}
 func (m *Afn04_P0_F46_Time_Slot) String() string { return proto.CompactTextString(m) }
 func (*Afn04_P0_F46_Time_Slot) ProtoMessage()    {}
 func (*Afn04_P0_F46_Time_Slot) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7c797d1dfec7a224, []int{14, 1}
+	return fileDescriptor_7c797d1dfec7a224, []int{14, 0}
 }
 func (m *Afn04_P0_F46_Time_Slot) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -2225,7 +2151,7 @@ type Afn04_P0_F52 struct {
 	LoopEnable int32 `protobuf:"varint,2,opt,name=loop_enable,json=loopEnable,proto3" json:"loop_enable,omitempty"`
 	// 关联的开关量输出号（1-255）
 	LoopSwitchout int32 `protobuf:"varint,3,opt,name=loop_switchout,json=loopSwitchout,proto3" json:"loop_switchout,omitempty"`
-	// 一级越限值
+	// 一级越限值(单位mA,下同)
 	Level1Limit int32 `protobuf:"varint,4,opt,name=level1_limit,json=level1Limit,proto3" json:"level1_limit,omitempty"`
 	// 二级越限值
 	Level2Limit int32 `protobuf:"varint,5,opt,name=level2_limit,json=level2Limit,proto3" json:"level2_limit,omitempty"`
@@ -2430,6 +2356,8 @@ func (m *Afn04_P0_F57) GetLoopMark() []int32 {
 // 控制命令
 // 允许合闸/跳闸
 type Afn05_P0_F1 struct {
+	// 是否操作对应的输出，16个0-不操作
+	SwitchoutCtrl []*Afn05_P0_F1_Switchout_Ctrl `protobuf:"bytes,1,rep,name=switchout_ctrl,json=switchoutCtrl,proto3" json:"switchout_ctrl,omitempty"`
 }
 
 func (m *Afn05_P0_F1) Reset()         { *m = Afn05_P0_F1{} }
@@ -2465,10 +2393,16 @@ func (m *Afn05_P0_F1) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_Afn05_P0_F1 proto.InternalMessageInfo
 
-// 是否操作对应的输出，16个0-不操作
+func (m *Afn05_P0_F1) GetSwitchoutCtrl() []*Afn05_P0_F1_Switchout_Ctrl {
+	if m != nil {
+		return m.SwitchoutCtrl
+	}
+	return nil
+}
+
 type Afn05_P0_F1_Switchout_Ctrl struct {
 	// 开关量输出序号1-16
-	SwitchoutIndx int32 `protobuf:"varint,1,opt,name=switchout_indx,json=switchoutIndx,proto3" json:"switchout_indx,omitempty"`
+	SwitchoutNo int32 `protobuf:"varint,1,opt,name=switchout_no,json=switchoutNo,proto3" json:"switchout_no,omitempty"`
 	// 开关量输出操作，0-关，1-开
 	SwitchoutDo int32 `protobuf:"varint,2,opt,name=switchout_do,json=switchoutDo,proto3" json:"switchout_do,omitempty"`
 	// 开关量输出操作时间，0-立即执行，>0-unix时间戳，表示在指定时间执行该操作
@@ -2508,9 +2442,9 @@ func (m *Afn05_P0_F1_Switchout_Ctrl) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_Afn05_P0_F1_Switchout_Ctrl proto.InternalMessageInfo
 
-func (m *Afn05_P0_F1_Switchout_Ctrl) GetSwitchoutIndx() int32 {
+func (m *Afn05_P0_F1_Switchout_Ctrl) GetSwitchoutNo() int32 {
 	if m != nil {
-		return m.SwitchoutIndx
+		return m.SwitchoutNo
 	}
 	return 0
 }
@@ -2630,22 +2564,22 @@ type Afn09_P0_F1 struct {
 	DeviceNum string `protobuf:"bytes,2,opt,name=device_num,json=deviceNum,proto3" json:"device_num,omitempty"`
 	// 终端软件版本号
 	SoftwareVer string `protobuf:"bytes,3,opt,name=software_ver,json=softwareVer,proto3" json:"software_ver,omitempty"`
-	// 终端软件发布日期：日/月/年
-	SoftwareDate string `protobuf:"bytes,4,opt,name=software_date,json=softwareDate,proto3" json:"software_date,omitempty"`
+	// 终端软件发布日期：YYMMDD
+	SoftwareDate int32 `protobuf:"varint,4,opt,name=software_date,json=softwareDate,proto3" json:"software_date,omitempty"`
 	// 终端配置容量信息码
 	DeviceInfo string `protobuf:"bytes,5,opt,name=device_info,json=deviceInfo,proto3" json:"device_info,omitempty"`
 	// 终端硬件版本号
 	HardwareVer string `protobuf:"bytes,6,opt,name=hardware_ver,json=hardwareVer,proto3" json:"hardware_ver,omitempty"`
-	// 终端硬件发布日期：日/月/年
-	HardwareDate string `protobuf:"bytes,7,opt,name=hardware_date,json=hardwareDate,proto3" json:"hardware_date,omitempty"`
+	// 终端硬件发布日期：YYMMDD
+	HardwareDate int32 `protobuf:"varint,7,opt,name=hardware_date,json=hardwareDate,proto3" json:"hardware_date,omitempty"`
 	// 远程通讯模块版本号
 	RemoteComVer string `protobuf:"bytes,8,opt,name=remote_com_ver,json=remoteComVer,proto3" json:"remote_com_ver,omitempty"`
-	// 远程通讯模块发布日期：日/月/年
-	RemoteComDate string `protobuf:"bytes,9,opt,name=remote_com_date,json=remoteComDate,proto3" json:"remote_com_date,omitempty"`
+	// 远程通讯模块发布日期：YYMMDD
+	RemoteComDate int32 `protobuf:"varint,9,opt,name=remote_com_date,json=remoteComDate,proto3" json:"remote_com_date,omitempty"`
 	// 本地通讯模块版本号
 	LocalComVer string `protobuf:"bytes,10,opt,name=local_com_ver,json=localComVer,proto3" json:"local_com_ver,omitempty"`
-	// 本地通讯模块发布日期：日/月/年
-	LocalComDate string `protobuf:"bytes,11,opt,name=local_com_date,json=localComDate,proto3" json:"local_com_date,omitempty"`
+	// 本地通讯模块发布日期：YYMMDD
+	LocalComDate int32 `protobuf:"varint,11,opt,name=local_com_date,json=localComDate,proto3" json:"local_com_date,omitempty"`
 }
 
 func (m *Afn09_P0_F1) Reset()         { *m = Afn09_P0_F1{} }
@@ -2702,11 +2636,11 @@ func (m *Afn09_P0_F1) GetSoftwareVer() string {
 	return ""
 }
 
-func (m *Afn09_P0_F1) GetSoftwareDate() string {
+func (m *Afn09_P0_F1) GetSoftwareDate() int32 {
 	if m != nil {
 		return m.SoftwareDate
 	}
-	return ""
+	return 0
 }
 
 func (m *Afn09_P0_F1) GetDeviceInfo() string {
@@ -2723,11 +2657,11 @@ func (m *Afn09_P0_F1) GetHardwareVer() string {
 	return ""
 }
 
-func (m *Afn09_P0_F1) GetHardwareDate() string {
+func (m *Afn09_P0_F1) GetHardwareDate() int32 {
 	if m != nil {
 		return m.HardwareDate
 	}
-	return ""
+	return 0
 }
 
 func (m *Afn09_P0_F1) GetRemoteComVer() string {
@@ -2737,11 +2671,11 @@ func (m *Afn09_P0_F1) GetRemoteComVer() string {
 	return ""
 }
 
-func (m *Afn09_P0_F1) GetRemoteComDate() string {
+func (m *Afn09_P0_F1) GetRemoteComDate() int32 {
 	if m != nil {
 		return m.RemoteComDate
 	}
-	return ""
+	return 0
 }
 
 func (m *Afn09_P0_F1) GetLocalComVer() string {
@@ -2751,16 +2685,16 @@ func (m *Afn09_P0_F1) GetLocalComVer() string {
 	return ""
 }
 
-func (m *Afn09_P0_F1) GetLocalComDate() string {
+func (m *Afn09_P0_F1) GetLocalComDate() int32 {
 	if m != nil {
 		return m.LocalComDate
 	}
-	return ""
+	return 0
 }
 
 // 请求实时数据，下行无数据单元
 // 出线模拟量数据(全数据)(报警主报)
-// pn: n是模拟量回路序号，1-48,0xffff表示所有回路
+// pn: n是模拟量回路序号，0xffff表示所有回路
 type Afn0C_Pn_F1 struct {
 	// 主报时间
 	DtReport int64 `protobuf:"varint,1,opt,name=dt_report,json=dtReport,proto3" json:"dt_report,omitempty"`
@@ -3530,17 +3464,7 @@ func (m *Afn0C_P0_F20) GetTemperature() float64 {
 // 模拟量历史数据曲线(出线)
 // pn: n 1-48，模拟量回路数量
 type Afn0D_Pn_F1 struct {
-	// 起始时间，unix时间戳(上下行)
-	DtStart int64 `protobuf:"varint,1,opt,name=dt_start,json=dtStart,proto3" json:"dt_start,omitempty"`
-	// 数据密度(分钟)，可选0,1,2,3,4,5,10,15,30,60，表示每小时0分起累加指定密度的分钟数(上下行)
-	DataDensity int32 `protobuf:"varint,2,opt,name=data_density,json=dataDensity,proto3" json:"data_density,omitempty"`
-	// 数据点数(上下行)（最大20）
-	DataNum int32 `protobuf:"varint,3,opt,name=data_num,json=dataNum,proto3" json:"data_num,omitempty"`
-	// 模拟量(上下行)
-	LoopNo int32 `protobuf:"varint,4,opt,name=loop_no,json=loopNo,proto3" json:"loop_no,omitempty"`
-	// 以下开始为上行填充
-	// 回路数据，依次为每个数据点的数据
-	LoopData []*Afn0D_Pn_F1_Loop_Data `protobuf:"bytes,5,rep,name=loop_data,json=loopData,proto3" json:"loop_data,omitempty"`
+	PnData []*Afn0D_Pn_F1_Pn_Data `protobuf:"bytes,1,rep,name=pn_data,json=pnData,proto3" json:"pn_data,omitempty"`
 }
 
 func (m *Afn0D_Pn_F1) Reset()         { *m = Afn0D_Pn_F1{} }
@@ -3576,35 +3500,98 @@ func (m *Afn0D_Pn_F1) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_Afn0D_Pn_F1 proto.InternalMessageInfo
 
-func (m *Afn0D_Pn_F1) GetDtStart() int64 {
+func (m *Afn0D_Pn_F1) GetPnData() []*Afn0D_Pn_F1_Pn_Data {
+	if m != nil {
+		return m.PnData
+	}
+	return nil
+}
+
+type Afn0D_Pn_F1_Pn_Data struct {
+	// pn序号
+	Pno int32 `protobuf:"varint,6,opt,name=pno,proto3" json:"pno,omitempty"`
+	// 起始时间，unix时间戳(上下行)
+	DtStart int64 `protobuf:"varint,1,opt,name=dt_start,json=dtStart,proto3" json:"dt_start,omitempty"`
+	// 数据密度(分钟)，可选0,1,2,3,4,5,10,15,30,60，表示每小时0分起累加指定密度的分钟数(上下行)
+	DataDensity int32 `protobuf:"varint,2,opt,name=data_density,json=dataDensity,proto3" json:"data_density,omitempty"`
+	// 数据点数(上下行)（最大20）
+	DataNum int32 `protobuf:"varint,3,opt,name=data_num,json=dataNum,proto3" json:"data_num,omitempty"`
+	// 模拟量(上下行)
+	LoopNo int32 `protobuf:"varint,4,opt,name=loop_no,json=loopNo,proto3" json:"loop_no,omitempty"`
+	// 以下开始为上行填充
+	// 回路数据，依次为每个数据点的数据
+	LoopData []*Afn0D_Pn_F1_Loop_Data `protobuf:"bytes,5,rep,name=loop_data,json=loopData,proto3" json:"loop_data,omitempty"`
+}
+
+func (m *Afn0D_Pn_F1_Pn_Data) Reset()         { *m = Afn0D_Pn_F1_Pn_Data{} }
+func (m *Afn0D_Pn_F1_Pn_Data) String() string { return proto.CompactTextString(m) }
+func (*Afn0D_Pn_F1_Pn_Data) ProtoMessage()    {}
+func (*Afn0D_Pn_F1_Pn_Data) Descriptor() ([]byte, []int) {
+	return fileDescriptor_7c797d1dfec7a224, []int{35, 0}
+}
+func (m *Afn0D_Pn_F1_Pn_Data) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *Afn0D_Pn_F1_Pn_Data) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_Afn0D_Pn_F1_Pn_Data.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *Afn0D_Pn_F1_Pn_Data) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Afn0D_Pn_F1_Pn_Data.Merge(m, src)
+}
+func (m *Afn0D_Pn_F1_Pn_Data) XXX_Size() int {
+	return m.Size()
+}
+func (m *Afn0D_Pn_F1_Pn_Data) XXX_DiscardUnknown() {
+	xxx_messageInfo_Afn0D_Pn_F1_Pn_Data.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_Afn0D_Pn_F1_Pn_Data proto.InternalMessageInfo
+
+func (m *Afn0D_Pn_F1_Pn_Data) GetPno() int32 {
+	if m != nil {
+		return m.Pno
+	}
+	return 0
+}
+
+func (m *Afn0D_Pn_F1_Pn_Data) GetDtStart() int64 {
 	if m != nil {
 		return m.DtStart
 	}
 	return 0
 }
 
-func (m *Afn0D_Pn_F1) GetDataDensity() int32 {
+func (m *Afn0D_Pn_F1_Pn_Data) GetDataDensity() int32 {
 	if m != nil {
 		return m.DataDensity
 	}
 	return 0
 }
 
-func (m *Afn0D_Pn_F1) GetDataNum() int32 {
+func (m *Afn0D_Pn_F1_Pn_Data) GetDataNum() int32 {
 	if m != nil {
 		return m.DataNum
 	}
 	return 0
 }
 
-func (m *Afn0D_Pn_F1) GetLoopNo() int32 {
+func (m *Afn0D_Pn_F1_Pn_Data) GetLoopNo() int32 {
 	if m != nil {
 		return m.LoopNo
 	}
 	return 0
 }
 
-func (m *Afn0D_Pn_F1) GetLoopData() []*Afn0D_Pn_F1_Loop_Data {
+func (m *Afn0D_Pn_F1_Pn_Data) GetLoopData() []*Afn0D_Pn_F1_Loop_Data {
 	if m != nil {
 		return m.LoopData
 	}
@@ -3632,7 +3619,7 @@ func (m *Afn0D_Pn_F1_Loop_Data) Reset()         { *m = Afn0D_Pn_F1_Loop_Data{} }
 func (m *Afn0D_Pn_F1_Loop_Data) String() string { return proto.CompactTextString(m) }
 func (*Afn0D_Pn_F1_Loop_Data) ProtoMessage()    {}
 func (*Afn0D_Pn_F1_Loop_Data) Descriptor() ([]byte, []int) {
-	return fileDescriptor_7c797d1dfec7a224, []int{35, 0}
+	return fileDescriptor_7c797d1dfec7a224, []int{35, 1}
 }
 func (m *Afn0D_Pn_F1_Loop_Data) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -3895,17 +3882,7 @@ func (m *Afn0D_P0_F2_Phase_Data) GetPowerFactor() float64 {
 // 漏电历史数据曲线
 // pn:n1-8,漏电回路数量
 type Afn0D_Pn_F3 struct {
-	// 起始时间，unix时间戳(上下行)
-	DtStart int64 `protobuf:"varint,1,opt,name=dt_start,json=dtStart,proto3" json:"dt_start,omitempty"`
-	// 数据密度(分钟)，可选0,1,2,3,4,5,10,15,30,60，表示每小时0分起累加指定密度的分钟数(上下行)
-	DataDensity int32 `protobuf:"varint,2,opt,name=data_density,json=dataDensity,proto3" json:"data_density,omitempty"`
-	// 数据点数(上下行)（最大20）
-	DataNum int32 `protobuf:"varint,3,opt,name=data_num,json=dataNum,proto3" json:"data_num,omitempty"`
-	// 模拟量(上下行)
-	LoopNo int32 `protobuf:"varint,4,opt,name=loop_no,json=loopNo,proto3" json:"loop_no,omitempty"`
-	// 以下开始为上行填充
-	// 依次为每个数据点数据（有符号3位小数bcd）
-	LeakageCurrent []float64 `protobuf:"fixed64,5,rep,packed,name=leakage_current,json=leakageCurrent,proto3" json:"leakage_current,omitempty"`
+	PnData []*Afn0D_Pn_F3_Pn_Data `protobuf:"bytes,1,rep,name=pn_data,json=pnData,proto3" json:"pn_data,omitempty"`
 }
 
 func (m *Afn0D_Pn_F3) Reset()         { *m = Afn0D_Pn_F3{} }
@@ -3941,35 +3918,97 @@ func (m *Afn0D_Pn_F3) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_Afn0D_Pn_F3 proto.InternalMessageInfo
 
-func (m *Afn0D_Pn_F3) GetDtStart() int64 {
+func (m *Afn0D_Pn_F3) GetPnData() []*Afn0D_Pn_F3_Pn_Data {
+	if m != nil {
+		return m.PnData
+	}
+	return nil
+}
+
+type Afn0D_Pn_F3_Pn_Data struct {
+	Pno int32 `protobuf:"varint,6,opt,name=pno,proto3" json:"pno,omitempty"`
+	// 起始时间，unix时间戳(上下行)
+	DtStart int64 `protobuf:"varint,1,opt,name=dt_start,json=dtStart,proto3" json:"dt_start,omitempty"`
+	// 数据密度(分钟)，可选0,1,2,3,4,5,10,15,30,60，表示每小时0分起累加指定密度的分钟数(上下行)
+	DataDensity int32 `protobuf:"varint,2,opt,name=data_density,json=dataDensity,proto3" json:"data_density,omitempty"`
+	// 数据点数(上下行)（最大20）
+	DataNum int32 `protobuf:"varint,3,opt,name=data_num,json=dataNum,proto3" json:"data_num,omitempty"`
+	// 模拟量(上下行)
+	LoopNo int32 `protobuf:"varint,4,opt,name=loop_no,json=loopNo,proto3" json:"loop_no,omitempty"`
+	// 以下开始为上行填充
+	// 依次为每个数据点数据（有符号3位小数bcd）
+	LeakageCurrent []float64 `protobuf:"fixed64,5,rep,packed,name=leakage_current,json=leakageCurrent,proto3" json:"leakage_current,omitempty"`
+}
+
+func (m *Afn0D_Pn_F3_Pn_Data) Reset()         { *m = Afn0D_Pn_F3_Pn_Data{} }
+func (m *Afn0D_Pn_F3_Pn_Data) String() string { return proto.CompactTextString(m) }
+func (*Afn0D_Pn_F3_Pn_Data) ProtoMessage()    {}
+func (*Afn0D_Pn_F3_Pn_Data) Descriptor() ([]byte, []int) {
+	return fileDescriptor_7c797d1dfec7a224, []int{37, 0}
+}
+func (m *Afn0D_Pn_F3_Pn_Data) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *Afn0D_Pn_F3_Pn_Data) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_Afn0D_Pn_F3_Pn_Data.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *Afn0D_Pn_F3_Pn_Data) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Afn0D_Pn_F3_Pn_Data.Merge(m, src)
+}
+func (m *Afn0D_Pn_F3_Pn_Data) XXX_Size() int {
+	return m.Size()
+}
+func (m *Afn0D_Pn_F3_Pn_Data) XXX_DiscardUnknown() {
+	xxx_messageInfo_Afn0D_Pn_F3_Pn_Data.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_Afn0D_Pn_F3_Pn_Data proto.InternalMessageInfo
+
+func (m *Afn0D_Pn_F3_Pn_Data) GetPno() int32 {
+	if m != nil {
+		return m.Pno
+	}
+	return 0
+}
+
+func (m *Afn0D_Pn_F3_Pn_Data) GetDtStart() int64 {
 	if m != nil {
 		return m.DtStart
 	}
 	return 0
 }
 
-func (m *Afn0D_Pn_F3) GetDataDensity() int32 {
+func (m *Afn0D_Pn_F3_Pn_Data) GetDataDensity() int32 {
 	if m != nil {
 		return m.DataDensity
 	}
 	return 0
 }
 
-func (m *Afn0D_Pn_F3) GetDataNum() int32 {
+func (m *Afn0D_Pn_F3_Pn_Data) GetDataNum() int32 {
 	if m != nil {
 		return m.DataNum
 	}
 	return 0
 }
 
-func (m *Afn0D_Pn_F3) GetLoopNo() int32 {
+func (m *Afn0D_Pn_F3_Pn_Data) GetLoopNo() int32 {
 	if m != nil {
 		return m.LoopNo
 	}
 	return 0
 }
 
-func (m *Afn0D_Pn_F3) GetLeakageCurrent() []float64 {
+func (m *Afn0D_Pn_F3_Pn_Data) GetLeakageCurrent() []float64 {
 	if m != nil {
 		return m.LeakageCurrent
 	}
@@ -4053,6 +4092,25 @@ func (m *Afn0E_P0_F1) GetEventsData() []*Afn0E_P0_F1_Events_Data {
 }
 
 type Afn0E_P0_F1_Events_Data struct {
+	// 事件号
+	ErcId int32 `protobuf:"varint,1,opt,name=erc_id,json=ercId,proto3" json:"erc_id,omitempty"`
+	// 发生时间
+	DtReport int64 `protobuf:"varint,2,opt,name=dt_report,json=dtReport,proto3" json:"dt_report,omitempty"`
+	// 事件数据
+	Erc04 *Afn0E_P0_F1_Erc04_Data `protobuf:"bytes,10,opt,name=erc04,proto3" json:"erc04,omitempty"`
+	Erc05 *Afn0E_P0_F1_Erc05_Data `protobuf:"bytes,11,opt,name=erc05,proto3" json:"erc05,omitempty"`
+	Erc13 *Afn0E_P0_F1_Erc13_Data `protobuf:"bytes,12,opt,name=erc13,proto3" json:"erc13,omitempty"`
+	Erc20 *Afn0E_P0_F1_Erc20_Data `protobuf:"bytes,13,opt,name=erc20,proto3" json:"erc20,omitempty"`
+	Erc21 *Afn0E_P0_F1_Erc20_Data `protobuf:"bytes,14,opt,name=erc21,proto3" json:"erc21,omitempty"`
+	Erc22 *Afn0E_P0_F1_Erc22_Data `protobuf:"bytes,15,opt,name=erc22,proto3" json:"erc22,omitempty"`
+	Erc23 *Afn0E_P0_F1_Erc22_Data `protobuf:"bytes,16,opt,name=erc23,proto3" json:"erc23,omitempty"`
+	Erc24 *Afn0E_P0_F1_Erc22_Data `protobuf:"bytes,17,opt,name=erc24,proto3" json:"erc24,omitempty"`
+	Erc25 *Afn0E_P0_F1_Erc25_Data `protobuf:"bytes,18,opt,name=erc25,proto3" json:"erc25,omitempty"`
+	Erc26 *Afn0E_P0_F1_Erc25_Data `protobuf:"bytes,19,opt,name=erc26,proto3" json:"erc26,omitempty"`
+	Erc27 *Afn0E_P0_F1_Erc25_Data `protobuf:"bytes,20,opt,name=erc27,proto3" json:"erc27,omitempty"`
+	Erc28 *Afn0E_P0_F1_Erc25_Data `protobuf:"bytes,21,opt,name=erc28,proto3" json:"erc28,omitempty"`
+	Erc29 *Afn0E_P0_F1_Erc25_Data `protobuf:"bytes,22,opt,name=erc29,proto3" json:"erc29,omitempty"`
+	Erc30 *Afn0E_P0_F1_Erc25_Data `protobuf:"bytes,23,opt,name=erc30,proto3" json:"erc30,omitempty"`
 }
 
 func (m *Afn0E_P0_F1_Events_Data) Reset()         { *m = Afn0E_P0_F1_Events_Data{} }
@@ -4087,6 +4145,469 @@ func (m *Afn0E_P0_F1_Events_Data) XXX_DiscardUnknown() {
 }
 
 var xxx_messageInfo_Afn0E_P0_F1_Events_Data proto.InternalMessageInfo
+
+func (m *Afn0E_P0_F1_Events_Data) GetErcId() int32 {
+	if m != nil {
+		return m.ErcId
+	}
+	return 0
+}
+
+func (m *Afn0E_P0_F1_Events_Data) GetDtReport() int64 {
+	if m != nil {
+		return m.DtReport
+	}
+	return 0
+}
+
+func (m *Afn0E_P0_F1_Events_Data) GetErc04() *Afn0E_P0_F1_Erc04_Data {
+	if m != nil {
+		return m.Erc04
+	}
+	return nil
+}
+
+func (m *Afn0E_P0_F1_Events_Data) GetErc05() *Afn0E_P0_F1_Erc05_Data {
+	if m != nil {
+		return m.Erc05
+	}
+	return nil
+}
+
+func (m *Afn0E_P0_F1_Events_Data) GetErc13() *Afn0E_P0_F1_Erc13_Data {
+	if m != nil {
+		return m.Erc13
+	}
+	return nil
+}
+
+func (m *Afn0E_P0_F1_Events_Data) GetErc20() *Afn0E_P0_F1_Erc20_Data {
+	if m != nil {
+		return m.Erc20
+	}
+	return nil
+}
+
+func (m *Afn0E_P0_F1_Events_Data) GetErc21() *Afn0E_P0_F1_Erc20_Data {
+	if m != nil {
+		return m.Erc21
+	}
+	return nil
+}
+
+func (m *Afn0E_P0_F1_Events_Data) GetErc22() *Afn0E_P0_F1_Erc22_Data {
+	if m != nil {
+		return m.Erc22
+	}
+	return nil
+}
+
+func (m *Afn0E_P0_F1_Events_Data) GetErc23() *Afn0E_P0_F1_Erc22_Data {
+	if m != nil {
+		return m.Erc23
+	}
+	return nil
+}
+
+func (m *Afn0E_P0_F1_Events_Data) GetErc24() *Afn0E_P0_F1_Erc22_Data {
+	if m != nil {
+		return m.Erc24
+	}
+	return nil
+}
+
+func (m *Afn0E_P0_F1_Events_Data) GetErc25() *Afn0E_P0_F1_Erc25_Data {
+	if m != nil {
+		return m.Erc25
+	}
+	return nil
+}
+
+func (m *Afn0E_P0_F1_Events_Data) GetErc26() *Afn0E_P0_F1_Erc25_Data {
+	if m != nil {
+		return m.Erc26
+	}
+	return nil
+}
+
+func (m *Afn0E_P0_F1_Events_Data) GetErc27() *Afn0E_P0_F1_Erc25_Data {
+	if m != nil {
+		return m.Erc27
+	}
+	return nil
+}
+
+func (m *Afn0E_P0_F1_Events_Data) GetErc28() *Afn0E_P0_F1_Erc25_Data {
+	if m != nil {
+		return m.Erc28
+	}
+	return nil
+}
+
+func (m *Afn0E_P0_F1_Events_Data) GetErc29() *Afn0E_P0_F1_Erc25_Data {
+	if m != nil {
+		return m.Erc29
+	}
+	return nil
+}
+
+func (m *Afn0E_P0_F1_Events_Data) GetErc30() *Afn0E_P0_F1_Erc25_Data {
+	if m != nil {
+		return m.Erc30
+	}
+	return nil
+}
+
+// ERC4终端状态量变位记录
+type Afn0E_P0_F1_Erc04_Data struct {
+	// 变化类型，0-由通到断，1-由断到通
+	LoopStatus int32 `protobuf:"varint,1,opt,name=loop_status,json=loopStatus,proto3" json:"loop_status,omitempty"`
+	// 变化的状态量回路
+	LoopNo int32 `protobuf:"varint,2,opt,name=loop_no,json=loopNo,proto3" json:"loop_no,omitempty"`
+}
+
+func (m *Afn0E_P0_F1_Erc04_Data) Reset()         { *m = Afn0E_P0_F1_Erc04_Data{} }
+func (m *Afn0E_P0_F1_Erc04_Data) String() string { return proto.CompactTextString(m) }
+func (*Afn0E_P0_F1_Erc04_Data) ProtoMessage()    {}
+func (*Afn0E_P0_F1_Erc04_Data) Descriptor() ([]byte, []int) {
+	return fileDescriptor_7c797d1dfec7a224, []int{38, 1}
+}
+func (m *Afn0E_P0_F1_Erc04_Data) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *Afn0E_P0_F1_Erc04_Data) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_Afn0E_P0_F1_Erc04_Data.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *Afn0E_P0_F1_Erc04_Data) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Afn0E_P0_F1_Erc04_Data.Merge(m, src)
+}
+func (m *Afn0E_P0_F1_Erc04_Data) XXX_Size() int {
+	return m.Size()
+}
+func (m *Afn0E_P0_F1_Erc04_Data) XXX_DiscardUnknown() {
+	xxx_messageInfo_Afn0E_P0_F1_Erc04_Data.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_Afn0E_P0_F1_Erc04_Data proto.InternalMessageInfo
+
+func (m *Afn0E_P0_F1_Erc04_Data) GetLoopStatus() int32 {
+	if m != nil {
+		return m.LoopStatus
+	}
+	return 0
+}
+
+func (m *Afn0E_P0_F1_Erc04_Data) GetLoopNo() int32 {
+	if m != nil {
+		return m.LoopNo
+	}
+	return 0
+}
+
+// ERC5终端遥控跳闸记录
+type Afn0E_P0_F1_Erc05_Data struct {
+	// 开关量输出序号1-16
+	SwitchoutNo int32 `protobuf:"varint,1,opt,name=switchout_no,json=switchoutNo,proto3" json:"switchout_no,omitempty"`
+	// 控制类型,0-关，1-开（设备为0-开，1-关，通信服务反向）
+	SwitchoutDo int32 `protobuf:"varint,2,opt,name=switchout_do,json=switchoutDo,proto3" json:"switchout_do,omitempty"`
+	// 控制源0-4：分别表示主台控制、液晶控制、最后开关灯时限、时控、光控
+	SwitchoutSource int32 `protobuf:"varint,3,opt,name=switchout_source,json=switchoutSource,proto3" json:"switchout_source,omitempty"`
+}
+
+func (m *Afn0E_P0_F1_Erc05_Data) Reset()         { *m = Afn0E_P0_F1_Erc05_Data{} }
+func (m *Afn0E_P0_F1_Erc05_Data) String() string { return proto.CompactTextString(m) }
+func (*Afn0E_P0_F1_Erc05_Data) ProtoMessage()    {}
+func (*Afn0E_P0_F1_Erc05_Data) Descriptor() ([]byte, []int) {
+	return fileDescriptor_7c797d1dfec7a224, []int{38, 2}
+}
+func (m *Afn0E_P0_F1_Erc05_Data) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *Afn0E_P0_F1_Erc05_Data) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_Afn0E_P0_F1_Erc05_Data.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *Afn0E_P0_F1_Erc05_Data) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Afn0E_P0_F1_Erc05_Data.Merge(m, src)
+}
+func (m *Afn0E_P0_F1_Erc05_Data) XXX_Size() int {
+	return m.Size()
+}
+func (m *Afn0E_P0_F1_Erc05_Data) XXX_DiscardUnknown() {
+	xxx_messageInfo_Afn0E_P0_F1_Erc05_Data.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_Afn0E_P0_F1_Erc05_Data proto.InternalMessageInfo
+
+func (m *Afn0E_P0_F1_Erc05_Data) GetSwitchoutNo() int32 {
+	if m != nil {
+		return m.SwitchoutNo
+	}
+	return 0
+}
+
+func (m *Afn0E_P0_F1_Erc05_Data) GetSwitchoutDo() int32 {
+	if m != nil {
+		return m.SwitchoutDo
+	}
+	return 0
+}
+
+func (m *Afn0E_P0_F1_Erc05_Data) GetSwitchoutSource() int32 {
+	if m != nil {
+		return m.SwitchoutSource
+	}
+	return 0
+}
+
+// ERC13终端停/上电记录
+type Afn0E_P0_F1_Erc13_Data struct {
+	// 记录类型：0恢复；1报警。
+	ReportType int32 `protobuf:"varint,1,opt,name=report_type,json=reportType,proto3" json:"report_type,omitempty"`
+}
+
+func (m *Afn0E_P0_F1_Erc13_Data) Reset()         { *m = Afn0E_P0_F1_Erc13_Data{} }
+func (m *Afn0E_P0_F1_Erc13_Data) String() string { return proto.CompactTextString(m) }
+func (*Afn0E_P0_F1_Erc13_Data) ProtoMessage()    {}
+func (*Afn0E_P0_F1_Erc13_Data) Descriptor() ([]byte, []int) {
+	return fileDescriptor_7c797d1dfec7a224, []int{38, 3}
+}
+func (m *Afn0E_P0_F1_Erc13_Data) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *Afn0E_P0_F1_Erc13_Data) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_Afn0E_P0_F1_Erc13_Data.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *Afn0E_P0_F1_Erc13_Data) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Afn0E_P0_F1_Erc13_Data.Merge(m, src)
+}
+func (m *Afn0E_P0_F1_Erc13_Data) XXX_Size() int {
+	return m.Size()
+}
+func (m *Afn0E_P0_F1_Erc13_Data) XXX_DiscardUnknown() {
+	xxx_messageInfo_Afn0E_P0_F1_Erc13_Data.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_Afn0E_P0_F1_Erc13_Data proto.InternalMessageInfo
+
+func (m *Afn0E_P0_F1_Erc13_Data) GetReportType() int32 {
+	if m != nil {
+		return m.ReportType
+	}
+	return 0
+}
+
+// ERC20漏电报警记录
+type Afn0E_P0_F1_Erc20_Data struct {
+	// 记录类型：0恢复；1报警。
+	ReportType int32 `protobuf:"varint,1,opt,name=report_type,json=reportType,proto3" json:"report_type,omitempty"`
+	// 漏电回路号
+	LeakageNo int32 `protobuf:"varint,2,opt,name=leakage_no,json=leakageNo,proto3" json:"leakage_no,omitempty"`
+	// 漏电等级
+	LeakageLevel int32 `protobuf:"varint,3,opt,name=leakage_level,json=leakageLevel,proto3" json:"leakage_level,omitempty"`
+	// 漏电值
+	LeakageCurrent float64 `protobuf:"fixed64,4,opt,name=leakage_current,json=leakageCurrent,proto3" json:"leakage_current,omitempty"`
+}
+
+func (m *Afn0E_P0_F1_Erc20_Data) Reset()         { *m = Afn0E_P0_F1_Erc20_Data{} }
+func (m *Afn0E_P0_F1_Erc20_Data) String() string { return proto.CompactTextString(m) }
+func (*Afn0E_P0_F1_Erc20_Data) ProtoMessage()    {}
+func (*Afn0E_P0_F1_Erc20_Data) Descriptor() ([]byte, []int) {
+	return fileDescriptor_7c797d1dfec7a224, []int{38, 4}
+}
+func (m *Afn0E_P0_F1_Erc20_Data) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *Afn0E_P0_F1_Erc20_Data) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_Afn0E_P0_F1_Erc20_Data.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *Afn0E_P0_F1_Erc20_Data) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Afn0E_P0_F1_Erc20_Data.Merge(m, src)
+}
+func (m *Afn0E_P0_F1_Erc20_Data) XXX_Size() int {
+	return m.Size()
+}
+func (m *Afn0E_P0_F1_Erc20_Data) XXX_DiscardUnknown() {
+	xxx_messageInfo_Afn0E_P0_F1_Erc20_Data.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_Afn0E_P0_F1_Erc20_Data proto.InternalMessageInfo
+
+func (m *Afn0E_P0_F1_Erc20_Data) GetReportType() int32 {
+	if m != nil {
+		return m.ReportType
+	}
+	return 0
+}
+
+func (m *Afn0E_P0_F1_Erc20_Data) GetLeakageNo() int32 {
+	if m != nil {
+		return m.LeakageNo
+	}
+	return 0
+}
+
+func (m *Afn0E_P0_F1_Erc20_Data) GetLeakageLevel() int32 {
+	if m != nil {
+		return m.LeakageLevel
+	}
+	return 0
+}
+
+func (m *Afn0E_P0_F1_Erc20_Data) GetLeakageCurrent() float64 {
+	if m != nil {
+		return m.LeakageCurrent
+	}
+	return 0
+}
+
+// ERC21 保护跳闸记录（同erc20,不填充leakage_level)
+// ERC22 缺相报警记录
+type Afn0E_P0_F1_Erc22_Data struct {
+	// 记录类型：0恢复；1报警。
+	ReportType int32 `protobuf:"varint,1,opt,name=report_type,json=reportType,proto3" json:"report_type,omitempty"`
+	// 相位0--A 相,调整1--B 相,调整2--C 相
+	Phase int32 `protobuf:"varint,2,opt,name=phase,proto3" json:"phase,omitempty"`
+}
+
+func (m *Afn0E_P0_F1_Erc22_Data) Reset()         { *m = Afn0E_P0_F1_Erc22_Data{} }
+func (m *Afn0E_P0_F1_Erc22_Data) String() string { return proto.CompactTextString(m) }
+func (*Afn0E_P0_F1_Erc22_Data) ProtoMessage()    {}
+func (*Afn0E_P0_F1_Erc22_Data) Descriptor() ([]byte, []int) {
+	return fileDescriptor_7c797d1dfec7a224, []int{38, 5}
+}
+func (m *Afn0E_P0_F1_Erc22_Data) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *Afn0E_P0_F1_Erc22_Data) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_Afn0E_P0_F1_Erc22_Data.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *Afn0E_P0_F1_Erc22_Data) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Afn0E_P0_F1_Erc22_Data.Merge(m, src)
+}
+func (m *Afn0E_P0_F1_Erc22_Data) XXX_Size() int {
+	return m.Size()
+}
+func (m *Afn0E_P0_F1_Erc22_Data) XXX_DiscardUnknown() {
+	xxx_messageInfo_Afn0E_P0_F1_Erc22_Data.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_Afn0E_P0_F1_Erc22_Data proto.InternalMessageInfo
+
+func (m *Afn0E_P0_F1_Erc22_Data) GetReportType() int32 {
+	if m != nil {
+		return m.ReportType
+	}
+	return 0
+}
+
+func (m *Afn0E_P0_F1_Erc22_Data) GetPhase() int32 {
+	if m != nil {
+		return m.Phase
+	}
+	return 0
+}
+
+// ERC23 过压记录(同erc22)
+// ERC24 欠压记录(同erc22)
+// ERC25 过流记录
+type Afn0E_P0_F1_Erc25_Data struct {
+	// 记录类型：0恢复；1报警。
+	ReportType int32 `protobuf:"varint,1,opt,name=report_type,json=reportType,proto3" json:"report_type,omitempty"`
+	// 回路号
+	LoopNo int32 `protobuf:"varint,2,opt,name=loop_no,json=loopNo,proto3" json:"loop_no,omitempty"`
+}
+
+func (m *Afn0E_P0_F1_Erc25_Data) Reset()         { *m = Afn0E_P0_F1_Erc25_Data{} }
+func (m *Afn0E_P0_F1_Erc25_Data) String() string { return proto.CompactTextString(m) }
+func (*Afn0E_P0_F1_Erc25_Data) ProtoMessage()    {}
+func (*Afn0E_P0_F1_Erc25_Data) Descriptor() ([]byte, []int) {
+	return fileDescriptor_7c797d1dfec7a224, []int{38, 6}
+}
+func (m *Afn0E_P0_F1_Erc25_Data) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *Afn0E_P0_F1_Erc25_Data) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_Afn0E_P0_F1_Erc25_Data.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *Afn0E_P0_F1_Erc25_Data) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_Afn0E_P0_F1_Erc25_Data.Merge(m, src)
+}
+func (m *Afn0E_P0_F1_Erc25_Data) XXX_Size() int {
+	return m.Size()
+}
+func (m *Afn0E_P0_F1_Erc25_Data) XXX_DiscardUnknown() {
+	xxx_messageInfo_Afn0E_P0_F1_Erc25_Data.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_Afn0E_P0_F1_Erc25_Data proto.InternalMessageInfo
+
+func (m *Afn0E_P0_F1_Erc25_Data) GetReportType() int32 {
+	if m != nil {
+		return m.ReportType
+	}
+	return 0
+}
+
+func (m *Afn0E_P0_F1_Erc25_Data) GetLoopNo() int32 {
+	if m != nil {
+		return m.LoopNo
+	}
+	return 0
+}
 
 // 数据转发
 // 透明转发（上下行）
@@ -4257,14 +4778,16 @@ func (m *Afn10_P0_F9) GetFtpFile() string {
 type Afn10_P0_F10 struct {
 	// 升级前软件版本号
 	SoftwareVerOld string `protobuf:"bytes,1,opt,name=software_ver_old,json=softwareVerOld,proto3" json:"software_ver_old,omitempty"`
-	// 升级前软件发布日期：日/月/年
-	SoftwareDateOld string `protobuf:"bytes,2,opt,name=software_date_old,json=softwareDateOld,proto3" json:"software_date_old,omitempty"`
+	// 升级前软件发布日期：YYMMDD
+	SoftwareDateOld int32 `protobuf:"varint,2,opt,name=software_date_old,json=softwareDateOld,proto3" json:"software_date_old,omitempty"`
 	// 升级后软件版本号
 	SoftwareVerNew string `protobuf:"bytes,3,opt,name=software_ver_new,json=softwareVerNew,proto3" json:"software_ver_new,omitempty"`
-	// 升级后软件发布日期：日/月/年
-	SoftwareDateNew string `protobuf:"bytes,4,opt,name=software_date_new,json=softwareDateNew,proto3" json:"software_date_new,omitempty"`
+	// 升级后软件发布日期：YYMMDD
+	SoftwareDateNew int32 `protobuf:"varint,4,opt,name=software_date_new,json=softwareDateNew,proto3" json:"software_date_new,omitempty"`
 	// 升级发生时间,unix时间戳
 	DtUpgrade int64 `protobuf:"varint,5,opt,name=dt_upgrade,json=dtUpgrade,proto3" json:"dt_upgrade,omitempty"`
+	// 设备类型（f41上行填写）
+	DevType string `protobuf:"bytes,6,opt,name=dev_type,json=devType,proto3" json:"dev_type,omitempty"`
 }
 
 func (m *Afn10_P0_F10) Reset()         { *m = Afn10_P0_F10{} }
@@ -4307,11 +4830,11 @@ func (m *Afn10_P0_F10) GetSoftwareVerOld() string {
 	return ""
 }
 
-func (m *Afn10_P0_F10) GetSoftwareDateOld() string {
+func (m *Afn10_P0_F10) GetSoftwareDateOld() int32 {
 	if m != nil {
 		return m.SoftwareDateOld
 	}
-	return ""
+	return 0
 }
 
 func (m *Afn10_P0_F10) GetSoftwareVerNew() string {
@@ -4321,11 +4844,11 @@ func (m *Afn10_P0_F10) GetSoftwareVerNew() string {
 	return ""
 }
 
-func (m *Afn10_P0_F10) GetSoftwareDateNew() string {
+func (m *Afn10_P0_F10) GetSoftwareDateNew() int32 {
 	if m != nil {
 		return m.SoftwareDateNew
 	}
-	return ""
+	return 0
 }
 
 func (m *Afn10_P0_F10) GetDtUpgrade() int64 {
@@ -4333,6 +4856,13 @@ func (m *Afn10_P0_F10) GetDtUpgrade() int64 {
 		return m.DtUpgrade
 	}
 	return 0
+}
+
+func (m *Afn10_P0_F10) GetDevType() string {
+	if m != nil {
+		return m.DevType
+	}
+	return ""
 }
 
 func init() {
@@ -4348,12 +4878,12 @@ func init() {
 	proto.RegisterType((*Afn04_P0_F11)(nil), "wlst.gb.Afn04_P0_F11")
 	proto.RegisterType((*Afn04_Pn_F14)(nil), "wlst.gb.Afn04_Pn_F14")
 	proto.RegisterType((*Afn04_Pn_F15)(nil), "wlst.gb.Afn04_Pn_F15")
+	proto.RegisterType((*Afn04_Pn_F15_Pn_Data)(nil), "wlst.gb.Afn04_Pn_F15.Pn_Data")
 	proto.RegisterType((*Afn04_Pn_F15_Time_Slot)(nil), "wlst.gb.Afn04_Pn_F15.Time_Slot")
 	proto.RegisterType((*Afn04_P0_F41)(nil), "wlst.gb.Afn04_P0_F41")
 	proto.RegisterType((*Afn04_P0_F42)(nil), "wlst.gb.Afn04_P0_F42")
 	proto.RegisterType((*Afn04_P0_F42_Current_Setting)(nil), "wlst.gb.Afn04_P0_F42.Current_Setting")
 	proto.RegisterType((*Afn04_P0_F46)(nil), "wlst.gb.Afn04_P0_F46")
-	proto.RegisterType((*Afn04_P0_F46_Week_Slot)(nil), "wlst.gb.Afn04_P0_F46.Week_Slot")
 	proto.RegisterType((*Afn04_P0_F46_Time_Slot)(nil), "wlst.gb.Afn04_P0_F46.Time_Slot")
 	proto.RegisterType((*Afn04_P0_F49)(nil), "wlst.gb.Afn04_P0_F49")
 	proto.RegisterType((*Afn04_P0_F50)(nil), "wlst.gb.Afn04_P0_F50")
@@ -4382,12 +4912,20 @@ func init() {
 	proto.RegisterType((*Afn0C_P0_F19)(nil), "wlst.gb.Afn0c_P0_F19")
 	proto.RegisterType((*Afn0C_P0_F20)(nil), "wlst.gb.Afn0c_P0_F20")
 	proto.RegisterType((*Afn0D_Pn_F1)(nil), "wlst.gb.Afn0d_Pn_F1")
+	proto.RegisterType((*Afn0D_Pn_F1_Pn_Data)(nil), "wlst.gb.Afn0d_Pn_F1.Pn_Data")
 	proto.RegisterType((*Afn0D_Pn_F1_Loop_Data)(nil), "wlst.gb.Afn0d_Pn_F1.Loop_Data")
 	proto.RegisterType((*Afn0D_P0_F2)(nil), "wlst.gb.Afn0d_P0_F2")
 	proto.RegisterType((*Afn0D_P0_F2_Phase_Data)(nil), "wlst.gb.Afn0d_P0_F2.Phase_Data")
 	proto.RegisterType((*Afn0D_Pn_F3)(nil), "wlst.gb.Afn0d_Pn_F3")
+	proto.RegisterType((*Afn0D_Pn_F3_Pn_Data)(nil), "wlst.gb.Afn0d_Pn_F3.Pn_Data")
 	proto.RegisterType((*Afn0E_P0_F1)(nil), "wlst.gb.Afn0e_P0_F1")
 	proto.RegisterType((*Afn0E_P0_F1_Events_Data)(nil), "wlst.gb.Afn0e_P0_F1.Events_Data")
+	proto.RegisterType((*Afn0E_P0_F1_Erc04_Data)(nil), "wlst.gb.Afn0e_P0_F1.Erc04_Data")
+	proto.RegisterType((*Afn0E_P0_F1_Erc05_Data)(nil), "wlst.gb.Afn0e_P0_F1.Erc05_Data")
+	proto.RegisterType((*Afn0E_P0_F1_Erc13_Data)(nil), "wlst.gb.Afn0e_P0_F1.Erc13_Data")
+	proto.RegisterType((*Afn0E_P0_F1_Erc20_Data)(nil), "wlst.gb.Afn0e_P0_F1.Erc20_Data")
+	proto.RegisterType((*Afn0E_P0_F1_Erc22_Data)(nil), "wlst.gb.Afn0e_P0_F1.Erc22_Data")
+	proto.RegisterType((*Afn0E_P0_F1_Erc25_Data)(nil), "wlst.gb.Afn0e_P0_F1.Erc25_Data")
 	proto.RegisterType((*Afn10_P0_F1)(nil), "wlst.gb.Afn10_P0_F1")
 	proto.RegisterType((*Afn10_P0_F9)(nil), "wlst.gb.Afn10_P0_F9")
 	proto.RegisterType((*Afn10_P0_F10)(nil), "wlst.gb.Afn10_P0_F10")
@@ -4396,211 +4934,230 @@ func init() {
 func init() { proto.RegisterFile("msg_wlst.proto", fileDescriptor_7c797d1dfec7a224) }
 
 var fileDescriptor_7c797d1dfec7a224 = []byte{
-	// 3261 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe4, 0x9a, 0xdb, 0x6f, 0x24, 0x47,
-	0xd5, 0xc0, 0xd3, 0xd3, 0xf6, 0xd8, 0x53, 0x33, 0xb6, 0x37, 0xfd, 0x25, 0xfa, 0xea, 0x73, 0x92,
-	0xbd, 0x74, 0x92, 0x2f, 0x4b, 0xa2, 0x38, 0xd3, 0x73, 0xb1, 0x77, 0x94, 0x08, 0xe4, 0x5d, 0xaf,
-	0x89, 0xa3, 0xb0, 0xbb, 0x9a, 0xdd, 0x4d, 0x78, 0x6b, 0xd5, 0x4e, 0xd7, 0xd8, 0x8d, 0x67, 0xba,
-	0x7b, 0xbb, 0x6b, 0x6c, 0xef, 0x23, 0x12, 0x2f, 0x88, 0x07, 0x12, 0x01, 0x09, 0x12, 0x08, 0x72,
-	0x01, 0xf2, 0x12, 0xfe, 0x00, 0x24, 0x78, 0x4f, 0x78, 0xca, 0x63, 0xc2, 0x0b, 0x28, 0x79, 0x42,
-	0xe2, 0x81, 0x07, 0x2e, 0x81, 0x10, 0x09, 0x9d, 0x3a, 0xd5, 0xdd, 0xd5, 0xe3, 0x99, 0xcc, 0x5a,
-	0x48, 0x5c, 0xc4, 0x5b, 0xf7, 0xa9, 0xf3, 0xab, 0x3a, 0x75, 0x4e, 0xd5, 0xa9, 0x4b, 0x37, 0x59,
-	0x1e, 0x26, 0xbb, 0xee, 0xe1, 0x20, 0x11, 0x6b, 0x51, 0x1c, 0x8a, 0xd0, 0x5a, 0x90, 0xcf, 0xbb,
-	0xb7, 0xec, 0x16, 0xb1, 0x6e, 0x06, 0xbe, 0xd8, 0xf1, 0x78, 0x20, 0xfc, 0xbe, 0xdf, 0x63, 0xc2,
-	0x0f, 0x03, 0x6b, 0x99, 0x94, 0xa2, 0x80, 0x1a, 0x67, 0x8d, 0xf3, 0xf3, 0xdd, 0x52, 0x24, 0xdf,
-	0xfb, 0x01, 0x2d, 0xe1, 0x7b, 0x3f, 0xb0, 0x3f, 0x35, 0x88, 0xb5, 0xc5, 0x04, 0x1b, 0xc3, 0x9a,
-	0xa4, 0x3c, 0xf2, 0x03, 0xb1, 0xb3, 0x45, 0x8d, 0xb3, 0xe6, 0xf9, 0x6a, 0xe3, 0x81, 0x35, 0xd5,
-	0xcc, 0xda, 0xf1, 0x36, 0xba, 0x4a, 0xd5, 0x3a, 0x45, 0x4c, 0xcf, 0x8f, 0x55, 0xe5, 0xf0, 0x08,
-	0xad, 0x89, 0x88, 0x9a, 0xd8, 0x9a, 0x88, 0xa4, 0x35, 0x87, 0x74, 0xfe, 0xac, 0x71, 0xbe, 0xd2,
-	0x2d, 0x45, 0x87, 0x40, 0xf0, 0x9e, 0x43, 0xcb, 0x48, 0xf0, 0x9e, 0x83, 0x92, 0x06, 0x5d, 0x48,
-	0x25, 0x0d, 0x90, 0x24, 0xfc, 0x36, 0x5d, 0x44, 0x49, 0xc2, 0x6f, 0x83, 0x84, 0xf5, 0x03, 0x5a,
-	0x41, 0x09, 0xeb, 0x07, 0x20, 0xe9, 0x8f, 0x02, 0x4a, 0x50, 0xd2, 0x1f, 0x05, 0x96, 0x45, 0xe6,
-	0x58, 0xcc, 0x19, 0xad, 0xca, 0xb6, 0xe4, 0xb3, 0x94, 0x79, 0x5e, 0x4c, 0x6b, 0x67, 0x8d, 0xf3,
-	0x66, 0x57, 0x3e, 0xdb, 0x5f, 0x5b, 0x25, 0xe4, 0xc5, 0x41, 0x22, 0xbe, 0x78, 0xf1, 0x6a, 0xc4,
-	0x65, 0xbf, 0xa5, 0x37, 0xb6, 0xa4, 0xcb, 0xf4, 0x7e, 0x1f, 0x77, 0x52, 0xb7, 0xec, 0x49, 0x55,
-	0xab, 0x45, 0xaa, 0xac, 0x1f, 0xd4, 0xeb, 0x6e, 0x54, 0x77, 0xfb, 0x8e, 0xb4, 0xa2, 0xda, 0xb8,
-	0x2f, 0x23, 0x37, 0x65, 0xd9, 0xb5, 0xba, 0xbb, 0xed, 0x74, 0x2b, 0x52, 0xf1, 0x5a, 0x7d, 0xdb,
-	0x29, 0x52, 0x0d, 0x69, 0xe8, 0x4c, 0xaa, 0x51, 0xa4, 0x9a, 0xb2, 0x2b, 0x93, 0xa9, 0x66, 0x4e,
-	0x35, 0x53, 0xaa, 0xa5, 0x2c, 0xf4, 0x26, 0x50, 0x2d, 0xbd, 0xad, 0x96, 0x6e, 0x61, 0x4b, 0xb5,
-	0xc5, 0xa7, 0x52, 0xcd, 0x9c, 0x1a, 0x6b, 0xab, 0x43, 0xfb, 0x53, 0xa9, 0x4e, 0x4e, 0x75, 0xac,
-	0x0d, 0x52, 0xd3, 0x2c, 0xac, 0xd3, 0x5d, 0x89, 0xdd, 0x3f, 0xc9, 0xc4, 0x7a, 0x97, 0x64, 0x36,
-	0xd6, 0xc7, 0x40, 0x87, 0xee, 0x4d, 0x07, 0x1d, 0x0d, 0x74, 0x34, 0x30, 0x70, 0xfb, 0x4e, 0x8b,
-	0xfa, 0x93, 0xc1, 0xc0, 0xdd, 0x76, 0x5a, 0x29, 0x18, 0x6c, 0x3b, 0xad, 0x31, 0xb0, 0x4d, 0xbf,
-	0x32, 0x1d, 0x6c, 0x6b, 0x60, 0xbb, 0x68, 0x6a, 0xcb, 0xa1, 0xfb, 0x53, 0x4d, 0x6d, 0x69, 0xa6,
-	0xb6, 0x9c, 0x31, 0xb0, 0x41, 0x07, 0xd3, 0xc1, 0x86, 0x06, 0x36, 0xc6, 0xc0, 0x75, 0x3a, 0x9c,
-	0x0e, 0xae, 0x6b, 0xe0, 0xfa, 0x18, 0xd8, 0xa1, 0xc1, 0x74, 0xb0, 0xa3, 0x81, 0x63, 0x71, 0x6c,
-	0xd7, 0x69, 0x38, 0x15, 0x6c, 0x6b, 0x71, 0x6c, 0x8f, 0xc5, 0xb1, 0xed, 0xd0, 0x68, 0x3a, 0xa8,
-	0x39, 0xa7, 0x3d, 0xe6, 0x9c, 0x76, 0x83, 0xde, 0x9e, 0x0e, 0x6a, 0xce, 0x69, 0x8f, 0x39, 0xa7,
-	0xdd, 0xa4, 0xf1, 0x74, 0xb0, 0xa9, 0x81, 0xcd, 0x31, 0x70, 0x83, 0x26, 0xd3, 0xc1, 0x0d, 0x0d,
-	0xdc, 0xb0, 0xda, 0x38, 0x35, 0xda, 0x6a, 0x1a, 0xbe, 0x63, 0x4c, 0x98, 0x1b, 0x6d, 0x7d, 0x1e,
-	0xb6, 0xe5, 0x3c, 0x2c, 0x60, 0x1d, 0xfa, 0xee, 0x74, 0xac, 0x93, 0x63, 0x1d, 0xeb, 0x02, 0x9a,
-	0x89, 0x58, 0xd3, 0xa1, 0xbf, 0x34, 0x26, 0xd8, 0x89, 0x5c, 0x53, 0xb9, 0x14, 0xc0, 0x66, 0xd6,
-	0x60, 0x47, 0xd9, 0xf9, 0x76, 0x69, 0x42, 0x83, 0x1d, 0xdd, 0xce, 0x8e, 0x6e, 0x27, 0x53, 0xd8,
-	0x4b, 0xe6, 0xac, 0x34, 0xc3, 0x8e, 0x63, 0x4d, 0xfa, 0xb2, 0x39, 0x2b, 0xcf, 0x30, 0x99, 0x67,
-	0x0a, 0x58, 0x87, 0xbe, 0x62, 0xce, 0x4a, 0x34, 0x4c, 0xf7, 0x0a, 0x4b, 0x13, 0xcd, 0xab, 0xe6,
-	0xcc, 0x4c, 0xc3, 0x30, 0xd3, 0x14, 0x49, 0x87, 0x7e, 0xd7, 0x9c, 0x99, 0x6a, 0x18, 0xa6, 0x9a,
-	0x9c, 0xc4, 0x54, 0xf3, 0x3d, 0x73, 0x66, 0xae, 0x61, 0x98, 0x6b, 0x8a, 0x64, 0x9b, 0x7e, 0xdf,
-	0x9c, 0x99, 0x6c, 0x18, 0x26, 0x9b, 0x82, 0xb5, 0x2d, 0x87, 0xfe, 0xd0, 0x9c, 0x99, 0x6d, 0x18,
-	0x66, 0x9b, 0x22, 0xd9, 0xa0, 0xaf, 0x99, 0x33, 0xd3, 0x0d, 0xc3, 0x74, 0x53, 0x24, 0xd7, 0xe9,
-	0xeb, 0xe6, 0xcc, 0x7c, 0xc3, 0x30, 0xdf, 0x14, 0xc9, 0x0e, 0x7d, 0xc3, 0x9c, 0x99, 0x70, 0x18,
-	0x26, 0x9c, 0x02, 0xd9, 0xae, 0xd3, 0x37, 0xcd, 0x99, 0x19, 0x87, 0x61, 0xc6, 0x29, 0x92, 0x0e,
-	0xfd, 0x91, 0x39, 0x33, 0xe5, 0x30, 0x4c, 0x39, 0x45, 0xb2, 0x41, 0x7f, 0x6c, 0xce, 0xcc, 0x39,
-	0x0c, 0x73, 0x4e, 0x91, 0x6c, 0xd2, 0x9f, 0x98, 0x33, 0x93, 0x0e, 0xc3, 0xa4, 0x53, 0x24, 0x37,
-	0xe8, 0x5b, 0xe6, 0xcc, 0xac, 0xc3, 0x0a, 0x59, 0xa7, 0x87, 0x63, 0x88, 0xfe, 0x61, 0xd2, 0x44,
-	0xe9, 0xe1, 0x10, 0xc2, 0x89, 0xd2, 0x83, 0x11, 0xa4, 0x61, 0x72, 0x7f, 0xf2, 0xc7, 0x29, 0x58,
-	0xdd, 0xdd, 0x6e, 0xa4, 0x18, 0x6c, 0x50, 0x0a, 0x58, 0x93, 0xfe, 0x69, 0x3a, 0xd6, 0xcc, 0xb1,
-	0x66, 0x11, 0x6b, 0xd1, 0x3f, 0x4f, 0xc7, 0x5a, 0x39, 0xd6, 0x2a, 0x62, 0xeb, 0xf4, 0xe3, 0xe9,
-	0xd8, 0x7a, 0x8e, 0xad, 0x17, 0xb1, 0x0d, 0xfa, 0x97, 0xe9, 0xd8, 0x46, 0x8e, 0x6d, 0x14, 0xb1,
-	0x0e, 0xfd, 0xeb, 0x74, 0xac, 0x93, 0x63, 0xd9, 0x10, 0x45, 0xcc, 0xb9, 0x40, 0x3f, 0x99, 0x14,
-	0x3a, 0xe4, 0x9c, 0x0b, 0x18, 0x3a, 0x00, 0x9d, 0x0b, 0x63, 0x64, 0x87, 0xfe, 0xed, 0x33, 0xc8,
-	0x8e, 0x46, 0x8e, 0xb5, 0xd9, 0xa8, 0xd3, 0x4f, 0xa7, 0x93, 0x8d, 0x7a, 0x4e, 0x36, 0xea, 0x69,
-	0x27, 0x3d, 0x35, 0x5c, 0xde, 0x9f, 0x9b, 0xd0, 0x49, 0x4f, 0x1f, 0x2e, 0x9e, 0x3e, 0x5c, 0x3c,
-	0x35, 0x5c, 0x3e, 0x98, 0x82, 0xe5, 0xc3, 0xc5, 0xd3, 0x87, 0x0b, 0xb6, 0xd6, 0xa4, 0xbf, 0x9a,
-	0xde, 0x5a, 0x33, 0x6f, 0x2d, 0x1b, 0x2e, 0x5c, 0x2d, 0x35, 0x3f, 0x9f, 0x9f, 0x80, 0x71, 0x7d,
-	0xa9, 0xe1, 0xfa, 0x52, 0xc3, 0x95, 0x91, 0xbf, 0xb8, 0x2b, 0x2c, 0x35, 0xd2, 0x49, 0x37, 0xf8,
-	0xaf, 0x95, 0x8f, 0x63, 0x8e, 0xbe, 0x57, 0x77, 0xea, 0x5a, 0x6b, 0x0a, 0xeb, 0xd0, 0xd7, 0xa7,
-	0x63, 0x9d, 0x1c, 0x4b, 0x43, 0x97, 0xb6, 0x56, 0xa7, 0x6f, 0x94, 0x8f, 0x87, 0x2e, 0x6d, 0x0e,
-	0x43, 0x87, 0xed, 0xd5, 0x8b, 0x64, 0xcb, 0xa1, 0x6f, 0xde, 0x1d, 0xd9, 0x72, 0xec, 0x33, 0xa4,
-	0xaa, 0x1d, 0x38, 0xd2, 0x13, 0x96, 0x91, 0x9d, 0xb0, 0xec, 0xdb, 0xba, 0x42, 0xf3, 0xb8, 0x82,
-	0xd5, 0x22, 0x0b, 0xa3, 0xc0, 0x17, 0xae, 0xef, 0xd1, 0xd2, 0xdd, 0x1c, 0x19, 0xa5, 0xcc, 0x5a,
-	0x25, 0xe5, 0x44, 0x30, 0x31, 0x4a, 0xa8, 0x79, 0xd6, 0x3c, 0x3f, 0x7f, 0xb1, 0x74, 0xca, 0xe8,
-	0x2a, 0x89, 0xfd, 0x8e, 0x81, 0x6d, 0xb6, 0x72, 0xa3, 0x62, 0x91, 0xa4, 0x6d, 0xc6, 0x22, 0xb1,
-	0x1e, 0x22, 0x64, 0xc8, 0x12, 0xc1, 0x63, 0x17, 0x0a, 0xf0, 0xdc, 0x59, 0x41, 0x49, 0x57, 0x24,
-	0xd6, 0xa3, 0x64, 0x39, 0xe6, 0x09, 0x0f, 0x3c, 0x57, 0xf8, 0x43, 0x1e, 0x8e, 0x84, 0x3a, 0x89,
-	0x2e, 0xa1, 0xf4, 0x06, 0x0a, 0xa1, 0x16, 0xa5, 0x16, 0x8c, 0x86, 0x74, 0x0e, 0x6b, 0x41, 0xc9,
-	0x95, 0xd1, 0xd0, 0x7a, 0x98, 0x54, 0x63, 0x1e, 0x85, 0xb1, 0x70, 0x87, 0x2c, 0xde, 0xa7, 0xf3,
-	0x99, 0x9d, 0x04, 0xc5, 0x5f, 0x62, 0xf1, 0x3e, 0xd4, 0xb1, 0xcf, 0x79, 0xe4, 0xb2, 0x81, 0x7f,
-	0xc0, 0xd5, 0x79, 0xb6, 0x02, 0x92, 0x4d, 0x10, 0xd8, 0x3f, 0x2b, 0x74, 0xa5, 0x69, 0xfd, 0x2f,
-	0x59, 0x18, 0x32, 0x3f, 0x70, 0xfd, 0x48, 0x76, 0xa7, 0xd2, 0x2d, 0xc3, 0xeb, 0x4e, 0x64, 0x3d,
-	0x40, 0x2a, 0xb2, 0x00, 0x2a, 0x56, 0x1d, 0x5a, 0x04, 0xc1, 0xb5, 0x30, 0x16, 0x50, 0x78, 0x8b,
-	0xf5, 0xf6, 0x47, 0x11, 0x70, 0xa6, 0xe4, 0x16, 0x51, 0xb0, 0x13, 0x59, 0x67, 0x48, 0x55, 0x15,
-	0x4a, 0x16, 0xbb, 0x41, 0x50, 0x24, 0x69, 0x08, 0x59, 0x14, 0xa8, 0xc3, 0x37, 0x3c, 0xc2, 0x79,
-	0x78, 0x94, 0xf0, 0x58, 0x9a, 0x5b, 0xe9, 0xca, 0x67, 0xd0, 0x8a, 0x0e, 0x3d, 0x79, 0xfe, 0xae,
-	0x74, 0xe1, 0xd1, 0xe6, 0xba, 0xe9, 0x1d, 0xeb, 0x49, 0x72, 0x8a, 0x1f, 0xf0, 0x40, 0x24, 0x2e,
-	0x3b, 0x60, 0xfe, 0x80, 0xdd, 0x1a, 0x70, 0x79, 0x47, 0x80, 0x3e, 0x59, 0xc1, 0xb2, 0xcd, 0xb4,
-	0xc8, 0x7a, 0x8c, 0x2c, 0x29, 0x75, 0xf4, 0x96, 0x1c, 0x1c, 0xa8, 0x5b, 0xc3, 0x82, 0xae, 0x94,
-	0xdb, 0x11, 0xa9, 0xe9, 0x3b, 0x2f, 0xcb, 0x21, 0x56, 0x72, 0xe8, 0x8b, 0xde, 0x9e, 0x1f, 0x4c,
-	0x6c, 0xe9, 0xde, 0xb4, 0x34, 0x6f, 0xeb, 0x49, 0x72, 0x2a, 0x43, 0xf6, 0xc2, 0x28, 0xf2, 0x83,
-	0x5d, 0xad, 0xb9, 0x95, 0xb4, 0xec, 0x59, 0x2c, 0xb2, 0xbf, 0x6d, 0x14, 0x9a, 0x74, 0xac, 0x07,
-	0x49, 0x65, 0x10, 0x06, 0xbb, 0xbe, 0x18, 0x79, 0x5c, 0xc6, 0xc5, 0xe8, 0xe6, 0x02, 0x6b, 0x95,
-	0x2c, 0x0e, 0x98, 0xc0, 0xc2, 0x92, 0x2c, 0xcc, 0xde, 0x61, 0xa4, 0x65, 0x8a, 0x38, 0x4c, 0xd4,
-	0x48, 0xcb, 0xa4, 0x72, 0x94, 0x3c, 0x4c, 0x96, 0x52, 0x04, 0xb5, 0x30, 0x4a, 0xb5, 0x54, 0x08,
-	0x4a, 0xf6, 0x72, 0x66, 0x95, 0xdc, 0x0e, 0xda, 0xbf, 0x33, 0x0a, 0x82, 0xb6, 0xf5, 0x7f, 0x64,
-	0xd1, 0x13, 0x6e, 0x22, 0x58, 0x2c, 0xa4, 0x95, 0x66, 0x77, 0xc1, 0x13, 0xd7, 0xe1, 0x15, 0xc6,
-	0x95, 0x27, 0x5c, 0x8f, 0xdd, 0x49, 0x67, 0x43, 0xd9, 0x13, 0x5b, 0xec, 0x4e, 0x62, 0x7d, 0x8e,
-	0x2c, 0x63, 0xf7, 0xc3, 0x91, 0x70, 0xfd, 0xc0, 0x3b, 0xd2, 0xe6, 0xdb, 0x52, 0x56, 0xb2, 0x13,
-	0x78, 0x47, 0xd6, 0x33, 0xa4, 0x02, 0xd3, 0xc5, 0x4d, 0x06, 0x21, 0x0c, 0x23, 0x98, 0xca, 0x67,
-	0x26, 0x6e, 0x37, 0xd7, 0x60, 0x02, 0xb9, 0xd7, 0x07, 0xa1, 0xe8, 0x2e, 0x02, 0x01, 0x4f, 0xab,
-	0x5f, 0x20, 0x95, 0x4c, 0x0c, 0xe6, 0xc8, 0xaa, 0xc2, 0x34, 0x53, 0x94, 0xe1, 0xf5, 0x6a, 0x00,
-	0x5d, 0xc0, 0x82, 0x7e, 0x5f, 0x19, 0x2a, 0x15, 0xaf, 0xf6, 0xfb, 0xf6, 0xd3, 0x7a, 0x50, 0x5a,
-	0x8e, 0xf5, 0x04, 0x59, 0xc9, 0x2d, 0x1f, 0x84, 0x61, 0x94, 0x68, 0x83, 0x20, 0xef, 0xd4, 0xf3,
-	0x50, 0x62, 0xff, 0xbe, 0x54, 0xa0, 0x1b, 0xd6, 0x53, 0xe4, 0x7f, 0x0e, 0xc2, 0x81, 0x60, 0xbb,
-	0xdc, 0x15, 0x31, 0x0b, 0x92, 0x7e, 0x18, 0x0f, 0x79, 0xac, 0xac, 0xb1, 0x54, 0xd1, 0x8d, 0xbc,
-	0xc4, 0xaa, 0x93, 0xfb, 0x78, 0xc0, 0xe3, 0xdd, 0x3b, 0x2e, 0x2b, 0x10, 0x68, 0xa5, 0x85, 0x65,
-	0x9b, 0x93, 0x89, 0x5b, 0x05, 0xc2, 0xd4, 0x89, 0x8b, 0x93, 0x89, 0x5e, 0x81, 0x98, 0xd3, 0x89,
-	0x4b, 0x3a, 0x71, 0x85, 0xac, 0xf4, 0x46, 0x71, 0xcc, 0x03, 0xe1, 0x26, 0x5c, 0x08, 0x18, 0xd8,
-	0xf3, 0x32, 0x32, 0x8f, 0x4e, 0xdc, 0x94, 0xaf, 0x5d, 0x52, 0xca, 0xd7, 0x51, 0xb9, 0xbb, 0xac,
-	0x68, 0xf5, 0xbe, 0xba, 0x43, 0x56, 0xc6, 0x54, 0xac, 0xb3, 0xa4, 0x7a, 0xdc, 0x43, 0xba, 0xc8,
-	0xba, 0x8f, 0xcc, 0x47, 0x7b, 0x2c, 0xe1, 0xca, 0x17, 0xf8, 0x62, 0xbf, 0xba, 0x50, 0x70, 0xf9,
-	0x3a, 0x8c, 0x9f, 0x43, 0xce, 0xf7, 0x61, 0x14, 0x3a, 0xea, 0x16, 0xed, 0xcc, 0xc4, 0x03, 0xc0,
-	0xda, 0x8b, 0xa0, 0x86, 0xe3, 0x07, 0x88, 0x2d, 0x76, 0xc7, 0xd1, 0xe9, 0x06, 0x2d, 0x9d, 0x8c,
-	0x6e, 0xe8, 0x74, 0x93, 0x9a, 0x27, 0xa3, 0x9b, 0x3a, 0xdd, 0xa2, 0x73, 0x27, 0xa3, 0x5b, 0x3a,
-	0xdd, 0xa6, 0xf3, 0x27, 0xa3, 0xdb, 0x3a, 0xbd, 0x4e, 0xcb, 0x27, 0xa3, 0x0b, 0x3e, 0xdf, 0x90,
-	0xb9, 0xfb, 0x04, 0xf4, 0xc6, 0xea, 0xb7, 0x4c, 0x52, 0xc9, 0xe4, 0xd6, 0x53, 0xa4, 0xb4, 0x3f,
-	0x23, 0x70, 0xf9, 0xc4, 0x2f, 0xed, 0x3b, 0x12, 0x98, 0x11, 0x2b, 0x1d, 0x68, 0x48, 0x60, 0x46,
-	0x78, 0x74, 0xa0, 0x29, 0x81, 0x19, 0x11, 0xd1, 0x81, 0x96, 0x04, 0x66, 0x04, 0x41, 0x07, 0xda,
-	0x12, 0x98, 0xe1, 0x77, 0x1d, 0x58, 0x97, 0xc0, 0x0c, 0x57, 0xeb, 0xc0, 0x86, 0x04, 0x2e, 0xc8,
-	0x5b, 0xec, 0xbb, 0x02, 0x2e, 0xfc, 0xe3, 0x99, 0xf4, 0xb9, 0xc2, 0xc4, 0xec, 0xc0, 0xf6, 0x21,
-	0xec, 0xf7, 0x13, 0x2e, 0xf2, 0x5a, 0x16, 0x51, 0x70, 0x35, 0x80, 0x0d, 0x4c, 0x5a, 0x98, 0xd5,
-	0xa4, 0xd4, 0xa1, 0x2e, 0x47, 0xaf, 0xab, 0x5d, 0xb7, 0xce, 0x91, 0x9a, 0xda, 0x14, 0x41, 0x6b,
-	0x59, 0xba, 0x40, 0x19, 0x98, 0x1d, 0xdb, 0x6f, 0x98, 0x05, 0xc6, 0xb1, 0xd6, 0xf2, 0x5c, 0x3c,
-	0x08, 0x0f, 0x79, 0xec, 0x0e, 0xfc, 0xa1, 0x2f, 0xd4, 0x42, 0x7b, 0xaf, 0x2a, 0x7a, 0x1e, 0x4a,
-	0x9e, 0x87, 0x02, 0x5d, 0x7f, 0x14, 0x45, 0x99, 0x7e, 0xa9, 0xa0, 0x7f, 0x13, 0x4a, 0x50, 0xff,
-	0x39, 0xb2, 0x94, 0x26, 0x49, 0xd4, 0x34, 0xa7, 0xa6, 0xc8, 0xb6, 0x73, 0x2c, 0x45, 0xd6, 0x14,
-	0x2b, 0xeb, 0x5a, 0xfd, 0xf2, 0xf1, 0x04, 0x79, 0x99, 0xd4, 0x60, 0xf9, 0xc9, 0x12, 0x30, 0x7e,
-	0x18, 0xb1, 0x27, 0xd7, 0x0e, 0xcb, 0x51, 0x56, 0x75, 0x15, 0xb8, 0x34, 0xf5, 0x7e, 0xc3, 0x20,
-	0x35, 0xbd, 0x14, 0xc2, 0x92, 0xaf, 0xb7, 0x2a, 0x2c, 0xe9, 0x72, 0x0a, 0x3e, 0xc8, 0xfa, 0xa4,
-	0xf9, 0x4c, 0xf9, 0x20, 0x35, 0xb9, 0xe0, 0xb3, 0x54, 0x5f, 0xf7, 0x99, 0x59, 0xd0, 0xcf, 0x7d,
-	0x66, 0x7f, 0x52, 0xd8, 0x03, 0xb5, 0x1b, 0x30, 0xd0, 0x64, 0x2f, 0x83, 0x30, 0x1d, 0x68, 0xf0,
-	0x7a, 0x25, 0x84, 0xfd, 0xa5, 0x2c, 0xe0, 0x81, 0xdc, 0x88, 0xe1, 0x08, 0x21, 0x20, 0xba, 0x2c,
-	0x25, 0xb8, 0x07, 0x02, 0xff, 0xa4, 0x4b, 0x72, 0xbe, 0x07, 0x0a, 0xa3, 0xeb, 0xa9, 0x10, 0x46,
-	0xce, 0x80, 0x1f, 0xf0, 0x81, 0xa3, 0x4c, 0xc3, 0x45, 0xaf, 0x8a, 0x32, 0xec, 0x44, 0xaa, 0xd2,
-	0x50, 0x2a, 0xf3, 0x9a, 0x4a, 0xa3, 0xa8, 0xd2, 0x54, 0x2a, 0x65, 0x4d, 0xa5, 0x59, 0x54, 0x69,
-	0x29, 0x95, 0x05, 0x4d, 0xa5, 0x85, 0xbd, 0xbf, 0x56, 0xe8, 0x7c, 0x53, 0xee, 0xcf, 0x46, 0x47,
-	0xae, 0xd8, 0x8b, 0x79, 0xb2, 0x17, 0x0e, 0x3c, 0xe5, 0x82, 0xda, 0x60, 0x74, 0x74, 0x23, 0x95,
-	0x65, 0xf1, 0x12, 0x7e, 0x6f, 0x3f, 0xdd, 0xa2, 0x83, 0xe0, 0x86, 0xdf, 0xdb, 0xb7, 0xbb, 0x85,
-	0x1a, 0x37, 0xe4, 0x3c, 0x19, 0x05, 0x52, 0x5f, 0x6e, 0xf8, 0xd2, 0x79, 0x82, 0x32, 0xb9, 0x29,
-	0x3c, 0x03, 0xbb, 0xce, 0x30, 0xc2, 0xf2, 0x7c, 0xbb, 0xba, 0x08, 0x42, 0xb9, 0x21, 0x7c, 0x59,
-	0x1d, 0x1e, 0xd4, 0xcd, 0xf0, 0xea, 0x57, 0x0d, 0xb2, 0x9c, 0xf9, 0xd3, 0xbd, 0x24, 0xe2, 0x01,
-	0xf8, 0x7e, 0x6c, 0x7b, 0x87, 0x0d, 0x8d, 0x6d, 0xed, 0xce, 0x91, 0x5a, 0xae, 0xe6, 0x85, 0xca,
-	0xfa, 0x6a, 0x26, 0xdb, 0x0a, 0x8b, 0x35, 0x81, 0x8d, 0x69, 0x14, 0x33, 0x29, 0xcc, 0x6e, 0x7b,
-	0x4d, 0x37, 0xa9, 0x53, 0xec, 0x83, 0x31, 0xa1, 0x0f, 0x4f, 0xa0, 0x5f, 0xd2, 0xdb, 0xe6, 0xcc,
-	0x89, 0xa3, 0xc0, 0x3f, 0x52, 0x9b, 0x58, 0xe9, 0xc4, 0x9b, 0x81, 0x7f, 0x64, 0x7f, 0xd3, 0xc4,
-	0xda, 0xd5, 0x15, 0xb3, 0x45, 0xc9, 0x42, 0x2f, 0x1c, 0x46, 0x2c, 0xb8, 0xa3, 0x4e, 0x4b, 0xe9,
-	0x2b, 0x64, 0x2d, 0x8f, 0x1f, 0xf8, 0x3d, 0x2e, 0x8f, 0x6e, 0x25, 0x59, 0x58, 0x41, 0x09, 0x1c,
-	0xdd, 0xa0, 0xbf, 0x61, 0x5f, 0x1c, 0xb2, 0x98, 0xbb, 0x07, 0x6a, 0x4b, 0x56, 0xe9, 0x56, 0x53,
-	0xd9, 0x0b, 0x3c, 0x86, 0x90, 0x67, 0x2a, 0x1e, 0x13, 0x5c, 0x8e, 0xc7, 0x4a, 0x37, 0xe3, 0xb6,
-	0x98, 0xe0, 0x30, 0xf6, 0x55, 0x33, 0x7e, 0xd0, 0x0f, 0xd5, 0x11, 0x4a, 0xb5, 0xbc, 0x13, 0xf4,
-	0x43, 0x68, 0x68, 0x8f, 0xc5, 0x5e, 0xd6, 0x10, 0x9e, 0xa8, 0xaa, 0xa9, 0x4c, 0x35, 0x94, 0xa9,
-	0xc8, 0x86, 0xf0, 0x88, 0x95, 0x71, 0xb2, 0xa1, 0x47, 0xe0, 0xc4, 0x3a, 0x0c, 0x05, 0x77, 0x7b,
-	0xe1, 0x50, 0xd6, 0xb4, 0x88, 0x5a, 0x28, 0xbd, 0x14, 0x0e, 0xa1, 0xaa, 0xff, 0x27, 0x2b, 0x9a,
-	0x96, 0xac, 0xac, 0x22, 0xd5, 0x96, 0x32, 0x35, 0x59, 0x9b, 0x4d, 0x96, 0x06, 0x61, 0x8f, 0x0d,
-	0xb2, 0xca, 0x08, 0x9a, 0x25, 0x85, 0xaa, 0xae, 0x47, 0x60, 0xd6, 0xa6, 0x3a, 0xb2, 0x2a, 0xfc,
-	0x62, 0x5a, 0x4b, 0x95, 0xa0, 0x26, 0xfb, 0xdd, 0x12, 0x46, 0x44, 0x5d, 0x13, 0x42, 0xf8, 0x3c,
-	0x91, 0x9e, 0xe8, 0x54, 0xf8, 0x3c, 0x81, 0x27, 0x39, 0xeb, 0x69, 0x35, 0x18, 0x3c, 0x26, 0x98,
-	0xba, 0x0b, 0x38, 0x3d, 0xe9, 0xb2, 0x11, 0x93, 0xe4, 0x16, 0x13, 0x0c, 0x07, 0x0a, 0x3c, 0xad,
-	0xfe, 0xda, 0x20, 0x95, 0x4c, 0x0e, 0x91, 0x57, 0x79, 0x5e, 0x2d, 0x13, 0xe9, 0xab, 0x1c, 0x13,
-	0x98, 0xcd, 0x54, 0x32, 0x4c, 0x5f, 0x21, 0x16, 0xac, 0x27, 0xfc, 0x03, 0xee, 0x46, 0x90, 0x17,
-	0x55, 0xee, 0xab, 0xa2, 0xec, 0x1a, 0x88, 0xf0, 0x62, 0xa0, 0xa0, 0x34, 0x27, 0x95, 0x96, 0x52,
-	0x29, 0xaa, 0x9d, 0x23, 0x35, 0x59, 0xea, 0xf6, 0x59, 0x4f, 0x84, 0xb1, 0x8c, 0xbb, 0xd1, 0xad,
-	0x4a, 0xd9, 0xb6, 0x14, 0x81, 0x23, 0x20, 0x63, 0x1c, 0xb0, 0xc1, 0x08, 0x8f, 0xfd, 0x30, 0xe8,
-	0x47, 0x47, 0x2f, 0xc0, 0x3b, 0x6c, 0x98, 0x43, 0xb1, 0xc7, 0x63, 0x19, 0x6a, 0xa3, 0x8b, 0x2f,
-	0xf6, 0xe3, 0x99, 0x2b, 0xeb, 0xee, 0x76, 0xe3, 0xb3, 0x67, 0xc2, 0x6f, 0x4b, 0xba, 0x72, 0xd3,
-	0xfa, 0x3c, 0x21, 0x72, 0xd7, 0x8d, 0xbe, 0x35, 0x26, 0x1c, 0xce, 0x94, 0xe6, 0xda, 0x35, 0xa9,
-	0x26, 0x9d, 0x5b, 0x91, 0x88, 0xf4, 0xe7, 0x83, 0xa4, 0xd2, 0x8f, 0xf9, 0xed, 0x11, 0x0f, 0x7a,
-	0x77, 0x94, 0xdf, 0x72, 0xc1, 0xea, 0x27, 0x06, 0x21, 0x39, 0xf7, 0xef, 0xef, 0xfc, 0x87, 0xc9,
-	0x92, 0xaa, 0x07, 0x8f, 0x4c, 0x2a, 0x00, 0xca, 0x82, 0xcb, 0x52, 0x66, 0x3d, 0x06, 0x93, 0xa5,
-	0xa8, 0x86, 0xe1, 0xc8, 0xac, 0x40, 0x45, 0xbb, 0xa1, 0xbb, 0xba, 0x05, 0x95, 0xe3, 0x52, 0xa7,
-	0x0f, 0xf3, 0xf9, 0x6e, 0x0d, 0x85, 0xea, 0xd2, 0xe2, 0x19, 0x9d, 0x59, 0xcf, 0x2f, 0x20, 0x20,
-	0x79, 0xaa, 0x7b, 0x2d, 0x63, 0xfc, 0x02, 0x22, 0x1c, 0xc1, 0x61, 0x5d, 0x8c, 0x12, 0xdb, 0xd1,
-	0xe9, 0x8d, 0xf4, 0x67, 0x08, 0xe3, 0xd8, 0xcf, 0x10, 0xa5, 0xec, 0x67, 0x08, 0xfb, 0x3b, 0x86,
-	0xce, 0x74, 0xac, 0x4d, 0xb5, 0x2a, 0x6b, 0x8d, 0x55, 0x1b, 0x67, 0x27, 0x5d, 0x48, 0xab, 0x2d,
-	0x89, 0xd4, 0xc3, 0x75, 0x1b, 0x9f, 0x57, 0x2f, 0x91, 0xaa, 0x56, 0x64, 0xdd, 0x4f, 0xca, 0x89,
-	0x70, 0x83, 0xf0, 0x50, 0x19, 0x32, 0x9f, 0x88, 0x2b, 0xe1, 0x21, 0x64, 0xda, 0x44, 0xb8, 0xbd,
-	0x3d, 0x16, 0xec, 0x72, 0x2f, 0xdd, 0x1f, 0x26, 0xe2, 0x12, 0x0a, 0xec, 0x5d, 0xcc, 0xef, 0xe9,
-	0x25, 0xf6, 0xf4, 0x6d, 0xc4, 0x43, 0x44, 0xb6, 0xed, 0xea, 0x27, 0x49, 0x99, 0x2e, 0xe4, 0xc0,
-	0x83, 0x85, 0x44, 0x5d, 0x17, 0x79, 0xa1, 0x76, 0x45, 0xb1, 0x88, 0xc2, 0xad, 0x30, 0xbd, 0x1e,
-	0x48, 0xef, 0xbc, 0xad, 0x27, 0xc8, 0xca, 0x80, 0xb3, 0x7d, 0xd8, 0x24, 0xa6, 0x43, 0x12, 0x9c,
-	0x60, 0xe0, 0xf5, 0x80, 0x2a, 0x52, 0x5b, 0x39, 0xfb, 0xa2, 0x0e, 0x37, 0xea, 0xe0, 0xdf, 0xc1,
-	0xe8, 0x48, 0x8d, 0x6e, 0x78, 0x94, 0xa7, 0x60, 0x3e, 0x8c, 0x78, 0xcc, 0xc4, 0x28, 0x4e, 0xef,
-	0x79, 0x74, 0x91, 0xfd, 0x03, 0xb5, 0x38, 0xa9, 0x2b, 0xf0, 0xcf, 0xba, 0x8d, 0x39, 0x47, 0x6a,
-	0x30, 0x4f, 0x5d, 0x8f, 0x07, 0x89, 0x2f, 0xee, 0xa4, 0xcb, 0x2d, 0xc8, 0xb6, 0x50, 0x24, 0x69,
-	0x50, 0x81, 0xe5, 0x0b, 0x17, 0xda, 0x05, 0x78, 0x87, 0xc5, 0x4b, 0x73, 0xe1, 0x5c, 0xc1, 0x85,
-	0x85, 0xfc, 0x3a, 0x3f, 0x21, 0xbf, 0x7a, 0xff, 0xd5, 0xf9, 0xf5, 0xe3, 0x3c, 0x40, 0x32, 0xc1,
-	0xfe, 0xf3, 0x03, 0xb4, 0x49, 0x6a, 0x98, 0xa5, 0x99, 0x1e, 0xa3, 0x33, 0x93, 0x3e, 0x85, 0xe8,
-	0x79, 0x1a, 0x53, 0xfb, 0xa6, 0x0c, 0x4c, 0x56, 0xc5, 0x2d, 0xac, 0xa2, 0x7c, 0x92, 0x2a, 0x2e,
-	0x16, 0xab, 0xe8, 0x61, 0x15, 0x0b, 0x27, 0xa9, 0xe2, 0x92, 0x1c, 0x2c, 0x3f, 0xfd, 0xcf, 0x5a,
-	0x10, 0xec, 0xb7, 0x0d, 0x7d, 0x6e, 0x36, 0xff, 0x05, 0xa1, 0x9f, 0x90, 0x8e, 0xe6, 0xa7, 0xa6,
-	0xa3, 0x57, 0x94, 0xb9, 0xea, 0x8b, 0x93, 0xfc, 0x3b, 0x6e, 0x98, 0xfd, 0xab, 0x37, 0x54, 0xff,
-	0xee, 0x95, 0xb2, 0x7f, 0xf7, 0xee, 0x27, 0x65, 0xde, 0x93, 0xa9, 0x19, 0xcd, 0x99, 0xe7, 0x3d,
-	0x48, 0xcd, 0x9b, 0xa4, 0x9a, 0xe6, 0x4c, 0x88, 0xf3, 0xdc, 0x84, 0x35, 0x40, 0xb5, 0xb0, 0x76,
-	0x19, 0xf5, 0x30, 0xd0, 0x2a, 0xa7, 0x42, 0xa0, 0x97, 0x48, 0x55, 0x2b, 0xb2, 0xbf, 0x8e, 0x86,
-	0xa5, 0x9f, 0x8a, 0xa4, 0x27, 0x12, 0xe1, 0xca, 0x9f, 0xe7, 0x52, 0x3f, 0x26, 0x62, 0xd3, 0xf3,
-	0x64, 0x54, 0xa0, 0x48, 0x7d, 0x60, 0x71, 0x32, 0x3f, 0x26, 0x42, 0x7d, 0x5e, 0x71, 0xc6, 0x54,
-	0x1a, 0xca, 0x78, 0x4d, 0xa5, 0x91, 0x36, 0xa0, 0xec, 0x97, 0x5b, 0x7c, 0x2f, 0x11, 0xd2, 0x96,
-	0xb7, 0x0a, 0xb6, 0x74, 0xc0, 0x09, 0x7d, 0x11, 0xa5, 0x5f, 0x4e, 0xcc, 0xee, 0x7c, 0x5f, 0x44,
-	0x3b, 0x11, 0xd4, 0x00, 0x62, 0xed, 0xbb, 0xc9, 0x42, 0x5f, 0xe0, 0x87, 0x0f, 0x55, 0x24, 0x3f,
-	0x75, 0xe0, 0x09, 0x00, 0x8a, 0x6e, 0x26, 0x3c, 0x86, 0x38, 0x4a, 0xea, 0xd0, 0x53, 0xcd, 0x42,
-	0xdd, 0xd7, 0x0e, 0xbd, 0xb4, 0xc0, 0xf3, 0x63, 0xb5, 0xdb, 0x87, 0x82, 0x2d, 0x3f, 0x4e, 0x2b,
-	0xeb, 0xfb, 0x03, 0xae, 0x76, 0xf9, 0xa0, 0xb8, 0xed, 0x0f, 0xb8, 0xfd, 0x01, 0x9e, 0xa5, 0xb3,
-	0x0f, 0x6c, 0xd6, 0x79, 0x72, 0x4a, 0x3f, 0x7e, 0xb8, 0xe9, 0x89, 0xb2, 0xd2, 0x5d, 0xd6, 0x8e,
-	0x20, 0x57, 0x07, 0x9e, 0xf5, 0x38, 0xb9, 0xb7, 0x70, 0x0a, 0x91, 0xaa, 0x78, 0x9c, 0x59, 0xd1,
-	0x4f, 0x22, 0xa0, 0x3b, 0x5e, 0x6b, 0xc0, 0x0f, 0x55, 0xb7, 0xf4, 0x5a, 0xaf, 0xf0, 0xc3, 0xe3,
-	0xb5, 0x82, 0xea, 0xdc, 0xf1, 0x5a, 0x41, 0x17, 0x4e, 0x52, 0xc2, 0x1d, 0x45, 0xbb, 0x31, 0xf3,
-	0xb8, 0xec, 0xb3, 0xd9, 0xad, 0x78, 0xe2, 0x26, 0x0a, 0x2e, 0xae, 0xbe, 0xf3, 0xe1, 0x69, 0xe3,
-	0xbd, 0x0f, 0x4f, 0x1b, 0xbf, 0xf9, 0xf0, 0xb4, 0xf1, 0xd2, 0x47, 0xa7, 0xef, 0x79, 0xef, 0xa3,
-	0xd3, 0xf7, 0xbc, 0xff, 0xd1, 0xe9, 0x7b, 0x9e, 0x35, 0x6e, 0x95, 0xe5, 0x8f, 0xa8, 0xcd, 0xbf,
-	0x07, 0x00, 0x00, 0xff, 0xff, 0x43, 0x27, 0x93, 0xb2, 0x9a, 0x2a, 0x00, 0x00,
+	// 3566 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe4, 0x5a, 0x4d, 0x6c, 0x1c, 0xc7,
+	0x95, 0xf6, 0x4c, 0x73, 0x86, 0x9c, 0x9a, 0x21, 0x25, 0xb5, 0xa5, 0x75, 0x99, 0xb6, 0x44, 0xb9,
+	0x65, 0xaf, 0xb5, 0x36, 0xcc, 0x9d, 0xee, 0x9e, 0x21, 0x35, 0xb0, 0xb1, 0x0b, 0x8a, 0x14, 0xd7,
+	0x34, 0xb4, 0x12, 0x31, 0x92, 0xbc, 0x7b, 0x6b, 0xb4, 0xa6, 0x6b, 0xc8, 0x5e, 0xce, 0x74, 0xb7,
+	0xba, 0x6b, 0x48, 0xf1, 0xe0, 0x83, 0x8f, 0x8b, 0x3d, 0xac, 0x17, 0xd8, 0x3f, 0x24, 0x01, 0xe2,
+	0x9f, 0x24, 0xbe, 0x24, 0xb7, 0x5c, 0x12, 0x04, 0xb9, 0xe4, 0x62, 0x1b, 0x08, 0xe0, 0xa3, 0x93,
+	0x4b, 0x02, 0xfb, 0x94, 0x43, 0x80, 0x00, 0x71, 0x12, 0x27, 0x8e, 0x81, 0xe0, 0xd5, 0x4f, 0x77,
+	0xf5, 0xcc, 0xb4, 0x47, 0x44, 0x82, 0xc0, 0x41, 0x4e, 0xd3, 0xfd, 0xea, 0x7d, 0xef, 0xbd, 0x7a,
+	0xef, 0xd5, 0xab, 0x57, 0xd5, 0x83, 0x96, 0x86, 0xc9, 0x9e, 0x73, 0x34, 0x48, 0xe8, 0x6a, 0x14,
+	0x87, 0x34, 0xd4, 0xe7, 0xd9, 0xf3, 0xde, 0x5d, 0xa3, 0x85, 0xf4, 0x3b, 0x81, 0x4f, 0x77, 0x3c,
+	0x12, 0x50, 0xbf, 0xef, 0xf7, 0x5c, 0xea, 0x87, 0x81, 0xbe, 0x84, 0xca, 0x51, 0x80, 0x4b, 0x17,
+	0x4b, 0x97, 0x2b, 0xdd, 0x72, 0xc4, 0xde, 0xfb, 0x01, 0x2e, 0xf3, 0xf7, 0x7e, 0x60, 0x7c, 0x56,
+	0x42, 0xfa, 0x96, 0x4b, 0xdd, 0x31, 0x98, 0x8d, 0xaa, 0x23, 0x3f, 0xa0, 0x3b, 0x5b, 0xb8, 0x74,
+	0x51, 0xbb, 0x5c, 0xb7, 0x1e, 0x5b, 0x15, 0x6a, 0x56, 0x27, 0x75, 0x74, 0x05, 0xab, 0x7e, 0x1a,
+	0x69, 0x9e, 0x1f, 0x0b, 0xe1, 0xf0, 0x08, 0xda, 0x68, 0x84, 0x35, 0xae, 0x8d, 0x46, 0xcc, 0x9a,
+	0x23, 0x5c, 0xb9, 0x58, 0xba, 0x5c, 0xeb, 0x96, 0xa3, 0x23, 0x40, 0x90, 0x9e, 0x89, 0xab, 0x1c,
+	0x41, 0x7a, 0x26, 0xa7, 0x58, 0x78, 0x5e, 0x52, 0x2c, 0xa0, 0x24, 0xe4, 0x1e, 0x5e, 0xe0, 0x94,
+	0x84, 0xdc, 0x03, 0x8a, 0xdb, 0x0f, 0x70, 0x8d, 0x53, 0xdc, 0x7e, 0x00, 0x94, 0xfe, 0x28, 0xc0,
+	0x88, 0x53, 0xfa, 0xa3, 0x40, 0xd7, 0xd1, 0x9c, 0x1b, 0x13, 0x17, 0xd7, 0x99, 0x2e, 0xf6, 0xcc,
+	0x68, 0x9e, 0x17, 0xe3, 0xc6, 0xc5, 0xd2, 0x65, 0xad, 0xcb, 0x9e, 0x8d, 0x1f, 0x3e, 0x8a, 0xd0,
+	0xbf, 0x0c, 0x12, 0xfa, 0x4f, 0x57, 0x6f, 0x46, 0x84, 0xcd, 0x9b, 0x79, 0x63, 0x8b, 0xb9, 0x4c,
+	0x9d, 0xf7, 0xa4, 0x93, 0xba, 0x55, 0x8f, 0xb1, 0xea, 0x2d, 0x54, 0x77, 0xfb, 0x41, 0xb3, 0xe9,
+	0x44, 0x4d, 0xa7, 0x6f, 0x32, 0x2b, 0xea, 0xd6, 0xd9, 0x14, 0xb9, 0xc1, 0xc6, 0x76, 0x9b, 0xce,
+	0xb6, 0xd9, 0xad, 0x31, 0xc6, 0xdd, 0xe6, 0xb6, 0x99, 0x47, 0x59, 0xcc, 0xd0, 0x99, 0x28, 0x2b,
+	0x8f, 0xb2, 0xd9, 0x54, 0xa6, 0xa3, 0xec, 0x0c, 0x65, 0x4b, 0x54, 0x4b, 0x58, 0xe8, 0x4d, 0x41,
+	0xb5, 0x54, 0x5d, 0x2d, 0xd5, 0xc2, 0x96, 0xd0, 0x45, 0x0a, 0x51, 0x76, 0x86, 0x1a, 0xd3, 0xd5,
+	0xc1, 0xfd, 0x42, 0x54, 0x27, 0x43, 0x75, 0xf4, 0x75, 0xd4, 0x50, 0x2c, 0x6c, 0xe2, 0x3d, 0x06,
+	0x3b, 0x37, 0xcd, 0xc4, 0x66, 0x17, 0xa5, 0x36, 0x36, 0xc7, 0x80, 0x26, 0xde, 0x2f, 0x06, 0x9a,
+	0x0a, 0xd0, 0x54, 0x80, 0x81, 0xd3, 0x37, 0x5b, 0xd8, 0x9f, 0x0e, 0x0c, 0x9c, 0x6d, 0xb3, 0x25,
+	0x81, 0xc1, 0xb6, 0xd9, 0x1a, 0x03, 0xb6, 0xf1, 0xbf, 0x15, 0x03, 0xdb, 0x0a, 0xb0, 0x9d, 0x37,
+	0xb5, 0x65, 0xe2, 0x83, 0x42, 0x53, 0x5b, 0x8a, 0xa9, 0x2d, 0x73, 0x0c, 0x68, 0xe1, 0x41, 0x31,
+	0xd0, 0x52, 0x80, 0xd6, 0x18, 0x70, 0x0d, 0x0f, 0x8b, 0x81, 0x6b, 0x0a, 0x70, 0x6d, 0x0c, 0xd8,
+	0xc1, 0x41, 0x31, 0xb0, 0xa3, 0x00, 0xc7, 0xe2, 0xd8, 0x6e, 0xe2, 0xb0, 0x10, 0xd8, 0x56, 0xe2,
+	0xd8, 0x1e, 0x8b, 0x63, 0xdb, 0xc4, 0x51, 0x31, 0x50, 0x71, 0x4e, 0x7b, 0xcc, 0x39, 0x6d, 0x0b,
+	0xdf, 0x2b, 0x06, 0x2a, 0xce, 0x69, 0x8f, 0x39, 0xa7, 0x6d, 0xe3, 0xb8, 0x18, 0x68, 0x2b, 0x40,
+	0x7b, 0x0c, 0xb8, 0x8e, 0x93, 0x62, 0xe0, 0xba, 0x02, 0x5c, 0xd7, 0xdb, 0x7c, 0x69, 0xb4, 0xc5,
+	0x32, 0x7c, 0xa7, 0x34, 0x65, 0x6d, 0xb4, 0xd5, 0x75, 0xd8, 0x66, 0xeb, 0x30, 0x07, 0xeb, 0xe0,
+	0x77, 0x8b, 0x61, 0x9d, 0x0c, 0xd6, 0xd1, 0xaf, 0x70, 0x33, 0x39, 0xcc, 0x36, 0xf1, 0x7b, 0xa5,
+	0x29, 0x76, 0x72, 0x9c, 0x2d, 0x5c, 0x0a, 0x40, 0x3b, 0x55, 0xd8, 0x11, 0x76, 0x7e, 0xb3, 0x3c,
+	0x45, 0x61, 0x47, 0xb5, 0xb3, 0xa3, 0xda, 0xe9, 0x0a, 0xd8, 0x6b, 0xda, 0xac, 0x32, 0xe3, 0x4e,
+	0xc2, 0x6c, 0xfc, 0x5f, 0xda, 0xac, 0x3a, 0xe3, 0xb2, 0x3a, 0x93, 0x83, 0x75, 0xf0, 0xff, 0x6a,
+	0xb3, 0x0a, 0x8d, 0xab, 0x7a, 0xc5, 0x95, 0x85, 0xe6, 0xff, 0xb4, 0x99, 0x95, 0xc6, 0xe5, 0x95,
+	0x26, 0x8f, 0x34, 0xf1, 0xff, 0x6b, 0x33, 0x4b, 0x8d, 0xcb, 0x4b, 0x4d, 0x86, 0xe4, 0xa5, 0xe6,
+	0xcb, 0xda, 0xcc, 0x5a, 0xe3, 0xf2, 0x5a, 0x93, 0x47, 0xb6, 0xf1, 0x57, 0xb4, 0x99, 0xc5, 0xc6,
+	0xe5, 0xc5, 0x26, 0x67, 0x6d, 0xcb, 0xc4, 0x5f, 0xd5, 0x66, 0x56, 0x1b, 0x97, 0x57, 0x9b, 0x3c,
+	0xd2, 0xc2, 0xaf, 0x6b, 0x33, 0xcb, 0x8d, 0xcb, 0xcb, 0x4d, 0x1e, 0xb9, 0x86, 0xdf, 0xd0, 0x66,
+	0xd6, 0x1b, 0x97, 0xd7, 0x9b, 0x3c, 0xb2, 0x83, 0xdf, 0xd4, 0x66, 0x16, 0x1c, 0x97, 0x17, 0x9c,
+	0x1c, 0xb2, 0xdd, 0xc4, 0x6f, 0x69, 0x33, 0x2b, 0x8e, 0xcb, 0x2b, 0x4e, 0x1e, 0x69, 0xe2, 0xaf,
+	0x69, 0x33, 0x4b, 0x8e, 0xcb, 0x4b, 0x4e, 0x1e, 0x69, 0xe1, 0xaf, 0x6b, 0x33, 0x6b, 0x8e, 0xcb,
+	0x6b, 0x4e, 0x1e, 0x69, 0xe3, 0x6f, 0x68, 0x33, 0x8b, 0x8e, 0xcb, 0x8b, 0x4e, 0x1e, 0xb9, 0x8e,
+	0xdf, 0xd6, 0x66, 0x56, 0x1d, 0x37, 0x57, 0x75, 0x7a, 0x3c, 0x87, 0xf0, 0xc7, 0xd3, 0x16, 0x4a,
+	0x8f, 0xa7, 0x10, 0x5f, 0x28, 0x3d, 0xc8, 0x20, 0x05, 0xc6, 0xfa, 0x93, 0x5f, 0x15, 0xc0, 0x9a,
+	0xce, 0xb6, 0x25, 0x61, 0xd0, 0xa0, 0xe4, 0x60, 0x36, 0xfe, 0x75, 0x31, 0xcc, 0xce, 0x60, 0x76,
+	0x1e, 0xd6, 0xc2, 0xbf, 0x29, 0x86, 0xb5, 0x32, 0x58, 0x2b, 0x0f, 0x5b, 0xc3, 0x9f, 0x14, 0xc3,
+	0xd6, 0x32, 0xd8, 0x5a, 0x1e, 0xb6, 0x8e, 0x7f, 0x5b, 0x0c, 0x5b, 0xcf, 0x60, 0xeb, 0x79, 0x58,
+	0x07, 0xff, 0xae, 0x18, 0xd6, 0xc9, 0x60, 0x69, 0x8a, 0x72, 0x98, 0x79, 0x05, 0x7f, 0x3a, 0x2d,
+	0x74, 0x1c, 0x67, 0x5e, 0xe1, 0xa1, 0x03, 0xa0, 0x79, 0x65, 0x0c, 0xd9, 0xc1, 0xbf, 0xff, 0x1c,
+	0x64, 0x47, 0x41, 0x8e, 0xe9, 0xb4, 0x9a, 0xf8, 0xb3, 0x62, 0xa4, 0xd5, 0xcc, 0x90, 0x56, 0x53,
+	0x4e, 0xd2, 0x13, 0xe9, 0xf2, 0xc1, 0xdc, 0x94, 0x49, 0x7a, 0x6a, 0xba, 0x78, 0x6a, 0xba, 0x78,
+	0x22, 0x5d, 0x7e, 0x54, 0x00, 0xcb, 0xd2, 0xc5, 0x53, 0xd3, 0x85, 0x6b, 0xb3, 0xf1, 0x8f, 0x8b,
+	0xb5, 0xd9, 0x99, 0xb6, 0x34, 0x5d, 0x88, 0xd8, 0x6a, 0xbe, 0x57, 0x99, 0x02, 0x23, 0xea, 0x56,
+	0x43, 0x94, 0xad, 0xc6, 0x94, 0x9d, 0xfa, 0xeb, 0xd5, 0x49, 0x98, 0xa9, 0x36, 0xdd, 0x66, 0x73,
+	0x12, 0xd6, 0xc1, 0x6f, 0x14, 0xc3, 0x3a, 0x19, 0x4c, 0xc6, 0x40, 0x6a, 0x6b, 0xe2, 0x37, 0xab,
+	0x93, 0x31, 0x90, 0xea, 0x78, 0x0c, 0xb8, 0xbe, 0x66, 0x1e, 0xd9, 0x32, 0xf1, 0x5b, 0x0f, 0x86,
+	0x6c, 0x99, 0xc6, 0x0a, 0xaa, 0x2b, 0x27, 0x07, 0x79, 0x54, 0x2a, 0xa5, 0x47, 0x25, 0xe3, 0x9e,
+	0xca, 0x60, 0x4f, 0x32, 0xe8, 0x2d, 0x34, 0x3f, 0x0a, 0x7c, 0xea, 0xf8, 0x1e, 0x2e, 0x3f, 0xc8,
+	0xd9, 0x8f, 0xd1, 0xf4, 0x65, 0x54, 0x4d, 0xa8, 0x4b, 0x47, 0x09, 0xd6, 0x2e, 0x6a, 0x97, 0x2b,
+	0x57, 0xcb, 0xa7, 0x4b, 0x5d, 0x41, 0x31, 0xde, 0x29, 0x71, 0x9d, 0xad, 0xcc, 0xa8, 0x98, 0x26,
+	0x52, 0x67, 0x4c, 0x13, 0xfd, 0x3c, 0x42, 0x43, 0x37, 0xa1, 0x24, 0x76, 0x60, 0x80, 0x1f, 0x20,
+	0x6b, 0x9c, 0xd2, 0xa5, 0x89, 0xfe, 0x14, 0x5a, 0x8a, 0x49, 0x42, 0x02, 0xcf, 0xa1, 0xfe, 0x90,
+	0x84, 0x23, 0x2a, 0x8e, 0x94, 0x8b, 0x9c, 0x7a, 0x9b, 0x13, 0x41, 0x8a, 0x60, 0x0b, 0x46, 0x43,
+	0x3c, 0xc7, 0xa5, 0x70, 0xca, 0x8d, 0xd1, 0x50, 0xbf, 0x84, 0xea, 0x31, 0x89, 0xc2, 0x98, 0x3a,
+	0x43, 0x37, 0x3e, 0xc0, 0x95, 0xd4, 0x4e, 0xc4, 0xc9, 0xff, 0xec, 0xc6, 0x07, 0x20, 0xe3, 0x80,
+	0x90, 0xc8, 0x71, 0x07, 0xfe, 0x21, 0x11, 0x07, 0xd3, 0x1a, 0x50, 0x36, 0x80, 0x60, 0x7c, 0x27,
+	0x37, 0x15, 0x5b, 0x7f, 0x04, 0xcd, 0x0f, 0x5d, 0x3f, 0x70, 0xfc, 0x88, 0x4d, 0xa7, 0xd6, 0xad,
+	0xc2, 0xeb, 0x4e, 0xa4, 0x3f, 0x86, 0x6a, 0x6c, 0x00, 0x04, 0x8b, 0x09, 0x2d, 0x00, 0x61, 0x37,
+	0x8c, 0x29, 0x0c, 0xde, 0x75, 0x7b, 0x07, 0xa3, 0x08, 0x70, 0x1a, 0xc3, 0x2d, 0x70, 0xc2, 0x4e,
+	0xa4, 0xaf, 0xa0, 0xba, 0x18, 0x64, 0x58, 0x3e, 0x0d, 0xc4, 0x49, 0x0c, 0x0d, 0x21, 0x8b, 0x02,
+	0x71, 0x8a, 0x86, 0x47, 0x38, 0xd8, 0x8e, 0x12, 0x12, 0x33, 0x73, 0x6b, 0x5d, 0xf6, 0x0c, 0x5c,
+	0xd1, 0x91, 0xc7, 0x0e, 0xd2, 0xb5, 0x2e, 0x3c, 0x1a, 0x44, 0x35, 0xbd, 0xa3, 0x3f, 0x87, 0x4e,
+	0x93, 0x43, 0x12, 0xd0, 0xc4, 0x71, 0x0f, 0x5d, 0x7f, 0xe0, 0xde, 0x1d, 0x10, 0x76, 0xd8, 0xe7,
+	0x3e, 0x39, 0xc5, 0xc7, 0x36, 0xe4, 0x90, 0xfe, 0x34, 0x5a, 0x14, 0xec, 0xdc, 0x5b, 0x2c, 0x39,
+	0x38, 0x6f, 0x83, 0x0f, 0x74, 0x19, 0xdd, 0x88, 0x50, 0x43, 0x6d, 0xa1, 0x74, 0x13, 0xe9, 0xc9,
+	0x91, 0x4f, 0x7b, 0xfb, 0x7e, 0x30, 0x55, 0xd3, 0x19, 0x39, 0x9a, 0xe9, 0x7a, 0x0e, 0x9d, 0x4e,
+	0x21, 0xfb, 0x61, 0x14, 0xf9, 0xc1, 0x9e, 0xa2, 0xee, 0x94, 0x1c, 0x7b, 0x91, 0x0f, 0x19, 0xff,
+	0x5d, 0xca, 0xa9, 0x34, 0xf5, 0xc7, 0x51, 0x6d, 0x10, 0x06, 0x7b, 0x3e, 0x1d, 0x79, 0x84, 0xc5,
+	0xa5, 0xd4, 0xcd, 0x08, 0xfa, 0x32, 0x5a, 0x18, 0xb8, 0x94, 0x0f, 0x96, 0xd9, 0x60, 0xfa, 0x0e,
+	0x99, 0x96, 0x32, 0xf2, 0x34, 0x11, 0x99, 0x96, 0x52, 0x59, 0x96, 0x5c, 0x42, 0x8b, 0x12, 0xc2,
+	0xb9, 0x78, 0x94, 0x1a, 0x92, 0x08, 0x4c, 0xc6, 0x52, 0x6a, 0x15, 0xeb, 0xeb, 0x8c, 0xef, 0x97,
+	0x73, 0x84, 0xb6, 0xbe, 0x86, 0xe6, 0xa3, 0xc0, 0xf1, 0x5c, 0xea, 0x8a, 0x5b, 0x96, 0xf3, 0x53,
+	0xdb, 0xba, 0xd5, 0xdd, 0xc0, 0xd9, 0x72, 0xa9, 0xdb, 0xad, 0x46, 0x01, 0xfc, 0x2e, 0x7f, 0xbb,
+	0x84, 0xe6, 0x05, 0x8d, 0x85, 0x39, 0x08, 0x59, 0x32, 0x54, 0xba, 0xf0, 0xa8, 0x3f, 0x8a, 0x16,
+	0x3c, 0xea, 0x24, 0xd4, 0x8d, 0xa9, 0xc8, 0xc9, 0x79, 0x8f, 0xde, 0x82, 0x57, 0xc8, 0x56, 0x8f,
+	0x3a, 0x9e, 0x7b, 0x2c, 0xd7, 0x58, 0xd5, 0xa3, 0x5b, 0xee, 0x31, 0x2c, 0xb0, 0x06, 0x77, 0x6a,
+	0x38, 0xa2, 0x4e, 0x10, 0x2a, 0x6b, 0xb8, 0x9e, 0xd2, 0x6f, 0x84, 0xfa, 0x0b, 0xa8, 0x06, 0x0b,
+	0xd0, 0x49, 0x06, 0x21, 0x24, 0x26, 0x98, 0xbc, 0x32, 0xdd, 0x64, 0x58, 0x92, 0xce, 0xad, 0x41,
+	0x48, 0xbb, 0x0b, 0x80, 0x80, 0xa7, 0xe5, 0x7f, 0x44, 0xb5, 0x94, 0x0c, 0xa6, 0x30, 0x51, 0xa1,
+	0xac, 0x3d, 0x55, 0x78, 0xbd, 0x19, 0x80, 0xf9, 0x7c, 0xa0, 0xdf, 0x17, 0x46, 0x32, 0xc6, 0x9b,
+	0xfd, 0xbe, 0xf1, 0xbc, 0x1a, 0xe6, 0x96, 0xa9, 0x3f, 0x8b, 0x4e, 0x65, 0x56, 0x0f, 0xc2, 0x30,
+	0x4a, 0x94, 0xb4, 0x5a, 0x4a, 0x87, 0xae, 0xc3, 0x88, 0xf1, 0x8b, 0x72, 0x0e, 0x6d, 0xe9, 0x7f,
+	0x8f, 0x1e, 0x3e, 0x0c, 0x07, 0xd4, 0xdd, 0x23, 0x0e, 0x8d, 0xdd, 0x20, 0xe9, 0x87, 0xf1, 0x90,
+	0xc4, 0xc2, 0x1a, 0x5d, 0x0c, 0xdd, 0xce, 0x46, 0xf4, 0x26, 0x3a, 0x4b, 0x02, 0x12, 0xef, 0x1d,
+	0x3b, 0x6e, 0x0e, 0xc1, 0xad, 0xd4, 0xf9, 0xd8, 0xc6, 0x74, 0xc4, 0xdd, 0x1c, 0x42, 0x53, 0x11,
+	0x57, 0xa7, 0x23, 0x7a, 0x39, 0xc4, 0x9c, 0x8a, 0xd8, 0x54, 0x11, 0x37, 0xd0, 0xa9, 0xde, 0x28,
+	0x8e, 0x49, 0x40, 0x9d, 0x84, 0x50, 0x0a, 0x4b, 0xa5, 0xc2, 0x22, 0xf3, 0xd4, 0xd4, 0x7e, 0x7d,
+	0x75, 0x53, 0x30, 0xdf, 0xe2, 0xcc, 0xdd, 0x25, 0x81, 0x16, 0xef, 0xcb, 0x3b, 0xe8, 0xd4, 0x18,
+	0x8b, 0x7e, 0x11, 0xd5, 0x27, 0x3d, 0xa4, 0x92, 0xf4, 0xb3, 0xa8, 0x12, 0xed, 0xbb, 0x09, 0x11,
+	0xbe, 0xe0, 0x2f, 0xc6, 0xab, 0x73, 0x39, 0x97, 0xaf, 0x41, 0xfe, 0x1c, 0x11, 0x72, 0x00, 0x19,
+	0x68, 0x8a, 0x94, 0x5f, 0x99, 0x7a, 0x36, 0x50, 0xf3, 0x07, 0x10, 0x5b, 0xee, 0xb1, 0xa9, 0xa2,
+	0x2d, 0xb1, 0x35, 0x3d, 0x30, 0xda, 0x52, 0xd1, 0x36, 0xcb, 0xef, 0x13, 0xa0, 0x6d, 0x15, 0xdd,
+	0x2a, 0xca, 0xfc, 0x22, 0x74, 0x4b, 0x45, 0xb7, 0x45, 0x74, 0x1e, 0x18, 0xdd, 0x56, 0xd1, 0x6b,
+	0xb8, 0x7a, 0x32, 0x74, 0xce, 0xe7, 0xeb, 0x78, 0xfe, 0x64, 0xe8, 0xf5, 0x3f, 0x7e, 0xcd, 0xbe,
+	0x94, 0x4b, 0x81, 0x0e, 0x6c, 0x7d, 0x61, 0xbf, 0x9f, 0x10, 0x9a, 0x49, 0x59, 0xe0, 0x84, 0x9b,
+	0x01, 0x6c, 0xbe, 0x72, 0x30, 0x95, 0x24, 0xd8, 0x41, 0x96, 0xa9, 0xca, 0x6a, 0x37, 0xf5, 0x27,
+	0x50, 0x43, 0x6c, 0xe8, 0xa0, 0x2d, 0x4d, 0x4c, 0x4e, 0x03, 0xb3, 0x63, 0xe3, 0x4d, 0x2d, 0x87,
+	0x31, 0xf5, 0xd5, 0x6c, 0xd5, 0x0f, 0xc2, 0x23, 0x12, 0x3b, 0x03, 0x7f, 0xe8, 0x53, 0xb1, 0x49,
+	0x9c, 0x11, 0x43, 0xd7, 0x61, 0xe4, 0x3a, 0x0c, 0xa8, 0xfc, 0xa3, 0x28, 0x4a, 0xf9, 0xcb, 0x39,
+	0xfe, 0x3b, 0x30, 0xc2, 0xf9, 0x5f, 0x42, 0x8b, 0x72, 0x39, 0x72, 0x4e, 0xad, 0x70, 0x31, 0xb6,
+	0xcd, 0x89, 0xc5, 0xd8, 0x10, 0x58, 0x26, 0x6b, 0xf9, 0x5f, 0x27, 0x97, 0xe2, 0x35, 0xd4, 0x80,
+	0x42, 0x97, 0x2e, 0x75, 0xbe, 0x88, 0x8c, 0xe9, 0xd2, 0xa1, 0xf0, 0xa5, 0xa2, 0xeb, 0x80, 0x93,
+	0x8b, 0xfc, 0x3f, 0x4a, 0xa8, 0xa1, 0x8e, 0x42, 0x58, 0xb2, 0xca, 0x2e, 0xc2, 0x22, 0x0b, 0x37,
+	0xf8, 0x20, 0x9d, 0x93, 0xe2, 0x33, 0xe1, 0x03, 0x69, 0x72, 0xce, 0x67, 0x92, 0x5f, 0xf5, 0x99,
+	0x96, 0xe3, 0xcf, 0x7c, 0x66, 0x7c, 0x9a, 0xdb, 0xbf, 0xdb, 0x16, 0x24, 0x1a, 0x9b, 0x65, 0x10,
+	0xca, 0x44, 0x83, 0xd7, 0x1b, 0x21, 0xf4, 0x46, 0x6c, 0x80, 0x04, 0xac, 0x89, 0xe0, 0x19, 0x82,
+	0x80, 0x74, 0x8d, 0x51, 0xf8, 0xfe, 0x0d, 0xfe, 0x91, 0xc5, 0x3f, 0xdb, 0xbf, 0xc3, 0xe8, 0x96,
+	0x24, 0x42, 0xe6, 0x0c, 0xc8, 0x21, 0x19, 0x98, 0xc2, 0x34, 0x5e, 0x5e, 0xeb, 0x9c, 0xc6, 0x27,
+	0x21, 0x59, 0x2c, 0xc1, 0x52, 0x51, 0x58, 0xac, 0x3c, 0x8b, 0x2d, 0x58, 0xaa, 0x0a, 0x8b, 0x9d,
+	0x67, 0x69, 0x09, 0x96, 0x79, 0x85, 0xa5, 0xc5, 0x67, 0xbf, 0x9b, 0x9b, 0xbc, 0xcd, 0x7a, 0x8b,
+	0xd1, 0x7d, 0x87, 0xee, 0xc7, 0x24, 0xd9, 0x0f, 0x07, 0x9e, 0x70, 0x41, 0x63, 0x30, 0xba, 0x7f,
+	0x5b, 0xd2, 0xd2, 0x78, 0x51, 0xbf, 0x77, 0x20, 0xdb, 0x4b, 0x20, 0xdc, 0xf6, 0x7b, 0x07, 0x46,
+	0x37, 0x27, 0x71, 0x9d, 0xad, 0x93, 0x51, 0xc0, 0xf8, 0x59, 0xb3, 0x22, 0xd7, 0x09, 0xa7, 0xb1,
+	0x86, 0x66, 0x05, 0x3a, 0xa6, 0x30, 0xe2, 0xe3, 0x59, 0xab, 0xb5, 0x00, 0x44, 0xd6, 0xcc, 0x7c,
+	0x20, 0x1a, 0x5f, 0x71, 0x3d, 0xa9, 0xbf, 0x84, 0xb2, 0x0d, 0xd6, 0xe9, 0xd1, 0x78, 0x20, 0x52,
+	0xf1, 0xd2, 0xb4, 0xcb, 0xcc, 0xd5, 0xd4, 0xf3, 0xce, 0x26, 0x8d, 0x07, 0xdd, 0xc5, 0x14, 0x0a,
+	0xaf, 0xcb, 0xaf, 0xa0, 0xa5, 0x3c, 0x03, 0x58, 0x9c, 0xeb, 0x47, 0x84, 0xc5, 0x6a, 0x2f, 0x92,
+	0x63, 0xf1, 0x42, 0xe1, 0x84, 0x8c, 0x65, 0x2b, 0x84, 0x64, 0xc8, 0x58, 0x60, 0xaa, 0x32, 0x19,
+	0x52, 0x2a, 0x14, 0x09, 0x63, 0x55, 0x9d, 0x59, 0x27, 0xef, 0x8a, 0xd2, 0x14, 0x57, 0x3c, 0xcb,
+	0xdd, 0x2b, 0x6f, 0x4e, 0xd3, 0x58, 0x8c, 0x02, 0xff, 0x3e, 0xb3, 0x54, 0xe3, 0xb1, 0xb8, 0x13,
+	0xf8, 0xf7, 0x8d, 0xff, 0xd4, 0xb8, 0x74, 0x71, 0x5d, 0xaa, 0x63, 0x34, 0xdf, 0x0b, 0x87, 0x91,
+	0x1b, 0x1c, 0xcb, 0xe6, 0x4c, 0xbc, 0x42, 0xf1, 0xf3, 0xc8, 0xa1, 0xdf, 0x23, 0xec, 0xf4, 0x52,
+	0x66, 0x83, 0x35, 0x4e, 0x81, 0xd3, 0x0b, 0xcc, 0x37, 0xec, 0xd3, 0x23, 0x37, 0x26, 0xce, 0xa1,
+	0xe8, 0x21, 0x6a, 0xdd, 0xba, 0xa4, 0xbd, 0x4c, 0x62, 0xc8, 0x9c, 0x94, 0xc5, 0x73, 0x29, 0x91,
+	0x5d, 0xa9, 0x24, 0x6e, 0xb9, 0x94, 0xc0, 0x12, 0x12, 0x6a, 0xfc, 0xa0, 0x1f, 0x8a, 0x53, 0x84,
+	0xd0, 0xbc, 0x13, 0xf4, 0x99, 0x63, 0xf7, 0xdd, 0xd8, 0x4b, 0x15, 0xf1, 0x43, 0x45, 0x5d, 0xd2,
+	0x84, 0xa2, 0x94, 0x85, 0x29, 0xe2, 0x69, 0x9d, 0xe2, 0x98, 0xa2, 0x27, 0xe1, 0xd0, 0x36, 0x0c,
+	0x29, 0x71, 0x7a, 0xe1, 0x90, 0x49, 0x5a, 0x60, 0x92, 0x1a, 0x9c, 0xba, 0x19, 0x0e, 0x41, 0xd4,
+	0xdf, 0xa2, 0x53, 0x0a, 0x17, 0x13, 0x56, 0x93, 0x67, 0x3b, 0xc1, 0xc6, 0xa4, 0x19, 0x68, 0x71,
+	0x10, 0xf6, 0xdc, 0x41, 0x2a, 0x0c, 0x71, 0xb3, 0x18, 0x51, 0xc8, 0x7a, 0x12, 0x16, 0xbf, 0xe4,
+	0x61, 0xa2, 0xea, 0x62, 0xe9, 0x08, 0x26, 0x90, 0x64, 0xbc, 0x5b, 0xe6, 0x11, 0x11, 0x57, 0x5e,
+	0x10, 0x3e, 0x8f, 0xca, 0x43, 0x8d, 0x08, 0x9f, 0x47, 0xf9, 0x61, 0x46, 0x7f, 0x5e, 0x24, 0x03,
+	0x6b, 0xd2, 0x79, 0xcf, 0x71, 0x61, 0xda, 0xc5, 0x19, 0xaf, 0xb5, 0xac, 0x4b, 0x67, 0x89, 0xc2,
+	0xfa, 0xf4, 0x9f, 0x94, 0x50, 0x2d, 0xa5, 0x43, 0xe4, 0xc5, 0x76, 0x21, 0x76, 0x1b, 0xf9, 0xca,
+	0x72, 0x82, 0x17, 0x45, 0x51, 0x53, 0xe5, 0x2b, 0xc4, 0xc2, 0xed, 0x51, 0xff, 0x90, 0x38, 0x11,
+	0x94, 0x57, 0x51, 0x42, 0xeb, 0x9c, 0xb6, 0x0b, 0x24, 0x7e, 0x36, 0xce, 0x31, 0xcd, 0x31, 0xa6,
+	0x45, 0x49, 0xe5, 0x6c, 0x4f, 0xa0, 0x06, 0x1b, 0x75, 0xfa, 0x6e, 0x8f, 0x86, 0x31, 0x8b, 0x7b,
+	0xa9, 0x5b, 0x67, 0xb4, 0x6d, 0x46, 0x02, 0x47, 0x40, 0xe1, 0x39, 0x74, 0x07, 0x23, 0x7e, 0xf2,
+	0x85, 0xa4, 0x1f, 0xdd, 0x7f, 0x19, 0xde, 0xa1, 0xc3, 0x0b, 0xe9, 0x3e, 0x89, 0x59, 0xa8, 0x4b,
+	0x5d, 0xfe, 0x62, 0x3c, 0x93, 0xba, 0xb2, 0xe9, 0x6c, 0x5b, 0x9f, 0xbf, 0x12, 0x7e, 0x56, 0x56,
+	0x99, 0x6d, 0xfd, 0x1f, 0x10, 0x62, 0x6d, 0xa2, 0x7a, 0x00, 0x5a, 0x99, 0x76, 0x4d, 0xb8, 0xba,
+	0xcb, 0xd8, 0x98, 0x73, 0x6b, 0x0c, 0xc2, 0xfc, 0xf9, 0x38, 0xaa, 0xf5, 0x63, 0x72, 0x6f, 0x44,
+	0x82, 0xde, 0xb1, 0xf0, 0x5b, 0x46, 0x58, 0xfe, 0xb4, 0x84, 0x50, 0x86, 0xfb, 0xe2, 0x3b, 0xff,
+	0x12, 0x5a, 0x14, 0x72, 0x78, 0x8f, 0x2f, 0x02, 0x20, 0x2c, 0xb8, 0xc6, 0x68, 0xfa, 0xd3, 0xb0,
+	0x58, 0xf2, 0x6c, 0x3c, 0x1c, 0xa9, 0x15, 0x9c, 0xd1, 0xb0, 0x54, 0x57, 0xb7, 0x40, 0x38, 0xdf,
+	0x31, 0xd5, 0x34, 0xaf, 0x74, 0x1b, 0x9c, 0x28, 0xce, 0xed, 0x2f, 0xa8, 0x98, 0xb5, 0xec, 0x0c,
+	0x0e, 0xc5, 0x53, 0x5c, 0xed, 0x94, 0xc6, 0xcf, 0xe0, 0xe1, 0x08, 0x4e, 0x96, 0x74, 0x94, 0x18,
+	0xa6, 0x8a, 0x5e, 0x97, 0x1f, 0xf6, 0x4b, 0x13, 0x1f, 0xf6, 0xcb, 0xe9, 0x87, 0x7d, 0xe3, 0x7f,
+	0x4a, 0x2a, 0xa6, 0xa3, 0x6f, 0x88, 0xcd, 0x5d, 0x51, 0x56, 0xb7, 0x2e, 0x4e, 0xbb, 0x5c, 0x15,
+	0x9d, 0x0d, 0xe3, 0xe3, 0xdb, 0x3f, 0x7f, 0x5e, 0xde, 0x44, 0x75, 0x65, 0x48, 0x3f, 0x87, 0xaa,
+	0x09, 0xec, 0x1f, 0x47, 0xc2, 0x90, 0x4a, 0x42, 0x6f, 0x84, 0x47, 0x50, 0x69, 0x13, 0xea, 0xf4,
+	0xf6, 0xdd, 0x60, 0x8f, 0x78, 0xb2, 0xcd, 0x4c, 0xe8, 0x26, 0x27, 0x18, 0x7b, 0xbc, 0xbe, 0xcb,
+	0x0b, 0xd9, 0xe2, 0x6e, 0xe4, 0x3c, 0x62, 0xba, 0x1d, 0xf5, 0xe8, 0xc3, 0xca, 0x05, 0x4b, 0x3c,
+	0xd8, 0x48, 0xc4, 0x8d, 0x89, 0xa7, 0x9e, 0xa8, 0x17, 0x38, 0x71, 0x2b, 0x94, 0xe7, 0x59, 0x79,
+	0x7f, 0x0b, 0xe7, 0xd9, 0x01, 0x71, 0x0f, 0xa0, 0xd7, 0x94, 0x29, 0x09, 0x4e, 0x28, 0xf1, 0xf3,
+	0xac, 0x18, 0x12, 0x1d, 0xa1, 0x71, 0x55, 0x05, 0x5b, 0x4d, 0xf0, 0xef, 0x60, 0x74, 0x5f, 0x64,
+	0x37, 0x3c, 0xb2, 0x63, 0x1b, 0x19, 0x46, 0x24, 0x76, 0xe9, 0x28, 0x96, 0x57, 0x1d, 0x2a, 0xc9,
+	0xf8, 0xa5, 0xd8, 0x9c, 0xc4, 0x75, 0xae, 0xde, 0x1e, 0xbf, 0x90, 0x78, 0x7c, 0xda, 0xad, 0xef,
+	0xc4, 0x7d, 0xc4, 0x7b, 0x93, 0xf7, 0x11, 0xd5, 0xe2, 0xfb, 0x08, 0x2d, 0xbb, 0x8f, 0x78, 0x02,
+	0x35, 0x40, 0x99, 0xe3, 0x91, 0x20, 0xf1, 0xe9, 0xb1, 0xdc, 0xc3, 0x81, 0xb6, 0xc5, 0x49, 0x0c,
+	0x0d, 0x2c, 0xb0, 0x27, 0xf2, 0xdd, 0x7b, 0x1e, 0xde, 0x61, 0x47, 0x54, 0xe2, 0x32, 0x97, 0x8b,
+	0x4b, 0xae, 0x68, 0x57, 0xa6, 0x14, 0x6d, 0xef, 0xaf, 0xba, 0x68, 0x7f, 0x92, 0x45, 0x9d, 0x55,
+	0xed, 0x3f, 0x7f, 0x80, 0x36, 0x50, 0x83, 0x97, 0x7e, 0x57, 0x8d, 0xd1, 0xca, 0xb4, 0x6f, 0x05,
+	0x6a, 0xf1, 0xe7, 0xfb, 0xc5, 0x06, 0x0b, 0x4c, 0x2a, 0xe2, 0x2e, 0x17, 0x51, 0x3d, 0x89, 0x88,
+	0xab, 0x79, 0x11, 0x3d, 0x2e, 0x62, 0xfe, 0x24, 0x22, 0x36, 0x59, 0xb2, 0x7c, 0xeb, 0x2f, 0x6b,
+	0x97, 0x31, 0x5e, 0x2d, 0xab, 0x0b, 0xde, 0x7e, 0xb0, 0x05, 0x6f, 0x4f, 0x2c, 0xf8, 0xef, 0x7e,
+	0xc1, 0x16, 0xfc, 0x94, 0xc2, 0x59, 0x29, 0x2c, 0x9c, 0x3f, 0xaf, 0x73, 0x1f, 0x88, 0xcf, 0x43,
+	0xec, 0x3f, 0x69, 0xc3, 0xf4, 0x1f, 0x72, 0x43, 0xf1, 0x8f, 0xb9, 0x72, 0xfa, 0x8f, 0xb9, 0x73,
+	0xa8, 0x4a, 0x7a, 0x6c, 0x13, 0xe1, 0xe6, 0x54, 0x48, 0x0f, 0x36, 0x91, 0x0d, 0x54, 0x97, 0xd5,
+	0x1d, 0xdc, 0x37, 0x37, 0x65, 0xb7, 0x12, 0x1a, 0x56, 0xaf, 0x71, 0x3e, 0x9e, 0x3d, 0xa2, 0xfa,
+	0x83, 0x1b, 0x7f, 0x50, 0x45, 0x75, 0x65, 0x8c, 0x69, 0x8a, 0x7b, 0x8e, 0x2f, 0x8f, 0x7c, 0x15,
+	0x12, 0xf7, 0x76, 0xbc, 0x7c, 0x83, 0x5a, 0x1e, 0x6b, 0x50, 0xdb, 0x08, 0xb8, 0x9a, 0x2d, 0xf1,
+	0xaf, 0xb3, 0x95, 0xe9, 0x06, 0x00, 0x07, 0xd7, 0xcf, 0xb9, 0x25, 0xac, 0x2d, 0xfe, 0x76, 0x56,
+	0x0c, 0x6b, 0x2b, 0xb0, 0xb6, 0x80, 0x99, 0xf2, 0x7f, 0x67, 0x85, 0x30, 0xd3, 0xce, 0x60, 0xa6,
+	0x2d, 0x60, 0x56, 0x13, 0x2f, 0x7e, 0x3e, 0xcc, 0x6a, 0x66, 0x30, 0xf6, 0x25, 0x92, 0x3d, 0x98,
+	0x78, 0xe9, 0x04, 0x30, 0x53, 0xc2, 0x2c, 0x7c, 0x6a, 0x06, 0xcc, 0x52, 0x60, 0x96, 0x84, 0xd9,
+	0xf8, 0xf4, 0x09, 0x60, 0xe9, 0xdc, 0x5a, 0xf8, 0xcc, 0x09, 0x60, 0x32, 0x00, 0x56, 0x1b, 0xeb,
+	0x33, 0x60, 0x4a, 0x00, 0x2c, 0x19, 0x00, 0x6b, 0x0d, 0x3f, 0x7c, 0x02, 0xd8, 0x9a, 0x84, 0xad,
+	0xe3, 0xb3, 0x27, 0x80, 0xad, 0x4b, 0xd8, 0x15, 0x7c, 0xee, 0x04, 0xb0, 0x2b, 0x12, 0xd6, 0xc1,
+	0x7f, 0x73, 0x02, 0x58, 0x47, 0xc0, 0xec, 0x26, 0x7e, 0xe4, 0xc1, 0x61, 0x76, 0x73, 0x79, 0x1b,
+	0xa1, 0x2c, 0xbf, 0xd3, 0x1b, 0xa2, 0xb4, 0x89, 0x4c, 0x6f, 0x88, 0x44, 0x4f, 0xa8, 0x14, 0x91,
+	0xb2, 0x5a, 0x44, 0x96, 0x5f, 0xe1, 0x72, 0xb8, 0xf0, 0x3f, 0xd1, 0x0d, 0xc4, 0xdf, 0xe5, 0x9a,
+	0xe8, 0x70, 0x14, 0xf7, 0xe4, 0x1d, 0x84, 0xd2, 0x40, 0x33, 0xf2, 0xf2, 0x73, 0x4c, 0xbd, 0x58,
+	0x38, 0x30, 0x0d, 0x79, 0xb5, 0x79, 0x1c, 0x11, 0x39, 0x0d, 0x71, 0xb3, 0x79, 0x1c, 0x91, 0xe5,
+	0x2f, 0x95, 0x18, 0xbf, 0x48, 0xfd, 0x99, 0xfc, 0xac, 0x57, 0x15, 0x25, 0x32, 0x9d, 0x79, 0x4d,
+	0x50, 0x6e, 0x84, 0xec, 0xd2, 0x49, 0x0c, 0xb3, 0xbb, 0x29, 0x61, 0x65, 0x43, 0x10, 0xaf, 0x03,
+	0x0d, 0x8e, 0x1f, 0xe3, 0x65, 0x96, 0x6f, 0x44, 0x63, 0x25, 0x76, 0x79, 0x93, 0xdb, 0x66, 0x3d,
+	0xa0, 0x6d, 0x53, 0xbf, 0x1e, 0x88, 0xb8, 0x8a, 0x60, 0xcf, 0x16, 0x52, 0x14, 0x57, 0xe3, 0xdf,
+	0xf9, 0x31, 0x43, 0x7e, 0x2e, 0x67, 0x1b, 0x4c, 0x42, 0x1d, 0xf6, 0x4f, 0x60, 0xb9, 0x3d, 0x25,
+	0x74, 0xc3, 0xf3, 0xd8, 0x0e, 0x0a, 0x43, 0xe2, 0x23, 0xb3, 0x99, 0x6e, 0x4f, 0x09, 0x15, 0x9f,
+	0x98, 0xcd, 0x31, 0x16, 0x4b, 0xf8, 0x49, 0x61, 0xb1, 0xa4, 0x02, 0xb1, 0x2d, 0xf0, 0x0f, 0x70,
+	0x09, 0x85, 0x59, 0x18, 0x6f, 0xe7, 0x6c, 0xe9, 0x40, 0xc5, 0xef, 0xd3, 0x48, 0x7e, 0x3d, 0xd6,
+	0xba, 0x95, 0x3e, 0x8d, 0x76, 0x22, 0x90, 0x00, 0x64, 0xe5, 0xdb, 0xf1, 0x7c, 0x9f, 0xf2, 0x8f,
+	0xbf, 0x62, 0x88, 0x7d, 0xee, 0xe5, 0x57, 0x40, 0x30, 0x74, 0x27, 0x21, 0x31, 0x78, 0x80, 0xa1,
+	0x8e, 0x3c, 0xa1, 0x16, 0x64, 0xef, 0x1e, 0x79, 0x72, 0xc0, 0xf3, 0x63, 0x71, 0xdd, 0x03, 0x03,
+	0x5b, 0x7e, 0x2c, 0x85, 0xf5, 0xfd, 0x01, 0x11, 0xd7, 0x3c, 0xc0, 0xb8, 0xed, 0x0f, 0x88, 0xf1,
+	0x31, 0xbf, 0x93, 0x4d, 0xff, 0x64, 0xa0, 0x5f, 0x46, 0xa7, 0xd5, 0xfb, 0x27, 0x47, 0xde, 0x4c,
+	0xd6, 0xba, 0x4b, 0xca, 0x1d, 0xd4, 0xcd, 0x81, 0xa7, 0x3f, 0x83, 0xce, 0xe4, 0xae, 0xa1, 0x18,
+	0x6b, 0x59, 0x64, 0xbd, 0x72, 0x15, 0x05, 0xbc, 0xe3, 0x52, 0x03, 0x72, 0x24, 0xa6, 0xa5, 0x4a,
+	0xbd, 0x41, 0x8e, 0x26, 0xa5, 0x02, 0xeb, 0xdc, 0xa4, 0x54, 0xe0, 0x3d, 0x8f, 0x90, 0x47, 0x9d,
+	0x51, 0xb4, 0x17, 0xbb, 0x1e, 0x61, 0x73, 0xd6, 0xba, 0x35, 0x8f, 0xde, 0xe1, 0x04, 0x16, 0x20,
+	0x72, 0xc8, 0x13, 0x49, 0x4c, 0xdb, 0x23, 0x87, 0x90, 0x45, 0x57, 0x97, 0xdf, 0xf9, 0xf0, 0x42,
+	0xe9, 0xfd, 0x0f, 0x2f, 0x94, 0x7e, 0xfa, 0xe1, 0x85, 0xd2, 0x6b, 0x1f, 0x5d, 0x78, 0xe8, 0xfd,
+	0x8f, 0x2e, 0x3c, 0xf4, 0xc1, 0x47, 0x17, 0x1e, 0x7a, 0xb1, 0x74, 0xb7, 0xca, 0xfe, 0x70, 0x6f,
+	0xff, 0x21, 0x00, 0x00, 0xff, 0xff, 0x41, 0x73, 0x7b, 0x7e, 0x82, 0x2f, 0x00, 0x00,
 }
 
 func (m *UnitIdentification) Marshal() (dAtA []byte, err error) {
@@ -4802,20 +5359,6 @@ func (m *WlstGBOpen) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		dAtA[i] = 0x32
 		i--
 		dAtA[i] = 0x82
-	}
-	if m.Afn0EP0F2 != nil {
-		{
-			size, err := m.Afn0EP0F2.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintMsgWlst(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x2b
-		i--
-		dAtA[i] = 0xea
 	}
 	if m.Afn0EP0F1 != nil {
 		{
@@ -5617,21 +6160,21 @@ func (m *Afn00_P0_F3) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	var l int
 	_ = l
 	if len(m.Status) > 0 {
-		dAtA61 := make([]byte, len(m.Status)*10)
-		var j60 int
+		dAtA60 := make([]byte, len(m.Status)*10)
+		var j59 int
 		for _, num1 := range m.Status {
 			num := uint64(num1)
 			for num >= 1<<7 {
-				dAtA61[j60] = uint8(uint64(num)&0x7f | 0x80)
+				dAtA60[j59] = uint8(uint64(num)&0x7f | 0x80)
 				num >>= 7
-				j60++
+				j59++
 			}
-			dAtA61[j60] = uint8(num)
-			j60++
+			dAtA60[j59] = uint8(num)
+			j59++
 		}
-		i -= j60
-		copy(dAtA[i:], dAtA61[:j60])
-		i = encodeVarintMsgWlst(dAtA, i, uint64(j60))
+		i -= j59
+		copy(dAtA[i:], dAtA60[:j59])
+		i = encodeVarintMsgWlst(dAtA, i, uint64(j59))
 		i--
 		dAtA[i] = 0x1a
 	}
@@ -5683,21 +6226,21 @@ func (m *Afn04_P0_F1) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		dAtA[i] = 0x30
 	}
 	if len(m.ReportMark) > 0 {
-		dAtA63 := make([]byte, len(m.ReportMark)*10)
-		var j62 int
+		dAtA62 := make([]byte, len(m.ReportMark)*10)
+		var j61 int
 		for _, num1 := range m.ReportMark {
 			num := uint64(num1)
 			for num >= 1<<7 {
-				dAtA63[j62] = uint8(uint64(num)&0x7f | 0x80)
+				dAtA62[j61] = uint8(uint64(num)&0x7f | 0x80)
 				num >>= 7
-				j62++
+				j61++
 			}
-			dAtA63[j62] = uint8(num)
-			j62++
+			dAtA62[j61] = uint8(num)
+			j61++
 		}
-		i -= j62
-		copy(dAtA[i:], dAtA63[:j62])
-		i = encodeVarintMsgWlst(dAtA, i, uint64(j62))
+		i -= j61
+		copy(dAtA[i:], dAtA62[:j61])
+		i = encodeVarintMsgWlst(dAtA, i, uint64(j61))
 		i--
 		dAtA[i] = 0x2a
 	}
@@ -5813,40 +6356,40 @@ func (m *Afn04_P0_F9) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	var l int
 	_ = l
 	if len(m.EventsReport) > 0 {
-		dAtA65 := make([]byte, len(m.EventsReport)*10)
-		var j64 int
+		dAtA64 := make([]byte, len(m.EventsReport)*10)
+		var j63 int
 		for _, num1 := range m.EventsReport {
 			num := uint64(num1)
 			for num >= 1<<7 {
-				dAtA65[j64] = uint8(uint64(num)&0x7f | 0x80)
+				dAtA64[j63] = uint8(uint64(num)&0x7f | 0x80)
 				num >>= 7
-				j64++
+				j63++
 			}
-			dAtA65[j64] = uint8(num)
-			j64++
+			dAtA64[j63] = uint8(num)
+			j63++
 		}
-		i -= j64
-		copy(dAtA[i:], dAtA65[:j64])
-		i = encodeVarintMsgWlst(dAtA, i, uint64(j64))
+		i -= j63
+		copy(dAtA[i:], dAtA64[:j63])
+		i = encodeVarintMsgWlst(dAtA, i, uint64(j63))
 		i--
 		dAtA[i] = 0x12
 	}
 	if len(m.EventsAvailable) > 0 {
-		dAtA67 := make([]byte, len(m.EventsAvailable)*10)
-		var j66 int
+		dAtA66 := make([]byte, len(m.EventsAvailable)*10)
+		var j65 int
 		for _, num1 := range m.EventsAvailable {
 			num := uint64(num1)
 			for num >= 1<<7 {
-				dAtA67[j66] = uint8(uint64(num)&0x7f | 0x80)
+				dAtA66[j65] = uint8(uint64(num)&0x7f | 0x80)
 				num >>= 7
-				j66++
+				j65++
 			}
-			dAtA67[j66] = uint8(num)
-			j66++
+			dAtA66[j65] = uint8(num)
+			j65++
 		}
-		i -= j66
-		copy(dAtA[i:], dAtA67[:j66])
-		i = encodeVarintMsgWlst(dAtA, i, uint64(j66))
+		i -= j65
+		copy(dAtA[i:], dAtA66[:j65])
+		i = encodeVarintMsgWlst(dAtA, i, uint64(j65))
 		i--
 		dAtA[i] = 0xa
 	}
@@ -5874,40 +6417,40 @@ func (m *Afn04_P0_F10) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	var l int
 	_ = l
 	if len(m.SwitchinHopping) > 0 {
-		dAtA69 := make([]byte, len(m.SwitchinHopping)*10)
-		var j68 int
+		dAtA68 := make([]byte, len(m.SwitchinHopping)*10)
+		var j67 int
 		for _, num1 := range m.SwitchinHopping {
 			num := uint64(num1)
 			for num >= 1<<7 {
-				dAtA69[j68] = uint8(uint64(num)&0x7f | 0x80)
+				dAtA68[j67] = uint8(uint64(num)&0x7f | 0x80)
 				num >>= 7
-				j68++
+				j67++
 			}
-			dAtA69[j68] = uint8(num)
-			j68++
+			dAtA68[j67] = uint8(num)
+			j67++
 		}
-		i -= j68
-		copy(dAtA[i:], dAtA69[:j68])
-		i = encodeVarintMsgWlst(dAtA, i, uint64(j68))
+		i -= j67
+		copy(dAtA[i:], dAtA68[:j67])
+		i = encodeVarintMsgWlst(dAtA, i, uint64(j67))
 		i--
 		dAtA[i] = 0x12
 	}
 	if len(m.SwitchinAvailable) > 0 {
-		dAtA71 := make([]byte, len(m.SwitchinAvailable)*10)
-		var j70 int
+		dAtA70 := make([]byte, len(m.SwitchinAvailable)*10)
+		var j69 int
 		for _, num1 := range m.SwitchinAvailable {
 			num := uint64(num1)
 			for num >= 1<<7 {
-				dAtA71[j70] = uint8(uint64(num)&0x7f | 0x80)
+				dAtA70[j69] = uint8(uint64(num)&0x7f | 0x80)
 				num >>= 7
-				j70++
+				j69++
 			}
-			dAtA71[j70] = uint8(num)
-			j70++
+			dAtA70[j69] = uint8(num)
+			j69++
 		}
-		i -= j70
-		copy(dAtA[i:], dAtA71[:j70])
-		i = encodeVarintMsgWlst(dAtA, i, uint64(j70))
+		i -= j69
+		copy(dAtA[i:], dAtA70[:j69])
+		i = encodeVarintMsgWlst(dAtA, i, uint64(j69))
 		i--
 		dAtA[i] = 0xa
 	}
@@ -6002,6 +6545,48 @@ func (m *Afn04_Pn_F15) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	_ = i
 	var l int
 	_ = l
+	if len(m.PnData) > 0 {
+		for iNdEx := len(m.PnData) - 1; iNdEx >= 0; iNdEx-- {
+			{
+				size, err := m.PnData[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				if err != nil {
+					return 0, err
+				}
+				i -= size
+				i = encodeVarintMsgWlst(dAtA, i, uint64(size))
+			}
+			i--
+			dAtA[i] = 0xa
+		}
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *Afn04_Pn_F15_Pn_Data) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *Afn04_Pn_F15_Pn_Data) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *Afn04_Pn_F15_Pn_Data) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.Pno != 0 {
+		i = encodeVarintMsgWlst(dAtA, i, uint64(m.Pno))
+		i--
+		dAtA[i] = 0x28
+	}
 	if len(m.TimeSlot) > 0 {
 		for iNdEx := len(m.TimeSlot) - 1; iNdEx >= 0; iNdEx-- {
 			{
@@ -6016,22 +6601,22 @@ func (m *Afn04_Pn_F15) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 			dAtA[i] = 0x22
 		}
 	}
-	if len(m.SwitchoutIndx) > 0 {
-		dAtA73 := make([]byte, len(m.SwitchoutIndx)*10)
-		var j72 int
-		for _, num1 := range m.SwitchoutIndx {
+	if len(m.SwitchoutNo) > 0 {
+		dAtA72 := make([]byte, len(m.SwitchoutNo)*10)
+		var j71 int
+		for _, num1 := range m.SwitchoutNo {
 			num := uint64(num1)
 			for num >= 1<<7 {
-				dAtA73[j72] = uint8(uint64(num)&0x7f | 0x80)
+				dAtA72[j71] = uint8(uint64(num)&0x7f | 0x80)
 				num >>= 7
-				j72++
+				j71++
 			}
-			dAtA73[j72] = uint8(num)
-			j72++
+			dAtA72[j71] = uint8(num)
+			j71++
 		}
-		i -= j72
-		copy(dAtA[i:], dAtA73[:j72])
-		i = encodeVarintMsgWlst(dAtA, i, uint64(j72))
+		i -= j71
+		copy(dAtA[i:], dAtA72[:j71])
+		i = encodeVarintMsgWlst(dAtA, i, uint64(j71))
 		i--
 		dAtA[i] = 0x1a
 	}
@@ -6040,10 +6625,12 @@ func (m *Afn04_Pn_F15) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0x10
 	}
-	if m.DtStart != 0 {
-		i = encodeVarintMsgWlst(dAtA, i, uint64(m.DtStart))
+	if len(m.DtStart) > 0 {
+		i -= len(m.DtStart)
+		copy(dAtA[i:], m.DtStart)
+		i = encodeVarintMsgWlst(dAtA, i, uint64(len(m.DtStart)))
 		i--
-		dAtA[i] = 0x8
+		dAtA[i] = 0xa
 	}
 	return len(dAtA) - i, nil
 }
@@ -6102,21 +6689,21 @@ func (m *Afn04_P0_F41) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	var l int
 	_ = l
 	if len(m.SwitchoutLoops) > 0 {
-		dAtA75 := make([]byte, len(m.SwitchoutLoops)*10)
-		var j74 int
+		dAtA74 := make([]byte, len(m.SwitchoutLoops)*10)
+		var j73 int
 		for _, num1 := range m.SwitchoutLoops {
 			num := uint64(num1)
 			for num >= 1<<7 {
-				dAtA75[j74] = uint8(uint64(num)&0x7f | 0x80)
+				dAtA74[j73] = uint8(uint64(num)&0x7f | 0x80)
 				num >>= 7
-				j74++
+				j73++
 			}
-			dAtA75[j74] = uint8(num)
-			j74++
+			dAtA74[j73] = uint8(num)
+			j73++
 		}
-		i -= j74
-		copy(dAtA[i:], dAtA75[:j74])
-		i = encodeVarintMsgWlst(dAtA, i, uint64(j74))
+		i -= j73
+		copy(dAtA[i:], dAtA74[:j73])
+		i = encodeVarintMsgWlst(dAtA, i, uint64(j73))
 		i--
 		dAtA[i] = 0xa
 	}
@@ -6233,208 +6820,103 @@ func (m *Afn04_P0_F46) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	_ = i
 	var l int
 	_ = l
-	if m.WeekDay7 != nil {
-		{
-			size, err := m.WeekDay7.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
+	if len(m.WeekDay7) > 0 {
+		for iNdEx := len(m.WeekDay7) - 1; iNdEx >= 0; iNdEx-- {
+			{
+				size, err := m.WeekDay7[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				if err != nil {
+					return 0, err
+				}
+				i -= size
+				i = encodeVarintMsgWlst(dAtA, i, uint64(size))
 			}
-			i -= size
-			i = encodeVarintMsgWlst(dAtA, i, uint64(size))
+			i--
+			dAtA[i] = 0x3a
 		}
-		i--
-		dAtA[i] = 0x3a
 	}
-	if m.WeekDay6 != nil {
-		{
-			size, err := m.WeekDay6.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
+	if len(m.WeekDay6) > 0 {
+		for iNdEx := len(m.WeekDay6) - 1; iNdEx >= 0; iNdEx-- {
+			{
+				size, err := m.WeekDay6[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				if err != nil {
+					return 0, err
+				}
+				i -= size
+				i = encodeVarintMsgWlst(dAtA, i, uint64(size))
 			}
-			i -= size
-			i = encodeVarintMsgWlst(dAtA, i, uint64(size))
+			i--
+			dAtA[i] = 0x32
 		}
-		i--
-		dAtA[i] = 0x32
 	}
-	if m.WeekDay5 != nil {
-		{
-			size, err := m.WeekDay5.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
+	if len(m.WeekDay5) > 0 {
+		for iNdEx := len(m.WeekDay5) - 1; iNdEx >= 0; iNdEx-- {
+			{
+				size, err := m.WeekDay5[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				if err != nil {
+					return 0, err
+				}
+				i -= size
+				i = encodeVarintMsgWlst(dAtA, i, uint64(size))
 			}
-			i -= size
-			i = encodeVarintMsgWlst(dAtA, i, uint64(size))
+			i--
+			dAtA[i] = 0x2a
 		}
-		i--
-		dAtA[i] = 0x2a
 	}
-	if m.WeekDay4 != nil {
-		{
-			size, err := m.WeekDay4.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
+	if len(m.WeekDay4) > 0 {
+		for iNdEx := len(m.WeekDay4) - 1; iNdEx >= 0; iNdEx-- {
+			{
+				size, err := m.WeekDay4[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				if err != nil {
+					return 0, err
+				}
+				i -= size
+				i = encodeVarintMsgWlst(dAtA, i, uint64(size))
 			}
-			i -= size
-			i = encodeVarintMsgWlst(dAtA, i, uint64(size))
+			i--
+			dAtA[i] = 0x22
 		}
-		i--
-		dAtA[i] = 0x22
 	}
-	if m.WeekDay3 != nil {
-		{
-			size, err := m.WeekDay3.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
+	if len(m.WeekDay3) > 0 {
+		for iNdEx := len(m.WeekDay3) - 1; iNdEx >= 0; iNdEx-- {
+			{
+				size, err := m.WeekDay3[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				if err != nil {
+					return 0, err
+				}
+				i -= size
+				i = encodeVarintMsgWlst(dAtA, i, uint64(size))
 			}
-			i -= size
-			i = encodeVarintMsgWlst(dAtA, i, uint64(size))
+			i--
+			dAtA[i] = 0x1a
 		}
-		i--
-		dAtA[i] = 0x1a
 	}
-	if m.WeekDay2 != nil {
-		{
-			size, err := m.WeekDay2.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
+	if len(m.WeekDay2) > 0 {
+		for iNdEx := len(m.WeekDay2) - 1; iNdEx >= 0; iNdEx-- {
+			{
+				size, err := m.WeekDay2[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				if err != nil {
+					return 0, err
+				}
+				i -= size
+				i = encodeVarintMsgWlst(dAtA, i, uint64(size))
 			}
-			i -= size
-			i = encodeVarintMsgWlst(dAtA, i, uint64(size))
+			i--
+			dAtA[i] = 0x12
 		}
-		i--
-		dAtA[i] = 0x12
 	}
-	if m.WeekDay1 != nil {
-		{
-			size, err := m.WeekDay1.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
+	if len(m.WeekDay1) > 0 {
+		for iNdEx := len(m.WeekDay1) - 1; iNdEx >= 0; iNdEx-- {
+			{
+				size, err := m.WeekDay1[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				if err != nil {
+					return 0, err
+				}
+				i -= size
+				i = encodeVarintMsgWlst(dAtA, i, uint64(size))
 			}
-			i -= size
-			i = encodeVarintMsgWlst(dAtA, i, uint64(size))
+			i--
+			dAtA[i] = 0xa
 		}
-		i--
-		dAtA[i] = 0xa
-	}
-	return len(dAtA) - i, nil
-}
-
-func (m *Afn04_P0_F46_Week_Slot) Marshal() (dAtA []byte, err error) {
-	size := m.Size()
-	dAtA = make([]byte, size)
-	n, err := m.MarshalToSizedBuffer(dAtA[:size])
-	if err != nil {
-		return nil, err
-	}
-	return dAtA[:n], nil
-}
-
-func (m *Afn04_P0_F46_Week_Slot) MarshalTo(dAtA []byte) (int, error) {
-	size := m.Size()
-	return m.MarshalToSizedBuffer(dAtA[:size])
-}
-
-func (m *Afn04_P0_F46_Week_Slot) MarshalToSizedBuffer(dAtA []byte) (int, error) {
-	i := len(dAtA)
-	_ = i
-	var l int
-	_ = l
-	if m.K8 != nil {
-		{
-			size, err := m.K8.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintMsgWlst(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x42
-	}
-	if m.K7 != nil {
-		{
-			size, err := m.K7.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintMsgWlst(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x3a
-	}
-	if m.K6 != nil {
-		{
-			size, err := m.K6.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintMsgWlst(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x32
-	}
-	if m.K5 != nil {
-		{
-			size, err := m.K5.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintMsgWlst(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x2a
-	}
-	if m.K4 != nil {
-		{
-			size, err := m.K4.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintMsgWlst(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x22
-	}
-	if m.K3 != nil {
-		{
-			size, err := m.K3.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintMsgWlst(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x1a
-	}
-	if m.K2 != nil {
-		{
-			size, err := m.K2.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintMsgWlst(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0x12
-	}
-	if m.K1 != nil {
-		{
-			size, err := m.K1.MarshalToSizedBuffer(dAtA[:i])
-			if err != nil {
-				return 0, err
-			}
-			i -= size
-			i = encodeVarintMsgWlst(dAtA, i, uint64(size))
-		}
-		i--
-		dAtA[i] = 0xa
 	}
 	return len(dAtA) - i, nil
 }
@@ -6771,21 +7253,21 @@ func (m *Afn04_P0_F57) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	var l int
 	_ = l
 	if len(m.LoopMark) > 0 {
-		dAtA92 := make([]byte, len(m.LoopMark)*10)
-		var j91 int
+		dAtA76 := make([]byte, len(m.LoopMark)*10)
+		var j75 int
 		for _, num1 := range m.LoopMark {
 			num := uint64(num1)
 			for num >= 1<<7 {
-				dAtA92[j91] = uint8(uint64(num)&0x7f | 0x80)
+				dAtA76[j75] = uint8(uint64(num)&0x7f | 0x80)
 				num >>= 7
-				j91++
+				j75++
 			}
-			dAtA92[j91] = uint8(num)
-			j91++
+			dAtA76[j75] = uint8(num)
+			j75++
 		}
-		i -= j91
-		copy(dAtA[i:], dAtA92[:j91])
-		i = encodeVarintMsgWlst(dAtA, i, uint64(j91))
+		i -= j75
+		copy(dAtA[i:], dAtA76[:j75])
+		i = encodeVarintMsgWlst(dAtA, i, uint64(j75))
 		i--
 		dAtA[i] = 0x12
 	}
@@ -6817,6 +7299,20 @@ func (m *Afn05_P0_F1) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	_ = i
 	var l int
 	_ = l
+	if len(m.SwitchoutCtrl) > 0 {
+		for iNdEx := len(m.SwitchoutCtrl) - 1; iNdEx >= 0; iNdEx-- {
+			{
+				size, err := m.SwitchoutCtrl[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				if err != nil {
+					return 0, err
+				}
+				i -= size
+				i = encodeVarintMsgWlst(dAtA, i, uint64(size))
+			}
+			i--
+			dAtA[i] = 0xa
+		}
+	}
 	return len(dAtA) - i, nil
 }
 
@@ -6850,8 +7346,8 @@ func (m *Afn05_P0_F1_Switchout_Ctrl) MarshalToSizedBuffer(dAtA []byte) (int, err
 		i--
 		dAtA[i] = 0x10
 	}
-	if m.SwitchoutIndx != 0 {
-		i = encodeVarintMsgWlst(dAtA, i, uint64(m.SwitchoutIndx))
+	if m.SwitchoutNo != 0 {
+		i = encodeVarintMsgWlst(dAtA, i, uint64(m.SwitchoutNo))
 		i--
 		dAtA[i] = 0x8
 	}
@@ -6879,21 +7375,21 @@ func (m *Afn05_P0_F9) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	var l int
 	_ = l
 	if len(m.LoopMark) > 0 {
-		dAtA94 := make([]byte, len(m.LoopMark)*10)
-		var j93 int
+		dAtA78 := make([]byte, len(m.LoopMark)*10)
+		var j77 int
 		for _, num1 := range m.LoopMark {
 			num := uint64(num1)
 			for num >= 1<<7 {
-				dAtA94[j93] = uint8(uint64(num)&0x7f | 0x80)
+				dAtA78[j77] = uint8(uint64(num)&0x7f | 0x80)
 				num >>= 7
-				j93++
+				j77++
 			}
-			dAtA94[j93] = uint8(num)
-			j93++
+			dAtA78[j77] = uint8(num)
+			j77++
 		}
-		i -= j93
-		copy(dAtA[i:], dAtA94[:j93])
-		i = encodeVarintMsgWlst(dAtA, i, uint64(j93))
+		i -= j77
+		copy(dAtA[i:], dAtA78[:j77])
+		i = encodeVarintMsgWlst(dAtA, i, uint64(j77))
 		i--
 		dAtA[i] = 0xa
 	}
@@ -6948,12 +7444,10 @@ func (m *Afn09_P0_F1) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	_ = i
 	var l int
 	_ = l
-	if len(m.LocalComDate) > 0 {
-		i -= len(m.LocalComDate)
-		copy(dAtA[i:], m.LocalComDate)
-		i = encodeVarintMsgWlst(dAtA, i, uint64(len(m.LocalComDate)))
+	if m.LocalComDate != 0 {
+		i = encodeVarintMsgWlst(dAtA, i, uint64(m.LocalComDate))
 		i--
-		dAtA[i] = 0x5a
+		dAtA[i] = 0x58
 	}
 	if len(m.LocalComVer) > 0 {
 		i -= len(m.LocalComVer)
@@ -6962,12 +7456,10 @@ func (m *Afn09_P0_F1) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0x52
 	}
-	if len(m.RemoteComDate) > 0 {
-		i -= len(m.RemoteComDate)
-		copy(dAtA[i:], m.RemoteComDate)
-		i = encodeVarintMsgWlst(dAtA, i, uint64(len(m.RemoteComDate)))
+	if m.RemoteComDate != 0 {
+		i = encodeVarintMsgWlst(dAtA, i, uint64(m.RemoteComDate))
 		i--
-		dAtA[i] = 0x4a
+		dAtA[i] = 0x48
 	}
 	if len(m.RemoteComVer) > 0 {
 		i -= len(m.RemoteComVer)
@@ -6976,12 +7468,10 @@ func (m *Afn09_P0_F1) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0x42
 	}
-	if len(m.HardwareDate) > 0 {
-		i -= len(m.HardwareDate)
-		copy(dAtA[i:], m.HardwareDate)
-		i = encodeVarintMsgWlst(dAtA, i, uint64(len(m.HardwareDate)))
+	if m.HardwareDate != 0 {
+		i = encodeVarintMsgWlst(dAtA, i, uint64(m.HardwareDate))
 		i--
-		dAtA[i] = 0x3a
+		dAtA[i] = 0x38
 	}
 	if len(m.HardwareVer) > 0 {
 		i -= len(m.HardwareVer)
@@ -6997,12 +7487,10 @@ func (m *Afn09_P0_F1) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0x2a
 	}
-	if len(m.SoftwareDate) > 0 {
-		i -= len(m.SoftwareDate)
-		copy(dAtA[i:], m.SoftwareDate)
-		i = encodeVarintMsgWlst(dAtA, i, uint64(len(m.SoftwareDate)))
+	if m.SoftwareDate != 0 {
+		i = encodeVarintMsgWlst(dAtA, i, uint64(m.SoftwareDate))
 		i--
-		dAtA[i] = 0x22
+		dAtA[i] = 0x20
 	}
 	if len(m.SoftwareVer) > 0 {
 		i -= len(m.SoftwareVer)
@@ -7320,21 +7808,21 @@ func (m *Afn0C_P0_F6) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	var l int
 	_ = l
 	if len(m.SwitchoutStatus) > 0 {
-		dAtA96 := make([]byte, len(m.SwitchoutStatus)*10)
-		var j95 int
+		dAtA80 := make([]byte, len(m.SwitchoutStatus)*10)
+		var j79 int
 		for _, num1 := range m.SwitchoutStatus {
 			num := uint64(num1)
 			for num >= 1<<7 {
-				dAtA96[j95] = uint8(uint64(num)&0x7f | 0x80)
+				dAtA80[j79] = uint8(uint64(num)&0x7f | 0x80)
 				num >>= 7
-				j95++
+				j79++
 			}
-			dAtA96[j95] = uint8(num)
-			j95++
+			dAtA80[j79] = uint8(num)
+			j79++
 		}
-		i -= j95
-		copy(dAtA[i:], dAtA96[:j95])
-		i = encodeVarintMsgWlst(dAtA, i, uint64(j95))
+		i -= j79
+		copy(dAtA[i:], dAtA80[:j79])
+		i = encodeVarintMsgWlst(dAtA, i, uint64(j79))
 		i--
 		dAtA[i] = 0xa
 	}
@@ -7465,21 +7953,21 @@ func (m *Afn0C_P0_F18) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	var l int
 	_ = l
 	if len(m.EventsDo) > 0 {
-		dAtA98 := make([]byte, len(m.EventsDo)*10)
-		var j97 int
+		dAtA82 := make([]byte, len(m.EventsDo)*10)
+		var j81 int
 		for _, num1 := range m.EventsDo {
 			num := uint64(num1)
 			for num >= 1<<7 {
-				dAtA98[j97] = uint8(uint64(num)&0x7f | 0x80)
+				dAtA82[j81] = uint8(uint64(num)&0x7f | 0x80)
 				num >>= 7
-				j97++
+				j81++
 			}
-			dAtA98[j97] = uint8(num)
-			j97++
+			dAtA82[j81] = uint8(num)
+			j81++
 		}
-		i -= j97
-		copy(dAtA[i:], dAtA98[:j97])
-		i = encodeVarintMsgWlst(dAtA, i, uint64(j97))
+		i -= j81
+		copy(dAtA[i:], dAtA82[:j81])
+		i = encodeVarintMsgWlst(dAtA, i, uint64(j81))
 		i--
 		dAtA[i] = 0x1a
 	}
@@ -7518,9 +8006,9 @@ func (m *Afn0C_P0_F19) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	_ = l
 	if len(m.LeakageCurrent) > 0 {
 		for iNdEx := len(m.LeakageCurrent) - 1; iNdEx >= 0; iNdEx-- {
-			f99 := math.Float64bits(float64(m.LeakageCurrent[iNdEx]))
+			f83 := math.Float64bits(float64(m.LeakageCurrent[iNdEx]))
 			i -= 8
-			encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(f99))
+			encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(f83))
 		}
 		i = encodeVarintMsgWlst(dAtA, i, uint64(len(m.LeakageCurrent)*8))
 		i--
@@ -7584,6 +8072,48 @@ func (m *Afn0D_Pn_F1) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	_ = i
 	var l int
 	_ = l
+	if len(m.PnData) > 0 {
+		for iNdEx := len(m.PnData) - 1; iNdEx >= 0; iNdEx-- {
+			{
+				size, err := m.PnData[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				if err != nil {
+					return 0, err
+				}
+				i -= size
+				i = encodeVarintMsgWlst(dAtA, i, uint64(size))
+			}
+			i--
+			dAtA[i] = 0xa
+		}
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *Afn0D_Pn_F1_Pn_Data) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *Afn0D_Pn_F1_Pn_Data) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *Afn0D_Pn_F1_Pn_Data) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.Pno != 0 {
+		i = encodeVarintMsgWlst(dAtA, i, uint64(m.Pno))
+		i--
+		dAtA[i] = 0x30
+	}
 	if len(m.LoopData) > 0 {
 		for iNdEx := len(m.LoopData) - 1; iNdEx >= 0; iNdEx-- {
 			{
@@ -7844,11 +8374,53 @@ func (m *Afn0D_Pn_F3) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	_ = i
 	var l int
 	_ = l
+	if len(m.PnData) > 0 {
+		for iNdEx := len(m.PnData) - 1; iNdEx >= 0; iNdEx-- {
+			{
+				size, err := m.PnData[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				if err != nil {
+					return 0, err
+				}
+				i -= size
+				i = encodeVarintMsgWlst(dAtA, i, uint64(size))
+			}
+			i--
+			dAtA[i] = 0xa
+		}
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *Afn0D_Pn_F3_Pn_Data) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *Afn0D_Pn_F3_Pn_Data) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *Afn0D_Pn_F3_Pn_Data) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.Pno != 0 {
+		i = encodeVarintMsgWlst(dAtA, i, uint64(m.Pno))
+		i--
+		dAtA[i] = 0x30
+	}
 	if len(m.LeakageCurrent) > 0 {
 		for iNdEx := len(m.LeakageCurrent) - 1; iNdEx >= 0; iNdEx-- {
-			f100 := math.Float64bits(float64(m.LeakageCurrent[iNdEx]))
+			f84 := math.Float64bits(float64(m.LeakageCurrent[iNdEx]))
 			i -= 8
-			encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(f100))
+			encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(f84))
 		}
 		i = encodeVarintMsgWlst(dAtA, i, uint64(len(m.LeakageCurrent)*8))
 		i--
@@ -7949,6 +8521,409 @@ func (m *Afn0E_P0_F1_Events_Data) MarshalToSizedBuffer(dAtA []byte) (int, error)
 	_ = i
 	var l int
 	_ = l
+	if m.Erc30 != nil {
+		{
+			size, err := m.Erc30.MarshalToSizedBuffer(dAtA[:i])
+			if err != nil {
+				return 0, err
+			}
+			i -= size
+			i = encodeVarintMsgWlst(dAtA, i, uint64(size))
+		}
+		i--
+		dAtA[i] = 0x1
+		i--
+		dAtA[i] = 0xba
+	}
+	if m.Erc29 != nil {
+		{
+			size, err := m.Erc29.MarshalToSizedBuffer(dAtA[:i])
+			if err != nil {
+				return 0, err
+			}
+			i -= size
+			i = encodeVarintMsgWlst(dAtA, i, uint64(size))
+		}
+		i--
+		dAtA[i] = 0x1
+		i--
+		dAtA[i] = 0xb2
+	}
+	if m.Erc28 != nil {
+		{
+			size, err := m.Erc28.MarshalToSizedBuffer(dAtA[:i])
+			if err != nil {
+				return 0, err
+			}
+			i -= size
+			i = encodeVarintMsgWlst(dAtA, i, uint64(size))
+		}
+		i--
+		dAtA[i] = 0x1
+		i--
+		dAtA[i] = 0xaa
+	}
+	if m.Erc27 != nil {
+		{
+			size, err := m.Erc27.MarshalToSizedBuffer(dAtA[:i])
+			if err != nil {
+				return 0, err
+			}
+			i -= size
+			i = encodeVarintMsgWlst(dAtA, i, uint64(size))
+		}
+		i--
+		dAtA[i] = 0x1
+		i--
+		dAtA[i] = 0xa2
+	}
+	if m.Erc26 != nil {
+		{
+			size, err := m.Erc26.MarshalToSizedBuffer(dAtA[:i])
+			if err != nil {
+				return 0, err
+			}
+			i -= size
+			i = encodeVarintMsgWlst(dAtA, i, uint64(size))
+		}
+		i--
+		dAtA[i] = 0x1
+		i--
+		dAtA[i] = 0x9a
+	}
+	if m.Erc25 != nil {
+		{
+			size, err := m.Erc25.MarshalToSizedBuffer(dAtA[:i])
+			if err != nil {
+				return 0, err
+			}
+			i -= size
+			i = encodeVarintMsgWlst(dAtA, i, uint64(size))
+		}
+		i--
+		dAtA[i] = 0x1
+		i--
+		dAtA[i] = 0x92
+	}
+	if m.Erc24 != nil {
+		{
+			size, err := m.Erc24.MarshalToSizedBuffer(dAtA[:i])
+			if err != nil {
+				return 0, err
+			}
+			i -= size
+			i = encodeVarintMsgWlst(dAtA, i, uint64(size))
+		}
+		i--
+		dAtA[i] = 0x1
+		i--
+		dAtA[i] = 0x8a
+	}
+	if m.Erc23 != nil {
+		{
+			size, err := m.Erc23.MarshalToSizedBuffer(dAtA[:i])
+			if err != nil {
+				return 0, err
+			}
+			i -= size
+			i = encodeVarintMsgWlst(dAtA, i, uint64(size))
+		}
+		i--
+		dAtA[i] = 0x1
+		i--
+		dAtA[i] = 0x82
+	}
+	if m.Erc22 != nil {
+		{
+			size, err := m.Erc22.MarshalToSizedBuffer(dAtA[:i])
+			if err != nil {
+				return 0, err
+			}
+			i -= size
+			i = encodeVarintMsgWlst(dAtA, i, uint64(size))
+		}
+		i--
+		dAtA[i] = 0x7a
+	}
+	if m.Erc21 != nil {
+		{
+			size, err := m.Erc21.MarshalToSizedBuffer(dAtA[:i])
+			if err != nil {
+				return 0, err
+			}
+			i -= size
+			i = encodeVarintMsgWlst(dAtA, i, uint64(size))
+		}
+		i--
+		dAtA[i] = 0x72
+	}
+	if m.Erc20 != nil {
+		{
+			size, err := m.Erc20.MarshalToSizedBuffer(dAtA[:i])
+			if err != nil {
+				return 0, err
+			}
+			i -= size
+			i = encodeVarintMsgWlst(dAtA, i, uint64(size))
+		}
+		i--
+		dAtA[i] = 0x6a
+	}
+	if m.Erc13 != nil {
+		{
+			size, err := m.Erc13.MarshalToSizedBuffer(dAtA[:i])
+			if err != nil {
+				return 0, err
+			}
+			i -= size
+			i = encodeVarintMsgWlst(dAtA, i, uint64(size))
+		}
+		i--
+		dAtA[i] = 0x62
+	}
+	if m.Erc05 != nil {
+		{
+			size, err := m.Erc05.MarshalToSizedBuffer(dAtA[:i])
+			if err != nil {
+				return 0, err
+			}
+			i -= size
+			i = encodeVarintMsgWlst(dAtA, i, uint64(size))
+		}
+		i--
+		dAtA[i] = 0x5a
+	}
+	if m.Erc04 != nil {
+		{
+			size, err := m.Erc04.MarshalToSizedBuffer(dAtA[:i])
+			if err != nil {
+				return 0, err
+			}
+			i -= size
+			i = encodeVarintMsgWlst(dAtA, i, uint64(size))
+		}
+		i--
+		dAtA[i] = 0x52
+	}
+	if m.DtReport != 0 {
+		i = encodeVarintMsgWlst(dAtA, i, uint64(m.DtReport))
+		i--
+		dAtA[i] = 0x10
+	}
+	if m.ErcId != 0 {
+		i = encodeVarintMsgWlst(dAtA, i, uint64(m.ErcId))
+		i--
+		dAtA[i] = 0x8
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *Afn0E_P0_F1_Erc04_Data) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *Afn0E_P0_F1_Erc04_Data) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *Afn0E_P0_F1_Erc04_Data) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.LoopNo != 0 {
+		i = encodeVarintMsgWlst(dAtA, i, uint64(m.LoopNo))
+		i--
+		dAtA[i] = 0x10
+	}
+	if m.LoopStatus != 0 {
+		i = encodeVarintMsgWlst(dAtA, i, uint64(m.LoopStatus))
+		i--
+		dAtA[i] = 0x8
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *Afn0E_P0_F1_Erc05_Data) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *Afn0E_P0_F1_Erc05_Data) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *Afn0E_P0_F1_Erc05_Data) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.SwitchoutSource != 0 {
+		i = encodeVarintMsgWlst(dAtA, i, uint64(m.SwitchoutSource))
+		i--
+		dAtA[i] = 0x18
+	}
+	if m.SwitchoutDo != 0 {
+		i = encodeVarintMsgWlst(dAtA, i, uint64(m.SwitchoutDo))
+		i--
+		dAtA[i] = 0x10
+	}
+	if m.SwitchoutNo != 0 {
+		i = encodeVarintMsgWlst(dAtA, i, uint64(m.SwitchoutNo))
+		i--
+		dAtA[i] = 0x8
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *Afn0E_P0_F1_Erc13_Data) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *Afn0E_P0_F1_Erc13_Data) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *Afn0E_P0_F1_Erc13_Data) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.ReportType != 0 {
+		i = encodeVarintMsgWlst(dAtA, i, uint64(m.ReportType))
+		i--
+		dAtA[i] = 0x8
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *Afn0E_P0_F1_Erc20_Data) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *Afn0E_P0_F1_Erc20_Data) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *Afn0E_P0_F1_Erc20_Data) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.LeakageCurrent != 0 {
+		i -= 8
+		encoding_binary.LittleEndian.PutUint64(dAtA[i:], uint64(math.Float64bits(float64(m.LeakageCurrent))))
+		i--
+		dAtA[i] = 0x21
+	}
+	if m.LeakageLevel != 0 {
+		i = encodeVarintMsgWlst(dAtA, i, uint64(m.LeakageLevel))
+		i--
+		dAtA[i] = 0x18
+	}
+	if m.LeakageNo != 0 {
+		i = encodeVarintMsgWlst(dAtA, i, uint64(m.LeakageNo))
+		i--
+		dAtA[i] = 0x10
+	}
+	if m.ReportType != 0 {
+		i = encodeVarintMsgWlst(dAtA, i, uint64(m.ReportType))
+		i--
+		dAtA[i] = 0x8
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *Afn0E_P0_F1_Erc22_Data) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *Afn0E_P0_F1_Erc22_Data) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *Afn0E_P0_F1_Erc22_Data) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.Phase != 0 {
+		i = encodeVarintMsgWlst(dAtA, i, uint64(m.Phase))
+		i--
+		dAtA[i] = 0x10
+	}
+	if m.ReportType != 0 {
+		i = encodeVarintMsgWlst(dAtA, i, uint64(m.ReportType))
+		i--
+		dAtA[i] = 0x8
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *Afn0E_P0_F1_Erc25_Data) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *Afn0E_P0_F1_Erc25_Data) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *Afn0E_P0_F1_Erc25_Data) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.LoopNo != 0 {
+		i = encodeVarintMsgWlst(dAtA, i, uint64(m.LoopNo))
+		i--
+		dAtA[i] = 0x10
+	}
+	if m.ReportType != 0 {
+		i = encodeVarintMsgWlst(dAtA, i, uint64(m.ReportType))
+		i--
+		dAtA[i] = 0x8
+	}
 	return len(dAtA) - i, nil
 }
 
@@ -8078,17 +9053,22 @@ func (m *Afn10_P0_F10) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	_ = i
 	var l int
 	_ = l
+	if len(m.DevType) > 0 {
+		i -= len(m.DevType)
+		copy(dAtA[i:], m.DevType)
+		i = encodeVarintMsgWlst(dAtA, i, uint64(len(m.DevType)))
+		i--
+		dAtA[i] = 0x32
+	}
 	if m.DtUpgrade != 0 {
 		i = encodeVarintMsgWlst(dAtA, i, uint64(m.DtUpgrade))
 		i--
 		dAtA[i] = 0x28
 	}
-	if len(m.SoftwareDateNew) > 0 {
-		i -= len(m.SoftwareDateNew)
-		copy(dAtA[i:], m.SoftwareDateNew)
-		i = encodeVarintMsgWlst(dAtA, i, uint64(len(m.SoftwareDateNew)))
+	if m.SoftwareDateNew != 0 {
+		i = encodeVarintMsgWlst(dAtA, i, uint64(m.SoftwareDateNew))
 		i--
-		dAtA[i] = 0x22
+		dAtA[i] = 0x20
 	}
 	if len(m.SoftwareVerNew) > 0 {
 		i -= len(m.SoftwareVerNew)
@@ -8097,12 +9077,10 @@ func (m *Afn10_P0_F10) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0x1a
 	}
-	if len(m.SoftwareDateOld) > 0 {
-		i -= len(m.SoftwareDateOld)
-		copy(dAtA[i:], m.SoftwareDateOld)
-		i = encodeVarintMsgWlst(dAtA, i, uint64(len(m.SoftwareDateOld)))
+	if m.SoftwareDateOld != 0 {
+		i = encodeVarintMsgWlst(dAtA, i, uint64(m.SoftwareDateOld))
 		i--
-		dAtA[i] = 0x12
+		dAtA[i] = 0x10
 	}
 	if len(m.SoftwareVerOld) > 0 {
 		i -= len(m.SoftwareVerOld)
@@ -8409,10 +9387,6 @@ func (m *WlstGBOpen) Size() (n int) {
 		l = m.Afn0EP0F1.Size()
 		n += 2 + l + sovMsgWlst(uint64(l))
 	}
-	if m.Afn0EP0F2 != nil {
-		l = m.Afn0EP0F2.Size()
-		n += 2 + l + sovMsgWlst(uint64(l))
-	}
 	if m.Afn10P0F1 != nil {
 		l = m.Afn10P0F1.Size()
 		n += 2 + l + sovMsgWlst(uint64(l))
@@ -8617,15 +9591,31 @@ func (m *Afn04_Pn_F15) Size() (n int) {
 	}
 	var l int
 	_ = l
-	if m.DtStart != 0 {
-		n += 1 + sovMsgWlst(uint64(m.DtStart))
+	if len(m.PnData) > 0 {
+		for _, e := range m.PnData {
+			l = e.Size()
+			n += 1 + l + sovMsgWlst(uint64(l))
+		}
+	}
+	return n
+}
+
+func (m *Afn04_Pn_F15_Pn_Data) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.DtStart)
+	if l > 0 {
+		n += 1 + l + sovMsgWlst(uint64(l))
 	}
 	if m.DtDays != 0 {
 		n += 1 + sovMsgWlst(uint64(m.DtDays))
 	}
-	if len(m.SwitchoutIndx) > 0 {
+	if len(m.SwitchoutNo) > 0 {
 		l = 0
-		for _, e := range m.SwitchoutIndx {
+		for _, e := range m.SwitchoutNo {
 			l += sovMsgWlst(uint64(e))
 		}
 		n += 1 + sovMsgWlst(uint64(l)) + l
@@ -8635,6 +9625,9 @@ func (m *Afn04_Pn_F15) Size() (n int) {
 			l = e.Size()
 			n += 1 + l + sovMsgWlst(uint64(l))
 		}
+	}
+	if m.Pno != 0 {
+		n += 1 + sovMsgWlst(uint64(m.Pno))
 	}
 	return n
 }
@@ -8718,74 +9711,47 @@ func (m *Afn04_P0_F46) Size() (n int) {
 	}
 	var l int
 	_ = l
-	if m.WeekDay1 != nil {
-		l = m.WeekDay1.Size()
-		n += 1 + l + sovMsgWlst(uint64(l))
+	if len(m.WeekDay1) > 0 {
+		for _, e := range m.WeekDay1 {
+			l = e.Size()
+			n += 1 + l + sovMsgWlst(uint64(l))
+		}
 	}
-	if m.WeekDay2 != nil {
-		l = m.WeekDay2.Size()
-		n += 1 + l + sovMsgWlst(uint64(l))
+	if len(m.WeekDay2) > 0 {
+		for _, e := range m.WeekDay2 {
+			l = e.Size()
+			n += 1 + l + sovMsgWlst(uint64(l))
+		}
 	}
-	if m.WeekDay3 != nil {
-		l = m.WeekDay3.Size()
-		n += 1 + l + sovMsgWlst(uint64(l))
+	if len(m.WeekDay3) > 0 {
+		for _, e := range m.WeekDay3 {
+			l = e.Size()
+			n += 1 + l + sovMsgWlst(uint64(l))
+		}
 	}
-	if m.WeekDay4 != nil {
-		l = m.WeekDay4.Size()
-		n += 1 + l + sovMsgWlst(uint64(l))
+	if len(m.WeekDay4) > 0 {
+		for _, e := range m.WeekDay4 {
+			l = e.Size()
+			n += 1 + l + sovMsgWlst(uint64(l))
+		}
 	}
-	if m.WeekDay5 != nil {
-		l = m.WeekDay5.Size()
-		n += 1 + l + sovMsgWlst(uint64(l))
+	if len(m.WeekDay5) > 0 {
+		for _, e := range m.WeekDay5 {
+			l = e.Size()
+			n += 1 + l + sovMsgWlst(uint64(l))
+		}
 	}
-	if m.WeekDay6 != nil {
-		l = m.WeekDay6.Size()
-		n += 1 + l + sovMsgWlst(uint64(l))
+	if len(m.WeekDay6) > 0 {
+		for _, e := range m.WeekDay6 {
+			l = e.Size()
+			n += 1 + l + sovMsgWlst(uint64(l))
+		}
 	}
-	if m.WeekDay7 != nil {
-		l = m.WeekDay7.Size()
-		n += 1 + l + sovMsgWlst(uint64(l))
-	}
-	return n
-}
-
-func (m *Afn04_P0_F46_Week_Slot) Size() (n int) {
-	if m == nil {
-		return 0
-	}
-	var l int
-	_ = l
-	if m.K1 != nil {
-		l = m.K1.Size()
-		n += 1 + l + sovMsgWlst(uint64(l))
-	}
-	if m.K2 != nil {
-		l = m.K2.Size()
-		n += 1 + l + sovMsgWlst(uint64(l))
-	}
-	if m.K3 != nil {
-		l = m.K3.Size()
-		n += 1 + l + sovMsgWlst(uint64(l))
-	}
-	if m.K4 != nil {
-		l = m.K4.Size()
-		n += 1 + l + sovMsgWlst(uint64(l))
-	}
-	if m.K5 != nil {
-		l = m.K5.Size()
-		n += 1 + l + sovMsgWlst(uint64(l))
-	}
-	if m.K6 != nil {
-		l = m.K6.Size()
-		n += 1 + l + sovMsgWlst(uint64(l))
-	}
-	if m.K7 != nil {
-		l = m.K7.Size()
-		n += 1 + l + sovMsgWlst(uint64(l))
-	}
-	if m.K8 != nil {
-		l = m.K8.Size()
-		n += 1 + l + sovMsgWlst(uint64(l))
+	if len(m.WeekDay7) > 0 {
+		for _, e := range m.WeekDay7 {
+			l = e.Size()
+			n += 1 + l + sovMsgWlst(uint64(l))
+		}
 	}
 	return n
 }
@@ -8956,6 +9922,12 @@ func (m *Afn05_P0_F1) Size() (n int) {
 	}
 	var l int
 	_ = l
+	if len(m.SwitchoutCtrl) > 0 {
+		for _, e := range m.SwitchoutCtrl {
+			l = e.Size()
+			n += 1 + l + sovMsgWlst(uint64(l))
+		}
+	}
 	return n
 }
 
@@ -8965,8 +9937,8 @@ func (m *Afn05_P0_F1_Switchout_Ctrl) Size() (n int) {
 	}
 	var l int
 	_ = l
-	if m.SwitchoutIndx != 0 {
-		n += 1 + sovMsgWlst(uint64(m.SwitchoutIndx))
+	if m.SwitchoutNo != 0 {
+		n += 1 + sovMsgWlst(uint64(m.SwitchoutNo))
 	}
 	if m.SwitchoutDo != 0 {
 		n += 1 + sovMsgWlst(uint64(m.SwitchoutDo))
@@ -9023,9 +9995,8 @@ func (m *Afn09_P0_F1) Size() (n int) {
 	if l > 0 {
 		n += 1 + l + sovMsgWlst(uint64(l))
 	}
-	l = len(m.SoftwareDate)
-	if l > 0 {
-		n += 1 + l + sovMsgWlst(uint64(l))
+	if m.SoftwareDate != 0 {
+		n += 1 + sovMsgWlst(uint64(m.SoftwareDate))
 	}
 	l = len(m.DeviceInfo)
 	if l > 0 {
@@ -9035,25 +10006,22 @@ func (m *Afn09_P0_F1) Size() (n int) {
 	if l > 0 {
 		n += 1 + l + sovMsgWlst(uint64(l))
 	}
-	l = len(m.HardwareDate)
-	if l > 0 {
-		n += 1 + l + sovMsgWlst(uint64(l))
+	if m.HardwareDate != 0 {
+		n += 1 + sovMsgWlst(uint64(m.HardwareDate))
 	}
 	l = len(m.RemoteComVer)
 	if l > 0 {
 		n += 1 + l + sovMsgWlst(uint64(l))
 	}
-	l = len(m.RemoteComDate)
-	if l > 0 {
-		n += 1 + l + sovMsgWlst(uint64(l))
+	if m.RemoteComDate != 0 {
+		n += 1 + sovMsgWlst(uint64(m.RemoteComDate))
 	}
 	l = len(m.LocalComVer)
 	if l > 0 {
 		n += 1 + l + sovMsgWlst(uint64(l))
 	}
-	l = len(m.LocalComDate)
-	if l > 0 {
-		n += 1 + l + sovMsgWlst(uint64(l))
+	if m.LocalComDate != 0 {
+		n += 1 + sovMsgWlst(uint64(m.LocalComDate))
 	}
 	return n
 }
@@ -9294,6 +10262,21 @@ func (m *Afn0D_Pn_F1) Size() (n int) {
 	}
 	var l int
 	_ = l
+	if len(m.PnData) > 0 {
+		for _, e := range m.PnData {
+			l = e.Size()
+			n += 1 + l + sovMsgWlst(uint64(l))
+		}
+	}
+	return n
+}
+
+func (m *Afn0D_Pn_F1_Pn_Data) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
 	if m.DtStart != 0 {
 		n += 1 + sovMsgWlst(uint64(m.DtStart))
 	}
@@ -9311,6 +10294,9 @@ func (m *Afn0D_Pn_F1) Size() (n int) {
 			l = e.Size()
 			n += 1 + l + sovMsgWlst(uint64(l))
 		}
+	}
+	if m.Pno != 0 {
+		n += 1 + sovMsgWlst(uint64(m.Pno))
 	}
 	return n
 }
@@ -9414,6 +10400,21 @@ func (m *Afn0D_Pn_F3) Size() (n int) {
 	}
 	var l int
 	_ = l
+	if len(m.PnData) > 0 {
+		for _, e := range m.PnData {
+			l = e.Size()
+			n += 1 + l + sovMsgWlst(uint64(l))
+		}
+	}
+	return n
+}
+
+func (m *Afn0D_Pn_F3_Pn_Data) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
 	if m.DtStart != 0 {
 		n += 1 + sovMsgWlst(uint64(m.DtStart))
 	}
@@ -9428,6 +10429,9 @@ func (m *Afn0D_Pn_F3) Size() (n int) {
 	}
 	if len(m.LeakageCurrent) > 0 {
 		n += 1 + sovMsgWlst(uint64(len(m.LeakageCurrent)*8)) + len(m.LeakageCurrent)*8
+	}
+	if m.Pno != 0 {
+		n += 1 + sovMsgWlst(uint64(m.Pno))
 	}
 	return n
 }
@@ -9462,6 +10466,164 @@ func (m *Afn0E_P0_F1_Events_Data) Size() (n int) {
 	}
 	var l int
 	_ = l
+	if m.ErcId != 0 {
+		n += 1 + sovMsgWlst(uint64(m.ErcId))
+	}
+	if m.DtReport != 0 {
+		n += 1 + sovMsgWlst(uint64(m.DtReport))
+	}
+	if m.Erc04 != nil {
+		l = m.Erc04.Size()
+		n += 1 + l + sovMsgWlst(uint64(l))
+	}
+	if m.Erc05 != nil {
+		l = m.Erc05.Size()
+		n += 1 + l + sovMsgWlst(uint64(l))
+	}
+	if m.Erc13 != nil {
+		l = m.Erc13.Size()
+		n += 1 + l + sovMsgWlst(uint64(l))
+	}
+	if m.Erc20 != nil {
+		l = m.Erc20.Size()
+		n += 1 + l + sovMsgWlst(uint64(l))
+	}
+	if m.Erc21 != nil {
+		l = m.Erc21.Size()
+		n += 1 + l + sovMsgWlst(uint64(l))
+	}
+	if m.Erc22 != nil {
+		l = m.Erc22.Size()
+		n += 1 + l + sovMsgWlst(uint64(l))
+	}
+	if m.Erc23 != nil {
+		l = m.Erc23.Size()
+		n += 2 + l + sovMsgWlst(uint64(l))
+	}
+	if m.Erc24 != nil {
+		l = m.Erc24.Size()
+		n += 2 + l + sovMsgWlst(uint64(l))
+	}
+	if m.Erc25 != nil {
+		l = m.Erc25.Size()
+		n += 2 + l + sovMsgWlst(uint64(l))
+	}
+	if m.Erc26 != nil {
+		l = m.Erc26.Size()
+		n += 2 + l + sovMsgWlst(uint64(l))
+	}
+	if m.Erc27 != nil {
+		l = m.Erc27.Size()
+		n += 2 + l + sovMsgWlst(uint64(l))
+	}
+	if m.Erc28 != nil {
+		l = m.Erc28.Size()
+		n += 2 + l + sovMsgWlst(uint64(l))
+	}
+	if m.Erc29 != nil {
+		l = m.Erc29.Size()
+		n += 2 + l + sovMsgWlst(uint64(l))
+	}
+	if m.Erc30 != nil {
+		l = m.Erc30.Size()
+		n += 2 + l + sovMsgWlst(uint64(l))
+	}
+	return n
+}
+
+func (m *Afn0E_P0_F1_Erc04_Data) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if m.LoopStatus != 0 {
+		n += 1 + sovMsgWlst(uint64(m.LoopStatus))
+	}
+	if m.LoopNo != 0 {
+		n += 1 + sovMsgWlst(uint64(m.LoopNo))
+	}
+	return n
+}
+
+func (m *Afn0E_P0_F1_Erc05_Data) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if m.SwitchoutNo != 0 {
+		n += 1 + sovMsgWlst(uint64(m.SwitchoutNo))
+	}
+	if m.SwitchoutDo != 0 {
+		n += 1 + sovMsgWlst(uint64(m.SwitchoutDo))
+	}
+	if m.SwitchoutSource != 0 {
+		n += 1 + sovMsgWlst(uint64(m.SwitchoutSource))
+	}
+	return n
+}
+
+func (m *Afn0E_P0_F1_Erc13_Data) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if m.ReportType != 0 {
+		n += 1 + sovMsgWlst(uint64(m.ReportType))
+	}
+	return n
+}
+
+func (m *Afn0E_P0_F1_Erc20_Data) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if m.ReportType != 0 {
+		n += 1 + sovMsgWlst(uint64(m.ReportType))
+	}
+	if m.LeakageNo != 0 {
+		n += 1 + sovMsgWlst(uint64(m.LeakageNo))
+	}
+	if m.LeakageLevel != 0 {
+		n += 1 + sovMsgWlst(uint64(m.LeakageLevel))
+	}
+	if m.LeakageCurrent != 0 {
+		n += 9
+	}
+	return n
+}
+
+func (m *Afn0E_P0_F1_Erc22_Data) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if m.ReportType != 0 {
+		n += 1 + sovMsgWlst(uint64(m.ReportType))
+	}
+	if m.Phase != 0 {
+		n += 1 + sovMsgWlst(uint64(m.Phase))
+	}
+	return n
+}
+
+func (m *Afn0E_P0_F1_Erc25_Data) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if m.ReportType != 0 {
+		n += 1 + sovMsgWlst(uint64(m.ReportType))
+	}
+	if m.LoopNo != 0 {
+		n += 1 + sovMsgWlst(uint64(m.LoopNo))
+	}
 	return n
 }
 
@@ -9528,20 +10690,22 @@ func (m *Afn10_P0_F10) Size() (n int) {
 	if l > 0 {
 		n += 1 + l + sovMsgWlst(uint64(l))
 	}
-	l = len(m.SoftwareDateOld)
-	if l > 0 {
-		n += 1 + l + sovMsgWlst(uint64(l))
+	if m.SoftwareDateOld != 0 {
+		n += 1 + sovMsgWlst(uint64(m.SoftwareDateOld))
 	}
 	l = len(m.SoftwareVerNew)
 	if l > 0 {
 		n += 1 + l + sovMsgWlst(uint64(l))
 	}
-	l = len(m.SoftwareDateNew)
-	if l > 0 {
-		n += 1 + l + sovMsgWlst(uint64(l))
+	if m.SoftwareDateNew != 0 {
+		n += 1 + sovMsgWlst(uint64(m.SoftwareDateNew))
 	}
 	if m.DtUpgrade != 0 {
 		n += 1 + sovMsgWlst(uint64(m.DtUpgrade))
+	}
+	l = len(m.DevType)
+	if l > 0 {
+		n += 1 + l + sovMsgWlst(uint64(l))
 	}
 	return n
 }
@@ -11919,42 +13083,6 @@ func (m *WlstGBOpen) Unmarshal(dAtA []byte) error {
 				return err
 			}
 			iNdEx = postIndex
-		case 701:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field Afn0EP0F2", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowMsgWlst
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.Afn0EP0F2 == nil {
-				m.Afn0EP0F2 = &Afn0E_P0_F1{}
-			}
-			if err := m.Afn0EP0F2.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
 		case 800:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field Afn10P0F1", wireType)
@@ -13458,10 +14586,10 @@ func (m *Afn04_Pn_F15) Unmarshal(dAtA []byte) error {
 		}
 		switch fieldNum {
 		case 1:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field DtStart", wireType)
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field PnData", wireType)
 			}
-			m.DtStart = 0
+			var msglen int
 			for shift := uint(0); ; shift += 7 {
 				if shift >= 64 {
 					return ErrIntOverflowMsgWlst
@@ -13471,11 +14599,111 @@ func (m *Afn04_Pn_F15) Unmarshal(dAtA []byte) error {
 				}
 				b := dAtA[iNdEx]
 				iNdEx++
-				m.DtStart |= int64(b&0x7F) << shift
+				msglen |= int(b&0x7F) << shift
 				if b < 0x80 {
 					break
 				}
 			}
+			if msglen < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.PnData = append(m.PnData, &Afn04_Pn_F15_Pn_Data{})
+			if err := m.PnData[len(m.PnData)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipMsgWlst(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if skippy < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if (iNdEx + skippy) < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *Afn04_Pn_F15_Pn_Data) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowMsgWlst
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: Pn_Data: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: Pn_Data: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field DtStart", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.DtStart = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
 		case 2:
 			if wireType != 0 {
 				return fmt.Errorf("proto: wrong wireType = %d for field DtDays", wireType)
@@ -13512,7 +14740,7 @@ func (m *Afn04_Pn_F15) Unmarshal(dAtA []byte) error {
 						break
 					}
 				}
-				m.SwitchoutIndx = append(m.SwitchoutIndx, v)
+				m.SwitchoutNo = append(m.SwitchoutNo, v)
 			} else if wireType == 2 {
 				var packedLen int
 				for shift := uint(0); ; shift += 7 {
@@ -13547,8 +14775,8 @@ func (m *Afn04_Pn_F15) Unmarshal(dAtA []byte) error {
 					}
 				}
 				elementCount = count
-				if elementCount != 0 && len(m.SwitchoutIndx) == 0 {
-					m.SwitchoutIndx = make([]int32, 0, elementCount)
+				if elementCount != 0 && len(m.SwitchoutNo) == 0 {
+					m.SwitchoutNo = make([]int32, 0, elementCount)
 				}
 				for iNdEx < postIndex {
 					var v int32
@@ -13566,10 +14794,10 @@ func (m *Afn04_Pn_F15) Unmarshal(dAtA []byte) error {
 							break
 						}
 					}
-					m.SwitchoutIndx = append(m.SwitchoutIndx, v)
+					m.SwitchoutNo = append(m.SwitchoutNo, v)
 				}
 			} else {
-				return fmt.Errorf("proto: wrong wireType = %d for field SwitchoutIndx", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field SwitchoutNo", wireType)
 			}
 		case 4:
 			if wireType != 2 {
@@ -13605,6 +14833,25 @@ func (m *Afn04_Pn_F15) Unmarshal(dAtA []byte) error {
 				return err
 			}
 			iNdEx = postIndex
+		case 5:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Pno", wireType)
+			}
+			m.Pno = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.Pno |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
 		default:
 			iNdEx = preIndex
 			skippy, err := skipMsgWlst(dAtA[iNdEx:])
@@ -14161,10 +15408,8 @@ func (m *Afn04_P0_F46) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if m.WeekDay1 == nil {
-				m.WeekDay1 = &Afn04_P0_F46_Week_Slot{}
-			}
-			if err := m.WeekDay1.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			m.WeekDay1 = append(m.WeekDay1, &Afn04_P0_F46_Time_Slot{})
+			if err := m.WeekDay1[len(m.WeekDay1)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -14197,10 +15442,8 @@ func (m *Afn04_P0_F46) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if m.WeekDay2 == nil {
-				m.WeekDay2 = &Afn04_P0_F46_Week_Slot{}
-			}
-			if err := m.WeekDay2.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			m.WeekDay2 = append(m.WeekDay2, &Afn04_P0_F46_Time_Slot{})
+			if err := m.WeekDay2[len(m.WeekDay2)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -14233,10 +15476,8 @@ func (m *Afn04_P0_F46) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if m.WeekDay3 == nil {
-				m.WeekDay3 = &Afn04_P0_F46_Week_Slot{}
-			}
-			if err := m.WeekDay3.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			m.WeekDay3 = append(m.WeekDay3, &Afn04_P0_F46_Time_Slot{})
+			if err := m.WeekDay3[len(m.WeekDay3)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -14269,10 +15510,8 @@ func (m *Afn04_P0_F46) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if m.WeekDay4 == nil {
-				m.WeekDay4 = &Afn04_P0_F46_Week_Slot{}
-			}
-			if err := m.WeekDay4.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			m.WeekDay4 = append(m.WeekDay4, &Afn04_P0_F46_Time_Slot{})
+			if err := m.WeekDay4[len(m.WeekDay4)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -14305,10 +15544,8 @@ func (m *Afn04_P0_F46) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if m.WeekDay5 == nil {
-				m.WeekDay5 = &Afn04_P0_F46_Week_Slot{}
-			}
-			if err := m.WeekDay5.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			m.WeekDay5 = append(m.WeekDay5, &Afn04_P0_F46_Time_Slot{})
+			if err := m.WeekDay5[len(m.WeekDay5)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -14341,10 +15578,8 @@ func (m *Afn04_P0_F46) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if m.WeekDay6 == nil {
-				m.WeekDay6 = &Afn04_P0_F46_Week_Slot{}
-			}
-			if err := m.WeekDay6.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			m.WeekDay6 = append(m.WeekDay6, &Afn04_P0_F46_Time_Slot{})
+			if err := m.WeekDay6[len(m.WeekDay6)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -14377,351 +15612,8 @@ func (m *Afn04_P0_F46) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			if m.WeekDay7 == nil {
-				m.WeekDay7 = &Afn04_P0_F46_Week_Slot{}
-			}
-			if err := m.WeekDay7.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		default:
-			iNdEx = preIndex
-			skippy, err := skipMsgWlst(dAtA[iNdEx:])
-			if err != nil {
-				return err
-			}
-			if skippy < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if (iNdEx + skippy) < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if (iNdEx + skippy) > l {
-				return io.ErrUnexpectedEOF
-			}
-			iNdEx += skippy
-		}
-	}
-
-	if iNdEx > l {
-		return io.ErrUnexpectedEOF
-	}
-	return nil
-}
-func (m *Afn04_P0_F46_Week_Slot) Unmarshal(dAtA []byte) error {
-	l := len(dAtA)
-	iNdEx := 0
-	for iNdEx < l {
-		preIndex := iNdEx
-		var wire uint64
-		for shift := uint(0); ; shift += 7 {
-			if shift >= 64 {
-				return ErrIntOverflowMsgWlst
-			}
-			if iNdEx >= l {
-				return io.ErrUnexpectedEOF
-			}
-			b := dAtA[iNdEx]
-			iNdEx++
-			wire |= uint64(b&0x7F) << shift
-			if b < 0x80 {
-				break
-			}
-		}
-		fieldNum := int32(wire >> 3)
-		wireType := int(wire & 0x7)
-		if wireType == 4 {
-			return fmt.Errorf("proto: Week_Slot: wiretype end group for non-group")
-		}
-		if fieldNum <= 0 {
-			return fmt.Errorf("proto: Week_Slot: illegal tag %d (wire type %d)", fieldNum, wire)
-		}
-		switch fieldNum {
-		case 1:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field K1", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowMsgWlst
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.K1 == nil {
-				m.K1 = &Afn04_P0_F46_Time_Slot{}
-			}
-			if err := m.K1.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 2:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field K2", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowMsgWlst
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.K2 == nil {
-				m.K2 = &Afn04_P0_F46_Time_Slot{}
-			}
-			if err := m.K2.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 3:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field K3", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowMsgWlst
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.K3 == nil {
-				m.K3 = &Afn04_P0_F46_Time_Slot{}
-			}
-			if err := m.K3.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 4:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field K4", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowMsgWlst
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.K4 == nil {
-				m.K4 = &Afn04_P0_F46_Time_Slot{}
-			}
-			if err := m.K4.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 5:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field K5", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowMsgWlst
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.K5 == nil {
-				m.K5 = &Afn04_P0_F46_Time_Slot{}
-			}
-			if err := m.K5.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 6:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field K6", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowMsgWlst
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.K6 == nil {
-				m.K6 = &Afn04_P0_F46_Time_Slot{}
-			}
-			if err := m.K6.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 7:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field K7", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowMsgWlst
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.K7 == nil {
-				m.K7 = &Afn04_P0_F46_Time_Slot{}
-			}
-			if err := m.K7.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
-				return err
-			}
-			iNdEx = postIndex
-		case 8:
-			if wireType != 2 {
-				return fmt.Errorf("proto: wrong wireType = %d for field K8", wireType)
-			}
-			var msglen int
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowMsgWlst
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				msglen |= int(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
-			if msglen < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			postIndex := iNdEx + msglen
-			if postIndex < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			if m.K8 == nil {
-				m.K8 = &Afn04_P0_F46_Time_Slot{}
-			}
-			if err := m.K8.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+			m.WeekDay7 = append(m.WeekDay7, &Afn04_P0_F46_Time_Slot{})
+			if err := m.WeekDay7[len(m.WeekDay7)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
 			iNdEx = postIndex
@@ -15747,6 +16639,40 @@ func (m *Afn05_P0_F1) Unmarshal(dAtA []byte) error {
 			return fmt.Errorf("proto: Afn05_P0_F1: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field SwitchoutCtrl", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.SwitchoutCtrl = append(m.SwitchoutCtrl, &Afn05_P0_F1_Switchout_Ctrl{})
+			if err := m.SwitchoutCtrl[len(m.SwitchoutCtrl)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
 			skippy, err := skipMsgWlst(dAtA[iNdEx:])
@@ -15802,9 +16728,9 @@ func (m *Afn05_P0_F1_Switchout_Ctrl) Unmarshal(dAtA []byte) error {
 		switch fieldNum {
 		case 1:
 			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field SwitchoutIndx", wireType)
+				return fmt.Errorf("proto: wrong wireType = %d for field SwitchoutNo", wireType)
 			}
-			m.SwitchoutIndx = 0
+			m.SwitchoutNo = 0
 			for shift := uint(0); ; shift += 7 {
 				if shift >= 64 {
 					return ErrIntOverflowMsgWlst
@@ -15814,7 +16740,7 @@ func (m *Afn05_P0_F1_Switchout_Ctrl) Unmarshal(dAtA []byte) error {
 				}
 				b := dAtA[iNdEx]
 				iNdEx++
-				m.SwitchoutIndx |= int32(b&0x7F) << shift
+				m.SwitchoutNo |= int32(b&0x7F) << shift
 				if b < 0x80 {
 					break
 				}
@@ -16208,10 +17134,10 @@ func (m *Afn09_P0_F1) Unmarshal(dAtA []byte) error {
 			m.SoftwareVer = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 4:
-			if wireType != 2 {
+			if wireType != 0 {
 				return fmt.Errorf("proto: wrong wireType = %d for field SoftwareDate", wireType)
 			}
-			var stringLen uint64
+			m.SoftwareDate = 0
 			for shift := uint(0); ; shift += 7 {
 				if shift >= 64 {
 					return ErrIntOverflowMsgWlst
@@ -16221,24 +17147,11 @@ func (m *Afn09_P0_F1) Unmarshal(dAtA []byte) error {
 				}
 				b := dAtA[iNdEx]
 				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
+				m.SoftwareDate |= int32(b&0x7F) << shift
 				if b < 0x80 {
 					break
 				}
 			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.SoftwareDate = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
 		case 5:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field DeviceInfo", wireType)
@@ -16304,10 +17217,10 @@ func (m *Afn09_P0_F1) Unmarshal(dAtA []byte) error {
 			m.HardwareVer = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 7:
-			if wireType != 2 {
+			if wireType != 0 {
 				return fmt.Errorf("proto: wrong wireType = %d for field HardwareDate", wireType)
 			}
-			var stringLen uint64
+			m.HardwareDate = 0
 			for shift := uint(0); ; shift += 7 {
 				if shift >= 64 {
 					return ErrIntOverflowMsgWlst
@@ -16317,24 +17230,11 @@ func (m *Afn09_P0_F1) Unmarshal(dAtA []byte) error {
 				}
 				b := dAtA[iNdEx]
 				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
+				m.HardwareDate |= int32(b&0x7F) << shift
 				if b < 0x80 {
 					break
 				}
 			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.HardwareDate = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
 		case 8:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field RemoteComVer", wireType)
@@ -16368,10 +17268,10 @@ func (m *Afn09_P0_F1) Unmarshal(dAtA []byte) error {
 			m.RemoteComVer = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 9:
-			if wireType != 2 {
+			if wireType != 0 {
 				return fmt.Errorf("proto: wrong wireType = %d for field RemoteComDate", wireType)
 			}
-			var stringLen uint64
+			m.RemoteComDate = 0
 			for shift := uint(0); ; shift += 7 {
 				if shift >= 64 {
 					return ErrIntOverflowMsgWlst
@@ -16381,24 +17281,11 @@ func (m *Afn09_P0_F1) Unmarshal(dAtA []byte) error {
 				}
 				b := dAtA[iNdEx]
 				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
+				m.RemoteComDate |= int32(b&0x7F) << shift
 				if b < 0x80 {
 					break
 				}
 			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.RemoteComDate = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
 		case 10:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field LocalComVer", wireType)
@@ -16432,10 +17319,10 @@ func (m *Afn09_P0_F1) Unmarshal(dAtA []byte) error {
 			m.LocalComVer = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 11:
-			if wireType != 2 {
+			if wireType != 0 {
 				return fmt.Errorf("proto: wrong wireType = %d for field LocalComDate", wireType)
 			}
-			var stringLen uint64
+			m.LocalComDate = 0
 			for shift := uint(0); ; shift += 7 {
 				if shift >= 64 {
 					return ErrIntOverflowMsgWlst
@@ -16445,24 +17332,11 @@ func (m *Afn09_P0_F1) Unmarshal(dAtA []byte) error {
 				}
 				b := dAtA[iNdEx]
 				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
+				m.LocalComDate |= int32(b&0x7F) << shift
 				if b < 0x80 {
 					break
 				}
 			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.LocalComDate = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
 			skippy, err := skipMsgWlst(dAtA[iNdEx:])
@@ -17872,6 +18746,93 @@ func (m *Afn0D_Pn_F1) Unmarshal(dAtA []byte) error {
 		}
 		switch fieldNum {
 		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field PnData", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.PnData = append(m.PnData, &Afn0D_Pn_F1_Pn_Data{})
+			if err := m.PnData[len(m.PnData)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipMsgWlst(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if skippy < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if (iNdEx + skippy) < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *Afn0D_Pn_F1_Pn_Data) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowMsgWlst
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: Pn_Data: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: Pn_Data: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
 			if wireType != 0 {
 				return fmt.Errorf("proto: wrong wireType = %d for field DtStart", wireType)
 			}
@@ -17981,6 +18942,25 @@ func (m *Afn0D_Pn_F1) Unmarshal(dAtA []byte) error {
 				return err
 			}
 			iNdEx = postIndex
+		case 6:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Pno", wireType)
+			}
+			m.Pno = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.Pno |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
 		default:
 			iNdEx = preIndex
 			skippy, err := skipMsgWlst(dAtA[iNdEx:])
@@ -18504,6 +19484,93 @@ func (m *Afn0D_Pn_F3) Unmarshal(dAtA []byte) error {
 		}
 		switch fieldNum {
 		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field PnData", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.PnData = append(m.PnData, &Afn0D_Pn_F3_Pn_Data{})
+			if err := m.PnData[len(m.PnData)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipMsgWlst(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if skippy < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if (iNdEx + skippy) < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *Afn0D_Pn_F3_Pn_Data) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowMsgWlst
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: Pn_Data: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: Pn_Data: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
 			if wireType != 0 {
 				return fmt.Errorf("proto: wrong wireType = %d for field DtStart", wireType)
 			}
@@ -18632,6 +19699,25 @@ func (m *Afn0D_Pn_F3) Unmarshal(dAtA []byte) error {
 				}
 			} else {
 				return fmt.Errorf("proto: wrong wireType = %d for field LeakageCurrent", wireType)
+			}
+		case 6:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Pno", wireType)
+			}
+			m.Pno = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.Pno |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
 			}
 		default:
 			iNdEx = preIndex
@@ -18830,6 +19916,1124 @@ func (m *Afn0E_P0_F1_Events_Data) Unmarshal(dAtA []byte) error {
 			return fmt.Errorf("proto: Events_Data: illegal tag %d (wire type %d)", fieldNum, wire)
 		}
 		switch fieldNum {
+		case 1:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field ErcId", wireType)
+			}
+			m.ErcId = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.ErcId |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 2:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field DtReport", wireType)
+			}
+			m.DtReport = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.DtReport |= int64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 10:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Erc04", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if m.Erc04 == nil {
+				m.Erc04 = &Afn0E_P0_F1_Erc04_Data{}
+			}
+			if err := m.Erc04.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		case 11:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Erc05", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if m.Erc05 == nil {
+				m.Erc05 = &Afn0E_P0_F1_Erc05_Data{}
+			}
+			if err := m.Erc05.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		case 12:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Erc13", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if m.Erc13 == nil {
+				m.Erc13 = &Afn0E_P0_F1_Erc13_Data{}
+			}
+			if err := m.Erc13.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		case 13:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Erc20", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if m.Erc20 == nil {
+				m.Erc20 = &Afn0E_P0_F1_Erc20_Data{}
+			}
+			if err := m.Erc20.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		case 14:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Erc21", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if m.Erc21 == nil {
+				m.Erc21 = &Afn0E_P0_F1_Erc20_Data{}
+			}
+			if err := m.Erc21.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		case 15:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Erc22", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if m.Erc22 == nil {
+				m.Erc22 = &Afn0E_P0_F1_Erc22_Data{}
+			}
+			if err := m.Erc22.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		case 16:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Erc23", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if m.Erc23 == nil {
+				m.Erc23 = &Afn0E_P0_F1_Erc22_Data{}
+			}
+			if err := m.Erc23.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		case 17:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Erc24", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if m.Erc24 == nil {
+				m.Erc24 = &Afn0E_P0_F1_Erc22_Data{}
+			}
+			if err := m.Erc24.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		case 18:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Erc25", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if m.Erc25 == nil {
+				m.Erc25 = &Afn0E_P0_F1_Erc25_Data{}
+			}
+			if err := m.Erc25.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		case 19:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Erc26", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if m.Erc26 == nil {
+				m.Erc26 = &Afn0E_P0_F1_Erc25_Data{}
+			}
+			if err := m.Erc26.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		case 20:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Erc27", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if m.Erc27 == nil {
+				m.Erc27 = &Afn0E_P0_F1_Erc25_Data{}
+			}
+			if err := m.Erc27.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		case 21:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Erc28", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if m.Erc28 == nil {
+				m.Erc28 = &Afn0E_P0_F1_Erc25_Data{}
+			}
+			if err := m.Erc28.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		case 22:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Erc29", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if m.Erc29 == nil {
+				m.Erc29 = &Afn0E_P0_F1_Erc25_Data{}
+			}
+			if err := m.Erc29.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		case 23:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Erc30", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if m.Erc30 == nil {
+				m.Erc30 = &Afn0E_P0_F1_Erc25_Data{}
+			}
+			if err := m.Erc30.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipMsgWlst(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if skippy < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if (iNdEx + skippy) < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *Afn0E_P0_F1_Erc04_Data) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowMsgWlst
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: Erc04_Data: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: Erc04_Data: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field LoopStatus", wireType)
+			}
+			m.LoopStatus = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.LoopStatus |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 2:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field LoopNo", wireType)
+			}
+			m.LoopNo = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.LoopNo |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		default:
+			iNdEx = preIndex
+			skippy, err := skipMsgWlst(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if skippy < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if (iNdEx + skippy) < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *Afn0E_P0_F1_Erc05_Data) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowMsgWlst
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: Erc05_Data: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: Erc05_Data: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field SwitchoutNo", wireType)
+			}
+			m.SwitchoutNo = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.SwitchoutNo |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 2:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field SwitchoutDo", wireType)
+			}
+			m.SwitchoutDo = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.SwitchoutDo |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 3:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field SwitchoutSource", wireType)
+			}
+			m.SwitchoutSource = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.SwitchoutSource |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		default:
+			iNdEx = preIndex
+			skippy, err := skipMsgWlst(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if skippy < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if (iNdEx + skippy) < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *Afn0E_P0_F1_Erc13_Data) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowMsgWlst
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: Erc13_Data: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: Erc13_Data: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field ReportType", wireType)
+			}
+			m.ReportType = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.ReportType |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		default:
+			iNdEx = preIndex
+			skippy, err := skipMsgWlst(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if skippy < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if (iNdEx + skippy) < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *Afn0E_P0_F1_Erc20_Data) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowMsgWlst
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: Erc20_Data: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: Erc20_Data: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field ReportType", wireType)
+			}
+			m.ReportType = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.ReportType |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 2:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field LeakageNo", wireType)
+			}
+			m.LeakageNo = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.LeakageNo |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 3:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field LeakageLevel", wireType)
+			}
+			m.LeakageLevel = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.LeakageLevel |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 4:
+			if wireType != 1 {
+				return fmt.Errorf("proto: wrong wireType = %d for field LeakageCurrent", wireType)
+			}
+			var v uint64
+			if (iNdEx + 8) > l {
+				return io.ErrUnexpectedEOF
+			}
+			v = uint64(encoding_binary.LittleEndian.Uint64(dAtA[iNdEx:]))
+			iNdEx += 8
+			m.LeakageCurrent = float64(math.Float64frombits(v))
+		default:
+			iNdEx = preIndex
+			skippy, err := skipMsgWlst(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if skippy < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if (iNdEx + skippy) < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *Afn0E_P0_F1_Erc22_Data) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowMsgWlst
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: Erc22_Data: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: Erc22_Data: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field ReportType", wireType)
+			}
+			m.ReportType = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.ReportType |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 2:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Phase", wireType)
+			}
+			m.Phase = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.Phase |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		default:
+			iNdEx = preIndex
+			skippy, err := skipMsgWlst(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if skippy < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if (iNdEx + skippy) < 0 {
+				return ErrInvalidLengthMsgWlst
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *Afn0E_P0_F1_Erc25_Data) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowMsgWlst
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: Erc25_Data: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: Erc25_Data: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field ReportType", wireType)
+			}
+			m.ReportType = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.ReportType |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 2:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field LoopNo", wireType)
+			}
+			m.LoopNo = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.LoopNo |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
 		default:
 			iNdEx = preIndex
 			skippy, err := skipMsgWlst(dAtA[iNdEx:])
@@ -19277,10 +21481,10 @@ func (m *Afn10_P0_F10) Unmarshal(dAtA []byte) error {
 			m.SoftwareVerOld = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 2:
-			if wireType != 2 {
+			if wireType != 0 {
 				return fmt.Errorf("proto: wrong wireType = %d for field SoftwareDateOld", wireType)
 			}
-			var stringLen uint64
+			m.SoftwareDateOld = 0
 			for shift := uint(0); ; shift += 7 {
 				if shift >= 64 {
 					return ErrIntOverflowMsgWlst
@@ -19290,24 +21494,11 @@ func (m *Afn10_P0_F10) Unmarshal(dAtA []byte) error {
 				}
 				b := dAtA[iNdEx]
 				iNdEx++
-				stringLen |= uint64(b&0x7F) << shift
+				m.SoftwareDateOld |= int32(b&0x7F) << shift
 				if b < 0x80 {
 					break
 				}
 			}
-			intStringLen := int(stringLen)
-			if intStringLen < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			postIndex := iNdEx + intStringLen
-			if postIndex < 0 {
-				return ErrInvalidLengthMsgWlst
-			}
-			if postIndex > l {
-				return io.ErrUnexpectedEOF
-			}
-			m.SoftwareDateOld = string(dAtA[iNdEx:postIndex])
-			iNdEx = postIndex
 		case 3:
 			if wireType != 2 {
 				return fmt.Errorf("proto: wrong wireType = %d for field SoftwareVerNew", wireType)
@@ -19341,8 +21532,46 @@ func (m *Afn10_P0_F10) Unmarshal(dAtA []byte) error {
 			m.SoftwareVerNew = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		case 4:
-			if wireType != 2 {
+			if wireType != 0 {
 				return fmt.Errorf("proto: wrong wireType = %d for field SoftwareDateNew", wireType)
+			}
+			m.SoftwareDateNew = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.SoftwareDateNew |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 5:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field DtUpgrade", wireType)
+			}
+			m.DtUpgrade = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowMsgWlst
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.DtUpgrade |= int64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 6:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field DevType", wireType)
 			}
 			var stringLen uint64
 			for shift := uint(0); ; shift += 7 {
@@ -19370,27 +21599,8 @@ func (m *Afn10_P0_F10) Unmarshal(dAtA []byte) error {
 			if postIndex > l {
 				return io.ErrUnexpectedEOF
 			}
-			m.SoftwareDateNew = string(dAtA[iNdEx:postIndex])
+			m.DevType = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
-		case 5:
-			if wireType != 0 {
-				return fmt.Errorf("proto: wrong wireType = %d for field DtUpgrade", wireType)
-			}
-			m.DtUpgrade = 0
-			for shift := uint(0); ; shift += 7 {
-				if shift >= 64 {
-					return ErrIntOverflowMsgWlst
-				}
-				if iNdEx >= l {
-					return io.ErrUnexpectedEOF
-				}
-				b := dAtA[iNdEx]
-				iNdEx++
-				m.DtUpgrade |= int64(b&0x7F) << shift
-				if b < 0x80 {
-					break
-				}
-			}
 		default:
 			iNdEx = preIndex
 			skippy, err := skipMsgWlst(dAtA[iNdEx:])

@@ -140,33 +140,17 @@ message WlstGBOpen {
   Afn04_P0_F1 afn0a_p0_f1 = 400;
   // 主站 IP 地址  和端口（上行）
   Afn04_P0_F3 afn0a_p0_f3 = 401;
-  // 终端上行通信消息认∕否认(证参数设置
-  // Afn04_P0_F5 afn0a_p0_f5 = 402;
-  // 终端组地址  设置
-  // Afn04_P0_F6 afn0a_p0_f6 = 403;
-  // 终端 IP 地址  和端口
-  // Afn04_P0_F7 afn0a_p0_f7 = 404;
-  // 终端上行通信工作方式
-  // Afn04_P0_F8 afn0a_p0_f8 = 405;
   // 终端事件记录配置设置（上行）
   Afn04_P0_F9 afn0a_p0_f9 = 406;
-  // 终端上行通信口通信参数设置（上行）
+  // 设备状态输入参数（上行）
   Afn04_P0_F10 afn0a_p0_f10 = 407;
   // GPS 地理位置信息（上行）
   Afn04_P0_F11 afn0a_p0_f11 = 408;
-  // 终端月流量控制阈值 设置
-  // Afn04_P0_F12 afn0a_p0_f12 = 409;
-  // 终端电能表/路灯控制器配置参数
-  // Afn04_Pn_F13 afn0a_pn_f13 = 410;
   // 扩展设备配置参数（上行）
   Afn04_Pn_F14 afn0a_pn_f14 = 411;
   // 继电器输出控制方案（上行）
   // pn: n为方案号，1-8
   Afn04_Pn_F15 afn0a_pn_f15 = 412;
-  // 台区集中抄表停抄/投抄设置
-  // Afn04_Pn_F30 afn0a_pn_f30 = 413;
-  // 终端抄表运行参数设置
-  // Afn04_Pn_F33 afn0a_pn_f33 = 414;
   // 开关量输出参数关联（上行）
   Afn04_P0_F41 afn0a_p0_f41 = 415;
   // 模拟量采集参数关联（上行）
@@ -187,6 +171,7 @@ message WlstGBOpen {
   Afn04_P0_F57 afn0a_p0_f57 = 423;
   // 请求实时数据，下行无数据单元，数据结构均为上行结构
   // 出线模拟量数据(全数据)(报警主报)（上行）
+  // pn: n是模拟量回路序号，0xffff表示所有回路(只用所有回路)
   Afn0c_Pn_F1 afn0c_pn_f1 = 500;
   // 终端日历时钟（上行）
   Afn0c_P0_F2 afn0c_p0_f2 = 501;
@@ -216,10 +201,8 @@ message WlstGBOpen {
   // pn：n为漏电回路n<=150
   Afn0d_Pn_F3 afn0d_pn_f3 = 602;
   // 请求事件记录
-  // 请求重要事件
+  // 请求重要/一般事件（上下行）
   Afn0e_P0_F1 afn0e_p0_f1 = 700;
-  // 请求一般事件
-  Afn0e_P0_F1 afn0e_p0_f2 = 701;
   // 数据转发
   // 透明转发
   Afn10_P0_F1 afn10_p0_f1 = 800;
@@ -334,20 +317,24 @@ message Afn04_P0_F11 {
   // 标识，0-北纬，1-南纬
   int32 latitude_mark = 4;
 }
-// 扩展设备配置参数(有问题，看不懂)
+// 扩展设备配置参数(看不懂，待定)
 message Afn04_Pn_F14 {}
 // 继电器输出控制方案（年设置）
 // pn:n 方案序号1-8
 message Afn04_Pn_F15 {
-  // 起始年月日，unix时间戳，0-表示每日执行，低优先级
-  int64 dt_start = 1;
-  // 持续时间1-31天
-  int32 dt_days = 2;
-  // 开关量输出启用标识1-启用，0-不用
-  repeated int32 switchout_indx = 3 [ packed = true ];
-  // 时段设置，留空表示清除所有时段
-  // 数量1-4为有效时段
-  repeated Time_Slot time_slot = 4;
+  repeated Pn_Data pn_data = 1;
+  message Pn_Data {
+    int32 pno = 5;
+    // 起始年月日，unix时间戳，000000-表示每日执行，低优先级
+    string dt_start = 1;
+    // 持续时间1-31天
+    int32 dt_days = 2;
+    // 开关量输出启用标识,依次1-16,1-启用，0-不用
+    repeated int32 switchout_no = 3 [ packed = true ];
+    // 时段设置，留空表示清除所有时段
+    // 数量1-4为有效时段
+    repeated Time_Slot time_slot = 4;
+  }
   message Time_Slot {
     // 开灯时间hh*60+mm，6039表示经纬度开灯,1500删除
     int32 time_on = 1;
@@ -382,32 +369,20 @@ message Afn04_P0_F42 {
 }
 // 周回路控制表,仅支持k1-k8（国标设备不建议使用）2500清除对应设置
 message Afn04_P0_F46 {
-  // 周一设置
-  Week_Slot week_day1 = 1;
-  // 周二设置
-  Week_Slot week_day2 = 2;
-  // 周三设置
-  Week_Slot week_day3 = 3;
-  // 周四设置
-  Week_Slot week_day4 = 4;
-  // 周五设置
-  Week_Slot week_day5 = 5;
-  // 周六设置
-  Week_Slot week_day6 = 6;
-  // 周日设置
-  Week_Slot week_day7 = 7;
-  // 周设置
-  message Week_Slot {
-    // k1~k8开关灯时间
-    Time_Slot k1 = 1;
-    Time_Slot k2 = 2;
-    Time_Slot k3 = 3;
-    Time_Slot k4 = 4;
-    Time_Slot k5 = 5;
-    Time_Slot k6 = 6;
-    Time_Slot k7 = 7;
-    Time_Slot k8 = 8;
-  }
+  // 周一设置,k1~k8
+  repeated Time_Slot week_day1 = 1;
+  // 周二设置,k1~k8
+  repeated Time_Slot week_day2 = 2;
+  // 周三设置,k1~k8
+  repeated Time_Slot week_day3 = 3;
+  // 周四设置,k1~k8
+  repeated Time_Slot week_day4 = 4;
+  // 周五设置,k1~k8
+  repeated Time_Slot week_day5 = 5;
+  // 周六设置,k1~k8
+  repeated Time_Slot week_day6 = 6;
+  // 周日设置,k1~k8
+  repeated Time_Slot week_day7 = 7;
   message Time_Slot {
     // 开灯时间hh*60+mm，15555保留当前值
     int32 time_on = 1;
@@ -459,7 +434,7 @@ message Afn04_P0_F52 {
   int32 loop_enable = 2;
   // 关联的开关量输出号（1-255）
   int32 loop_switchout = 3;
-  // 一级越限值
+  // 一级越限值(单位mA,下同)
   int32 level1_limit = 4;
   // 二级越限值
   int32 level2_limit = 5;
@@ -486,9 +461,10 @@ message Afn04_P0_F57 {
 // 允许合闸/跳闸
 message Afn05_P0_F1 {
   // 是否操作对应的输出，16个0-不操作
+  repeated Switchout_Ctrl switchout_ctrl = 1;
   message Switchout_Ctrl {
     // 开关量输出序号1-16
-    int32 switchout_indx = 1;
+    int32 switchout_no = 1;
     // 开关量输出操作，0-关，1-开
     int32 switchout_do = 2;
     // 开关量输出操作时间，0-立即执行，>0-unix时间戳，表示在指定时间执行该操作
@@ -514,29 +490,29 @@ message Afn09_P0_F1 {
   string device_num = 2;
   // 终端软件版本号
   string software_ver = 3;
-  // 终端软件发布日期：日/月/年
-  string software_date = 4;
+  // 终端软件发布日期：YYMMDD
+  int32 software_date = 4;
   // 终端配置容量信息码
   string device_info = 5;
   // 终端硬件版本号
   string hardware_ver = 6;
-  // 终端硬件发布日期：日/月/年
-  string hardware_date = 7;
+  // 终端硬件发布日期：YYMMDD
+  int32 hardware_date = 7;
   // 远程通讯模块版本号
   string remote_com_ver = 8;
-  // 远程通讯模块发布日期：日/月/年
-  string remote_com_date = 9;
+  // 远程通讯模块发布日期：YYMMDD
+  int32 remote_com_date = 9;
   // 本地通讯模块版本号
   string local_com_ver = 10;
-  // 本地通讯模块发布日期：日/月/年
-  string local_com_date = 11;
+  // 本地通讯模块发布日期：YYMMDD
+  int32 local_com_date = 11;
 }
 
 // 查询参数，结构和afn04相同
 
 // 请求实时数据，下行无数据单元
 // 出线模拟量数据(全数据)(报警主报)
-// pn: n是模拟量回路序号，1-48,0xffff表示所有回路
+// pn: n是模拟量回路序号，0xffff表示所有回路
 message Afn0c_Pn_F1 {
   // 主报时间
   int64 dt_report = 1;
@@ -640,17 +616,22 @@ message Afn0c_P0_F20 {
 // 模拟量历史数据曲线(出线)
 // pn: n 1-48，模拟量回路数量
 message Afn0d_Pn_F1 {
-  // 起始时间，unix时间戳(上下行)
-  int64 dt_start = 1;
-  // 数据密度(分钟)，可选0,1,2,3,4,5,10,15,30,60，表示每小时0分起累加指定密度的分钟数(上下行)
-  int32 data_density = 2;
-  // 数据点数(上下行)（最大20）
-  int32 data_num = 3;
-  // 模拟量(上下行)
-  int32 loop_no = 4;
-  // 以下开始为上行填充
-  // 回路数据，依次为每个数据点的数据
-  repeated Loop_Data loop_data = 5;
+  repeated Pn_Data pn_data = 1;
+  message Pn_Data {
+    // pn序号
+    int32 pno = 6;
+    // 起始时间，unix时间戳(上下行)
+    int64 dt_start = 1;
+    // 数据密度(分钟)，可选0,1,2,3,4,5,10,15,30,60，表示每小时0分起累加指定密度的分钟数(上下行)
+    int32 data_density = 2;
+    // 数据点数(上下行)（最大20）
+    int32 data_num = 3;
+    // 模拟量(上下行)
+    int32 loop_no = 4;
+    // 以下开始为上行填充
+    // 回路数据，依次为每个数据点的数据
+    repeated Loop_Data loop_data = 5;
+  }
   message Loop_Data {
     // 电压（1位小数bcd）
     double voltage = 1;
@@ -701,17 +682,21 @@ message Afn0d_P0_F2 {
 // 漏电历史数据曲线
 // pn:n1-8,漏电回路数量
 message Afn0d_Pn_F3 {
-  // 起始时间，unix时间戳(上下行)
-  int64 dt_start = 1;
-  // 数据密度(分钟)，可选0,1,2,3,4,5,10,15,30,60，表示每小时0分起累加指定密度的分钟数(上下行)
-  int32 data_density = 2;
-  // 数据点数(上下行)（最大20）
-  int32 data_num = 3;
-  // 模拟量(上下行)
-  int32 loop_no = 4;
-  // 以下开始为上行填充
-  // 依次为每个数据点数据（有符号3位小数bcd）
-  repeated double leakage_current = 5 [ packed = true ];
+  repeated Pn_Data pn_data = 1;
+  message Pn_Data {
+    int32 pno = 6;
+    // 起始时间，unix时间戳(上下行)
+    int64 dt_start = 1;
+    // 数据密度(分钟)，可选0,1,2,3,4,5,10,15,30,60，表示每小时0分起累加指定密度的分钟数(上下行)
+    int32 data_density = 2;
+    // 数据点数(上下行)（最大20）
+    int32 data_num = 3;
+    // 模拟量(上下行)
+    int32 loop_no = 4;
+    // 以下开始为上行填充
+    // 依次为每个数据点数据（有符号3位小数bcd）
+    repeated double leakage_current = 5 [ packed = true ];
+  }
 }
 // 请求事件记录
 // 请求重要/一般事件
@@ -724,9 +709,83 @@ message Afn0e_P0_F1 {
   // 以下为上行填充字段
   // 当前读到的位置
   int32 ec_now = 3;
-  // 事件信息（看不懂，待定）
+  // 事件信息
   repeated Events_Data events_data = 4;
-  message Events_Data {}
+  message Events_Data {
+    // 事件号
+    int32 erc_id = 1;
+    // 发生时间
+    int64 dt_report = 2;
+    // 事件数据
+    Erc04_Data erc04 = 10;
+    Erc05_Data erc05 = 11;
+    Erc13_Data erc13 = 12;
+    Erc20_Data erc20 = 13;
+    Erc20_Data erc21 = 14;
+    Erc22_Data erc22 = 15;
+    Erc22_Data erc23 = 16;
+    Erc22_Data erc24 = 17;
+    Erc25_Data erc25 = 18;
+    Erc25_Data erc26 = 19;
+    Erc25_Data erc27 = 20;
+    Erc25_Data erc28 = 21;
+    Erc25_Data erc29 = 22;
+    Erc25_Data erc30 = 23;
+  }
+  // ERC4终端状态量变位记录
+  message Erc04_Data {
+    // 变化类型，0-由通到断，1-由断到通
+    int32 loop_status = 1;
+    // 变化的状态量回路
+    int32 loop_no = 2;
+  }
+  // ERC5终端遥控跳闸记录
+  message Erc05_Data {
+    // 开关量输出序号1-16
+    int32 switchout_no = 1;
+    // 控制类型,0-关，1-开（设备为0-开，1-关，通信服务反向）
+    int32 switchout_do = 2;
+    // 控制源0-4：分别表示主台控制、液晶控制、最后开关灯时限、时控、光控
+    int32 switchout_source = 3;
+  }
+  // ERC13终端停/上电记录
+  message Erc13_Data {
+    // 记录类型：0恢复；1报警。
+    int32 report_type = 1;
+  }
+  // ERC20漏电报警记录
+  message Erc20_Data {
+    // 记录类型：0恢复；1报警。
+    int32 report_type = 1;
+    // 漏电回路号
+    int32 leakage_no = 2;
+    // 漏电等级
+    int32 leakage_level = 3;
+    // 漏电值
+    double leakage_current = 4;
+  }
+  // ERC21 保护跳闸记录（同erc20,不填充leakage_level)
+  // ERC22 缺相报警记录
+  message Erc22_Data {
+    // 记录类型：0恢复；1报警。
+    int32 report_type = 1;
+    // 相位0--A 相,调整1--B 相,调整2--C 相
+    int32 phase = 2;
+  }
+  // ERC23 过压记录(同erc22)
+  // ERC24 欠压记录(同erc22)
+  // ERC25 过流记录
+  message Erc25_Data {
+    // 记录类型：0恢复；1报警。
+    int32 report_type = 1;
+    // 回路号
+    int32 loop_no = 2;
+  }
+  // ERC26 欠流记录(同erc25)
+  // ERC27 接触器未释放记录(同erc25)
+  // ERC28 接触器断开记录(同erc25)
+  // ERC29 白天亮灯记录(同erc25)
+  // ERC30 夜间灭灯记录(同erc25)
 }
 // 数据转发
 // 透明转发（上下行）
@@ -759,12 +818,14 @@ message Afn10_P0_F9 {
 message Afn10_P0_F10 {
   // 升级前软件版本号
   string software_ver_old = 1;
-  // 升级前软件发布日期：日/月/年
-  string software_date_old = 2;
+  // 升级前软件发布日期：YYMMDD
+  int32 software_date_old = 2;
   // 升级后软件版本号
   string software_ver_new = 3;
-  // 升级后软件发布日期：日/月/年
-  string software_date_new = 4;
+  // 升级后软件发布日期：YYMMDD
+  int32 software_date_new = 4;
   // 升级发生时间,unix时间戳
   int64 dt_upgrade = 5;
+  // 设备类型（f41上行填写）
+  string dev_type = 6;
 }
