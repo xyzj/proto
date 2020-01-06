@@ -4,7 +4,7 @@ package wlst.gb;
 option optimize_for = SPEED;
 
 // rabbitmq过滤器命名规则：
-//    [wlst-micro].devdown.[dataparser-wlst].wlst-open-[2位十六进制链路层功能码][2位十六进制afn功能码].[设备地址].[设备区域码，默认0000]
+//    [wlst-micro].devdown.[dataparser-wlst].wlst-open-[2位十六进制链路层功能码][2位十六进制afn功能码].[12位设备地址].[设备区域码，默认0000]
 //
 // 发起（主要为主站下行，也包括设备主报）：
 //  0101-复位
@@ -66,13 +66,13 @@ message DataIdentification {
   int32 afn = 9;
   // fun 功能码
   int32 fun = 10;
-  // 区域码
+  // 区域码，默认"0000"
   string area = 11;
   // 设备地址，1-65534，65535为广播地址
   int64 addr = 12;
 }
 
-message WlstGBOpen {
+message MsgGBOpen {
   // 指令头
   // 依据DataID.unitid的内容读取对应结构体数据
   // 一条指令可能存在多个unitid，因此可以读取多个结构体数据
@@ -193,15 +193,17 @@ message WlstGBOpen {
   Afn0c_P0_F20 afn0c_p0_f20 = 509;
   // 请求历史数据
   // 模拟量历史数据曲线(出线)
-  // pn：n为电流回路n<=30
+  // pn：n为电流回路1-48
   Afn0d_Pn_F1 afn0d_pn_f1 = 600;
   // 模拟量历史数据曲线(进线)
   Afn0d_P0_F2 afn0d_p0_f2 = 601;
   // 漏电历史数据曲线
-  // pn：n为漏电回路n<=150
+  // pn：n为漏电回路1-8
   Afn0d_Pn_F3 afn0d_pn_f3 = 602;
   // 请求事件记录
   // 请求重要/一般事件（上下行）
+  // 查询重要事件时pn=0,fn=1
+  // 查询一般事件时pn=0,fn=2
   Afn0e_P0_F1 afn0e_p0_f1 = 700;
   // 数据转发
   // 透明转发
@@ -468,7 +470,7 @@ message Afn05_P0_F1 {
     // 开关量输出操作，0-关，1-开
     int32 switchout_do = 2;
     // 开关量输出操作时间，0-立即执行，>0-unix时间戳，表示在指定时间执行该操作
-    int32 switchout_time = 3;
+    int64 switchout_time = 3;
   }
 }
 // 消除漏电分闸/报警
@@ -616,22 +618,17 @@ message Afn0c_P0_F20 {
 // 模拟量历史数据曲线(出线)
 // pn: n 1-48，模拟量回路数量
 message Afn0d_Pn_F1 {
-  repeated Pn_Data pn_data = 1;
-  message Pn_Data {
-    // pn序号
-    int32 pno = 6;
-    // 起始时间，unix时间戳(上下行)
-    int64 dt_start = 1;
-    // 数据密度(分钟)，可选0,1,2,3,4,5,10,15,30,60，表示每小时0分起累加指定密度的分钟数(上下行)
-    int32 data_density = 2;
-    // 数据点数(上下行)（最大20）
-    int32 data_num = 3;
-    // 模拟量(上下行)
-    int32 loop_no = 4;
-    // 以下开始为上行填充
-    // 回路数据，依次为每个数据点的数据
-    repeated Loop_Data loop_data = 5;
-  }
+  // 起始时间，unix时间戳(上下行)
+  int64 dt_start = 1;
+  // 数据密度(分钟)，可选0,1,2,3,4,5,10,15,30,60，表示每小时0分起累加指定密度的分钟数(上下行)
+  int32 data_density = 2;
+  // 数据点数(上下行)（最大20）
+  int32 data_num = 3;
+  // 模拟量(上下行，下行可填充多个回路，1-48,上行为单回路)
+  repeated int32 loop_no = 4 [ packed = true ];
+  // 以下开始为上行填充
+  // 回路数据，依次为每个数据点的数据
+  repeated Loop_Data loop_data = 5;
   message Loop_Data {
     // 电压（1位小数bcd）
     double voltage = 1;
@@ -682,21 +679,17 @@ message Afn0d_P0_F2 {
 // 漏电历史数据曲线
 // pn:n1-8,漏电回路数量
 message Afn0d_Pn_F3 {
-  repeated Pn_Data pn_data = 1;
-  message Pn_Data {
-    int32 pno = 6;
-    // 起始时间，unix时间戳(上下行)
-    int64 dt_start = 1;
-    // 数据密度(分钟)，可选0,1,2,3,4,5,10,15,30,60，表示每小时0分起累加指定密度的分钟数(上下行)
-    int32 data_density = 2;
-    // 数据点数(上下行)（最大20）
-    int32 data_num = 3;
-    // 模拟量(上下行)
-    int32 loop_no = 4;
-    // 以下开始为上行填充
-    // 依次为每个数据点数据（有符号3位小数bcd）
-    repeated double leakage_current = 5 [ packed = true ];
-  }
+  // 起始时间，unix时间戳(上下行)
+  int64 dt_start = 1;
+  // 数据密度(分钟)，可选0,1,2,3,4,5,10,15,30,60，表示每小时0分起累加指定密度的分钟数(上下行)
+  int32 data_density = 2;
+  // 数据点数(上下行)（最大20）
+  int32 data_num = 3;
+  // 模拟量(上下行，下行可填充多个回路，1-8,上行为单回路)
+  repeated int32 loop_no = 4 [ packed = true ];
+  // 以下开始为上行填充
+  // 依次为每个数据点数据（有符号3位小数bcd）
+  repeated double leakage_current = 5 [ packed = true ];
 }
 // 请求事件记录
 // 请求重要/一般事件
