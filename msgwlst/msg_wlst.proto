@@ -371,7 +371,7 @@ message Afn04_P0_F42 {
     int32 phase = 2;
   }
 }
-// 周回路控制表,仅支持k1-k8（国标设备不建议使用）2500清除对应设置
+// 周回路控制表,仅支持k1-k8（国标设备不建议使用）1500清除对应设置
 message Afn04_P0_F46 {
   // 周一设置,k1~k8
   repeated Time_Slot week_day1 = 1;
