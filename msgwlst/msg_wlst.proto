@@ -70,6 +70,8 @@ message DataIdentification {
   string area = 11;
   // 设备地址，1-65534，65535为广播地址
   int64 addr = 12;
+  // 命令优先级,0-普通，1-高，普通优先级命令先进先出，高优先级命令后进先出
+  int32 sp = 13;
 }
 
 message MsgGBOpen {
