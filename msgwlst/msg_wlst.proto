@@ -68,7 +68,7 @@ message DataIdentification {
   int32 fun = 10;
   // 区域码，默认"0000"
   string area = 11;
-  // 设备地址，1-65534，65535为广播地址
+  // 设备地址，1-65534，（65535为广播地址下行不可使用）
   int64 addr = 12;
   // 命令优先级,0-普通，1-高，普通优先级命令先进先出，高优先级命令后进先出
   int32 sp = 13;
@@ -103,10 +103,12 @@ message MsgGBOpen {
   Afn04_P0_F11 afn04_p0_f11 = 104;
   // 扩展设备配置参数
   // pn: n为0-99
-  Afn04_Pn_F14 afn04_pn_f14 = 105;
+  repeated Afn04_Pn_F14 afn04_pn_f14 = 105;
   // 继电器输出控制方案
   // pn: n为方案号，1-8
-  Afn04_Pn_F15 afn04_pn_f15 = 106;
+  // 当有多个方案同时下发时，对应填充多少个数据结构
+  // 清除方案指令应单独下发，将时段数设置为0，并标识需要清除的开关量输出即可，其他字段可不填。
+  repeated Afn04_Pn_F15 afn04_pn_f15 = 106;
   // 开关量输出参数关联
   Afn04_P0_F41 afn04_p0_f41 = 107;
   // 模拟量采集参数关联
@@ -149,10 +151,10 @@ message MsgGBOpen {
   // GPS 地理位置信息（上行）
   Afn04_P0_F11 afn0a_p0_f11 = 408;
   // 扩展设备配置参数（上行）
-  Afn04_Pn_F14 afn0a_pn_f14 = 411;
+  repeated Afn04_Pn_F14 afn0a_pn_f14 = 411;
   // 继电器输出控制方案（上行）
   // pn: n为方案号，1-8
-  Afn04_Pn_F15 afn0a_pn_f15 = 412;
+  repeated Afn04_Pn_F15 afn0a_pn_f15 = 412;
   // 开关量输出参数关联（上行）
   Afn04_P0_F41 afn0a_p0_f41 = 415;
   // 模拟量采集参数关联（上行）
@@ -322,23 +324,21 @@ message Afn04_P0_F11 {
   int32 latitude_mark = 4;
 }
 // 扩展设备配置参数(看不懂，待定)
-message Afn04_Pn_F14 {}
+message Afn04_Pn_F14 {
+  
+}
 // 继电器输出控制方案（年设置）
 // pn:n 方案序号1-8
 message Afn04_Pn_F15 {
-  repeated Pn_Data pn_data = 1;
-  message Pn_Data {
-    int32 pno = 5;
-    // 起始年月日，unix时间戳，000000-表示每日执行，低优先级
-    string dt_start = 1;
-    // 持续时间1-31天
-    int32 dt_days = 2;
-    // 开关量输出启用标识,依次1-16,1-启用，0-不用
-    repeated int32 switchout_no = 3 [ packed = true ];
-    // 时段设置，留空表示清除所有时段
-    // 数量1-4为有效时段
-    repeated Time_Slot time_slot = 4;
-  }
+  // 起始年月日，unix时间戳，000000-表示每日执行，低优先级
+  string dt_start = 1;
+  // 持续时间1-31天
+  int32 dt_days = 2;
+  // 开关量输出启用标识,依次1-16,1-启用，0-不用
+  repeated int32 switchout_no = 3 [ packed = true ];
+  // 时段设置，留空表示清除所有时段
+  // 数量1-4为有效时段
+  repeated Time_Slot time_slot = 4;
   message Time_Slot {
     // 开灯时间hh*60+mm，6039表示经纬度开灯,1500删除
     int32 time_on = 1;
@@ -371,7 +371,7 @@ message Afn04_P0_F42 {
     int32 phase = 2;
   }
 }
-// 周回路控制表,仅支持k1-k8（国标设备不建议使用）2500清除对应设置
+// 周回路控制表,仅支持k1-k8（国标设备不建议使用）
 message Afn04_P0_F46 {
   // 周一设置,k1~k8
   repeated Time_Slot week_day1 = 1;
@@ -388,9 +388,9 @@ message Afn04_P0_F46 {
   // 周日设置,k1~k8
   repeated Time_Slot week_day7 = 7;
   message Time_Slot {
-    // 开灯时间hh*60+mm，15555保留当前值
+    // 开灯时间hh*60+mm，15555保留当前值,1500清除对应设置
     int32 time_on = 1;
-    // 关灯时间hh*60+mm，15555保留当前值
+    // 关灯时间hh*60+mm，15555保留当前值,1500清除对应设置
     int32 time_off = 2;
   }
 }
