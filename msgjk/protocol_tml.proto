@@ -321,7 +321,7 @@ message WlstTerminal {
   // 添加卡应答
   Hj_lock_0000 hj_lock_8600 = 477;
   // 删除卡
-  Hj_lock_0700 hj_lock_0700 = 478;
+  Hj_lock_0600 hj_lock_0700 = 478;
   // 删除卡应答
   Hj_lock_0000 hj_lock_8700 = 479;
   // 设置管理卡
