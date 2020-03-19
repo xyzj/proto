@@ -20,7 +20,7 @@ message Hj_lock_0200 {
   int32 lock_status = 1; //锁状态，0-闭合，1-开启
   int32 freq_lights = 2; //1～254表示打开或者关闭持续时间，单位100MS。0表示常闭，0xFF表示常开
   int32 freq_beep = 3; // 1～254表示打开或者关闭持续时间，单位100MS。0表示常闭，0xFF表示常开
-  int32 time_delay = 4； // 以上2个freq状态的持续时间
+  int32 time_delay = 4; // 以上2个freq状态的持续时间
   int32 lockoff_delay = 5; // 开门持续时间，默认5000ms
   uint32 master_card1 = 6; // 主卡号1，用于现场添加卡
   uint32 master_card2 = 7; // 主卡号2，用于现场删除卡
@@ -36,7 +36,7 @@ message Hj_lock_0200 {
 message Hj_lock_0500 {
   int32 freq_lights = 1; //1～254表示打开或者关闭持续时间，单位100MS。0表示常闭，0xFF表示常开
   int32 freq_beep = 2; // 1～254表示打开或者关闭持续时间，单位100MS。0表示常闭，0xFF表示常开
-  int32 time_delay = 3； // 以上2个freq状态的持续时间
+  int32 time_delay = 3; // 以上2个freq状态的持续时间
 }
 
 // 添加/删除卡
