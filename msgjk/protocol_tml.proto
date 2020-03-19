@@ -303,9 +303,9 @@ message WlstTerminal {
   Wlst_elu_6256 wlst_elu_62d6 = 456;
   // 恒杰门控
   // 设置地址
-  Hj_lock_0100 hj_lock_0100 = 470;
+  Hj_lock_0100 hj_lock_0100 = 469;
   // 设置地址应答
-  Hj_lock_0000 hj_lock_8100 = 471;
+  Hj_lock_0000 hj_lock_8100 = 470;
   // 查询锁状态应答，下行命令：hj_lock_0200
   Hj_lock_0000 hj_lock_8200 = 471;
   // 开锁应答，下行命令：hj_lock_0300
@@ -333,9 +333,9 @@ message WlstTerminal {
   // 设置开锁时间应答
   Hj_lock_0000 hj_lock_8c00 = 483;
   // 复位应答，下行命令：hj_lock_0900
-  Hj_lock_0000 hj_lock_8900 = 473;
+  Hj_lock_0000 hj_lock_8900 = 484;
   // 恢复出厂应答，下行命令：hj_lock_0a00
-  Hj_lock_0000 hj_lock_8a00 = 473;
+  Hj_lock_0000 hj_lock_8a00 = 485;
 
   //单灯
   //复位网络
