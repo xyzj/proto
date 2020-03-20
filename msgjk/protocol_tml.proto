@@ -315,7 +315,7 @@ message WlstTerminal {
   // 开门提醒设置
   Hj_lock_0500 hj_lock_0500 = 474;
   // 开门提醒设置应答
-  Hj_lock_0500 hj_lock_8500 = 475;
+  Hj_lock_0000 hj_lock_8500 = 475;
   // 添加卡
   Hj_lock_0600 hj_lock_0600 = 476;
   // 添加卡应答
