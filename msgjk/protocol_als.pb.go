@@ -23,6 +23,441 @@ var _ = math.Inf
 // proto package needs to be updated.
 const _ = proto.GoGoProtoPackageIsVersion3 // please upgrade the proto package
 
+// 通用应答，除查询锁状态命令以外的所有命令
+type HjLock_0000 struct {
+	Status int32 `protobuf:"varint,1,opt,name=status,proto3" json:"status,omitempty"`
+}
+
+func (m *HjLock_0000) Reset()         { *m = HjLock_0000{} }
+func (m *HjLock_0000) String() string { return proto.CompactTextString(m) }
+func (*HjLock_0000) ProtoMessage()    {}
+func (*HjLock_0000) Descriptor() ([]byte, []int) {
+	return fileDescriptor_16b54be489a6899a, []int{0}
+}
+func (m *HjLock_0000) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *HjLock_0000) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_HjLock_0000.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *HjLock_0000) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_HjLock_0000.Merge(m, src)
+}
+func (m *HjLock_0000) XXX_Size() int {
+	return m.Size()
+}
+func (m *HjLock_0000) XXX_DiscardUnknown() {
+	xxx_messageInfo_HjLock_0000.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_HjLock_0000 proto.InternalMessageInfo
+
+func (m *HjLock_0000) GetStatus() int32 {
+	if m != nil {
+		return m.Status
+	}
+	return 0
+}
+
+// 设置地址
+type HjLock_0100 struct {
+	NewAddr int32 `protobuf:"varint,1,opt,name=new_addr,json=newAddr,proto3" json:"new_addr,omitempty"`
+}
+
+func (m *HjLock_0100) Reset()         { *m = HjLock_0100{} }
+func (m *HjLock_0100) String() string { return proto.CompactTextString(m) }
+func (*HjLock_0100) ProtoMessage()    {}
+func (*HjLock_0100) Descriptor() ([]byte, []int) {
+	return fileDescriptor_16b54be489a6899a, []int{1}
+}
+func (m *HjLock_0100) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *HjLock_0100) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_HjLock_0100.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *HjLock_0100) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_HjLock_0100.Merge(m, src)
+}
+func (m *HjLock_0100) XXX_Size() int {
+	return m.Size()
+}
+func (m *HjLock_0100) XXX_DiscardUnknown() {
+	xxx_messageInfo_HjLock_0100.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_HjLock_0100 proto.InternalMessageInfo
+
+func (m *HjLock_0100) GetNewAddr() int32 {
+	if m != nil {
+		return m.NewAddr
+	}
+	return 0
+}
+
+// 查询锁状态
+type HjLock_0200 struct {
+	LockStatus    int32  `protobuf:"varint,1,opt,name=lock_status,json=lockStatus,proto3" json:"lock_status,omitempty"`
+	FreqLights    int32  `protobuf:"varint,2,opt,name=freq_lights,json=freqLights,proto3" json:"freq_lights,omitempty"`
+	FreqBeep      int32  `protobuf:"varint,3,opt,name=freq_beep,json=freqBeep,proto3" json:"freq_beep,omitempty"`
+	TimeDelay     int32  `protobuf:"varint,4,opt,name=time_delay,json=timeDelay,proto3" json:"time_delay,omitempty"`
+	LockoffDelay  int32  `protobuf:"varint,5,opt,name=lockoff_delay,json=lockoffDelay,proto3" json:"lockoff_delay,omitempty"`
+	MasterCard1   uint64 `protobuf:"varint,6,opt,name=master_card1,json=masterCard1,proto3" json:"master_card1,omitempty"`
+	MasterCard2   uint64 `protobuf:"varint,7,opt,name=master_card2,json=masterCard2,proto3" json:"master_card2,omitempty"`
+	Cards         int32  `protobuf:"varint,8,opt,name=cards,proto3" json:"cards,omitempty"`
+	HardwareVer   uint64 `protobuf:"varint,9,opt,name=hardware_ver,json=hardwareVer,proto3" json:"hardware_ver,omitempty"`
+	LastCard      uint64 `protobuf:"varint,10,opt,name=last_card,json=lastCard,proto3" json:"last_card,omitempty"`
+	LastCardLegal int32  `protobuf:"varint,11,opt,name=last_card_legal,json=lastCardLegal,proto3" json:"last_card_legal,omitempty"`
+	CardType      int32  `protobuf:"varint,12,opt,name=card_type,json=cardType,proto3" json:"card_type,omitempty"`
+	Status        int32  `protobuf:"varint,13,opt,name=status,proto3" json:"status,omitempty"`
+}
+
+func (m *HjLock_0200) Reset()         { *m = HjLock_0200{} }
+func (m *HjLock_0200) String() string { return proto.CompactTextString(m) }
+func (*HjLock_0200) ProtoMessage()    {}
+func (*HjLock_0200) Descriptor() ([]byte, []int) {
+	return fileDescriptor_16b54be489a6899a, []int{2}
+}
+func (m *HjLock_0200) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *HjLock_0200) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_HjLock_0200.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *HjLock_0200) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_HjLock_0200.Merge(m, src)
+}
+func (m *HjLock_0200) XXX_Size() int {
+	return m.Size()
+}
+func (m *HjLock_0200) XXX_DiscardUnknown() {
+	xxx_messageInfo_HjLock_0200.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_HjLock_0200 proto.InternalMessageInfo
+
+func (m *HjLock_0200) GetLockStatus() int32 {
+	if m != nil {
+		return m.LockStatus
+	}
+	return 0
+}
+
+func (m *HjLock_0200) GetFreqLights() int32 {
+	if m != nil {
+		return m.FreqLights
+	}
+	return 0
+}
+
+func (m *HjLock_0200) GetFreqBeep() int32 {
+	if m != nil {
+		return m.FreqBeep
+	}
+	return 0
+}
+
+func (m *HjLock_0200) GetTimeDelay() int32 {
+	if m != nil {
+		return m.TimeDelay
+	}
+	return 0
+}
+
+func (m *HjLock_0200) GetLockoffDelay() int32 {
+	if m != nil {
+		return m.LockoffDelay
+	}
+	return 0
+}
+
+func (m *HjLock_0200) GetMasterCard1() uint64 {
+	if m != nil {
+		return m.MasterCard1
+	}
+	return 0
+}
+
+func (m *HjLock_0200) GetMasterCard2() uint64 {
+	if m != nil {
+		return m.MasterCard2
+	}
+	return 0
+}
+
+func (m *HjLock_0200) GetCards() int32 {
+	if m != nil {
+		return m.Cards
+	}
+	return 0
+}
+
+func (m *HjLock_0200) GetHardwareVer() uint64 {
+	if m != nil {
+		return m.HardwareVer
+	}
+	return 0
+}
+
+func (m *HjLock_0200) GetLastCard() uint64 {
+	if m != nil {
+		return m.LastCard
+	}
+	return 0
+}
+
+func (m *HjLock_0200) GetLastCardLegal() int32 {
+	if m != nil {
+		return m.LastCardLegal
+	}
+	return 0
+}
+
+func (m *HjLock_0200) GetCardType() int32 {
+	if m != nil {
+		return m.CardType
+	}
+	return 0
+}
+
+func (m *HjLock_0200) GetStatus() int32 {
+	if m != nil {
+		return m.Status
+	}
+	return 0
+}
+
+// 开门提醒参数设置
+type HjLock_0500 struct {
+	FreqLights int32 `protobuf:"varint,1,opt,name=freq_lights,json=freqLights,proto3" json:"freq_lights,omitempty"`
+	FreqBeep   int32 `protobuf:"varint,2,opt,name=freq_beep,json=freqBeep,proto3" json:"freq_beep,omitempty"`
+	TimeDelay  int32 `protobuf:"varint,3,opt,name=time_delay,json=timeDelay,proto3" json:"time_delay,omitempty"`
+}
+
+func (m *HjLock_0500) Reset()         { *m = HjLock_0500{} }
+func (m *HjLock_0500) String() string { return proto.CompactTextString(m) }
+func (*HjLock_0500) ProtoMessage()    {}
+func (*HjLock_0500) Descriptor() ([]byte, []int) {
+	return fileDescriptor_16b54be489a6899a, []int{3}
+}
+func (m *HjLock_0500) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *HjLock_0500) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_HjLock_0500.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *HjLock_0500) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_HjLock_0500.Merge(m, src)
+}
+func (m *HjLock_0500) XXX_Size() int {
+	return m.Size()
+}
+func (m *HjLock_0500) XXX_DiscardUnknown() {
+	xxx_messageInfo_HjLock_0500.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_HjLock_0500 proto.InternalMessageInfo
+
+func (m *HjLock_0500) GetFreqLights() int32 {
+	if m != nil {
+		return m.FreqLights
+	}
+	return 0
+}
+
+func (m *HjLock_0500) GetFreqBeep() int32 {
+	if m != nil {
+		return m.FreqBeep
+	}
+	return 0
+}
+
+func (m *HjLock_0500) GetTimeDelay() int32 {
+	if m != nil {
+		return m.TimeDelay
+	}
+	return 0
+}
+
+// 添加/删除卡
+type HjLock_0600 struct {
+	Card uint64 `protobuf:"varint,1,opt,name=card,proto3" json:"card,omitempty"`
+}
+
+func (m *HjLock_0600) Reset()         { *m = HjLock_0600{} }
+func (m *HjLock_0600) String() string { return proto.CompactTextString(m) }
+func (*HjLock_0600) ProtoMessage()    {}
+func (*HjLock_0600) Descriptor() ([]byte, []int) {
+	return fileDescriptor_16b54be489a6899a, []int{4}
+}
+func (m *HjLock_0600) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *HjLock_0600) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_HjLock_0600.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *HjLock_0600) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_HjLock_0600.Merge(m, src)
+}
+func (m *HjLock_0600) XXX_Size() int {
+	return m.Size()
+}
+func (m *HjLock_0600) XXX_DiscardUnknown() {
+	xxx_messageInfo_HjLock_0600.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_HjLock_0600 proto.InternalMessageInfo
+
+func (m *HjLock_0600) GetCard() uint64 {
+	if m != nil {
+		return m.Card
+	}
+	return 0
+}
+
+// 设置管理卡
+type HjLock_0800 struct {
+	MasterCard1 uint64 `protobuf:"varint,1,opt,name=master_card1,json=masterCard1,proto3" json:"master_card1,omitempty"`
+	MasterCard2 uint64 `protobuf:"varint,2,opt,name=master_card2,json=masterCard2,proto3" json:"master_card2,omitempty"`
+}
+
+func (m *HjLock_0800) Reset()         { *m = HjLock_0800{} }
+func (m *HjLock_0800) String() string { return proto.CompactTextString(m) }
+func (*HjLock_0800) ProtoMessage()    {}
+func (*HjLock_0800) Descriptor() ([]byte, []int) {
+	return fileDescriptor_16b54be489a6899a, []int{5}
+}
+func (m *HjLock_0800) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *HjLock_0800) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_HjLock_0800.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *HjLock_0800) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_HjLock_0800.Merge(m, src)
+}
+func (m *HjLock_0800) XXX_Size() int {
+	return m.Size()
+}
+func (m *HjLock_0800) XXX_DiscardUnknown() {
+	xxx_messageInfo_HjLock_0800.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_HjLock_0800 proto.InternalMessageInfo
+
+func (m *HjLock_0800) GetMasterCard1() uint64 {
+	if m != nil {
+		return m.MasterCard1
+	}
+	return 0
+}
+
+func (m *HjLock_0800) GetMasterCard2() uint64 {
+	if m != nil {
+		return m.MasterCard2
+	}
+	return 0
+}
+
+// 设置开锁延迟（指定时间后自动锁闭）
+type HjLock_0C00 struct {
+	Delay int32 `protobuf:"varint,1,opt,name=delay,proto3" json:"delay,omitempty"`
+}
+
+func (m *HjLock_0C00) Reset()         { *m = HjLock_0C00{} }
+func (m *HjLock_0C00) String() string { return proto.CompactTextString(m) }
+func (*HjLock_0C00) ProtoMessage()    {}
+func (*HjLock_0C00) Descriptor() ([]byte, []int) {
+	return fileDescriptor_16b54be489a6899a, []int{6}
+}
+func (m *HjLock_0C00) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *HjLock_0C00) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_HjLock_0C00.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *HjLock_0C00) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_HjLock_0C00.Merge(m, src)
+}
+func (m *HjLock_0C00) XXX_Size() int {
+	return m.Size()
+}
+func (m *HjLock_0C00) XXX_DiscardUnknown() {
+	xxx_messageInfo_HjLock_0C00.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_HjLock_0C00 proto.InternalMessageInfo
+
+func (m *HjLock_0C00) GetDelay() int32 {
+	if m != nil {
+		return m.Delay
+	}
+	return 0
+}
+
 // 漏电协议
 // 设置地址
 type WlstElu_6255 struct {
@@ -34,7 +469,7 @@ func (m *WlstElu_6255) Reset()         { *m = WlstElu_6255{} }
 func (m *WlstElu_6255) String() string { return proto.CompactTextString(m) }
 func (*WlstElu_6255) ProtoMessage()    {}
 func (*WlstElu_6255) Descriptor() ([]byte, []int) {
-	return fileDescriptor_16b54be489a6899a, []int{0}
+	return fileDescriptor_16b54be489a6899a, []int{7}
 }
 func (m *WlstElu_6255) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -87,7 +522,7 @@ func (m *WlstElu_6256) Reset()         { *m = WlstElu_6256{} }
 func (m *WlstElu_6256) String() string { return proto.CompactTextString(m) }
 func (*WlstElu_6256) ProtoMessage()    {}
 func (*WlstElu_6256) Descriptor() ([]byte, []int) {
-	return fileDescriptor_16b54be489a6899a, []int{1}
+	return fileDescriptor_16b54be489a6899a, []int{8}
 }
 func (m *WlstElu_6256) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -141,7 +576,7 @@ func (m *WlstElu_6256_WorkArgv) Reset()         { *m = WlstElu_6256_WorkArgv{} }
 func (m *WlstElu_6256_WorkArgv) String() string { return proto.CompactTextString(m) }
 func (*WlstElu_6256_WorkArgv) ProtoMessage()    {}
 func (*WlstElu_6256_WorkArgv) Descriptor() ([]byte, []int) {
-	return fileDescriptor_16b54be489a6899a, []int{1, 0}
+	return fileDescriptor_16b54be489a6899a, []int{8, 0}
 }
 func (m *WlstElu_6256_WorkArgv) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -208,7 +643,7 @@ func (m *WlstElu_6257) Reset()         { *m = WlstElu_6257{} }
 func (m *WlstElu_6257) String() string { return proto.CompactTextString(m) }
 func (*WlstElu_6257) ProtoMessage()    {}
 func (*WlstElu_6257) Descriptor() ([]byte, []int) {
-	return fileDescriptor_16b54be489a6899a, []int{2}
+	return fileDescriptor_16b54be489a6899a, []int{9}
 }
 func (m *WlstElu_6257) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -260,7 +695,7 @@ func (m *WlstElu_62D8) Reset()         { *m = WlstElu_62D8{} }
 func (m *WlstElu_62D8) String() string { return proto.CompactTextString(m) }
 func (*WlstElu_62D8) ProtoMessage()    {}
 func (*WlstElu_62D8) Descriptor() ([]byte, []int) {
-	return fileDescriptor_16b54be489a6899a, []int{3}
+	return fileDescriptor_16b54be489a6899a, []int{10}
 }
 func (m *WlstElu_62D8) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -309,7 +744,7 @@ func (m *WlstElu_62D8_AlarmData) Reset()         { *m = WlstElu_62D8_AlarmData{}
 func (m *WlstElu_62D8_AlarmData) String() string { return proto.CompactTextString(m) }
 func (*WlstElu_62D8_AlarmData) ProtoMessage()    {}
 func (*WlstElu_62D8_AlarmData) Descriptor() ([]byte, []int) {
-	return fileDescriptor_16b54be489a6899a, []int{3, 0}
+	return fileDescriptor_16b54be489a6899a, []int{10, 0}
 }
 func (m *WlstElu_62D8_AlarmData) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -386,7 +821,7 @@ func (m *WlstElu_625A) Reset()         { *m = WlstElu_625A{} }
 func (m *WlstElu_625A) String() string { return proto.CompactTextString(m) }
 func (*WlstElu_625A) ProtoMessage()    {}
 func (*WlstElu_625A) Descriptor() ([]byte, []int) {
-	return fileDescriptor_16b54be489a6899a, []int{4}
+	return fileDescriptor_16b54be489a6899a, []int{11}
 }
 func (m *WlstElu_625A) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -461,7 +896,7 @@ func (m *WlstElu_625B) Reset()         { *m = WlstElu_625B{} }
 func (m *WlstElu_625B) String() string { return proto.CompactTextString(m) }
 func (*WlstElu_625B) ProtoMessage()    {}
 func (*WlstElu_625B) Descriptor() ([]byte, []int) {
-	return fileDescriptor_16b54be489a6899a, []int{5}
+	return fileDescriptor_16b54be489a6899a, []int{12}
 }
 func (m *WlstElu_625B) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -521,7 +956,7 @@ func (m *WlstElu_625C) Reset()         { *m = WlstElu_625C{} }
 func (m *WlstElu_625C) String() string { return proto.CompactTextString(m) }
 func (*WlstElu_625C) ProtoMessage()    {}
 func (*WlstElu_625C) Descriptor() ([]byte, []int) {
-	return fileDescriptor_16b54be489a6899a, []int{6}
+	return fileDescriptor_16b54be489a6899a, []int{13}
 }
 func (m *WlstElu_625C) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -586,7 +1021,7 @@ func (m *WlstAlsA700) Reset()         { *m = WlstAlsA700{} }
 func (m *WlstAlsA700) String() string { return proto.CompactTextString(m) }
 func (*WlstAlsA700) ProtoMessage()    {}
 func (*WlstAlsA700) Descriptor() ([]byte, []int) {
-	return fileDescriptor_16b54be489a6899a, []int{7}
+	return fileDescriptor_16b54be489a6899a, []int{14}
 }
 func (m *WlstAlsA700) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -678,7 +1113,7 @@ func (m *WlstGps_0000) Reset()         { *m = WlstGps_0000{} }
 func (m *WlstGps_0000) String() string { return proto.CompactTextString(m) }
 func (*WlstGps_0000) ProtoMessage()    {}
 func (*WlstGps_0000) Descriptor() ([]byte, []int) {
-	return fileDescriptor_16b54be489a6899a, []int{8}
+	return fileDescriptor_16b54be489a6899a, []int{15}
 }
 func (m *WlstGps_0000) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -746,7 +1181,7 @@ func (m *WlstGps_5901) Reset()         { *m = WlstGps_5901{} }
 func (m *WlstGps_5901) String() string { return proto.CompactTextString(m) }
 func (*WlstGps_5901) ProtoMessage()    {}
 func (*WlstGps_5901) Descriptor() ([]byte, []int) {
-	return fileDescriptor_16b54be489a6899a, []int{9}
+	return fileDescriptor_16b54be489a6899a, []int{16}
 }
 func (m *WlstGps_5901) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -822,7 +1257,7 @@ func (m *WlstGps_5902) Reset()         { *m = WlstGps_5902{} }
 func (m *WlstGps_5902) String() string { return proto.CompactTextString(m) }
 func (*WlstGps_5902) ProtoMessage()    {}
 func (*WlstGps_5902) Descriptor() ([]byte, []int) {
-	return fileDescriptor_16b54be489a6899a, []int{10}
+	return fileDescriptor_16b54be489a6899a, []int{17}
 }
 func (m *WlstGps_5902) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -877,7 +1312,7 @@ func (m *WlstGps_5903) Reset()         { *m = WlstGps_5903{} }
 func (m *WlstGps_5903) String() string { return proto.CompactTextString(m) }
 func (*WlstGps_5903) ProtoMessage()    {}
 func (*WlstGps_5903) Descriptor() ([]byte, []int) {
-	return fileDescriptor_16b54be489a6899a, []int{11}
+	return fileDescriptor_16b54be489a6899a, []int{18}
 }
 func (m *WlstGps_5903) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -938,7 +1373,7 @@ func (m *WlstGps_5904) Reset()         { *m = WlstGps_5904{} }
 func (m *WlstGps_5904) String() string { return proto.CompactTextString(m) }
 func (*WlstGps_5904) ProtoMessage()    {}
 func (*WlstGps_5904) Descriptor() ([]byte, []int) {
-	return fileDescriptor_16b54be489a6899a, []int{12}
+	return fileDescriptor_16b54be489a6899a, []int{19}
 }
 func (m *WlstGps_5904) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1021,7 +1456,7 @@ func (m *WlstMru_9100) Reset()         { *m = WlstMru_9100{} }
 func (m *WlstMru_9100) String() string { return proto.CompactTextString(m) }
 func (*WlstMru_9100) ProtoMessage()    {}
 func (*WlstMru_9100) Descriptor() ([]byte, []int) {
-	return fileDescriptor_16b54be489a6899a, []int{13}
+	return fileDescriptor_16b54be489a6899a, []int{20}
 }
 func (m *WlstMru_9100) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -1093,6 +1528,13 @@ func (m *WlstMru_9100) GetVer() int32 {
 }
 
 func init() {
+	proto.RegisterType((*HjLock_0000)(nil), "wlst.pb2.Hj_lock_0000")
+	proto.RegisterType((*HjLock_0100)(nil), "wlst.pb2.Hj_lock_0100")
+	proto.RegisterType((*HjLock_0200)(nil), "wlst.pb2.Hj_lock_0200")
+	proto.RegisterType((*HjLock_0500)(nil), "wlst.pb2.Hj_lock_0500")
+	proto.RegisterType((*HjLock_0600)(nil), "wlst.pb2.Hj_lock_0600")
+	proto.RegisterType((*HjLock_0800)(nil), "wlst.pb2.Hj_lock_0800")
+	proto.RegisterType((*HjLock_0C00)(nil), "wlst.pb2.Hj_lock_0c00")
 	proto.RegisterType((*WlstElu_6255)(nil), "wlst.pb2.Wlst_elu_6255")
 	proto.RegisterType((*WlstElu_6256)(nil), "wlst.pb2.Wlst_elu_6256")
 	proto.RegisterType((*WlstElu_6256_WorkArgv)(nil), "wlst.pb2.Wlst_elu_6256.WorkArgv")
@@ -1114,60 +1556,348 @@ func init() {
 func init() { proto.RegisterFile("protocol_als.proto", fileDescriptor_16b54be489a6899a) }
 
 var fileDescriptor_16b54be489a6899a = []byte{
-	// 841 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xac, 0x55, 0xcd, 0x6e, 0x2b, 0x35,
-	0x14, 0xae, 0x33, 0xf9, 0x75, 0x9b, 0x4b, 0x65, 0xa1, 0xcb, 0xdc, 0x5c, 0x14, 0xd2, 0xf0, 0xd7,
-	0x05, 0x8a, 0xd2, 0x94, 0xfe, 0x2d, 0x90, 0x68, 0x09, 0x12, 0x2c, 0xca, 0x62, 0x5a, 0xd1, 0xa5,
-	0xe5, 0xc4, 0x56, 0x18, 0xc5, 0x19, 0x8f, 0x3c, 0x9e, 0x4c, 0xfb, 0x00, 0x2c, 0xd8, 0x21, 0xb1,
-	0x66, 0x8f, 0xc4, 0x8a, 0xb7, 0x60, 0x47, 0x97, 0x2c, 0x51, 0xfb, 0x06, 0x3c, 0x01, 0xf2, 0xcf,
-	0x24, 0x99, 0xd0, 0x50, 0x21, 0xdd, 0xdd, 0x39, 0xdf, 0x39, 0x3e, 0xfe, 0xe6, 0x3b, 0xc7, 0x67,
-	0x20, 0x8a, 0xa5, 0x50, 0x62, 0x2c, 0x38, 0x26, 0x3c, 0xe9, 0x19, 0x07, 0xd5, 0x33, 0x9e, 0xa8,
-	0x5e, 0x3c, 0x1a, 0x74, 0x2f, 0x60, 0xf3, 0x86, 0x27, 0x0a, 0x33, 0x9e, 0xe2, 0xe3, 0xc1, 0xd1,
-	0x11, 0x7a, 0x05, 0xeb, 0x11, 0xcb, 0x30, 0xa1, 0x54, 0xfa, 0xa0, 0x03, 0xf6, 0x2b, 0x41, 0x2d,
-	0x62, 0xd9, 0x39, 0xa5, 0x12, 0xbd, 0x84, 0xd5, 0x44, 0x11, 0x95, 0x26, 0x7e, 0xc9, 0x04, 0x9c,
-	0xd7, 0xfd, 0x1b, 0x14, 0x8b, 0x1c, 0xa3, 0xcf, 0x60, 0x23, 0x13, 0x72, 0x8a, 0x89, 0x9c, 0xcc,
-	0x7d, 0xd0, 0xf1, 0xf6, 0xb7, 0x07, 0x9d, 0x5e, 0x7e, 0x67, 0xaf, 0x90, 0xdb, 0xbb, 0x11, 0x72,
-	0x7a, 0x2e, 0x27, 0xf3, 0xa0, 0x9e, 0x39, 0x6b, 0xd3, 0x45, 0xad, 0x1f, 0x00, 0xac, 0xe7, 0xe9,
-	0xe8, 0x35, 0x6c, 0x70, 0x21, 0x62, 0x3c, 0x23, 0x72, 0xea, 0x98, 0xd6, 0x35, 0x70, 0x49, 0xe4,
-	0x54, 0x07, 0x0d, 0x81, 0x99, 0xa0, 0xcc, 0x15, 0x31, 0xe5, 0x2f, 0x05, 0x65, 0xe8, 0x23, 0xf8,
-	0x16, 0xe1, 0x44, 0xce, 0xf0, 0x9c, 0xf0, 0x94, 0xe1, 0x84, 0x29, 0xdf, 0x33, 0x29, 0x4d, 0x03,
-	0x7f, 0xab, 0xd1, 0x2b, 0xa6, 0x74, 0x11, 0x11, 0x2b, 0x4c, 0x19, 0x27, 0x77, 0x7e, 0xd9, 0x16,
-	0x11, 0xb1, 0x1a, 0x6a, 0x7f, 0x5d, 0xb8, 0x13, 0xf4, 0x0a, 0x56, 0x4d, 0xb6, 0x30, 0x1f, 0x5c,
-	0xb9, 0x28, 0xed, 0x82, 0xa0, 0xa2, 0xd3, 0xc5, 0x46, 0xe1, 0xbe, 0x2f, 0x15, 0x8a, 0xd0, 0x53,
-	0xf4, 0x39, 0x84, 0x96, 0x1a, 0x25, 0x8a, 0x38, 0xe5, 0xf6, 0x9e, 0x54, 0x8e, 0x9e, 0xf6, 0xce,
-	0x75, 0xe6, 0x90, 0x28, 0x12, 0x34, 0x48, 0x6e, 0xb6, 0x7e, 0x03, 0xb0, 0xb1, 0x08, 0xa0, 0x8f,
-	0x61, 0x33, 0xc9, 0x42, 0x35, 0xfe, 0x0e, 0x3b, 0x02, 0x4b, 0x6e, 0x3b, 0x36, 0x70, 0x65, 0xf0,
-	0xa7, 0x34, 0x29, 0x3d, 0xab, 0x89, 0x57, 0xd4, 0x44, 0x07, 0x23, 0x91, 0xd9, 0x12, 0xb9, 0x60,
-	0x91, 0xc8, 0xcc, 0x61, 0x3d, 0x58, 0x8c, 0xbb, 0x58, 0xc5, 0x0e, 0x16, 0xe3, 0x26, 0xd4, 0xfd,
-	0x75, 0x6d, 0x80, 0x08, 0xda, 0x83, 0x3b, 0x6c, 0xce, 0x22, 0x95, 0xe0, 0xb1, 0x48, 0x23, 0xe5,
-	0xfa, 0xbb, 0x6d, 0xb1, 0x2f, 0x34, 0x84, 0xde, 0x81, 0x35, 0xd3, 0xff, 0x48, 0xf8, 0x25, 0xfd,
-	0x51, 0x41, 0x55, 0xbb, 0xdf, 0x88, 0xff, 0xd3, 0xde, 0xff, 0x64, 0x4b, 0x15, 0x36, 0x07, 0x0c,
-	0x5b, 0x2f, 0xa8, 0x51, 0x65, 0x74, 0xed, 0x26, 0x45, 0xb2, 0x23, 0xf4, 0x01, 0x7c, 0x91, 0x11,
-	0xad, 0xb1, 0xbd, 0x90, 0x71, 0x47, 0x77, 0xc7, 0xa0, 0xa6, 0xde, 0x97, 0x7c, 0x3d, 0x4b, 0xc5,
-	0x4e, 0xe0, 0x95, 0xac, 0xeb, 0x78, 0x65, 0x54, 0xbc, 0xc2, 0xa8, 0xac, 0x8d, 0xdb, 0xd8, 0x11,
-	0x54, 0xe1, 0x8c, 0xd9, 0x77, 0x6a, 0x08, 0x5e, 0x6b, 0x77, 0xe3, 0xb8, 0xfd, 0x9c, 0xcb, 0x4c,
-	0x78, 0x82, 0xc9, 0x49, 0xbf, 0x8f, 0x10, 0x2c, 0xaf, 0x3c, 0x74, 0x63, 0x6f, 0x3a, 0xad, 0x73,
-	0xcd, 0x6b, 0xb2, 0xbc, 0x8c, 0xad, 0x31, 0xcd, 0xc0, 0xa9, 0x67, 0x6c, 0xb4, 0x0b, 0xbd, 0x39,
-	0x93, 0x46, 0xb4, 0x46, 0xa0, 0x4d, 0x8d, 0xf0, 0xf4, 0xd6, 0xaf, 0x76, 0xc0, 0x3e, 0x08, 0xb4,
-	0x89, 0xde, 0x86, 0x15, 0x26, 0xa5, 0x90, 0x7e, 0xcd, 0x1c, 0xb4, 0x4e, 0x77, 0xec, 0xe8, 0x4d,
-	0xe2, 0x04, 0xf7, 0xfb, 0xfd, 0x3e, 0x7a, 0x57, 0x3f, 0xf1, 0x68, 0x12, 0xaa, 0x94, 0x32, 0xc3,
-	0x11, 0x04, 0x4b, 0x00, 0xb5, 0x60, 0x9d, 0x13, 0x65, 0x83, 0x25, 0x13, 0x5c, 0xf8, 0xc8, 0x87,
-	0xb5, 0x49, 0x9c, 0x50, 0xa2, 0x2c, 0xdf, 0x46, 0x90, 0xbb, 0xdd, 0x5f, 0xc0, 0xca, 0x2d, 0x47,
-	0x67, 0xfd, 0x83, 0xe2, 0xae, 0x00, 0x6b, 0xbb, 0xe2, 0x7d, 0xd8, 0xd4, 0x5f, 0x85, 0xc3, 0x48,
-	0x31, 0x39, 0x27, 0x3c, 0x6f, 0x9a, 0x06, 0xbf, 0x76, 0x18, 0xfa, 0x10, 0xbe, 0x70, 0xaf, 0x36,
-	0x4c, 0x14, 0x89, 0xc6, 0xac, 0x30, 0x70, 0x43, 0x07, 0xae, 0x28, 0x5b, 0x2e, 0x28, 0xfb, 0x12,
-	0x56, 0xa3, 0x30, 0xa2, 0xec, 0xd6, 0xbd, 0x0b, 0xe7, 0x2d, 0x7a, 0xee, 0x98, 0x0e, 0x9e, 0xd9,
-	0xcd, 0xae, 0x46, 0xa9, 0x50, 0xe3, 0xac, 0x58, 0xe3, 0x30, 0x6f, 0x0f, 0x58, 0xb6, 0x67, 0xd3,
-	0xd1, 0x9f, 0xd6, 0x94, 0xfa, 0xf4, 0xcd, 0xf5, 0xc3, 0x5b, 0xf4, 0x63, 0xe5, 0xf6, 0xf2, 0xea,
-	0xed, 0x1a, 0x97, 0x84, 0x86, 0x69, 0x92, 0x8b, 0x62, 0xbd, 0xee, 0x1f, 0x39, 0xab, 0x99, 0x4c,
-	0xf1, 0xd9, 0x41, 0x61, 0x88, 0xbd, 0xc5, 0x10, 0x7f, 0x02, 0xd1, 0x8c, 0x29, 0x26, 0xb1, 0x64,
-	0x84, 0x86, 0xd1, 0x04, 0xab, 0xbb, 0x38, 0xff, 0x11, 0xec, 0x9a, 0x48, 0x60, 0x03, 0xd7, 0x77,
-	0x31, 0xfb, 0x77, 0xf6, 0x82, 0xe8, 0x5a, 0xf6, 0x50, 0x33, 0x7e, 0x0d, 0x1b, 0x23, 0x92, 0x52,
-	0x2c, 0x75, 0x92, 0xdb, 0x1b, 0x1a, 0x08, 0x74, 0xf0, 0x3d, 0xb8, 0x6d, 0x4b, 0x2d, 0x17, 0x1d,
-	0x08, 0xa0, 0x81, 0xec, 0x62, 0x71, 0xfa, 0x57, 0xcd, 0x39, 0x6d, 0x5e, 0xb4, 0x7e, 0x7f, 0x68,
-	0x83, 0xfb, 0x87, 0x36, 0xf8, 0xeb, 0xa1, 0x0d, 0x7e, 0x7c, 0x6c, 0x6f, 0xdd, 0x3f, 0xb6, 0xb7,
-	0xfe, 0x7c, 0x6c, 0x6f, 0x7d, 0x05, 0x46, 0x55, 0xf3, 0xbf, 0x3e, 0xfc, 0x27, 0x00, 0x00, 0xff,
-	0xff, 0xb4, 0x24, 0x26, 0x38, 0xc5, 0x07, 0x00, 0x00,
+	// 1108 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xac, 0x56, 0x4f, 0x6f, 0x1b, 0x45,
+	0x14, 0xef, 0xda, 0xf1, 0xbf, 0xb1, 0x5d, 0xa2, 0x11, 0x2a, 0xdb, 0x14, 0xdc, 0x74, 0x5b, 0x4a,
+	0x90, 0x90, 0xb5, 0x71, 0x49, 0x9a, 0x1c, 0x90, 0x48, 0x1a, 0xa4, 0x22, 0xb5, 0x1c, 0xb6, 0x51,
+	0x7b, 0x5c, 0x4d, 0xbc, 0x13, 0xc7, 0x78, 0xbc, 0xb3, 0xcc, 0x8e, 0xed, 0xe6, 0x03, 0x70, 0xe0,
+	0x86, 0xc4, 0x99, 0x3b, 0x82, 0x13, 0xdf, 0x82, 0x1b, 0x3d, 0x72, 0x44, 0xc9, 0x37, 0xe0, 0x13,
+	0xa0, 0xf7, 0x66, 0xd6, 0xd9, 0x75, 0xe2, 0x44, 0x48, 0xdc, 0xe6, 0xfd, 0xde, 0x6f, 0xde, 0xbc,
+	0x79, 0xbf, 0x37, 0x6f, 0x97, 0xd0, 0x44, 0x49, 0x2d, 0xfb, 0x52, 0x84, 0x4c, 0xa4, 0x5d, 0x34,
+	0x68, 0x7d, 0x26, 0x52, 0xdd, 0x4d, 0x8e, 0x7a, 0xde, 0x63, 0xd2, 0x7a, 0xfe, 0x6d, 0x28, 0x64,
+	0x7f, 0x14, 0xfa, 0xbe, 0xef, 0xd3, 0x3b, 0xa4, 0x9a, 0x6a, 0xa6, 0x27, 0xa9, 0xeb, 0xac, 0x3b,
+	0x1b, 0x95, 0xc0, 0x5a, 0xde, 0xa7, 0x39, 0xde, 0xa6, 0xef, 0xd3, 0xbb, 0xa4, 0x1e, 0xf3, 0x59,
+	0xc8, 0xa2, 0x48, 0x59, 0x66, 0x2d, 0xe6, 0xb3, 0xbd, 0x28, 0x52, 0xde, 0xaf, 0xe5, 0x1c, 0xb7,
+	0xe7, 0xfb, 0xf4, 0x3e, 0x69, 0xa2, 0x51, 0x08, 0x4c, 0x00, 0x7a, 0x85, 0x08, 0x10, 0x8e, 0x15,
+	0xff, 0x2e, 0x14, 0xc3, 0xc1, 0x89, 0x4e, 0xdd, 0x92, 0x21, 0x00, 0xf4, 0x02, 0x11, 0x7a, 0x8f,
+	0x34, 0x90, 0x70, 0xc4, 0x79, 0xe2, 0x96, 0xd1, 0x5d, 0x07, 0x60, 0x9f, 0xf3, 0x84, 0x7e, 0x44,
+	0x88, 0x1e, 0x8e, 0x79, 0x18, 0x71, 0xc1, 0x4e, 0xdd, 0x15, 0xf4, 0x36, 0x00, 0x39, 0x00, 0x80,
+	0x3e, 0x24, 0x6d, 0x38, 0x4a, 0x1e, 0x1f, 0x5b, 0x46, 0x05, 0x19, 0x2d, 0x0b, 0x1a, 0xd2, 0x03,
+	0xd2, 0x1a, 0xb3, 0x54, 0x73, 0x15, 0xf6, 0x99, 0x8a, 0x36, 0xdd, 0xea, 0xba, 0xb3, 0xb1, 0x12,
+	0x34, 0x0d, 0xf6, 0x0c, 0xa0, 0x05, 0x4a, 0xcf, 0xad, 0x2d, 0x52, 0x7a, 0xf4, 0x7d, 0x52, 0x01,
+	0x5f, 0xea, 0xd6, 0xf1, 0x08, 0x63, 0xc0, 0xc6, 0x13, 0xa6, 0xa2, 0x19, 0x53, 0x3c, 0x9c, 0x72,
+	0xe5, 0x36, 0xcc, 0xc6, 0x0c, 0x7b, 0xcd, 0x15, 0xdc, 0x4f, 0xb0, 0x54, 0x63, 0x64, 0x97, 0xa0,
+	0xbf, 0x0e, 0x00, 0x84, 0xa5, 0x8f, 0xc9, 0x7b, 0x73, 0x67, 0x28, 0xf8, 0x80, 0x09, 0xb7, 0x89,
+	0xf1, 0xdb, 0x19, 0xe5, 0x05, 0x80, 0x10, 0x04, 0x29, 0xfa, 0x34, 0xe1, 0x6e, 0xcb, 0x14, 0x09,
+	0x80, 0xc3, 0xd3, 0x84, 0xe7, 0x74, 0x6d, 0x17, 0x74, 0x1d, 0xe5, 0xb4, 0xda, 0x32, 0x5a, 0xe5,
+	0xa5, 0x70, 0xae, 0x97, 0xa2, 0x74, 0xad, 0x14, 0xe5, 0x05, 0x29, 0x3c, 0x2f, 0x77, 0xd8, 0xb6,
+	0xef, 0x53, 0x4a, 0x56, 0xf0, 0xc6, 0x0e, 0xde, 0x18, 0xd7, 0xde, 0x61, 0x8e, 0xb3, 0xe3, 0xfb,
+	0x97, 0x94, 0x71, 0x6e, 0x56, 0xa6, 0x74, 0x49, 0x19, 0xef, 0x51, 0x2e, 0x6a, 0xdf, 0xf7, 0x41,
+	0x29, 0x93, 0xa3, 0xb9, 0xa0, 0x31, 0xbc, 0x7d, 0xd2, 0x7e, 0x23, 0x52, 0x1d, 0x72, 0x31, 0x09,
+	0xb7, 0x7b, 0x5b, 0x5b, 0xd7, 0x74, 0x79, 0xae, 0xa0, 0xa5, 0x42, 0x41, 0xff, 0x71, 0x8a, 0x41,
+	0xb6, 0xe9, 0x17, 0xa4, 0x31, 0x93, 0x6a, 0x14, 0x32, 0x35, 0x98, 0xba, 0xce, 0x7a, 0x79, 0xa3,
+	0xd9, 0x5b, 0xef, 0x66, 0x0f, 0xb0, 0x5b, 0xe0, 0x76, 0xdf, 0x48, 0x35, 0xda, 0x53, 0x83, 0x69,
+	0x50, 0x9f, 0xd9, 0xd5, 0xb2, 0x83, 0xd6, 0x7e, 0x70, 0x48, 0x3d, 0xa3, 0x63, 0x03, 0x49, 0x99,
+	0x84, 0x63, 0xa6, 0x46, 0x36, 0xd3, 0x3a, 0x00, 0x2f, 0x99, 0x1a, 0x81, 0x13, 0x13, 0x18, 0xcb,
+	0x88, 0x67, 0x92, 0x01, 0xf0, 0x52, 0x46, 0x1c, 0xba, 0x8b, 0x09, 0xa6, 0xc6, 0xe1, 0x94, 0x89,
+	0x09, 0x0f, 0x53, 0xae, 0xad, 0x6e, 0x6d, 0x84, 0x5f, 0x03, 0xfa, 0x8a, 0x6b, 0x08, 0x22, 0x13,
+	0x5d, 0x78, 0x64, 0x75, 0x99, 0xe8, 0x83, 0xab, 0x0a, 0xf7, 0x94, 0xde, 0x25, 0x55, 0x64, 0x4b,
+	0xbc, 0x70, 0x65, 0xbf, 0xb4, 0xea, 0x04, 0x15, 0xa0, 0xcb, 0xa5, 0x85, 0xfb, 0xbe, 0x54, 0x08,
+	0x12, 0xed, 0xd0, 0x2f, 0x09, 0x31, 0xa9, 0x45, 0x4c, 0x33, 0x5b, 0xb9, 0x07, 0x57, 0x56, 0x2e,
+	0xda, 0xe9, 0xee, 0x01, 0xf3, 0x80, 0x69, 0x16, 0x34, 0x58, 0xb6, 0x5c, 0xfb, 0xdd, 0x21, 0x8d,
+	0xb9, 0x83, 0x7e, 0x42, 0xda, 0xe9, 0x6c, 0xa8, 0xfb, 0x27, 0x17, 0x93, 0x28, 0xcb, 0xad, 0x65,
+	0x1c, 0x76, 0x1e, 0x5d, 0x51, 0x93, 0xd2, 0x8d, 0x35, 0x29, 0x17, 0x6b, 0x02, 0xce, 0x58, 0xce,
+	0x4c, 0x88, 0xac, 0x60, 0xb1, 0x9c, 0xe1, 0x66, 0x68, 0x2c, 0x2e, 0xac, 0xcf, 0xcc, 0xa3, 0x1a,
+	0x17, 0xe8, 0xf2, 0x7e, 0x5b, 0x68, 0x20, 0x06, 0xfd, 0xcd, 0xa7, 0x3c, 0xd6, 0x69, 0xd8, 0x97,
+	0x93, 0x58, 0x5b, 0x7d, 0x9b, 0x06, 0x7b, 0x06, 0x10, 0xfd, 0x80, 0xd4, 0x50, 0xff, 0x58, 0xba,
+	0x25, 0xb8, 0x54, 0x50, 0x05, 0xf3, 0x1b, 0xf9, 0x5f, 0xe4, 0xbd, 0x36, 0xdb, 0x48, 0x87, 0xb8,
+	0x01, 0xb3, 0x2d, 0x07, 0xb5, 0x48, 0x63, 0x5d, 0xbd, 0xb4, 0x98, 0xec, 0x11, 0x7d, 0x44, 0x6e,
+	0xcf, 0x18, 0xd4, 0xd8, 0x1c, 0xc8, 0x85, 0x4d, 0xb7, 0x85, 0x28, 0xc6, 0xfb, 0x4a, 0x2c, 0xb2,
+	0x74, 0x36, 0x4a, 0x72, 0xac, 0xc3, 0x24, 0xd7, 0x2a, 0xe5, 0x42, 0xab, 0x2c, 0xb4, 0x5b, 0xdf,
+	0x26, 0x08, 0x83, 0xc6, 0xbc, 0x53, 0x4c, 0xf0, 0x10, 0xcc, 0xa5, 0xed, 0xf6, 0x73, 0x56, 0x66,
+	0x26, 0xd2, 0x90, 0x3d, 0x35, 0xd3, 0x28, 0xf7, 0xd0, 0x71, 0xbd, 0x6c, 0x37, 0x70, 0xf1, 0x35,
+	0x99, 0xbc, 0x70, 0x0d, 0x18, 0x64, 0x60, 0xab, 0x87, 0x6b, 0xba, 0x4a, 0xca, 0x30, 0xf2, 0xa1,
+	0x68, 0x8d, 0x00, 0x96, 0x80, 0x88, 0xc9, 0x5b, 0xfc, 0xc0, 0x38, 0x01, 0x2c, 0x61, 0x16, 0x71,
+	0xa5, 0xa4, 0xc2, 0x2f, 0x4a, 0x25, 0x30, 0x86, 0xd7, 0xb7, 0xe9, 0x0d, 0x92, 0xd4, 0x7c, 0x99,
+	0x3f, 0x84, 0x27, 0x1e, 0x0f, 0x86, 0x7a, 0x12, 0x71, 0xcc, 0xd1, 0x09, 0x2e, 0x00, 0xba, 0x46,
+	0xea, 0x82, 0x69, 0xe3, 0x2c, 0xa1, 0x73, 0x6e, 0x53, 0x97, 0xd4, 0x06, 0x49, 0x1a, 0x31, 0x6d,
+	0xf2, 0x6d, 0x04, 0x99, 0xe9, 0xfd, 0xe2, 0xe4, 0x4e, 0xd9, 0xda, 0xf5, 0x37, 0x8b, 0xb3, 0xc2,
+	0x59, 0x98, 0x15, 0x0f, 0x49, 0x1b, 0xc7, 0xfb, 0x30, 0xd6, 0x5c, 0x4d, 0x99, 0xc8, 0x44, 0x03,
+	0xf0, 0x6b, 0x8b, 0xd1, 0x8f, 0xc9, 0x6d, 0xfb, 0x6a, 0x87, 0xa9, 0x66, 0x71, 0x9f, 0x17, 0x1a,
+	0xee, 0xc0, 0x82, 0xb9, 0xca, 0xae, 0x14, 0x2a, 0x7b, 0x87, 0x54, 0xe3, 0x61, 0x1c, 0xf1, 0xb7,
+	0xf6, 0x5d, 0x58, 0x6b, 0xae, 0xb9, 0xcd, 0xb4, 0x77, 0xc3, 0x6c, 0xb6, 0x31, 0x4a, 0x85, 0x18,
+	0xbb, 0xc5, 0x18, 0x4f, 0x32, 0x79, 0x9c, 0x0b, 0x79, 0x96, 0x6d, 0xfd, 0x69, 0xa1, 0x52, 0x9f,
+	0xff, 0x7f, 0x7a, 0x94, 0xe7, 0x7a, 0xe4, 0x4e, 0x5f, 0xc9, 0x9f, 0x0e, 0xb8, 0x62, 0xd1, 0x70,
+	0x92, 0x66, 0x45, 0x31, 0x96, 0xf7, 0x67, 0x96, 0xd5, 0x58, 0x4d, 0xc2, 0xdd, 0xcd, 0x42, 0x13,
+	0x97, 0xe7, 0x4d, 0xfc, 0x19, 0xa1, 0x63, 0x0e, 0x9f, 0x47, 0xc5, 0x59, 0x34, 0x8c, 0x07, 0xe6,
+	0x0f, 0xc1, 0xdc, 0x6f, 0x15, 0x3d, 0x81, 0x71, 0xe0, 0x9f, 0xc2, 0x25, 0xf6, 0x3c, 0xd1, 0x05,
+	0xf6, 0x01, 0x64, 0x7c, 0x8f, 0x34, 0x8e, 0xd8, 0x24, 0x0a, 0x15, 0x90, 0xec, 0xdc, 0x00, 0x20,
+	0x00, 0xe7, 0x7d, 0xd2, 0x34, 0xa1, 0x2e, 0x06, 0x9d, 0x13, 0x10, 0x84, 0xcc, 0x60, 0xb1, 0xf5,
+	0xaf, 0xe2, 0x3e, 0x58, 0xee, 0xaf, 0xfd, 0x71, 0xd6, 0x71, 0xde, 0x9d, 0x75, 0x9c, 0xbf, 0xcf,
+	0x3a, 0xce, 0x8f, 0xe7, 0x9d, 0x5b, 0xef, 0xce, 0x3b, 0xb7, 0xfe, 0x3a, 0xef, 0xdc, 0x7a, 0xee,
+	0x1c, 0x55, 0xf1, 0xe7, 0xf5, 0xc9, 0xbf, 0x01, 0x00, 0x00, 0xff, 0xff, 0x71, 0xe9, 0x14, 0x9d,
+	0xd2, 0x0a, 0x00, 0x00,
+}
+
+func (m *HjLock_0000) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *HjLock_0000) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *HjLock_0000) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.Status != 0 {
+		i = encodeVarintProtocolAls(dAtA, i, uint64(m.Status))
+		i--
+		dAtA[i] = 0x8
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *HjLock_0100) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *HjLock_0100) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *HjLock_0100) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.NewAddr != 0 {
+		i = encodeVarintProtocolAls(dAtA, i, uint64(m.NewAddr))
+		i--
+		dAtA[i] = 0x8
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *HjLock_0200) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *HjLock_0200) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *HjLock_0200) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.Status != 0 {
+		i = encodeVarintProtocolAls(dAtA, i, uint64(m.Status))
+		i--
+		dAtA[i] = 0x68
+	}
+	if m.CardType != 0 {
+		i = encodeVarintProtocolAls(dAtA, i, uint64(m.CardType))
+		i--
+		dAtA[i] = 0x60
+	}
+	if m.LastCardLegal != 0 {
+		i = encodeVarintProtocolAls(dAtA, i, uint64(m.LastCardLegal))
+		i--
+		dAtA[i] = 0x58
+	}
+	if m.LastCard != 0 {
+		i = encodeVarintProtocolAls(dAtA, i, uint64(m.LastCard))
+		i--
+		dAtA[i] = 0x50
+	}
+	if m.HardwareVer != 0 {
+		i = encodeVarintProtocolAls(dAtA, i, uint64(m.HardwareVer))
+		i--
+		dAtA[i] = 0x48
+	}
+	if m.Cards != 0 {
+		i = encodeVarintProtocolAls(dAtA, i, uint64(m.Cards))
+		i--
+		dAtA[i] = 0x40
+	}
+	if m.MasterCard2 != 0 {
+		i = encodeVarintProtocolAls(dAtA, i, uint64(m.MasterCard2))
+		i--
+		dAtA[i] = 0x38
+	}
+	if m.MasterCard1 != 0 {
+		i = encodeVarintProtocolAls(dAtA, i, uint64(m.MasterCard1))
+		i--
+		dAtA[i] = 0x30
+	}
+	if m.LockoffDelay != 0 {
+		i = encodeVarintProtocolAls(dAtA, i, uint64(m.LockoffDelay))
+		i--
+		dAtA[i] = 0x28
+	}
+	if m.TimeDelay != 0 {
+		i = encodeVarintProtocolAls(dAtA, i, uint64(m.TimeDelay))
+		i--
+		dAtA[i] = 0x20
+	}
+	if m.FreqBeep != 0 {
+		i = encodeVarintProtocolAls(dAtA, i, uint64(m.FreqBeep))
+		i--
+		dAtA[i] = 0x18
+	}
+	if m.FreqLights != 0 {
+		i = encodeVarintProtocolAls(dAtA, i, uint64(m.FreqLights))
+		i--
+		dAtA[i] = 0x10
+	}
+	if m.LockStatus != 0 {
+		i = encodeVarintProtocolAls(dAtA, i, uint64(m.LockStatus))
+		i--
+		dAtA[i] = 0x8
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *HjLock_0500) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *HjLock_0500) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *HjLock_0500) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.TimeDelay != 0 {
+		i = encodeVarintProtocolAls(dAtA, i, uint64(m.TimeDelay))
+		i--
+		dAtA[i] = 0x18
+	}
+	if m.FreqBeep != 0 {
+		i = encodeVarintProtocolAls(dAtA, i, uint64(m.FreqBeep))
+		i--
+		dAtA[i] = 0x10
+	}
+	if m.FreqLights != 0 {
+		i = encodeVarintProtocolAls(dAtA, i, uint64(m.FreqLights))
+		i--
+		dAtA[i] = 0x8
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *HjLock_0600) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *HjLock_0600) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *HjLock_0600) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.Card != 0 {
+		i = encodeVarintProtocolAls(dAtA, i, uint64(m.Card))
+		i--
+		dAtA[i] = 0x8
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *HjLock_0800) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *HjLock_0800) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *HjLock_0800) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.MasterCard2 != 0 {
+		i = encodeVarintProtocolAls(dAtA, i, uint64(m.MasterCard2))
+		i--
+		dAtA[i] = 0x10
+	}
+	if m.MasterCard1 != 0 {
+		i = encodeVarintProtocolAls(dAtA, i, uint64(m.MasterCard1))
+		i--
+		dAtA[i] = 0x8
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *HjLock_0C00) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *HjLock_0C00) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *HjLock_0C00) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.Delay != 0 {
+		i = encodeVarintProtocolAls(dAtA, i, uint64(m.Delay))
+		i--
+		dAtA[i] = 0x8
+	}
+	return len(dAtA) - i, nil
 }
 
 func (m *WlstElu_6255) Marshal() (dAtA []byte, err error) {
@@ -1915,6 +2645,135 @@ func encodeVarintProtocolAls(dAtA []byte, offset int, v uint64) int {
 	dAtA[offset] = uint8(v)
 	return base
 }
+func (m *HjLock_0000) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if m.Status != 0 {
+		n += 1 + sovProtocolAls(uint64(m.Status))
+	}
+	return n
+}
+
+func (m *HjLock_0100) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if m.NewAddr != 0 {
+		n += 1 + sovProtocolAls(uint64(m.NewAddr))
+	}
+	return n
+}
+
+func (m *HjLock_0200) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if m.LockStatus != 0 {
+		n += 1 + sovProtocolAls(uint64(m.LockStatus))
+	}
+	if m.FreqLights != 0 {
+		n += 1 + sovProtocolAls(uint64(m.FreqLights))
+	}
+	if m.FreqBeep != 0 {
+		n += 1 + sovProtocolAls(uint64(m.FreqBeep))
+	}
+	if m.TimeDelay != 0 {
+		n += 1 + sovProtocolAls(uint64(m.TimeDelay))
+	}
+	if m.LockoffDelay != 0 {
+		n += 1 + sovProtocolAls(uint64(m.LockoffDelay))
+	}
+	if m.MasterCard1 != 0 {
+		n += 1 + sovProtocolAls(uint64(m.MasterCard1))
+	}
+	if m.MasterCard2 != 0 {
+		n += 1 + sovProtocolAls(uint64(m.MasterCard2))
+	}
+	if m.Cards != 0 {
+		n += 1 + sovProtocolAls(uint64(m.Cards))
+	}
+	if m.HardwareVer != 0 {
+		n += 1 + sovProtocolAls(uint64(m.HardwareVer))
+	}
+	if m.LastCard != 0 {
+		n += 1 + sovProtocolAls(uint64(m.LastCard))
+	}
+	if m.LastCardLegal != 0 {
+		n += 1 + sovProtocolAls(uint64(m.LastCardLegal))
+	}
+	if m.CardType != 0 {
+		n += 1 + sovProtocolAls(uint64(m.CardType))
+	}
+	if m.Status != 0 {
+		n += 1 + sovProtocolAls(uint64(m.Status))
+	}
+	return n
+}
+
+func (m *HjLock_0500) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if m.FreqLights != 0 {
+		n += 1 + sovProtocolAls(uint64(m.FreqLights))
+	}
+	if m.FreqBeep != 0 {
+		n += 1 + sovProtocolAls(uint64(m.FreqBeep))
+	}
+	if m.TimeDelay != 0 {
+		n += 1 + sovProtocolAls(uint64(m.TimeDelay))
+	}
+	return n
+}
+
+func (m *HjLock_0600) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if m.Card != 0 {
+		n += 1 + sovProtocolAls(uint64(m.Card))
+	}
+	return n
+}
+
+func (m *HjLock_0800) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if m.MasterCard1 != 0 {
+		n += 1 + sovProtocolAls(uint64(m.MasterCard1))
+	}
+	if m.MasterCard2 != 0 {
+		n += 1 + sovProtocolAls(uint64(m.MasterCard2))
+	}
+	return n
+}
+
+func (m *HjLock_0C00) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if m.Delay != 0 {
+		n += 1 + sovProtocolAls(uint64(m.Delay))
+	}
+	return n
+}
+
 func (m *WlstElu_6255) Size() (n int) {
 	if m == nil {
 		return 0
@@ -2257,6 +3116,795 @@ func sovProtocolAls(x uint64) (n int) {
 }
 func sozProtocolAls(x uint64) (n int) {
 	return sovProtocolAls(uint64((x << 1) ^ uint64((int64(x) >> 63))))
+}
+func (m *HjLock_0000) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowProtocolAls
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: Hj_lock_0000: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: Hj_lock_0000: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Status", wireType)
+			}
+			m.Status = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowProtocolAls
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.Status |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		default:
+			iNdEx = preIndex
+			skippy, err := skipProtocolAls(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if skippy < 0 {
+				return ErrInvalidLengthProtocolAls
+			}
+			if (iNdEx + skippy) < 0 {
+				return ErrInvalidLengthProtocolAls
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *HjLock_0100) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowProtocolAls
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: Hj_lock_0100: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: Hj_lock_0100: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field NewAddr", wireType)
+			}
+			m.NewAddr = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowProtocolAls
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.NewAddr |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		default:
+			iNdEx = preIndex
+			skippy, err := skipProtocolAls(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if skippy < 0 {
+				return ErrInvalidLengthProtocolAls
+			}
+			if (iNdEx + skippy) < 0 {
+				return ErrInvalidLengthProtocolAls
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *HjLock_0200) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowProtocolAls
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: Hj_lock_0200: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: Hj_lock_0200: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field LockStatus", wireType)
+			}
+			m.LockStatus = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowProtocolAls
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.LockStatus |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 2:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field FreqLights", wireType)
+			}
+			m.FreqLights = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowProtocolAls
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.FreqLights |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 3:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field FreqBeep", wireType)
+			}
+			m.FreqBeep = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowProtocolAls
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.FreqBeep |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 4:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field TimeDelay", wireType)
+			}
+			m.TimeDelay = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowProtocolAls
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.TimeDelay |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 5:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field LockoffDelay", wireType)
+			}
+			m.LockoffDelay = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowProtocolAls
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.LockoffDelay |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 6:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field MasterCard1", wireType)
+			}
+			m.MasterCard1 = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowProtocolAls
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.MasterCard1 |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 7:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field MasterCard2", wireType)
+			}
+			m.MasterCard2 = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowProtocolAls
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.MasterCard2 |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 8:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Cards", wireType)
+			}
+			m.Cards = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowProtocolAls
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.Cards |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 9:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field HardwareVer", wireType)
+			}
+			m.HardwareVer = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowProtocolAls
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.HardwareVer |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 10:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field LastCard", wireType)
+			}
+			m.LastCard = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowProtocolAls
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.LastCard |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 11:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field LastCardLegal", wireType)
+			}
+			m.LastCardLegal = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowProtocolAls
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.LastCardLegal |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 12:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field CardType", wireType)
+			}
+			m.CardType = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowProtocolAls
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.CardType |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 13:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Status", wireType)
+			}
+			m.Status = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowProtocolAls
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.Status |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		default:
+			iNdEx = preIndex
+			skippy, err := skipProtocolAls(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if skippy < 0 {
+				return ErrInvalidLengthProtocolAls
+			}
+			if (iNdEx + skippy) < 0 {
+				return ErrInvalidLengthProtocolAls
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *HjLock_0500) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowProtocolAls
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: Hj_lock_0500: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: Hj_lock_0500: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field FreqLights", wireType)
+			}
+			m.FreqLights = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowProtocolAls
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.FreqLights |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 2:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field FreqBeep", wireType)
+			}
+			m.FreqBeep = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowProtocolAls
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.FreqBeep |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 3:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field TimeDelay", wireType)
+			}
+			m.TimeDelay = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowProtocolAls
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.TimeDelay |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		default:
+			iNdEx = preIndex
+			skippy, err := skipProtocolAls(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if skippy < 0 {
+				return ErrInvalidLengthProtocolAls
+			}
+			if (iNdEx + skippy) < 0 {
+				return ErrInvalidLengthProtocolAls
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *HjLock_0600) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowProtocolAls
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: Hj_lock_0600: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: Hj_lock_0600: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Card", wireType)
+			}
+			m.Card = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowProtocolAls
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.Card |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		default:
+			iNdEx = preIndex
+			skippy, err := skipProtocolAls(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if skippy < 0 {
+				return ErrInvalidLengthProtocolAls
+			}
+			if (iNdEx + skippy) < 0 {
+				return ErrInvalidLengthProtocolAls
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *HjLock_0800) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowProtocolAls
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: Hj_lock_0800: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: Hj_lock_0800: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field MasterCard1", wireType)
+			}
+			m.MasterCard1 = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowProtocolAls
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.MasterCard1 |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 2:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field MasterCard2", wireType)
+			}
+			m.MasterCard2 = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowProtocolAls
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.MasterCard2 |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		default:
+			iNdEx = preIndex
+			skippy, err := skipProtocolAls(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if skippy < 0 {
+				return ErrInvalidLengthProtocolAls
+			}
+			if (iNdEx + skippy) < 0 {
+				return ErrInvalidLengthProtocolAls
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *HjLock_0C00) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowProtocolAls
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: Hj_lock_0c00: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: Hj_lock_0c00: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Delay", wireType)
+			}
+			m.Delay = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowProtocolAls
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.Delay |= int32(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		default:
+			iNdEx = preIndex
+			skippy, err := skipProtocolAls(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if skippy < 0 {
+				return ErrInvalidLengthProtocolAls
+			}
+			if (iNdEx + skippy) < 0 {
+				return ErrInvalidLengthProtocolAls
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
 }
 func (m *WlstElu_6255) Unmarshal(dAtA []byte) error {
 	l := len(dAtA)

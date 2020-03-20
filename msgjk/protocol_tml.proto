@@ -224,7 +224,7 @@ message WlstTerminal {
   Wlst_esu_9000 wlst_esu_a200 = 826;
   Wlst_esu_9000 wlst_esu_a300 = 827;
 
-  //光照度,GPS,抄表
+  //光照度,GPS,抄表,恒杰门控
   // gps数据
   Wlst_gps_0000 wlst_gps_0000 = 400;
   // wx2002gps 读版本
@@ -301,6 +301,41 @@ message WlstTerminal {
   // 设置运行参数
   Wlst_elu_6256 wlst_elu_6256 = 455;
   Wlst_elu_6256 wlst_elu_62d6 = 456;
+  // 恒杰门控
+  // 设置地址
+  Hj_lock_0100 hj_lock_0100 = 469;
+  // 设置地址应答
+  Hj_lock_0000 hj_lock_8100 = 470;
+  // 查询锁状态应答，下行命令：hj_lock_0200
+  Hj_lock_0200 hj_lock_8200 = 471;
+  // 开锁应答，下行命令：hj_lock_0300
+  Hj_lock_0000 hj_lock_8300 = 472;
+  // 关锁应答，下行命令：hj_lock_0400
+  Hj_lock_0000 hj_lock_8400 = 473;
+  // 开门提醒设置
+  Hj_lock_0500 hj_lock_0500 = 474;
+  // 开门提醒设置应答
+  Hj_lock_0000 hj_lock_8500 = 475;
+  // 添加卡
+  Hj_lock_0600 hj_lock_0600 = 476;
+  // 添加卡应答
+  Hj_lock_0000 hj_lock_8600 = 477;
+  // 删除卡
+  Hj_lock_0600 hj_lock_0700 = 478;
+  // 删除卡应答
+  Hj_lock_0000 hj_lock_8700 = 479;
+  // 设置管理卡
+  Hj_lock_0800 hj_lock_0800 = 480;
+  // 设置管理卡应答
+  Hj_lock_0000 hj_lock_8800 = 481;
+  // 设置开锁时间
+  Hj_lock_0c00 hj_lock_0c00 = 482;
+  // 设置开锁时间应答
+  Hj_lock_0000 hj_lock_8c00 = 483;
+  // 复位应答，下行命令：hj_lock_0900
+  Hj_lock_0000 hj_lock_8900 = 484;
+  // 恢复出厂应答，下行命令：hj_lock_0a00
+  Hj_lock_0000 hj_lock_8a00 = 485;
 
   //单灯
   //复位网络
