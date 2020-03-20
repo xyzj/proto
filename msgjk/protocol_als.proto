@@ -22,11 +22,11 @@ message Hj_lock_0200 {
   int32 freq_beep = 3; // 1～254表示打开或者关闭持续时间，单位100MS。0表示常闭，0xFF表示常开
   int32 time_delay = 4; // 以上2个freq状态的持续时间
   int32 lockoff_delay = 5; // 开门持续时间，默认5000ms
-  uint32 master_card1 = 6; // 主卡号1，用于现场添加卡
-  uint32 master_card2 = 7; // 主卡号2，用于现场删除卡
+  uint64 master_card1 = 6; // 主卡号1，用于现场添加卡
+  uint64 master_card2 = 7; // 主卡号2，用于现场删除卡
   int32 cards = 8; // 已添加的卡数量
-  uint32 hardware_ver = 9; // 硬件版本
-  uint32 last_card = 10; // 最后一次读卡卡号
+  uint64 hardware_ver = 9; // 硬件版本
+  uint64 last_card = 10; // 最后一次读卡卡号
   int32 last_card_legal = 11; // 最后一次读卡是否合法，0-非法，1-合法
   int32 card_type = 12; // 卡类型，0x00 ID，0x01 IC
   int32 status = 13; // 0x00 无异常，0x01 开锁异常，0x02 关锁异常
@@ -41,14 +41,13 @@ message Hj_lock_0500 {
 
 // 添加/删除卡
 message Hj_lock_0600{
-  int32 do = 1; // 0-添加，1-删除
-  uint32 card = 2; // 卡号
+  uint64 card = 1; // 卡号
 }
 
 // 设置管理卡
 message Hj_lock_0800{
-  uint32 master_card1 = 1; //主卡号1，用于现场添加卡
-  uint32 master_card2 = 2; //主卡号2，用于现场删除卡
+  uint64 master_card1 = 1; //主卡号1，用于现场添加卡
+  uint64 master_card2 = 2; //主卡号2，用于现场删除卡
 }
 
 // 设置开锁延迟（指定时间后自动锁闭）
