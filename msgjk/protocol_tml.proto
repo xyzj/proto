@@ -336,6 +336,12 @@ message WlstTerminal {
   Hj_lock_0000 hj_lock_8900 = 484;
   // 恢复出厂应答，下行命令：hj_lock_0a00
   Hj_lock_0000 hj_lock_8a00 = 485;
+  // 刷卡主报
+  Hj_lock_0200 hj_lock_8e00 = 486;
+  // 设置是否刷卡上报
+  Hj_lock_0d00 hj_lock_0d00 = 487;
+  // 设置是否刷卡上报应答
+  Hj_lock_0000 hj_lock_8d00 = 488;
 
   //单灯
   //复位网络
