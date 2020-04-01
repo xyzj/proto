@@ -10,6 +10,10 @@ message Hj_lock_0000{
   int32 status = 1; // 应答，0-失败，1-成功
 }
 
+// 设置刷卡主报
+message Hj_lock_0d00{
+  int32 enable_alarm = 1; // 0-不允许主报，1-允许主报
+}
 // 设置地址
 message Hj_lock_0100{
   int32 new_addr = 1; // 设置的地址
