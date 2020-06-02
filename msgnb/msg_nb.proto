@@ -20,7 +20,7 @@ service NBIoTCtl {
 
 //数据服务和通讯服务传输格式
 message MsgNBOpen {
-  // 设备imei
+  // 设备imei（云平台不填充，只填充device_id）
   int64 imei = 1;
   // 数据接收时间
   int64 dt_receive = 2;
@@ -50,6 +50,8 @@ message MsgNBOpen {
   NBSlu_5500 Nb_slu_5500 = 19;
   // 本地控制方案设置/读取
   NBSlu_5600 Nb_slu_5600 = 20;
+  // deviceid，与imei对应
+  string device_id =21;
 }
 
 message SluitemConfig {
