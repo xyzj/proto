@@ -55,6 +55,8 @@ message Args {
   int32 br = 10;
   // 设备标识，用于电信nb平台，本公司产品使用0xd0
   repeated int32 data_flag = 11 [ packed = true ];
+  // 64位附属设备地址
+  int64 cid64 = 12;
 }
 
 message SysCommands {
