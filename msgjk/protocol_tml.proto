@@ -343,17 +343,17 @@ message WlstTerminal {
   // 设置是否刷卡上报应答
   Hj_lock_0000 hj_lock_8d00 = 488;
   // 设置报警参数
-  Hj_lock_0e00 hj_lock_0e00 = 488;
+  Hj_lock_0e00 hj_lock_0e00 = 489;
   // 设置报警参数应答
-  Hj_lock_0000 hj_lock_8e00 = 488;
+  Hj_lock_0000 hj_lock_8e01 = 490;
   // 设置门磁报警
-  Hj_lock_0f00 hj_lock_0f00 = 488;
+  Hj_lock_0f00 hj_lock_0f00 = 491;
   // 设置门磁报警应答
-  Hj_lock_0000 hj_lock_8f00 = 488;
+  Hj_lock_0000 hj_lock_8f00 = 492;
   // 查询锁号应答
-  Hj_lock_1000 hj_lock_9000 = 488;
+  Hj_lock_1000 hj_lock_9000 = 493;
   // 查询门锁状态应答
-  Hj_lock_1100 hj_lock_9100 = 488;
+  Hj_lock_1100 hj_lock_9100 = 494;
 
   //单灯
   //复位网络

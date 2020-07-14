@@ -16,7 +16,7 @@ message Hj_lock_0d00{
 }
 // 设置地址
 message Hj_lock_0100{
-  int32 new_addr = 1; // 设置的地址
+  int64 new_addr = 1; // 设置的地址
 }
 
 // 查询锁状态
