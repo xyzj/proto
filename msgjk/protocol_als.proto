@@ -59,6 +59,28 @@ message Hj_lock_0c00{
   int32 delay = 1; // 开锁延迟，毫秒值，1-65535，默认5000
 }
 
+// 设置报警参数
+message Hj_lock_0e00{
+  int32 freq_lights = 1; // 红灯异常报警时间，单位秒，范围5-600
+  int32 freq_beep = 2; // 蜂鸣器异常报警时间，单位秒，范围5-600
+}
+
+// 设置门磁报警
+message Hj_lock_0f00{
+  int32 alarm_magnetic = 1; // 门磁报警 0-不启用 1-启用
+}
+
+// 查询锁号
+message Hj_lock_1000{
+  int64 lock_id = 2; // 锁号
+}
+
+// 查询门锁状态
+message Hj_lock_1100{
+  int32 lock_status = 1; // 锁状态 0-关 1-开
+  int32 door_status = 2; // 门状态 0-关 1-开
+}
+
 // 漏电协议
 // 设置地址
 message Wlst_elu_6255 {
