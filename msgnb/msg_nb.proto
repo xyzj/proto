@@ -52,6 +52,17 @@ message MsgNBOpen {
   NBSlu_5600 Nb_slu_5600 = 20;
   // deviceid，与imei对应
   string device_id =21;
+  // 升级
+  // 序号（升级协议用）
+  int32 seq = 4;
+  // 执行状态（升级协议用），0-成功
+  int32 status = 5;
+  // 查询版本
+  NBSlu_FF05 Nb_slu_ff05 = 22;
+  // 升级状态
+  NBSlu_FF07 Nb_slu_ff07 = 23;
+  // 升级完成
+  NBSlu_FF01 Nb_slu_ff01 = 24;
 }
 
 message SluitemConfig {
@@ -474,4 +485,27 @@ message NBSlu_5600 {
     // PWM频率 (1~15) * 100 默认为4
     int32 pwm_baudrate = 9;
   }
+}
+
+// 远程升级相关
+// 查询版本
+message NBSlu_FF05{
+  // 版本号
+  string ver = 1;
+}
+
+// 查询升级状态
+message NBSlu_FF07 {
+  // 数据包总数
+  int32 datapack_total = 1;
+  // 数据包状态
+  repeated int32 datapack_status = 2 [packed=true];
+}
+
+// 升级完成通知
+message NBSlu_FF01 {
+  // 旧版本
+  string old_ver = 1;
+  // 新版本
+  string new_ver = 2;
 }
