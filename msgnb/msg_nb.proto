@@ -51,7 +51,7 @@ message MsgNBOpen {
   // 本地控制方案设置/读取
   NBSlu_5600 Nb_slu_5600 = 20;
   // deviceid，与imei对应
-  string device_id =21;
+  string device_id = 21;
   // 升级
   // 序号（升级协议用）
   int32 seq = 4;
@@ -489,7 +489,7 @@ message NBSlu_5600 {
 
 // 远程升级相关
 // 查询版本
-message NBSlu_FF05{
+message NBSlu_FF05 {
   // 版本号
   string ver = 1;
 }
@@ -499,7 +499,7 @@ message NBSlu_FF07 {
   // 数据包总数
   int32 datapack_total = 1;
   // 数据包状态
-  repeated int32 datapack_status = 2 [packed=true];
+  repeated int32 datapack_status = 2 [ packed = true ];
 }
 
 // 升级完成通知

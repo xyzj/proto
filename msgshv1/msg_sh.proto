@@ -1,0 +1,363 @@
+syntax = "proto3";
+package wlst.sh;
+
+option optimize_for = SPEED;
+
+// rabbitmq过滤器命名规则：
+//    [wlst-micro].devdown.[dataparser-wlst].shv1-rtu-[2位十六进制afn功能码].[16位设备地址]
+//
+// afn:
+// 00H 确认∕否认
+// 01H 复位
+// 02H 链路接口检测
+// 03H 备用
+// 04H 设置参数
+// 05H 控制命令
+// 06H 备用
+// 07H 备用
+// 08H 备用
+// 09H 请求终端配置
+// 0AH 查询参数
+// 0BH 备用
+// 0CH 请求实时数据
+// 0DH 请求历史数据
+// 0EH 请求事件数据
+// 0FH 备用
+// 10H 数据转发
+// 11H~1FH 备用
+
+// 结构体命名说明
+// Afn[2位十六进制afn代码]_P[十进制代码]_F[十进制代码]
+// 未标记（上行，下行）方向的结构体，默认为下行填充
+
+// 串口配置
+message RS_Setting {
+  // 波特率，300,600,1200,2400,4800,7200,9600,19200
+  int32 bps = 1;
+  // 停止位，0-1位，1-2位
+  int32 stop = 2;
+  // 是否校验0-否，1-是
+  int32 rc = 3;
+  // 是否奇校验，0-否（偶校验），1-是
+  int32 odd = 4;
+}
+// 数据单元标识
+message UnitIdentification {
+  // 信息点DA
+  int32 pn = 1;
+  // 信息类DT
+  int32 fn = 2;
+}
+// 数据标识信息
+message DataIdentification {
+  // 数据单元标识
+  repeated UnitIdentification uintID = 1;
+  // dir 数据方向,0-下行，1-上行
+  int32 dir = 2;
+  // 指令有效的分钟数，0-不启用（默认），>0指令在指定的分钟内才有效，超时丢弃（下行有，暂不用）
+  int32 tp = 3;
+  // 高优先级事件数量（上行才有）
+  int32 ec1 = 6;
+  // 普通优先级事件数量（上行才有）
+  int32 ec2 = 7;
+  // 顺序码0-15
+  int32 seq = 8;
+  // afn 功能码
+  int32 afn = 9;
+  // 设备地址，1-65534，（65535为广播地址下行不可使用）
+  int64 addr = 12;
+  // 命令优先级,0-普通，1-高，普通优先级命令先进先出，高优先级命令后进先出
+  int32 sp = 13;
+}
+
+message MsgSHv1 {
+  // 指令头
+  // 依据DataID.unitid的内容读取对应结构体数据
+  // 一条指令可能存在多个unitid，因此可以读取多个结构体数据
+  // 但是注意：多个unitid必须属于同一个fun和afn的组合
+  DataIdentification DataID = 1;
+  // 通用应答
+  // 全部确认，无数据体
+  // 全部否认
+
+  // 复位（下行无数据区）通用应答
+  //  pn: 0
+  //  fn: 1-设备复位，2-模块重连
+
+  // 设置参数，所有设置指令均为通用应答
+  // 设置事件记录
+  Afn04_P0_F3 afn04_p0_f3 = 101;
+  // 设置设备基本信息
+  Afn04_P0_F4 afn04_p0_f4 = 102;
+  // 开关灯时间设置
+  Afn04_P0_F9 afn04_p0_f9 = 103;
+  // 控制回路设置
+  Afn04_P0_F12 afn04_p0_f12 = 104;
+  // 状态量设置
+  Afn04_P0_F25 afn04_p0_f25 = 105;
+  // 模拟量设置
+  Afn04_P0_F26 afn04_p0_f26 = 106;
+
+  // 控制,全部使用通用应答
+  // 开关灯
+  Afn05_P0_F1 afn05_p0_f1 = 201;
+  // 对时
+  Afn05_P0_F31 afn05_p0_f31 = 202;
+
+  // 读取版本信息
+  Afn09_P0_F1 afn09_p0_f1 = 301;
+
+  // 读取参数，此类命令下行无数据结构
+  // 查询事件设置
+  Afn04_P0_F3 afn0a_p0_f3 = 401;
+  // 查询设备基本信息
+  Afn04_P0_F4 afn0a_p0_f4 = 402;
+  // 查询开关灯时间设置
+  Afn04_P0_F9 afn0a_p0_f9 = 403;
+  // 查询控制回路设置
+  Afn04_P0_F12 afn0a_p0_f12 = 404;
+  // 查询状态量设置
+  Afn04_P0_F25 afn0a_p0_f25 = 405;
+  // 查询模拟量设置
+  Afn04_P0_F26 afn0a_p0_f26 = 406;
+
+  // 读取实时数据
+  // 读取时钟（上行）
+  Afn05_P0_F31 afn0c_p0_f2 = 501;
+  // 读取模拟量
+  Afn04_P0_F26 afn0c_p0_f11 = 502;
+  // 读取遥信量
+  Afn0c_P0_F12 afn0c_p0_f12 = 503;
+
+  // 读取事件
+  // 重要事件
+  Afn0e_P0_F1 afn0e_p0_f1 = 601;
+  // 一般事件
+  Afn0e_P0_F1 afn0e_p0_f2 = 602;
+}
+// 设置参数
+// 事件记录
+message Afn04_P0_F3 {
+  // 1	RTU失电记录
+  // 2	正常开灯成功记录
+  // 3	正常开灯失败记录
+  // 4	正常关灯成功记录
+  // 5	正常关灯失败记录
+  // 6	异常开灯记录
+  // 7	异常关灯记录
+  // 11	终端通信故障记录
+  // 13	节能接触器档位正常切换记录
+  // 14	节能接触器档位切换失败记录
+  // 上报故障标识，填1,2,11这种
+  repeated int32 report = 1 [ packed = true ];
+  // 重要故障标识
+  repeated int32 import = 2 [ packed = true ];
+  // 一般故障标识
+  repeated int32 normal = 3 [ packed = true ];
+}
+// 设备基本信息
+message Afn04_P0_F4 {
+  // 控制箱编号
+  int32 cbox_number = 1;
+  // 终端地址
+  int32 tml_phyid = 2;
+  // 经度
+  double longitude = 3;
+  // 纬度
+  double latitude = 4;
+  // 启用单灯，0-不启用，1-启用
+  int32 use_slu = 5;
+  //单灯通讯频点
+  int32 slu_freq = 6;
+}
+// 控制器开关灯时间参数
+message Afn04_P0_F9 {
+  // 起始日期,unix时间戳
+  int32 dt_start = 1;
+  // 数据天数，2月始终按29天算
+  int32 days = 2;
+  // 每日开关灯时间
+  repeated Time_Slot time_slot = 3;
+  message Time_Slot {
+    // 开灯时间hh*60+mm
+    int32 time_on = 1;
+    // 关灯时间hh*60+mm
+    int32 time_off = 2;
+  }
+}
+// 控制回路表示
+message Afn04_P0_F12 {
+  // 有效回路序号，1,2,3这样填，最大16
+  repeated int32 loop_no = 1 [ packed = true ];
+  // 节能档位有效标识，1,2,3这样，最大8
+  repeated int32 eng_no = 2 [ packed = true ];
+  // 节能档位数,1-254,255表示无极调光
+  int32 eng_level = 3;
+}
+// 遥信分类参数
+message Afn04_P0_F25 {
+  // 回路设置
+  repeated Loop_Info loop_info = 1;
+
+  message Loop_Info {
+    // 回路类型0x00 开关;0x01 失电;0x02 接触器状态;0x03 节能档位状态;0x04
+    // 中间继电器状态;0x05 手自动切换;0x06 门磁;0x7 设施物理状态
+    int32 type = 1;
+    // 进出线,0-进，1-出
+    int32 in_out = 2;
+    // 回路序号，1-127
+    int32 index = 3;
+    // 相位0x00 未知;0x01 A 相;0x02 B 相;0x03 C 相
+    int32 phase = 4;
+  }
+}
+// 回路设置/读取
+message Afn04_P0_F26 {
+  // 起始回路序号
+  int32 loop_start = 1;
+  repeated Loop_Data loop_data = 2;
+  message Loop_Data {
+    // 0x00 未知;0x01 电压;0x02 电流;0x03 有功功率;0x04 无功功率;
+    // 0x05功率因数;0x06 频率;0x07 相角;0x08 照度
+    int32 type = 1;
+    // 进出线,0-进，1-出
+    int32 in_out = 2;
+    // 回路序号，1-127
+    int32 loop_no = 3;
+    // 相位0x00 未知;0x01 A 相;0x02 B 相;0x03 C 相（仅下行）
+    int32 phase = 4;
+    // 是否启用0x00 不启用;0x01 启用（仅下行）
+    int32 using = 5;
+    // 开灯上限（仅下行）
+    double uplimit_on = 6;
+    // 开灯下限（仅下行）
+    double lowlimit_on = 7;
+    // 关灯上限（仅下行）
+    double uplimit_off = 8;
+    // 关灯下限（仅下行）
+    double lowlimit_off = 9;
+    // 数据（仅上行）
+    double data = 10;
+  }
+}
+// 开关节能
+message Afn05_P0_F1 {
+  // 控制类型 0x00 开,0x01 关,0x02 节能开关调档
+  int32 ctl_type = 1;
+  // 节能档位，0-255
+  int32 eng_level = 2;
+}
+// 对时
+message Afn05_P0_F31 {
+  // 时间，unix时间戳，精确到秒
+  int64 time = 1;
+}
+// 招测终端版本
+message Afn09_P0_F1 {
+  // 厂商代号
+  string company_code = 1;
+  // 厂商设备编号
+  string company_dev_code = 2;
+  // 设备软件版本
+  string dev_soft_ver = 3;
+  // 终端软件发布日期
+  string dev_soft_date = 4;
+  // 终端配置容量 信息码
+  string dev_capacity = 5;
+  // 终端通讯协议版本
+  string dev_com_ver = 6;
+  // 终端硬件版本
+  string dev_hard_ver = 7;
+  // 载波芯片型号
+  string chip_module = 8;
+  // 终端硬件发布日期
+  string dev_hard_date = 9;
+  // 是否有中间继电器0x00 否;0x01 是
+  int32 contain_relay = 10;
+  //终端设备类型0x00 未分类;0x01 RTU;0x02 集中器;0x03 一体化终端
+  int32 dev_module = 11;
+  // 终端出厂日期
+  string dev_manufacture_date = 12;
+}
+
+// 状态量查询
+message Afn0c_P0_F12 {
+  // 起始回路序号
+  int32 idx_start = 1;
+  repeated Loop_Status loop_status = 2;
+  message Loop_Status {
+    // 回路序号，1-127
+    int32 index = 1;
+    // 状态
+    int32 status = 2;
+  }
+}
+// 事件查询
+// ERC1 RTU 失电记录
+// ERC2 正常开灯成功记录
+// ERC3 正常开灯失败记录
+// ERC4 正常关灯成功记录
+// ERC5 正常关灯失败记录
+// ERC6 异常开灯记录
+// ERC7 异常关灯记录
+// ERC8 模拟量越上限(关灯时间内)记录
+// ERC9 模拟量越上限(开灯时间内)记录
+// ERC10 模拟量越下限(开灯时间内)记录
+// ERC11 终端  通信故障记录
+// ERC12 集中器路由板故障记录
+// ERC13 节能接触器档位正常切换记录
+// ERC14 节能接触器档位切换失败记录
+// ERC15 单灯正常开灯记录
+// ERC16 单灯正常关灯记录
+// ERC17 单灯异常开灯记录
+// ERC18 单灯异常关灯记录
+// ERC19 单灯电流过大记录
+// ERC20 单灯电流过小记录
+// ERC21 单灯电容故障记录
+// ERC22 单灯灯具故障记录
+// ERC23 单灯熔丝故障记录
+// ERC24 单灯通信故障记录
+// ERC25 设施物理状态报警记录
+// 请求事件
+message Afn0e_P0_F1 {
+  // pn应大于pm
+  // 事件起始指针（上下行）0-254
+  int32 pm = 1;
+  // 事件结束指针（上下行）1-255
+  int32 pn = 2;
+  // 以下为上行填充字段
+  // 当前读到的位置，重要事件
+  int32 ec1_now = 3;
+  // 当前读到的位置，一般事件
+  int32 ec2_now = 4;
+  // 事件信息
+  repeated Events_Data events_data = 5;
+  message Events_Data { // 事件号
+    int32 erc_id = 1;
+    // 发生时间
+    int64 dt_report = 2;
+
+    Erc01_Data erc01 = 11;
+    Erc06_Data erc06 = 12;
+    Erc06_Data erc07 = 13;
+    Erc01_Data erc11 = 14;
+    Erc01_Data erc12 = 15;
+    Erc14_Data erc14 = 16;
+    Erc14_Data erc15 = 17;
+  }
+  message Erc01_Data {
+    // 记录类型，0x00 事件恢复;0x01 事件开始
+    int32 type = 1;
+  }
+  message Erc06_Data {
+    // 记录类型，0x00 事件恢复;0x01 事件开始
+    int32 type = 1;
+    // 异常开灯原因:0x00 未知;0x01 调试
+    int32 why = 2;
+  }
+  message Erc14_Data {
+    int32 d1 = 1;
+    int32 d2 = 2;
+    int32 d3 = 3;
+  }
+}

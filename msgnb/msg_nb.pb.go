@@ -4,13 +4,9 @@
 package wlst_nbiot
 
 import (
-	context "context"
 	encoding_binary "encoding/binary"
 	fmt "fmt"
 	proto "github.com/gogo/protobuf/proto"
-	grpc "google.golang.org/grpc"
-	codes "google.golang.org/grpc/codes"
-	status "google.golang.org/grpc/status"
 	io "io"
 	math "math"
 	math_bits "math/bits"
@@ -3124,86 +3120,6 @@ var fileDescriptor_7d0ba9a34991f86e = []byte{
 	0xb5, 0x7f, 0xbc, 0x5d, 0xab, 0xfd, 0xee, 0xdd, 0xda, 0x95, 0x6f, 0xdf, 0xad, 0x5d, 0xf9, 0xee,
 	0xdd, 0xda, 0x95, 0x9f, 0xd4, 0x0e, 0x5a, 0xf4, 0x2b, 0xfa, 0xd3, 0xff, 0x06, 0x00, 0x00, 0xff,
 	0xff, 0xe7, 0x55, 0x63, 0xd0, 0x9a, 0x1e, 0x00, 0x00,
-}
-
-// Reference imports to suppress errors if they are not otherwise used.
-var _ context.Context
-var _ grpc.ClientConn
-
-// This is a compile-time assertion to ensure that this generated file
-// is compatible with the grpc package it is being compiled against.
-const _ = grpc.SupportPackageIsVersion4
-
-// NBIoTCtlClient is the client API for NBIoTCtl service.
-//
-// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
-type NBIoTCtlClient interface {
-	NBIoTEcho(ctx context.Context, in *MsgNBOpen, opts ...grpc.CallOption) (*MsgNBOpen, error)
-}
-
-type nBIoTCtlClient struct {
-	cc *grpc.ClientConn
-}
-
-func NewNBIoTCtlClient(cc *grpc.ClientConn) NBIoTCtlClient {
-	return &nBIoTCtlClient{cc}
-}
-
-func (c *nBIoTCtlClient) NBIoTEcho(ctx context.Context, in *MsgNBOpen, opts ...grpc.CallOption) (*MsgNBOpen, error) {
-	out := new(MsgNBOpen)
-	err := c.cc.Invoke(ctx, "/wlst.nbiot.NBIoTCtl/NBIoTEcho", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-// NBIoTCtlServer is the server API for NBIoTCtl service.
-type NBIoTCtlServer interface {
-	NBIoTEcho(context.Context, *MsgNBOpen) (*MsgNBOpen, error)
-}
-
-// UnimplementedNBIoTCtlServer can be embedded to have forward compatible implementations.
-type UnimplementedNBIoTCtlServer struct {
-}
-
-func (*UnimplementedNBIoTCtlServer) NBIoTEcho(ctx context.Context, req *MsgNBOpen) (*MsgNBOpen, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method NBIoTEcho not implemented")
-}
-
-func RegisterNBIoTCtlServer(s *grpc.Server, srv NBIoTCtlServer) {
-	s.RegisterService(&_NBIoTCtl_serviceDesc, srv)
-}
-
-func _NBIoTCtl_NBIoTEcho_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(MsgNBOpen)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(NBIoTCtlServer).NBIoTEcho(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/wlst.nbiot.NBIoTCtl/NBIoTEcho",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(NBIoTCtlServer).NBIoTEcho(ctx, req.(*MsgNBOpen))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-var _NBIoTCtl_serviceDesc = grpc.ServiceDesc{
-	ServiceName: "wlst.nbiot.NBIoTCtl",
-	HandlerType: (*NBIoTCtlServer)(nil),
-	Methods: []grpc.MethodDesc{
-		{
-			MethodName: "NBIoTEcho",
-			Handler:    _NBIoTCtl_NBIoTEcho_Handler,
-		},
-	},
-	Streams:  []grpc.StreamDesc{},
-	Metadata: "msg_nb.proto",
 }
 
 func (m *MsgNBiot) Marshal() (dAtA []byte, err error) {
