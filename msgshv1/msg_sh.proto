@@ -294,7 +294,7 @@ message Afn0c_P0_F11 {
     // 回路类型
     int32 type = 2;
     // 状态
-    int32 data = 3;
+    double data = 3;
   }
 }
 // 状态量查询
@@ -343,10 +343,6 @@ message Afn0e_P0_F1 {
   // 事件结束指针（上下行）1-255
   int32 pn = 2;
   // 以下为上行填充字段
-  // 当前读到的位置，重要事件
-  int32 ec1_now = 3;
-  // 当前读到的位置，一般事件
-  int32 ec2_now = 4;
   // 事件信息
   repeated Events_Data events_data = 5;
   message Events_Data { // 事件号
