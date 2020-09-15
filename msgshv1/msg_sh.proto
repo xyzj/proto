@@ -125,8 +125,8 @@ message MsgSHv1 {
   // 读取时钟（上行）
   Afn05_P0_F31 afn0c_p0_f2 = 501;
   // 读取模拟量
-  Afn04_P0_F26 afn0c_p0_f11 = 502;
-  // 读取遥信量
+  Afn0c_P0_F11 afn0c_p0_f11 = 502;
+  // 读取状态量
   Afn0c_P0_F12 afn0c_p0_f12 = 503;
 
   // 读取事件
@@ -158,9 +158,9 @@ message Afn04_P0_F3 {
 // 设备基本信息
 message Afn04_P0_F4 {
   // 控制箱编号
-  int32 cbox_number = 1;
+  int64 cbox_number = 1;
   // 终端地址
-  int32 tml_phyid = 2;
+  int64 tml_phyid = 2;
   // 经度
   double longitude = 3;
   // 纬度
@@ -172,8 +172,8 @@ message Afn04_P0_F4 {
 }
 // 控制器开关灯时间参数
 message Afn04_P0_F9 {
-  // 起始日期,unix时间戳
-  int32 dt_start = 1;
+  // 起始日期,MMdd格式
+  string dt_start = 1;
   // 数据天数，2月始终按29天算
   int32 days = 2;
   // 每日开关灯时间
@@ -194,11 +194,12 @@ message Afn04_P0_F12 {
   // 节能档位数,1-254,255表示无极调光
   int32 eng_level = 3;
 }
-// 遥信分类参数
+// 状态量参数
 message Afn04_P0_F25 {
+  // 起始回路序号
+  int32 loop_start = 1;
   // 回路设置
-  repeated Loop_Info loop_info = 1;
-
+  repeated Loop_Info loop_info = 2;
   message Loop_Info {
     // 回路类型0x00 开关;0x01 失电;0x02 接触器状态;0x03 节能档位状态;0x04
     // 中间继电器状态;0x05 手自动切换;0x06 门磁;0x7 设施物理状态
@@ -209,6 +210,8 @@ message Afn04_P0_F25 {
     int32 index = 3;
     // 相位0x00 未知;0x01 A 相;0x02 B 相;0x03 C 相
     int32 phase = 4;
+    // 回路号
+    int32 loop_no = 5;
   }
 }
 // 回路设置/读取
@@ -280,26 +283,40 @@ message Afn09_P0_F1 {
   string dev_manufacture_date = 12;
 }
 
+// 模拟量查询
+message Afn0c_P0_F11 {
+  // 起始回路序号
+  int32 loop_start = 1;
+  repeated Loop_Data loop_data = 2;
+  message Loop_Data {
+    // 回路序号，1-127
+    int32 loop_no = 1;
+    // 回路类型
+    int32 type = 2;
+    // 状态
+    int32 data = 3;
+  }
+}
 // 状态量查询
 message Afn0c_P0_F12 {
   // 起始回路序号
-  int32 idx_start = 1;
+  int32 loop_start = 1;
   repeated Loop_Status loop_status = 2;
   message Loop_Status {
     // 回路序号，1-127
-    int32 index = 1;
+    int32 loop_no = 1;
     // 状态
     int32 status = 2;
   }
 }
 // 事件查询
-// ERC1 RTU 失电记录
+// ERC1 RTU 失电记录（done）
 // ERC2 正常开灯成功记录
 // ERC3 正常开灯失败记录
 // ERC4 正常关灯成功记录
 // ERC5 正常关灯失败记录
-// ERC6 异常开灯记录
-// ERC7 异常关灯记录
+// ERC6 异常开灯记录（done）
+// ERC7 异常关灯记录（done）
 // ERC8 模拟量越上限(关灯时间内)记录
 // ERC9 模拟量越上限(开灯时间内)记录
 // ERC10 模拟量越下限(开灯时间内)记录
