@@ -148,11 +148,11 @@ message Afn04_P0_F3 {
   // 11	终端通信故障记录
   // 13	节能接触器档位正常切换记录
   // 14	节能接触器档位切换失败记录
-  // 上报故障标识，填1,2,11这种
+  // 上报故障标识，默认填1,6，7
   repeated int32 report = 1 [ packed = true ];
-  // 重要故障标识
+  // 重要故障标识，默认填1,6，7
   repeated int32 import = 2 [ packed = true ];
-  // 一般故障标识
+  // 一般故障标识，默认留空
   repeated int32 normal = 3 [ packed = true ];
 }
 // 设备基本信息
@@ -285,11 +285,14 @@ message Afn09_P0_F1 {
 
 // 模拟量查询
 message Afn0c_P0_F11 {
-  // 起始回路序号
+  // 起始回路序号(上下行)
   int32 loop_start = 1;
-  repeated Loop_Data loop_data = 2;
+  // 总计读取回路数（上下行）
+  int32 loop_num = 2;
+  // 回路数据（上行）
+  repeated Loop_Data loop_data = 3;
   message Loop_Data {
-    // 回路序号，1-127
+    // 回路序号
     int32 loop_no = 1;
     // 回路类型
     int32 type = 2;
@@ -299,24 +302,27 @@ message Afn0c_P0_F11 {
 }
 // 状态量查询
 message Afn0c_P0_F12 {
-  // 起始回路序号
+  // 起始回路序号(上下行)
   int32 loop_start = 1;
-  repeated Loop_Status loop_status = 2;
+  // 总计读取回路数（上下行）
+  int32 loop_num = 2;
+  // 回路数据（上行）
+  repeated Loop_Status loop_status = 3;
   message Loop_Status {
-    // 回路序号，1-127
+    // 回路序号
     int32 loop_no = 1;
     // 状态
     int32 status = 2;
   }
 }
 // 事件查询
-// ERC1 RTU 失电记录（done）
+// ERC1 RTU 失电记录（done）对应我公司设备故障2终端断电
 // ERC2 正常开灯成功记录
 // ERC3 正常开灯失败记录
 // ERC4 正常关灯成功记录
 // ERC5 正常关灯失败记录
-// ERC6 异常开灯记录（done）
-// ERC7 异常关灯记录（done）
+// ERC6 异常开灯记录（done）对应我公司设备故障38接触器未释放
+// ERC7 异常关灯记录（done）对应我公司设备故障40接触器断路
 // ERC8 模拟量越上限(关灯时间内)记录
 // ERC9 模拟量越上限(开灯时间内)记录
 // ERC10 模拟量越下限(开灯时间内)记录
