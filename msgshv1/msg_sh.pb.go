@@ -852,7 +852,7 @@ func (m *Afn04_P0_F12) GetEngLevel() int32 {
 
 // 状态量参数
 type Afn04_P0_F25 struct {
-	// 起始回路序号
+	// 起始回路序号（上下行）
 	LoopStart int32 `protobuf:"varint,1,opt,name=loop_start,json=loopStart,proto3" json:"loop_start,omitempty"`
 	// 总计读取回路数（上下行）
 	LoopNum int32 `protobuf:"varint,2,opt,name=loop_num,json=loopNum,proto3" json:"loop_num,omitempty"`
@@ -998,7 +998,7 @@ func (m *Afn04_P0_F25_Loop_Info) GetLoopNo() int32 {
 
 // 回路设置/读取
 type Afn04_P0_F26 struct {
-	// 起始回路序号
+	// 起始回路序号（上下行）
 	LoopStart int32 `protobuf:"varint,1,opt,name=loop_start,json=loopStart,proto3" json:"loop_start,omitempty"`
 	// 总计读取回路数（上下行）
 	LoopNum  int32                     `protobuf:"varint,2,opt,name=loop_num,json=loopNum,proto3" json:"loop_num,omitempty"`

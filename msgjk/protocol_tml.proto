@@ -301,6 +301,12 @@ message WlstTerminal {
   // 设置运行参数
   Wlst_elu_6256 wlst_elu_6256 = 455;
   Wlst_elu_6256 wlst_elu_62d6 = 456;
+  // 设置/读取 8路2级运行参数
+  Wlst_elu_6266 wlst_elu_6266 = 457;
+  Wlst_elu_6266 wlst_elu_62e6 = 458;
+  // 主动报警/选测 8路2级数据
+  Wlst_elu_62e8 wlst_elu_62e8 = 459;
+  Wlst_elu_62e8 wlst_elu_62e9 = 460;
   // 恒杰门控
   // 设置地址
   Hj_lock_0100 hj_lock_0100 = 469;

@@ -4,7 +4,7 @@ package wlst.sh;
 option optimize_for = SPEED;
 
 // rabbitmq过滤器命名规则：
-//    [wlst-micro].devdown.[dataparser-shld].shv1-rtu-[2位十六进制afn功能码].[16位设备地址]
+//    [wlst-micro].devdown.[dataparser-shld].[mqflag].shv1-rtu-[2位十六进制afn功能码].[16位设备地址]
 //
 // afn:
 // 00H 确认∕否认

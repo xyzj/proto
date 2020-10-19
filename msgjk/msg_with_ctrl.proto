@@ -9,7 +9,7 @@ import "protocol_3c.proto";
 option optimize_for = SPEED;
 
 service DeviceCtrl {
-  rpc DeviceEcho(MsgWithCtrl) returns (MsgWithCtrl) {}
+  rpc DeviceEcho(MsgWithCtrl) returns(MsgWithCtrl) {}
 }
 
 //数据服务和通讯服务传输格式
@@ -99,5 +99,5 @@ message SubmitSettingChange {
   // 参数类型，1-参数变化（含增删改），2-时间表变化（含单灯，终端，增删改），3-定时任务变化（增删改）
   int32 setting_type = 1;
   // 设备逻辑地址，setting_type==3时可不填充
-  repeated int64 tml_id = 2 [ packed = true ];
+  repeated int64 tml_id = 2 [packed = true];
 }

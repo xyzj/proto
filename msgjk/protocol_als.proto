@@ -6,77 +6,81 @@ option optimize_for = SPEED;
 // 恒杰电子锁
 
 // 通用应答，除查询锁状态命令以外的所有命令
-message Hj_lock_0000{
+message Hj_lock_0000 {
   int32 status = 1; // 应答，0-失败，1-成功
 }
 
 // 设置刷卡主报
-message Hj_lock_0d00{
+message Hj_lock_0d00 {
   int32 enable_alarm = 1; // 0-不允许主报，1-允许主报
 }
 // 设置地址
-message Hj_lock_0100{
+message Hj_lock_0100 {
   int64 new_addr = 1; // 设置的地址
 }
 
 // 查询锁状态
 message Hj_lock_0200 {
   int32 lock_status = 1; //锁状态，0-闭合，1-开启
-  int32 freq_lights = 2; //1～254表示打开或者关闭持续时间，单位100MS。0表示常闭，0xFF表示常开
-  int32 freq_beep = 3; // 1～254表示打开或者关闭持续时间，单位100MS。0表示常闭，0xFF表示常开
-  int32 time_delay = 4; // 以上2个freq状态的持续时间
+  int32 freq_lights =
+      2; // 1～254表示打开或者关闭持续时间，单位100MS。0表示常闭，0xFF表示常开
+  int32 freq_beep =
+      3; // 1～254表示打开或者关闭持续时间，单位100MS。0表示常闭，0xFF表示常开
+  int32 time_delay = 4;    // 以上2个freq状态的持续时间
   int32 lockoff_delay = 5; // 开门持续时间，默认5000ms
   uint64 master_card1 = 6; // 主卡号1，用于现场添加卡
   uint64 master_card2 = 7; // 主卡号2，用于现场删除卡
-  int32 cards = 8; // 已添加的卡数量
+  int32 cards = 8;         // 已添加的卡数量
   uint64 hardware_ver = 9; // 硬件版本
-  uint64 last_card = 10; // 最后一次读卡卡号
+  uint64 last_card = 10;   // 最后一次读卡卡号
   int32 last_card_legal = 11; // 最后一次读卡是否合法，0-非法，1-合法
-  int32 card_type = 12; // 卡类型，0x00 ID，0x01 IC
+  int32 card_type = 12;       // 卡类型，0x00 ID，0x01 IC
   int32 status = 13; // 0x00 无异常，0x01 开锁异常，0x02 关锁异常
 }
 
 // 开门提醒参数设置
 message Hj_lock_0500 {
-  int32 freq_lights = 1; //1～254表示打开或者关闭持续时间，单位100MS。0表示常闭，0xFF表示常开
-  int32 freq_beep = 2; // 1～254表示打开或者关闭持续时间，单位100MS。0表示常闭，0xFF表示常开
+  int32 freq_lights =
+      1; // 1～254表示打开或者关闭持续时间，单位100MS。0表示常闭，0xFF表示常开
+  int32 freq_beep =
+      2; // 1～254表示打开或者关闭持续时间，单位100MS。0表示常闭，0xFF表示常开
   int32 time_delay = 3; // 以上2个freq状态的持续时间
 }
 
 // 添加/删除卡
-message Hj_lock_0600{
+message Hj_lock_0600 {
   uint64 card = 1; // 卡号
 }
 
 // 设置管理卡
-message Hj_lock_0800{
+message Hj_lock_0800 {
   uint64 master_card1 = 1; //主卡号1，用于现场添加卡
   uint64 master_card2 = 2; //主卡号2，用于现场删除卡
 }
 
 // 设置开锁延迟（指定时间后自动锁闭）
-message Hj_lock_0c00{
+message Hj_lock_0c00 {
   int32 delay = 1; // 开锁延迟，毫秒值，1-65535，默认5000
 }
 
 // 设置报警参数
-message Hj_lock_0e00{
+message Hj_lock_0e00 {
   int32 freq_lights = 1; // 红灯异常报警时间，单位秒，范围5-600
   int32 freq_beep = 2; // 蜂鸣器异常报警时间，单位秒，范围5-600
 }
 
 // 设置门磁报警
-message Hj_lock_0f00{
+message Hj_lock_0f00 {
   int32 alarm_magnetic = 1; // 门磁报警 0-不启用 1-启用
 }
 
 // 查询锁号
-message Hj_lock_1000{
+message Hj_lock_1000 {
   int64 lock_id = 1; // 锁号
 }
 
 // 查询门锁状态
-message Hj_lock_1100{
+message Hj_lock_1100 {
   int32 lock_status = 1; // 锁状态 0-关 1-开
   int32 door_status = 2; // 门状态 0-关 1-开
 }
@@ -100,17 +104,17 @@ message Wlst_elu_6256 {
 }
 // 手动操作
 message Wlst_elu_6257 {
-  repeated int32 opt_do = 1
-      [ packed = true ]; // 1-8回路操作标示,0-关,1-开,2-不操作
+  repeated int32 opt_do =
+      1 [packed = true]; // 1-8回路操作标示,0-关,1-开,2-不操作
   int32 status = 2;      // 设置应答,0-失败(0xaa),1-成功(0xff)
 }
 // 主动报警,选测
 message Wlst_elu_62d8 {
   message AlarmData {
-    repeated int32 switch_status = 1 [
-      packed = true
-    ]; // 状态,传输8个标志,目前只解析前3个
-       // [主动报警(0-报警不动作,1-报警并动作),分合闸状态(0-分闸,1-合闸),报警状态(1-漏电/温度报警,0-漏电/温度消警)]
+    repeated int32 switch_status = 1
+        [packed =
+             true]; // 状态,传输8个标志,目前只解析前3个
+                    // [主动报警(0-报警不动作,1-报警并动作),分合闸状态(0-分闸,1-合闸),报警状态(1-漏电/温度报警,0-漏电/温度消警)]
     int32 alarm_value_set = 2; // 设置的漏电报警(毫安)/温度报警值(摄氏度)
     int32 opt_delay = 3; // 动作延迟
     int32 now_value = 4; // 当前漏电值/当前温度值
@@ -140,6 +144,31 @@ message Wlst_elu_625c {
 // 召测运行参数, 同 Wlst_elu_6256
 // 召测时钟, 同 Wlst_elu_625c
 // 复位, 同 Wlst_elu_6255
+// 设置/读取 8路2级参数
+message Wlst_elu_6266 {
+  message WorkArgv {
+    int32 loop_mark = 1;         // 回路标示 0-不启用,1-启用
+    int32 alarm_value_set = 2;   // 设置的漏电报警上限(毫安)
+    int32 opt_value_set = 3;     // 设置的分匝上限（毫安）
+    int32 opt_delay = 4;         // 动作延时,下发/10ms
+    int32 opt_recover = 5;       // 是否自动重合匝，1-是，0-否
+    int32 opt_recover_count = 6; // 自动重合闸次数
+    int32 opt_recover_time = 7;  // 自动重合闸时间（单位秒）
+  }
+  repeated WorkArgv work_argv = 1; // 固定8，依次1-8
+  int32 status = 2;                // 设置应答,0-失败(0xaa),1-成功(0xff)
+}
+// 主动报警,选测，8路
+message Wlst_elu_62e8 {
+  message AlarmData {
+    int32 loop_status = 1; // 回路报警状态，1-漏电报警，2-分匝报警，3-漏电分匝同时报警
+    int32 alarm_status = 2; // 漏电状态，1-报警，0-消警
+    int32 opt_status = 3; // 分匝状态，1-报警，0-消警
+    int32 now_value = 4; // 当前漏电值
+    int32 alarm_value = 5;  // 报警漏电流大小
+  }
+  repeated AlarmData alarm_data = 1; // 各回路数据，依次1-8
+}
 
 //光照度协议
 message Wlst_als_a700 {
