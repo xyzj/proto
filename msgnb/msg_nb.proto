@@ -130,6 +130,8 @@ message SluitemConfig {
     int32 uplink_timer = 9;
     // nb主报需要主站应答，0-不需要，1-需要
     int32 uplink_reply = 10;
+    // 1-4回路是否反向调光，0-正向，1-反向
+    repeated int32 sluitem_reverse_dimming = 12 [ packed = true ];
   }
   message Sluitem_ver {
     // 控制器回路
@@ -412,6 +414,8 @@ message NBSlu_5200 {
   int32 use_loop = 10;
   // 应答状态 (0x35为成功，其它失败)
   int32 status = 11;
+  // 1-4回路是否反向调光，0-正向，1-反向
+  repeated int32 sluitem_reverse_dimming = 12 [ packed = true ];
 }
 
 // 即时控制
