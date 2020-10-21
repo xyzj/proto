@@ -162,10 +162,11 @@ message Wlst_elu_6266 {
 message Wlst_elu_62e8 {
   message AlarmData {
     int32 loop_status = 1; // 回路报警状态，1-漏电报警，2-分匝报警，3-漏电分匝同时报警
-    int32 alarm_status = 2; // 漏电状态，1-报警，0-消警
-    int32 opt_status = 3; // 分匝状态，1-报警，0-消警
+    int32 alarm_status = 2; // 漏电报警，1-报警，0-消警
+    int32 opt_status = 3; // 分匝报警，1-报警，0-消警
     int32 now_value = 4; // 当前漏电值
     int32 alarm_value = 5;  // 报警漏电流大小
+    int32 opt_now = 6; // 分匝状态，1-合匝，0-分匝
   }
   repeated AlarmData alarm_data = 1; // 各回路数据，依次1-8
 }
