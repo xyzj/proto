@@ -57,6 +57,8 @@ message Args {
   repeated int32 data_flag = 11 [ packed = true ];
   // 64位附属设备地址
   int64 cid64 = 12;
+  // 字符型ip地址
+  string ipstr = 13;
 }
 
 message SysCommands {
@@ -81,6 +83,8 @@ message SysCommands {
     int64 phy_id = 5;
     // SIM卡IMEI
     int64 imei = 6;
+    // 字符型ip地址
+    string ipstr = 7;
   }
   repeated OnlineInfo online_info = 6;
 }
