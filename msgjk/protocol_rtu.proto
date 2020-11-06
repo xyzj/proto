@@ -513,6 +513,8 @@ message Wlst_rtu_1900 {
   int32 addr = 1;
   //终端ip
   int64 tml_ip = 2;
+  // str 格式ip
+  string tml_ip_str = 3;
 }
 
 message Wlst_rtu_4000 {
