@@ -63,6 +63,8 @@ message MsgNBOpen {
   NBSlu_FF07 Nb_slu_ff07 = 23;
   // 升级完成
   NBSlu_FF01 Nb_slu_ff01 = 24;
+  // 0xda or 0xd9
+  int32 data_flag = 25;
 }
 
 message SluitemConfig {
