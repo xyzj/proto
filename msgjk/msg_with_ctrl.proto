@@ -72,6 +72,11 @@ message MsgWithCtrl {
   Blk_slu_6891 blk_slu_6893 = 2209;
   // 控制器回路数设置应答
   Blk_slu_6891 blk_slu_6894 = 2210;
+
+  // 云帆除湿
+  Yf_dry_0300 yf_dry_0300 = 2300;
+  Yf_dry_1005 yf_dry_1005 = 2301;
+  Yf_dry_1001 yf_dry_1001 = 2302;
 }
 
 // 中间层报警信息提交

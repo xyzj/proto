@@ -5,86 +5,6 @@ option optimize_for = SPEED;
 
 // 恒杰电子锁
 
-// 通用应答，除查询锁状态命令以外的所有命令
-message Hj_lock_0000 {
-  int32 status = 1; // 应答，0-失败，1-成功
-}
-
-// 设置刷卡主报
-message Hj_lock_0d00 {
-  int32 enable_alarm = 1; // 0-不允许主报，1-允许主报
-}
-// 设置地址
-message Hj_lock_0100 {
-  int64 new_addr = 1; // 设置的地址
-}
-
-// 查询锁状态
-message Hj_lock_0200 {
-  int32 lock_status = 1; //锁状态，0-闭合，1-开启
-  int32 freq_lights =
-      2; // 1～254表示打开或者关闭持续时间，单位100MS。0表示常闭，0xFF表示常开
-  int32 freq_beep =
-      3; // 1～254表示打开或者关闭持续时间，单位100MS。0表示常闭，0xFF表示常开
-  int32 time_delay = 4;    // 以上2个freq状态的持续时间
-  int32 lockoff_delay = 5; // 开门持续时间，默认5000ms
-  uint64 master_card1 = 6; // 主卡号1，用于现场添加卡
-  uint64 master_card2 = 7; // 主卡号2，用于现场删除卡
-  int32 cards = 8;         // 已添加的卡数量
-  uint64 hardware_ver = 9; // 硬件版本
-  uint64 last_card = 10;   // 最后一次读卡卡号
-  int32 last_card_legal = 11; // 最后一次读卡是否合法，0-非法，1-合法
-  int32 card_type = 12;       // 卡类型，0x00 ID，0x01 IC
-  int32 status = 13; // 0x00 无异常，0x01 开锁异常，0x02 关锁异常
-}
-
-// 开门提醒参数设置
-message Hj_lock_0500 {
-  int32 freq_lights =
-      1; // 1～254表示打开或者关闭持续时间，单位100MS。0表示常闭，0xFF表示常开
-  int32 freq_beep =
-      2; // 1～254表示打开或者关闭持续时间，单位100MS。0表示常闭，0xFF表示常开
-  int32 time_delay = 3; // 以上2个freq状态的持续时间
-}
-
-// 添加/删除卡
-message Hj_lock_0600 {
-  uint64 card = 1; // 卡号
-}
-
-// 设置管理卡
-message Hj_lock_0800 {
-  uint64 master_card1 = 1; //主卡号1，用于现场添加卡
-  uint64 master_card2 = 2; //主卡号2，用于现场删除卡
-}
-
-// 设置开锁延迟（指定时间后自动锁闭）
-message Hj_lock_0c00 {
-  int32 delay = 1; // 开锁延迟，毫秒值，1-65535，默认5000
-}
-
-// 设置报警参数
-message Hj_lock_0e00 {
-  int32 freq_lights = 1; // 红灯异常报警时间，单位秒，范围5-600
-  int32 freq_beep = 2; // 蜂鸣器异常报警时间，单位秒，范围5-600
-}
-
-// 设置门磁报警
-message Hj_lock_0f00 {
-  int32 alarm_magnetic = 1; // 门磁报警 0-不启用 1-启用
-}
-
-// 查询锁号
-message Hj_lock_1000 {
-  int64 lock_id = 1; // 锁号
-}
-
-// 查询门锁状态
-message Hj_lock_1100 {
-  int32 lock_status = 1; // 锁状态 0-关 1-开
-  int32 door_status = 2; // 门状态 0-关 1-开
-}
-
 // 漏电协议
 // 设置地址
 message Wlst_elu_6255 {
@@ -253,4 +173,84 @@ message Wlst_mru_9100 {
   double meter_value = 5;
   //协议版本，1-1997协议，2-2007协议
   int32 ver = 6;
+}
+
+// 通用应答，除查询锁状态命令以外的所有命令
+message Hj_lock_0000 {
+  int32 status = 1; // 应答，0-失败，1-成功
+}
+
+// 设置刷卡主报
+message Hj_lock_0d00 {
+  int32 enable_alarm = 1; // 0-不允许主报，1-允许主报
+}
+// 设置地址
+message Hj_lock_0100 {
+  int64 new_addr = 1; // 设置的地址
+}
+
+// 查询锁状态
+message Hj_lock_0200 {
+  int32 lock_status = 1; //锁状态，0-闭合，1-开启
+  int32 freq_lights =
+      2; // 1～254表示打开或者关闭持续时间，单位100MS。0表示常闭，0xFF表示常开
+  int32 freq_beep =
+      3; // 1～254表示打开或者关闭持续时间，单位100MS。0表示常闭，0xFF表示常开
+  int32 time_delay = 4;    // 以上2个freq状态的持续时间
+  int32 lockoff_delay = 5; // 开门持续时间，默认5000ms
+  uint64 master_card1 = 6; // 主卡号1，用于现场添加卡
+  uint64 master_card2 = 7; // 主卡号2，用于现场删除卡
+  int32 cards = 8;         // 已添加的卡数量
+  uint64 hardware_ver = 9; // 硬件版本
+  uint64 last_card = 10;   // 最后一次读卡卡号
+  int32 last_card_legal = 11; // 最后一次读卡是否合法，0-非法，1-合法
+  int32 card_type = 12;       // 卡类型，0x00 ID，0x01 IC
+  int32 status = 13; // 0x00 无异常，0x01 开锁异常，0x02 关锁异常
+}
+
+// 开门提醒参数设置
+message Hj_lock_0500 {
+  int32 freq_lights =
+      1; // 1～254表示打开或者关闭持续时间，单位100MS。0表示常闭，0xFF表示常开
+  int32 freq_beep =
+      2; // 1～254表示打开或者关闭持续时间，单位100MS。0表示常闭，0xFF表示常开
+  int32 time_delay = 3; // 以上2个freq状态的持续时间
+}
+
+// 添加/删除卡
+message Hj_lock_0600 {
+  uint64 card = 1; // 卡号
+}
+
+// 设置管理卡
+message Hj_lock_0800 {
+  uint64 master_card1 = 1; //主卡号1，用于现场添加卡
+  uint64 master_card2 = 2; //主卡号2，用于现场删除卡
+}
+
+// 设置开锁延迟（指定时间后自动锁闭）
+message Hj_lock_0c00 {
+  int32 delay = 1; // 开锁延迟，毫秒值，1-65535，默认5000
+}
+
+// 设置报警参数
+message Hj_lock_0e00 {
+  int32 freq_lights = 1; // 红灯异常报警时间，单位秒，范围5-600
+  int32 freq_beep = 2; // 蜂鸣器异常报警时间，单位秒，范围5-600
+}
+
+// 设置门磁报警
+message Hj_lock_0f00 {
+  int32 alarm_magnetic = 1; // 门磁报警 0-不启用 1-启用
+}
+
+// 查询锁号
+message Hj_lock_1000 {
+  int64 lock_id = 1; // 锁号
+}
+
+// 查询门锁状态
+message Hj_lock_1100 {
+  int32 lock_status = 1; // 锁状态 0-关 1-开
+  int32 door_status = 2; // 门状态 0-关 1-开
 }
