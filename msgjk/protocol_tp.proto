@@ -143,18 +143,18 @@ message Yf_dry_0300 {
   int32 dew_point = 3;  // 露点温度
   int32 humidity = 4;   // 湿度百分比
   int32 temperature = 5;          // 温度
-  int32 humidity_uplimit = 6;     // 湿度上限
-  int32 humidity_lowlimit = 7;    // 湿度下限
-  int32 temperature_uplimit = 8;  // 温度上限
-  int32 temperature_lowlimit = 9; // 温度下限
+  int32 humidity_uplimit = 6;     // 湿度上限10-90,默认55
+  int32 humidity_lowlimit = 7;    // 湿度下限10-90,默认40
+  int32 temperature_uplimit = 8;  // 温度上限0-70,默认60
+  int32 temperature_lowlimit = 9; // 温度下限0-70,默认5
 }
 // 设置参数
 message Yf_dry_1005 {
   int32 addr = 1;                 // 设备地址
-  int32 humidity_uplimit = 6;     // 湿度上限
-  int32 humidity_lowlimit = 7;    // 湿度下限
-  int32 temperature_uplimit = 8;  // 温度上限
-  int32 temperature_lowlimit = 9; // 温度下限
+  int32 humidity_uplimit = 6;     // 湿度上限10-90,默认55
+  int32 humidity_lowlimit = 7;    // 湿度下限10-90,默认40
+  int32 temperature_uplimit = 8;  // 温度上限0-70,默认60
+  int32 temperature_lowlimit = 9; // 温度下限0-70,默认5
 }
 // 运行控制
 message Yf_dry_1001 {
