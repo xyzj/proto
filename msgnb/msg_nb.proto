@@ -24,7 +24,7 @@ message MsgNBOpen {
   int64 imei = 1;
   // 数据接收时间
   int64 dt_receive = 2;
-  // 数据类型，1-设备最新数据，2-控制应答，3-参数设置/读取应答,4-登录主报，5-时间应答，6-即时控制应答，7-复位应答，8-本地控制方案应答,9-版本读取，10-运行参数，11-网络参数
+  // 数据类型，1-设备最新数据，2-控制应答，3-参数设置/读取应答,4-登录主报，5-时间应答，6-即时控制应答，7-复位应答，8-本地控制方案应答,9-版本读取，10-运行参数，11-网络参数,12-漏电参数，13-事件参数
   int32 data_type = 3;
   // 内部命令名称: 选测 wlst.vslu.b900,
   string data_cmd = 9;
@@ -425,6 +425,8 @@ message NBSlu_5200 {
   int32 status = 11;
   // 1-4回路是否反向调光，0-正向，1-反向
   repeated int32 sluitem_reverse_dimming = 12 [packed = true];
+  // 历史数据保存间隔，默认30分钟
+  int32 record_timer = 13;
 }
 
 // 即时控制
@@ -525,26 +527,36 @@ message NBSlu_FF01 {
 
 // 设置/读取漏电参数
 message NBSlu_5800 {
+  // 序号
+  int32 cmd_idx = 1;
+  // 应答状态 (0x35为成功，其它失败)
+  int32 status = 2;
   // 漏电报警延时,1-65535毫秒，默认30
-  int32 alarm_delay = 1;
+  int32 alarm_delay = 3;
   // 漏电报警限值，10-65530毫安，必须是10的倍数，默认30
-  int32 alarm_limit = 2;
+  int32 alarm_limit = 4;
   // 漏电分匝延时，1-65535毫秒，默认30
   int32 opt_delay = 5;
   // 漏电分匝限值，0,10-65530毫安，必须是10的倍数，0-不分匝
-  int32 opt_limit = 4;
+  int32 opt_limit = 6;
 }
 
 // 设置/读取漏电事件
 message NBSlu_6200 {
+  // 序号
+  int32 cmd_idx = 1;
+  // 应答状态 (0x35为成功，其它失败)
+  int32 status = 2;
   // 事件有效标识，填写有效事件编号，如[1,4,5]，会记录
-  repeated int32 events_available = 1 [packed = true];
+  repeated int32 events_available = 3 [packed = true];
   // 事件重要标识，填写有效事件编号，如[4,5]，记录后会上报
-  repeated int32 events_report = 2 [packed = true];
+  repeated int32 events_report = 4 [packed = true];
 }
 
 // 读取历史数据
 message NBSlu_6100 {
+  // 序号
+  int32 cmd_idx = 15;
   // 起始时间，unix时间戳(下行)
   int64 dt_start = 1;
   // 结束时间，unix时间戳（下行）
