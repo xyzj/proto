@@ -76,7 +76,7 @@ message Wlst_slu_3900 {
     int32 has_temperature = 4;
     // 时钟 0-无，1-有
     int32 has_timer = 5;
-    // 型号 0-unknow
+    // 协议版本（原型号），9-v0.1，0-v0.2，1-v0.3，2-0.4
     int32 model = 6;
     // 字符串型号
     string sluitem_type = 7;

@@ -15,7 +15,7 @@ message MsgNBiot {
 }
 
 service NBIoTCtl {
-  rpc NBIoTEcho(MsgNBOpen) returns (MsgNBOpen) {}
+  rpc NBIoTEcho(MsgNBOpen) returns(MsgNBOpen) {}
 }
 
 //数据服务和通讯服务传输格式
@@ -65,6 +65,13 @@ message MsgNBOpen {
   NBSlu_FF01 Nb_slu_ff01 = 24;
   // 0xda or 0xd9
   int32 data_flag = 25;
+  // 漏电参数设置/读取
+  NBSlu_5800 Nb_slu_5800 = 26;
+  // 历史数据读取
+  NBSlu_6100 Nb_slu_6100 = 27;
+  // 事件参数设置/读取
+  NBSlu_6200 Nb_slu_6200 = 28;
+  // 事件读取
 }
 
 message SluitemConfig {
@@ -121,19 +128,19 @@ message SluitemConfig {
     // 控制器主报 0-禁止主报，1-允许主报
     int32 sluitem_enable_alarm = 3;
     // 控制器上电开灯 1-开灯，0-关灯
-    repeated int32 sluitem_power_turnon = 4 [ packed = true ];
+    repeated int32 sluitem_power_turnon = 4 [packed = true];
     // 经度
     double longitude = 6;
     // 纬度
     double latitude = 7;
     // 1-4回路额定功率
-    repeated int32 rated_power = 8 [ packed = true ];
+    repeated int32 rated_power = 8 [packed = true];
     // nb主报间隔，(0～127)*5
     int32 uplink_timer = 9;
     // nb主报需要主站应答，0-不需要，1-需要
     int32 uplink_reply = 10;
     // 1-4回路是否反向调光，0-正向，1-反向
-    repeated int32 sluitem_reverse_dimming = 12 [ packed = true ];
+    repeated int32 sluitem_reverse_dimming = 12 [packed = true];
   }
   message Sluitem_ver {
     // 控制器回路
@@ -164,15 +171,15 @@ message SluitemConfig {
     // 操作类型1-定时操作，2-经纬度操作，3-即时操作
     int32 operate_type = 3;
     // 有效日期，0-6～周日-周6
-    repeated int32 date_enable = 4 [ packed = true ];
+    repeated int32 date_enable = 4 [packed = true];
     // 开关灯操作时间 hhmm->int32
     int32 operate_time = 5;
     // 操作偏移 -720~+720
     int32 operate_offset = 6;
     // 继电器操作回路1-4, 0x0-不操作，0x3-开灯，0xc-关灯
-    repeated int32 relay_operate = 7 [ packed = true ];
+    repeated int32 relay_operate = 7 [packed = true];
     // PWM操作回路
-    repeated int32 pwm_loop = 8 [ packed = true ];
+    repeated int32 pwm_loop = 8 [packed = true];
     // PWM操作占空比
     int32 pwm_power = 9;
     // PWM频率 (1~255) * 100
@@ -329,7 +336,7 @@ message NBSlu_3100 {
   // 接入运营商
   int32 operater = 5;
   // ip (每1字节分别代表地址中1个数字)
-  repeated int32 ip_address = 6 [ packed = true ];
+  repeated int32 ip_address = 6 [packed = true];
   // 远程端口
   int32 teleport = 7;
   // 本地端口
@@ -403,11 +410,11 @@ message NBSlu_5200 {
   // 控制器状态 0-停运，1-投运
   int32 sluitem_status = 4;
   // 控制器上电开灯 1-开灯，0-关灯
-  repeated int32 sluitem_power_turnon = 5 [ packed = true ];
+  repeated int32 sluitem_power_turnon = 5 [packed = true];
   // 控制器主报 0-禁止主报，1-允许主报
   int32 sluitem_enable_alarm = 6;
   // 1-4回路额定功率
-  repeated int32 rated_power = 7 [ packed = true ];
+  repeated int32 rated_power = 7 [packed = true];
   // nb主报间隔，(0～127)*5
   int32 uplink_timer = 8;
   // nb主报需要主站应答，0-不需要，1-需要
@@ -417,7 +424,7 @@ message NBSlu_5200 {
   // 应答状态 (0x35为成功，其它失败)
   int32 status = 11;
   // 1-4回路是否反向调光，0-正向，1-反向
-  repeated int32 sluitem_reverse_dimming = 12 [ packed = true ];
+  repeated int32 sluitem_reverse_dimming = 12 [packed = true];
 }
 
 // 即时控制
@@ -427,9 +434,9 @@ message NBSlu_5400 {
   // 输出类型0-继电器，1-pwm输出
   int32 output_type = 2;
   // 继电器操作回路1-4, 0x0-不操作，0x3-开灯，0xc-关灯
-  repeated int32 relay_operate = 3 [ packed = true ];
+  repeated int32 relay_operate = 3 [packed = true];
   // PWM操作回路
-  repeated int32 pwm_loop = 4 [ packed = true ];
+  repeated int32 pwm_loop = 4 [packed = true];
   // PWM操作占空比
   int32 pwm_power = 5;
   // PWM频率 (1~15) * 100 默认为4
@@ -477,15 +484,15 @@ message NBSlu_5600 {
     // 操作类型1-定时操作，2-经纬度操作
     int32 operate_type = 2;
     // 有效日期，0-6～周日-周6
-    repeated int32 date_enable = 3 [ packed = true ];
+    repeated int32 date_enable = 3 [packed = true];
     // 开关灯操作时间 hhmm->int32
     int32 operate_time = 4;
     // 操作偏移 -720~+720
     int32 operate_offset = 5;
     // 继电器操作回路1-4, 0x0-不操作，0x3-开灯，0xc-关灯
-    repeated int32 relay_operate = 6 [ packed = true ];
+    repeated int32 relay_operate = 6 [packed = true];
     // PWM操作回路
-    repeated int32 pwm_loop = 7 [ packed = true ];
+    repeated int32 pwm_loop = 7 [packed = true];
     // PWM操作占空比
     int32 pwm_power = 8;
     // PWM频率 (1~15) * 100 默认为4
@@ -505,7 +512,7 @@ message NBSlu_FF07 {
   // 数据包总数
   int32 datapack_total = 1;
   // 数据包状态
-  repeated int32 datapack_status = 2 [ packed = true ];
+  repeated int32 datapack_status = 2 [packed = true];
 }
 
 // 升级完成通知
@@ -514,4 +521,69 @@ message NBSlu_FF01 {
   string old_ver = 1;
   // 新版本
   string new_ver = 2;
+}
+
+// 设置/读取漏电参数
+message NBSlu_5800 {
+  // 漏电报警延时,1-65535毫秒，默认30
+  int32 alarm_delay = 1;
+  // 漏电报警限值，10-65530毫安，必须是10的倍数，默认30
+  int32 alarm_limit = 2;
+  // 漏电分匝延时，1-65535毫秒，默认30
+  int32 opt_delay = 5;
+  // 漏电分匝限值，0,10-65530毫安，必须是10的倍数，0-不分匝
+  int32 opt_limit = 4;
+}
+
+// 设置/读取漏电事件
+message NBSlu_6200 {
+  // 事件有效标识，填写有效事件编号，如[1,4,5]，会记录
+  repeated int32 events_available = 1 [packed = true];
+  // 事件重要标识，填写有效事件编号，如[4,5]，记录后会上报
+  repeated int32 events_report = 2 [packed = true];
+}
+
+// 读取历史数据
+message NBSlu_6100 {
+  // 起始时间，unix时间戳(下行)
+  int64 dt_start = 1;
+  // 结束时间，unix时间戳（下行）
+  int64 dt_end = 2;
+  // 历史数据 (上行)
+  repeated Data_Record data_record = 3;
+  message Data_Record {
+    // 记录时间
+    int64 dt_record = 1;
+    // 电压,2路
+    repeated int32 voltage = 2 [packed = true];
+    // 电流,2路
+    repeated int32 current = 3 [packed = true];
+    // 有功功率,2路
+    repeated int32 active_power = 4 [packed = true];
+    // 功率因数,2路
+    repeated int32 power_factor = 5 [packed = true];
+    // 漏电流
+    int32 leakage_current = 6;
+    // 光照度
+    int32 lux = 7;
+    // 信号强度
+    int32 csq = 8;
+    // 信噪比
+    int32 snr = 9;
+    // 参考信号接收功率
+    int32 rsrp = 10;
+    // 基站小区标识
+    int32 cellid = 11;
+    // 物理小区标识
+    int32 pci = 12;
+    // 频点
+    int32 earfcn = 13;
+    // 设备通讯状态
+    int32 status_communication = 14;
+  }
+}
+
+// 读取事件记录（好烦，不做）
+message NBSlu_6400{
+
 }

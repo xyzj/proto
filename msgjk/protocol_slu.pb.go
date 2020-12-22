@@ -343,7 +343,7 @@ type WlstSlu_3900_ModelInfo struct {
 	HasTemperature int32 `protobuf:"varint,4,opt,name=has_temperature,json=hasTemperature,proto3" json:"has_temperature,omitempty"`
 	// 时钟 0-无，1-有
 	HasTimer int32 `protobuf:"varint,5,opt,name=has_timer,json=hasTimer,proto3" json:"has_timer,omitempty"`
-	// 型号 0-unknow
+	// 协议版本（原型号），9-v0.1，0-v0.2，1-v0.3，2-0.4
 	Model int32 `protobuf:"varint,6,opt,name=model,proto3" json:"model,omitempty"`
 	// 字符串型号
 	SluitemType string `protobuf:"bytes,7,opt,name=sluitem_type,json=sluitemType,proto3" json:"sluitem_type,omitempty"`

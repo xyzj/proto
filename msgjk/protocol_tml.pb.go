@@ -367,9 +367,9 @@ type WlstTerminal struct {
 	HjLock_0F00 *HjLock_0F00 `protobuf:"bytes,491,opt,name=hj_lock_0f00,json=hjLock0f00,proto3" json:"hj_lock_0f00,omitempty"`
 	// 设置门磁报警应答
 	HjLock_8F00 *HjLock_0000 `protobuf:"bytes,492,opt,name=hj_lock_8f00,json=hjLock8f00,proto3" json:"hj_lock_8f00,omitempty"`
-	// 查询锁号应答
+	// 查询锁号应答, 下行命令 xh.lock.1000
 	HjLock_9000 *HjLock_1000 `protobuf:"bytes,493,opt,name=hj_lock_9000,json=hjLock9000,proto3" json:"hj_lock_9000,omitempty"`
-	// 查询门锁状态应答
+	// 查询门锁状态应答,下行命令 xh.lock.1100
 	HjLock_9100 *HjLock_1100 `protobuf:"bytes,494,opt,name=hj_lock_9100,json=hjLock9100,proto3" json:"hj_lock_9100,omitempty"`
 	//单灯
 	//复位网络

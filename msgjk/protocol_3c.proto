@@ -86,6 +86,8 @@ message Wlst_com_3e02 {
     int64 imei = 2;
     // 模块版本
     string ver = 3;
+    // iccid
+    string iccid = 4;
   }
 }
 
