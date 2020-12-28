@@ -88,6 +88,8 @@ message Wlst_com_3e02 {
     string ver = 3;
     // iccid
     string iccid = 4;
+    // imsi
+    string imsi = 5;
   }
 }
 
