@@ -582,15 +582,15 @@ message NBSlu_6100 {
     // 信号强度
     int32 csq = 8;
     // 信噪比
-    int32 snr = 9;
+    int64 snr = 9;
     // 参考信号接收功率
-    int32 rsrp = 10;
+    int64 rsrp = 10;
     // 基站小区标识
-    int32 cellid = 11;
+    int64 cellid = 11;
     // 物理小区标识
-    int32 pci = 12;
+    int64 pci = 12;
     // 频点
-    int32 earfcn = 13;
+    int64 earfcn = 13;
     // 设备通讯状态
     int32 status_communication = 14;
   }
