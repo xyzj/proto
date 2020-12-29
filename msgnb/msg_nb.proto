@@ -568,17 +568,17 @@ message NBSlu_6100 {
     // 记录时间
     int64 dt_record = 1;
     // 电压,2路
-    repeated int32 voltage = 2 [packed = true];
+    repeated double voltage = 2 [packed = true];
     // 电流,2路
-    repeated int32 current = 3 [packed = true];
+    repeated double current = 3 [packed = true];
     // 有功功率,2路
-    repeated int32 active_power = 4 [packed = true];
+    repeated double active_power = 4 [packed = true];
     // 功率因数,2路
-    repeated int32 power_factor = 5 [packed = true];
+    repeated double power_factor = 5 [packed = true];
     // 漏电流
-    int32 leakage_current = 6;
+    double leakage_current = 6;
     // 光照度
-    int32 lux = 7;
+    double lux = 7;
     // 信号强度
     int32 csq = 8;
     // 信噪比
