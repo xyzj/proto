@@ -540,6 +540,10 @@ message NBSlu_5800 {
   int32 opt_delay = 5;
   // 漏电分匝限值，0,10-65530毫安，必须是10的倍数，0-不分匝
   int32 opt_limit = 6;
+  // 补偿电容（Compensation capacitor）报警功率因数限值，0-100,前端/100显示，默认85，低于85报警
+  int32 cc_alarm = 7;
+  // 补偿电容（Compensation capacitor）消警功率因数限值，0-100,前端/100显示，默认90，高于90消警
+  int32 cc_normal = 8;
 }
 
 // 设置/读取漏电事件
