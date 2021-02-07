@@ -42,14 +42,12 @@ option optimize_for = SPEED;
 
 // 串口配置
 message RS_Setting {
-  // 波特率，300,600,1200,2400,4800,7200,9600,19200
-  int32 bps = 1;
-  // 停止位，0-1位，1-2位
-  int32 stop = 2;
-  // 是否校验0-否，1-是
+  // 目标端口序号，默认0，上行254表示设备无应答，255表示主报
+  int32 idx = 1;
+  // 波特率,0表示300bps；1表示600 bps；2表示1200 bps；3表示2400 bps；4表示4800 bps；5表示9600 bps；6表示14400；7表示19200；8表示38400；9表示56000；A表示57600；B表示115200
+  int32 bps = 2;
+  // 校验方式0-无，1-奇，2-偶
   int32 rc = 3;
-  // 是否奇校验，0-否（偶校验），1-是
-  int32 odd = 4;
 }
 // 数据单元标识
 message UnitIdentification {
@@ -223,7 +221,7 @@ message MsgGBOpen {
   Afn0e_P0_F1 afn0e_p0_f1 = 700;
   // 数据转发
   // 透明转发
-  Afn10_P0_F1 afn10_p0_f1 = 800;
+  Afn10_P0_F2 afn10_p0_f2 = 800;
   // FTP升级命令
   Afn10_P0_F9 afn10_p0_f9 = 801;
   // 终端FTP升级结果
@@ -335,7 +333,7 @@ message Afn04_P0_F11 {
   // 标识，0-北纬，1-南纬
   int32 latitude_mark = 4;
 }
-// 扩展设备配置参数
+// 扩展设备配置参数(不用)
 // pn:n 0-99,0-无效配置（删除配置）
 message Afn04_Pn_F14 {
   // 串口配置
@@ -453,16 +451,16 @@ message Afn04_P0_F50 {
   // 全数据主报周期（分钟）1-255
   int32 report_timer = 1;
 }
-// 设置模拟量上下限（有问题，待定）
+// 设置模拟量上下限
 message Afn04_P0_F51 {
   // 电压下限(1位小数bcd)
   double voltage_lower_limit = 1;
   // 电压上限(1位小数bcd)
   double voltage_upper_limit = 2;
-  // 回路电流上下限设置（依次1-64，不允许跳过回路）
+  // 回路电流上下限设置（从回路1开始，填充到最后一个回路即可（最大64），中间不允许跳过回路，不需要报警的回路填0）
   repeated Current_Setting current_limit = 3;
   message Current_Setting {
-    // 依次1-4（最大）时段设置
+    // 依次时段设置（最大4,有多少填多少，若要清除某回路的上下限设置，填充4个全0的结构）
     repeated Loop_Setting loop_setting = 1;
   }
   // 回路设置
@@ -470,29 +468,32 @@ message Afn04_P0_F51 {
     // 启用时刻hh*60+mm
     // 第一时段可使用特殊值：6039-终端自动判断每日第一次开灯或经纬度
     // 最后一个时段（依据F15设置而定），可使用特殊值：5368-使用经纬度自动计算
-    int32 time_slot = 1;
+    int32 time_start = 1;
+    int32 time_end = 2;
     // 电流下限（有符号3位小数）
-    double current_lower_limit = 2;
+    double current_lower_limit = 3;
     // 电流上限（有符号3位小数）
-    double current_upper_limit = 3;
+    double current_upper_limit = 4;
   }
 }
 // 设置漏电保护参数
 message Afn04_P0_F52 {
-  // 回路号(1-127)
-  int32 loop_no = 1;
+  // 漏电参数，依次1-8路填满，不启用或要擦除的回路全部填0即可
+  repeated Leakage_Limit leakage_limit = 1;
+  message Leakage_Limit{
   // 是否启用(0-不启用，1-启用)
-  int32 loop_enable = 2;
+  int32 loop_enable = 1;
   // 关联的开关量输出号（1-255）
-  int32 loop_switchout = 3;
+  int32 loop_switchout = 2;
   // 一级越限值(单位mA,下同)
-  int32 level1_limit = 4;
+  int32 level1_limit = 3;
   // 二级越限值
-  int32 level2_limit = 5;
+  int32 level2_limit = 4;
   // 三级越限值
-  int32 level3_limit = 6;
+  int32 level3_limit = 5;
   // 四级越限值（断电）
-  int32 level4_limit = 7;
+  int32 level4_limit = 6;
+  }
 }
 // 设置光照度限值 参数
 message Afn04_P0_F53 {
@@ -507,6 +508,40 @@ message Afn04_P0_F57 {
   int32 runtime_mark = 1;
   // 回路停运标识,48个，0-停运，1-投运（没用，不用填）
   repeated int32 loop_mark = 2 [ packed = true ];
+}
+// 电流回路矢量
+message Afn04_P0_F65{
+  // 电流回路矢量，从0开始
+  repeated int32 switchin_vector = 1 [packed=true];
+}
+// 电流回路和开关量输出对应关系
+message Afn04_P0_F66{
+  // 填写每个回路对应的开关量输出序号，0开始，如果不对应开关量输出，如门，则填255
+  repeated int32 switchin_switchout = 2 [packed=true];
+}
+// 开关量输出矢量
+message Afn04_P0_F67 {
+  // 开关量输出矢量，从0开始
+  repeated int32 switchout_vector =1 [packed=true];
+}
+// 电压过/欠保护，触发后需手动发送消除断电保护命令（afn05_p0_f57）
+message Afn04_P0_F68 {
+  // 这里下限启用标识，三个相位的均一致即可，页面不需要分开设置
+  int32 lower_limit_a_enable=1;
+  int32 lower_limit_b_enable=2;
+  int32 lower_limit_c_enable=3;
+  // 这里上限启用标识，三个相位的均一致即可，页面不需要分开设置
+  int32 upper_limit_a_enable=4;
+  int32 upper_limit_b_enable=5;
+  int32 upper_limit_c_enable=6;
+  // 三项下限，一致即可，页面不需要分开设置
+  int32 lower_limit_a = 7;
+  int32 lower_limit_b = 8;
+  int32 lower_limit_c = 9;
+  // 三项上限，一致即可，页面不需要分开设置
+  int32 upper_limit_a = 10;
+  int32 upper_limit_b = 11;
+  int32 upper_limit_c = 12;
 }
 // 控制命令
 // 允许合闸/跳闸
@@ -531,6 +566,12 @@ message Afn05_P0_F9 {
 message Afn05_P0_F31 {
   // 时间，unix时间戳,0-表示使用通讯服务所在服务器时间，>0-表示使用设置值
   int64 time_unix = 1;
+}
+// 消除电压保护断电
+// 这协议莫名其妙，设置时候分相位，执行/消除都不分相位，什么脑回路。。。
+message Afn05_P0_F57 {
+  // 断电保护消除标识，0-不消除，1-消除
+  int32 dismiss = 1;
 }
 // 查询终端信息
 // 终端版本信息
@@ -662,6 +703,15 @@ message Afn0c_P0_F20 {
   double lux = 1;
   // 温度（有符号2位小数bcd）
   double temperature = 2;
+}
+// 断电/漏电状态
+message Afn0c_P0_F25 {
+  // 欠压断电保护状态,0-正常，1-断电
+  int32 voltage_over_lower = 1;
+  // 过压断电保护状态,0-正常，1-断电
+  int32 voltage_over_upper = 2;
+  // 漏电跳闸保护状态，依次16个回路，0-正常，1-断电
+  repeated int32 leakage_break = 3 [packed=true];
 }
 // 请求历史数据
 // 模拟量历史数据曲线(出线)
@@ -831,15 +881,26 @@ message Afn0e_P0_F1 {
 }
 // 数据转发
 // 透明转发（上下行）
-message Afn10_P0_F1 {
-  // 目标设备地址（上下行）
-  int64 dst_addr = 1;
-  // 等待报文超时（下行）
-  int32 dst_timeout1 = 2;
-  // 等待字节超时（下行）
-  int32 dst_timeout2 = 3;
-  // 子设备数据json字符串，格式定义依据不同设备另行定义（上下行）
-  string dst_data = 4;
+message Afn10_P0_F2 {
+  // 串口配置
+  RS_Setting rs_setting = 1;
+  // 透传数据命令定义，具体见每个命令结构体内说明
+  string cmd = 2;
+  // 抄表
+  Wlst_mru_9100 wlst_mru_9100 = 10; // 电表数据
+  message Wlst_mru_9100 {
+    // cmd: wlst_mru_1100-读数据，wlst_mru_9100-读数据应答，wlst_mru_1300-读地址, wlst_mru_9300-读地址应答
+    // 电表地址
+    int64 addr = 1;
+    //抄表类型(1A相，2B相，3C相，4正向有功总电能，5组合有功总电能)
+    int32 meter_reading_type = 2;
+    //抄表时间段（0当前，1上月，2上上月。。。）
+    int32 meter_reading_date = 3;
+    //协议版本，1-1997协议，2-2007协议
+    int32 ver = 4;
+    //数据（wlst_mru_9100上行填充）
+    double meter_value = 5;
+  }
 }
 // FTP升级命令
 message Afn10_P0_F9 {
