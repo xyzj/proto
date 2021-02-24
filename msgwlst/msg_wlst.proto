@@ -457,10 +457,10 @@ message Afn04_P0_F51 {
   double voltage_lower_limit = 1;
   // 电压上限(1位小数bcd)
   double voltage_upper_limit = 2;
-  // 回路电流上下限设置（从回路1开始，填充到最后一个回路即可（最大64），中间不允许跳过回路，不需要报警的回路填0）
-  repeated Current_Setting current_limit = 3;
+  // 回路电流上下限设置（从回路1开始，填充到最后一个回路即可（最大64），中间不允许跳过回路）
+  repeated Current_Setting current_setting = 3;
   message Current_Setting {
-    // 依次时段设置（最大4,有多少填多少，若要清除某回路的上下限设置，填充4个全0的结构）
+    // 依次时段设置（最大4,有多少填多少，若要清除某回路的上下限设置，初始化一个空的loop_setting即可）
     repeated Loop_Setting loop_setting = 1;
   }
   // 回路设置
@@ -889,7 +889,7 @@ message Afn10_P0_F2 {
   // 抄表
   Wlst_mru_9100 wlst_mru_9100 = 10; // 电表数据
   message Wlst_mru_9100 {
-    // cmd: wlst_mru_1100-读数据，wlst_mru_9100-读数据应答，wlst_mru_1300-读地址, wlst_mru_9300-读地址应答
+    // cmd: wlst.mru.1100-读数据，wlst.mru.9100-读数据应答，wlst.mru.1300-读地址, wlst.mru.9300-读地址应答
     // 电表地址
     int64 addr = 1;
     //抄表类型(1A相，2B相，3C相，4正向有功总电能，5组合有功总电能)
@@ -898,7 +898,7 @@ message Afn10_P0_F2 {
     int32 meter_reading_date = 3;
     //协议版本，1-1997协议，2-2007协议
     int32 ver = 4;
-    //数据（wlst_mru_9100上行填充）
+    //数据（wlst.mru.9100上行填充）
     double meter_value = 5;
   }
 }
