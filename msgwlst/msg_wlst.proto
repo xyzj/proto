@@ -529,22 +529,14 @@ message Afn04_P0_F67 {
 }
 // 电压过/欠保护，触发后需手动发送消除断电保护命令（afn05_p0_f57）
 message Afn04_P0_F68 {
-  // 这里下限启用标识，三个相位的均一致即可，页面不需要分开设置
-  int32 lower_limit_a_enable=1;
-  int32 lower_limit_b_enable=2;
-  int32 lower_limit_c_enable=3;
-  // 这里上限启用标识，三个相位的均一致即可，页面不需要分开设置
-  int32 upper_limit_a_enable=4;
-  int32 upper_limit_b_enable=5;
-  int32 upper_limit_c_enable=6;
-  // 三项下限，一致即可，页面不需要分开设置
-  int32 lower_limit_a = 7;
-  int32 lower_limit_b = 8;
-  int32 lower_limit_c = 9;
-  // 三项上限，一致即可，页面不需要分开设置
-  int32 upper_limit_a = 10;
-  int32 upper_limit_b = 11;
-  int32 upper_limit_c = 12;
+  // 三相报警下限，三相统一设置，当值小于100时，则认为不启用报警
+  double voltage_lower_limit = 1;
+  // 三相报警上限，三相统一设置，当值大于300时，则认为不启用报警
+  double voltage_upper_limit = 2;
+  // 越下限跳闸,0-不跳，1-跳
+  int32 voltage_lower_break = 3;
+  // 越上限跳闸,0-不跳，1-跳
+  int32 voltage_upper_break = 4;
 }
 // 控制命令
 // 允许合闸/跳闸
