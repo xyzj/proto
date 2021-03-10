@@ -4,8 +4,8 @@ package wlst.gb;
 option optimize_for = SPEED;
 
 // rabbitmq过滤器命名规则：
-//    下行：[wlst-micro].devdown.[dataparser-wlst].[mq标识，默认0].wlst-open-[2位十六进制fun功能码][2位十六进制afn功能码].[12位设备地址].1
-//    上行：[wlst-micro].devuplink.[devmanager-wlst].[mq标识，默认0].wlst-open-[2位十六进制fun功能码][2位十六进制afn功能码].[12位设备地址].1
+//    下行：[wlst-micro].devdown.[dataparser-wlst].[mq标识，默认0].gb-open-[2位十六进制fun功能码][2位十六进制afn功能码].[12位设备地址].[areacode]
+//    上行：[wlst-micro].devuplink.[devmanager-gbopen].[mq标识，默认0].gb-open-[2位十六进制fun功能码][2位十六进制afn功能码].[12位设备地址].[areacode]
 //
 // [fun][afn]列表：
 // 发起（主要为主站下行，也包括设备主报）：
