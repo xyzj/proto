@@ -1282,9 +1282,9 @@ type Afn04_P0_F9 struct {
 	// 30 夜间灭灯(无 I&开关闭合)（1）
 	// 31 欠压保护断电（1）
 	// 32 过压保护断电（1）
-	// 需要记录的事件标识0-不记录，1-记录
+	// 需要记录的事件标识，直接填写需要记录的事件id，如[10,11,29]
 	EventsAvailable []int32 `protobuf:"varint,1,rep,packed,name=events_available,json=eventsAvailable,proto3" json:"events_available,omitempty"`
-	// 需要主报的事件表示0-不主报，1-主报
+	// 需要主报的事件标识，直接填写需要主报的事件id
 	EventsReport []int32 `protobuf:"varint,2,rep,packed,name=events_report,json=eventsReport,proto3" json:"events_report,omitempty"`
 }
 
