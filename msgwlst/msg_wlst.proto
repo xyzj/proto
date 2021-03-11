@@ -638,6 +638,8 @@ message Afn0c_Pn_F1 {
     double lux_value = 6;
     // 其他模拟量（没这玩意）
     double other = 7;
+    // 回路号，从1开始
+    int32 loop_no = 8;
   }
 }
 // 终端日历时钟
