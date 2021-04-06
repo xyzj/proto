@@ -125,6 +125,8 @@ type MsgNBOpen struct {
 	// 14-读取历史数据，
 	// 15-读取事件记录
 	// 16-数据透传上行
+	// 17-升级控制
+	// 18-升级状态查询/主报
 	DataType int32 `protobuf:"varint,3,opt,name=data_type,json=dataType,proto3" json:"data_type,omitempty"`
 	// 内部命令名称: 选测 wlst.vslu.b900,
 	DataCmd string `protobuf:"bytes,9,opt,name=data_cmd,json=dataCmd,proto3" json:"data_cmd,omitempty"`
@@ -3707,14 +3709,14 @@ type NBSlu_4F00 struct {
 	// 205 文件内部版本和升级指令中目标版本不一致 0
 	// 201 升级成功 0
 	// 400 上报版本返回错误 0
-	// 401 检查升级任务返回错误 见注 3
-	// 402 下载固件返回错误 见注 4
+	// 401 检查升级任务返回错误
+	// 402 下载固件返回错误
 	// 403 上报进度返回错误 0
 	// 404 上报下载完毕返回错误 0
 	// 405 上报升级成功返回错误 0
 	// 406 获取设备 devID 时返回错误
 	Status int32 `protobuf:"varint,2,opt,name=status,proto3" json:"status,omitempty"`
-	// 原因，对应status
+	// 原因，对应status，未特别标注的status对应的reason==0
 	// status == 104:
 	//  20 固件头校验错误
 	//  21 固件头部版本和下发的升级指令中版本不一致
