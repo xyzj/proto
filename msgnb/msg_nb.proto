@@ -650,6 +650,8 @@ message NBSlu_4C00 {
   int32 cmd_idx = 1;
   // ascii 字符串
   string sdata = 2;
+  // 下行应答，0-失败，1-成功
+  int32 status = 3;
 }
 
 // ota远程升级
