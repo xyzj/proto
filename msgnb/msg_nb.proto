@@ -91,7 +91,7 @@ message MsgNBOpen {
   NBSlu_6200 Nb_slu_6200 = 28;
   // 事件读取
   NBSlu_6400 Nb_slu_6400 = 29;
-  // ota升级
+  // ota升级，公司设备暂不支持
   // ascii透传
   NBSlu_4C00 Nb_slu_4c00 = 30;
   // 升级控制
