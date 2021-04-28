@@ -1,0 +1,63 @@
+syntax = "proto3";
+package wlst.dg;
+
+option optimize_for = SPEED;
+
+// rabbitmq过滤器命名规则：
+//    下行：[wlst-micro].devdown.[dataparser-dgsensor].[mq标识，默认0].dg-sensor-[8fxx].[12位设备地址].[tra]
+//    上行：[wlst-micro].devuplink.[devmanager-dgsensor].[mq标识，默认0].dg-sensor-[8fxx].[12位设备地址].[tra]
+//
+message MsgDengGan {
+    // 指令序号，0-255
+    int32 idx = 1;
+    // 设备地址
+    int64 addr = 2;
+    // 设备命令，同结构体名称，如dg.sensor.8f80
+    string cmd = 3;
+    
+    // 灯杆传感器主报
+    DG_Sensor_8F80 dg_sensor_8f80 = 11;
+}
+
+// 灯杆传感器
+// 自动上传数据
+message DG_Sensor_8F80{
+    // 通讯模式,0自动 1手动
+    int32 communication_mode = 1;
+    // 通讯速率 范围1~255（s）
+    int32 communication_rate = 2;
+    // 倾角x 报警，0-正常，1-报警，下同
+    int32 alarm_x = 3;
+    // 倾角y 报警
+    int32 alarm_y = 4;
+    // 倾角z 报警
+    int32 alarm_z = 5;
+    // 温度上限 报警
+    int32 alarm_temperature_uplimit = 6;
+    // 温度下限 报警
+    int32 alarm_temperature_lowlimit = 7;
+    // 湿度下限 报警
+    int32 alarm_humidity_uplimit = 9;
+    // 气压上限 报警
+    int32 alarm_pressure_uplimit = 10;
+    // 气压下限 报警
+    int32 alarm_perssure_lowlimit = 11;
+    // 照度上限 报警
+    int32 alarm_lux_uplimit = 12;
+    // 照度下限 报警
+    int32 alarm_lux_lowlimit = 13;
+    // 倾角X（度）
+    double angle_x = 14;
+    // 倾角Y
+    double angle_y = 15;
+    // 倾角Z
+    double angle_z = 16;
+    // 温度（摄氏度）
+    double temperature = 17;
+    // 湿度（%）
+    double humidity = 18;
+    // 气压（pa）
+    double pressure = 19;
+    // 照度（lux）
+    double lux = 20;
+}

@@ -185,7 +185,7 @@ message SluitemConfig {
     string ver = 7;
   }
   message Sluitem_sunriseset {
-    // 当日日出日落时间 hhmm->int32
+    // 当日日出日落时间 hh*60+mm
     int32 sunrise = 1;
     int32 sunset = 2;
   }
@@ -198,7 +198,7 @@ message SluitemConfig {
     int32 operate_type = 3;
     // 有效日期，0-6～周日-周6
     repeated int32 date_enable = 4 [packed = true];
-    // 开关灯操作时间 hhmm->int32
+    // 开关灯操作时间 hh*60+mm
     int32 operate_time = 5;
     // 操作偏移 -720~+720
     int32 operate_offset = 6;
@@ -513,7 +513,7 @@ message NBSlu_5600 {
     int32 operate_type = 2;
     // 有效日期，0-6～周日-周6
     repeated int32 date_enable = 3 [packed = true];
-    // 开关灯操作时间 hhmm->int32
+    // 开关灯操作时间 hh*60+mm
     int32 operate_time = 4;
     // 操作偏移 -720~+720
     int32 operate_offset = 5;
