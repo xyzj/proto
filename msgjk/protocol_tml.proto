@@ -180,7 +180,12 @@ message WlstTerminal {
   Wlst_rtu_7077 wlst_rtu_7077 = 92;
   // 除湿控制上行
   Wlst_rtu_7077 wlst_rtu_70F7 = 93;
-
+  // 招测漏电板参数设置
+  Wlst_rtu_7024 wlst_rtu_7025 = 94;
+  // 招测漏电板参数设置应答
+  Wlst_rtu_7024 wlst_rtu_70a5 = 95;
+  // 漏电板选测应答
+  Wlst_rtu_7026 wlst_rtu_70a6 = 96;
 
   //线路检测
   //召测终端软件版本
