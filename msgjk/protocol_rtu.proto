@@ -15,14 +15,143 @@ message Wlst_rtu_ans {
   // 状态码，详细参考文档
   int32 status_code = 5;
 }
+// 漏电板参数设置
+// 0x24,0x25,0xa4,0xa5
+message Wlst_rtu_7024 {
+  message EluArgv {
+    int32 elu_mark = 1;         // 回路标示 0-不启用,1-只检测漏电流，2-检测漏电流并报警，3-检测漏电流不报警但分闸，4-检测漏电流报警并分闸
+    int32 transformers = 2;   // 互感比，默认1000
+    int32 switchout_no = 3;     // 开关量输出序号0-不对应，1-8对应k1-k8
+    int32 alarm_level = 4;         // 报警级数，0-5,默认0
+    repeated int32 alarm_limit = 5 [ packed=true ];       // 依次N级报警电流(mA),固定5个，不用的级数填0
+    int32 breaker_limit = 6; // 分闸值（mA）
+    int32 baseline  = 7;  // 基线（屏蔽值）（mA）
+    int32 alarm_delay = 8; // 报警延时（ms）
+    int32 breaker_delay = 9; // 分匝延时
+    int32 retry_no = 10; // 重合匝次数，0-5，默认0
+    int32 retry_distance = 11; // 重合闸间隔（s），1-255，默认20
+  }
+  repeated EluArgv elu_argv = 1; // 固定8，依次1-8
+  int32 status = 2;                // 设置应答,0-成功，1-失败，0x0d-设备不支持漏电
+}
+// 漏电板选测
+message Wlst_rtu_7026 {
+  message EluData{
+    int32 switchout_manually = 5; // 开关量输出是否手动状态，0-自动，1-手动
+    int32 switchout_status = 6; // 开关量输出当前状态，0-闭合，1-断开
+    int32 elu_mark = 7; // 回路标示 0-不启用,1-只检测漏电流，2-检测漏电流并报警，3-检测漏电流不报警但分闸，4-检测漏电流报警并分闸
+    int32 alarm_status =8; // 报警状态0:未报警；1：一级报警；2：二级报警；3：三级报警；4：四级报警；5：五级报警；0xAA：分闸报警
+    int32 current_now = 9; // 当前值（mA）
+    int32 current_alarm =10; // 报警值（mA）
+    int32 baseline = 11; // 基线（屏蔽值）（mA）
+  }
+  int32 hardware_type = 1; // 设备类型0-不支持漏电，1-支持漏电
+  int32 elu_status = 2; // 0-未启用漏电，1-启用漏电
+  int32 eeprom = 3; // 0-正常，1-错误（需要重新下发参数）（不用展示）
+  int32 reset = 4; // 是否发生复位，0-未发生，1-发生
+  repeated EluData elu_data = 5; // 依次1-8路漏电值，没有漏电板或全部不启用时不填充
+}
+// 漏电复位
+message Wlst_rtu_7027 {
+  repeated int32 reset = 1 [packed=true]; // 固定1-8路是否需要复位
+  int32 status = 2; // 0-成功，1-失败
+}
+// 电子锁
+message Wlst_rtu_7076 {
+  // 功能，1-设置锁地址，2-设置开锁保持时间，3-恢复出厂设置，11-查询锁状态，12-开关锁
+  int32 cmd_type = 1; 
+  // 锁地址，0-广播地址
+  int64 addr = 2; 
+   // 地址设置/应答
+  Lock01 lock01 = 3;
+  // 开锁时间设置/应答
+  Lock02 lock02= 4;
+  // 复位应答
+  Lock03 lock03 = 5;
+  // 选测应答
+  Lock11 lock11 = 6;
+  // 开关控制/应答
+  Lock12 lock12 = 7;
+  message Lock01 {
+     // 新地址
+    int64 new_addr=1;
+     // 0-成功，1-失败
+    int32 status = 2;
+  }
+  message Lock02 { 
+     // 开锁时间，秒，5-600
+    int32 open_distance = 1;
+     // 0-成功，1-失败
+    int32 status = 2;
+  }
+  message Lock03 { 
+    // 0-成功，1-失败
+    int32 status = 2; 
+  }
+  message Lock11 { 
+    // 开关状态，0-关，1-开
+    int32 lock_status = 2;
+    // 开锁维持时间（秒）
+    int32 open_distance = 3;
+    // 故障状态 0-无，1-开锁异常，2-关锁异常
+    int32 lock_error = 4;
+    // 固件版本
+    string hw_ver = 5;
+  }
+  message Lock12 { 
+    // 0-关，1-开
+    int32 control = 1; 
+    // 0-成功，1-失败
+    int32 status = 2; 
+  }
+}
+// 除湿
+message Wlst_rtu_7077 {
+  // 功能，1-设置锁地址，2-设置开锁保持时间，3-恢复出厂设置，11-查询锁状态，12-开关锁
+  int32 cmd_type = 1; 
+  // 锁地址，0-广播地址
+  int64 addr = 2; 
+   // 地址设置/应答
+  Dry01 dry01 = 3;
+  message Dry01 {
+     // 新地址
+    int64 new_addr=1;
+     // 0-成功，1-失败
+    int32 status = 2;
+  }
+  // 参数设置/应答
+  Dry02 dry02 = 4;
+  message Dry02 {
+    int32 humidity_uplimit = 6;     // 湿度上限10-90,默认55
+    int32 humidity_lowlimit = 7;    // 湿度下限10-90,默认40
+    int32 temperature_uplimit = 8;  // 温度上限0-70,默认60
+    int32 temperature_lowlimit = 9; // 温度下限0-70,默认5
+    // 0-成功，1-失败
+   int32 status = 2;
+  }
+  // 选测应答
+  Dry11 dry11 = 5;
+  message Dry11 {
+    int32 ctl_status = 2; // 控制状态,0-自动,1-强制开,2-强制关
+    int32 humidity = 4;   // 湿度百分比
+    int32 temperature = 5;          // 温度
+  }
+  // 控制/应答
+  Dry13 dry13 =6;
+  message Dry13{
+    int32 ctl_status = 1; // 控制状态,0-自动,1-强制开,2-强制关
+    // 0-成功，1-失败
+    int32 status = 2;
+  }
+}
 // 3006主动上报
 message Wlst_rtu_7094 {
   // 序号
   int32 cmd_idx = 1;
-  // 报警类型，400-火零不平衡,401-24路设备开关灯操作后应答
+  // 报警类型，400-火零不平衡,401-24路设备开关灯操作后应答,500-漏电报警,4096-电子锁报警,4097-除湿报警
   int32 alarm_type = 2;
   // 火零不平衡报警内容
-  Alarm_LN alarmln = 3;
+  Alarm_LN alarm_ln = 3;
   message Alarm_LN {
     // 回路序号，1-12
     int32 loop_no = 1;
@@ -33,6 +162,48 @@ message Wlst_rtu_7094 {
   }
   // 24路开关灯后操作结果，依次为1-24路输出状态，1-通，0-断
   repeated int32 switch_out_st_packed = 4 [ packed = true ];
+  // 漏电板报警
+  Alarm_Elu alarm_elu = 5;
+  message Alarm_Elu{
+    // 回路
+    int32 loop_no = 1;
+    // 漏电值(mA)
+    int32 alarm_value = 2;
+    // 新增的报警，0-无警、1-一级警报、2-二级警报、3-三级警报、4-四级警报、5-五级警报、0xAA-分闸警报
+    repeated int32 alarm_new =3 [packed=true];
+    // 消除的报警，0-无警、1-一级警报、2-二级警报、3-三级警报、4-四级警报、5-五级警报、0xAA-分闸警报
+    repeated int32 alarm_clear = 4 [packed=true];
+    // 发生时间
+    int64 dt_alarm = 5;
+  }
+  // 门锁报警
+  Alarm_HJLock alarm_hjlock=6;
+  message Alarm_HJLock{
+    // 锁地址
+    int64 addr = 1;
+    // 开关状态，0-关，1-开
+    int32 lock_status = 2;
+    // 开锁维持时间（秒）
+    int32 open_distance = 3;
+    // 故障状态 0-无，1-开锁异常，2-关锁异常
+    int32 lock_error = 4;
+    // 固件版本
+    string hw_ver = 5;
+    // 时间
+    int64 dt_alarm = 6;
+  }
+  // 除湿器报警
+  Alarm_YFDry alarm_yfdry = 7;
+  message Alarm_YFDry {
+    // 地址
+    int64 addr = 1;
+    // 工作状态0-启动，1-关闭
+    int32 ctl_status = 2;
+    // 湿度
+    int32 humidity = 3;
+    // 温度
+    int32 temperature = 4;
+  }
 }
 // 设置/读取终端参数 （火零不平衡参数,1-24路周控制时间表）
 message Wlst_rtu_7021 {

@@ -1080,10 +1080,7 @@ func (m *WlstLdu_2600) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolLdu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolLdu
 			}
 			if (iNdEx + skippy) > l {
@@ -1186,10 +1183,7 @@ func (m *WlstLduA600) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolLdu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolLdu
 			}
 			if (iNdEx + skippy) > l {
@@ -1419,10 +1413,7 @@ func (m *WlstLduA600_LduLoopData) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolLdu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolLdu
 			}
 			if (iNdEx + skippy) > l {
@@ -1525,10 +1516,7 @@ func (m *WlstLdu_4900) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolLdu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolLdu
 			}
 			if (iNdEx + skippy) > l {
@@ -1749,10 +1737,7 @@ func (m *WlstLdu_4900_LduLoopArgv) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolLdu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolLdu
 			}
 			if (iNdEx + skippy) > l {
@@ -1897,10 +1882,7 @@ func (m *WlstLduCd01) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolLdu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolLdu
 			}
 			if (iNdEx + skippy) > l {

@@ -14396,10 +14396,7 @@ func (m *WlstSluF400) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -14942,10 +14939,7 @@ func (m *WlstSlu_3900) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -15160,10 +15154,7 @@ func (m *WlstSlu_3900_ModelInfo) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -15383,10 +15374,7 @@ func (m *WlstSlu_3900_LightData) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -15493,10 +15481,7 @@ func (m *WlstSlu_3900_LightStatus) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -15584,10 +15569,7 @@ func (m *WlstSlu_3900_SluitemStatus) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -15694,10 +15676,7 @@ func (m *WlstSlu_3900_TimeFault) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -15845,10 +15824,7 @@ func (m *WlstSlu_3900_SluitemPara) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -16012,10 +15988,7 @@ func (m *WlstSlu_7800) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -16383,10 +16356,7 @@ func (m *WlstSluF800) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -16531,10 +16501,7 @@ func (m *WlstSluF800_View0X20) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -16698,10 +16665,7 @@ func (m *WlstSluF800_View0X21) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -17309,10 +17273,7 @@ func (m *WlstSluF800_View0X23) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -17453,10 +17414,7 @@ func (m *WlstSluEc00) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -17865,10 +17823,7 @@ func (m *WlstSlu_6B00) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -18032,10 +17987,7 @@ func (m *WlstSlu_6B00_CmdPwm) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -18142,10 +18094,7 @@ func (m *WlstSlu_6C00) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -18227,10 +18176,7 @@ func (m *WlstSluD000) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -18318,10 +18264,7 @@ func (m *WlstSlu_2800) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -18409,10 +18352,7 @@ func (m *WlstSlu_2400) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -18576,10 +18516,7 @@ func (m *WlstSlu_6E00) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -18724,10 +18661,7 @@ func (m *WlstSlu_3000) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -18853,10 +18787,7 @@ func (m *WlstSlu_9A00) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -19148,10 +19079,7 @@ func (m *WlstSluCd00) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -19258,10 +19186,7 @@ func (m *WlstSlu_1C00) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -19385,10 +19310,7 @@ func (m *WlstSlu_1D00) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -19590,10 +19512,7 @@ func (m *WlstSlu_1D00_DataMark) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -20119,10 +20038,7 @@ func (m *WlstSlu_9D00) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -20267,10 +20183,7 @@ func (m *WlstSlu_9D00_SetMark) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -20750,10 +20663,7 @@ func (m *WlstSlu_9D00_SluitemData) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -21309,10 +21219,7 @@ func (m *WlstSlu_9D00_SluitemDataNew) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -21707,10 +21614,7 @@ func (m *WlstSlu_9D00_SluitemPara) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -21919,10 +21823,7 @@ func (m *WlstSlu_9D00_SluitemVer) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -22010,10 +21911,7 @@ func (m *WlstSlu_9D00_SluitemSunriseset) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -22462,10 +22360,7 @@ func (m *WlstSlu_9D00_SluitemRuntime) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -22570,10 +22465,7 @@ func (m *WlstSluF000) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -22775,10 +22667,7 @@ func (m *WlstSluF000_ResetMark) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -22940,10 +22829,7 @@ func (m *WlstSluF100) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -23050,10 +22936,7 @@ func (m *WlstSluF100_TimerStatus) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -23249,10 +23132,7 @@ func (m *WlstSluF200) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -23511,10 +23391,7 @@ func (m *WlstSluF200_DataMark) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -24137,10 +24014,7 @@ func (m *WlstSluF200_ControllerData) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -24514,10 +24388,7 @@ func (m *WlstSlu_7300) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -24789,10 +24660,7 @@ func (m *WlstSlu_7300_ConcentratorData) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -24937,10 +24805,7 @@ func (m *WlstSlu_7300_ConcentratorData_RunStatus) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -25047,10 +24912,7 @@ func (m *WlstSlu_7300_ConcentratorData_ArgsStatus) Unmarshal(dAtA []byte) error 
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -25195,10 +25057,7 @@ func (m *WlstSlu_7300_ConcentratorData_HardwareStatus) Unmarshal(dAtA []byte) er
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -25409,10 +25268,7 @@ func (m *WlstSlu_7300_BaseSluitemData) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -25595,10 +25451,7 @@ func (m *WlstSlu_7300_BaseSluitemData_SluitemStatus) Unmarshal(dAtA []byte) erro
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -25724,10 +25577,7 @@ func (m *WlstSlu_7300_BaseSluitemData_LightStatus) Unmarshal(dAtA []byte) error 
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -25851,10 +25701,7 @@ func (m *WlstSlu_7300_BaseSluitemData_LightData) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -25959,10 +25806,7 @@ func (m *WlstSlu_7300_UnknowSluitem) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -26095,10 +25939,7 @@ func (m *WlstSlu_7300_AssistSluitemData) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -26181,10 +26022,7 @@ func (m *WlstSlu_7300_AssistSluitemData_LightData) Unmarshal(dAtA []byte) error 
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -26365,10 +26203,7 @@ func (m *WlstSlu_7300_SluitemPhyinfo) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -26564,10 +26399,7 @@ func (m *WlstSlu_7300_ModelInfo) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -26873,10 +26705,7 @@ func (m *WlstSluF900) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -27034,10 +26863,7 @@ func (m *WlstSluF900_SluitemStatusAlarm) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -27138,10 +26964,7 @@ func (m *WlstSluF900_BluetoothApply) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -27286,10 +27109,7 @@ func (m *WlstSluF900_SetDomainResult) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -27430,10 +27250,7 @@ func (m *WlstSlu_7B00) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -27764,10 +27581,7 @@ func (m *WlstSlu_7B00_ReadConcentratorOperationData) Unmarshal(dAtA []byte) erro
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -27855,10 +27669,7 @@ func (m *WlstSlu_7B00_ReadConcentratorOperationData_CmdOperation) Unmarshal(dAtA
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -28041,10 +27852,7 @@ func (m *WlstSluFe00) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -28472,10 +28280,7 @@ func (m *WlstSlu_7400) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -28639,10 +28444,7 @@ func (m *WlstSlu_7400_CmdPwm) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -28821,10 +28623,7 @@ func (m *WlstSlu_7C00) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -29155,10 +28954,7 @@ func (m *WlstSlu_7C00_ConcentratorOperationData) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -29322,10 +29118,7 @@ func (m *WlstSlu_7C00_ConcentratorOperationData_CmdPwm) Unmarshal(dAtA []byte) e
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -29464,10 +29257,7 @@ func (m *WlstSlu_7C00_ConcentratorOperationData_Cmd_485) Unmarshal(dAtA []byte) 
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -29629,10 +29419,7 @@ func (m *WlstSlu_6F00) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {
@@ -29796,10 +29583,7 @@ func (m *WlstSlu_6F00_ResetMark) Unmarshal(dAtA []byte) error {
 			if err != nil {
 				return err
 			}
-			if skippy < 0 {
-				return ErrInvalidLengthProtocolSlu
-			}
-			if (iNdEx + skippy) < 0 {
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
 				return ErrInvalidLengthProtocolSlu
 			}
 			if (iNdEx + skippy) > l {

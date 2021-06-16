@@ -162,6 +162,25 @@ message WlstTerminal {
   Wlst_rtu_7023 wlst_rtu_7023 = 83;
   // 遥控应答
   Wlst_rtu_7023 wlst_rtu_70a3 = 84;
+  // 漏电板参数设置
+  Wlst_rtu_7024 wlst_rtu_7024 = 85;
+  // 漏电板参数设置应答
+  Wlst_rtu_7024 wlst_rtu_70a4 = 86;
+  // 漏电板选测
+  Wlst_rtu_7026 wlst_rtu_7026 = 87;
+  // 漏电板复位
+  Wlst_rtu_7027 wlst_rtu_7027 = 88;
+  // 漏电板复位应答
+  Wlst_rtu_7027 wlst_rtu_70a7 = 89;
+  // 电子锁控制下行
+  Wlst_rtu_7076 wlst_rtu_7076 = 90;
+  // 电子锁控制上行
+  Wlst_rtu_7076 wlst_rtu_70F6 = 91;
+  // 除湿控制下行
+  Wlst_rtu_7077 wlst_rtu_7077 = 92;
+  // 除湿控制上行
+  Wlst_rtu_7077 wlst_rtu_70F7 = 93;
+
 
   //线路检测
   //召测终端软件版本

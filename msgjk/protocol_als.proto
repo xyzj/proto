@@ -3,8 +3,6 @@ package wlst.pb2;
 
 option optimize_for = SPEED;
 
-// 恒杰电子锁
-
 // 漏电协议
 // 设置地址
 message Wlst_elu_6255 {
