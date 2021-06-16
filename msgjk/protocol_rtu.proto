@@ -62,7 +62,7 @@ message Wlst_rtu_7026 {
 }
 // 漏电复位
 message Wlst_rtu_7027 {
-  repeated int32 reset = 1 [ packed = true ]; // 固定1-8路是否需要复位
+  repeated int32 need_reset = 1 [ packed = true ]; // 固定1-8路是否需要复位
   int32 status = 2;                           // 0-成功，1-失败
   // 序号
   int32 cmd_idx = 3;
