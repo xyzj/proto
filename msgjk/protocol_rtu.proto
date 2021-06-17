@@ -54,7 +54,7 @@ message Wlst_rtu_7026 {
   int32 hardware_type = 1; // 设备类型0-不支持漏电，1-支持漏电
   int32 elu_status = 2;    // 0-未启用漏电，1-启用漏电
   int32 eeprom = 3; // 0-正常，1-错误（需要重新下发参数）（不用展示）
-  int32 reset = 4; // 是否发生复位，0-未发生，1-发生
+  int32 hardware_reset = 4; // 是否发生复位，0-未发生，1-发生
   // 依次1-8路漏电值，没有漏电板或全部不启用时不填充
   repeated EluData elu_data = 5;
   // 序号
