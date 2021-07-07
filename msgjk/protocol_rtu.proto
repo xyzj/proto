@@ -590,7 +590,18 @@ message Wlst_rtu_7003 {
   //序号
   int32 cmd_idx = 1;
   // ftp升级命令数据
-  repeated int32 ftp_data = 2;
+  // ftpip,int64算法
+  int64 ftp_ip = 7;
+  // ftp 端口号
+  int32 ftp_port = 2;
+  // ftp用户名，最大32个英文字符
+  string ftp_user = 3;
+  // ftp 密码，最大32个英文字符
+  string ftp_pwd = 4;
+  // 服务器文件路径，默认'/'，最大64个英文字符，不能有空格
+  string ftp_dir = 5;
+  // 文件名，最大32个英文字符（含扩展名）
+  string ftp_file = 6;
 }
 
 // 3006终端升级准备
